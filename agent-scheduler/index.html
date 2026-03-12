@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>エージェント空き枠検索 | ハックツ就職</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif;
+    background: #f0f2f5;
+    color: #1a1a2e;
+    line-height: 1.6;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 24px 32px;
+  }
+  .header h1 { font-size: 22px; font-weight: 700; }
+  .header-sub { font-size: 13px; opacity: 0.85; margin-top: 4px; }
+
+  .controls {
+    background: white;
+    padding: 20px 32px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    gap: 16px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  }
+  .control-group { display: flex; flex-direction: column; gap: 4px; }
+  .control-group label { font-size: 12px; font-weight: 600; color: #555; }
+  .control-group input, .control-group select {
+    padding: 10px 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .control-group input:focus, .control-group select:focus { border-color: #667eea; }
+  .search-btn {
+    padding: 10px 28px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+  }
+  .search-btn:hover { opacity: 0.9; }
+  .search-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .progress-bar {
+    height: 4px;
+    background: #e0e0e0;
+    position: relative;
+    display: none;
+  }
+  .progress-bar.active { display: block; }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    width: 0%;
+    transition: width 0.3s;
+  }
+
+  .status {
+    padding: 12px 32px;
+    font-size: 14px;
+    color: #555;
+    display: none;
+  }
+  .status.active { display: block; }
+
+  .summary {
+    display: flex;
+    gap: 16px;
+    padding: 16px 32px;
+    flex-wrap: wrap;
+    display: none;
+  }
+  .summary.active { display: flex; }
+  .summary-card {
+    background: white;
+    border-radius: 10px;
+    padding: 16px 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    text-align: center;
+    min-width: 140px;
+  }
+  .summary-card .num { font-size: 28px; font-weight: 800; }
+  .summary-card .label { font-size: 12px; color: #888; margin-top: 2px; }
+  .num-green { color: #2e7d32; }
+  .num-red { color: #c62828; }
+  .num-gray { color: #546e7a; }
+
+  .results {
+    padding: 20px 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .result-section { margin-bottom: 24px; }
+  .result-section h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    border-radius: 8px;
+  }
+  .section-available h3 { background: #e8f5e9; color: #1b5e20; }
+  .section-unavailable h3 { background: #fce4ec; color: #b71c1c; }
+  .section-error h3 { background: #fff3e0; color: #e65100; }
+  .section-unsupported h3 { background: #eceff1; color: #546e7a; }
+
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 12px;
+  }
+  .result-card {
+    background: white;
+    border-radius: 10px;
+    padding: 16px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    border-left: 4px solid #ccc;
+  }
+  .result-card.available { border-left-color: #4caf50; }
+  .result-card.unavailable { border-left-color: #ef5350; }
+  .result-card.error { border-left-color: #ff9800; }
+  .result-card.unsupported { border-left-color: #90a4ae; }
+
+  .result-card .agent-name { font-weight: 700; font-size: 15px; }
+  .result-card .contact-name { font-size: 13px; color: #555; }
+  .result-card .slots {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .slot-tag {
+    background: #e8f5e9;
+    color: #1b5e20;
+    padding: 3px 10px;
+    border-radius: 14px;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .result-card .link-row {
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+  .result-card .open-link {
+    font-size: 12px;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .result-card .open-link:hover { text-decoration: underline; }
+  .result-card .error-msg { font-size: 12px; color: #e65100; margin-top: 6px; }
+  .result-card .unsupported-msg { font-size: 12px; color: #78909c; margin-top: 6px; }
+
+  .empty-state {
+    text-align: center;
+    padding: 60px 32px;
+    color: #999;
+  }
+  .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+  .empty-state p { font-size: 15px; }
+
+  @media (max-width: 600px) {
+    .controls { padding: 16px; }
+    .results { padding: 12px; }
+    .result-grid { grid-template-columns: 1fr; }
+    .summary { padding: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>エージェント空き枠検索ダッシュボード</h1>
+  <div class="header-sub">日付を指定して、全エージェントの空き面談枠を一括検索</div>
+</div>
+
+<div class="controls">
+  <div class="control-group">
+    <label>検索日</label>
+    <input type="date" id="dateInput">
+  </div>
+  <div class="control-group">
+    <label>会社名フィルタ（任意）</label>
+    <input type="text" id="filterInput" placeholder="例: ROXX, meevo...">
+  </div>
+  <button class="search-btn" id="searchBtn" onclick="startSearch()">空き枠を検索</button>
+</div>
+
+<div class="progress-bar" id="progressBar">
+  <div class="progress-fill" id="progressFill"></div>
+</div>
+
+<div class="status" id="statusText"></div>
+
+<div class="summary" id="summary">
+  <div class="summary-card">
+    <div class="num num-green" id="availableCount">0</div>
+    <div class="label">空きあり</div>
+  </div>
+  <div class="summary-card">
+    <div class="num num-red" id="unavailableCount">0</div>
+    <div class="label">空きなし</div>
+  </div>
+  <div class="summary-card">
+    <div class="num num-gray" id="unsupportedCount">0</div>
+    <div class="label">手動確認</div>
+  </div>
+</div>
+
+<div class="results" id="results">
+  <div class="empty-state">
+    <div class="icon">&#128197;</div>
+    <p>上の日付を選択して「空き枠を検索」をクリック</p>
+    <p style="font-size:13px;color:#bbb;margin-top:8px;">Timerex対応エージェントの空き枠を自動取得します</p>
+  </div>
+</div>
+
+<script>
+// Set default date to tomorrow
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+document.getElementById("dateInput").value = tomorrow.toISOString().split("T")[0];
+
+let searchInProgress = false;
+
+async function startSearch() {
+  if (searchInProgress) return;
+
+  const date = document.getElementById("dateInput").value;
+  const filter = document.getElementById("filterInput").value.trim();
+
+  if (!date) { alert("日付を選択してください"); return; }
+
+  searchInProgress = true;
+  const btn = document.getElementById("searchBtn");
+  btn.disabled = true;
+  btn.textContent = "検索中...";
+
+  const progressBar = document.getElementById("progressBar");
+  const progressFill = document.getElementById("progressFill");
+  const statusText = document.getElementById("statusText");
+  const summary = document.getElementById("summary");
+  const results = document.getElementById("results");
+
+  progressBar.classList.add("active");
+  statusText.classList.add("active");
+  summary.classList.remove("active");
+  progressFill.style.width = "10%";
+  statusText.textContent = "各エージェントの空き枠を取得中...";
+  results.innerHTML = '<div class="empty-state"><div class="icon">&#9203;</div><p>検索中です。しばらくお待ちください...</p></div>';
+
+  // Animate progress bar
+  let progress = 10;
+  const progressInterval = setInterval(() => {
+    progress = Math.min(progress + Math.random() * 15, 90);
+    progressFill.style.width = progress + "%";
+  }, 300);
+
+  try {
+    const response = await fetch("/api/check", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ date, agentFilter: filter || undefined }),
+    });
+
+    clearInterval(progressInterval);
+    progressFill.style.width = "100%";
+
+    if (!response.ok) {
+      const err = await response.json();
+      throw new Error(err.error || "サーバーエラー");
+    }
+
+    const data = await response.json();
+    statusText.textContent = `${data.date} の検索完了 - ${data.results.length}件チェック済み`;
+
+    renderResults(data);
+  } catch (err) {
+    clearInterval(progressInterval);
+    statusText.textContent = "エラー: " + err.message;
+    results.innerHTML = `<div class="empty-state"><div class="icon">&#9888;</div><p>検索に失敗しました: ${err.message}</p><p style="font-size:13px;color:#bbb;margin-top:8px;">サーバーが起動しているか確認してください（node server.js）</p></div>`;
+  } finally {
+    searchInProgress = false;
+    btn.disabled = false;
+    btn.textContent = "空き枠を検索";
+    setTimeout(() => {
+      progressBar.classList.remove("active");
+      progressFill.style.width = "0%";
+    }, 1000);
+  }
+}
+
+function renderResults(data) {
+  const summary = document.getElementById("summary");
+  const results = document.getElementById("results");
+
+  // Categorize results
+  const available = data.results.filter(r => r.slots && r.slots.length > 0);
+  const unavailable = data.results.filter(r => r.slots && r.slots.length === 0 && !r.error);
+  const errors = data.results.filter(r => r.error);
+
+  // Non-timerex agents that need manual check
+  const unsupportedAgents = [
+    { name: "ネオキャリア", note: "ログインして確認が必要" },
+    { name: "キャリアスタート", note: "専用URLで確認が必要" },
+    { name: "ユニゾンキャリア", note: "Slackで確認が必要" },
+    { name: "ジール", note: "顧客管理シートで確認が必要" },
+    { name: "ForAcareer", note: "Jicooで手動確認" },
+    { name: "ラストデータ", note: "Jicooで手動確認" },
+    { name: "パーソルイノベーション", note: "eeasyで手動確認" },
+    { name: "UZUZ", note: "eeasyで手動確認" },
+    { name: "サプリレ", note: "Google Calendarで手動確認" },
+    { name: "HADO", note: "Google Calendarで手動確認" },
+    { name: "ユニポテンシャル", note: "Google Calendarで手動確認" },
+    { name: "move on", note: "Spirincで手動確認" },
+  ];
+
+  // Update summary
+  summary.classList.add("active");
+  document.getElementById("availableCount").textContent = available.length;
+  document.getElementById("unavailableCount").textContent = unavailable.length;
+  document.getElementById("unsupportedCount").textContent = unsupportedAgents.length;
+
+  let html = "";
+
+  // Available section
+  if (available.length > 0) {
+    html += `<div class="result-section section-available"><h3>&#9989; 空きあり（${available.length}件）</h3><div class="result-grid">`;
+    html += available.map(r => `
+      <div class="result-card available">
+        <div class="agent-name">${r.agentName}</div>
+        <div class="contact-name">${r.contactName}${r.area ? ` (${r.area})` : ""}</div>
+        <div class="slots">${r.slots.map(s => `<span class="slot-tag">${s}</span>`).join("")}</div>
+        <div class="link-row">
+          <a href="${r.url}" target="_blank" class="open-link">&#128279; 予約ページを開く</a>
+        </div>
+      </div>
+    `).join("");
+    html += `</div></div>`;
+  }
+
+  // Unavailable section
+  if (unavailable.length > 0) {
+    html += `<div class="result-section section-unavailable"><h3>&#10060; 空きなし（${unavailable.length}件）</h3><div class="result-grid">`;
+    html += unavailable.map(r => `
+      <div class="result-card unavailable">
+        <div class="agent-name">${r.agentName}</div>
+        <div class="contact-name">${r.contactName}${r.area ? ` (${r.area})` : ""}</div>
+        <div class="link-row">
+          <a href="${r.url}" target="_blank" class="open-link">&#128279; ページで確認</a>
+        </div>
+      </div>
+    `).join("");
+    html += `</div></div>`;
+  }
+
+  // Unsupported section (need manual check)
+  html += `<div class="result-section section-unsupported"><h3>&#128270; 手動確認が必要（${unsupportedAgents.length}件）</h3><div class="result-grid">`;
+  html += unsupportedAgents.map(a => `
+    <div class="result-card unsupported">
+      <div class="agent-name">${a.name}</div>
+      <div class="unsupported-msg">${a.note}</div>
+    </div>
+  `).join("");
+  html += `</div></div>`;
+
+  // Error section
+  if (errors.length > 0) {
+    html += `<div class="result-section section-error"><h3>&#9888; エラー（${errors.length}件）</h3><div class="result-grid">`;
+    html += errors.map(r => `
+      <div class="result-card error">
+        <div class="agent-name">${r.agentName}</div>
+        <div class="contact-name">${r.contactName}</div>
+        <div class="error-msg">${r.error}</div>
+        <div class="link-row">
+          <a href="${r.url}" target="_blank" class="open-link">&#128279; 手動で確認</a>
+        </div>
+      </div>
+    `).join("");
+    html += `</div></div>`;
+  }
+
+  results.innerHTML = html;
+}
+</script>
+</body>
+</html>

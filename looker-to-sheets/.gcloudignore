@@ -1,0 +1,8 @@
+.venv/
+auth_state/
+__pycache__/
+*.pyc
+debug_screenshot.png
+service-account.json
+test_*.py
+.git/

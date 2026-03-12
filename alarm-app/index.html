@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>目覚ましアプリ</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .clock {
+      font-size: 5rem;
+      font-weight: 200;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .date {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 2.5rem;
+    }
+
+    .alarm-form {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 2rem;
+      width: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .alarm-form h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .time-input-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .time-input-group input[type="number"] {
+      width: 80px;
+      padding: 0.7rem;
+      font-size: 1.8rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      color: #fff;
+      outline: none;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .time-input-group input[type="number"]:focus {
+      border-color: #7c6cf0;
+      box-shadow: 0 0 0 3px rgba(124, 108, 240, 0.3);
+    }
+
+    .time-input-group .separator {
+      font-size: 2rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .label-input {
+      width: 100%;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.95rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      color: #fff;
+      outline: none;
+    }
+
+    .label-input::placeholder {
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    .label-input:focus {
+      border-color: #7c6cf0;
+      box-shadow: 0 0 0 3px rgba(124, 108, 240, 0.3);
+    }
+
+    .btn {
+      padding: 0.7rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #7c6cf0, #a78bfa);
+      color: #fff;
+      width: 100%;
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 4px 20px rgba(124, 108, 240, 0.4);
+    }
+
+    .alarm-list {
+      margin-top: 1.5rem;
+      width: 340px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .alarm-item {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .alarm-info .alarm-time {
+      font-size: 1.6rem;
+      font-weight: 300;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .alarm-info .alarm-label {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-top: 0.15rem;
+    }
+
+    .alarm-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .toggle {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .toggle input {
+      display: none;
+    }
+
+    .toggle .slider {
+      position: absolute;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 12px;
+      transition: background 0.3s;
+    }
+
+    .toggle .slider::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 3px;
+      top: 3px;
+      background: #fff;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    .toggle input:checked + .slider {
+      background: #7c6cf0;
+    }
+
+    .toggle input:checked + .slider::before {
+      transform: translateX(20px);
+    }
+
+    .btn-delete {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0.2rem;
+      transition: color 0.2s;
+    }
+
+    .btn-delete:hover {
+      color: #f87171;
+    }
+
+    .no-alarms {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.35);
+      font-size: 0.9rem;
+      padding: 1rem;
+    }
+
+    /* Alarm ringing overlay */
+    .alarm-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(20px);
+      z-index: 100;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    .alarm-overlay.active {
+      display: flex;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .alarm-overlay .ring-icon {
+      font-size: 5rem;
+      animation: shake 0.5s infinite;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(15deg); }
+      75% { transform: rotate(-15deg); }
+    }
+
+    .alarm-overlay .ring-time {
+      font-size: 3rem;
+      font-weight: 200;
+    }
+
+    .alarm-overlay .ring-label {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .btn-stop {
+      margin-top: 1rem;
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, #f87171, #ef4444);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .btn-stop:hover {
+      box-shadow: 0 4px 20px rgba(248, 113, 113, 0.4);
+    }
+
+    .btn-snooze {
+      padding: 0.7rem 2rem;
+      font-size: 1rem;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="clock" id="clock">00:00:00</div>
+  <div class="date" id="date"></div>
+
+  <div class="alarm-form">
+    <h2>アラームを追加</h2>
+    <div class="time-input-group">
+      <input type="number" id="alarmHour" min="0" max="23" placeholder="00" value="07">
+      <span class="separator">:</span>
+      <input type="number" id="alarmMin" min="0" max="59" placeholder="00" value="00">
+    </div>
+    <input type="text" class="label-input" id="alarmLabel" placeholder="ラベル (例: 起床)">
+    <button class="btn btn-primary" id="addAlarmBtn">アラームをセット</button>
+  </div>
+
+  <div class="alarm-list" id="alarmList">
+    <div class="no-alarms" id="noAlarms">アラームはありません</div>
+  </div>
+
+  <div class="alarm-overlay" id="alarmOverlay">
+    <div class="ring-icon">&#128276;</div>
+    <div class="ring-time" id="ringTime"></div>
+    <div class="ring-label" id="ringLabel"></div>
+    <button class="btn-stop" id="stopBtn">停止</button>
+    <button class="btn-snooze" id="snoozeBtn">スヌーズ (5分)</button>
+  </div>
+
+  <script>
+    const clockEl = document.getElementById('clock');
+    const dateEl = document.getElementById('date');
+    const alarmHourEl = document.getElementById('alarmHour');
+    const alarmMinEl = document.getElementById('alarmMin');
+    const alarmLabelEl = document.getElementById('alarmLabel');
+    const addAlarmBtn = document.getElementById('addAlarmBtn');
+    const alarmListEl = document.getElementById('alarmList');
+    const noAlarmsEl = document.getElementById('noAlarms');
+    const overlay = document.getElementById('alarmOverlay');
+    const ringTimeEl = document.getElementById('ringTime');
+    const ringLabelEl = document.getElementById('ringLabel');
+    const stopBtn = document.getElementById('stopBtn');
+    const snoozeBtn = document.getElementById('snoozeBtn');
+
+    let alarms = JSON.parse(localStorage.getItem('alarms') || '[]');
+    let audioCtx = null;
+    let oscillator = null;
+    let gainNode = null;
+    let ringingAlarmId = null;
+
+    const days = ['日', '月', '火', '水', '木', '金', '土'];
+
+    function pad(n) {
+      return String(n).padStart(2, '0');
+    }
+
+    function updateClock() {
+      const now = new Date();
+      clockEl.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+      dateEl.textContent = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日 (${days[now.getDay()]})`;
+    }
+
+    function saveAlarms() {
+      localStorage.setItem('alarms', JSON.stringify(alarms));
+    }
+
+    function renderAlarms() {
+      const items = alarmListEl.querySelectorAll('.alarm-item');
+      items.forEach(item => item.remove());
+
+      if (alarms.length === 0) {
+        noAlarmsEl.style.display = 'block';
+        return;
+      }
+
+      noAlarmsEl.style.display = 'none';
+
+      alarms.forEach(alarm => {
+        const el = document.createElement('div');
+        el.className = 'alarm-item';
+        el.innerHTML = `
+          <div class="alarm-info">
+            <div class="alarm-time">${pad(alarm.hour)}:${pad(alarm.min)}</div>
+            <div class="alarm-label">${alarm.label || 'アラーム'}</div>
+          </div>
+          <div class="alarm-actions">
+            <label class="toggle">
+              <input type="checkbox" ${alarm.enabled ? 'checked' : ''} data-id="${alarm.id}">
+              <span class="slider"></span>
+            </label>
+            <button class="btn-delete" data-id="${alarm.id}">&times;</button>
+          </div>
+        `;
+        alarmListEl.appendChild(el);
+
+        el.querySelector('input[type="checkbox"]').addEventListener('change', (e) => {
+          const a = alarms.find(a => a.id === alarm.id);
+          if (a) {
+            a.enabled = e.target.checked;
+            a.triggered = false;
+            saveAlarms();
+          }
+        });
+
+        el.querySelector('.btn-delete').addEventListener('click', () => {
+          alarms = alarms.filter(a => a.id !== alarm.id);
+          saveAlarms();
+          renderAlarms();
+        });
+      });
+    }
+
+    addAlarmBtn.addEventListener('click', () => {
+      const hour = parseInt(alarmHourEl.value, 10);
+      const min = parseInt(alarmMinEl.value, 10);
+
+      if (isNaN(hour) || isNaN(min) || hour < 0 || hour > 23 || min < 0 || min > 59) {
+        return;
+      }
+
+      alarms.push({
+        id: Date.now().toString(),
+        hour,
+        min,
+        label: alarmLabelEl.value.trim(),
+        enabled: true,
+        triggered: false
+      });
+
+      alarmLabelEl.value = '';
+      saveAlarms();
+      renderAlarms();
+    });
+
+    function startAlarmSound() {
+      if (audioCtx) return;
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      gainNode = audioCtx.createGain();
+      gainNode.connect(audioCtx.destination);
+      gainNode.gain.value = 0.3;
+
+      function beep() {
+        if (!audioCtx) return;
+        oscillator = audioCtx.createOscillator();
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(880, audioCtx.currentTime);
+        oscillator.connect(gainNode);
+        oscillator.start();
+        oscillator.stop(audioCtx.currentTime + 0.15);
+
+        setTimeout(() => {
+          if (!audioCtx) return;
+          const osc2 = audioCtx.createOscillator();
+          osc2.type = 'sine';
+          osc2.frequency.setValueAtTime(1100, audioCtx.currentTime);
+          osc2.connect(gainNode);
+          osc2.start();
+          osc2.stop(audioCtx.currentTime + 0.15);
+        }, 200);
+
+        setTimeout(() => {
+          if (audioCtx) beep();
+        }, 1000);
+      }
+
+      beep();
+    }
+
+    function stopAlarmSound() {
+      if (audioCtx) {
+        audioCtx.close();
+        audioCtx = null;
+        oscillator = null;
+        gainNode = null;
+      }
+    }
+
+    function triggerAlarm(alarm) {
+      ringingAlarmId = alarm.id;
+      ringTimeEl.textContent = `${pad(alarm.hour)}:${pad(alarm.min)}`;
+      ringLabelEl.textContent = alarm.label || 'アラーム';
+      overlay.classList.add('active');
+      startAlarmSound();
+    }
+
+    stopBtn.addEventListener('click', () => {
+      stopAlarmSound();
+      overlay.classList.remove('active');
+      const alarm = alarms.find(a => a.id === ringingAlarmId);
+      if (alarm) {
+        alarm.triggered = true;
+        saveAlarms();
+      }
+      ringingAlarmId = null;
+    });
+
+    snoozeBtn.addEventListener('click', () => {
+      stopAlarmSound();
+      overlay.classList.remove('active');
+      const alarm = alarms.find(a => a.id === ringingAlarmId);
+      if (alarm) {
+        alarm.triggered = true;
+        // Create a snooze alarm 5 minutes from now
+        const now = new Date();
+        const snoozeTime = new Date(now.getTime() + 5 * 60 * 1000);
+        alarms.push({
+          id: Date.now().toString(),
+          hour: snoozeTime.getHours(),
+          min: snoozeTime.getMinutes(),
+          label: `${alarm.label || 'アラーム'} (スヌーズ)`,
+          enabled: true,
+          triggered: false
+        });
+        saveAlarms();
+        renderAlarms();
+      }
+      ringingAlarmId = null;
+    });
+
+    function checkAlarms() {
+      const now = new Date();
+      const currentHour = now.getHours();
+      const currentMin = now.getMinutes();
+      const currentSec = now.getSeconds();
+
+      alarms.forEach(alarm => {
+        if (alarm.enabled && !alarm.triggered &&
+            alarm.hour === currentHour && alarm.min === currentMin && currentSec === 0) {
+          triggerAlarm(alarm);
+        }
+      });
+
+      // Reset triggered flag at the start of each minute (after second 0 passes)
+      if (currentSec === 1) {
+        alarms.forEach(alarm => {
+          if (alarm.triggered && !(alarm.hour === currentHour && alarm.min === currentMin)) {
+            alarm.triggered = false;
+            saveAlarms();
+          }
+        });
+      }
+    }
+
+    // Clamp input values
+    [alarmHourEl, alarmMinEl].forEach(input => {
+      input.addEventListener('input', () => {
+        const max = parseInt(input.max);
+        const min = parseInt(input.min);
+        let val = parseInt(input.value);
+        if (val > max) input.value = max;
+        if (val < min) input.value = min;
+      });
+    });
+
+    // Initialize
+    updateClock();
+    renderAlarms();
+    setInterval(() => {
+      updateClock();
+      checkAlarms();
+    }, 1000);
+  </script>
+</body>
+</html>

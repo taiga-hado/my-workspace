@@ -1,0 +1,1242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>セールスパス | 営業職特化の転職支援サービス</title>
+  <meta name="description" content="20代営業職志望に特化した転職支援サービス。営業経験豊富なアドバイザーが年収アップを完全無料でサポート。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #333;
+      line-height: 1.8;
+      background: #fff;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== UTILITIES ===== */
+    .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+    .section-title {
+      text-align: center;
+      font-size: 1.75rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 3rem;
+    }
+    .accent { color: #ff6b35; }
+    .highlight-bg { background: linear-gradient(transparent 60%, rgba(255, 107, 53, 0.2) 60%); }
+
+    /* ===== FLOATING CTA ===== */
+    .floating-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26, 26, 94, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 12px 20px;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .floating-cta.visible { transform: translateY(0); }
+    .floating-cta p {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .floating-cta .cta-btn {
+      padding: 10px 24px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    /* ===== CTA BUTTON ===== */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 18px 40px;
+      border-radius: 60px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);
+      text-align: center;
+      line-height: 1.4;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255, 107, 53, 0.5);
+    }
+    .cta-btn::after {
+      content: '→';
+      font-size: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+    .cta-btn:hover::after { transform: translateX(4px); }
+
+    .cta-note {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #888;
+      margin-top: 10px;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 12px 0;
+    }
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #1a1a5e;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .logo-icon {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, #1a1a5e, #ff6b35);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+    .header .cta-btn {
+      padding: 10px 24px;
+      font-size: 0.85rem;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #0d0d3b 0%, #1a1a5e 40%, #2d1b69 100%);
+      padding-top: 80px;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 80%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(255, 107, 53, 0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-text { color: #fff; }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 107, 53, 0.2);
+      border: 1px solid rgba(255, 107, 53, 0.4);
+      color: #ff8c42;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 900;
+      line-height: 1.35;
+      margin-bottom: 20px;
+    }
+    .hero h1 .orange { color: #ff8c42; }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat-num {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #ff8c42;
+    }
+    .hero-stat-label {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-top: 2px;
+    }
+    .hero-image {
+      position: relative;
+      display: flex;
+      justify-content: center;
+    }
+    .hero-image img {
+      border-radius: 20px;
+      max-height: 500px;
+      object-fit: cover;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+    .hero-image-placeholder {
+      width: 100%;
+      max-width: 420px;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.3);
+      font-size: 0.9rem;
+      border: 1px dashed rgba(255,255,255,0.15);
+    }
+
+    /* ===== PAIN POINTS ===== */
+    .pain-section {
+      padding: 80px 0;
+      background: #f8f7f4;
+    }
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .pain-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+    .pain-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+    .pain-icon {
+      flex-shrink: 0;
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, #fff3ec, #ffe8db);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+    .pain-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #1a1a5e;
+    }
+    .pain-card p {
+      font-size: 0.85rem;
+      color: #777;
+      line-height: 1.6;
+    }
+
+    /* ===== CTA BAND ===== */
+    .cta-band {
+      background: linear-gradient(135deg, #1a1a5e, #2d1b69);
+      padding: 48px 0;
+      text-align: center;
+    }
+    .cta-band p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+    .cta-band .cta-note { color: rgba(255,255,255,0.5); }
+
+    /* ===== NUMBERS ===== */
+    .numbers-section {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .numbers-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .number-card {
+      text-align: center;
+      padding: 32px 16px;
+      background: linear-gradient(135deg, #fafafe, #f5f4ff);
+      border-radius: 20px;
+      border: 1px solid rgba(26, 26, 94, 0.06);
+    }
+    .number-card-icon {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 16px;
+      background: linear-gradient(135deg, #1a1a5e, #3d2b8e);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .number-card-value {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #1a1a5e;
+      line-height: 1.2;
+    }
+    .number-card-value .unit {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+    .number-card-label {
+      font-size: 0.85rem;
+      color: #888;
+      margin-top: 4px;
+    }
+
+    /* ===== FEATURES ===== */
+    .features-section {
+      padding: 80px 0;
+      background: #f8f7f4;
+    }
+    .feature-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+    .feature-item:nth-child(even) { direction: rtl; }
+    .feature-item:nth-child(even) > * { direction: ltr; }
+    .feature-item:last-child { margin-bottom: 0; }
+    .feature-num {
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(26, 26, 94, 0.08);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .feature-content h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #1a1a5e;
+      margin-bottom: 12px;
+    }
+    .feature-content p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.8;
+    }
+    .feature-content .feature-tag {
+      display: inline-block;
+      background: rgba(255, 107, 53, 0.1);
+      color: #ff6b35;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .feature-visual {
+      background: linear-gradient(135deg, #e8e6f8, #f0e8ff);
+      border-radius: 20px;
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .feature-visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 40%, rgba(255, 107, 53, 0.06) 0%, transparent 60%);
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials-section {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+    .testimonial-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 32px;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s ease;
+    }
+    .testimonial-card:hover { transform: translateY(-4px); }
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .testimonial-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: linear-gradient(135deg, #e8e6f8, #f0e8ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .testimonial-avatar-placeholder {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e8e6f8, #f0e8ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.4rem;
+    }
+    .testimonial-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a1a5e;
+    }
+    .testimonial-info p {
+      font-size: 0.8rem;
+      color: #999;
+    }
+    .salary-change {
+      background: linear-gradient(135deg, #fff8f4, #fff3ec);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .salary-before {
+      font-size: 1rem;
+      color: #999;
+      font-weight: 700;
+    }
+    .salary-arrow {
+      color: #ff6b35;
+      font-size: 1.2rem;
+      font-weight: 900;
+    }
+    .salary-after {
+      font-size: 1.3rem;
+      color: #ff6b35;
+      font-weight: 900;
+    }
+    .salary-diff {
+      background: #ff6b35;
+      color: #fff;
+      padding: 2px 10px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .testimonial-text {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ===== COMPARISON ===== */
+    .comparison-section {
+      padding: 80px 0;
+      background: #f8f7f4;
+    }
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 18px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .comparison-table thead th {
+      background: #1a1a5e;
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+    .comparison-table thead th:last-child {
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    }
+    .comparison-table tbody td {
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    .comparison-table tbody td:first-child {
+      font-weight: 700;
+      color: #1a1a5e;
+      text-align: left;
+    }
+    .comparison-table tbody td:last-child {
+      background: rgba(255, 107, 53, 0.04);
+      color: #ff6b35;
+      font-weight: 700;
+    }
+    .check { color: #ff6b35; font-size: 1.2rem; }
+    .cross { color: #ccc; font-size: 1.2rem; }
+
+    /* ===== STEPS ===== */
+    .steps-section {
+      padding: 80px 0;
+      background: #fff;
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 16.67%;
+      right: 16.67%;
+      height: 3px;
+      background: linear-gradient(90deg, #1a1a5e, #ff6b35);
+      z-index: 0;
+    }
+    .step-card {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, #1a1a5e, #3d2b8e);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: 900;
+      box-shadow: 0 4px 16px rgba(26, 26, 94, 0.3);
+      border: 4px solid #fff;
+    }
+    .step-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a1a5e;
+      margin-bottom: 8px;
+    }
+    .step-card p {
+      font-size: 0.85rem;
+      color: #888;
+      line-height: 1.6;
+    }
+    .step-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-section {
+      padding: 80px 0;
+      background: #f8f7f4;
+    }
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      background: #fff;
+      border-radius: 16px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    }
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 24px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #1a1a5e;
+      transition: background 0.2s ease;
+      user-select: none;
+    }
+    .faq-question:hover { background: #fafafe; }
+    .faq-question .q-badge {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 900;
+      margin-right: 12px;
+    }
+    .faq-question .q-text { flex: 1; }
+    .faq-toggle {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #f0f0f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s ease, background 0.3s ease;
+      font-size: 0.8rem;
+      color: #1a1a5e;
+    }
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+      background: #1a1a5e;
+      color: #fff;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 200px;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 20px 64px;
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      padding: 80px 0;
+      background: linear-gradient(135deg, #0d0d3b 0%, #1a1a5e 40%, #2d1b69 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -20%;
+      width: 60%;
+      height: 200%;
+      background: radial-gradient(ellipse, rgba(255, 107, 53, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .final-cta h2 {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .final-cta .sub {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 1rem;
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .final-cta .cta-btn { position: relative; }
+    .final-cta .cta-note { color: rgba(255, 255, 255, 0.4); }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #0d0d2b;
+      padding: 40px 0 100px;
+      text-align: center;
+    }
+    .footer .logo {
+      justify-content: center;
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+    .footer-links a {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.4);
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255, 255, 255, 0.8); }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero h1 { font-size: 1.7rem; }
+      .hero-image { display: none; }
+      .hero-stats { justify-content: center; flex-wrap: wrap; gap: 16px; }
+      .hero-text .cta-btn { width: 100%; justify-content: center; }
+
+      .pain-grid { grid-template-columns: 1fr; }
+      .numbers-grid { grid-template-columns: repeat(2, 1fr); }
+
+      .feature-item,
+      .feature-item:nth-child(even) {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+      .feature-visual { aspect-ratio: 16/9; }
+
+      .testimonials-grid { grid-template-columns: 1fr; }
+
+      .comparison-table { font-size: 0.8rem; }
+      .comparison-table th, .comparison-table td { padding: 12px 8px; }
+
+      .steps-grid { grid-template-columns: 1fr; gap: 32px; }
+      .steps-grid::before { display: none; }
+
+      .section-title { font-size: 1.4rem; }
+      .final-cta h2 { font-size: 1.5rem; }
+
+      .floating-cta p { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">SP</div>
+        セールスパス
+      </div>
+      <a href="#cta" class="cta-btn" style="padding:10px 24px;font-size:0.85rem;">無料相談する</a>
+    </div>
+  </header>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <p>営業職で年収アップしませんか？</p>
+    <a href="#cta" class="cta-btn">無料でキャリア相談する</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <span class="hero-badge">20代営業志望に特化</span>
+          <h1><span class="orange">営業職</span>で<br>年収アップを実現。<br>あなた専属の<br>キャリアナビゲーター</h1>
+          <p class="hero-sub">営業経験豊富なアドバイザーが、あなたに最適な<br>営業職への転職を完全無料でサポートします。</p>
+          <a href="#cta" class="cta-btn">無料でキャリア相談する</a>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-num">95<span style="font-size:1rem;">%</span></div>
+              <div class="hero-stat-label">利用者満足度</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">3,000<span style="font-size:0.9rem;">件+</span></div>
+              <div class="hero-stat-label">営業職求人数</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">完全無料</div>
+              <div class="hero-stat-label">一切費用なし</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-placeholder" id="heroImageSlot">
+            <img id="heroImg" src="" alt="営業職の若手ビジネスパーソン" style="display:none;width:100%;height:100%;object-fit:cover;border-radius:20px;">
+            <span id="heroPlaceholder">HERO IMAGE</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="pain-section">
+    <div class="container">
+      <p class="section-title fade-in">こんな<span class="accent">お悩み</span>ありませんか？</p>
+      <p class="section-subtitle fade-in">一つでも当てはまったら、セールスパスにご相談ください</p>
+      <div class="pain-grid">
+        <div class="pain-card fade-in">
+          <div class="pain-icon">😰</div>
+          <div>
+            <h3>営業に挑戦したいけど未経験で不安</h3>
+            <p>「営業は厳しそう」「ノルマが怖い」そんな不安を抱えていませんか？</p>
+          </div>
+        </div>
+        <div class="pain-card fade-in">
+          <div class="pain-icon">💸</div>
+          <div>
+            <h3>今の年収に満足していない</h3>
+            <p>年収300万円台で頭打ち。もっと稼げる仕事がしたいと思っている。</p>
+          </div>
+        </div>
+        <div class="pain-card fade-in">
+          <div class="pain-icon">🤯</div>
+          <div>
+            <h3>転職エージェントが多すぎて選べない</h3>
+            <p>どのエージェントが自分に合っているのか、情報が多すぎて判断できない。</p>
+          </div>
+        </div>
+        <div class="pain-card fade-in">
+          <div class="pain-icon">🤔</div>
+          <div>
+            <h3>自分に合った営業職がわからない</h3>
+            <p>IT営業？法人営業？メーカー営業？種類が多くて自分に向いている営業がわからない。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band">
+    <div class="container">
+      <p>営業のプロがあなたにぴったりのキャリアを一緒に見つけます</p>
+      <a href="#cta" class="cta-btn">無料でキャリア相談する</a>
+      <p class="cta-note">※ 60秒で申し込み完了。費用は一切かかりません。</p>
+    </div>
+  </div>
+
+  <!-- NUMBERS -->
+  <section class="numbers-section">
+    <div class="container">
+      <p class="section-title fade-in">数字で見る<span class="accent">セールスパス</span>の実績</p>
+      <p class="section-subtitle fade-in">多くの20代が営業職で新しいキャリアをスタートしています</p>
+      <div class="numbers-grid">
+        <div class="number-card fade-in">
+          <div class="number-card-icon">👥</div>
+          <div class="number-card-value">10,000<span class="unit">人+</span></div>
+          <div class="number-card-label">累計利用者数</div>
+        </div>
+        <div class="number-card fade-in">
+          <div class="number-card-icon">📈</div>
+          <div class="number-card-value">+80<span class="unit">万円</span></div>
+          <div class="number-card-label">平均年収UP額</div>
+        </div>
+        <div class="number-card fade-in">
+          <div class="number-card-icon">🎯</div>
+          <div class="number-card-value">92<span class="unit">%</span></div>
+          <div class="number-card-label">内定率</div>
+        </div>
+        <div class="number-card fade-in">
+          <div class="number-card-icon">⭐</div>
+          <div class="number-card-value">95<span class="unit">%</span></div>
+          <div class="number-card-label">利用者満足度</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features-section">
+    <div class="container">
+      <p class="section-title fade-in">セールスパスが選ばれる<span class="accent">3つの理由</span></p>
+      <p class="section-subtitle fade-in">営業職への転職に本気で向き合うからこそ、選ばれ続けています</p>
+
+      <div class="feature-item fade-in">
+        <div class="feature-content">
+          <div class="feature-num">01</div>
+          <span class="feature-tag">専門性</span>
+          <h3>営業職専門の<br>キャリアアドバイザー</h3>
+          <p>アドバイザー全員が営業職経験者。IT営業・法人営業・SaaS営業など各業界の現場を知るプロが、リアルなアドバイスで最適なキャリアパスを提案します。</p>
+        </div>
+        <div class="feature-visual">🎯</div>
+      </div>
+
+      <div class="feature-item fade-in">
+        <div class="feature-content">
+          <div class="feature-num">02</div>
+          <span class="feature-tag">求人の質</span>
+          <h3>300社以上の<br>厳選優良企業</h3>
+          <p>IT・メーカー・不動産・保険・SaaSなど、幅広い業界の営業職求人を厳選。ブラック企業を徹底排除し、成長できる環境だけをご紹介します。</p>
+        </div>
+        <div class="feature-visual">🏢</div>
+      </div>
+
+      <div class="feature-item fade-in">
+        <div class="feature-content">
+          <div class="feature-num">03</div>
+          <span class="feature-tag">フルサポート</span>
+          <h3>年収交渉まで<br>完全無料サポート</h3>
+          <p>履歴書・職務経歴書の作成から面接対策、内定後の年収交渉まで。入社後のフォローアップも含めて、すべて完全無料でサポートします。</p>
+        </div>
+        <div class="feature-visual">💰</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="container">
+      <p class="section-title fade-in"><span class="accent">年収アップ</span>を実現した先輩たちの声</p>
+      <p class="section-subtitle fade-in">セールスパスを利用して営業職に転職した方々のリアルな体験談</p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar-placeholder" id="avatar1Slot">👩</div>
+            <div class="testimonial-info">
+              <h4>A.Sさん（24歳・女性）</h4>
+              <p>事務職 → IT法人営業</p>
+            </div>
+          </div>
+          <div class="salary-change">
+            <span class="salary-before">年収280万</span>
+            <span class="salary-arrow">▶</span>
+            <span class="salary-after">420万円</span>
+            <span class="salary-diff">+140万</span>
+          </div>
+          <p class="testimonial-text">事務職で毎日同じことの繰り返しに退屈していました。営業未経験で不安でしたが、アドバイザーの方がIT営業の魅力を丁寧に教えてくれて、今では毎日やりがいを感じています。</p>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar-placeholder" id="avatar2Slot">👨</div>
+            <div class="testimonial-info">
+              <h4>T.Kさん（26歳・男性）</h4>
+              <p>飲食店長 → メーカー営業</p>
+            </div>
+          </div>
+          <div class="salary-change">
+            <span class="salary-before">年収320万</span>
+            <span class="salary-arrow">▶</span>
+            <span class="salary-after">450万円</span>
+            <span class="salary-diff">+130万</span>
+          </div>
+          <p class="testimonial-text">飲食業界の長時間労働から抜け出したくて転職を決意。店長時代のコミュニケーション力が評価され、メーカーの法人営業に。土日休みで年収も大幅アップしました。</p>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar-placeholder" id="avatar3Slot">👨‍🦱</div>
+            <div class="testimonial-info">
+              <h4>R.Mさん（22歳・男性）</h4>
+              <p>フリーター → 保険営業</p>
+            </div>
+          </div>
+          <div class="salary-change">
+            <span class="salary-before">フリーター</span>
+            <span class="salary-arrow">▶</span>
+            <span class="salary-after">380万円</span>
+            <span class="salary-diff">正社員に</span>
+          </div>
+          <p class="testimonial-text">大学中退後フリーターを続けていましたが、「このままじゃダメだ」と思い相談。学歴を気にせず実力で評価してくれる保険営業を紹介してもらい、人生が変わりました。</p>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-header">
+            <div class="testimonial-avatar-placeholder" id="avatar4Slot">👩‍💼</div>
+            <div class="testimonial-info">
+              <h4>M.Hさん（28歳・女性）</h4>
+              <p>ルート営業 → SaaS営業</p>
+            </div>
+          </div>
+          <div class="salary-change">
+            <span class="salary-before">年収350万</span>
+            <span class="salary-arrow">▶</span>
+            <span class="salary-after">520万円</span>
+            <span class="salary-diff">+170万</span>
+          </div>
+          <p class="testimonial-text">ルート営業で成長が止まっていると感じていた時にセールスパスに出会いました。SaaS業界の成長性とインセンティブ制度を教えてもらい、思い切ってチャレンジ。結果、年収170万アップです。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BAND 2 -->
+  <div class="cta-band">
+    <div class="container">
+      <p>あなたも営業職で年収アップを実現しませんか？</p>
+      <a href="#cta" class="cta-btn">無料でキャリア相談する</a>
+      <p class="cta-note">※ 完全無料。転職を決めていなくても相談OKです。</p>
+    </div>
+  </div>
+
+  <!-- COMPARISON -->
+  <section class="comparison-section">
+    <div class="container">
+      <p class="section-title fade-in">他社と<span class="accent">ここが違う</span></p>
+      <p class="section-subtitle fade-in">一般的な転職エージェントとの違いを比較</p>
+      <div class="fade-in" style="overflow-x:auto;">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="text-align:left;">比較項目</th>
+              <th>一般的な<br>転職エージェント</th>
+              <th>セールスパス</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>営業職への特化度</td>
+              <td><span class="cross">△</span> 幅広い職種を扱う</td>
+              <td><span class="check">◎</span> 営業職100%特化</td>
+            </tr>
+            <tr>
+              <td>アドバイザーの営業経験</td>
+              <td><span class="cross">×</span> 営業未経験者も多い</td>
+              <td><span class="check">◎</span> 全員が営業経験者</td>
+            </tr>
+            <tr>
+              <td>年収交渉力</td>
+              <td><span class="cross">△</span> テンプレート的</td>
+              <td><span class="check">◎</span> 営業特化の交渉力</td>
+            </tr>
+            <tr>
+              <td>求人の質</td>
+              <td><span class="cross">△</span> 量重視</td>
+              <td><span class="check">◎</span> 厳選300社以上</td>
+            </tr>
+            <tr>
+              <td>入社後フォロー</td>
+              <td><span class="cross">×</span> なし</td>
+              <td><span class="check">◎</span> 入社後3ヶ月フォロー</td>
+            </tr>
+            <tr>
+              <td>料金</td>
+              <td>無料</td>
+              <td><span class="check">◎</span> 完全無料</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="steps-section">
+    <div class="container">
+      <p class="section-title fade-in">ご利用の<span class="accent">流れ</span></p>
+      <p class="section-subtitle fade-in">かんたん3ステップで営業職デビュー</p>
+      <div class="steps-grid">
+        <div class="step-card fade-in">
+          <div class="step-num">1</div>
+          <div class="step-icon">📝</div>
+          <h3>無料相談申し込み</h3>
+          <p>60秒で完了するフォームから<br>お気軽にお申し込みください。</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-num">2</div>
+          <div class="step-icon">💬</div>
+          <h3>キャリア面談</h3>
+          <p>営業経験豊富なアドバイザーと<br>オンラインで面談。あなたに合った<br>キャリアプランを一緒に設計します。</p>
+        </div>
+        <div class="step-card fade-in">
+          <div class="step-num">3</div>
+          <div class="step-icon">🎉</div>
+          <h3>求人紹介〜内定</h3>
+          <p>厳選企業をご紹介。書類作成から<br>面接対策・年収交渉まで<br>徹底サポートします。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <p class="section-title fade-in">よくある<span class="accent">ご質問</span></p>
+      <p class="section-subtitle fade-in">ご不明点があればお気軽にご相談ください</p>
+      <div class="faq-list">
+        <div class="faq-item fade-in">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="q-badge">Q</span>
+            <span class="q-text">営業未経験でも大丈夫ですか？</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、もちろんです。セールスパス利用者の60%が営業未経験からのスタートです。事務職、販売職、飲食業など、異業種からの転職実績が豊富にあります。コミュニケーション力や行動力など、あなたの強みを活かせる営業職をご提案します。</div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="q-badge">Q</span>
+            <span class="q-text">本当に完全無料ですか？</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、完全無料です。求職者の方から費用をいただくことは一切ありません。企業様から紹介報酬をいただく仕組みのため、安心してご利用いただけます。</div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="q-badge">Q</span>
+            <span class="q-text">今すぐ転職するつもりはないのですが、相談だけでも良いですか？</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">もちろんOKです。「まだ転職を決めていない」「情報収集だけしたい」という方も多くご利用いただいています。市場価値の確認やキャリアプランの相談だけでもお気軽にどうぞ。</div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span class="q-badge">Q</span>
+            <span class="q-text">どんな種類の営業職がありますか？</span>
+            <span class="faq-toggle">▼</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">IT営業（SaaS・クラウドサービス）、法人営業（BtoB）、メーカー営業、不動産営業、保険営業、広告営業、人材営業など、幅広い業界の営業職をご紹介しています。あなたの適性や希望に合わせて最適な営業職種をご提案します。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="cta">
+    <div class="container">
+      <h2>まずは<span class="accent">無料</span>で<br>キャリア相談しませんか？</h2>
+      <p class="sub">営業職のプロがあなたの可能性を一緒に見つけます</p>
+      <a href="#" class="cta-btn" style="font-size:1.2rem;padding:20px 48px;">無料でキャリア相談する</a>
+      <p class="cta-note">※ 60秒で申し込み完了。費用は一切かかりません。</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-icon">SP</div>
+        セールスパス
+      </div>
+      <div class="footer-links">
+        <a href="#">運営会社</a>
+        <a href="#">プライバシーポリシー</a>
+        <a href="#">利用規約</a>
+        <a href="#">特定商取引法に基づく表記</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 SalesPath Inc. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ toggle
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      item.classList.toggle('active');
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Floating CTA
+    const floatingCta = document.getElementById('floatingCta');
+    const heroSection = document.querySelector('.hero');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > heroSection.offsetHeight) {
+        floatingCta.classList.add('visible');
+      } else {
+        floatingCta.classList.remove('visible');
+      }
+    });
+  </script>
+</body>
+</html>

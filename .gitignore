@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+.venv/
+__pycache__/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Secrets & credentials
+*.key
+*.pem
+service-account.json
+.env
+.env.*
+auth_state/
+
+# Debug screenshots
+**/debug_*.png
+**/auth_check.png
+**/datepicker_*.png
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Obsidian (sync handled by Obsidian itself)
+My-Vault/.obsidian/workspace.json
+My-Vault/.obsidian/workspace-mobile.json
+
+# Claude Code local state
+.claude/

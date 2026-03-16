@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>セルキャリ | 営業職専門の転職支援サービス</title>
+  <meta name="description" content="営業職特化の転職支援サービス。未経験でも経験者でも、年収アップ×ホワイト企業への転職を完全無料でサポート。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #333;
+      line-height: 1.8;
+      background: #fff;
+      overflow-x: hidden;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HEADER ===== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      max-width: 520px;
+      z-index: 999;
+      background: #fff;
+      border-bottom: 2px solid #2ea84e;
+      padding: 8px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 36px;
+      width: auto;
+    }
+    .footer .logo img {
+      height: 40px;
+      width: auto;
+    }
+    .header-badge {
+      background: #2ea84e;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      margin-top: 52px;
+      background: linear-gradient(135deg, #4bc46a 0%, #2ea84e 100%);
+      padding: 32px 20px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      right: -20%;
+      width: 60%;
+      height: 160%;
+      background: radial-gradient(ellipse, rgba(255,255,255,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-tags {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .hero-tag {
+      background: #fff;
+      color: #333;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 6px;
+    }
+    .hero-tag-suffix {
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 900;
+      margin-left: 4px;
+    }
+    .hero-illustration {
+      width: 220px;
+      height: 260px;
+      margin: 0 auto 16px;
+      position: relative;
+    }
+    .hero-person {
+      width: 200px;
+      height: 240px;
+      margin: 0 auto;
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-person img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .hero h1 {
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .hero h1 .large {
+      font-size: 2.6rem;
+      display: block;
+    }
+    .hero h1 .yellow {
+      color: #ffe34e;
+    }
+    .hero-badges {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .hero-badge-item {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #333;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .hero-badge-item .orange {
+      color: #ff6b35;
+      font-weight: 900;
+      font-size: 1.3rem;
+    }
+    .hero-no1 {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #d4a017, #f0c040);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 900;
+      box-shadow: 0 2px 12px rgba(212, 160, 23, 0.4);
+      margin-top: 8px;
+    }
+    .hero-no1 .no1-num {
+      font-size: 1.6rem;
+    }
+
+    /* ===== LINE CTA ===== */
+    .line-cta {
+      display: block;
+      background: linear-gradient(135deg, #ffe34e, #ffd700);
+      padding: 14px 20px;
+      text-align: center;
+      position: relative;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .line-cta:hover {
+      filter: brightness(1.05);
+    }
+    .line-cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .line-icon {
+      width: 36px;
+      height: 36px;
+      background: #06C755;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.7rem;
+    }
+    .line-cta-text {
+      text-align: left;
+    }
+    .line-cta-sub {
+      font-size: 0.7rem;
+      color: #ff6b35;
+      font-weight: 700;
+    }
+    .line-cta-main {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #333;
+    }
+    .line-cta-main strong {
+      color: #333;
+    }
+    .line-cta-arrow {
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: 900;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    .section-white { background: #fff; padding: 48px 20px; }
+    .section-gray { background: #f6f5f0; padding: 48px 20px; }
+    .section-green {
+      background: linear-gradient(135deg, #4bc46a, #2ea84e);
+      padding: 48px 20px;
+      color: #fff;
+    }
+    .section-dark {
+      background: #3a3a3a;
+      padding: 48px 20px;
+      color: #fff;
+    }
+    .section-yellow {
+      background: #fff9c4;
+      padding: 40px 20px;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 24px;
+    }
+    .section-title .green { color: #2ea84e; }
+    .section-title .orange { color: #ff6b35; }
+    .accent-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .accent-dots span {
+      width: 8px;
+      height: 8px;
+      background: #ff6b35;
+      border-radius: 50%;
+    }
+
+    /* ===== SUCCESS STORIES (CAROUSEL) ===== */
+    .success-header {
+      text-align: center;
+      padding: 0 20px 20px;
+    }
+    .success-header .service-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #2ea84e;
+      color: #fff;
+      padding: 6px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+    .carousel-wrapper {
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 0 20px 20px;
+      display: flex;
+      gap: 16px;
+    }
+    .carousel-wrapper::-webkit-scrollbar { display: none; }
+    .success-card {
+      min-width: 280px;
+      max-width: 280px;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      scroll-snap-align: start;
+      flex-shrink: 0;
+    }
+    .success-card-header {
+      background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      position: relative;
+    }
+    .success-card-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #ddd;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .success-card-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .success-card-info {
+      font-size: 0.85rem;
+    }
+    .success-card-info .transition {
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #333;
+    }
+    .success-card-info .profile {
+      font-size: 0.75rem;
+      color: #888;
+    }
+    .success-card-body {
+      padding: 16px;
+    }
+    .salary-up-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      color: #fff;
+      font-weight: 900;
+      font-size: 1.3rem;
+      padding: 4px 16px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .salary-up-badge .unit { font-size: 0.85rem; }
+    .salary-bar {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .salary-col {
+      text-align: center;
+      flex: 1;
+    }
+    .salary-col .label {
+      font-size: 0.7rem;
+      color: #999;
+      margin-bottom: 4px;
+    }
+    .salary-col .amount {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #666;
+    }
+    .salary-col .amount.highlight {
+      font-size: 1.4rem;
+      color: #ff6b35;
+      font-weight: 900;
+    }
+    .salary-col .bar {
+      height: 40px;
+      background: #e0e0e0;
+      border-radius: 4px 4px 0 0;
+      margin-top: 4px;
+    }
+    .salary-col .bar.orange {
+      height: 70px;
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+    }
+    .salary-arrow {
+      font-size: 1.5rem;
+      color: #ff6b35;
+      font-weight: 900;
+      padding-bottom: 20px;
+    }
+    .salary-jobs {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #eee;
+      padding-top: 8px;
+    }
+    .salary-jobs .job-label {
+      font-size: 0.7rem;
+      color: #999;
+    }
+    .salary-jobs .job-name {
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+    .salary-jobs .job-name.green {
+      color: #2ea84e;
+    }
+
+    /* ===== PAIN POINTS ===== */
+    .pain-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .pain-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 14px 16px;
+    }
+    .pain-check {
+      width: 28px;
+      height: 28px;
+      background: rgba(255,255,255,0.2);
+      border: 2px solid rgba(255,255,255,0.5);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffe34e;
+      font-size: 0.9rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .pain-text {
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .pain-text .highlight {
+      color: #ffe34e;
+    }
+    .pain-illustration {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 20px;
+      font-size: 3rem;
+    }
+
+    /* ===== AGENT SUPPORT ===== */
+    .agent-section {
+      background: linear-gradient(135deg, #4bc46a, #2ea84e);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .agent-title {
+      color: #fff;
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .agent-title .big {
+      font-size: 1.6rem;
+      display: block;
+    }
+    .support-items {
+      display: flex;
+      gap: 4px;
+      margin-top: 20px;
+    }
+    .support-item {
+      flex: 1;
+      background: rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 16px 4px;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      writing-mode: vertical-rl;
+      text-align: center;
+      min-height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .support-bottom {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .support-bottom-text {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .support-bottom-text .icon {
+      font-size: 1.2rem;
+    }
+    .support-bottom-text .strong {
+      color: #ffe34e;
+    }
+
+    /* ===== PITFALL ===== */
+    .pitfall-section {
+      background: #fff9c4;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .pitfall-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #d32f2f;
+      margin-bottom: 8px;
+    }
+    .pitfall-title {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #d32f2f;
+      margin-bottom: 16px;
+    }
+    .pitfall-description {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .pitfall-illustration {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    /* ===== SOLUTION ===== */
+    .solution-section {
+      background: linear-gradient(135deg, #4bc46a, #2ea84e);
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .solution-bubble {
+      display: inline-block;
+      background: #fff;
+      color: #2ea84e;
+      font-weight: 900;
+      font-size: 1.1rem;
+      padding: 8px 24px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+    }
+    .solution-title {
+      color: #fff;
+      font-size: 1.6rem;
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .solution-photo {
+      border-radius: 16px;
+      overflow: hidden;
+      margin-top: 16px;
+    }
+    .solution-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-title-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      border: 2px solid #2ea84e;
+      padding: 4px 14px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 900;
+      color: #2ea84e;
+      margin-bottom: 12px;
+    }
+    .about-mascot {
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+    .about-catch {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 4px;
+    }
+    .about-main {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #ff6b35;
+      margin-bottom: 24px;
+      line-height: 1.4;
+    }
+    .about-stat {
+      background: linear-gradient(135deg, #4bc46a, #2ea84e);
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      color: #fff;
+    }
+    .about-stat-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+    }
+    .about-stat-num .unit {
+      font-size: 1rem;
+    }
+    .about-stat-label {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .about-stat-sub {
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+    .about-advisors {
+      margin-top: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .about-advisors img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    /* ===== REASONS ===== */
+    .reason-card {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .reason-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #ffd700, #f0c040);
+      border-radius: 50%;
+      color: #fff;
+      font-weight: 900;
+      margin: -28px auto 0;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      font-size: 0.7rem;
+      line-height: 1.2;
+      box-shadow: 0 4px 12px rgba(240, 192, 64, 0.4);
+    }
+    .reason-num .num {
+      display: block;
+      font-size: 1.4rem;
+      font-style: italic;
+    }
+    .reason-head {
+      background: linear-gradient(135deg, #ff6b35, #ff8c42);
+      padding: 16px;
+      text-align: center;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      line-height: 1.4;
+    }
+    .reason-body {
+      padding: 20px;
+      text-align: center;
+    }
+    .reason-body p {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.7;
+      text-align: left;
+    }
+    .reason-visual {
+      margin: 16px 0;
+    }
+    /* Comparison table for reason 02 */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+    }
+    .compare-table th {
+      padding: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: #f0f0f0;
+      color: #666;
+    }
+    .compare-table th.highlight-col {
+      background: #2ea84e;
+      color: #fff;
+    }
+    .compare-table td {
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #666;
+      border-bottom: 1px solid #eee;
+    }
+    .compare-table td.highlight-col {
+      color: #2ea84e;
+      font-size: 1.5rem;
+      font-weight: 900;
+      background: rgba(46, 168, 78, 0.04);
+    }
+    /* Support flow for reason 03 */
+    .support-flow {
+      display: flex;
+      gap: 3px;
+    }
+    .support-flow-item {
+      flex: 1;
+      background: linear-gradient(180deg, #4bc46a, #2ea84e);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 12px 2px;
+      border-radius: 6px;
+      text-align: center;
+      writing-mode: vertical-rl;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .reason-point {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      background: #fff8f0;
+      border-radius: 12px;
+      padding: 12px;
+      margin-top: 16px;
+      text-align: left;
+    }
+    .reason-point-icon {
+      flex-shrink: 0;
+      font-size: 1.2rem;
+    }
+    .reason-point-text {
+      font-size: 0.8rem;
+      color: #ff6b35;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    /* ===== RESULTS ===== */
+    .results-section {
+      background: #f6f5f0;
+      padding: 48px 20px;
+      text-align: center;
+    }
+    .results-title {
+      font-size: 1.3rem;
+      font-weight: 900;
+      color: #ff6b35;
+      margin-bottom: 4px;
+    }
+    .results-subtitle {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 24px;
+    }
+    .results-photo {
+      margin-bottom: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .results-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    .results-badges {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+    .result-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: linear-gradient(135deg, #f0c040, #d4a017);
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      justify-content: center;
+      color: #fff;
+      box-shadow: 0 4px 16px rgba(212, 160, 23, 0.3);
+    }
+    .result-badge .badge-label {
+      font-size: 0.55rem;
+      font-weight: 700;
+    }
+    .result-badge .badge-value {
+      font-size: 1.3rem;
+      font-weight: 900;
+      line-height: 1.1;
+    }
+    .result-badge .badge-unit {
+      font-size: 0.6rem;
+      font-weight: 700;
+    }
+
+    /* ===== JOB LISTINGS ===== */
+    .job-listing {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+    .job-image {
+      width: 100%;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .job-image.it { background: linear-gradient(135deg, #1a73e8, #4285f4); }
+    .job-image.saas { background: linear-gradient(135deg, #2ea84e, #66bb6a); }
+    .job-image.maker { background: linear-gradient(135deg, #ff6b35, #ff9800); }
+    .job-image span { position: relative; z-index: 1; font-size: 1.5rem; letter-spacing: 2px; }
+    .job-image::before {
+      content: '';
+      position: absolute;
+      top: -20px; right: -20px;
+      width: 100px; height: 100px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+    }
+    .job-image::after {
+      content: '';
+      position: absolute;
+      bottom: -30px; left: -10px;
+      width: 120px; height: 120px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50%;
+    }
+    .job-tags {
+      display: flex;
+      gap: 6px;
+      padding: 12px 16px 0;
+      flex-wrap: wrap;
+    }
+    .job-tag {
+      background: #ff6b35;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+    .job-tag.green {
+      background: #2ea84e;
+    }
+    .job-info {
+      padding: 8px 16px 16px;
+    }
+    .job-industry {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #333;
+    }
+    .job-industry .company {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #888;
+    }
+    .job-salary {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .job-salary .label {
+      font-size: 0.75rem;
+      color: #999;
+    }
+    .job-salary .amount {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #ff6b35;
+    }
+    .job-salary .unit {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #ff6b35;
+    }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonial-card {
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      margin-bottom: 20px;
+    }
+    .testimonial-header {
+      position: relative;
+      padding: 16px;
+      display: flex;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      background: #eee;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .testimonial-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .testimonial-bubble {
+      background: #2ea84e;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 12px;
+      border-bottom-left-radius: 4px;
+      font-size: 0.85rem;
+      font-weight: 900;
+      line-height: 1.4;
+    }
+    .testimonial-body {
+      padding: 0 16px 16px;
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.7;
+    }
+    .testimonial-body .highlight {
+      color: #ff6b35;
+      font-weight: 700;
+    }
+
+    /* ===== ANXIETY ===== */
+    .anxiety-bubbles {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 20px;
+    }
+    .anxiety-bubble {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .anxiety-bubble.right {
+      flex-direction: row-reverse;
+    }
+    .anxiety-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    .anxiety-text {
+      background: #fff;
+      color: #333;
+      padding: 12px 16px;
+      border-radius: 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .anxiety-text .red { color: #d32f2f; }
+
+    .answer-section {
+      background: #f6f5f0;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .answer-badge {
+      display: inline-block;
+      background: #ff6b35;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      padding: 8px 28px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+    }
+    .answer-title {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    .answer-title .orange {
+      font-size: 1.3rem;
+      color: #ff6b35;
+    }
+    .answer-text {
+      font-size: 0.85rem;
+      color: #666;
+      line-height: 1.7;
+    }
+    .answer-text .green {
+      color: #2ea84e;
+      font-weight: 700;
+    }
+    .answer-advisor {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 8px;
+    }
+    .answer-advisor img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ===== STEPS ===== */
+    .steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+    }
+    .steps-list::before {
+      content: '';
+      position: absolute;
+      left: 28px;
+      top: 56px;
+      bottom: 56px;
+      width: 3px;
+      background: #ddd;
+    }
+    .step-card {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .step-num {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(135deg, #ffd700, #f0c040);
+      border-radius: 50%;
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.6rem;
+      line-height: 1.2;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 12px;
+    }
+    .step-num .num {
+      font-size: 1.3rem;
+      font-style: italic;
+    }
+    .step-icon {
+      font-size: 3rem;
+      margin-bottom: 8px;
+    }
+    .step-badge {
+      display: inline-block;
+      background: #ff6b35;
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 20px;
+      margin-bottom: 6px;
+    }
+    .step-label {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #333;
+    }
+    .step-arrow {
+      text-align: center;
+      color: #2ea84e;
+      font-size: 1.5rem;
+      margin: -8px 0;
+    }
+    .step-result {
+      background: linear-gradient(135deg, #4bc46a, #2ea84e);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+      color: #fff;
+      margin-top: 8px;
+    }
+    .step-result .big {
+      font-size: 1.3rem;
+      font-weight: 900;
+    }
+    .step-result .bigger {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #ffe34e;
+    }
+
+    /* ===== FAQ ===== */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: rgba(255,255,255,0.95);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 16px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-q-badge {
+      width: 28px;
+      height: 28px;
+      background: #ff6b35;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .faq-q-text {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #333;
+      flex: 1;
+    }
+    .faq-toggle {
+      font-size: 0.7rem;
+      color: #2ea84e;
+      transition: transform 0.3s;
+    }
+    .faq-item.active .faq-toggle {
+      transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+    }
+    .faq-answer-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 0 16px 14px;
+    }
+    .faq-a-badge {
+      width: 28px;
+      height: 28px;
+      background: #2ea84e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .faq-a-text {
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #f6f5f0;
+      padding: 32px 20px;
+      text-align: center;
+    }
+    .footer .logo {
+      justify-content: center;
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 12px;
+    }
+    .footer-links a {
+      font-size: 0.75rem;
+      color: #999;
+    }
+    .footer-copy {
+      font-size: 0.7rem;
+      color: #bbb;
+    }
+
+    /* ===== FLOATING CTA ===== */
+    .floating-cta {
+      position: fixed;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) translateY(100%);
+      width: 100%;
+      max-width: 520px;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+    .floating-cta.visible {
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ===== ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <img src="images/logo-header.png" alt="セルキャリ">
+    </div>
+    <span class="header-badge">営業職専門の転職サービス</span>
+  </header>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <a href="#cta" class="line-cta">
+      <div class="line-cta-inner">
+        <div class="line-icon">LINE</div>
+        <div class="line-cta-text">
+          <div class="line-cta-sub">入社まで完全無料</div>
+          <div class="line-cta-main">今すぐ<strong>年収診断</strong>をする</div>
+        </div>
+        <span class="line-cta-arrow">></span>
+      </div>
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-tags">
+      <span class="hero-tag">#未経験</span>
+      <span class="hero-tag">#営業経験者</span>
+      <span class="hero-tag-suffix">でも！！</span>
+    </div>
+    <div class="hero-illustration">
+      <div class="hero-person"><img src="images/hero-person.png" alt="営業職転職のプロフェッショナル"></div>
+    </div>
+    <h1>
+      <span class="large">ホワイト企業の営業職へ</span>
+    </h1>
+    <div class="hero-badges">
+      <div class="hero-badge-item"><span class="orange">年収500万</span>円以上</div>
+      <div class="hero-badge-item"><span class="orange">土日祝</span>休み</div>
+      <div class="hero-badge-item"><span class="orange">残業</span>なし</div>
+    </div>
+    <div class="hero-no1">
+      <span>営業職ホワイト求人数</span>
+      <span class="no1-num">No.1</span>
+    </div>
+  </section>
+
+  <!-- LINE CTA 1 -->
+  <a href="#cta" class="line-cta" id="cta">
+    <div class="line-cta-inner">
+      <div class="line-icon">LINE</div>
+      <div class="line-cta-text">
+        <div class="line-cta-sub">入社まで完全無料</div>
+        <div class="line-cta-main">今すぐ<strong>年収診断</strong>をする</div>
+      </div>
+      <span class="line-cta-arrow">></span>
+    </div>
+  </a>
+
+  <!-- SUCCESS STORIES -->
+  <section class="section-gray fade-in">
+    <div class="success-header">
+      <div class="service-badge">セルキャリ で</div>
+      <div class="accent-dots"><span></span><span></span><span></span></div>
+      <div class="section-title" style="margin-bottom: 0;">未経験からでも<br><span class="orange">成功者が続出！！</span></div>
+    </div>
+    <div class="carousel-wrapper">
+      <!-- Card 1 -->
+      <div class="success-card">
+        <div class="success-card-header">
+          <div class="success-card-avatar"><img src="images/avatar-woman-1.png" alt="Aさん"></div>
+          <div class="success-card-info">
+            <div class="transition"><strong>事務職</strong> から <strong>IT法人営業</strong> に</div>
+            <div class="profile">Aさん・24歳女性</div>
+          </div>
+        </div>
+        <div class="success-card-body">
+          <div class="salary-up-badge">+140<span class="unit">万</span> UP</div>
+          <div class="salary-bar">
+            <div class="salary-col">
+              <div class="amount">280<small>万円</small></div>
+              <div class="bar"></div>
+            </div>
+            <div class="salary-arrow">▶</div>
+            <div class="salary-col">
+              <div class="amount highlight">420<small>万円</small></div>
+              <div class="bar orange"></div>
+            </div>
+          </div>
+          <div class="salary-jobs">
+            <div><span class="job-label">転職前</span><br><span class="job-name">事務職</span></div>
+            <div><span class="job-label">転職後</span><br><span class="job-name green">IT法人営業</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="success-card">
+        <div class="success-card-header">
+          <div class="success-card-avatar"><img src="images/avatar-man-1.png" alt="Tさん"></div>
+          <div class="success-card-info">
+            <div class="transition"><strong>飲食店長</strong> から <strong>メーカー営業</strong> に</div>
+            <div class="profile">Tさん・26歳男性</div>
+          </div>
+        </div>
+        <div class="success-card-body">
+          <div class="salary-up-badge">+130<span class="unit">万</span> UP</div>
+          <div class="salary-bar">
+            <div class="salary-col">
+              <div class="amount">320<small>万円</small></div>
+              <div class="bar"></div>
+            </div>
+            <div class="salary-arrow">▶</div>
+            <div class="salary-col">
+              <div class="amount highlight">450<small>万円</small></div>
+              <div class="bar orange"></div>
+            </div>
+          </div>
+          <div class="salary-jobs">
+            <div><span class="job-label">転職前</span><br><span class="job-name">飲食店長</span></div>
+            <div><span class="job-label">転職後</span><br><span class="job-name green">メーカー営業</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="success-card">
+        <div class="success-card-header">
+          <div class="success-card-avatar"><img src="images/avatar-woman-1.png" alt="Mさん"></div>
+          <div class="success-card-info">
+            <div class="transition"><strong>ルート営業</strong> から <strong>SaaS営業</strong> に</div>
+            <div class="profile">Mさん・28歳女性</div>
+          </div>
+        </div>
+        <div class="success-card-body">
+          <div class="salary-up-badge">+170<span class="unit">万</span> UP</div>
+          <div class="salary-bar">
+            <div class="salary-col">
+              <div class="amount">350<small>万円</small></div>
+              <div class="bar"></div>
+            </div>
+            <div class="salary-arrow">▶</div>
+            <div class="salary-col">
+              <div class="amount highlight">520<small>万円</small></div>
+              <div class="bar orange"></div>
+            </div>
+          </div>
+          <div class="salary-jobs">
+            <div><span class="job-label">転職前</span><br><span class="job-name">ルート営業</span></div>
+            <div><span class="job-label">転職後</span><br><span class="job-name green">SaaS営業</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="success-card">
+        <div class="success-card-header">
+          <div class="success-card-avatar"><img src="images/avatar-man-1.png" alt="Rさん"></div>
+          <div class="success-card-info">
+            <div class="transition"><strong>フリーター</strong> から <strong>保険営業</strong> に</div>
+            <div class="profile">Rさん・22歳男性</div>
+          </div>
+        </div>
+        <div class="success-card-body">
+          <div class="salary-up-badge">正社員に！</div>
+          <div class="salary-bar">
+            <div class="salary-col">
+              <div class="amount">フリーター</div>
+              <div class="bar"></div>
+            </div>
+            <div class="salary-arrow">▶</div>
+            <div class="salary-col">
+              <div class="amount highlight">380<small>万円</small></div>
+              <div class="bar orange"></div>
+            </div>
+          </div>
+          <div class="salary-jobs">
+            <div><span class="job-label">転職前</span><br><span class="job-name">フリーター</span></div>
+            <div><span class="job-label">転職後</span><br><span class="job-name green">保険営業</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAIN POINTS -->
+  <section class="section-dark fade-in">
+    <div style="text-align:center;margin-bottom:8px;">
+      <span style="background:#555;color:#fff;font-size:0.75rem;padding:4px 14px;border-radius:20px;">いくつ当てはまりますか？</span>
+    </div>
+    <div class="section-title" style="color:#fff;">営業転職の<span class="orange">お悩み</span></div>
+    <div class="pain-list">
+      <div class="pain-item">
+        <div class="pain-check">✓</div>
+        <div class="pain-text">未経験でも<span class="highlight">営業職</span>に就けるの？</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-check">✓</div>
+        <div class="pain-text">営業って<span class="highlight">ノルマ</span>がキツそうで不安…</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-check">✓</div>
+        <div class="pain-text"><span class="highlight">年収を上げたい</span>けど何から始めれば？</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-check">✓</div>
+        <div class="pain-text"><span class="highlight">ブラック企業</span>に当たりたくない</div>
+      </div>
+    </div>
+    <div class="pain-illustration" style="font-size:1rem;color:rgba(255,255,255,0.6);text-align:center;margin-top:16px;">一つでも当てはまるなら、プロに相談を。</div>
+  </section>
+
+  <!-- AGENT SUPPORT -->
+  <section class="agent-section fade-in">
+    <div class="agent-title">
+      1つでも当てはまる方
+      <span class="big">営業職に強い<br>転職エージェントに<br>頼りましょう！</span>
+    </div>
+    <div class="support-items">
+      <div class="support-item">自己分析</div>
+      <div class="support-item">履歴書作成</div>
+      <div class="support-item">面接対策</div>
+      <div class="support-item">営業求人の紹介</div>
+      <div class="support-item">年収交渉</div>
+    </div>
+    <div class="support-bottom">
+      <div class="support-bottom-text">
+        <span class="icon">💡</span>
+        <span><span class="strong">転職のプロ</span>がすべてサポート</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PITFALL -->
+  <section class="pitfall-section fade-in">
+    <div class="pitfall-badge">⚠️ ただし</div>
+    <div class="pitfall-title">落とし穴も</div>
+    <div class="pitfall-illustration" style="font-size:2.5rem;">⚠️</div>
+    <p class="pitfall-description">営業職に詳しくないエージェントを選ぶと、<br><strong>ブラック営業に転職して後悔</strong>することも。</p>
+  </section>
+
+  <!-- SOLUTION -->
+  <section class="solution-section fade-in">
+    <div class="solution-bubble">そこで！！</div>
+    <div class="solution-title">セルキャリ に<br>お任せください</div>
+    <div class="solution-photo"><img src="images/team-advisors.png" alt="セルキャリのアドバイザーチーム"></div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section-white fade-in" style="text-align:center;">
+    <div class="about-title-badge">セルキャリ とは？</div>
+    <div class="about-mascot" style="font-size:2rem;color:#2ea84e;font-weight:900;">★</div>
+    <div class="about-catch">あなたの理想を叶える</div>
+    <div class="about-main">営業職専門の<br>転職エージェント<br>紹介サービス</div>
+    <div class="about-stat">
+      <div class="about-stat-num">500<span class="unit">人以上の</span></div>
+      <div class="about-stat-label" style="color:#ffe34e;">認定キャリアアドバイザー</div>
+      <div class="about-stat-sub">からあなたの理想を叶える<br><span style="font-size:1.5rem;">1名</span>を紹介！</div>
+      <div class="about-advisors"><img src="images/team-advisors.png" alt="認定キャリアアドバイザー"></div>
+    </div>
+  </section>
+
+  <!-- LINE CTA 2 -->
+  <a href="#cta" class="line-cta">
+    <div class="line-cta-inner">
+      <div class="line-icon">LINE</div>
+      <div class="line-cta-text">
+        <div class="line-cta-sub">入社まで完全無料</div>
+        <div class="line-cta-main">今すぐ<strong>年収診断</strong>をする</div>
+      </div>
+      <span class="line-cta-arrow">></span>
+    </div>
+  </a>
+
+  <!-- 3 REASONS -->
+  <section class="section-green fade-in">
+    <div class="section-title" style="color:#fff;">
+      セルキャリ が<br>選ばれる<span style="font-size:2.2rem;">3</span>つの理由
+    </div>
+
+    <!-- REASON 01 -->
+    <div class="reason-card">
+      <div style="text-align:center;padding-top:28px;">
+        <div class="reason-num">REASON<span class="num">01</span></div>
+      </div>
+      <div class="reason-head">営業職を知り尽くした<br>プロが所属</div>
+      <div class="reason-body">
+        <div style="display:flex;justify-content:center;gap:12px;margin:8px 0;"><img src="images/avatar-woman-1.png" alt="アドバイザー" style="width:60px;height:60px;border-radius:50%;object-fit:cover;"><img src="images/avatar-man-1.png" alt="アドバイザー" style="width:60px;height:60px;border-radius:50%;object-fit:cover;"></div>
+        <p>アドバイザー全員が営業職出身。IT営業・法人営業・SaaS営業など各業界のリアルを知るプロが、あなたに最適な営業職をマッチングします。</p>
+        <div class="reason-point">
+          <span class="reason-point-icon">💡</span>
+          <span class="reason-point-text">営業現場のリアルを知るからこそ最適なマッチングが可能</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- REASON 02 -->
+    <div class="reason-card">
+      <div style="text-align:center;padding-top:28px;">
+        <div class="reason-num">REASON<span class="num">02</span></div>
+      </div>
+      <div class="reason-head">年収アップ率が<br>業界トップクラス</div>
+      <div class="reason-body">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>転職サイト</th>
+              <th class="highlight-col">セルキャリ</th>
+              <th>一般の<br>エージェント</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>+15万円</td>
+              <td class="highlight-col">+93万円</td>
+              <td>+30万円</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="reason-point">
+          <span class="reason-point-icon">💡</span>
+          <span class="reason-point-text">営業職特化の年収交渉ノウハウで市場価値を最大化</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- REASON 03 -->
+    <div class="reason-card">
+      <div style="text-align:center;padding-top:28px;">
+        <div class="reason-num">REASON<span class="num">03</span></div>
+      </div>
+      <div class="reason-head">プロによる転職サポートが<br>完全無料</div>
+      <div class="reason-body">
+        <div class="support-flow">
+          <div class="support-flow-item">カウンセリング</div>
+          <div class="support-flow-item">求人紹介</div>
+          <div class="support-flow-item">書類作成</div>
+          <div class="support-flow-item">面接対策</div>
+          <div class="support-flow-item">年収交渉</div>
+          <div class="support-flow-item">内定</div>
+        </div>
+        <div class="reason-point">
+          <span class="reason-point-icon">💡</span>
+          <span class="reason-point-text">転職のプロが"すべて"サポート。残業月20h以下のホワイト企業のみ厳選</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="results-section fade-in">
+    <div class="results-title">転職先に満足している</div>
+    <div class="results-subtitle">と回答しています！</div>
+    <div class="results-photo"><img src="images/team-advisors.png" alt="セルキャリのチーム"></div>
+    <div class="results-badges">
+      <div class="result-badge">
+        <span class="badge-label">平均年収</span>
+        <span class="badge-value">93<small>万円</small></span>
+        <span class="badge-unit">UP</span>
+      </div>
+      <div class="result-badge">
+        <span class="badge-label">入社満足度</span>
+        <span class="badge-value">98<small>%</small></span>
+        <span class="badge-unit"></span>
+      </div>
+      <div class="result-badge">
+        <span class="badge-label">支援実績</span>
+        <span class="badge-value">1万</span>
+        <span class="badge-unit">件以上</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOB LISTINGS -->
+  <section class="section-white fade-in">
+    <div style="text-align:center;margin-bottom:8px;">
+      <span style="background:#2ea84e;color:#fff;font-size:0.75rem;padding:4px 14px;border-radius:20px;">セルキャリ厳選</span>
+    </div>
+    <div class="section-title">非公開求人<span style="font-size:1rem;font-weight:500;color:#666;">の一例</span></div>
+
+    <div class="job-listing">
+      <div class="job-image it"><span>IT COMPANY</span></div>
+      <div class="job-tags">
+        <span class="job-tag">未経験OK</span>
+        <span class="job-tag green">土日休み</span>
+        <span class="job-tag green">リモートOK</span>
+      </div>
+      <div class="job-info">
+        <div class="job-industry">IT業界 <span class="company">大手S社</span></div>
+        <div class="job-salary">
+          <span class="label">初年度<br>年収</span>
+          <span class="amount">450</span>
+          <span class="unit">万円</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="job-listing">
+      <div class="job-image saas"><span>SaaS COMPANY</span></div>
+      <div class="job-tags">
+        <span class="job-tag">営業経験者優遇</span>
+        <span class="job-tag green">フレックス</span>
+        <span class="job-tag green">有給100%</span>
+      </div>
+      <div class="job-info">
+        <div class="job-industry">SaaS業界 <span class="company">大手M社</span></div>
+        <div class="job-salary">
+          <span class="label">初年度<br>年収</span>
+          <span class="amount">550</span>
+          <span class="unit">万円</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="job-listing">
+      <div class="job-image maker"><span>MAKER</span></div>
+      <div class="job-tags">
+        <span class="job-tag">未経験OK</span>
+        <span class="job-tag green">家賃補助</span>
+        <span class="job-tag green">残業ゼロ</span>
+      </div>
+      <div class="job-info">
+        <div class="job-industry">メーカー <span class="company">G社</span></div>
+        <div class="job-salary">
+          <span class="label">初年度<br>年収</span>
+          <span class="amount">400</span>
+          <span class="unit">万円</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section-green fade-in">
+    <div class="section-title" style="color:#fff;">ご利用者様の声</div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar"><img src="images/avatar-woman-1.png" alt="利用者"></div>
+        <div class="testimonial-bubble">正直、営業なんて<br>自分にできるか不安でしたが…</div>
+      </div>
+      <div class="testimonial-body">
+        事務職3年目で将来が見えず、思い切って営業職への転職を決意。セルキャリのアドバイザーが<span class="highlight">営業職の種類や向き不向きを丁寧に教えてくれて</span>、自信を持ってIT法人営業に挑戦できました。<span class="highlight">年収も140万円アップ</span>して大満足です。
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar"><img src="images/avatar-man-1.png" alt="利用者"></div>
+        <div class="testimonial-bubble">前職のブラック営業から<br>脱出できました</div>
+      </div>
+      <div class="testimonial-body">
+        前の会社は毎日終電、土日出勤当たり前のブラック営業。「営業職が嫌なんじゃなく、環境が悪いだけ」とアドバイザーに言われてハッとしました。今は<span class="highlight">残業ほぼなしの法人営業</span>で、家族との時間も取れるようになりました。
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <div class="testimonial-header">
+        <div class="testimonial-avatar"><img src="images/avatar-woman-1.png" alt="利用者"></div>
+        <div class="testimonial-bubble">年収170万UPは<br>想像以上でした</div>
+      </div>
+      <div class="testimonial-body">
+        ルート営業で成長が止まっていた時にセルキャリに相談。<span class="highlight">SaaS業界の将来性とインセンティブ制度</span>を教えてもらい、思い切ってチャレンジ。年収交渉もプロに任せたら<span class="highlight">170万円アップ</span>を実現できました。
+      </div>
+    </div>
+  </section>
+
+  <!-- ANXIETY -->
+  <section class="section-green fade-in" style="padding-top:0;">
+    <div class="section-title" style="color:#fff;">こんな自分でも…<br><span style="font-size:1.8rem;">本当に営業職で<br>成功できますか？</span></div>
+    <div class="anxiety-bubbles">
+      <div class="anxiety-bubble">
+        <div class="anxiety-icon">😟</div>
+        <div class="anxiety-text">結局、<span class="red">学歴と経歴</span>がすべてでしょ？</div>
+      </div>
+      <div class="anxiety-bubble right">
+        <div class="anxiety-icon">😣</div>
+        <div class="anxiety-text">営業って<span class="red">体育会系のノリ</span>じゃないの？</div>
+      </div>
+      <div class="anxiety-bubble">
+        <div class="anxiety-icon">😰</div>
+        <div class="anxiety-text"><span class="red">ブラック企業</span>ばかりなんじゃない？</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ANSWER -->
+  <section class="answer-section fade-in">
+    <div class="answer-advisor"><img src="images/avatar-woman-1.png" alt="アドバイザー"></div>
+    <div class="answer-badge">大丈夫！</div>
+    <div class="answer-title"><span class="orange">転職成功者</span>のほとんどは<br>同じ悩みを抱えています</div>
+    <p class="answer-text"><strong>9割の方</strong>は同じ不安を感じていましたが、<br>セルキャリで<span class="green">理想の営業職</span>に出会えています！</p>
+  </section>
+
+  <!-- LINE CTA 3 -->
+  <a href="#cta" class="line-cta">
+    <div class="line-cta-inner">
+      <div class="line-icon">LINE</div>
+      <div class="line-cta-text">
+        <div class="line-cta-sub">入社まで完全無料</div>
+        <div class="line-cta-main">今すぐ<strong>年収診断</strong>をする</div>
+      </div>
+      <span class="line-cta-arrow">></span>
+    </div>
+  </a>
+
+  <!-- STEPS -->
+  <section class="section-white fade-in">
+    <div class="section-title">ご利用の流れ</div>
+    <div class="steps-list">
+      <div class="step-card">
+        <div class="step-num">STEP<span class="num">01</span></div>
+        <div class="step-icon" style="font-size:2.5rem;color:#2ea84e;">📱</div>
+        <div class="step-badge">30秒でカンタン</div>
+        <div class="step-label">公式LINEから<br>無料年収診断</div>
+      </div>
+      <div class="step-arrow">▼</div>
+      <div class="step-card">
+        <div class="step-num">STEP<span class="num">02</span></div>
+        <div class="step-icon">💬</div>
+        <div class="step-badge">スマホから参加OK!</div>
+        <div class="step-label">営業職専門<br>カウンセラーとの面談</div>
+      </div>
+      <div class="step-arrow">▼</div>
+      <div class="step-card">
+        <div class="step-num">STEP<span class="num">03</span></div>
+        <div class="step-icon" style="font-size:2.5rem;color:#2ea84e;">🏢</div>
+        <div class="step-badge">内定獲得まで徹底サポート！</div>
+        <div class="step-label">ホワイト営業企業を<br>ご紹介</div>
+      </div>
+      <div class="step-result">
+        <div class="big">最短1週間で</div>
+        <div class="bigger">内定GET！</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-green fade-in">
+    <div class="section-title" style="color:#fff;">よくある質問</div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q-text">営業未経験でも大丈夫ですか？</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <span class="faq-a-badge">A</span>
+            <span class="faq-a-text">はい、もちろんです。セルキャリ利用者の60%が営業未経験からのスタートです。事務職、販売職、飲食業など異業種からの転職実績が豊富にあります。</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q-text">利用は無料ですか？</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <span class="faq-a-badge">A</span>
+            <span class="faq-a-text">はい。転職サポートは0から内定獲得まですべて無料ですので安心してご利用ください。</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q-text">紹介されたアドバイザーと合わなかった場合は？</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <span class="faq-a-badge">A</span>
+            <span class="faq-a-text">はい。合わないと感じた部分を再度ヒアリングし、別のキャリアアドバイザーを紹介させていただきます。</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q-text">オンラインで相談は可能ですか？</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <span class="faq-a-badge">A</span>
+            <span class="faq-a-text">はい。サポートは完全オンラインで行っております。スマホからでもお気軽にご参加いただけます。</span>
+          </div>
+        </div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span class="faq-q-badge">Q</span>
+          <span class="faq-q-text">どんな種類の営業職がありますか？</span>
+          <span class="faq-toggle">▼</span>
+        </div>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <span class="faq-a-badge">A</span>
+            <span class="faq-a-text">IT営業（SaaS・クラウドサービス）、法人営業（BtoB）、メーカー営業、保険営業、広告営業、人材営業など幅広い業界の営業職をご紹介しています。</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LINE CTA FINAL -->
+  <a href="#cta" class="line-cta">
+    <div class="line-cta-inner">
+      <div class="line-icon">LINE</div>
+      <div class="line-cta-text">
+        <div class="line-cta-sub">入社まで完全無料</div>
+        <div class="line-cta-main">今すぐ<strong>年収診断</strong>をする</div>
+      </div>
+      <span class="line-cta-arrow">></span>
+    </div>
+  </a>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="logo" style="justify-content:center;">
+      <img src="images/logo-footer.png" alt="セルキャリ">
+    </div>
+    <div class="footer-links">
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">運営社情報</a>
+    </div>
+    <p class="footer-copy">copyright&copy;セルキャリ</p>
+  </footer>
+
+  <script>
+    // FAQ toggle
+    function toggleFaq(el) {
+      const item = el.closest('.faq-item');
+      item.classList.toggle('active');
+    }
+
+    // Scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Floating CTA
+    const floatingCta = document.getElementById('floatingCta');
+    const heroSection = document.querySelector('.hero');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > heroSection.offsetHeight + heroSection.offsetTop) {
+        floatingCta.classList.add('visible');
+      } else {
+        floatingCta.classList.remove('visible');
+      }
+    });
+  </script>
+</body>
+</html>

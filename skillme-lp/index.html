@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スキルミー | 副業スキルの無料カウンセリング</title>
+  <meta name="description" content="副業で何を始めればいいかわからない20代へ。スキルミーなら、あなたに最適な副業スキルと学び方をプロがアドバイス。オンライン無料カウンセリング実施中。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #333;
+      line-height: 1.8;
+      background: #fff;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== UTILITIES ===== */
+    .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
+    .yellow { color: #FFD700; }
+    .white { color: #fff; }
+    .marker-yellow {
+      background: linear-gradient(transparent 60%, #FFD700 60%);
+      padding: 0 4px;
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      padding: 12px 0;
+      background: #1a1a1a;
+      position: sticky;
+      top: 0;
+      z-index: 900;
+      border-bottom: 2px solid #FFD700;
+    }
+    .header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 900;
+      color: #FFD700;
+      letter-spacing: 0.05em;
+    }
+    .header-cta {
+      background: #FFD700;
+      color: #1a1a1a;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 900;
+      transition: all 0.2s;
+      letter-spacing: 0.05em;
+    }
+    .header-cta:hover { background: #ffe44d; transform: scale(1.05); }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      padding: 60px 0 50px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,215,0,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+      justify-content: center;
+    }
+    .hero-tag {
+      background: rgba(255,215,0,0.12);
+      border: 1px solid rgba(255,215,0,0.3);
+      color: #FFD700;
+      padding: 6px 16px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+    }
+    .hero-lead {
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.1em;
+    }
+    .hero h1 {
+      text-align: center;
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1.5;
+      margin-bottom: 12px;
+      letter-spacing: 0.02em;
+    }
+    .hero h1 .big {
+      font-size: 3rem;
+      color: #FFD700;
+      display: block;
+      line-height: 1.3;
+    }
+    .hero-sub {
+      text-align: center;
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .hero-cta-area {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: #FFD700;
+      color: #1a1a1a;
+      font-size: 1.15rem;
+      font-weight: 900;
+      padding: 18px 52px;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(255,215,0,0.3);
+      position: relative;
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(255,215,0,0.4);
+      background: #ffe44d;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50px;
+      border: 2px solid rgba(255,215,0,0.3);
+      animation: pulse-ring 2s infinite;
+    }
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(1.08); opacity: 0; }
+    }
+    .hero-note {
+      text-align: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.78rem;
+      margin-top: 16px;
+    }
+    .hero-stats-bar {
+      background: #111;
+      padding: 24px 0;
+      border-top: 1px solid rgba(255,215,0,0.15);
+    }
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat .num {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #FFD700;
+      line-height: 1.2;
+    }
+    .hero-stat .label {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+
+    /* ===== PROBLEMS ===== */
+    .problems {
+      padding: 70px 0;
+      background: #fff;
+    }
+    .section-label {
+      text-align: center;
+      font-size: 0.8rem;
+      font-weight: 900;
+      color: #FFD700;
+      background: #1a1a1a;
+      display: inline-block;
+      padding: 6px 24px;
+      border-radius: 50px;
+      letter-spacing: 0.15em;
+      margin-bottom: 20px;
+    }
+    .section-label-wrap { text-align: center; }
+    .section-title {
+      text-align: center;
+      font-size: 1.7rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      color: #1a1a1a;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: #888;
+      font-size: 0.9rem;
+      margin-bottom: 40px;
+    }
+    .problem-list {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .problem-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: #FFFDF0;
+      padding: 18px 24px;
+      border-radius: 12px;
+      border-left: 5px solid #FFD700;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #333;
+      transition: transform 0.2s;
+    }
+    .problem-item:hover { transform: translateX(4px); }
+    .problem-item .check-icon {
+      width: 28px;
+      height: 28px;
+      background: #1a1a1a;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: #FFD700;
+      font-size: 0.8rem;
+      font-weight: 900;
+    }
+
+    /* ===== ARROW DIVIDER ===== */
+    .arrow-divider {
+      text-align: center;
+      padding: 20px 0;
+      background: #fff;
+    }
+    .arrow-divider .arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 30px solid transparent;
+      border-right: 30px solid transparent;
+      border-top: 24px solid #1a1a1a;
+    }
+
+    /* ===== SOLUTION ===== */
+    .solution {
+      padding: 70px 0;
+      background: #1a1a1a;
+      text-align: center;
+    }
+    .solution .section-label {
+      background: #FFD700;
+      color: #1a1a1a;
+    }
+    .solution .section-title {
+      color: #fff;
+    }
+    .solution .section-title .yellow {
+      color: #FFD700;
+    }
+    .solution-desc {
+      color: rgba(255,255,255,0.7);
+      font-size: 1rem;
+      line-height: 2;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+    .solution-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .solution-feature {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,215,0,0.2);
+      border-radius: 16px;
+      padding: 32px 20px;
+      text-align: center;
+      transition: all 0.3s;
+    }
+    .solution-feature:hover {
+      background: rgba(255,215,0,0.08);
+      border-color: rgba(255,215,0,0.4);
+      transform: translateY(-4px);
+    }
+    .solution-feature .feat-num {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: #FFD700;
+      margin-bottom: 12px;
+      line-height: 1;
+      font-style: italic;
+    }
+    .solution-feature h3 {
+      font-size: 1rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 10px;
+      line-height: 1.5;
+    }
+    .solution-feature p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.7;
+    }
+
+    /* ===== MID CTA ===== */
+    .mid-cta {
+      padding: 50px 0;
+      background: linear-gradient(135deg, #FFD700 0%, #FFC000 100%);
+      text-align: center;
+    }
+    .mid-cta h2 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .btn-dark {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #FFD700;
+      font-size: 1.1rem;
+      font-weight: 900;
+      padding: 18px 48px;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    .btn-dark:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+      background: #333;
+    }
+    .mid-cta .note {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: rgba(26,26,26,0.6);
+    }
+
+    /* ===== STEPS ===== */
+    .steps {
+      padding: 70px 0;
+      background: #f9f9f9;
+    }
+    .step-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 650px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .step-list::before {
+      content: '';
+      position: absolute;
+      left: 36px;
+      top: 50px;
+      bottom: 50px;
+      width: 3px;
+      background: linear-gradient(to bottom, #FFD700, #1a1a1a);
+    }
+    .step-item {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+      padding: 28px 0;
+      position: relative;
+    }
+    .step-num {
+      width: 72px;
+      height: 72px;
+      background: #1a1a1a;
+      color: #FFD700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      font-weight: 900;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      border: 3px solid #FFD700;
+      font-style: italic;
+    }
+    .step-content {
+      background: #fff;
+      padding: 24px 28px;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+      flex: 1;
+      border-left: 4px solid #FFD700;
+    }
+    .step-content h3 {
+      font-size: 1.1rem;
+      font-weight: 900;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+    .step-content p {
+      font-size: 0.88rem;
+      color: #666;
+      line-height: 1.8;
+    }
+
+    /* ===== CONSULTABLE ===== */
+    .consultable {
+      padding: 70px 0;
+      background: #fff;
+    }
+    .consult-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      max-width: 650px;
+      margin: 0 auto;
+    }
+    .consult-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #FFFDF0;
+      padding: 16px 20px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: 1px solid rgba(255,215,0,0.3);
+      transition: all 0.2s;
+    }
+    .consult-item:hover {
+      border-color: #FFD700;
+      background: #FFFBE6;
+    }
+    .consult-item .icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== COMPARISON ===== */
+    .comparison {
+      padding: 70px 0;
+      background: #f9f9f9;
+    }
+    .comparison-table {
+      max-width: 650px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .comparison-table th,
+    .comparison-table td {
+      padding: 16px 20px;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    .comparison-table thead th {
+      background: #1a1a1a;
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+    }
+    .comparison-table thead th:last-child {
+      background: #1a1a1a;
+      color: #FFD700;
+    }
+    .comparison-table tbody tr {
+      border-bottom: 1px solid #eee;
+      background: #fff;
+    }
+    .comparison-table tbody tr:last-child { border-bottom: none; }
+    .comparison-table tbody td:first-child {
+      font-weight: 900;
+      text-align: left;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .comparison-table tbody td:last-child {
+      color: #1a1a1a;
+      font-weight: 900;
+    }
+    .comparison-table .good {
+      color: #1a1a1a;
+      font-weight: 900;
+    }
+    .comparison-table .good::before {
+      content: '';
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #FFD700;
+      border-radius: 50%;
+      margin-right: 6px;
+    }
+    .comparison-table .bad { color: #bbb; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      padding: 70px 0;
+      background: #1a1a1a;
+    }
+    .testimonials .section-title { color: #fff; }
+    .testimonials .section-subtitle { color: rgba(255,255,255,0.5); }
+    .testimonial-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,215,0,0.15);
+      border-radius: 16px;
+      padding: 28px 24px;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-size: 4rem;
+      color: rgba(255,215,0,0.2);
+      position: absolute;
+      top: 8px;
+      left: 16px;
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+    .testimonial-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      background: #FFD700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #1a1a1a;
+      font-weight: 900;
+      font-size: 0.85rem;
+    }
+    .testimonial-info .t-name {
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: #fff;
+    }
+    .testimonial-info .t-job {
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.4);
+    }
+    .testimonial-card .t-body {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.9;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      padding: 70px 0;
+      background: #fff;
+    }
+    .faq-list {
+      max-width: 650px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: #f9f9f9;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #eee;
+    }
+    .faq-question {
+      padding: 20px 24px;
+      font-weight: 900;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      user-select: none;
+      transition: background 0.2s;
+      color: #1a1a1a;
+    }
+    .faq-question:hover { background: #f0f0f0; }
+    .faq-question .q-icon {
+      width: 28px;
+      height: 28px;
+      background: #1a1a1a;
+      color: #FFD700;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .faq-question .arrow {
+      margin-left: auto;
+      font-size: 0.8rem;
+      color: #aaa;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-question .arrow { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer-inner {
+      padding: 0 24px 20px 64px;
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.9;
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      padding: 80px 0;
+      background: #1a1a1a;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(255,215,0,0.06) 0%, transparent 60%);
+      border-radius: 50%;
+    }
+    .final-cta h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 12px;
+      line-height: 1.6;
+      position: relative;
+    }
+    .final-cta h2 .yellow { color: #FFD700; }
+    .final-cta .desc {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 36px;
+      line-height: 2;
+      position: relative;
+    }
+    .final-cta .final-note {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.4);
+      position: relative;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 28px 0;
+      background: #111;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      font-size: 0.75rem;
+      border-top: 2px solid #FFD700;
+    }
+    .footer .logo-footer {
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #FFD700;
+      margin-bottom: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== FLOATING CTA ===== */
+    .floating-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(26,26,26,0.97);
+      backdrop-filter: blur(10px);
+      padding: 12px 20px;
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+      border-top: 2px solid #FFD700;
+    }
+    .floating-cta.visible { transform: translateY(0); }
+    .floating-cta p {
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .floating-cta .btn-float {
+      background: #FFD700;
+      color: #1a1a1a;
+      font-weight: 900;
+      padding: 10px 28px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+      transition: all 0.2s;
+      letter-spacing: 0.03em;
+    }
+    .floating-cta .btn-float:hover { background: #ffe44d; transform: scale(1.05); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 1.6rem; }
+      .hero h1 .big { font-size: 2.2rem; }
+      .hero-stats { gap: 24px; }
+      .hero-stat .num { font-size: 1.5rem; }
+      .hero-tags { gap: 8px; }
+      .hero-tag { font-size: 0.75rem; padding: 5px 12px; }
+      .solution-features { grid-template-columns: 1fr; gap: 16px; }
+      .consult-grid { grid-template-columns: 1fr; }
+      .testimonial-cards { grid-template-columns: 1fr; }
+      .comparison-table th, .comparison-table td { padding: 12px 10px; font-size: 0.8rem; }
+      .section-title { font-size: 1.35rem; }
+      .floating-cta p { display: none; }
+      .final-cta h2 { font-size: 1.4rem; }
+      .step-list::before { left: 35px; }
+      .btn-primary { font-size: 1rem; padding: 16px 36px; }
+      .btn-dark { font-size: 1rem; padding: 16px 36px; }
+      .mid-cta h2 { font-size: 1.2rem; }
+    }
+
+    /* ===== ANIMATION ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .slide-left {
+      opacity: 0;
+      transform: translateX(-30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .slide-left.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">スキルミー</div>
+      <a href="#cta" class="header-cta">無料で相談する</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-tags">
+        <span class="hero-tag">#副業したいけど何から？</span>
+        <span class="hero-tag">#情報多すぎて迷う</span>
+        <span class="hero-tag">#独学続かない</span>
+        <span class="hero-tag">#スキルほしい</span>
+        <span class="hero-tag">#収入もう一本</span>
+      </div>
+      <p class="hero-lead">&#x2500;&#x2500; 副業スキル取得の パーソナルカウンセリング &#x2500;&#x2500;</p>
+      <h1>
+        あなたに合った副業スキル、<br>
+        <span class="big">30分で見つかる。</span>
+      </h1>
+      <p class="hero-sub">
+        「何を学べばいいかわからない」を解決する<br>
+        20代のための無料カウンセリングサービス
+      </p>
+      <div class="hero-cta-area">
+        <a href="#cta" class="btn-primary">まずは無料で相談する</a>
+      </div>
+      <p class="hero-note">※ オンライン完結 / 30分 / 強引な勧誘一切なし</p>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <div class="hero-stats-bar">
+    <div class="container">
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="num">500<span style="font-size:0.6em">件</span>+</div>
+          <div class="label">相談実績</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">98<span style="font-size:0.6em">%</span></div>
+          <div class="label">満足度</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">0<span style="font-size:0.6em">円</span></div>
+          <div class="label">完全無料</div>
+        </div>
+        <div class="hero-stat">
+          <div class="num">30<span style="font-size:0.6em">分</span></div>
+          <div class="label">オンライン完結</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROBLEMS -->
+  <section class="problems">
+    <div class="container">
+      <div class="section-label-wrap">
+        <span class="section-label">YOUR WORRIES</span>
+      </div>
+      <h2 class="section-title fade-in">こんな悩み、<br>ありませんか？</h2>
+      <p class="section-subtitle fade-in">一つでも当てはまったら、スキルミーに相談してください</p>
+      <div class="problem-list">
+        <div class="problem-item slide-left">
+          <div class="check-icon">&#10003;</div>
+          副業に興味はあるけど、何が自分に向いてるかわからない
+        </div>
+        <div class="problem-item slide-left">
+          <div class="check-icon">&#10003;</div>
+          SNSで「○○で月5万」系の情報が多すぎて逆に迷う
+        </div>
+        <div class="problem-item slide-left">
+          <div class="check-icon">&#10003;</div>
+          独学で始めたけど、続かなかった
+        </div>
+        <div class="problem-item slide-left">
+          <div class="check-icon">&#10003;</div>
+          本業が忙しくて、遠回りしてる時間がない
+        </div>
+        <div class="problem-item slide-left">
+          <div class="check-icon">&#10003;</div>
+          周りに副業やってる人がいなくて、相談相手がいない
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARROW -->
+  <div class="arrow-divider">
+    <span class="arrow"></span>
+  </div>
+
+  <!-- SOLUTION -->
+  <section class="solution">
+    <div class="container">
+      <div class="section-label-wrap">
+        <span class="section-label">SOLUTION</span>
+      </div>
+      <h2 class="section-title fade-in">
+        その悩み、<br>
+        <span class="yellow">スキルミー</span>が<br>
+        すべて解決します。
+      </h2>
+      <p class="solution-desc fade-in">
+        スキルミーは、あなたの経験・性格・使える時間をヒアリングし、<br>
+        最適な副業スキルと学び方をプロが無料でアドバイスするサービスです。
+      </p>
+      <div class="solution-features">
+        <div class="solution-feature fade-in">
+          <div class="feat-num">01</div>
+          <h3>あなた専用の<br>スキル診断</h3>
+          <p>経験・強み・性格から最適な副業スキルを特定</p>
+        </div>
+        <div class="solution-feature fade-in">
+          <div class="feat-num">02</div>
+          <h3>最短ルートの<br>学習プラン</h3>
+          <p>何を・いつまでに・どう学ぶかロードマップをお渡し</p>
+        </div>
+        <div class="solution-feature fade-in">
+          <div class="feat-num">03</div>
+          <h3>完全無料<br>中立の立場</h3>
+          <p>特定のスクールに偏らないフラットなアドバイス</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MID CTA -->
+  <section class="mid-cta">
+    <div class="container">
+      <h2 class="fade-in">まだ何も決まってなくてOK。<br>まずは気軽に話してみませんか？</h2>
+      <a href="#cta" class="btn-dark fade-in">無料カウンセリングを予約する</a>
+      <p class="note fade-in">※ 所要時間30分 / オンライン完結</p>
+    </div>
+  </section>
+
+  <!-- STEPS -->
+  <section class="steps">
+    <div class="container">
+      <div class="section-label-wrap">
+        <span class="section-label">HOW IT WORKS</span>
+      </div>
+      <h2 class="section-title fade-in">オンラインで<span class="marker-yellow">30分</span>。<br>副業プランが見えてくる。</h2>
+      <p class="section-subtitle fade-in">カウンセリングの流れ</p>
+      <div class="step-list">
+        <div class="step-item fade-in">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>簡単なアンケートに回答（3分）</h3>
+            <p>今の仕事、使える時間、興味のある分野を入力するだけ。事前にお送りするフォームに回答してください。</p>
+          </div>
+        </div>
+        <div class="step-item fade-in">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>カウンセラーとオンライン面談（30分）</h3>
+            <p>あなたの強み・性格を踏まえて、最適な副業スキルと学び方をアドバイス。「まだ何も決まってない」状態で大丈夫です。</p>
+          </div>
+        </div>
+        <div class="step-item fade-in">
+          <div class="step-num">03</div>
+          <div class="step-content">
+            <h3>あなた専用の「スキル取得プラン」をお渡し</h3>
+            <p>何を・いつまでに・どうやって学ぶかのロードマップをお渡し。具体的な学習方法やおすすめの環境もご提案します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTABLE -->
+  <section class="consultable">
+    <div class="container">
+      <div class="section-label-wrap">
+        <span class="section-label">YOU CAN ASK</span>
+      </div>
+      <h2 class="section-title fade-in">こんなこと、<br>全部聞けます。</h2>
+      <p class="section-subtitle fade-in">「こんなこと聞いていいのかな？」→ 全部OKです</p>
+      <div class="consult-grid">
+        <div class="consult-item fade-in">
+          <span class="icon">&#x1F914;</span>
+          自分にはどんな副業が向いてる？
+        </div>
+        <div class="consult-item fade-in">
+          <span class="icon">&#x2696;&#xFE0F;</span>
+          プログラミングとデザイン、どっちがいい？
+        </div>
+        <div class="consult-item fade-in">
+          <span class="icon">&#x1F4B0;</span>
+          今から始めて、いつ頃稼げるようになる？
+        </div>
+        <div class="consult-item fade-in">
+          <span class="icon">&#x1F4DA;</span>
+          独学とスクール、自分にはどっちが合う？
+        </div>
+        <div class="consult-item fade-in">
+          <span class="icon">&#x1F4B8;</span>
+          予算が少ないけど、学ぶ方法ある？
+        </div>
+        <div class="consult-item fade-in">
+          <span class="icon">&#x23F0;</span>
+          本業が忙しいけど、週何時間あれば大丈夫？
+        </div>
+        <div class="consult-item fade-in">
+          <span class="icon">&#x1F4C8;</span>
+          今のスキルを副業に活かせる？
+        </div>
+        <div class="consult-item fade-in">
+          <span class="icon">&#x1F331;</span>
+          30代になってからでも遅くない？
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON -->
+  <section class="comparison">
+    <div class="container">
+      <div class="section-label-wrap">
+        <span class="section-label">COMPARISON</span>
+      </div>
+      <h2 class="section-title fade-in">ネットの情報を100時間見るより、<br><span class="marker-yellow">プロに30分聞く</span>方が早い。</h2>
+      <p class="section-subtitle fade-in">自分で調べるのとスキルミー、何が違う？</p>
+      <table class="comparison-table fade-in">
+        <thead>
+          <tr>
+            <th></th>
+            <th>ネットで自力検索</th>
+            <th>スキルミー</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>あなたに合った情報</td>
+            <td class="bad">&#x2716; 一般論ばかり</td>
+            <td class="good">あなた専用</td>
+          </tr>
+          <tr>
+            <td>かかる時間</td>
+            <td class="bad">数十時間</td>
+            <td class="good">30分</td>
+          </tr>
+          <tr>
+            <td>相談できるか</td>
+            <td class="bad">&#x2716; できない</td>
+            <td class="good">何度でも</td>
+          </tr>
+          <tr>
+            <td>情報の信頼性</td>
+            <td class="bad">広告・アフィリ混在</td>
+            <td class="good">中立の立場</td>
+          </tr>
+          <tr>
+            <td>料金</td>
+            <td>無料</td>
+            <td class="good">無料</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <div class="section-label-wrap">
+        <span class="section-label" style="background:#FFD700;color:#1a1a1a;">VOICE</span>
+      </div>
+      <h2 class="section-title fade-in">"何から始めればいいかわからない"が<br><span class="yellow">30分で解決した。</span></h2>
+      <p class="section-subtitle fade-in">カウンセリングを受けた方の声</p>
+      <div class="testimonial-cards">
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">K.T</div>
+            <div class="testimonial-info">
+              <div class="t-name">K.T さん</div>
+              <div class="t-job">24歳 / 営業職</div>
+            </div>
+          </div>
+          <p class="t-body">副業したくてYouTubeを見まくったけど余計に迷ってました。スキルミーで相談したら、自分の営業経験を活かせるWebマーケが向いてると言われて、すごく腹落ちしました。</p>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">M.S</div>
+            <div class="testimonial-info">
+              <div class="t-name">M.S さん</div>
+              <div class="t-job">26歳 / 事務職</div>
+            </div>
+          </div>
+          <p class="t-body">プログラミングを始めようとしてたけど、カウンセリングで「デザインの方が向いてる」と。実際やってみたら楽しくて、3ヶ月で初案件が取れました。</p>
+        </div>
+        <div class="testimonial-card fade-in">
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">R.H</div>
+            <div class="testimonial-info">
+              <div class="t-name">R.H さん</div>
+              <div class="t-job">22歳 / 飲食業</div>
+            </div>
+          </div>
+          <p class="t-body">スクールに通うお金がないと思ってたけど、自分の予算でできる学び方を教えてもらえた。「スクールだけが正解じゃない」と言われて、本当に信頼できると感じました。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <div class="section-label-wrap">
+        <span class="section-label">FAQ</span>
+      </div>
+      <h2 class="section-title fade-in">よくある質問</h2>
+      <p class="section-subtitle fade-in">不安なことがあれば、お気軽にご相談ください</p>
+      <div class="faq-list">
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <span class="q-icon">Q</span>
+            本当に無料ですか？
+            <span class="arrow">&#x25BC;</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい、完全無料です。カウンセリングは何度でも無料でご利用いただけます。スキルミーは提携先からの紹介料で運営しているため、ご利用者様に費用は一切かかりません。</div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <span class="q-icon">Q</span>
+            何か売り込まれたりしませんか？
+            <span class="arrow">&#x25BC;</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">一切ありません。あなたに合った選択肢を提案するだけです。スクール・独学・コミュニティなど、最適な方法をフラットにお伝えします。最終的に何を選ぶかはあなた自身が決めてください。</div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <span class="q-icon">Q</span>
+            まだ何も決まってないのですが、相談していいですか？
+            <span class="arrow">&#x25BC;</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">もちろんです。むしろ「何も決まっていない状態」でのご相談が最も多いです。「副業に興味はあるけど、何がいいかわからない」という方こそ、ぜひカウンセリングをご活用ください。</div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <span class="q-icon">Q</span>
+            カウンセリングは何分くらいですか？
+            <span class="arrow">&#x25BC;</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">約30分です。オンライン（Zoom）で行います。事前にアンケートにご回答いただくことで、当日は効率的にお話を進められます。</div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <span class="q-icon">Q</span>
+            忙しくて時間が取れないのですが…
+            <span class="arrow">&#x25BC;</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">平日夜（21時まで）・土日も対応しています。また、カウンセリング後のフォローアップはLINEでも行っていますので、お忙しい方でもご自身のペースでご相談いただけます。</div>
+          </div>
+        </div>
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <span class="q-icon">Q</span>
+            地方に住んでいても利用できますか？
+            <span class="arrow">&#x25BC;</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">はい。カウンセリングはすべてオンラインで完結しますので、全国どこからでもご利用いただけます。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta" id="cta">
+    <div class="container">
+      <h2 class="fade-in">副業の第一歩は、<br>"自分に何が向いてるか"を<span class="yellow">知ること。</span></h2>
+      <p class="desc fade-in">
+        30分のカウンセリングで、<br>
+        あなた専用の副業スキルプランをお渡しします。
+      </p>
+      <a href="#" class="btn-primary fade-in" style="font-size:1.2rem;padding:20px 56px;">無料カウンセリングを予約する</a>
+      <p class="final-note fade-in">※ オンライン完結 / 30分 / 強引な勧誘なし / 「まだ何も決まってない」状態でOK</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="logo-footer">スキルミー</div>
+      <p>&copy; 2026 スキルミー All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta" id="floatingCta">
+    <p>副業の始め方、プロに無料で相談しませんか？</p>
+    <a href="#cta" class="btn-float">無料で相談する</a>
+  </div>
+
+  <script>
+    // Floating CTA visibility
+    const floatingCta = document.getElementById('floatingCta');
+    const hero = document.querySelector('.hero');
+    const observer = new IntersectionObserver(([entry]) => {
+      floatingCta.classList.toggle('visible', !entry.isIntersecting);
+    }, { threshold: 0 });
+    observer.observe(hero);
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const isOpen = item.classList.contains('open');
+
+        document.querySelectorAll('.faq-item').forEach(fi => {
+          fi.classList.remove('open');
+          fi.querySelector('.faq-answer').style.maxHeight = null;
+        });
+
+        if (!isOpen) {
+          item.classList.add('open');
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      });
+    });
+
+    // Scroll fade-in animation
+    const fadeObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in, .slide-left').forEach(el => fadeObserver.observe(el));
+  </script>
+</body>
+</html>

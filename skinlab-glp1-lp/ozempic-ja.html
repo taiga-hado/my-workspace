@@ -1147,6 +1147,14 @@
       background: #06a050;
       transform: translateY(-2px);
     }
+    .contact-btn.email-btn {
+      background: #1a5276;
+      color: #fff;
+    }
+    .contact-btn.email-btn:hover {
+      background: #154360;
+      transform: translateY(-2px);
+    }
 
     .contact-btn svg {
       width: 20px;
@@ -1628,6 +1636,10 @@
               <span class="label">WeChat</span>
               <span class="value" style="font-weight: 600; color: #07C160;">wxid_v325w38zksea12</span>
             </div>
+            <div class="clinic-detail">
+              <span class="label">Email</span>
+              <span class="value"><a href="mailto:reception@skinlabclinic.net" style="color: var(--primary-light); text-decoration: none; font-weight: 600;">reception@skinlabclinic.net</a></span>
+            </div>
           </div>
         </div>
 
@@ -1803,6 +1815,7 @@
         <a href="https://wa.me/819053233246" target="_blank" rel="noopener" class="contact-channel">WhatsApp: +81-90-5323-3246</a>
         <a href="https://lin.ee/vYCtYj6" target="_blank" rel="noopener" class="contact-channel">LINE: @487homss</a>
         <a href="javascript:void(0)" onclick="toggleWeChat()" class="contact-channel">WeChat: wxid_v325w38zksea12</a>
+        <a href="mailto:reception@skinlabclinic.net" class="contact-channel">Email: reception@skinlabclinic.net</a>
       </div>
     </div>
   </section>
@@ -1902,6 +1915,10 @@
       <button class="copy-btn" onclick="copyWeChat(event)">IDをコピー</button>
     </div>
   </button>
+  <a href="mailto:reception@skinlabclinic.net" class="contact-btn email-btn">
+    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+    <span>Email</span>
+  </a>
 </div>
 
 </body>

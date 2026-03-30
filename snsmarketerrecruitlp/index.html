@@ -18,6 +18,7 @@
             warm: '#FAF0DC',
             accent: '#E8872E',
             gold: '#D4880F',
+            line: '#06C755',
           },
           fontFamily: {
             zen: ['"Zen Kaku Gothic New"', 'sans-serif'],
@@ -31,119 +32,77 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body { font-family: 'Noto Sans JP', sans-serif; background: #FDF6E3; color: #1a1a1a; overflow-x: hidden; }
-
     .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1); }
     .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
-
-    .pill-link {
-      display: inline-flex; align-items: center; justify-content: space-between;
-      border: 2px solid #1a1a1a; border-radius: 60px; padding: 16px 32px;
-      font-weight: 700; font-size: 1rem; color: #1a1a1a; text-decoration: none;
-      transition: all 0.3s ease; background: transparent;
-    }
+    .pill-link { display: inline-flex; align-items: center; border: 2px solid #1a1a1a; border-radius: 60px; padding: 16px 32px; font-weight: 700; font-size: 1rem; color: #1a1a1a; text-decoration: none; transition: all 0.3s ease; }
     .pill-link:hover { background: #1a1a1a; color: #FDF6E3; }
-
-    .pill-link-accent {
-      display: inline-flex; align-items: center; gap: 12px;
-      border: 2px solid #E8872E; border-radius: 60px; padding: 18px 40px;
-      font-weight: 900; font-size: 1.1rem; color: #E8872E; text-decoration: none;
-      transition: all 0.3s ease; background: transparent;
-    }
-    .pill-link-accent:hover { background: #E8872E; color: #FDF6E3; }
-
-    .pill-filled {
-      display: inline-flex; align-items: center; gap: 12px;
-      border-radius: 60px; padding: 18px 48px;
-      font-weight: 900; font-size: 1.1rem; color: #FDF6E3; text-decoration: none;
-      transition: all 0.3s ease; background: #1a1a1a;
-    }
+    .pill-filled { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 60px; padding: 18px 48px; font-weight: 900; font-size: 1.1rem; color: #FDF6E3; text-decoration: none; transition: all 0.3s ease; background: #1a1a1a; }
     .pill-filled:hover { background: #333; transform: translateY(-2px); }
-
+    .line-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 60px; padding: 18px 48px; font-weight: 900; font-size: 1.1rem; color: #fff; text-decoration: none; transition: all 0.3s ease; background: #06C755; }
+    .line-cta:hover { background: #05b34c; transform: translateY(-2px); }
     .section-line { height: 1px; background: #1a1a1a; opacity: 0.15; }
-
     .photo-card { border-radius: 16px; overflow: hidden; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     .photo-card:hover img { transform: scale(1.03); }
-
-    .voice-chip {
-      display: inline-block; border: 1.5px solid #1a1a1a; border-radius: 40px;
-      padding: 12px 24px; font-weight: 700; font-size: 0.9rem;
-      transition: all 0.3s ease; white-space: nowrap;
-    }
+    .voice-chip { display: inline-block; border: 1.5px solid #1a1a1a; border-radius: 40px; padding: 12px 24px; font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease; white-space: nowrap; }
     .voice-chip:hover { background: #1a1a1a; color: #FDF6E3; }
-
-    .info-card {
-      background: #fff; border-radius: 20px; padding: 32px;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
-      transition: all 0.3s ease;
-    }
+    .info-card { background: #fff; border-radius: 20px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.04); transition: all 0.3s ease; }
     .info-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.08); transform: translateY(-4px); }
-
-    .testimonial-card {
-      background: #fff; border-radius: 20px; overflow: hidden;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
-      transition: all 0.3s ease;
-    }
+    .testimonial-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.04); transition: all 0.3s ease; }
     .testimonial-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.08); transform: translateY(-4px); }
-
     .data-number { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; color: #E8872E; }
-
-    .sticky-cta {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
-      background: rgba(253,246,227,0.95); backdrop-filter: blur(12px);
-      border-top: 1px solid rgba(0,0,0,0.08); padding: 12px 16px;
-      transform: translateY(100%); transition: transform 0.4s ease;
-    }
+    .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; background: rgba(253,246,227,0.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(0,0,0,0.08); padding: 12px 16px; transform: translateY(100%); transition: transform 0.4s ease; }
     .sticky-cta.show { transform: translateY(0); }
+    .mid-cta { background: #fff; border-radius: 20px; padding: 32px; text-align: center; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
+    .line-svg { width: 24px; height: 24px; fill: currentColor; }
+    .photo-overlay { position: relative; }
+    .photo-overlay::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); border-radius: 16px; }
+    .photo-overlay-text { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px; z-index: 2; color: #fff; }
   </style>
 </head>
 <body>
 
-  <!-- ===================== HEADER NAV ===================== -->
+  <!-- NAV -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-black/5">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <a href="#" class="font-zen text-lg md:text-xl font-black tracking-wide">HADO inc.</a>
+    <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+      <a href="#"><img src="images/hado-logo-cropped.png" alt="HADO" class="h-6 md:h-7"></a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
         <a href="#about" class="hover:text-accent transition-colors">About</a>
         <a href="#culture" class="hover:text-accent transition-colors">Culture</a>
         <a href="#career" class="hover:text-accent transition-colors">Career</a>
-        <a href="#entry" class="pill-link text-sm !py-2 !px-6">Entry →</a>
+        <a href="#entry" class="inline-flex items-center gap-2 bg-line text-white font-bold text-sm px-5 py-2.5 rounded-full hover:bg-[#05b34c] transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINEで話を聞く
+        </a>
       </div>
     </div>
   </nav>
 
-
-  <!-- ===================== HERO ===================== -->
-  <section id="hero" class="pt-24 md:pt-32 pb-16 md:pb-24 px-6 relative">
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="pt-20 md:pt-28 pb-16 md:pb-24 px-6">
     <div class="max-w-6xl mx-auto">
-      <!-- Hero Image -->
       <div class="photo-card aspect-[16/7] md:aspect-[16/6] mb-12 md:mb-16">
         <img src="images/hero-stairs.jpg" alt="HADOチーム" class="object-[center_30%]">
       </div>
-
-      <!-- Hero Text -->
       <div class="max-w-3xl">
         <p class="text-accent font-bold text-sm md:text-base tracking-widest uppercase mb-4">SNS Marketing Team</p>
-        <h1 class="font-zen text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-8">
-          この瞬間に、<br>全力で火をつけろ。
-        </h1>
-        <p class="text-black/50 text-base md:text-lg leading-relaxed mb-10 max-w-xl">
-          みんなでやるから楽しい。今この一瞬に全てをかける。<br>
-          線香花火のように、一人ひとりが自分の火を灯すチーム。
-        </p>
+        <h1 class="font-zen text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-8">この瞬間に、<br>全力で火をつけろ。</h1>
+        <p class="text-black/50 text-base md:text-lg leading-relaxed mb-10 max-w-xl">みんなでやるから楽しい。今この一瞬に全てをかける。<br>線香花火のように、一人ひとりが自分の火を灯すチーム。</p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="#entry" class="pill-filled">話を聞いてみる</a>
+          <a href="#entry" class="line-cta">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+            話を聞いてみる
+          </a>
           <a href="#about" class="pill-link">Sparklersを知る →</a>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== WELCOME TAGS ===================== -->
-  <section class="py-8 md:py-10 px-6">
+  <!-- WELCOME TAGS -->
+  <section class="py-8 px-6">
     <div class="max-w-4xl mx-auto">
-      <div class="flex flex-wrap justify-center gap-2 md:gap-3 animate-on-scroll">
+      <div class="flex flex-wrap justify-center gap-2 md:gap-3">
         <span class="inline-flex items-center gap-1.5 bg-white border border-black/10 rounded-full px-4 py-2 text-sm font-medium">🎓 高校生・大学生・専門学生歓迎</span>
         <span class="inline-flex items-center gap-1.5 bg-white border border-black/10 rounded-full px-4 py-2 text-sm font-medium">🙌 フリーター歓迎</span>
         <span class="inline-flex items-center gap-1.5 bg-white border border-black/10 rounded-full px-4 py-2 text-sm font-medium">💇 髪型／服装／ネイル／タトゥー自由</span>
@@ -153,320 +112,254 @@
     </div>
   </section>
 
-
-  <!-- ===================== DATA ===================== -->
+  <!-- DATA -->
   <section class="py-16 md:py-24 px-6">
     <div class="max-w-4xl mx-auto animate-on-scroll">
       <div class="grid grid-cols-3 gap-4 md:gap-8 text-center">
-        <div>
-          <p class="data-number text-4xl md:text-7xl">675<span class="text-lg md:text-2xl">万円</span></p>
-          <p class="text-black/40 text-xs md:text-sm mt-2">平均年収</p>
-        </div>
-        <div>
-          <p class="data-number text-4xl md:text-7xl">25<span class="text-lg md:text-2xl">歳</span></p>
-          <p class="text-black/40 text-xs md:text-sm mt-2">平均年齢</p>
-        </div>
-        <div>
-          <p class="data-number text-4xl md:text-7xl">90<span class="text-lg md:text-2xl">%</span></p>
-          <p class="text-black/40 text-xs md:text-sm mt-2">業界未経験率</p>
-        </div>
+        <div><p class="data-number text-4xl md:text-7xl">675<span class="text-lg md:text-2xl">万円</span></p><p class="text-black/40 text-xs md:text-sm mt-2">平均年収</p></div>
+        <div><p class="data-number text-4xl md:text-7xl">25<span class="text-lg md:text-2xl">歳</span></p><p class="text-black/40 text-xs md:text-sm mt-2">平均年齢</p></div>
+        <div><p class="data-number text-4xl md:text-7xl">90<span class="text-lg md:text-2xl">%</span></p><p class="text-black/40 text-xs md:text-sm mt-2">業界未経験率</p></div>
       </div>
     </div>
   </section>
 
   <div class="section-line max-w-6xl mx-auto"></div>
 
-
-  <!-- ===================== INDUSTRY DATA ===================== -->
-  <section class="py-16 md:py-24 px-6">
-    <div class="max-w-4xl mx-auto animate-on-scroll">
-      <div class="text-center mb-12">
-        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Growing Industry</p>
-        <h2 class="font-zen text-2xl md:text-4xl font-black">SNSマーケターへの転職が<br>おすすめな理由</h2>
-      </div>
-      <div class="grid sm:grid-cols-3 gap-4">
-        <div class="info-card text-center">
-          <p class="text-accent font-bold text-sm mb-2">理由 01</p>
-          <h3 class="font-zen text-lg font-black mb-2">約2.9兆円<br>今でもアツい業界</h3>
-          <p class="text-black/40 text-xs leading-relaxed">インターネット広告費は年々成長。2024年は前年比108%の約2.9兆円規模。</p>
-        </div>
-        <div class="info-card text-center">
-          <p class="text-accent font-bold text-sm mb-2">理由 02</p>
-          <h3 class="font-zen text-lg font-black mb-2">平均年収500万以上<br>高い給与水準</h3>
-          <p class="text-black/40 text-xs leading-relaxed">様々な商材の「売り方」を知れるので、市場価値が上がり高い給与水準に。</p>
-        </div>
-        <div class="info-card text-center">
-          <p class="text-accent font-bold text-sm mb-2">理由 03</p>
-          <h3 class="font-zen text-lg font-black mb-2">どのビジネスでも<br>活躍できるスキル</h3>
-          <p class="text-black/40 text-xs leading-relaxed">経営目線で企画から実行まで幅広い業務に携わるため、一貫したスキルを獲得。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-line max-w-6xl mx-auto"></div>
-
-
-  <!-- ===================== QUESTION ===================== -->
+  <!-- QUESTION -->
   <section class="py-20 md:py-32 px-6">
     <div class="max-w-3xl mx-auto animate-on-scroll">
-      <h2 class="font-zen text-2xl md:text-4xl lg:text-5xl font-black leading-relaxed mb-8">
-        TikTokを毎日スクロールしてる。<br>
-        面白い動画を見て笑って、保存して、シェアして。
-      </h2>
-      <p class="text-accent font-zen text-xl md:text-3xl font-black mb-8">
-        でも、「消費する側」のままでいいのか？
-      </p>
-      <p class="text-black/50 text-base md:text-lg leading-loose">
-        私たちがやってるのは、たった数十秒の動画で、誰かの人生を動かすこと。<br>
-        バズらせたいんじゃない。表現を通じて目の前の1人の行動を変えたい。
-      </p>
+      <h2 class="font-zen text-2xl md:text-4xl lg:text-5xl font-black leading-relaxed mb-8">TikTokを毎日スクロールしてる。<br>面白い動画を見て笑って、保存して、シェアして。</h2>
+      <p class="text-accent font-zen text-xl md:text-3xl font-black mb-8">でも、「消費する側」のままでいいのか？</p>
+      <p class="text-black/50 text-base md:text-lg leading-loose">私たちがやってるのは、たった数十秒の動画で、誰かの人生を動かすこと。<br>バズらせたいんじゃない。表現を通じて目の前の1人の行動を変えたい。</p>
     </div>
   </section>
 
   <div class="section-line max-w-6xl mx-auto"></div>
 
-
-  <!-- ===================== PAIN POINTS ===================== -->
+  <!-- PAIN POINTS -->
   <section class="py-20 md:py-32 px-6">
     <div class="max-w-3xl mx-auto animate-on-scroll">
       <h2 class="font-zen text-2xl md:text-4xl font-black mb-12">こんなお悩みありませんか？</h2>
       <div class="space-y-4">
-        <div class="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-sm">
-          <span class="text-accent text-xl font-bold mt-0.5">✓</span>
-          <p class="text-black/70 leading-relaxed">今の仕事をずっと続けても<strong class="text-black">生涯通用するスキル</strong>を実感できない</p>
-        </div>
-        <div class="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-sm">
-          <span class="text-accent text-xl font-bold mt-0.5">✓</span>
-          <p class="text-black/70 leading-relaxed">本気で尊敬できる同僚や上司、<strong class="text-black">全力で仕事に向き合える環境</strong>で働きたい</p>
-        </div>
-        <div class="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-sm">
-          <span class="text-accent text-xl font-bold mt-0.5">✓</span>
-          <p class="text-black/70 leading-relaxed">社会人になってからは<strong class="text-black">何にも熱中できておらず</strong>、焦りを感じている</p>
-        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-sm"><span class="text-accent text-xl font-bold mt-0.5">✓</span><p class="text-black/70 leading-relaxed">今の仕事をずっと続けても<strong class="text-black">生涯通用するスキル</strong>を実感できない</p></div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-sm"><span class="text-accent text-xl font-bold mt-0.5">✓</span><p class="text-black/70 leading-relaxed">本気で尊敬できる同僚や上司、<strong class="text-black">全力で仕事に向き合える環境</strong>で働きたい</p></div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-6 shadow-sm"><span class="text-accent text-xl font-bold mt-0.5">✓</span><p class="text-black/70 leading-relaxed">社会人になってからは<strong class="text-black">何にも熱中できておらず</strong>、焦りを感じている</p></div>
       </div>
-      <p class="text-center mt-10 font-zen text-xl md:text-2xl font-black">
-        その悩み、<span class="text-accent">HADOなら全て解決</span>します。
-      </p>
+      <p class="text-center mt-10 font-zen text-xl md:text-2xl font-black">1つでも当てはまったら、<span class="text-accent">HADOに来てください。</span></p>
+    </div>
+  </section>
+
+  <!-- MID CTA 1 -->
+  <section class="py-10 px-6">
+    <div class="max-w-lg mx-auto mid-cta animate-on-scroll">
+      <p class="text-black/50 text-sm mb-4">まずは気軽に話を聞いてみませんか？</p>
+      <a href="#entry" class="line-cta w-full justify-center">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        話を聞いてみる
+      </a>
+      <p class="text-black/30 text-xs mt-3">選考ではありません。質問だけでもOKです。</p>
     </div>
   </section>
 
   <div class="section-line max-w-6xl mx-auto"></div>
 
+  <!-- YOUR VALUE -->
+  <section class="py-20 md:py-32 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="mb-12 animate-on-scroll">
+        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Your Value</p>
+        <h2 class="font-zen text-3xl md:text-5xl font-black">マーケターになると、<br>何が手に入る？</h2>
+      </div>
+      <div class="text-center mb-10 animate-on-scroll">
+        <p class="data-number text-5xl md:text-8xl">675<span class="text-2xl md:text-3xl">万円</span></p>
+        <p class="text-black/40 text-sm mt-2">SNSマーケター平均年収</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 animate-on-scroll">
+        <div class="info-card">
+          <p class="data-number text-3xl mb-2">2.9<span class="text-lg">兆円</span></p>
+          <h3 class="font-bold text-base mb-2">まだまだ伸びる市場</h3>
+          <p class="text-black/40 text-sm leading-relaxed">SNS広告市場は右肩上がり。今から入れば先行者になれる。</p>
+        </div>
+        <div class="info-card">
+          <p class="data-number text-3xl mb-2">どの業界でも</p>
+          <h3 class="font-bold text-base mb-2">通用するスキル</h3>
+          <p class="text-black/40 text-sm leading-relaxed">「売り方」がわかる人材は、業界を問わず引っ張りだこ。</p>
+        </div>
+        <div class="info-card">
+          <p class="data-number text-3xl mb-2">50<span class="text-lg">万円</span></p>
+          <h3 class="font-bold text-base mb-2">引越し・休学支援</h3>
+          <p class="text-black/40 text-sm leading-relaxed">本気で挑戦したいメンバーを会社が全力サポート。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <!-- ===================== 3 REASONS ===================== -->
+  <div class="section-line max-w-6xl mx-auto"></div>
+
+  <!-- 3 REASONS -->
   <section class="py-20 md:py-32 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 animate-on-scroll">
         <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Why HADO?</p>
         <h2 class="font-zen text-3xl md:text-5xl font-black">HADOで働く3つの理由</h2>
       </div>
-
       <div class="space-y-16 md:space-y-24">
-        <!-- Reason 01 -->
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center animate-on-scroll">
           <div>
             <span class="text-accent font-bold text-sm tracking-wider">reason 01</span>
             <h3 class="font-zen text-2xl md:text-3xl font-black mt-2 mb-4">裁量を持って働けるから<br>スピード昇進！</h3>
-            <p class="text-black/50 text-sm md:text-base leading-relaxed">学歴や年齢関係なく、個人の成長のために挑戦を後押しする風土。これまでの経験や年齢などにハンデは一切ない社風で、誰でも子会社の代表を目指せる。</p>
+            <p class="text-black/50 text-sm md:text-base leading-relaxed">学歴や年齢関係なく、個人の成長のために挑戦を後押しする風土。誰でも子会社の代表を目指せる。</p>
           </div>
-          <div class="photo-card aspect-[4/3]"><img src="images/member-saito-smile.jpg" alt="齋藤" class="object-[center_20%]"></div>
+          <div class="photo-card aspect-[4/3]"><img src="images/member-narita.jpg" alt="" class="object-[center_20%]"></div>
         </div>
-
-        <!-- Reason 02 -->
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center animate-on-scroll">
           <div class="md:order-2">
             <span class="text-accent font-bold text-sm tracking-wider">reason 02</span>
             <h3 class="font-zen text-2xl md:text-3xl font-black mt-2 mb-4">未経験から<br>育成するカルチャー</h3>
-            <p class="text-black/50 text-sm md:text-base leading-relaxed">圧倒的に経験者を優遇するマーケティング職でも、HADOは"人"を一番大切にしているので未経験者でもOK！部活のように本気で仕事に取り組む環境。</p>
+            <p class="text-black/50 text-sm md:text-base leading-relaxed">HADOは"人"を一番大切にしているので未経験者でもOK！部活のように本気で仕事に取り組む環境。</p>
           </div>
-          <div class="photo-card aspect-[4/3] md:order-1"><img src="images/work-office.jpg" alt="オフィスで仕事する仲間"></div>
+          <div class="photo-card aspect-[4/3] md:order-1"><img src="images/work-office.jpg" alt=""></div>
         </div>
-
-        <!-- Reason 03 -->
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center animate-on-scroll">
           <div>
             <span class="text-accent font-bold text-sm tracking-wider">reason 03</span>
             <h3 class="font-zen text-2xl md:text-3xl font-black mt-2 mb-4">本質的な<br>マーケティングスキルが身につく</h3>
-            <p class="text-black/50 text-sm md:text-base leading-relaxed">実力と結果でのし上がってきたHADOには、超一流のマーケターが多数。その中で働くことで、若いうちから市場価値を上げ、一流のマーケターを目指せます。</p>
+            <p class="text-black/50 text-sm md:text-base leading-relaxed">超一流のマーケターが多数。若いうちから市場価値を上げ、一流のマーケターを目指せます。</p>
           </div>
-          <div class="photo-card aspect-[4/3]"><img src="images/work-laptop.jpg" alt="仕事風景"></div>
+          <div class="photo-card aspect-[4/3]"><img src="images/work-laptop.jpg" alt=""></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- MID CTA 2 -->
+  <section class="py-10 px-6">
+    <div class="max-w-lg mx-auto mid-cta animate-on-scroll">
+      <p class="text-black/50 text-sm mb-4">LINEで採用の最新情報をお届けします</p>
+      <a href="#entry" class="line-cta w-full justify-center">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        話を聞いてみる
+      </a>
+      <p class="text-black/30 text-xs mt-3">質問や相談、説明会予約もこちらから！</p>
     </div>
   </section>
 
   <div class="section-line max-w-6xl mx-auto"></div>
 
-
-  <!-- ===================== INEXPERIENCED OK ===================== -->
-  <section class="py-20 md:py-32 px-6 bg-[#1a1a1a] text-white">
-    <div class="max-w-3xl mx-auto text-center animate-on-scroll">
-      <p class="text-white/40 text-sm mb-6">しかし…高いスキルが求められる仕事なので基本は</p>
-      <h2 class="font-zen text-3xl md:text-5xl font-black mb-4">未経験での入社お断りの<br>企業が多数…</h2>
-      <div class="w-16 h-1 bg-accent mx-auto my-8"></div>
-      <h3 class="font-zen text-3xl md:text-5xl font-black mb-8"><span class="text-accent">HADO</span>なら大丈夫！</h3>
-      <div class="photo-card aspect-[16/9] max-w-2xl mx-auto mb-8">
-        <img src="images/group-photo.png" alt="HADOメンバー集合">
-      </div>
-      <p class="text-white/60 text-base leading-relaxed max-w-xl mx-auto mb-6">
-        みんな未経験からスタートして、<br>
-        <strong class="text-white">業界有数のマーケターに成長しています！</strong>
-      </p>
-      <div class="grid grid-cols-2 gap-4 max-w-sm mx-auto">
-        <div class="bg-white/10 rounded-2xl p-4 text-center">
-          <p class="data-number text-3xl">90<span class="text-base">%</span></p>
-          <p class="text-white/40 text-xs mt-1">業界未経験での入社率</p>
-        </div>
-        <div class="bg-white/10 rounded-2xl p-4 text-center">
-          <p class="data-number text-3xl">675<span class="text-base">万円</span></p>
-          <p class="text-white/40 text-xs mt-1">平均年収</p>
+  <!-- FULL-WIDTH PHOTO + CATCH -->
+  <section class="py-20 md:py-32 px-6">
+    <div class="max-w-6xl mx-auto animate-on-scroll">
+      <div class="photo-card photo-overlay aspect-[16/7]">
+        <img src="images/group-photo.png" alt="全員20代" class="object-top">
+        <div class="photo-overlay-text">
+          <h2 class="font-zen text-2xl md:text-4xl lg:text-5xl font-black mb-2">全員20代。ストレスゼロ。</h2>
+          <p class="text-white/70 text-sm md:text-base">上司の顔色を伺う必要なし。みんなで仲良くバズを作る毎日。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ===== MID CTA 1 ===== -->
-  <section class="py-12 px-6 bg-cream text-center">
-    <div class="max-w-md mx-auto animate-on-scroll">
-      <p class="text-black/40 text-sm mb-4">まずは気軽に話を聞いてみませんか？</p>
-      <a href="#entry" class="pill-filled w-full justify-center">話を聞いてみる →</a>
-    </div>
-  </section>
-
-  <div class="section-line max-w-6xl mx-auto"></div>
-
-
-  <!-- ===================== ABOUT SPARKLERS ===================== -->
+  <!-- ABOUT -->
   <section id="about" class="py-20 md:py-32 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 animate-on-scroll">
         <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">About the Team</p>
         <h2 class="font-zen text-3xl md:text-5xl font-black mb-6">Sparklers<span class="text-black/30 text-lg md:text-xl ml-2">（スパクル）</span></h2>
-        <p class="text-black/50 text-base md:text-lg max-w-2xl leading-relaxed">
-          HADOのSNSマーケティングチーム。コンセプトは、Sparklers＝線香花火。<br>みんなでやるから楽しい。今この一瞬に全てをかける。
-        </p>
+        <p class="text-black/50 text-base md:text-lg max-w-2xl leading-relaxed">HADOのSNSマーケティングチーム。コンセプトは線香花火。<br>みんなでやるから楽しい。今この一瞬に全てをかける。</p>
       </div>
-
       <div class="grid md:grid-cols-3 gap-6 animate-on-scroll">
-        <div class="info-card text-center">
-          <div class="text-4xl mb-4">🔥</div>
-          <h3 class="font-zen text-lg font-black mb-2">一人ひとりが<br>自分の火を持つ</h3>
-          <p class="text-black/40 text-sm">誰かに持ってもらうんじゃなく、<br>自分の手でスパクルを持つ。</p>
-        </div>
-        <div class="info-card text-center">
-          <div class="text-4xl mb-4">✨</div>
-          <h3 class="font-zen text-lg font-black mb-2">火花を<br>市場に散らす</h3>
-          <p class="text-black/40 text-sm">溜め込んだままじゃ光らない。<br>燃えている間に全力で散らす。</p>
-        </div>
-        <div class="info-card text-center">
-          <div class="text-4xl mb-4">🎆</div>
-          <h3 class="font-zen text-lg font-black mb-2">みんなで囲むから<br>楽しい</h3>
-          <p class="text-black/40 text-sm">一人の火は小さくても、<br>隣に仲間がいるから輝ける。</p>
-        </div>
+        <div class="info-card text-center"><div class="text-4xl mb-4">🔥</div><h3 class="font-zen text-lg font-black mb-2">一人ひとりが<br>自分の火を持つ</h3><p class="text-black/40 text-sm">自分の手でスパクルを持つ。</p></div>
+        <div class="info-card text-center"><div class="text-4xl mb-4">✨</div><h3 class="font-zen text-lg font-black mb-2">火花を<br>市場に散らす</h3><p class="text-black/40 text-sm">燃えている間に全力で散らす。</p></div>
+        <div class="info-card text-center"><div class="text-4xl mb-4">🎆</div><h3 class="font-zen text-lg font-black mb-2">みんなで囲むから<br>楽しい</h3><p class="text-black/40 text-sm">隣に仲間がいるから輝ける。</p></div>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== MEMBER VOICES ===================== -->
+  <!-- MEMBER VOICES -->
   <section class="py-20 md:py-32 px-6 bg-white">
     <div class="max-w-5xl mx-auto">
       <div class="mb-12 animate-on-scroll">
         <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Member Voices</p>
         <h2 class="font-zen text-3xl md:text-5xl font-black">HADOさんってどんな人？</h2>
       </div>
-
-      <!-- Voice chips -->
       <div class="flex flex-wrap gap-3 mb-16 animate-on-scroll">
         <span class="voice-chip">一生文化祭みたいな人生を送りたい</span>
         <span class="voice-chip">消費ではなく表現をする人生でいたい</span>
         <span class="voice-chip">一生、熱狂し続けたい</span>
         <span class="voice-chip">完全燃焼して死にたい</span>
         <span class="voice-chip">かっこいいと思う自分でありたい</span>
-        <span class="voice-chip">使命感を感じたい</span>
         <span class="voice-chip">没頭、ゾーンに入り続けて生きたい</span>
       </div>
-
-      <!-- Testimonials -->
       <div class="grid md:grid-cols-3 gap-6 animate-on-scroll">
         <div class="testimonial-card">
-          <div class="aspect-[4/3] overflow-hidden"><img src="images/member-female-1.png" alt="メンバー" class="w-full h-full object-cover object-top"></div>
+          <div class="aspect-[4/3] overflow-hidden"><img src="images/member-male.png" alt="" class="w-full h-full object-cover object-top"></div>
           <div class="p-6">
             <h3 class="font-bold text-base mb-2">全くの未経験でも<br>活躍できるようになりました</h3>
-            <p class="text-black/40 text-sm leading-relaxed">元々はアパレル店員。入社後すぐにマーケティングの面白さにハマり、毎日仕事に没頭するように。仕事に熱狂する楽しさを知りました！</p>
+            <p class="text-black/40 text-sm leading-relaxed">元々はアパレル店員。入社後すぐにマーケティングの面白さにハマり、毎日仕事に没頭。</p>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="aspect-[4/3] overflow-hidden"><img src="images/member-male.png" alt="メンバー" class="w-full h-full object-cover object-top"></div>
+          <div class="aspect-[4/3] overflow-hidden"><img src="images/member-female-1.png" alt="" class="w-full h-full object-cover object-top"></div>
           <div class="p-6">
             <h3 class="font-bold text-base mb-2">信頼できる仲間が<br>できました</h3>
-            <p class="text-black/40 text-sm leading-relaxed">みんな前向きで常に仕事に熱狂しているところがいい。部活のように本気で仕事に取り組むからこそ、かけがえのない仲間にも出会えました。</p>
+            <p class="text-black/40 text-sm leading-relaxed">部活のように本気で仕事に取り組むからこそ、かけがえのない仲間にも出会えました。</p>
           </div>
         </div>
         <div class="testimonial-card">
-          <div class="aspect-[4/3] overflow-hidden"><img src="images/member-female-2.png" alt="メンバー" class="w-full h-full object-cover object-top"></div>
+          <div class="aspect-[4/3] overflow-hidden"><img src="images/member-female-2.png" alt="" class="w-full h-full object-cover object-top"></div>
           <div class="p-6">
             <h3 class="font-bold text-base mb-2">日々、自分の市場価値が<br>上がっているのを感じます</h3>
-            <p class="text-black/40 text-sm leading-relaxed">「やりたい」と手を挙げた人間に、社歴に関わらずチャンスをくれる会社。入社1年目から大きなプロジェクトのリーダーを任せてもらいました。</p>
+            <p class="text-black/40 text-sm leading-relaxed">入社1年目から大きなプロジェクトのリーダーを任せてもらいました。</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== CULTURE ===================== -->
+  <!-- CULTURE -->
   <section id="culture" class="py-20 md:py-32 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 animate-on-scroll">
         <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Culture</p>
         <h2 class="font-zen text-3xl md:text-5xl font-black">3つのカルチャー柱</h2>
       </div>
-
       <div class="space-y-16 md:space-y-24">
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center animate-on-scroll">
           <div>
-            <h3 class="font-zen text-4xl md:text-5xl font-black mb-1">MATE</h3>
-            <p class="text-accent font-bold mb-6">仲間</p>
+            <h3 class="font-zen text-4xl md:text-5xl font-black mb-1">MATE</h3><p class="text-accent font-bold mb-6">仲間</p>
             <div class="space-y-4">
-              <div><h4 class="font-bold mb-1">素直でいいやつ</h4><p class="text-black/50 text-sm leading-relaxed">フィードバックを素直に受け取れる。変なプライドより成長を選べる人。</p></div>
-              <div><h4 class="font-bold mb-1">超ポジティブ</h4><p class="text-black/50 text-sm leading-relaxed">問題が起きたとき「どうしよう」ではなく「どうしたらいけるか」を考える。</p></div>
-              <div><h4 class="font-bold mb-1">ありがとうを口癖に</h4><p class="text-black/50 text-sm leading-relaxed">当たり前のことにも感謝を伝える。それだけでチームの空気は変わる。</p></div>
+              <div><h4 class="font-bold mb-1">素直でいいやつ</h4><p class="text-black/50 text-sm">変なプライドより成長を選べる人。</p></div>
+              <div><h4 class="font-bold mb-1">超ポジティブ</h4><p class="text-black/50 text-sm">「どうしたらいけるか」を考える。</p></div>
+              <div><h4 class="font-bold mb-1">ありがとうを口癖に</h4><p class="text-black/50 text-sm">感謝を伝えるだけでチームの空気は変わる。</p></div>
             </div>
           </div>
-          <div class="photo-card aspect-[4/3]"><img src="images/team-hado-sign.jpg" alt="HADOチーム"></div>
+          <div class="photo-card aspect-[4/3]"><img src="images/team-hado-sign.jpg" alt=""></div>
         </div>
-
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center animate-on-scroll">
           <div class="md:order-2">
-            <h3 class="font-zen text-4xl md:text-5xl font-black mb-1">TRY</h3>
-            <p class="text-accent font-bold mb-6">挑戦</p>
+            <h3 class="font-zen text-4xl md:text-5xl font-black mb-1">TRY</h3><p class="text-accent font-bold mb-6">挑戦</p>
             <div class="space-y-4">
-              <div><h4 class="font-bold mb-1">まず打席に立て</h4><p class="text-black/50 text-sm leading-relaxed">完璧な企画を考えてから動くんじゃなくて、まず出してみる。5投稿して初めてわかることがある。</p></div>
-              <div><h4 class="font-bold mb-1">最前線をつくる側でいろ</h4><p class="text-black/50 text-sm leading-relaxed">誰かが作ったトレンドを追いかけるんじゃなくて、自分たちがトレンドを作る。</p></div>
+              <div><h4 class="font-bold mb-1">まず打席に立て</h4><p class="text-black/50 text-sm">完璧な企画を考えてから動くんじゃなくて、まず出してみる。</p></div>
+              <div><h4 class="font-bold mb-1">最前線をつくる側でいろ</h4><p class="text-black/50 text-sm">自分たちがトレンドを作る。</p></div>
             </div>
           </div>
-          <div class="photo-card aspect-[4/3] md:order-1"><img src="images/work-meeting.jpg" alt="ミーティング"></div>
+          <div class="photo-card aspect-[4/3] md:order-1"><img src="images/work-meeting.jpg" alt=""></div>
         </div>
-
         <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center animate-on-scroll">
           <div>
-            <h3 class="font-zen text-4xl md:text-5xl font-black mb-1">WIN</h3>
-            <p class="text-accent font-bold mb-6">成果</p>
+            <h3 class="font-zen text-4xl md:text-5xl font-black mb-1">WIN</h3><p class="text-accent font-bold mb-6">成果</p>
             <div class="space-y-4">
-              <div><h4 class="font-bold mb-1">背中で語る</h4><p class="text-black/50 text-sm leading-relaxed">「頑張りました」ではなく「10万再生出しました」で語る。最終的に数字で証明できるかどうか。</p></div>
-              <div><h4 class="font-bold mb-1">主人公であれ</h4><p class="text-black/50 text-sm leading-relaxed">環境や他人のせいにした瞬間、自分の成長は止まる。自分の人生の主導権は自分が握る。</p></div>
+              <div><h4 class="font-bold mb-1">背中で語る</h4><p class="text-black/50 text-sm">「10万再生出しました」で語る。</p></div>
+              <div><h4 class="font-bold mb-1">主人公であれ</h4><p class="text-black/50 text-sm">自分の人生の主導権は自分が握る。</p></div>
             </div>
           </div>
-          <div class="photo-card aspect-[4/3]"><img src="images/party-peace.jpg" alt="パーティ"></div>
+          <div class="photo-card aspect-[4/3]"><img src="images/bbq-group.jpg" alt=""></div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== GALLERY ===================== -->
+  <!-- GALLERY -->
   <section class="py-20 md:py-32 px-6 bg-white">
     <div class="max-w-6xl mx-auto">
       <div class="mb-12 animate-on-scroll">
@@ -475,95 +368,83 @@
         <p class="text-black/40 text-base">オフィスの名前は「アジト」。秘密基地のような、仲間との居場所。</p>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 animate-on-scroll">
-        <div class="photo-card col-span-2 row-span-2"><img src="images/bbq-rooftop-group.jpg" alt="BBQパーティ" class="aspect-square"></div>
-        <div class="photo-card"><img src="images/bbq-cheers.jpg" alt="乾杯" class="aspect-square"></div>
-        <div class="photo-card"><img src="images/fun-food.png" alt="食事" class="aspect-square"></div>
-        <div class="photo-card"><img src="images/bbq-girls-smile.jpg" alt="笑顔" class="aspect-square"></div>
-        <div class="photo-card"><img src="images/yakatabune.jpg" alt="屋形船" class="aspect-square"></div>
-        <div class="photo-card"><img src="images/bbq-laughing.jpg" alt="みんなで笑う" class="aspect-square"></div>
-        <div class="photo-card"><img src="images/party-group.jpg" alt="パーティ集合" class="aspect-square"></div>
-        <div class="photo-card"><img src="images/bbq-chatting.jpg" alt="談笑" class="aspect-square"></div>
-        <div class="photo-card"><img src="images/okinawa-sunset.jpg" alt="沖縄旅行" class="aspect-square"></div>
+        <div class="photo-card col-span-2 row-span-2"><img src="images/party-group.jpg" alt="" class="aspect-square"></div>
+        <div class="photo-card"><img src="images/fun-food.png" alt="" class="aspect-square"></div>
+        <div class="photo-card"><img src="images/bbq-cheers.jpg" alt="" class="aspect-square"></div>
+        <div class="photo-card"><img src="images/yakatabune.jpg" alt="" class="aspect-square"></div>
+        <div class="photo-card"><img src="images/bbq-night.jpg" alt="" class="aspect-square"></div>
+        <div class="photo-card"><img src="images/okinawa-sunset.jpg" alt="" class="aspect-square"></div>
       </div>
     </div>
   </section>
 
-
-  <!-- ===== MID CTA 2 ===== -->
-  <section class="py-12 px-6 bg-cream text-center">
-    <div class="max-w-md mx-auto animate-on-scroll">
-      <p class="text-black/40 text-sm mb-4">少しでも気になったら、まずはLINEから</p>
-      <a href="#entry" class="pill-link-accent w-full justify-center">カジュアルに話を聞いてみる →</a>
+  <!-- MID CTA 3 -->
+  <section class="py-10 px-6">
+    <div class="max-w-lg mx-auto mid-cta animate-on-scroll">
+      <p class="font-zen font-black text-lg mb-4">仲間と一緒に、全力で働きませんか？</p>
+      <a href="#entry" class="line-cta w-full justify-center">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        話を聞いてみる
+      </a>
     </div>
   </section>
 
+  <div class="section-line max-w-6xl mx-auto"></div>
 
-  <!-- ===================== JOB DETAILS ===================== -->
+  <!-- JOB DETAILS -->
   <section class="py-20 md:py-32 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 animate-on-scroll">
-        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Job Details</p>
-        <h2 class="font-zen text-3xl md:text-5xl font-black">業務詳細</h2>
+        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">What's the Job?</p>
+        <h2 class="font-zen text-3xl md:text-5xl font-black">SNSが好きなら、<br>それが仕事になる</h2>
       </div>
       <div class="grid md:grid-cols-3 gap-6 animate-on-scroll">
-        <div class="info-card"><div class="text-3xl mb-3">📱</div><h3 class="font-bold text-lg mb-2">SNSコンテンツ制作</h3><p class="text-black/40 text-sm leading-relaxed">商材や市場のリサーチで最新のトレンドを掴み、常に流行の最先端を走り続ける。</p></div>
-        <div class="info-card"><div class="text-3xl mb-3">🎬</div><h3 class="font-bold text-lg mb-2">SNS広告制作</h3><p class="text-black/40 text-sm leading-relaxed">クライアントの商材やサービスが自然と売れるような、細部にまでこだわり尽くした広告を作成。</p></div>
-        <div class="info-card"><div class="text-3xl mb-3">📊</div><h3 class="font-bold text-lg mb-2">SNS広告運用</h3><p class="text-black/40 text-sm leading-relaxed">作成した広告を運用し、数値の確認やデータをもとに更に売れる広告のための仮説検証を行う。</p></div>
+        <div class="info-card"><div class="text-3xl mb-3">📱</div><h3 class="font-bold text-lg mb-2">SNSコンテンツ制作</h3><p class="text-black/40 text-sm leading-relaxed">トレンドをリサーチして、バズる動画を企画・制作。</p></div>
+        <div class="info-card"><div class="text-3xl mb-3">🎬</div><h3 class="font-bold text-lg mb-2">SNS広告制作</h3><p class="text-black/40 text-sm leading-relaxed">自然と売れるような、細部にこだわり尽くした広告を作成。</p></div>
+        <div class="info-card"><div class="text-3xl mb-3">📊</div><h3 class="font-bold text-lg mb-2">SNS広告運用</h3><p class="text-black/40 text-sm leading-relaxed">データをもとに更に売れる広告のための仮説検証を行う。</p></div>
       </div>
     </div>
   </section>
 
   <div class="section-line max-w-6xl mx-auto"></div>
 
-
-  <!-- ===================== CAREER PATH ===================== -->
+  <!-- CAREER PATH -->
   <section id="career" class="py-20 md:py-32 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 animate-on-scroll">
         <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Career Path</p>
         <h2 class="font-zen text-3xl md:text-5xl font-black mb-4">キャリアパス</h2>
-        <p class="text-black/40 text-base">入社時期や年功序列は関係なし。実力次第で駆け上がれる。</p>
+        <p class="text-black/40 text-base">実力次第で駆け上がれる。年功序列は関係なし。</p>
       </div>
-
       <div class="animate-on-scroll">
-        <div class="max-w-md mx-auto mb-8">
+        <div class="max-w-md mx-auto mb-6">
           <div class="info-card text-center border-2 border-accent/20">
             <p class="text-accent text-xs font-bold tracking-wider uppercase mb-2">Entry</p>
             <h3 class="font-zen text-xl font-black mb-1">アシスタントディレクター</h3>
-            <p class="text-black/40 text-sm mb-3">既存の勝ちパターンの量産、撮影・編集・運用をサポート</p>
+            <p class="text-black/40 text-sm mb-3">既存の勝ちパターンの量産、撮影・編集・運用サポート</p>
             <p class="data-number text-lg">月給 25〜30万円</p>
           </div>
         </div>
-
-        <div class="flex justify-center mb-8"><div class="w-px h-12 bg-accent/30"></div></div>
-
+        <div class="flex justify-center mb-6"><div class="w-px h-10 bg-accent/30"></div></div>
         <div class="grid md:grid-cols-2 gap-6">
           <div class="space-y-4">
-            <div class="text-center mb-2">
-              <span class="inline-block border-2 border-black rounded-full text-sm font-bold px-4 py-1">Creative Track</span>
-              <p class="text-black/40 text-xs mt-2">表現を極めて、市場を拓く</p>
-            </div>
+            <div class="text-center mb-2"><span class="inline-block border-2 border-black rounded-full text-sm font-bold px-4 py-1">Creative Track</span></div>
             <div class="info-card"><h4 class="font-bold mb-1">クリエイティブディレクター</h4><p class="text-black/40 text-sm mb-2">新規クリエイティブの開拓</p><p class="data-number text-base">月給 30〜40万円</p></div>
             <div class="info-card"><h4 class="font-bold mb-1">R&Dディレクター</h4><p class="text-black/40 text-sm mb-2">新規媒体、新規事業の開拓</p><p class="data-number text-base">月給 33〜45万円</p></div>
           </div>
           <div class="space-y-4">
-            <div class="text-center mb-2">
-              <span class="inline-block border-2 border-black rounded-full text-sm font-bold px-4 py-1">Management Track</span>
-              <p class="text-black/40 text-xs mt-2">組織を育て、仕組みで勝つ</p>
-            </div>
-            <div class="info-card"><h4 class="font-bold mb-1">オペレーションマネージャー</h4><p class="text-black/40 text-sm mb-2">既存の勝ちパターンを再現性持たせて拡大</p><p class="data-number text-base">月給 40〜50万円</p></div>
-            <div class="info-card"><h4 class="font-bold mb-1">プロデューサー</h4><p class="text-black/40 text-sm mb-2">チーム全体のプロデュース、ビジネス設計</p><p class="data-number text-base">月給 50〜60万円</p></div>
+            <div class="text-center mb-2"><span class="inline-block border-2 border-black rounded-full text-sm font-bold px-4 py-1">Management Track</span></div>
+            <div class="info-card"><h4 class="font-bold mb-1">オペレーションマネージャー</h4><p class="text-black/40 text-sm mb-2">勝ちパターンを再現性持たせて拡大</p><p class="data-number text-base">月給 40〜50万円</p></div>
+            <div class="info-card"><h4 class="font-bold mb-1">プロデューサー</h4><p class="text-black/40 text-sm mb-2">事業設計・チーム統括</p><p class="data-number text-base">月給 50〜60万円</p></div>
           </div>
         </div>
-        <p class="text-center mt-10 text-black/40 text-sm">✨ 実力次第で役員登用実績あり</p>
       </div>
     </div>
   </section>
 
   <div class="section-line max-w-6xl mx-auto"></div>
 
-
-  <!-- ===================== SUPPORT ===================== -->
+  <!-- SUPPORT -->
   <section class="py-20 md:py-32 px-6">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 animate-on-scroll">
@@ -571,104 +452,43 @@
         <h2 class="font-zen text-3xl md:text-5xl font-black">チームを支える制度</h2>
       </div>
       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 animate-on-scroll">
-        <div class="info-card"><div class="text-3xl mb-3">💰</div><h3 class="font-bold text-lg mb-2">インセンティブ制度</h3><p class="text-black/40 text-sm leading-relaxed">事業目標の達成度によってチームにインセンティブ原資がたまり、各メンバーの貢献度によって毎月配分。</p></div>
-        <div class="info-card"><div class="text-3xl mb-3">🎯</div><h3 class="font-bold text-lg mb-2">5投稿ルール</h3><p class="text-black/40 text-sm leading-relaxed">新規クリエイティブは5本以内に10万再生を超えるかで継続・撤退を判断。仮説検証のスピードを重視。</p></div>
-        <div class="info-card sm:col-span-2 lg:col-span-1"><div class="text-3xl mb-3">🏠</div><h3 class="font-bold text-lg mb-2">引っ越し・休学支援</h3><p class="text-black/40 text-sm leading-relaxed">本気で働きたいメンバーを最大50万円でサポート。引っ越し初期費用や休学費用を会社が負担。</p></div>
+        <div class="info-card"><div class="text-3xl mb-3">💰</div><h3 class="font-bold text-lg mb-2">インセンティブ制度</h3><p class="text-black/40 text-sm leading-relaxed">事業目標の達成度に応じて毎月配分。頑張りが給与に反映されます。</p></div>
+        <div class="info-card"><div class="text-3xl mb-3">🎯</div><h3 class="font-bold text-lg mb-2">5投稿ルール</h3><p class="text-black/40 text-sm leading-relaxed">5本以内に10万再生を超えるかで継続・撤退を判断。スピード重視。</p></div>
+        <div class="info-card sm:col-span-2 lg:col-span-1"><div class="text-3xl mb-3">🏠</div><h3 class="font-bold text-lg mb-2">引っ越し・休学支援</h3><p class="text-black/40 text-sm leading-relaxed">最大50万円サポート。引っ越し初期費用や休学費用を会社が負担。</p></div>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== CEO ===================== -->
-  <section class="py-20 md:py-32 px-6 bg-[#1a1a1a] text-white">
+  <!-- CEO -->
+  <section class="py-20 md:py-32 px-6 bg-white">
     <div class="max-w-4xl mx-auto animate-on-scroll">
-      <div class="mb-12 text-center">
-        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Message from CEO</p>
-        <h2 class="font-zen text-3xl md:text-5xl font-black">だからこそ、今。</h2>
-      </div>
-      <div class="max-w-2xl mx-auto mb-12">
-        <p class="text-white/60 text-base md:text-lg leading-loose mb-6">
-          世界を前に進めるのに、年齢は関係ない。<br>
-          むしろ若いエネルギーを才能開花にフルベットすることこそが重要だと。
-        </p>
-        <p class="text-white/60 text-base md:text-lg leading-loose mb-6">
-          「若いうちはまず大企業で経験を積んでから〜」<br>
-          なんて言っていると、あれよあれよというまにエネルギーは落ちたり、家族ができたりと、挑戦のハードルが上がっていきます。
-        </p>
-        <p class="text-white font-zen text-xl md:text-2xl font-black leading-relaxed">
-          だからこそ、今。<br>
-          人生で一番気力のある今、挑戦をしよう。
-        </p>
-      </div>
-      <div class="flex flex-col items-center">
-        <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden mb-4">
-          <img src="images/ceo-tanaka.jpg" alt="田中大雅" class="w-full h-full object-cover object-top">
-        </div>
-        <p class="text-white/40 text-xs">代表取締役</p>
-        <p class="font-zen text-lg font-black">田中 大雅</p>
-        <p class="text-white/30 text-xs mt-1">97年生。慶應大学中退。上場企業に8億円で会社売却経験済みの連続起業家。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== HEAT SUMMARY ===== -->
-  <section class="py-16 md:py-24 px-6 bg-accent text-white">
-    <div class="max-w-4xl mx-auto animate-on-scroll">
-      <h2 class="font-zen text-2xl md:text-4xl font-black text-center mb-10">HADOで仕事に<span class="underline decoration-4 underline-offset-4">熱狂</span>しませんか？</h2>
-      <div class="grid sm:grid-cols-3 gap-4 text-center">
-        <div class="bg-white/20 backdrop-blur rounded-2xl p-6">
-          <div class="text-3xl mb-2">✅</div>
-          <h3 class="font-bold text-lg">正当な<br>評価制度</h3>
-        </div>
-        <div class="bg-white/20 backdrop-blur rounded-2xl p-6">
-          <div class="text-3xl mb-2">✅</div>
-          <h3 class="font-bold text-lg">挑戦できる<br>環境</h3>
-        </div>
-        <div class="bg-white/20 backdrop-blur rounded-2xl p-6">
-          <div class="text-3xl mb-2">✅</div>
-          <h3 class="font-bold text-lg">若手の<br>高い熱量</h3>
-        </div>
-      </div>
-      <p class="text-center text-white/80 text-base md:text-lg font-bold mt-8">当たり前の基準が高い環境で、圧倒的キャリアアップ。</p>
-    </div>
-  </section>
-
-
-  <!-- ===================== COMPANY INFO ===================== -->
-  <section class="py-20 md:py-28 px-6">
-    <div class="max-w-5xl mx-auto animate-on-scroll">
       <div class="mb-12">
-        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">About HADO</p>
-        <h2 class="font-zen text-2xl md:text-4xl font-black">MOVE THE WORLD FORWARD</h2>
-        <p class="text-black/40 text-sm mt-1">世界を前に進める表現者</p>
+        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Message from CEO</p>
+        <h2 class="font-zen text-3xl md:text-5xl font-black">だからこそ、<span class="text-accent">今。</span></h2>
       </div>
-      <div class="info-card mb-8">
-        <div class="grid sm:grid-cols-2 gap-6">
-          <div class="space-y-4">
-            <div><p class="text-black/30 text-xs mb-1">社名</p><p class="font-bold">株式会社HADO（ハドウ）</p></div>
-            <div><p class="text-black/30 text-xs mb-1">設立</p><p>2020年11月06日</p></div>
-            <div><p class="text-black/30 text-xs mb-1">代表取締役</p><p>田中 大雅</p></div>
-            <div><p class="text-black/30 text-xs mb-1">従業員数</p><p>40名（子会社・支社含む）</p></div>
+      <div class="grid md:grid-cols-[240px_1fr] gap-8 md:gap-12 items-start">
+        <div class="flex flex-col items-center">
+          <div class="w-40 h-40 md:w-52 md:h-52 rounded-full overflow-hidden">
+            <img src="images/ceo-tanaka.jpg" alt="田中大雅" class="w-full h-full object-cover object-top">
           </div>
-          <div class="space-y-4">
-            <div><p class="text-black/30 text-xs mb-1">事業内容</p><p>SNSマーケティング / 人材紹介 / Eコマース</p></div>
-            <div><p class="text-black/30 text-xs mb-1">所在地（東京）</p><p class="text-sm">東京都渋谷区桜丘町21-4 渋谷桜丘町ビル3F</p></div>
-            <div><p class="text-black/30 text-xs mb-1">所在地（福岡）</p><p class="text-sm">福岡県福岡市博多区博多駅前4丁目3-3 博多八百治ビル9F</p></div>
-            <div><p class="text-black/30 text-xs mb-1">会社HP</p><a href="https://hado.co.jp/" target="_blank" class="text-accent hover:underline">https://hado.co.jp/</a></div>
+          <div class="text-center mt-4">
+            <p class="text-black/40 text-xs">代表取締役</p>
+            <p class="font-zen text-xl font-black">田中 大雅</p>
+            <p class="text-black/30 text-xs mt-1">97年生・連続起業家</p>
           </div>
         </div>
-      </div>
-      <div class="grid grid-cols-2 gap-4">
-        <div class="info-card text-center"><p class="data-number text-3xl md:text-4xl mb-1">3<span class="text-lg">億円</span></p><p class="text-black/40 text-xs">累計資金調達</p></div>
-        <div class="info-card text-center"><p class="data-number text-3xl md:text-4xl mb-1">5<span class="text-lg">年</span></p><p class="text-black/40 text-xs">で複数事業を創出</p></div>
+        <div class="info-card">
+          <p class="text-black/60 text-sm md:text-base leading-loose">
+            世界を前に進めるのに、年齢は関係ない。むしろ若いエネルギーを才能開花にフルベットすることこそが重要だと。<br><br>
+            「若いうちはまず大企業で経験を積んでから〜」なんて言っていると、あれよあれよというまにエネルギーは落ちたり、家族ができたりと、挑戦のハードルが上がっていきます。<br><br>
+            上場企業に<strong class="text-black">8億円で会社売却済み</strong>の連続起業家として断言します。HADOは「一つの事業を立ち上げて終わりの会社」ではない。だから、<strong class="text-accent">「次に何を仕掛けるか」を一緒に考えられる仲間</strong>を探しています。
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
-  <div class="section-line max-w-6xl mx-auto"></div>
-
-
-  <!-- ===================== REQUIREMENTS ===================== -->
+  <!-- REQUIREMENTS -->
   <section class="py-20 md:py-32 px-6">
     <div class="max-w-4xl mx-auto animate-on-scroll">
       <div class="mb-12">
@@ -678,73 +498,76 @@
       <div class="info-card">
         <table class="w-full text-sm md:text-base">
           <tbody>
-            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-black/40 font-medium whitespace-nowrap align-top w-28 md:w-40">募集職種</td><td class="py-4 font-medium">SNSマーケター</td></tr>
-            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-black/40 font-medium whitespace-nowrap align-top">雇用形態</td><td class="py-4">正社員</td></tr>
-            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-black/40 font-medium whitespace-nowrap align-top">対象</td><td class="py-4">30歳以下（長期キャリア形成のため）</td></tr>
-            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-black/40 font-medium whitespace-nowrap align-top">給与</td><td class="py-4"><strong class="text-accent">月給25万〜60万円</strong>（経験・能力に応じて決定）<br><span class="text-black/40 text-xs">※初年度年収350万〜450万円目安</span></td></tr>
-            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-black/40 font-medium whitespace-nowrap align-top">勤務時間</td><td class="py-4">9:00〜18:00（実働8時間）</td></tr>
-            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-black/40 font-medium whitespace-nowrap align-top">休日</td><td class="py-4">年間休日125日 / 完全週休2日制（土日祝）<br><span class="text-black/40 text-xs">夏季・年末年始・有給・産休育休あり</span></td></tr>
-            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-black/40 font-medium whitespace-nowrap align-top">勤務地</td><td class="py-4">
-              <strong>東京本社</strong>：渋谷区桜丘町21-4 渋谷桜丘町ビル3F<br>
-              <strong>福岡支社</strong>：博多区博多駅前4-3-3 博多八百治ビル9F<br>
-              <span class="text-black/40 text-xs">※各駅から徒歩6分</span>
-            </td></tr>
-            <tr><td class="py-4 pr-4 text-black/40 font-medium whitespace-nowrap align-top">福利厚生</td><td class="py-4">各種社会保険完備 / インセンティブ制度 / 引越支援（最大50万円）/ 休学支援 / 各種研修制度</td></tr>
+            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-accent font-bold w-28 md:w-36 align-top">職種</td><td class="py-4">SNSマーケター</td></tr>
+            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-accent font-bold align-top">雇用形態</td><td class="py-4">正社員</td></tr>
+            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-accent font-bold align-top">対象</td><td class="py-4">30歳以下</td></tr>
+            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-accent font-bold align-top">給与</td><td class="py-4">月給25万〜60万円<br><span class="text-black/40 text-xs">※初年度年収350万〜450万円目安</span></td></tr>
+            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-accent font-bold align-top">勤務時間</td><td class="py-4">9:00〜18:00（実働8時間）</td></tr>
+            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-accent font-bold align-top">休日</td><td class="py-4">年間休日125日<br>完全週休2日制（土日祝）</td></tr>
+            <tr class="border-b border-black/5"><td class="py-4 pr-4 text-accent font-bold align-top">勤務地</td><td class="py-4">東京：渋谷区桜丘町<br>福岡：博多区博多駅前<br><span class="text-black/40 text-xs">※各駅から徒歩6分</span></td></tr>
+            <tr><td class="py-4 pr-4 text-accent font-bold align-top">福利厚生</td><td class="py-4">社会保険完備 / インセンティブ / 引越支援（最大50万円）/ 各種研修</td></tr>
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
-
-  <!-- ===================== FLOW ===================== -->
-  <section class="py-20 md:py-32 px-6 bg-white">
+  <!-- COMPANY INFO -->
+  <section class="py-16 px-6 bg-white">
     <div class="max-w-4xl mx-auto animate-on-scroll">
-      <div class="text-center mb-12">
-        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Flow</p>
-        <h2 class="font-zen text-3xl md:text-5xl font-black">選考開始までの流れ</h2>
-        <p class="text-black/40 text-sm mt-4">たった3ステップで選考スタート。まずはLINEから！</p>
-      </div>
-      <div class="grid sm:grid-cols-3 gap-6">
-        <div class="info-card text-center relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">STEP 01</div>
-          <div class="text-4xl mt-4 mb-4">📱</div>
-          <h3 class="font-zen text-lg font-black mb-2">LINE登録</h3>
-          <p class="text-black/40 text-sm">下のボタンからHADO採用LINEを友だち追加</p>
+      <div class="info-card">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <div><p class="text-black/30 text-xs mb-1">社名</p><p class="font-bold">株式会社HADO（ハドウ）</p></div>
+            <div><p class="text-black/30 text-xs mb-1">設立</p><p>2020年11月06日</p></div>
+            <div><p class="text-black/30 text-xs mb-1">従業員数</p><p>40名（子会社・支社含む）</p></div>
+          </div>
+          <div class="space-y-4">
+            <div><p class="text-black/30 text-xs mb-1">事業</p><p>SNSマーケティング / 人材紹介 / Eコマース</p></div>
+            <div><p class="text-black/30 text-xs mb-1">資金調達</p><p>累計8億円</p></div>
+            <div><p class="text-black/30 text-xs mb-1">会社HP</p><a href="https://hado.co.jp/" target="_blank" class="text-accent hover:underline">https://hado.co.jp/</a></div>
+          </div>
         </div>
-        <div class="info-card text-center relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">STEP 02</div>
-          <div class="text-4xl mt-4 mb-4">✍️</div>
-          <h3 class="font-zen text-lg font-black mb-2">LINEで簡単エントリー</h3>
-          <p class="text-black/40 text-sm">LINEのトーク画面から簡単な質問に回答</p>
-        </div>
-        <div class="info-card text-center relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-white text-xs font-bold px-3 py-1 rounded-full">STEP 03</div>
-          <div class="text-4xl mt-4 mb-4">🤝</div>
-          <h3 class="font-zen text-lg font-black mb-2">選考開始</h3>
-          <p class="text-black/40 text-sm">カジュアル面談からスタート。服装自由・オンラインOK</p>
-        </div>
-      </div>
-      <div class="text-center mt-8">
-        <p class="text-black/30 text-sm">※ カジュアル面談は選考ではありません。お気軽にご参加ください。</p>
       </div>
     </div>
   </section>
 
   <div class="section-line max-w-6xl mx-auto"></div>
 
+  <!-- FLOW -->
+  <section class="py-20 md:py-32 px-6">
+    <div class="max-w-3xl mx-auto animate-on-scroll">
+      <div class="mb-12">
+        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Flow</p>
+        <h2 class="font-zen text-3xl md:text-5xl font-black">応募はたった3ステップ</h2>
+      </div>
+      <div class="space-y-6">
+        <div class="flex items-start gap-5">
+          <div class="w-12 h-12 rounded-full bg-accent text-white font-zen font-black text-lg flex items-center justify-center shrink-0">01</div>
+          <div><h3 class="font-bold text-lg mb-1">LINE登録</h3><p class="text-black/40 text-sm">ボタンからHADO採用LINEを友だち追加</p></div>
+        </div>
+        <div class="flex items-start gap-5">
+          <div class="w-12 h-12 rounded-full bg-accent text-white font-zen font-black text-lg flex items-center justify-center shrink-0">02</div>
+          <div><h3 class="font-bold text-lg mb-1">簡単エントリー</h3><p class="text-black/40 text-sm">LINEで簡単な質問に回答するだけ</p></div>
+        </div>
+        <div class="flex items-start gap-5">
+          <div class="w-12 h-12 rounded-full bg-accent text-white font-zen font-black text-lg flex items-center justify-center shrink-0">03</div>
+          <div><h3 class="font-bold text-lg mb-1">カジュアル面談</h3><p class="text-black/40 text-sm">服装自由・オンラインOK</p></div>
+        </div>
+      </div>
+      <div class="mt-8 bg-white rounded-2xl p-6 text-center shadow-sm">
+        <p class="text-black/50 text-sm">面談は約30分。<strong class="text-black">選考ではありません。</strong><br>質問だけでもOKです。</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- ===================== CTA ===================== -->
+  <!-- FINAL CTA -->
   <section id="entry" class="py-24 md:py-40 px-6">
     <div class="max-w-3xl mx-auto text-center animate-on-scroll">
-      <h2 class="font-zen text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-8">
-        一生文化祭みたいに、<br>仕事しない？
-      </h2>
-      <p class="text-black/50 text-base md:text-lg leading-relaxed mb-4 max-w-xl mx-auto">
-        Sparklersのカルチャーは、まだ完成されたものじゃない。<br>今まさに形成期。あなたにそのカルチャーを一緒に作る第一人者になってほしい。
-      </p>
-      <p class="text-black/30 text-sm mb-12">完成品に乗るのではなく、自分たちで作る。それがSparklersの今のフェーズ。</p>
-      <a href="#" class="pill-filled text-lg">
+      <h2 class="font-zen text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-8">一生<span class="text-accent">文化祭</span>みたいに、<br>仕事しない？</h2>
+      <p class="text-black/50 text-base md:text-lg leading-relaxed mb-4 max-w-xl mx-auto">Sparklersのカルチャーは、まだ完成されたものじゃない。<br>今まさに形成期。あなたに一緒に作る第一人者になってほしい。</p>
+      <p class="text-black/30 text-sm mb-12">完成品に乗るのではなく、自分たちで作る。</p>
+      <a href="#" class="line-cta text-lg">
         <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
         話を聞いてみる
       </a>
@@ -752,19 +575,14 @@
     </div>
   </section>
 
-
-  <!-- ===================== FOOTER ===================== -->
+  <!-- FOOTER -->
   <footer class="py-12 px-6 border-t border-black/10">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-      <div>
-        <p class="font-zen text-xl font-black">HADO Inc.</p>
-        <p class="text-black/30 text-xs">MOVE THE WORLD FORWARD</p>
-      </div>
+      <div><p class="font-zen text-xl font-black">HADO Inc.</p><p class="text-black/30 text-xs">MOVE THE WORLD FORWARD</p></div>
       <div class="flex flex-wrap justify-center gap-6">
         <a href="https://hado.co.jp/" target="_blank" class="text-black/30 hover:text-accent text-sm transition-colors">Company</a>
         <a href="#about" class="text-black/30 hover:text-accent text-sm transition-colors">About</a>
         <a href="#culture" class="text-black/30 hover:text-accent text-sm transition-colors">Culture</a>
-        <a href="#career" class="text-black/30 hover:text-accent text-sm transition-colors">Career</a>
         <a href="#entry" class="text-black/30 hover:text-accent text-sm transition-colors">Entry</a>
       </div>
     </div>
@@ -773,13 +591,15 @@
 
   <!-- STICKY CTA (mobile) -->
   <div class="sticky-cta md:hidden" id="stickyCta">
-    <div class="flex justify-center"><a href="#entry" class="pill-filled text-sm !py-3 !px-8 w-full max-w-sm flex items-center justify-center gap-2">話を聞いてみる <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg></a></div>
+    <a href="#entry" class="line-cta w-full justify-center text-sm !py-3">
+      話を聞いてみる
+      <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    </a>
   </div>
 
   <script>
     const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
-
     const stickyCta = document.getElementById('stickyCta');
     const heroSection = document.getElementById('hero');
     const entrySection = document.getElementById('entry');
@@ -789,7 +609,6 @@
       stickyCta.classList.toggle('show', !hv && !ev);
     }, { threshold: 0.1 });
     stickyObs.observe(heroSection); stickyObs.observe(entrySection);
-
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function(e) { e.preventDefault(); const t = document.querySelector(this.getAttribute('href')); if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' }); });
     });

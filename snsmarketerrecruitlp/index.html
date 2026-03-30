@@ -42,27 +42,19 @@
     .delay-3 { transition-delay: 0.32s; }
 
     /* ── hero stagger ── */
-    .hero-el { opacity: 0; transform: translateY(40px); transition: opacity 0.85s cubic-bezier(0.16,1,0.3,1), transform 0.85s cubic-bezier(0.16,1,0.3,1); }
+    .hero-el { opacity: 0; transform: translateY(44px); transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1); }
     .hero-el.in { opacity: 1; transform: translateY(0); }
 
     /* ── gradient text ── */
     .grad-text { background: linear-gradient(120deg, #E8872E 0%, #F5C36A 60%, #E8872E 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
     /* ── buttons ── */
-    .pill-link { display: inline-flex; align-items: center; border: 2px solid #1a1a1a; border-radius: 60px; padding: 16px 32px; font-weight: 700; font-size: 1rem; color: #1a1a1a; text-decoration: none; transition: all 0.3s ease; }
-    .pill-link:hover { background: #1a1a1a; color: #FDF6E3; }
-    .pill-link-light { display: inline-flex; align-items: center; border: 2px solid rgba(255,255,255,0.6); border-radius: 60px; padding: 16px 32px; font-weight: 700; font-size: 1rem; color: #fff; text-decoration: none; transition: all 0.3s ease; }
-    .pill-link-light:hover { background: rgba(255,255,255,0.15); }
-    .pill-filled { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 60px; padding: 18px 48px; font-weight: 900; font-size: 1.1rem; color: #FDF6E3; text-decoration: none; transition: all 0.3s ease; background: #1a1a1a; }
-    .pill-filled:hover { background: #333; transform: translateY(-2px); }
     .line-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; border-radius: 60px; padding: 18px 48px; font-weight: 900; font-size: 1.1rem; color: #fff; text-decoration: none; transition: all 0.3s ease; background: #06C755; }
     .line-cta:hover { background: #05b34c; transform: translateY(-2px); }
 
     /* ── cards ── */
     .info-card { background: #fff; border-radius: 20px; padding: 32px; box-shadow: 0 2px 20px rgba(0,0,0,0.04); transition: all 0.3s ease; }
     .info-card:hover { box-shadow: 0 8px 40px rgba(0,0,0,0.08); transform: translateY(-4px); }
-    .info-card-dark { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 32px; transition: all 0.3s ease; }
-    .info-card-dark:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); }
     .photo-card { border-radius: 16px; overflow: hidden; }
     .photo-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
     .photo-card:hover img { transform: scale(1.03); }
@@ -72,12 +64,9 @@
 
     /* ── testimonials ── */
     .testimonial-card { background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 20px rgba(0,0,0,0.04); }
-    .voice-chip { display: inline-block; border: 1.5px solid rgba(255,255,255,0.4); border-radius: 40px; padding: 12px 24px; font-weight: 700; font-size: 0.9rem; transition: all 0.3s ease; white-space: nowrap; color: rgba(255,255,255,0.75); }
-    .voice-chip:hover { background: rgba(255,255,255,0.15); color: #fff; }
 
     /* ── data numbers ── */
     .data-number { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; color: #E8872E; }
-    .data-number-light { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; }
 
     /* ── sticky cta ── */
     .sticky-cta { position: fixed; bottom: 0; left: 0; right: 0; z-index: 50; background: rgba(253,246,227,0.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(0,0,0,0.08); padding: 12px 16px; transform: translateY(100%); transition: transform 0.4s ease; }
@@ -89,30 +78,27 @@
     /* ── section line ── */
     .section-line { height: 1px; background: #1a1a1a; opacity: 0.1; }
 
-    /* ── wave dividers ── */
-    .wave-down-dark { display: block; width: 100%; margin-bottom: -2px; }
-    .wave-up-cream { display: block; width: 100%; margin-top: -2px; }
-
-    /* ── parallax hero ── */
-    #hero-img-wrap { overflow: hidden; border-radius: 16px; }
-    #hero-img { transform: scale(1.08); will-change: transform; }
-
     /* ── swiper tweaks ── */
-    .swiper-pagination-bullet { background: rgba(255,255,255,0.4) !important; }
+    .swiper-pagination-bullet { background: rgba(0,0,0,0.25) !important; }
     .swiper-pagination-bullet-active { background: #E8872E !important; }
-    .swiper-button-next, .swiper-button-prev { color: #E8872E !important; }
+
+    /* ── hero parallax ── */
+    #hero-img { will-change: transform; }
+
+    /* ── scroll indicator ── */
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+    .scroll-down { animation: bounce 2s infinite; }
   </style>
 </head>
 <body>
 
   <!-- NAV -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-md border-b border-black/5">
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-md border-b border-white/10" id="mainNav">
     <div class="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-      <a href="#"><img src="images/hado-logo-cropped.png" alt="HADO" class="h-6 md:h-7"></a>
+      <a href="#"><img src="images/hado-logo-cropped.png" alt="HADO" class="h-6 md:h-7" style="filter:invert(1) brightness(10);"></a>
       <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-        <a href="#about" class="hover:text-accent transition-colors">About</a>
-        <a href="#culture" class="hover:text-accent transition-colors">Culture</a>
-        <a href="#career" class="hover:text-accent transition-colors">Career</a>
+        <a href="#about" class="text-white/70 hover:text-white transition-colors">About</a>
+        <a href="#career" class="text-white/70 hover:text-white transition-colors">Career</a>
         <a href="#entry" class="inline-flex items-center gap-2 bg-line text-white font-bold text-sm px-5 py-2.5 rounded-full hover:bg-[#05b34c] transition-colors">
           <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           LINEで話を聞く
@@ -121,65 +107,53 @@
     </div>
   </nav>
 
-  <!-- ===== HERO ===== -->
-  <section id="hero" class="pt-20 md:pt-28 pb-0 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div id="hero-img-wrap" class="aspect-[16/7] md:aspect-[16/6] mb-12 md:mb-16">
-        <img id="hero-img" src="images/hero-stairs.jpg" alt="HADOチーム" class="w-full h-full object-cover object-[center_30%]">
+  <!-- ===== HERO — full-bleed ===== -->
+  <section id="hero" class="relative overflow-hidden" style="min-height:100svh; display:flex; align-items:flex-end; background:#111;">
+    <!-- BG photo -->
+    <div class="absolute inset-0">
+      <img id="hero-img" src="images/hero-stairs.jpg" alt="HADOチーム" style="width:100%;height:100%;object-fit:cover;object-position:center 30%;transform:scale(1.08);">
+      <div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0.25) 35%, rgba(0,0,0,0.72) 80%, rgba(0,0,0,0.85) 100%);"></div>
+    </div>
+    <!-- Content -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-6 pb-16 md:pb-24">
+      <p class="hero-el font-bold text-sm tracking-widest uppercase mb-5" style="color:rgba(255,255,255,0.55);">SNS Marketing Team — Sparklers</p>
+      <h1 class="hero-el font-zen font-black leading-[1.05] mb-6" style="color:#fff; font-size:clamp(2.6rem,8vw,6rem);">未経験から最速で<br><span class="grad-text">一流のマーケター</span>に。</h1>
+      <p class="hero-el font-bold mb-3" style="color:rgba(255,255,255,0.85); font-size:clamp(1rem,2.5vw,1.25rem);">平均年収675万円。90%が未経験スタート。</p>
+      <p class="hero-el leading-relaxed mb-10 max-w-xl" style="color:rgba(255,255,255,0.5); font-size:clamp(0.9rem,1.8vw,1.1rem);">普通の会社だと10年かかる挑戦や経験が、<br>HADOなら20代で全部できる。</p>
+      <div class="hero-el">
+        <a href="#entry" class="line-cta" style="font-size:clamp(1rem,2vw,1.15rem);">
+          <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          話を聞いてみる
+        </a>
       </div>
-      <div class="max-w-3xl pb-16 md:pb-24">
-        <p class="hero-el text-accent font-bold text-sm md:text-base tracking-widest uppercase mb-4">SNS Marketing Team — Sparklers</p>
-        <h1 class="hero-el font-zen text-4xl md:text-6xl lg:text-7xl font-black leading-[1.1] mb-6">未経験から最速で<br><span class="grad-text">一流のマーケター</span>に。</h1>
-        <p class="hero-el text-black/70 text-lg md:text-xl font-bold mb-3">平均年収675万円。90%が未経験スタート。</p>
-        <p class="hero-el text-black/50 text-base md:text-lg leading-relaxed mb-10 max-w-xl">普通の会社だと10年かかる挑戦や経験が、<br>HADOなら20代で全部できる。</p>
-        <div class="hero-el flex flex-col sm:flex-row gap-4">
-          <a href="#entry" class="line-cta">
-            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-            話を聞いてみる
-          </a>
-          <a href="#about" class="pill-link">Sparklersを知る →</a>
-        </div>
-      </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 scroll-down" style="color:rgba(255,255,255,0.35);">
+      <svg width="24" height="32" viewBox="0 0 24 32" fill="none"><rect x="1" y="1" width="22" height="30" rx="11" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9" r="3" fill="currentColor"/></svg>
     </div>
   </section>
 
-  <!-- WELCOME TAGS -->
-  <section class="py-8 px-6 bg-cream">
-    <div class="max-w-4xl mx-auto">
-      <div class="flex flex-wrap justify-center gap-2 md:gap-3">
-        <span class="inline-flex items-center gap-1.5 bg-white border border-black/10 rounded-full px-4 py-2 text-sm font-medium">🎓 高校生・大学生・専門学生歓迎</span>
-        <span class="inline-flex items-center gap-1.5 bg-white border border-black/10 rounded-full px-4 py-2 text-sm font-medium">🙌 フリーター歓迎</span>
-        <span class="inline-flex items-center gap-1.5 bg-white border border-black/10 rounded-full px-4 py-2 text-sm font-medium">💇 髪型／服装／ネイル／タトゥー自由</span>
-        <span class="inline-flex items-center gap-1.5 bg-white border border-black/10 rounded-full px-4 py-2 text-sm font-medium">📝 履歴書不要</span>
-        <span class="inline-flex items-center gap-1.5 bg-white border border-black/10 rounded-full px-4 py-2 text-sm font-medium">✨ 未経験OK</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- wave: cream → dark -->
-  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" class="w-full block" style="height:56px;display:block;background:#FDF6E3;"><path d="M0,28 C360,56 1080,0 1440,28 L1440,56 L0,56 Z" fill="#0f0f0f"/></svg>
-
-  <!-- DATA — dark section -->
+  <!-- DATA — seamless continuation from dark hero -->
   <section style="background:#0f0f0f;" class="py-20 md:py-28 px-6">
     <div class="max-w-4xl mx-auto animate-on-scroll">
       <div class="grid grid-cols-3 gap-4 md:gap-8 text-center">
         <div>
-          <p class="font-zen font-black text-white" style="font-size:clamp(3rem,10vw,6rem);line-height:1;">
-            <span class="grad-text" data-countup data-target="675">675</span><span class="grad-text text-2xl md:text-4xl">万円</span>
+          <p class="font-zen font-black" style="font-size:clamp(3rem,10vw,6rem);line-height:1;color:#fff;">
+            <span class="grad-text" data-countup data-target="675">675</span><span class="grad-text" style="font-size:clamp(1rem,3vw,2.5rem);">万円</span>
           </p>
-          <p class="text-white/30 text-xs md:text-sm mt-3">平均年収</p>
+          <p style="color:rgba(255,255,255,0.3);" class="text-xs md:text-sm mt-3">平均年収</p>
         </div>
         <div>
-          <p class="font-zen font-black text-white" style="font-size:clamp(3rem,10vw,6rem);line-height:1;">
-            <span class="grad-text" data-countup data-target="25">25</span><span class="grad-text text-2xl md:text-4xl">歳</span>
+          <p class="font-zen font-black" style="font-size:clamp(3rem,10vw,6rem);line-height:1;color:#fff;">
+            <span class="grad-text" data-countup data-target="25">25</span><span class="grad-text" style="font-size:clamp(1rem,3vw,2.5rem);">歳</span>
           </p>
-          <p class="text-white/30 text-xs md:text-sm mt-3">平均年齢</p>
+          <p style="color:rgba(255,255,255,0.3);" class="text-xs md:text-sm mt-3">平均年齢</p>
         </div>
         <div>
-          <p class="font-zen font-black text-white" style="font-size:clamp(3rem,10vw,6rem);line-height:1;">
-            <span class="grad-text" data-countup data-target="90">90</span><span class="grad-text text-2xl md:text-4xl">%</span>
+          <p class="font-zen font-black" style="font-size:clamp(3rem,10vw,6rem);line-height:1;color:#fff;">
+            <span class="grad-text" data-countup data-target="90">90</span><span class="grad-text" style="font-size:clamp(1rem,3vw,2.5rem);">%</span>
           </p>
-          <p class="text-white/30 text-xs md:text-sm mt-3">業界未経験率</p>
+          <p style="color:rgba(255,255,255,0.3);" class="text-xs md:text-sm mt-3">業界未経験率</p>
         </div>
       </div>
     </div>
@@ -188,11 +162,11 @@
   <!-- wave: dark → cream -->
   <svg viewBox="0 0 1440 56" preserveAspectRatio="none" class="w-full block" style="height:56px;display:block;background:#0f0f0f;"><path d="M0,28 C360,0 1080,56 1440,28 L1440,56 L0,56 Z" fill="#FDF6E3"/></svg>
 
-  <!-- CLIENT LOGOS -->
+  <!-- CLIENT LOGOS — original color -->
   <section class="py-12 md:py-16 px-6 bg-cream">
     <div class="max-w-5xl mx-auto animate-on-scroll">
       <p class="text-center text-black/30 text-xs tracking-widest uppercase mb-8">支援企業の一例</p>
-      <div class="grid grid-cols-4 md:grid-cols-8 gap-6 md:gap-8 items-center justify-items-center opacity-50 grayscale">
+      <div class="grid grid-cols-4 md:grid-cols-8 gap-6 md:gap-8 items-center justify-items-center">
         <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Persol_Holdings_logo.png" alt="PERSOL" class="h-6 md:h-8 object-contain">
         <img src="https://type.jp/common/img/layout/header_site_id_logo01.png" alt="Type" class="h-5 md:h-7 object-contain">
         <img src="https://chocozap.jp/_nuxt/icon_header_logo.DCmXwRHE.svg" alt="chocoZAP" class="h-5 md:h-7 object-contain">
@@ -204,21 +178,6 @@
       </div>
     </div>
   </section>
-
-  <!-- wave: cream → charcoal -->
-  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" class="w-full block" style="height:56px;display:block;background:#FDF6E3;"><path d="M0,0 C480,56 960,0 1440,40 L1440,56 L0,56 Z" fill="#1a1209"/></svg>
-
-  <!-- QUESTION — dark warm section -->
-  <section style="background:#1a1209; color:#f5f0e8;" class="py-20 md:py-32 px-6">
-    <div class="max-w-3xl mx-auto animate-on-scroll">
-      <h2 class="font-zen text-2xl md:text-4xl lg:text-5xl font-black leading-relaxed mb-8" style="color:#f5f0e8;">TikTokを毎日スクロールしてる。<br>面白い動画を見て笑って、保存して、シェアして。</h2>
-      <p class="font-zen text-xl md:text-3xl font-black mb-8 grad-text">でも、「消費する側」のままでいいのか？</p>
-      <p class="text-white/50 text-base md:text-lg leading-loose">私たちがやってるのは、たった数十秒の動画で、誰かの人生を動かすこと。<br>バズらせたいんじゃない。表現を通じて目の前の1人の行動を変えたい。</p>
-    </div>
-  </section>
-
-  <!-- wave: charcoal → cream -->
-  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" class="w-full block" style="height:56px;display:block;background:#1a1209;"><path d="M0,40 C480,0 960,56 1440,20 L1440,56 L0,56 Z" fill="#FDF6E3"/></svg>
 
   <!-- PAIN POINTS -->
   <section class="py-20 md:py-32 px-6 bg-cream">
@@ -264,7 +223,7 @@
   </section>
 
   <!-- BUSINESS -->
-  <section class="py-20 md:py-32 px-6 bg-white">
+  <section id="about" class="py-20 md:py-32 px-6 bg-white">
     <div class="max-w-5xl mx-auto">
       <div class="mb-12 animate-on-scroll">
         <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Our Business</p>
@@ -285,39 +244,6 @@
           <div class="text-4xl mb-4">💡</div>
           <h3 class="font-zen text-xl font-black mb-3">新規事業開発</h3>
           <p class="text-black/40 text-sm leading-relaxed">マーケティングノウハウを基盤に、D2Cブランド開発やメディア運営など多角的に事業を展開。社員が新しい価値を生み出し、利益に繋げている。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-line max-w-6xl mx-auto"></div>
-
-  <!-- YOUR VALUE -->
-  <section class="py-20 md:py-32 px-6 bg-cream">
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-12 animate-on-scroll">
-        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Your Value</p>
-        <h2 class="font-zen text-3xl md:text-5xl font-black">マーケターになると、<br>何が手に入る？</h2>
-      </div>
-      <div class="text-center mb-10 animate-on-scroll">
-        <p class="font-zen font-black grad-text" style="font-size:clamp(3.5rem,12vw,7rem);line-height:1;">675<span style="font-size:clamp(1.5rem,4vw,3rem);">万円</span></p>
-        <p class="text-black/40 text-sm mt-2">SNSマーケター平均年収</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="info-card animate-on-scroll">
-          <p class="data-number text-3xl mb-2">2.9<span class="text-lg">兆円</span></p>
-          <h3 class="font-bold text-base mb-2">まだまだ伸びる市場</h3>
-          <p class="text-black/40 text-sm leading-relaxed">SNS広告市場は右肩上がり。今から入れば先行者になれる。</p>
-        </div>
-        <div class="info-card animate-on-scroll delay-1">
-          <p class="data-number text-3xl mb-2">どの業界でも</p>
-          <h3 class="font-bold text-base mb-2">通用するスキル</h3>
-          <p class="text-black/40 text-sm leading-relaxed">「売り方」がわかる人材は、業界を問わず引っ張りだこ。</p>
-        </div>
-        <div class="info-card animate-on-scroll delay-2">
-          <p class="data-number text-3xl mb-2">50<span class="text-lg">万円</span></p>
-          <h3 class="font-bold text-base mb-2">引越し・休学支援</h3>
-          <p class="text-black/40 text-sm leading-relaxed">本気で挑戦したいメンバーを会社が全力サポート。</p>
         </div>
       </div>
     </div>
@@ -386,7 +312,7 @@
     </div>
   </section>
 
-  <!-- 10 YEARS IN 20s — gradient bg -->
+  <!-- 10 YEARS IN 20s -->
   <section style="background: linear-gradient(135deg, #FDF6E3 0%, #FDE8C4 50%, #FDF6E3 100%);" class="py-20 md:py-32 px-6">
     <div class="max-w-3xl mx-auto text-center animate-on-scroll">
       <h2 class="font-zen font-black leading-tight mb-8" style="font-size:clamp(1.8rem,5vw,3.5rem);">普通の会社だと<span class="grad-text">10年</span>かかる<br>挑戦や経験が、<br><span class="grad-text">20代で全部</span>できる場所。</h2>
@@ -410,50 +336,24 @@
     </div>
   </section>
 
-  <!-- wave: gradient → dark for ABOUT -->
-  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" class="w-full block" style="height:56px;display:block;background:#FDF6E3;"><path d="M0,20 C360,56 1080,0 1440,36 L1440,56 L0,56 Z" fill="#111"/></svg>
-
-  <!-- ABOUT — dark -->
-  <section id="about" style="background:#111; color:#f5f0e8;" class="py-20 md:py-32 px-6">
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-16 animate-on-scroll">
-        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">About the Team</p>
-        <h2 class="font-zen text-3xl md:text-5xl font-black mb-6" style="color:#f5f0e8;">Sparklers<span class="text-white/30 text-lg md:text-xl ml-2">（スパクル）</span></h2>
-        <p class="text-white/50 text-base md:text-lg max-w-2xl leading-relaxed">HADOのSNSマーケティングチーム。コンセプトは線香花火。<br>みんなでやるから楽しい。今この一瞬に全てをかける。</p>
-      </div>
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="info-card-dark text-center animate-on-scroll"><div class="text-4xl mb-4">🔥</div><h3 class="font-zen text-lg font-black mb-2" style="color:#f5f0e8;">一人ひとりが<br>自分の火を持つ</h3><p class="text-white/40 text-sm">自分の手でスパクルを持つ。</p></div>
-        <div class="info-card-dark text-center animate-on-scroll delay-1"><div class="text-4xl mb-4">✨</div><h3 class="font-zen text-lg font-black mb-2" style="color:#f5f0e8;">火花を<br>市場に散らす</h3><p class="text-white/40 text-sm">燃えている間に全力で散らす。</p></div>
-        <div class="info-card-dark text-center animate-on-scroll delay-2"><div class="text-4xl mb-4">🎆</div><h3 class="font-zen text-lg font-black mb-2" style="color:#f5f0e8;">みんなで囲むから<br>楽しい</h3><p class="text-white/40 text-sm">隣に仲間がいるから輝ける。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- wave: dark → white for MEMBER VOICES -->
-  <svg viewBox="0 0 1440 56" preserveAspectRatio="none" class="w-full block" style="height:56px;display:block;background:#111;"><path d="M0,36 C360,0 1080,56 1440,20 L1440,56 L0,56 Z" fill="#fff"/></svg>
-
-  <!-- MEMBER VOICES — white bg, Swiper carousel -->
+  <!-- MEMBER VOICES -->
   <section class="py-20 md:py-32 px-6 bg-white">
     <div class="max-w-5xl mx-auto">
       <div class="mb-12 animate-on-scroll">
         <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Member Voices</p>
         <h2 class="font-zen text-3xl md:text-5xl font-black">HADOさんってどんな人？</h2>
       </div>
-
-      <!-- voice chips -->
       <div class="flex flex-wrap gap-3 mb-16 animate-on-scroll">
-        <span style="display:inline-block;border:1.5px solid #1a1a1a;border-radius:40px;padding:12px 24px;font-weight:700;font-size:0.9rem;transition:all 0.3s ease;white-space:nowrap;">一生文化祭みたいな人生を送りたい</span>
+        <span style="display:inline-block;border:1.5px solid #1a1a1a;border-radius:40px;padding:12px 24px;font-weight:700;font-size:0.9rem;white-space:nowrap;">一生文化祭みたいな人生を送りたい</span>
         <span style="display:inline-block;border:1.5px solid #1a1a1a;border-radius:40px;padding:12px 24px;font-weight:700;font-size:0.9rem;white-space:nowrap;">消費ではなく表現をする人生でいたい</span>
         <span style="display:inline-block;border:1.5px solid #1a1a1a;border-radius:40px;padding:12px 24px;font-weight:700;font-size:0.9rem;white-space:nowrap;">一生、熱狂し続けたい</span>
         <span style="display:inline-block;border:1.5px solid #1a1a1a;border-radius:40px;padding:12px 24px;font-weight:700;font-size:0.9rem;white-space:nowrap;">完全燃焼して死にたい</span>
         <span style="display:inline-block;border:1.5px solid #1a1a1a;border-radius:40px;padding:12px 24px;font-weight:700;font-size:0.9rem;white-space:nowrap;">かっこいいと思う自分でありたい</span>
         <span style="display:inline-block;border:1.5px solid #1a1a1a;border-radius:40px;padding:12px 24px;font-weight:700;font-size:0.9rem;white-space:nowrap;">没頭、ゾーンに入り続けて生きたい</span>
       </div>
-
       <!-- Swiper carousel -->
       <div class="swiper memberSwiper animate-on-scroll" style="overflow:hidden;border-radius:20px;">
         <div class="swiper-wrapper">
-          <!-- slide 1 -->
           <div class="swiper-slide">
             <div class="testimonial-card md:flex">
               <div class="md:w-80 shrink-0 aspect-[4/3] md:aspect-auto overflow-hidden">
@@ -466,7 +366,6 @@
               </div>
             </div>
           </div>
-          <!-- slide 2 -->
           <div class="swiper-slide">
             <div class="testimonial-card md:flex">
               <div class="md:w-80 shrink-0 aspect-[4/3] md:aspect-auto overflow-hidden">
@@ -479,7 +378,6 @@
               </div>
             </div>
           </div>
-          <!-- slide 3 -->
           <div class="swiper-slide">
             <div class="testimonial-card md:flex">
               <div class="md:w-80 shrink-0 aspect-[4/3] md:aspect-auto overflow-hidden">
@@ -494,49 +392,6 @@
           </div>
         </div>
         <div class="swiper-pagination" style="position:relative;margin-top:24px;"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CULTURE -->
-  <section id="culture" class="py-20 md:py-32 px-6 bg-cream">
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-16 animate-on-scroll">
-        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Culture</p>
-        <h2 class="font-zen text-3xl md:text-5xl font-black">3つのカルチャー柱</h2>
-      </div>
-      <div class="space-y-16 md:space-y-24">
-        <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center animate-on-scroll">
-          <div>
-            <h3 class="font-zen text-4xl md:text-5xl font-black mb-1">MATE</h3><p class="text-accent font-bold mb-6">仲間</p>
-            <div class="space-y-4">
-              <div><h4 class="font-bold mb-1">素直でいいやつ</h4><p class="text-black/50 text-sm">変なプライドより成長を選べる人。</p></div>
-              <div><h4 class="font-bold mb-1">超ポジティブ</h4><p class="text-black/50 text-sm">「どうしたらいけるか」を考える。</p></div>
-              <div><h4 class="font-bold mb-1">ありがとうを口癖に</h4><p class="text-black/50 text-sm">感謝を伝えるだけでチームの空気は変わる。</p></div>
-            </div>
-          </div>
-          <div class="photo-card aspect-[4/3]"><img src="images/team-hado-sign.jpg" alt=""></div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center animate-on-scroll">
-          <div class="md:order-2">
-            <h3 class="font-zen text-4xl md:text-5xl font-black mb-1">TRY</h3><p class="text-accent font-bold mb-6">挑戦</p>
-            <div class="space-y-4">
-              <div><h4 class="font-bold mb-1">まず打席に立て</h4><p class="text-black/50 text-sm">完璧な企画を考えてから動くんじゃなくて、まず出してみる。</p></div>
-              <div><h4 class="font-bold mb-1">最前線をつくる側でいろ</h4><p class="text-black/50 text-sm">自分たちがトレンドを作る。</p></div>
-            </div>
-          </div>
-          <div class="photo-card aspect-[4/3] md:order-1"><img src="images/work-meeting.jpg" alt=""></div>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center animate-on-scroll">
-          <div>
-            <h3 class="font-zen text-4xl md:text-5xl font-black mb-1">WIN</h3><p class="text-accent font-bold mb-6">成果</p>
-            <div class="space-y-4">
-              <div><h4 class="font-bold mb-1">背中で語る</h4><p class="text-black/50 text-sm">「10万再生出しました」で語る。</p></div>
-              <div><h4 class="font-bold mb-1">主人公であれ</h4><p class="text-black/50 text-sm">自分の人生の主導権は自分が握る。</p></div>
-            </div>
-          </div>
-          <div class="photo-card aspect-[4/3]"><img src="images/bbq-group.jpg" alt=""></div>
-        </div>
       </div>
     </div>
   </section>
@@ -574,7 +429,7 @@
   <div class="section-line max-w-6xl mx-auto"></div>
 
   <!-- JOB DETAILS -->
-  <section class="py-20 md:py-32 px-6 bg-cream">
+  <section class="py-20 md:py-32 px-6 bg-cream" id="career">
     <div class="max-w-5xl mx-auto">
       <div class="mb-16 animate-on-scroll">
         <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">What's the Job?</p>
@@ -584,42 +439,6 @@
         <div class="info-card animate-on-scroll"><div class="text-3xl mb-3">📱</div><h3 class="font-bold text-lg mb-2">SNSコンテンツ制作</h3><p class="text-black/40 text-sm leading-relaxed">トレンドをリサーチして、バズる動画を企画・制作。</p></div>
         <div class="info-card animate-on-scroll delay-1"><div class="text-3xl mb-3">🎬</div><h3 class="font-bold text-lg mb-2">SNS広告制作</h3><p class="text-black/40 text-sm leading-relaxed">自然と売れるような、細部にこだわり尽くした広告を作成。</p></div>
         <div class="info-card animate-on-scroll delay-2"><div class="text-3xl mb-3">📊</div><h3 class="font-bold text-lg mb-2">SNS広告運用</h3><p class="text-black/40 text-sm leading-relaxed">データをもとに更に売れる広告のための仮説検証を行う。</p></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-line max-w-6xl mx-auto"></div>
-
-  <!-- CAREER PATH -->
-  <section id="career" class="py-20 md:py-32 px-6 bg-cream">
-    <div class="max-w-5xl mx-auto">
-      <div class="mb-16 animate-on-scroll">
-        <p class="text-accent font-bold text-sm tracking-widest uppercase mb-4">Career Path</p>
-        <h2 class="font-zen text-3xl md:text-5xl font-black mb-4">キャリアパス</h2>
-        <p class="text-black/40 text-base">実力次第で駆け上がれる。年功序列は関係なし。</p>
-      </div>
-      <div class="animate-on-scroll">
-        <div class="max-w-md mx-auto mb-6">
-          <div class="info-card text-center border-2 border-accent/20">
-            <p class="text-accent text-xs font-bold tracking-wider uppercase mb-2">Entry</p>
-            <h3 class="font-zen text-xl font-black mb-1">アシスタントディレクター</h3>
-            <p class="text-black/40 text-sm mb-3">既存の勝ちパターンの量産、撮影・編集・運用サポート</p>
-            <p class="data-number text-lg">月給 25〜30万円</p>
-          </div>
-        </div>
-        <div class="flex justify-center mb-6"><div class="w-px h-10 bg-accent/30"></div></div>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div class="space-y-4">
-            <div class="text-center mb-2"><span class="inline-block border-2 border-black rounded-full text-sm font-bold px-4 py-1">Creative Track</span></div>
-            <div class="info-card"><h4 class="font-bold mb-1">クリエイティブディレクター</h4><p class="text-black/40 text-sm mb-2">新規クリエイティブの開拓</p><p class="data-number text-base">月給 30〜40万円</p></div>
-            <div class="info-card"><h4 class="font-bold mb-1">R&Dディレクター</h4><p class="text-black/40 text-sm mb-2">新規媒体、新規事業の開拓</p><p class="data-number text-base">月給 33〜45万円</p></div>
-          </div>
-          <div class="space-y-4">
-            <div class="text-center mb-2"><span class="inline-block border-2 border-black rounded-full text-sm font-bold px-4 py-1">Management Track</span></div>
-            <div class="info-card"><h4 class="font-bold mb-1">オペレーションマネージャー</h4><p class="text-black/40 text-sm mb-2">勝ちパターンを再現性持たせて拡大</p><p class="data-number text-base">月給 40〜50万円</p></div>
-            <div class="info-card"><h4 class="font-bold mb-1">プロデューサー</h4><p class="text-black/40 text-sm mb-2">事業設計・チーム統括</p><p class="data-number text-base">月給 50〜60万円</p></div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -796,7 +615,7 @@
           <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-sm font-bold text-white">研修3ヶ月</span>
         </div>
         <p class="text-white/30 text-sm mb-10">今この瞬間にも、同世代は動き出しています。</p>
-        <a href="#" class="line-cta text-lg" style="font-size:1.2rem;padding:20px 56px;">
+        <a href="#" class="line-cta" style="font-size:1.2rem;padding:20px 56px;">
           <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           話を聞いてみる
         </a>
@@ -815,7 +634,7 @@
       <div class="flex flex-wrap justify-center gap-6">
         <a href="https://hado.co.jp/" target="_blank" class="text-black/30 hover:text-accent text-sm transition-colors">Company</a>
         <a href="#about" class="text-black/30 hover:text-accent text-sm transition-colors">About</a>
-        <a href="#culture" class="text-black/30 hover:text-accent text-sm transition-colors">Culture</a>
+        <a href="#career" class="text-black/30 hover:text-accent text-sm transition-colors">Career</a>
         <a href="#entry" class="text-black/30 hover:text-accent text-sm transition-colors">Entry</a>
       </div>
     </div>
@@ -837,8 +656,22 @@
       loop: true,
       autoplay: { delay: 4500, disableOnInteraction: false },
       pagination: { el: '.swiper-pagination', clickable: true },
-      effect: 'slide',
     });
+
+    // ── NAV: switch to light after hero ──
+    const nav = document.getElementById('mainNav');
+    const heroEl = document.getElementById('hero');
+    const navObs = new IntersectionObserver((entries) => {
+      const inHero = entries[0].isIntersecting;
+      nav.style.background = inHero ? 'rgba(0,0,0,0.3)' : 'rgba(253,246,227,0.95)';
+      nav.style.borderBottomColor = inHero ? 'rgba(255,255,255,0.1)' : 'rgba(0,0,0,0.06)';
+      nav.querySelectorAll('a:not([class*="bg-"])').forEach(a => {
+        a.style.color = inHero ? 'rgba(255,255,255,0.7)' : '';
+      });
+      const logo = nav.querySelector('img');
+      if (logo) logo.style.filter = inHero ? 'invert(1) brightness(10)' : 'none';
+    }, { threshold: 0.1 });
+    navObs.observe(heroEl);
 
     // ── Scroll fade ──
     const observer = new IntersectionObserver((entries) => {
@@ -848,14 +681,13 @@
 
     // ── Sticky CTA ──
     const stickyCta = document.getElementById('stickyCta');
-    const heroSection = document.getElementById('hero');
     const entrySection = document.getElementById('entry');
     const stickyObs = new IntersectionObserver((entries) => {
-      const hv = entries.find(e => e.target === heroSection)?.isIntersecting;
+      const hv = entries.find(e => e.target === heroEl)?.isIntersecting;
       const ev = entries.find(e => e.target === entrySection)?.isIntersecting;
       stickyCta.classList.toggle('show', !hv && !ev);
     }, { threshold: 0.1 });
-    stickyObs.observe(heroSection);
+    stickyObs.observe(heroEl);
     stickyObs.observe(entrySection);
 
     // ── Smooth scroll ──
@@ -870,7 +702,7 @@
     // ── Hero stagger ──
     window.addEventListener('load', () => {
       document.querySelectorAll('.hero-el').forEach((el, i) => {
-        setTimeout(() => el.classList.add('in'), 80 + i * 160);
+        setTimeout(() => el.classList.add('in'), 100 + i * 160);
       });
     });
 
@@ -890,10 +722,7 @@
     }
     const countupObs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          runCountup(e.target);
-          countupObs.unobserve(e.target);
-        }
+        if (e.isIntersecting) { runCountup(e.target); countupObs.unobserve(e.target); }
       });
     }, { threshold: 0.5 });
     document.querySelectorAll('[data-countup]').forEach(el => countupObs.observe(el));
@@ -906,7 +735,7 @@
         requestAnimationFrame(() => {
           const scrollY = window.pageYOffset;
           if (heroImg && scrollY < window.innerHeight * 1.5) {
-            heroImg.style.transform = `scale(1.08) translateY(${scrollY * 0.25}px)`;
+            heroImg.style.transform = `scale(1.08) translateY(${scrollY * 0.2}px)`;
           }
           ticking = false;
         });

@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNSマーケター募集 | 株式会社HADO Sparklers</title>
+  <meta name="description" content="未経験から最速で一流のマーケターに。SNSマーケティングチーム Sparklers メンバー募集中。平均年収675万円・平均年齢25歳・未経験率90%。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: #FAF6EE; color: #111; overflow-x: hidden; }
+
+    /* ── variables ── */
+    :root {
+      --orange: #E8872E;
+      --gold: #F5C36A;
+      --dark: #0f0f0f;
+      --cream: #FAF6EE;
+      --line-green: #06C755;
+    }
+
+    /* ── utility ── */
+    .grad { background: linear-gradient(120deg, var(--orange) 0%, var(--gold) 55%, var(--orange) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .section-label { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.45; }
+    img { display: block; }
+
+    /* ── fade in ── */
+    .fade { opacity: 0; transform: translateY(32px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
+    .fade.in { opacity: 1; transform: none; }
+    .fade.d1 { transition-delay: .1s; }
+    .fade.d2 { transition-delay: .2s; }
+    .fade.d3 { transition-delay: .3s; }
+    .fade.d4 { transition-delay: .4s; }
+
+    /* ── hero stagger ── */
+    .h-el { opacity: 0; transform: translateY(48px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+    .h-el.in { opacity: 1; transform: none; }
+
+    /* ── nav ── */
+    #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,.3); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.08); transition: background .4s, border-color .4s; }
+    #nav.light { background: rgba(250,246,238,.96); border-bottom-color: rgba(0,0,0,.06); }
+    #nav .logo { height: 26px; filter: invert(1) brightness(10); transition: filter .4s; }
+    #nav.light .logo { filter: none; }
+    #nav .nav-links { display: none; }
+    @media(min-width: 768px) {
+      #nav .nav-links { display: flex; align-items: center; gap: 32px; }
+      #nav .nav-links a { font-size: .875rem; font-weight: 600; color: rgba(255,255,255,.7); text-decoration: none; transition: color .3s; }
+      #nav.light .nav-links a { color: rgba(0,0,0,.6); }
+      #nav .nav-links a:hover { color: #fff; }
+      #nav.light .nav-links a:hover { color: var(--orange); }
+    }
+    .btn-line { display: inline-flex; align-items: center; gap: 8px; background: var(--line-green); color: #fff; font-weight: 800; font-size: .875rem; padding: 10px 20px; border-radius: 100px; text-decoration: none; transition: background .3s, transform .3s; white-space: nowrap; }
+    .btn-line:hover { background: #05b34c; transform: translateY(-1px); }
+    .btn-line.lg { font-size: 1.1rem; padding: 18px 48px; }
+    .btn-line.xl { font-size: 1.25rem; padding: 22px 60px; }
+    .btn-line svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+
+    /* ── hero ── */
+    #hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; background: var(--dark); overflow: hidden; }
+    #hero-bg { position: absolute; inset: 0; }
+    #hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transform: scale(1.08); will-change: transform; }
+    #hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(0,0,0,.3) 40%, rgba(0,0,0,.78) 85%, rgba(0,0,0,.88) 100%); }
+    #hero-content { position: relative; z-index: 2; width: 100%; max-width: 1100px; margin: 0 auto; padding: 120px 24px 64px; }
+    #hero-content .tag { font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 20px; }
+    #hero-content h1 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; line-height: 1.05; color: #fff; font-size: clamp(2.8rem, 9vw, 6.5rem); margin-bottom: 24px; }
+    #hero-content .sub { font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 700; color: rgba(255,255,255,.8); margin-bottom: 8px; }
+    #hero-content .note { font-size: clamp(.85rem, 2vw, 1rem); color: rgba(255,255,255,.45); line-height: 1.8; margin-bottom: 40px; }
+    .scroll-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 2; color: rgba(255,255,255,.3); animation: sb 2s ease-in-out infinite; }
+    @keyframes sb { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+
+    /* ── ticker ── */
+    #ticker { background: var(--dark); padding: 28px 0; overflow: hidden; }
+    #ticker .label { text-align: center; color: rgba(255,255,255,.28); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 20px; }
+    .ticker-track { display: flex; width: max-content; animation: tick 28s linear infinite; }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes tick { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .ticker-item { display: flex; align-items: center; margin: 0 36px; }
+    .ticker-item img { height: 28px; object-fit: contain; filter: invert(1) brightness(10); opacity: .5; }
+
+    /* ── stats ── */
+    #stats { background: #080808; padding: 80px 24px 96px; }
+    .stats-inner { max-width: 1100px; margin: 0 auto; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .stat-card { background: #111; padding: 48px 32px; text-align: center; }
+    .stat-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; margin-bottom: 28px; }
+    .stat-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1; }
+    .stat-unit { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+    .stat-label { color: rgba(255,255,255,.35); font-size: .8rem; margin-top: 12px; letter-spacing: .05em; }
+    @media(max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr; gap: 2px; }
+    }
+
+    /* ── business bands ── */
+    .biz-band { padding: 80px 24px; }
+    .biz-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .biz-inner.rev { direction: rtl; }
+    .biz-inner.rev > * { direction: ltr; }
+    .biz-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(4rem, 10vw, 8rem); line-height: 1; margin-bottom: 16px; }
+    .biz-heading { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.6rem, 4vw, 2.5rem); line-height: 1.25; margin-bottom: 20px; }
+    .biz-text { font-size: clamp(.9rem, 1.8vw, 1.05rem); line-height: 2; opacity: .65; }
+    .biz-photo { border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; }
+    .biz-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .biz-photo:hover img { transform: scale(1.04); }
+    @media(max-width: 768px) {
+      .biz-inner { grid-template-columns: 1fr; gap: 36px; direction: ltr; }
+      .biz-inner.rev { direction: ltr; }
+    }
+
+    /* ── voice ── */
+    #voice { background: #0a0a0a; padding: 80px 0 100px; }
+    #voice .sec-head { max-width: 1100px; margin: 0 auto; padding: 0 24px; margin-bottom: 48px; }
+    .voice-swiper { overflow: hidden; padding: 0 24px; max-width: 1148px; margin: 0 auto; }
+    .voice-slide { border-radius: 20px; overflow: hidden; position: relative; aspect-ratio: 3/4; }
+    @media(min-width: 768px) { .voice-slide { aspect-ratio: 4/5; } }
+    .voice-slide img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .voice-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.88) 100%); }
+    .voice-quote { position: absolute; top: 28px; left: 28px; right: 28px; z-index: 2; }
+    .voice-quote p { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.1rem, 3vw, 1.5rem); line-height: 1.5; color: #fff; }
+    .voice-bottom { position: absolute; bottom: 28px; left: 28px; right: 28px; z-index: 2; }
+    .voice-role { font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+    .voice-name { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.2rem; color: #fff; }
+    .voice-meta { font-size: .8rem; color: rgba(255,255,255,.5); margin-top: 4px; }
+    .voice-body { margin-top: 16px; font-size: .85rem; line-height: 1.8; color: rgba(255,255,255,.65); }
+    .swiper-button-next, .swiper-button-prev { color: var(--orange) !important; }
+    .swiper-pagination-bullet { background: rgba(255,255,255,.35) !important; }
+    .swiper-pagination-bullet-active { background: var(--orange) !important; }
+
+    /* ── schedule ── */
+    #schedule { background: var(--cream); padding: 80px 0 100px; overflow: hidden; }
+    #schedule .sec-head { max-width: 1100px; margin: 0 auto; padding: 0 24px; margin-bottom: 48px; }
+    .sch-track { display: flex; gap: 20px; padding: 0 24px; overflow-x: auto; cursor: grab; user-select: none; scrollbar-width: none; }
+    .sch-track::-webkit-scrollbar { display: none; }
+    .sch-track.grabbing { cursor: grabbing; }
+    .sch-card { flex: 0 0 260px; background: #fff; border-radius: 20px; overflow: hidden; }
+    @media(min-width: 768px) { .sch-card { flex: 0 0 300px; } }
+    .sch-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .sch-body { padding: 20px; }
+    .sch-time { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--orange); line-height: 1; margin-bottom: 8px; }
+    .sch-title { font-weight: 800; font-size: 1rem; margin-bottom: 8px; }
+    .sch-desc { font-size: .8rem; line-height: 1.75; color: rgba(0,0,0,.5); }
+
+    /* ── benefits ── */
+    #benefits { background: var(--dark); padding: 80px 24px 100px; }
+    .ben-inner { max-width: 900px; margin: 0 auto; }
+    .ben-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media(max-width: 640px) { .ben-grid { grid-template-columns: 1fr; } }
+    .ben-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; padding: 32px 24px; text-align: center; transition: background .3s; }
+    .ben-card:hover { background: rgba(255,255,255,.09); }
+    .ben-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 3.5rem; line-height: 1; margin-bottom: 16px; }
+    .ben-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.1rem; color: #fff; margin-bottom: 10px; }
+    .ben-desc { font-size: .82rem; line-height: 1.75; color: rgba(255,255,255,.45); }
+
+    /* ── job card ── */
+    #job { background: var(--cream); padding: 80px 24px 100px; }
+    .job-inner { max-width: 900px; margin: 0 auto; }
+    .job-card { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 40px rgba(0,0,0,.07); }
+    .job-photo { width: 100%; aspect-ratio: 16/7; object-fit: cover; object-position: center 30%; }
+    .job-body { padding: 40px 36px; }
+    .job-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .job-tag { background: rgba(232,135,46,.1); color: var(--orange); font-size: .78rem; font-weight: 700; padding: 5px 14px; border-radius: 100px; border: 1px solid rgba(232,135,46,.25); }
+    .job-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: 12px; }
+    .job-salary { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--orange); margin-bottom: 20px; }
+    .job-desc { font-size: .9rem; line-height: 2; color: rgba(0,0,0,.6); margin-bottom: 32px; }
+    @media(max-width: 600px) { .job-body { padding: 28px 24px; } }
+
+    /* ── flow ── */
+    #flow { background: #fff; padding: 80px 24px 100px; }
+    .flow-inner { max-width: 860px; margin: 0 auto; }
+    .flow-steps { display: flex; flex-direction: column; gap: 0; }
+    @media(min-width: 640px) { .flow-steps { flex-direction: row; align-items: flex-start; } }
+    .flow-step { flex: 1; text-align: center; padding: 32px 20px; position: relative; }
+    .flow-step:not(:last-child)::after { content: '↓'; position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 1.5rem; color: var(--orange); font-weight: 900; }
+    @media(min-width: 640px) {
+      .flow-step:not(:last-child)::after { content: '→'; bottom: auto; top: 44px; left: auto; right: -16px; transform: none; }
+    }
+    .flow-num { width: 64px; height: 64px; border-radius: 50%; background: var(--orange); color: #fff; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .flow-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.1rem; margin-bottom: 8px; }
+    .flow-desc { font-size: .82rem; color: rgba(0,0,0,.5); line-height: 1.75; }
+
+    /* ── final cta ── */
+    #entry { position: relative; overflow: hidden; background: var(--dark); padding: 96px 24px 120px; text-align: center; }
+    #entry-bg { position: absolute; inset: 0; background-image: url('../snsmarketerrecruitlp/images/bbq-group.jpg'); background-size: cover; background-position: center; opacity: .2; }
+    #entry-content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+    #entry h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(2rem, 6vw, 3.5rem); color: #fff; line-height: 1.2; margin-bottom: 20px; }
+    #entry p { font-size: clamp(.9rem, 2vw, 1.05rem); color: rgba(255,255,255,.5); line-height: 1.9; margin-bottom: 12px; }
+    .entry-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 24px 0 40px; }
+    .entry-chip { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 100px; padding: 8px 18px; font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.8); }
+    #entry .note { font-size: .78rem; color: rgba(255,255,255,.2); margin-top: 16px; }
+
+    /* ── footer ── */
+    footer { background: #060606; color: rgba(255,255,255,.35); padding: 48px 24px; text-align: center; font-size: .8rem; line-height: 2; }
+    footer .f-logo { height: 22px; filter: invert(1) brightness(10); opacity: .25; margin: 0 auto 16px; }
+
+    /* ── sticky cta ── */
+    #sticky { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: rgba(250,246,238,.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(0,0,0,.07); padding: 12px 16px; transform: translateY(100%); transition: transform .4s ease; }
+    #sticky.show { transform: none; }
+    @media(min-width: 768px) { #sticky { display: none; } }
+
+    /* ── section headers ── */
+    .sec-label { font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 12px; }
+    .sec-h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.25; }
+    .sec-sub { margin-top: 12px; font-size: clamp(.9rem, 2vw, 1.05rem); line-height: 1.9; }
+  </style>
+</head>
+<body>
+
+<!-- LINE SVG template -->
+<template id="line-svg">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+</template>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="#"><img class="logo" src="../snsmarketerrecruitlp/images/hado-logo-cropped.png" alt="HADO"></a>
+  <div class="nav-links">
+    <a href="#about">事業内容</a>
+    <a href="#voice">先輩の声</a>
+    <a href="#schedule">マーケターの1日</a>
+  </div>
+  <a href="#entry" class="btn-line">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINE登録
+  </a>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div id="hero-bg">
+    <img id="hero-img" src="../snsmarketerrecruitlp/images/hero-stairs.jpg" alt="HADOチーム">
+  </div>
+  <div id="hero-content">
+    <p class="tag h-el">SNS Marketing Team — Sparklers</p>
+    <h1 class="h-el">未経験から最速で<br><span class="grad">一流のマーケター</span>に。</h1>
+    <p class="sub h-el">経験はいらない。ほしいのは、挑戦心だけ。</p>
+    <p class="note h-el">平均年収675万円 ／ 平均年齢25歳 ／ 未経験スタート率90%</p>
+    <div class="h-el">
+      <a href="#entry" class="btn-line lg">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        まずは話を聞いてみる
+      </a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <svg width="22" height="30" viewBox="0 0 22 30" fill="none"><rect x="1" y="1" width="20" height="28" rx="10" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="8" r="2.5" fill="currentColor"/></svg>
+  </div>
+</section>
+
+<!-- ── LOGO TICKER ── -->
+<section id="ticker">
+  <p class="label">支援企業の一例</p>
+  <div class="ticker-track">
+    <!-- set A -->
+    <div class="ticker-item"><img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Persol_Holdings_logo.png" alt="PERSOL"></div>
+    <div class="ticker-item"><img src="https://type.jp/common/img/layout/header_site_id_logo01.png" alt="type"></div>
+    <div class="ticker-item"><img src="https://chocozap.jp/_nuxt/icon_header_logo.DCmXwRHE.svg" alt="chocoZAP"></div>
+    <div class="ticker-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Clinique_logo.svg" alt="CLINIQUE"></div>
+    <div class="ticker-item"><img src="https://www.kao.com/content/dam/sites/kao/inc-common/kao_global_header_logo.png" alt="KAO"></div>
+    <div class="ticker-item"><img src="https://tirtir.co.jp/cdn/shop/files/LOGO_Wordmark_BK.png?v=1761551165" alt="TIRTIR"></div>
+    <div class="ticker-item"><img src="https://kao-h.assetsadobe3.com/is/image/content/dam/sites/kanebo/www-nomorerules-net/cmn/cmn-logo-kate-s.png?fmt=png-alpha&wid=320" alt="KATE"></div>
+    <div class="ticker-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Zozo_logo.svg" alt="ZOZO"></div>
+    <!-- set B (duplicate) -->
+    <div class="ticker-item"><img src="https://upload.wikimedia.org/wikipedia/en/a/ae/Persol_Holdings_logo.png" alt="PERSOL"></div>
+    <div class="ticker-item"><img src="https://type.jp/common/img/layout/header_site_id_logo01.png" alt="type"></div>
+    <div class="ticker-item"><img src="https://chocozap.jp/_nuxt/icon_header_logo.DCmXwRHE.svg" alt="chocoZAP"></div>
+    <div class="ticker-item"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Clinique_logo.svg" alt="CLINIQUE"></div>
+    <div class="ticker-item"><img src="https://www.kao.com/content/dam/sites/kao/inc-common/kao_global_header_logo.png" alt="KAO"></div>
+    <div class="ticker-item"><img src="https://tirtir.co.jp/cdn/shop/files/LOGO_Wordmark_BK.png?v=1761551165" alt="TIRTIR"></div>
+    <div class="ticker-item"><img src="https://kao-h.assetsadobe3.com/is/image/content/dam/sites/kanebo/www-nomorerules-net/cmn/cmn-logo-kate-s.png?fmt=png-alpha&wid=320" alt="KATE"></div>
+    <div class="ticker-item"><img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Zozo_logo.svg" alt="ZOZO"></div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section id="stats">
+  <div class="stats-inner">
+    <div class="stats-grid">
+      <div class="stat-card fade">
+        <img class="stat-photo" src="../snsmarketerrecruitlp/images/member-narita.jpg" alt="">
+        <p class="stat-num grad" data-countup data-target="675">675<span class="stat-unit">万円</span></p>
+        <p class="stat-label">SNSマーケター平均年収</p>
+      </div>
+      <div class="stat-card fade d1">
+        <img class="stat-photo" src="../snsmarketerrecruitlp/images/group-photo.png" alt="" style="object-position:top;">
+        <p class="stat-num grad" data-countup data-target="25">25<span class="stat-unit">歳</span></p>
+        <p class="stat-label">チームの平均年齢</p>
+      </div>
+      <div class="stat-card fade d2">
+        <img class="stat-photo" src="../snsmarketerrecruitlp/images/work-office.jpg" alt="">
+        <p class="stat-num grad" data-countup data-target="90">90<span class="stat-unit">%</span></p>
+        <p class="stat-label">未経験からのスタート率</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BUSINESS BANDS ── -->
+<div id="about">
+
+  <!-- 01 SNS広告事業 — dark -->
+  <div class="biz-band" style="background:#111; color:#f5f0e8;">
+    <div class="biz-inner fade">
+      <div>
+        <p class="sec-label" style="color:var(--orange);">Business 01</p>
+        <p class="biz-num grad">01</p>
+        <h3 class="biz-heading">SNS広告事業</h3>
+        <p class="biz-text">TikTok・Instagram・YouTubeなどの主要SNSにおいて、クリエイティブ制作から広告運用まで一気通貫で支援。クライアントの売上最大化にコミット。バズを数字に変える、それが私たちの仕事。</p>
+      </div>
+      <div class="biz-photo">
+        <img src="../snsmarketerrecruitlp/images/work-laptop.jpg" alt="SNS広告">
+      </div>
+    </div>
+  </div>
+
+  <!-- 02 キャリア支援事業 — cream -->
+  <div class="biz-band" style="background:var(--cream);">
+    <div class="biz-inner rev fade">
+      <div>
+        <p class="sec-label" style="color:var(--orange);">Business 02</p>
+        <p class="biz-num grad">02</p>
+        <h3 class="biz-heading">キャリア支援事業</h3>
+        <p class="biz-text">若い才能が正しく評価される社会をつくる。キャリアマッチングや転職支援を展開し、人材紹介を通じて企業と個人の最適な出会いを創出。「売り方」がわかる人材を社会に送り出す。</p>
+      </div>
+      <div class="biz-photo">
+        <img src="../snsmarketerrecruitlp/images/work-meeting.jpg" alt="キャリア支援">
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 新規事業開発 — orange accent -->
+  <div class="biz-band" style="background:#1a0d00;">
+    <div class="biz-inner fade" style="color:#f5f0e8;">
+      <div>
+        <p class="sec-label" style="color:var(--orange);">Business 03</p>
+        <p class="biz-num grad">03</p>
+        <h3 class="biz-heading">新規事業開発</h3>
+        <p class="biz-text">マーケティングノウハウを基盤に、D2Cブランド開発やメディア運営など多角的に事業を展開。「売る力で０→１を創出」。社員が新しい価値を生み出し、直接利益に繋げる環境がある。</p>
+      </div>
+      <div class="biz-photo">
+        <img src="../snsmarketerrecruitlp/images/team-meeting.jpg" alt="新規事業">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ── VOICE ── -->
+<section id="voice">
+  <div class="sec-head fade">
+    <p class="sec-label" style="color:var(--orange);">Voice</p>
+    <h2 class="sec-h2" style="color:#fff;">先輩社員の声</h2>
+    <p class="sec-sub" style="color:rgba(255,255,255,.4);">共に働くメンバーたちのリアルな言葉。</p>
+  </div>
+
+  <div class="swiper voice-swiper">
+    <div class="swiper-wrapper">
+      <!-- slide 1 -->
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <img src="../snsmarketerrecruitlp/images/member-male.png" alt="">
+          <div class="voice-overlay"></div>
+          <div class="voice-quote">
+            <p>「入社6ヶ月で<br>100万再生を突破。<br>自分でも信じられなかった。」</p>
+          </div>
+          <div class="voice-bottom">
+            <p class="voice-role">SNSコンテンツ制作</p>
+            <p class="voice-name">Aさん（24歳）</p>
+            <p class="voice-meta">元アパレル店員 → 入社8ヶ月</p>
+            <p class="voice-body">未経験でも3ヶ月の研修でしっかり基礎が身につく。入社後すぐにマーケティングの面白さにハマり、毎日仕事に没頭できています。</p>
+          </div>
+        </div>
+      </div>
+      <!-- slide 2 -->
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <img src="../snsmarketerrecruitlp/images/member-female-1.png" alt="">
+          <div class="voice-overlay"></div>
+          <div class="voice-quote">
+            <p>「入社1年で<br>チームリーダーに。<br>年齢は全く関係なかった。」</p>
+          </div>
+          <div class="voice-bottom">
+            <p class="voice-role">SNS広告運用</p>
+            <p class="voice-name">Bさん（23歳）</p>
+            <p class="voice-meta">元飲食店スタッフ → 入社1年</p>
+            <p class="voice-body">部活のように本気で仕事に取り組む環境。「売り方」がわかるようになって、どの業界でも通用する自信がつきました。</p>
+          </div>
+        </div>
+      </div>
+      <!-- slide 3 -->
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <img src="../snsmarketerrecruitlp/images/member-female-2.png" alt="">
+          <div class="voice-overlay"></div>
+          <div class="voice-quote">
+            <p>「普通なら数年かかる<br>経験を、数ヶ月で<br>凝縮して得られました。」</p>
+          </div>
+          <div class="voice-bottom">
+            <p class="voice-role">マーケティングプランナー</p>
+            <p class="voice-name">Cさん（25歳）</p>
+            <p class="voice-meta">元事務職 → 入社1年半</p>
+            <p class="voice-body">「やりたい」と手を挙げた人間に社歴関係なくチャンスをくれる。日々、自分の市場価値が上がっているのを感じています。</p>
+          </div>
+        </div>
+      </div>
+      <!-- slide 4 -->
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <img src="../snsmarketerrecruitlp/images/member-okamoto.jpg" alt="" style="object-position:top;">
+          <div class="voice-overlay"></div>
+          <div class="voice-quote">
+            <p>「20代でこれだけの<br>経験ができる場所は<br>ここしかないと思う。」</p>
+          </div>
+          <div class="voice-bottom">
+            <p class="voice-role">クリエイティブディレクター</p>
+            <p class="voice-name">岡本（22歳）</p>
+            <p class="voice-meta">新卒入社 → 入社10ヶ月</p>
+            <p class="voice-body">大手だったら会議室にもいられないような戦略会議に、入社すぐから参加できる。成長の密度が全然違う。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination" style="position:relative;margin-top:32px;"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<!-- ── SCHEDULE ── -->
+<section id="schedule">
+  <div class="sec-head fade">
+    <p class="sec-label" style="color:var(--orange);">One Day Schedule</p>
+    <h2 class="sec-h2">マーケターの1日</h2>
+    <p class="sec-sub" style="color:rgba(0,0,0,.45);">← スクロールして確認</p>
+  </div>
+  <div class="sch-track" id="schTrack">
+    <div class="sch-card">
+      <img class="sch-photo" src="../snsmarketerrecruitlp/images/team-meeting.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">09:00</p>
+        <p class="sch-title">チームミーティング</p>
+        <p class="sch-desc">当日のKPIとタスク確認。チーム全員で方針を揃える朝の10分。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="../snsmarketerrecruitlp/images/work-laptop.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">10:00</p>
+        <p class="sch-title">クリエイティブ制作</p>
+        <p class="sch-desc">バズるコンテンツの企画・撮影・編集。0.5秒で止まる動画を目指す。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="../snsmarketerrecruitlp/images/fun-food.png" alt="">
+      <div class="sch-body">
+        <p class="sch-time">12:00</p>
+        <p class="sch-title">ランチ</p>
+        <p class="sch-desc">チームでわいわい！渋谷・博多の美味しいお店を開拓する大事な時間。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="../snsmarketerrecruitlp/images/work-office.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">13:00</p>
+        <p class="sch-title">広告運用・分析</p>
+        <p class="sch-desc">データを読んで改善ポイントを特定。仮説を立てて、すぐ実行する。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="../snsmarketerrecruitlp/images/work-meeting.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">15:00</p>
+        <p class="sch-title">クライアントMTG</p>
+        <p class="sch-desc">成果を数字で報告。次の施策を提案。入社半年で担当クライアントを持つ。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="../snsmarketerrecruitlp/images/fun-smartphone.png" alt="">
+      <div class="sch-body">
+        <p class="sch-time">17:00</p>
+        <p class="sch-title">トレンドリサーチ</p>
+        <p class="sch-desc">SNSを「消費」ではなく「仕事」として見る。最新トレンドをキャッチ。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="../snsmarketerrecruitlp/images/bbq-cheers.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">18:00</p>
+        <p class="sch-title">振り返り＆退社</p>
+        <p class="sch-desc">日次KPI確認と翌日の準備。定時退社がほとんど。たまにチーム飲みも！</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── LINE BENEFITS ── -->
+<section id="benefits">
+  <div class="ben-inner">
+    <div style="text-align:center;margin-bottom:56px;" class="fade">
+      <p class="sec-label" style="color:var(--orange);display:block;margin-bottom:12px;">LINE Benefits</p>
+      <h2 class="sec-h2" style="color:#fff;">LINE登録者<span class="grad">限定</span><br>3大特典</h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-card fade">
+        <p class="ben-num grad">01</p>
+        <h3 class="ben-title">特別先行ルート</h3>
+        <p class="ben-desc">通常とは別枠の、LINE登録者限定の特別選考ルートをご案内します。</p>
+      </div>
+      <div class="ben-card fade d1">
+        <p class="ben-num grad">02</p>
+        <h3 class="ben-title">プレミアムスカウト</h3>
+        <p class="ben-desc">書類選考・一次面接をスキップできる特別スカウトが届くことも！</p>
+      </div>
+      <div class="ben-card fade d2">
+        <p class="ben-num grad">03</p>
+        <h3 class="ben-title">非公開求人の案内</h3>
+        <p class="ben-desc">LINEでしか公開されない限定求人をいち早くチェックできます。</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="fade">
+      <a href="#entry" class="btn-line lg">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        特典を受け取る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── JOB CARD ── -->
+<section id="job">
+  <div class="job-inner fade">
+    <div style="margin-bottom:40px;">
+      <p class="sec-label" style="color:var(--orange);">Job Opening</p>
+      <h2 class="sec-h2">求人例</h2>
+    </div>
+    <div class="job-card">
+      <img class="job-photo" src="../snsmarketerrecruitlp/images/team-outdoor.jpg" alt="HADOチーム">
+      <div class="job-body">
+        <div class="job-tags">
+          <span class="job-tag">未経験歓迎</span>
+          <span class="job-tag">土日祝休み</span>
+          <span class="job-tag">研修3ヶ月</span>
+          <span class="job-tag">オンライン面談OK</span>
+          <span class="job-tag">髪型・服装自由</span>
+          <span class="job-tag">30歳以下</span>
+        </div>
+        <h3 class="job-title">SNSマーケター</h3>
+        <p class="job-salary">月給 25万〜60万円</p>
+        <p class="job-desc">TikTok・Instagram・YouTubeのクリエイティブ制作から広告運用まで担当。入社3ヶ月はマンツーマン研修で基礎からしっかり学べます。入社6ヶ月で担当クライアントを持ち、1年でリーダーを目指せます。<br><br>SNSが好き、表現することが好き、誰かの行動を動かしたい。そんな想いがあれば、経験は問いません。</p>
+        <a href="#entry" class="btn-line lg" style="width:100%;justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          この求人に応募する
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ENTRY FLOW ── -->
+<section id="flow">
+  <div class="flow-inner">
+    <div style="text-align:center;margin-bottom:56px;" class="fade">
+      <p class="sec-label" style="color:var(--orange);display:block;margin-bottom:12px;">Entry Flow</p>
+      <h2 class="sec-h2">選考までの流れ</h2>
+      <p class="sec-sub" style="color:rgba(0,0,0,.45);">応募はLINEから3ステップ</p>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step fade">
+        <div class="flow-num">01</div>
+        <p class="flow-title">LINE登録</p>
+        <p class="flow-desc">ボタンからHADO採用LINEを友だち追加するだけ</p>
+      </div>
+      <div class="flow-step fade d1">
+        <div class="flow-num">02</div>
+        <p class="flow-title">カジュアル面談</p>
+        <p class="flow-desc">30分のオンライン面談。選考ではありません。質問だけでもOK。</p>
+      </div>
+      <div class="flow-step fade d2">
+        <div class="flow-num">03</div>
+        <p class="flow-title">選考開始</p>
+        <p class="flow-desc">入社意欲のある方から選考へ。最短1週間で内定も。</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:56px;" class="fade">
+      <p style="font-size:.85rem;color:rgba(0,0,0,.4);margin-bottom:16px;">質問だけでも大歓迎です。まずは話を聞いてみませんか？</p>
+      <a href="#entry" class="btn-line lg">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINEで話を聞いてみる
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section id="entry">
+  <div id="entry-bg"></div>
+  <div id="entry-content" class="fade">
+    <p class="sec-label" style="color:var(--orange);display:block;text-align:center;margin-bottom:16px;">Join Us</p>
+    <h2>一生<span class="grad">文化祭</span>みたいに、<br>仕事しない？</h2>
+    <p>Sparklersのカルチャーはまだ完成されていない。<br>今まさに形成期。あなたに第一人者になってほしい。</p>
+    <div class="entry-chips">
+      <span class="entry-chip">未経験OK</span>
+      <span class="entry-chip">平均年収675万円</span>
+      <span class="entry-chip">全員20代</span>
+      <span class="entry-chip">研修3ヶ月</span>
+    </div>
+    <a href="#" class="btn-line xl">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      話を聞いてみる
+    </a>
+    <p class="note">カジュアル面談OK ／ 服装自由 ／ オンライン対応可</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <img class="f-logo" src="../snsmarketerrecruitlp/images/hado-logo-cropped.png" alt="HADO">
+  <p>株式会社HADO（ハドウ）</p>
+  <p>東京都渋谷区桜丘町 ／ 福岡県博多区博多駅前</p>
+  <p style="margin-top:16px;">&copy; 2025 HADO Inc. All rights reserved.</p>
+</footer>
+
+<!-- ── STICKY CTA ── -->
+<div id="sticky">
+  <a href="#entry" class="btn-line" style="width:100%;justify-content:center;padding:14px;">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    話を聞いてみる
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Swiper
+  new Swiper('.voice-swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    breakpoints: {
+      640: { slidesPerView: 1.5, spaceBetween: 20 },
+      900: { slidesPerView: 2.2, spaceBetween: 24 },
+      1200: { slidesPerView: 3, spaceBetween: 24 },
+    }
+  });
+
+  // NAV switch
+  const nav = document.getElementById('nav');
+  const hero = document.getElementById('hero');
+  new IntersectionObserver(([e]) => nav.classList.toggle('light', !e.isIntersecting), { threshold: 0.1 }).observe(hero);
+
+  // Scroll fade
+  const fadeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.fade').forEach(el => fadeObs.observe(el));
+
+  // Hero stagger
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.h-el').forEach((el, i) => {
+      setTimeout(() => el.classList.add('in'), 120 + i * 170);
+    });
+  });
+
+  // Countup
+  const cuObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      const unit = el.querySelector('span');
+      const unitText = unit ? unit.outerHTML : '';
+      let start = null;
+      const run = ts => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / 1800, 1);
+        const v = Math.round((1 - Math.pow(1 - p, 3)) * target);
+        el.innerHTML = v + unitText;
+        if (p < 1) requestAnimationFrame(run);
+      };
+      requestAnimationFrame(run);
+      cuObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-countup]').forEach(el => cuObs.observe(el));
+
+  // Parallax hero
+  const heroImg = document.getElementById('hero-img');
+  let raf = false;
+  window.addEventListener('scroll', () => {
+    if (!raf) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y < window.innerHeight * 1.5) heroImg.style.transform = `scale(1.08) translateY(${y * 0.2}px)`;
+        raf = false;
+      });
+      raf = true;
+    }
+  });
+
+  // Sticky CTA
+  const sticky = document.getElementById('sticky');
+  const entry = document.getElementById('entry');
+  const sObs = new IntersectionObserver((entries) => {
+    const inHero = entries.find(e => e.target === hero)?.isIntersecting;
+    const inEntry = entries.find(e => e.target === entry)?.isIntersecting;
+    sticky.classList.toggle('show', !inHero && !inEntry);
+  }, { threshold: 0.1 });
+  sObs.observe(hero);
+  sObs.observe(entry);
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  // Schedule drag scroll
+  const track = document.getElementById('schTrack');
+  let isDown = false, startX, scrollLeft;
+  track.addEventListener('mousedown', e => { isDown = true; track.classList.add('grabbing'); startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
+  track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('grabbing'); });
+  track.addEventListener('mouseup', () => { isDown = false; track.classList.remove('grabbing'); });
+  track.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); const x = e.pageX - track.offsetLeft; track.scrollLeft = scrollLeft - (x - startX) * 1.5; });
+</script>
+</body>
+</html>

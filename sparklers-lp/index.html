@@ -12,19 +12,19 @@
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; font-size: 16px; }
-    body { font-family: 'Noto Sans JP', sans-serif; background: #FAF6EE; color: #111; overflow-x: hidden; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: #F5F7FA; color: #111; overflow-x: hidden; }
 
     /* ── variables ── */
     :root {
-      --orange: #E8872E;
-      --gold: #F5C36A;
+      --blue: #0055FF;
+      --blue-light: #3B82F6;
       --dark: #0f0f0f;
-      --cream: #FAF6EE;
+      --cream: #F5F7FA;
       --line-green: #06C755;
     }
 
     /* ── utility ── */
-    .grad { background: linear-gradient(120deg, var(--orange) 0%, var(--gold) 55%, var(--orange) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .grad { background: linear-gradient(120deg, var(--blue) 0%, var(--blue-light) 55%, var(--blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .section-label { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.45; }
     img { display: block; }
 
@@ -41,45 +41,58 @@
     .h-el.in { opacity: 1; transform: none; }
 
     /* ── nav ── */
-    #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(0,0,0,.3); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,.08); transition: background .4s, border-color .4s; }
-    #nav.light { background: rgba(250,246,238,.96); border-bottom-color: rgba(0,0,0,.06); }
-    #nav .logo { height: 26px; filter: invert(1) brightness(10); transition: filter .4s; }
-    #nav.light .logo { filter: none; }
+    #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,.06); transition: background .4s, border-color .4s; }
+    #nav .logo { height: 26px; transition: filter .4s; }
     #nav .nav-links { display: none; }
     @media(min-width: 768px) {
       #nav .nav-links { display: flex; align-items: center; gap: 32px; }
-      #nav .nav-links a { font-size: .875rem; font-weight: 600; color: rgba(255,255,255,.7); text-decoration: none; transition: color .3s; }
-      #nav.light .nav-links a { color: rgba(0,0,0,.6); }
-      #nav .nav-links a:hover { color: #fff; }
-      #nav.light .nav-links a:hover { color: var(--orange); }
+      #nav .nav-links a { font-size: .875rem; font-weight: 600; color: rgba(0,0,0,.6); text-decoration: none; transition: color .3s; }
+      #nav .nav-links a:hover { color: var(--blue); }
     }
     .btn-line { display: inline-flex; align-items: center; gap: 8px; background: var(--line-green); color: #fff; font-weight: 800; font-size: .875rem; padding: 10px 20px; border-radius: 100px; text-decoration: none; transition: background .3s, transform .3s; white-space: nowrap; }
+    #nav > .btn-line { display: none; }
     .btn-line:hover { background: #05b34c; transform: translateY(-1px); }
     .btn-line.lg { font-size: 1.1rem; padding: 18px 48px; }
-    .btn-line.xl { font-size: 1.25rem; padding: 22px 60px; }
+    .btn-line.xl { font-size: 1.25rem; padding: 22px 60px; max-width: 100%; }
+    @media(max-width: 768px) { .btn-line.xl { font-size: 1rem; padding: 18px 32px; } }
     .btn-line svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
 
     /* ── hero ── */
-    #hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; background: var(--dark); overflow: hidden; }
-    #hero-bg { position: absolute; inset: 0; }
-    #hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transform: scale(1.08); will-change: transform; }
-    #hero-bg::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(0,0,0,.3) 40%, rgba(0,0,0,.78) 85%, rgba(0,0,0,.88) 100%); }
-    #hero-content { position: relative; z-index: 2; width: 100%; max-width: 1100px; margin: 0 auto; padding: 120px 24px 64px; }
-    #hero-content .tag { font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 20px; }
-    #hero-content h1 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; line-height: 1.05; color: #fff; font-size: clamp(2.8rem, 9vw, 6.5rem); margin-bottom: 24px; }
-    #hero-content .sub { font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 700; color: rgba(255,255,255,.8); margin-bottom: 8px; }
-    #hero-content .note { font-size: clamp(.85rem, 2vw, 1rem); color: rgba(255,255,255,.45); line-height: 1.8; margin-bottom: 40px; }
-    .scroll-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 2; color: rgba(255,255,255,.3); animation: sb 2s ease-in-out infinite; }
+    #hero { position: relative; background: #fff; overflow: hidden; }
+    #hero-bg { width: 100%; }
+    #hero-bg picture { display: block; width: 100%; }
+    #hero-bg img { width: 100%; height: auto; display: block; }
+    #hero-content { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; max-width: 1100px; margin: 0 auto; padding: 24px 24px 32px; }
+    @media(max-width: 768px) {
+      #hero-content { padding: 12px 16px 40px; }
+      #hero-content .btn-line.lg { font-size: .75rem; padding: 10px 20px; }
+      .scroll-hint { display: none; }
+    }
+    #hero-content .tag { font-size: .75rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--blue); margin-bottom: 20px; }
+    #hero-content h1 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; line-height: 1.05; color: #111; font-size: clamp(2.8rem, 9vw, 6.5rem); margin-bottom: 24px; }
+    #hero-content .sub { font-size: clamp(1rem, 2.5vw, 1.2rem); font-weight: 700; color: rgba(0,0,0,.7); margin-bottom: 8px; }
+    #hero-content .note { font-size: clamp(.85rem, 2vw, 1rem); color: rgba(0,0,0,.45); line-height: 1.8; margin-bottom: 40px; }
+    .scroll-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 2; color: rgba(0,0,0,.25); animation: sb 2s ease-in-out infinite; }
     @keyframes sb { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
 
+    /* ── hero badge ── */
+    #hero-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px 24px; background: #fff; }
+    .hero-badge-text { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(.95rem, 2.5vw, 1.2rem); letter-spacing: .08em; background: linear-gradient(120deg, var(--blue) 0%, var(--blue-light) 55%, var(--blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-badge-logo { height: 48px; }
+    #hero-badge .btn-line.lg { margin-top: 8px; }
+    @media(max-width: 768px) {
+      #hero-badge { padding: 24px 16px; }
+      #hero-badge .btn-line.lg { font-size: .8rem; padding: 12px 24px; }
+    }
+
     /* ── ticker ── */
-    #ticker { background: var(--dark); padding: 28px 0; overflow: hidden; }
-    #ticker .label { text-align: center; color: rgba(255,255,255,.28); font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 20px; }
+    #ticker { background: #fff; padding: 28px 0; overflow: hidden; border-top: 1px solid rgba(0,0,0,.06); border-bottom: 1px solid rgba(0,0,0,.06); }
+    #ticker .label { text-align: center; color: rgba(0,0,0,.5); font-size: 1rem; font-weight: 700; letter-spacing: .1em; margin-bottom: 20px; }
     .ticker-track { display: flex; width: max-content; animation: tick 28s linear infinite; }
     .ticker-track:hover { animation-play-state: paused; }
     @keyframes tick { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
     .ticker-item { display: flex; align-items: center; margin: 0 36px; }
-    .ticker-item img { height: 28px; object-fit: contain; filter: invert(1) brightness(10); opacity: .5; }
+    .ticker-item img { height: 28px; object-fit: contain; }
 
     /* ── stats ── */
     #stats { background: #080808; padding: 80px 24px 96px; }
@@ -89,25 +102,26 @@
     .stat-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; margin-bottom: 28px; }
     .stat-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1; }
     .stat-unit { font-size: clamp(1rem, 2.5vw, 1.5rem); }
-    .stat-label { color: rgba(255,255,255,.35); font-size: .8rem; margin-top: 12px; letter-spacing: .05em; }
+    .stat-label { color: rgba(255,255,255,.85); font-size: 1rem; font-weight: 700; margin-top: 12px; letter-spacing: .05em; }
     @media(max-width: 600px) {
       .stats-grid { grid-template-columns: 1fr; gap: 2px; }
     }
 
-    /* ── business bands ── */
-    .biz-band { padding: 80px 24px; }
-    .biz-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
-    .biz-inner.rev { direction: rtl; }
-    .biz-inner.rev > * { direction: ltr; }
-    .biz-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(4rem, 10vw, 8rem); line-height: 1; margin-bottom: 16px; }
-    .biz-heading { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.6rem, 4vw, 2.5rem); line-height: 1.25; margin-bottom: 20px; }
-    .biz-text { font-size: clamp(.9rem, 1.8vw, 1.05rem); line-height: 2; opacity: .65; }
-    .biz-photo { border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; }
-    .biz-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-    .biz-photo:hover img { transform: scale(1.04); }
+    /* ── business cards (3-col) ── */
+    #about { padding: 80px 24px; background: var(--cream); }
+    .biz-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .biz-card { background: #fff; border-radius: 16px; overflow: hidden; }
+    .biz-card .biz-photo { aspect-ratio: 16/10; }
+    .biz-card .biz-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .biz-card .biz-photo:hover img { transform: scale(1.04); }
+    .biz-card-body { padding: 24px; }
+    .biz-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 2.5rem; line-height: 1; margin-bottom: 8px; }
+    .biz-heading { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.15rem; line-height: 1.35; margin-bottom: 12px; }
+    .biz-text { font-size: .85rem; line-height: 1.85; color: rgba(0,0,0,.55); }
     @media(max-width: 768px) {
-      .biz-inner { grid-template-columns: 1fr; gap: 36px; direction: ltr; }
-      .biz-inner.rev { direction: ltr; }
+      .biz-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 24px; }
+      .biz-grid::-webkit-scrollbar { display: none; }
+      .biz-card { flex: 0 0 280px; scroll-snap-align: start; }
     }
 
     /* ── voice ── */
@@ -117,17 +131,17 @@
     .voice-slide { border-radius: 20px; overflow: hidden; position: relative; aspect-ratio: 3/4; }
     @media(min-width: 768px) { .voice-slide { aspect-ratio: 4/5; } }
     .voice-slide img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-    .voice-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.05) 0%, rgba(0,0,0,.35) 45%, rgba(0,0,0,.88) 100%); }
-    .voice-quote { position: absolute; top: 28px; left: 28px; right: 28px; z-index: 2; }
-    .voice-quote p { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.1rem, 3vw, 1.5rem); line-height: 1.5; color: #fff; }
+    .voice-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(0,0,0,.1) 35%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.88) 100%); }
+    .voice-quote { position: absolute; top: 20px; left: 20px; right: 20px; z-index: 2; }
+    .voice-quote p { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(0.95rem, 2.5vw, 1.25rem); line-height: 1.5; color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.5); }
     .voice-bottom { position: absolute; bottom: 28px; left: 28px; right: 28px; z-index: 2; }
-    .voice-role { font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+    .voice-role { font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
     .voice-name { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.2rem; color: #fff; }
     .voice-meta { font-size: .8rem; color: rgba(255,255,255,.5); margin-top: 4px; }
     .voice-body { margin-top: 16px; font-size: .85rem; line-height: 1.8; color: rgba(255,255,255,.65); }
-    .swiper-button-next, .swiper-button-prev { color: var(--orange) !important; }
+    .swiper-button-next, .swiper-button-prev { color: var(--blue) !important; }
     .swiper-pagination-bullet { background: rgba(255,255,255,.35) !important; }
-    .swiper-pagination-bullet-active { background: var(--orange) !important; }
+    .swiper-pagination-bullet-active { background: var(--blue) !important; }
 
     /* ── schedule ── */
     #schedule { background: var(--cream); padding: 80px 0 100px; overflow: hidden; }
@@ -135,21 +149,36 @@
     .sch-track { display: flex; gap: 20px; padding: 0 24px; overflow-x: auto; cursor: grab; user-select: none; scrollbar-width: none; }
     .sch-track::-webkit-scrollbar { display: none; }
     .sch-track.grabbing { cursor: grabbing; }
+
+    /* ── Gallery Collage (HADOの日常) ── */
+    #gallery { padding: 0; background: #1a1a1a; overflow: hidden; }
+    .gal-text { padding: 48px 24px; text-align: center; background: #1a1a1a; }
+    .gal-text p { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; color: #fff; font-size: clamp(1.1rem, 3.5vw, 1.6rem); line-height: 1.8; letter-spacing: .04em; }
+    .gal-text .gal-highlight { font-size: clamp(1.5rem, 5vw, 2.4rem); background: linear-gradient(120deg, #3B82F6 0%, #60a5fa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; margin-top: 8px; line-height: 1.4; }
+    .gal-mosaic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; padding: 0; }
+    .gal-mosaic img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+    .gal-mosaic .pc-only { display: none; }
+    @media(min-width: 768px) {
+      .gal-mosaic { grid-template-columns: repeat(5, 1fr); gap: 4px; }
+      .gal-mosaic .pc-only { display: block; }
+    }
     .sch-card { flex: 0 0 260px; background: #fff; border-radius: 20px; overflow: hidden; }
     @media(min-width: 768px) { .sch-card { flex: 0 0 300px; } }
     .sch-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
     .sch-body { padding: 20px; }
-    .sch-time { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--orange); line-height: 1; margin-bottom: 8px; }
+    .sch-time { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--blue); line-height: 1; margin-bottom: 8px; }
     .sch-title { font-weight: 800; font-size: 1rem; margin-bottom: 8px; }
     .sch-desc { font-size: .8rem; line-height: 1.75; color: rgba(0,0,0,.5); }
 
     /* ── benefits ── */
-    #benefits { background: var(--dark); padding: 80px 24px 100px; }
+    #benefits { background: linear-gradient(160deg, #0a0a1a 0%, #0d1b3e 30%, #0a0a1a 60%, #111827 100%); padding: 80px 24px 100px; position: relative; overflow: hidden; }
+    #benefits::before { content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 200%; background: radial-gradient(ellipse, rgba(0,85,255,.12) 0%, transparent 60%); pointer-events: none; }
+    #benefits::after { content: ''; position: absolute; bottom: -40%; left: -20%; width: 60%; height: 150%; background: radial-gradient(ellipse, rgba(59,130,246,.08) 0%, transparent 60%); pointer-events: none; }
     .ben-inner { max-width: 900px; margin: 0 auto; }
     .ben-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
     @media(max-width: 640px) { .ben-grid { grid-template-columns: 1fr; } }
-    .ben-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; padding: 32px 24px; text-align: center; transition: background .3s; }
-    .ben-card:hover { background: rgba(255,255,255,.09); }
+    .ben-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 32px 24px; text-align: center; transition: background .3s, border-color .3s; backdrop-filter: blur(8px); }
+    .ben-card:hover { background: rgba(255,255,255,.1); border-color: rgba(0,85,255,.3); }
     .ben-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 3.5rem; line-height: 1; margin-bottom: 16px; }
     .ben-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.1rem; color: #fff; margin-bottom: 10px; }
     .ben-desc { font-size: .82rem; line-height: 1.75; color: rgba(255,255,255,.45); }
@@ -158,28 +187,29 @@
     #job { background: var(--cream); padding: 80px 24px 100px; }
     .job-inner { max-width: 900px; margin: 0 auto; }
     .job-card { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 40px rgba(0,0,0,.07); }
-    .job-photo { width: 100%; aspect-ratio: 16/7; object-fit: cover; object-position: center 30%; }
+    .job-photo { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: center top; }
     .job-body { padding: 40px 36px; }
     .job-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
-    .job-tag { background: rgba(232,135,46,.1); color: var(--orange); font-size: .78rem; font-weight: 700; padding: 5px 14px; border-radius: 100px; border: 1px solid rgba(232,135,46,.25); }
+    .job-tag { background: rgba(0,85,255,.08); color: var(--blue); font-size: .78rem; font-weight: 700; padding: 5px 14px; border-radius: 100px; border: 1px solid rgba(0,85,255,.2); }
     .job-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: 12px; }
-    .job-salary { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--orange); margin-bottom: 20px; }
+    .job-salary { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--blue); margin-bottom: 20px; }
     .job-desc { font-size: .9rem; line-height: 2; color: rgba(0,0,0,.6); margin-bottom: 32px; }
     @media(max-width: 600px) { .job-body { padding: 28px 24px; } }
 
     /* ── flow ── */
     #flow { background: #fff; padding: 80px 24px 100px; }
-    .flow-inner { max-width: 860px; margin: 0 auto; }
+    .flow-inner { max-width: 900px; margin: 0 auto; }
     .flow-steps { display: flex; flex-direction: column; gap: 0; }
     @media(min-width: 640px) { .flow-steps { flex-direction: row; align-items: flex-start; } }
-    .flow-step { flex: 1; text-align: center; padding: 32px 20px; position: relative; }
-    .flow-step:not(:last-child)::after { content: '↓'; position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 1.5rem; color: var(--orange); font-weight: 900; }
+    .flow-step { flex: 1; text-align: center; padding: 28px 16px; position: relative; }
+    .flow-step:not(:last-child)::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 24px; height: 24px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230055FF'%3E%3Cpath d='M12 16l-6-6h12z'/%3E%3C/svg%3E") center/contain no-repeat; }
     @media(min-width: 640px) {
-      .flow-step:not(:last-child)::after { content: '→'; bottom: auto; top: 44px; left: auto; right: -16px; transform: none; }
+      .flow-step:not(:last-child)::after { bottom: auto; top: 56px; left: auto; right: -12px; transform: rotate(-90deg); }
     }
-    .flow-num { width: 64px; height: 64px; border-radius: 50%; background: var(--orange); color: #fff; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.3rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
-    .flow-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.1rem; margin-bottom: 8px; }
-    .flow-desc { font-size: .82rem; color: rgba(0,0,0,.5); line-height: 1.75; }
+    .flow-icon { width: 72px; height: 72px; border-radius: 20px; background: linear-gradient(135deg, rgba(0,85,255,.08), rgba(59,130,246,.15)); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 2rem; }
+    .flow-step-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: .7rem; color: var(--blue); letter-spacing: .1em; margin-bottom: 6px; }
+    .flow-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.05rem; margin-bottom: 8px; }
+    .flow-desc { font-size: .8rem; color: rgba(0,0,0,.45); line-height: 1.75; }
 
     /* ── final cta ── */
     #entry { position: relative; overflow: hidden; background: var(--dark); padding: 96px 24px 120px; text-align: center; }
@@ -192,17 +222,18 @@
     #entry .note { font-size: .78rem; color: rgba(255,255,255,.2); margin-top: 16px; }
 
     /* ── footer ── */
-    footer { background: #060606; color: rgba(255,255,255,.35); padding: 48px 24px; text-align: center; font-size: .8rem; line-height: 2; }
+    footer { background: #060606; color: rgba(255,255,255,.35); padding: 48px 24px 100px; text-align: center; font-size: .8rem; line-height: 2; }
+    @media(min-width: 768px) { footer { padding-bottom: 48px; } }
     footer .f-logo { height: 22px; filter: invert(1) brightness(10); opacity: .25; margin: 0 auto 16px; }
 
     /* ── sticky cta ── */
-    #sticky { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: rgba(250,246,238,.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(0,0,0,.07); padding: 12px 16px; transform: translateY(100%); transition: transform .4s ease; }
+    #sticky { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(0,0,0,.07); padding: 12px 16px; transform: translateY(100%); transition: transform .4s ease; }
     #sticky.show { transform: none; }
     @media(min-width: 768px) { #sticky { display: none; } }
 
     /* ── section headers ── */
     .sec-label { font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 12px; }
-    .sec-h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.25; }
+    .sec-h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 3.5vw, 2rem); line-height: 1.3; }
     .sec-sub { margin-top: 12px; font-size: clamp(.9rem, 2vw, 1.05rem); line-height: 1.9; }
   </style>
 </head>
@@ -216,11 +247,7 @@
 <!-- ── NAV ── -->
 <nav id="nav">
   <a href="#"><img class="logo" src="../snsmarketerrecruitlp/images/hado-logo-cropped.png" alt="HADO"></a>
-  <div class="nav-links">
-    <a href="#about">事業内容</a>
-    <a href="#voice">先輩の声</a>
-    <a href="#schedule">マーケターの1日</a>
-  </div>
+  <div class="nav-links"></div>
   <a href="#entry" class="btn-line">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
     LINE登録
@@ -230,24 +257,27 @@
 <!-- ── HERO ── -->
 <section id="hero">
   <div id="hero-bg">
-    <img id="hero-img" src="../snsmarketerrecruitlp/images/hero-stairs.jpg" alt="HADOチーム">
+    <picture>
+      <source media="(min-width: 769px)" srcset="images/hero-pc.png">
+      <source media="(max-width: 768px)" srcset="images/hero-tablet.png">
+      <img id="hero-img" src="images/hero-pc.png" alt="未経験から最速で一流のマーケターに。">
+    </picture>
   </div>
-  <div id="hero-content">
-    <p class="tag h-el">SNS Marketing Team — Sparklers</p>
-    <h1 class="h-el">未経験から最速で<br><span class="grad">一流のマーケター</span>に。</h1>
-    <p class="sub h-el">経験はいらない。ほしいのは、挑戦心だけ。</p>
-    <p class="note h-el">平均年収675万円 ／ 平均年齢25歳 ／ 未経験スタート率90%</p>
-    <div class="h-el">
-      <a href="#entry" class="btn-line lg">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        まずは話を聞いてみる
-      </a>
-    </div>
-  </div>
+  <div id="hero-content"></div>
   <div class="scroll-hint">
     <svg width="22" height="30" viewBox="0 0 22 30" fill="none"><rect x="1" y="1" width="20" height="28" rx="10" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="8" r="2.5" fill="currentColor"/></svg>
   </div>
 </section>
+
+<!-- ── HERO BADGE ── -->
+<div id="hero-badge">
+  <p class="hero-badge-text">急成長中のマーケティングカンパニー</p>
+  <img src="../snsmarketerrecruitlp/images/hado-logo-cropped.png" alt="HADO" class="hero-badge-logo">
+  <a href="#entry" class="btn-line lg">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINEで非公開求人を受け取る
+  </a>
+</div>
 
 <!-- ── LOGO TICKER ── -->
 <section id="ticker">
@@ -276,6 +306,10 @@
 
 <!-- ── STATS ── -->
 <section id="stats">
+  <div class="stats-head fade" style="max-width:1100px;margin:0 auto;padding:40px 24px 24px;text-align:center;">
+    <p class="sec-label" style="color:var(--blue);">Data</p>
+    <h2 class="sec-h2" style="color:#fff;">数字で見るHADO</h2>
+  </div>
   <div class="stats-inner">
     <div class="stats-grid">
       <div class="stat-card fade">
@@ -297,60 +331,44 @@
   </div>
 </section>
 
-<!-- ── BUSINESS BANDS ── -->
-<div id="about">
-
-  <!-- 01 SNS広告事業 — dark -->
-  <div class="biz-band" style="background:#111; color:#f5f0e8;">
-    <div class="biz-inner fade">
-      <div>
-        <p class="sec-label" style="color:var(--orange);">Business 01</p>
+<!-- ── BUSINESS CARDS ── -->
+<section id="about">
+  <div class="sec-head fade" style="max-width:1100px;margin:0 auto 40px;padding:0 24px;">
+    <p class="sec-label" style="color:var(--blue);">Business</p>
+    <h2 class="sec-h2">事業内容</h2>
+  </div>
+  <div class="biz-grid fade">
+    <div class="biz-card">
+      <div class="biz-photo"><img src="../snsmarketerrecruitlp/images/work-laptop.jpg" alt="SNS広告"></div>
+      <div class="biz-card-body">
         <p class="biz-num grad">01</p>
         <h3 class="biz-heading">SNS広告事業</h3>
-        <p class="biz-text">TikTok・Instagram・YouTubeなどの主要SNSにおいて、クリエイティブ制作から広告運用まで一気通貫で支援。クライアントの売上最大化にコミット。バズを数字に変える、それが私たちの仕事。</p>
-      </div>
-      <div class="biz-photo">
-        <img src="../snsmarketerrecruitlp/images/work-laptop.jpg" alt="SNS広告">
+        <p class="biz-text">TikTok・Instagram・YouTubeなどの主要SNSにおいて、クリエイティブ制作から広告運用まで一気通貫で支援。バズを数字に変える、それが私たちの仕事。</p>
       </div>
     </div>
-  </div>
-
-  <!-- 02 キャリア支援事業 — cream -->
-  <div class="biz-band" style="background:var(--cream);">
-    <div class="biz-inner rev fade">
-      <div>
-        <p class="sec-label" style="color:var(--orange);">Business 02</p>
+    <div class="biz-card">
+      <div class="biz-photo"><img src="../snsmarketerrecruitlp/images/work-meeting.jpg" alt="キャリア支援"></div>
+      <div class="biz-card-body">
         <p class="biz-num grad">02</p>
         <h3 class="biz-heading">キャリア支援事業</h3>
-        <p class="biz-text">若い才能が正しく評価される社会をつくる。キャリアマッチングや転職支援を展開し、人材紹介を通じて企業と個人の最適な出会いを創出。「売り方」がわかる人材を社会に送り出す。</p>
-      </div>
-      <div class="biz-photo">
-        <img src="../snsmarketerrecruitlp/images/work-meeting.jpg" alt="キャリア支援">
+        <p class="biz-text">若い才能が正しく評価される社会をつくる。人材紹介を通じて企業と個人の最適な出会いを創出。「売り方」がわかる人材を社会に送り出す。</p>
       </div>
     </div>
-  </div>
-
-  <!-- 03 新規事業開発 — orange accent -->
-  <div class="biz-band" style="background:#1a0d00;">
-    <div class="biz-inner fade" style="color:#f5f0e8;">
-      <div>
-        <p class="sec-label" style="color:var(--orange);">Business 03</p>
+    <div class="biz-card">
+      <div class="biz-photo"><img src="../snsmarketerrecruitlp/images/team-meeting.jpg" alt="新規事業"></div>
+      <div class="biz-card-body">
         <p class="biz-num grad">03</p>
         <h3 class="biz-heading">新規事業開発</h3>
-        <p class="biz-text">マーケティングノウハウを基盤に、D2Cブランド開発やメディア運営など多角的に事業を展開。「売る力で０→１を創出」。社員が新しい価値を生み出し、直接利益に繋げる環境がある。</p>
-      </div>
-      <div class="biz-photo">
-        <img src="../snsmarketerrecruitlp/images/team-meeting.jpg" alt="新規事業">
+        <p class="biz-text">D2Cブランド開発やメディア運営など多角的に事業を展開。「売る力で０→１を創出」。社員が新しい価値を生み出し、直接利益に繋げる環境がある。</p>
       </div>
     </div>
   </div>
-
-</div>
+</section>
 
 <!-- ── VOICE ── -->
 <section id="voice">
   <div class="sec-head fade">
-    <p class="sec-label" style="color:var(--orange);">Voice</p>
+    <p class="sec-label" style="color:var(--blue);">Voice</p>
     <h2 class="sec-h2" style="color:#fff;">先輩社員の声</h2>
     <p class="sec-sub" style="color:rgba(255,255,255,.4);">共に働くメンバーたちのリアルな言葉。</p>
   </div>
@@ -415,7 +433,7 @@
           </div>
           <div class="voice-bottom">
             <p class="voice-role">クリエイティブディレクター</p>
-            <p class="voice-name">岡本（22歳）</p>
+            <p class="voice-name">Dさん（22歳）</p>
             <p class="voice-meta">新卒入社 → 入社10ヶ月</p>
             <p class="voice-body">大手だったら会議室にもいられないような戦略会議に、入社すぐから参加できる。成長の密度が全然違う。</p>
           </div>
@@ -431,7 +449,7 @@
 <!-- ── SCHEDULE ── -->
 <section id="schedule">
   <div class="sec-head fade">
-    <p class="sec-label" style="color:var(--orange);">One Day Schedule</p>
+    <p class="sec-label" style="color:var(--blue);">One Day Schedule</p>
     <h2 class="sec-h2">マーケターの1日</h2>
     <p class="sec-sub" style="color:rgba(0,0,0,.45);">← スクロールして確認</p>
   </div>
@@ -495,11 +513,32 @@
   </div>
 </section>
 
+<!-- ── GALLERY (HADOの日常) ── -->
+<section id="gallery">
+  <!-- テキスト -->
+  <div class="gal-text fade">
+    <p>普通の会社だと<strong>10年</strong>かかる<br>挑戦や経験が、<br><span class="gal-highlight">20代で全部できる場所。</span></p>
+  </div>
+  <!-- コラージュ写真 -->
+  <div class="gal-mosaic">
+    <img src="images/P1430721.JPG" alt="">
+    <img src="images/IMG_3570.JPG" alt="">
+    <img src="images/IMG_7911.JPG" alt="">
+    <img src="images/IMG_1665.jpg" alt="">
+    <img src="images/IMG_1780.jpg" alt="">
+    <img src="images/P1430806.JPG" alt="">
+    <img src="images/IMG_3588.jpeg" alt="">
+    <img src="images/IMG_1980.jpg" alt="">
+    <img src="images/Gemini_Generated_Image_pwswerpwswerpwsw.png" alt="">
+    <img src="images/715E99B5-6047-430F-B4B5-816C4EAF2031.jpeg" alt="" class="pc-only">
+  </div>
+</section>
+
 <!-- ── LINE BENEFITS ── -->
 <section id="benefits">
   <div class="ben-inner">
     <div style="text-align:center;margin-bottom:56px;" class="fade">
-      <p class="sec-label" style="color:var(--orange);display:block;margin-bottom:12px;">LINE Benefits</p>
+      <p class="sec-label" style="color:var(--blue);display:block;margin-bottom:12px;">LINE Benefits</p>
       <h2 class="sec-h2" style="color:#fff;">LINE登録者<span class="grad">限定</span><br>3大特典</h2>
     </div>
     <div class="ben-grid">
@@ -522,7 +561,7 @@
     <div style="text-align:center;margin-top:48px;" class="fade">
       <a href="#entry" class="btn-line lg">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        特典を受け取る
+        LINEで非公開求人を受け取る
       </a>
     </div>
   </div>
@@ -532,26 +571,26 @@
 <section id="job">
   <div class="job-inner fade">
     <div style="margin-bottom:40px;">
-      <p class="sec-label" style="color:var(--orange);">Job Opening</p>
-      <h2 class="sec-h2">求人例</h2>
+      <p class="sec-label" style="color:var(--blue);">Job Opening</p>
+      <h2 class="sec-h2">募集求人</h2>
     </div>
     <div class="job-card">
-      <img class="job-photo" src="../snsmarketerrecruitlp/images/team-outdoor.jpg" alt="HADOチーム">
+      <img class="job-photo" src="../snsmarketerrecruitlp/images/team-hado-sign.jpg" alt="HADOチーム">
       <div class="job-body">
         <div class="job-tags">
           <span class="job-tag">未経験歓迎</span>
-          <span class="job-tag">土日祝休み</span>
+          <span class="job-tag">土日休み</span>
           <span class="job-tag">研修3ヶ月</span>
           <span class="job-tag">オンライン面談OK</span>
-          <span class="job-tag">髪型・服装自由</span>
+          <span class="job-tag">髪型・服装・ネイル自由</span>
           <span class="job-tag">30歳以下</span>
         </div>
         <h3 class="job-title">SNSマーケター</h3>
-        <p class="job-salary">月給 25万〜60万円</p>
+        <p class="job-salary">月給 25万〜60万円＋賞与年2回</p>
         <p class="job-desc">TikTok・Instagram・YouTubeのクリエイティブ制作から広告運用まで担当。入社3ヶ月はマンツーマン研修で基礎からしっかり学べます。入社6ヶ月で担当クライアントを持ち、1年でリーダーを目指せます。<br><br>SNSが好き、表現することが好き、誰かの行動を動かしたい。そんな想いがあれば、経験は問いません。</p>
         <a href="#entry" class="btn-line lg" style="width:100%;justify-content:center;">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-          この求人に応募する
+          LINEで非公開求人を受け取る
         </a>
       </div>
     </div>
@@ -562,32 +601,35 @@
 <section id="flow">
   <div class="flow-inner">
     <div style="text-align:center;margin-bottom:56px;" class="fade">
-      <p class="sec-label" style="color:var(--orange);display:block;margin-bottom:12px;">Entry Flow</p>
+      <p class="sec-label" style="color:var(--blue);display:block;margin-bottom:12px;">Entry Flow</p>
       <h2 class="sec-h2">選考までの流れ</h2>
       <p class="sec-sub" style="color:rgba(0,0,0,.45);">応募はLINEから3ステップ</p>
     </div>
     <div class="flow-steps">
       <div class="flow-step fade">
-        <div class="flow-num">01</div>
+        <div class="flow-icon">📱</div>
+        <p class="flow-step-num">STEP 01</p>
         <p class="flow-title">LINE登録</p>
         <p class="flow-desc">ボタンからHADO採用LINEを友だち追加するだけ</p>
       </div>
       <div class="flow-step fade d1">
-        <div class="flow-num">02</div>
+        <div class="flow-icon">💬</div>
+        <p class="flow-step-num">STEP 02</p>
         <p class="flow-title">カジュアル面談</p>
-        <p class="flow-desc">30分のオンライン面談。選考ではありません。質問だけでもOK。</p>
+        <p class="flow-desc">30分のオンライン面談。選考ではありません。質問だけでもOK</p>
       </div>
       <div class="flow-step fade d2">
-        <div class="flow-num">03</div>
-        <p class="flow-title">選考開始</p>
-        <p class="flow-desc">入社意欲のある方から選考へ。最短1週間で内定も。</p>
+        <div class="flow-icon">🎉</div>
+        <p class="flow-step-num">STEP 03</p>
+        <p class="flow-title">選考・内定</p>
+        <p class="flow-desc">入社意欲のある方から選考へ。最短1週間で内定も</p>
       </div>
     </div>
     <div style="text-align:center;margin-top:56px;" class="fade">
       <p style="font-size:.85rem;color:rgba(0,0,0,.4);margin-bottom:16px;">質問だけでも大歓迎です。まずは話を聞いてみませんか？</p>
       <a href="#entry" class="btn-line lg">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-        LINEで話を聞いてみる
+        LINEで非公開求人を受け取る
       </a>
     </div>
   </div>
@@ -597,7 +639,7 @@
 <section id="entry">
   <div id="entry-bg"></div>
   <div id="entry-content" class="fade">
-    <p class="sec-label" style="color:var(--orange);display:block;text-align:center;margin-bottom:16px;">Join Us</p>
+    <p class="sec-label" style="color:var(--blue);display:block;text-align:center;margin-bottom:16px;">Join Us</p>
     <h2>一生<span class="grad">文化祭</span>みたいに、<br>仕事しない？</h2>
     <p>Sparklersのカルチャーはまだ完成されていない。<br>今まさに形成期。あなたに第一人者になってほしい。</p>
     <div class="entry-chips">
@@ -608,7 +650,7 @@
     </div>
     <a href="#" class="btn-line xl">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-      話を聞いてみる
+      LINEで非公開求人を受け取る
     </a>
     <p class="note">カジュアル面談OK ／ 服装自由 ／ オンライン対応可</p>
   </div>
@@ -618,7 +660,7 @@
 <footer>
   <img class="f-logo" src="../snsmarketerrecruitlp/images/hado-logo-cropped.png" alt="HADO">
   <p>株式会社HADO（ハドウ）</p>
-  <p>東京都渋谷区桜丘町 ／ 福岡県博多区博多駅前</p>
+  <p>東京都渋谷区桜丘町21-4 渋谷桜丘町ビル3F</p>
   <p style="margin-top:16px;">&copy; 2025 HADO Inc. All rights reserved.</p>
 </footer>
 
@@ -626,7 +668,7 @@
 <div id="sticky">
   <a href="#entry" class="btn-line" style="width:100%;justify-content:center;padding:14px;">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
-    話を聞いてみる
+    LINEで非公開求人を受け取る
   </a>
 </div>
 

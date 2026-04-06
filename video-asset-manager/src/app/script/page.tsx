@@ -68,7 +68,7 @@ export default function ScriptPage() {
         <textarea
           value={script}
           onChange={(e) => setScript(e.target.value)}
-          placeholder={"例:\n【シーン1: オープニング】\n朝の光が差し込むカフェ。主人公がコーヒーを飲みながら微笑む。\n\n【シーン2: 商品紹介】\n新作スキンケアアイテムを手に取り、テクスチャーを見せる。\n\n【シーン3: CTA】\n「今すぐチェック」のテロップとともに、商品のクローズアップ。"}
+          placeholder={"例:\n\nナレーション「毎日のスキンケア、本当にそれで合ってる？」\n→ 鏡を見て肌を気にする女性のカット\n\nナレーション「〇〇美容液なら、たった30秒で浸透」\n→ 商品を手に取りワンプッシュ、肌に馴染ませるカット\n\nナレーション「使い続けた結果がこちら」\n→ ビフォーアフターの肌、笑顔のクローズアップ\n\nテロップ「今なら初回50%OFF」\nナレーション「詳しくはプロフィールのリンクから」\n→ スマホでサイトを見せるカット"}
           className="w-full h-48 px-4 py-3 border border-gray-200 rounded-xl text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-y"
           disabled={loading}
         />

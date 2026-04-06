@@ -19,9 +19,12 @@ export async function POST(request: NextRequest) {
     const videos = getAllVideos();
     const result = await chatSearch(message, videos);
 
-    const matchedVideos = videos.filter((v) =>
-      result.matchedVideoIds.includes(v.id)
-    );
+    const matchedVideos = videos
+      .filter((v) => result.matchedVideoIds.includes(v.id))
+      .map((v) => ({
+        ...v,
+        thumbnailUrl: v.id ? `/api/thumbnail?id=${v.id}` : v.thumbnailUrl,
+      }));
 
     return NextResponse.json({
       message: result.message,

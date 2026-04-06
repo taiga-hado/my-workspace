@@ -9,7 +9,12 @@ export async function GET(request: NextRequest) {
   const tagsParam = searchParams.get("tags");
   const tags = tagsParam ? tagsParam.split(",") : undefined;
 
-  const videos = searchVideos(query, category, model, tags);
+  const videos = searchVideos(query, category, model, tags).map((v) => ({
+    ...v,
+    // Replace Google Drive thumbnail URL with proxy URL
+    thumbnailUrl: v.id ? `/api/thumbnail?id=${v.id}` : v.thumbnailUrl,
+  }));
+
   const categories = getCategories();
   const models = getModels();
   const allTags = getAllTags();

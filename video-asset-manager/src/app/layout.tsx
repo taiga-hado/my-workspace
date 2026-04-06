@@ -39,24 +39,24 @@ export default function RootLayout({
                 </svg>
                 <span className="font-bold text-gray-900">Video Asset Manager</span>
               </Link>
-              <nav className="flex items-center gap-4">
+              <nav className="flex items-center gap-2">
                 <Link
                   href="/"
-                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                  className="px-3 py-1.5 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
                 >
-                  一覧
+                  素材一覧
                 </Link>
                 <Link
                   href="/chat"
-                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                  className="px-3 py-1.5 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
                 >
-                  AI検索
+                  AI素材検索
                 </Link>
                 <Link
                   href="/script"
-                  className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                  className="px-3 py-1.5 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
                 >
-                  台本分析
+                  台本から素材レコメンド
                 </Link>
               </nav>
             </div>

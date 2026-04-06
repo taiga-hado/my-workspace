@@ -3,10 +3,13 @@ import type { drive_v3 } from "googleapis";
 import type { FolderInfo } from "./types";
 
 function getAuth() {
+  const privateKey = process.env.GOOGLE_PRIVATE_KEY;
   return new google.auth.GoogleAuth({
     credentials: {
       client_email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-      private_key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+      private_key: privateKey?.includes("\\n")
+        ? privateKey.replace(/\\n/g, "\n")
+        : privateKey,
     },
     scopes: ["https://www.googleapis.com/auth/drive.readonly"],
   });

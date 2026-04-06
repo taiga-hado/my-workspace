@@ -55,23 +55,6 @@ export default function VideoCard({ video: initialVideo, onUpdate }: VideoCardPr
             {video.description}
           </p>
 
-          {/* Tags */}
-          <div className="flex flex-wrap gap-1 mb-3">
-            {video.tags.slice(0, 3).map((tag) => (
-              <span
-                key={tag}
-                className="px-2 py-0.5 bg-blue-50 text-blue-600 text-xs rounded-full"
-              >
-                {tag}
-              </span>
-            ))}
-            {video.tags.length > 3 && (
-              <span className="px-2 py-0.5 bg-gray-100 text-gray-500 text-xs rounded-full">
-                +{video.tags.length - 3}
-              </span>
-            )}
-          </div>
-
           {/* Transcript toggle */}
           {video.transcript && video.transcript !== "（音声なし）" && (
             <>

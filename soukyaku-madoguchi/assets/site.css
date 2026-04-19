@@ -1913,3 +1913,144 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .site-header-inner { padding: 0 20px; }
   .metrics-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* ============================================
+   Polish layer — 案A (elegant enhancements)
+   Isolated block. To revert visual polish,
+   delete everything from here to end of file.
+   ============================================ */
+:root {
+  --grad-navy-rich: linear-gradient(135deg, #1a3a8a 0%, #12286a 50%, #0a1a54 100%);
+  --grad-blue-rich: linear-gradient(135deg, #2e64e8 0%, #1b48bb 55%, #143494 100%);
+  --grad-gold-metal: linear-gradient(135deg, #fbd868 0%, #f5b400 45%, #c88a00 100%);
+  --grad-blue-text: linear-gradient(135deg, #1a3a8a 0%, #2357d8 100%);
+  --grad-hero-mesh:
+    radial-gradient(at 8% 12%, rgba(35, 87, 216, 0.10) 0%, transparent 55%),
+    radial-gradient(at 92% 18%, rgba(245, 180, 0, 0.07) 0%, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(26, 58, 138, 0.06) 0%, transparent 60%);
+}
+
+/* --- Hero: richer mesh background --- */
+.saas-hero {
+  background:
+    var(--grad-hero-mesh),
+    linear-gradient(180deg, var(--brand-blue-tint) 0%, #fff 85%);
+}
+
+/* --- Hero H1 main box: rich navy gradient with depth --- */
+.hero-h1-box-main {
+  background: var(--grad-navy-rich);
+  box-shadow:
+    0 16px 38px rgba(14, 25, 60, 0.22),
+    0 4px 10px rgba(35, 87, 216, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+.hero-h1-box-main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 38%, rgba(255, 255, 255, 0.07) 50%, transparent 62%);
+  pointer-events: none;
+}
+
+/* --- Metallic gold for accent text --- */
+.hero-h1-box-type .gold,
+.heading-display .gold,
+.heading-xl .gold,
+.heading-lg .gold,
+.heading-md .gold,
+.feature-row-text h3 .gold {
+  background: var(--grad-gold-metal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Refined blue gradient for accent text --- */
+.heading-display .blue,
+.heading-xl .blue,
+.heading-lg .blue,
+.heading-md .blue,
+.feature-row-text h3 .blue {
+  background: var(--grad-blue-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+/* --- Eyebrow: soft glow --- */
+.eyebrow {
+  box-shadow:
+    inset 0 0 0 1px rgba(35, 87, 216, 0.1),
+    0 4px 12px rgba(35, 87, 216, 0.08);
+}
+
+/* --- Primary CTA: gradient + shimmer --- */
+.btn-primary {
+  background: var(--grad-blue-rich);
+  background-size: 200% 100%;
+  background-position: 0% 0%;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background-position 0.55s var(--ease-out),
+    transform 0.25s var(--ease-out),
+    box-shadow 0.3s var(--ease-out);
+  box-shadow:
+    0 10px 24px rgba(35, 87, 216, 0.28),
+    0 2px 6px rgba(14, 25, 60, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 80%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 20%, rgba(255, 255, 255, 0.28) 50%, transparent 80%);
+  transition: left 0.8s var(--ease-out);
+  pointer-events: none;
+}
+.btn-primary:hover {
+  background: var(--grad-blue-rich);
+  background-position: 100% 0%;
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 38px rgba(35, 87, 216, 0.38),
+    0 6px 14px rgba(14, 25, 60, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+.btn-primary:hover::after {
+  left: 120%;
+}
+
+/* --- Card elevation refinement --- */
+.pain-card,
+.service-card,
+.case-card {
+  transition:
+    transform 0.45s var(--ease-out),
+    box-shadow 0.45s var(--ease-out),
+    border-color 0.35s var(--ease-out);
+}
+.pain-card:hover,
+.service-card:hover,
+.case-card:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 28px 56px rgba(14, 25, 60, 0.12),
+    0 10px 22px rgba(35, 87, 216, 0.08);
+}
+
+/* --- Compare table header: richer gradient --- */
+.compare-head {
+  background: linear-gradient(135deg, var(--brand-blue-tint) 0%, var(--bg-soft) 100%);
+}
+.compare-brand-tag {
+  background: var(--grad-blue-rich);
+}

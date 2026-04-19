@@ -332,12 +332,11 @@
           </label>
 
           <button type="submit" class="ct-submit" id="submitBtn">送信する</button>
-          <p class="ct-note">送信ボタンを押すと、ご入力内容を基にメールアプリが起動します。<br>メールが起動しない場合は、お手数ですが担当者宛に直接ご連絡ください。</p>
         </form>
 
         <div class="ct-success" id="successMsg">
           <h3>お問い合わせありがとうございます</h3>
-          <p>メールアプリを起動しました。<br>そのままメール送信を完了してください。<br>内容を確認のうえ、担当者より2営業日以内にご連絡いたします。</p>
+          <p>送信が完了しました。<br>内容を確認のうえ、担当者より2営業日以内にご連絡いたします。</p>
         </div>
       </div>
     </div>
@@ -349,29 +348,52 @@
     </div>
   </footer>
 
-  <script src="../assets/form-config.js"></script>
   <script>
   (function(){
-    var SLACK_EMAIL = 'x-aaaatgnqded6hjsx3iponfqvhy@hado-group.slack.com';
+    var WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxKPd--F16UiULPqRmbz_jLjWGt-Xy9y_aipISPsgFhFiHcdZsOaSHNoc2AsCZXgQcR/exec';
     var STORAGE_KEY = 'madoguchi_submissions';
-    var CONFIG = (window.MADOGUCHI_CONFIG || {});
     var form = document.getElementById('contactForm');
     var success = document.getElementById('successMsg');
+    var submitBtn = document.getElementById('submitBtn');
     if(!form) return;
 
-    function postToGoogleForm(submission){
-      if(!CONFIG.GOOGLE_FORM_ACTION) return;
-      var entries = CONFIG.FIELD_ENTRIES || {};
+    function buildSubmission(){
+      var d = new FormData(form);
+      return {
+        id: Date.now().toString(36) + Math.random().toString(36).slice(2,8),
+        submittedAt: new Date().toISOString(),
+        company: d.get('company')||'',
+        department: d.get('department')||'',
+        lastName: d.get('lastName')||'',
+        firstName: d.get('firstName')||'',
+        email: d.get('email')||'',
+        service: d.get('service')||'',
+        monthly: d.get('monthly')||'',
+        message: d.get('message')||'',
+        userAgent: navigator.userAgent,
+        referer: document.referrer || location.href
+      };
+    }
+
+    function saveLocal(submission){
+      try {
+        var list = JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
+        list.unshift(submission);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+      } catch(err){}
+    }
+
+    function postToAppsScript(submission){
       var params = new URLSearchParams();
-      ['company','department','lastName','firstName','email','service','monthly','message'].forEach(function(k){
-        if(entries[k]) params.append(entries[k], submission[k]||'');
+      Object.keys(submission).forEach(function(k){
+        params.append(k, submission[k] == null ? '' : String(submission[k]));
       });
-      // Use no-cors POST; response is opaque but the record is saved
-      fetch(CONFIG.GOOGLE_FORM_ACTION, {
-        method:'POST', mode:'no-cors',
-        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      return fetch(WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {'Content-Type':'application/x-www-form-urlencoded'},
         body: params.toString()
-      }).catch(function(){ /* silent */ });
+      });
     }
 
     form.addEventListener('submit', function(e){
@@ -380,50 +402,14 @@
         form.reportValidity();
         return;
       }
-      var d = new FormData(form);
-      var submission = {
-        id: Date.now().toString(36) + Math.random().toString(36).slice(2,8),
-        submittedAt: new Date().toISOString(),
-        company: d.get('company')||'',
-        department: d.get('department')||'',
-        name: ((d.get('lastName')||'') + ' ' + (d.get('firstName')||'')).trim(),
-        lastName: d.get('lastName')||'',
-        firstName: d.get('firstName')||'',
-        email: d.get('email')||'',
-        service: d.get('service')||'',
-        monthly: d.get('monthly')||'',
-        message: d.get('message')||''
-      };
-      try {
-        var list = JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]');
-        list.unshift(submission);
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-      } catch(err){}
-      postToGoogleForm(submission);
-      var lines = [
-        '【お問い合わせ内容】',
-        '',
-        '■ 会社名：' + submission.company,
-        '■ 部署名・役職：' + (submission.department||'—'),
-        '■ お名前：' + submission.name,
-        '■ メールアドレス：' + submission.email,
-        '',
-        '■ ご興味のあるサービス：' + submission.service,
-        '■ 月間希望送客数：' + (submission.monthly||'—'),
-        '',
-        '■ ご要望・ご質問：',
-        (submission.message||'—'),
-        '',
-        '—',
-        '送信日時：' + new Date(submission.submittedAt).toLocaleString('ja-JP'),
-        'ID：' + submission.id
-      ];
-      var subject = '【求職者送客の窓口】お問い合わせ（' + submission.company + '）';
-      var body = lines.join('\n');
-      var href = 'mailto:' + SLACK_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
-      window.location.href = href;
-      success.classList.add('is-visible');
-      form.style.display = 'none';
+      if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = '送信中...'; }
+      var submission = buildSubmission();
+      saveLocal(submission);
+      postToAppsScript(submission).catch(function(){ /* no-cors: opaque, ignore */ }).then(function(){
+        form.style.display = 'none';
+        success.classList.add('is-visible');
+        if(success.scrollIntoView) success.scrollIntoView({behavior:'smooth', block:'start'});
+      });
     });
   })();
   </script>

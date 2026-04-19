@@ -1805,8 +1805,19 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     position: relative;
   }
   .saas-hero-content { text-align: center; max-width: 100%; margin: 0 auto; padding-bottom: 0; }
-  .hero-badges { justify-content: center; margin-bottom: 14px; gap: 6px; }
-  .hero-badge-chip { font-size: 0.72rem; padding: 6px 12px; }
+  .hero-badges {
+    justify-content: center;
+    margin-bottom: 14px;
+    gap: 4px;
+    flex-wrap: nowrap;
+  }
+  .hero-badge-chip {
+    font-size: 0.64rem;
+    padding: 5px 8px;
+    gap: 4px;
+    letter-spacing: 0;
+  }
+  .hero-badge-chip::before { width: 12px; height: 12px; background-size: 8px; }
   .hero-h1-boxed { gap: 10px; align-items: center; }
   .hero-h1-box { align-self: center; }
   .hero-h1-box-type { font-size: 1.1rem; padding: 10px 20px; }

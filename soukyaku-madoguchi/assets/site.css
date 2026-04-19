@@ -1862,6 +1862,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     background: var(--bg-muted);
     justify-content: center;
   }
+  .compare-row .compare-label br { display: none; }
   .compare-us,
   .compare-them {
     padding: 14px 12px;

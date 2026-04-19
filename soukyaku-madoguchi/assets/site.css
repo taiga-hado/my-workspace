@@ -1796,16 +1796,46 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .burger.is-open span:nth-child(2) { opacity: 0; }
   .burger.is-open span:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
   .cta-panel { padding: 48px 28px; }
-  /* Hero responsive — stack content above, photo below */
-  .saas-hero { padding: 48px 0 0; }
+  /* Hero responsive — compact layout with CTA overlapping the portrait */
+  .saas-hero { padding: 24px 0 0; }
   .saas-hero-inner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 8px;
     padding: 0 20px;
+    position: relative;
   }
   .saas-hero-content { text-align: center; max-width: 100%; margin: 0 auto; padding-bottom: 0; }
-  .hero-duo { max-width: 380px; justify-self: center; }
-  .hero-ctas { justify-content: center; }
+  .hero-badges { justify-content: center; margin-bottom: 14px; gap: 6px; }
+  .hero-badge-chip { font-size: 0.72rem; padding: 6px 12px; }
+  .hero-h1-boxed { gap: 10px; align-items: center; }
+  .hero-h1-box { align-self: center; }
+  .hero-h1-box-type { font-size: 1.1rem; padding: 10px 20px; }
+  .hero-h1-box-main { font-size: 1.75rem; padding: 12px 24px; }
+  .hero-sub { font-size: 0.88rem; line-height: 1.8; margin-bottom: 0; padding: 0 4px; }
+  .hero-duo {
+    max-width: 320px;
+    justify-self: center;
+    margin: -8px auto 0;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-ctas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 14%;
+    width: min(300px, 80%);
+    margin: 0 auto;
+    justify-content: center;
+    z-index: 5;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .hero-ctas .btn {
+    width: 100%;
+    box-shadow: 0 10px 26px rgba(14, 25, 60, 0.22), 0 4px 10px rgba(35, 87, 216, 0.3);
+  }
   .hero-trust { justify-content: center; }
 
   /* Feature row illustrations — smaller on mobile */

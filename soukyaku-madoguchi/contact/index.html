@@ -349,13 +349,31 @@
     </div>
   </footer>
 
+  <script src="../assets/form-config.js"></script>
   <script>
   (function(){
     var SLACK_EMAIL = 'x-aaaatgnqded6hjsx3iponfqvhy@hado-group.slack.com';
     var STORAGE_KEY = 'madoguchi_submissions';
+    var CONFIG = (window.MADOGUCHI_CONFIG || {});
     var form = document.getElementById('contactForm');
     var success = document.getElementById('successMsg');
     if(!form) return;
+
+    function postToGoogleForm(submission){
+      if(!CONFIG.GOOGLE_FORM_ACTION) return;
+      var entries = CONFIG.FIELD_ENTRIES || {};
+      var params = new URLSearchParams();
+      ['company','department','lastName','firstName','email','service','monthly','message'].forEach(function(k){
+        if(entries[k]) params.append(entries[k], submission[k]||'');
+      });
+      // Use no-cors POST; response is opaque but the record is saved
+      fetch(CONFIG.GOOGLE_FORM_ACTION, {
+        method:'POST', mode:'no-cors',
+        headers:{'Content-Type':'application/x-www-form-urlencoded'},
+        body: params.toString()
+      }).catch(function(){ /* silent */ });
+    }
+
     form.addEventListener('submit', function(e){
       e.preventDefault();
       if(!form.checkValidity()){
@@ -381,6 +399,7 @@
         list.unshift(submission);
         localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
       } catch(err){}
+      postToGoogleForm(submission);
       var lines = [
         '【お問い合わせ内容】',
         '',

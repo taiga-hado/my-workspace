@@ -158,8 +158,8 @@
       </div>
     </div>
 
-    <div class="dash-note">
-      ⚠ このダッシュボードは <strong>ブラウザ内（localStorage）</strong> に保存された送信履歴を表示しています。データはブラウザごとに保持され、端末・ブラウザをまたいで同期されません。正本はSlackチャンネル <code>#お問い合わせ</code>（<code>x-aaaatgnqded6hjsx3iponfqvhy@hado-group.slack.com</code>）で管理してください。
+    <div class="dash-note" id="dataSourceNote">
+      読み込み中...
     </div>
 
     <div class="dash-stats" id="stats"></div>
@@ -192,10 +192,15 @@
     </div>
   </div>
 
+  <script src="../assets/form-config.js"></script>
   <script>
   (function(){
     var STORAGE_KEY = 'madoguchi_submissions';
+    var CONFIG = window.MADOGUCHI_CONFIG || {};
+    var USE_SHEET = !!CONFIG.SHEET_CSV_URL;
     var $ = function(s){ return document.querySelector(s); };
+    var note = document.getElementById('dataSourceNote');
+    var remoteCache = [];
     var countLabel = $('#countLabel');
     var statsEl = $('#stats');
     var wrapEl = $('#tableWrap');
@@ -206,9 +211,66 @@
     var modalBody = $('#modalBody');
 
     function load(){
+      if(USE_SHEET) return remoteCache.slice();
       try { return JSON.parse(localStorage.getItem(STORAGE_KEY)||'[]'); } catch(e){ return []; }
     }
-    function save(list){ localStorage.setItem(STORAGE_KEY, JSON.stringify(list)); }
+    function save(list){
+      if(USE_SHEET) return; // remote sheet is authoritative; local writes skipped
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    }
+
+    function parseCSV(text){
+      var rows = [];
+      var row = [], cur = '', inQuotes = false, i = 0;
+      while(i < text.length){
+        var ch = text[i];
+        if(inQuotes){
+          if(ch === '"' && text[i+1] === '"'){ cur += '"'; i += 2; continue; }
+          if(ch === '"'){ inQuotes = false; i++; continue; }
+          cur += ch; i++;
+        } else {
+          if(ch === '"'){ inQuotes = true; i++; continue; }
+          if(ch === ','){ row.push(cur); cur = ''; i++; continue; }
+          if(ch === '\r'){ i++; continue; }
+          if(ch === '\n'){ row.push(cur); rows.push(row); row = []; cur = ''; i++; continue; }
+          cur += ch; i++;
+        }
+      }
+      if(cur !== '' || row.length) { row.push(cur); rows.push(row); }
+      return rows;
+    }
+
+    function mapSheetRow(headers, row){
+      var obj = {};
+      headers.forEach(function(h, i){ obj[String(h).trim()] = row[i] || ''; });
+      var ts = obj['タイムスタンプ'] || obj['送信日時'] || obj['Timestamp'] || '';
+      var submittedAt = ts ? new Date(ts).toISOString() : new Date().toISOString();
+      var lastName = obj['姓'] || obj['lastName'] || '';
+      var firstName = obj['名'] || obj['firstName'] || '';
+      return {
+        id: (submittedAt + '-' + (obj['メールアドレス']||obj['email']||'')).replace(/[^\w]/g,'').slice(0,24),
+        submittedAt: submittedAt,
+        company: obj['会社名'] || obj['company'] || '',
+        department: obj['部署名・役職'] || obj['department'] || '',
+        lastName: lastName,
+        firstName: firstName,
+        name: (lastName + ' ' + firstName).trim(),
+        email: obj['メールアドレス'] || obj['email'] || '',
+        service: obj['ご興味のあるサービス'] || obj['service'] || '',
+        monthly: obj['月間希望送客数'] || obj['monthly'] || '',
+        message: obj['ご要望・ご質問'] || obj['message'] || ''
+      };
+    }
+
+    function loadFromSheet(){
+      var url = CONFIG.SHEET_CSV_URL + (CONFIG.SHEET_CSV_URL.indexOf('?')>-1?'&':'?') + 't=' + Date.now();
+      return fetch(url).then(function(r){ return r.text(); }).then(function(text){
+        var rows = parseCSV(text).filter(function(r){ return r.length > 1; });
+        if(!rows.length) return [];
+        var headers = rows[0];
+        return rows.slice(1).map(function(r){ return mapSheetRow(headers, r); });
+      });
+    }
 
     function fmtDate(iso){
       try {
@@ -348,7 +410,25 @@
     // React to other tabs updating storage
     window.addEventListener('storage', function(e){ if(e.key === STORAGE_KEY) render(); });
 
-    render();
+    if(USE_SHEET){
+      note.innerHTML = '⏳ Google Sheets から送信履歴を読み込み中...';
+      loadFromSheet().then(function(list){
+        remoteCache = list;
+        note.innerHTML = '✓ <strong>Google Sheets</strong> と連携中。全メンバーで同じデータを共有しています。（最終更新: ' + new Date().toLocaleTimeString('ja-JP') + '） <a href="' + CONFIG.SHEET_CSV_URL.replace(/\/pub.*/, '/edit') + '" target="_blank" rel="noopener" style="margin-left:8px;color:var(--brand-blue);">Sheetを開く</a>';
+        render();
+        // Auto refresh every 60s
+        setInterval(function(){
+          loadFromSheet().then(function(l){ remoteCache = l; render(); }).catch(function(){});
+        }, 60000);
+      }).catch(function(err){
+        note.innerHTML = '⚠ Google Sheets の読み込みに失敗しました（CSV 公開設定をご確認ください）。一時的にローカル履歴を表示します。';
+        USE_SHEET = false;
+        render();
+      });
+    } else {
+      note.innerHTML = 'ℹ このダッシュボードは <strong>ブラウザ内（localStorage）</strong> に保存された送信履歴のみ表示しています（このブラウザ限定）。メンバー全員で共有するには <code>assets/form-config.js</code> の <code>SHEET_CSV_URL</code> を設定してください。正本は Slack チャンネルで管理してください。';
+      render();
+    }
   })();
   </script>
 </body>

@@ -2054,3 +2054,150 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .compare-brand-tag {
   background: var(--grad-blue-rich);
 }
+
+/* ============================================
+   Polish v2 — refined luxury (1+2+3+4+5)
+   Block-scoped so we can remove / trim individually.
+   Sub-blocks each marked with bracketed tag (v2-N).
+   ============================================ */
+
+/* [v2-tokens] */
+:root {
+  --serif-display: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+  --ease-luxe: cubic-bezier(0.4, 0, 0.2, 1);
+  --hairline: rgba(14, 25, 60, 0.08);
+}
+
+/* [v2-1] Typography: serif accent on display-scale elements & numbers */
+.hero-h1-box-main,
+.heading-display,
+.metric-value,
+.case-headline {
+  font-family: var(--serif-display);
+  font-weight: 700;
+  letter-spacing: 0.005em;
+}
+.hero-h1-box-main {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.compare-us strong,
+.compare-them strong,
+.metric-value,
+.feature-row-text h3 .blue,
+.feature-row-text h3 .gold {
+  font-feature-settings: "palt", "liga";
+}
+/* Numbers & percent in compare — serif & metallic gold */
+.compare-us strong {
+  font-family: var(--serif-display);
+  font-weight: 700;
+}
+
+/* [v2-2] Hairlines & breathing room */
+.section { padding: 144px 0; }
+.section-sm { padding: 96px 0; }
+.pain-card,
+.service-card,
+.case-card,
+.compare-table,
+.faq-item,
+.feature-row-visual {
+  border-color: var(--hairline);
+}
+.pain-card,
+.service-card {
+  border-radius: 20px;
+}
+.case-card,
+.compare-table {
+  border-radius: 20px;
+}
+.section-head { margin-bottom: 80px; }
+.hero-badge-chip {
+  border-color: var(--hairline);
+}
+
+/* [v2-3] Motion: slower, more deliberate */
+.btn {
+  transition:
+    background-color 0.5s var(--ease-luxe),
+    background-position 0.7s var(--ease-luxe),
+    transform 0.4s var(--ease-luxe),
+    box-shadow 0.5s var(--ease-luxe),
+    color 0.3s var(--ease-luxe);
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+.btn-primary::after {
+  transition: left 1.1s var(--ease-luxe);
+}
+.pain-card,
+.service-card,
+.case-card {
+  transition:
+    transform 0.6s var(--ease-luxe),
+    box-shadow 0.6s var(--ease-luxe),
+    border-color 0.5s var(--ease-luxe);
+}
+.pain-card:hover,
+.service-card:hover,
+.case-card:hover {
+  transform: translateY(-4px);
+}
+[data-reveal] {
+  transition:
+    opacity 1.1s var(--ease-luxe),
+    transform 1.1s var(--ease-luxe);
+}
+
+/* [v2-4] Image treatment: subtle cool-duotone on portraits */
+.hero-duo img,
+.case-thumb img {
+  filter: saturate(0.88) contrast(1.02) brightness(1.01);
+  transition: filter 0.8s var(--ease-luxe);
+}
+.case-card:hover .case-thumb img {
+  filter: saturate(0.95) contrast(1.02);
+}
+.hero-duo img {
+  filter:
+    saturate(0.88)
+    contrast(1.02)
+    drop-shadow(0 20px 40px rgba(14, 25, 60, 0.08));
+}
+
+/* [v2-5] Numbers — serif + metallic gold on stat/compare values */
+.metric-value {
+  background: var(--grad-gold-metal);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+}
+.compare-us strong {
+  color: var(--brand-navy);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn-primary::after,
+  .pain-card,
+  .service-card,
+  .case-card,
+  [data-reveal],
+  .hero-duo img,
+  .case-thumb img {
+    transition: none;
+  }
+}
+
+/* Mobile: ease section-padding back down */
+@media (max-width: 960px) {
+  .section { padding: 96px 0; }
+  .section-sm { padding: 64px 0; }
+  .section-head { margin-bottom: 48px; }
+}

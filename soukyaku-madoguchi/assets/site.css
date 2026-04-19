@@ -2063,35 +2063,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 /* [v2-tokens] */
 :root {
-  --serif-display: 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
   --ease-luxe: cubic-bezier(0.4, 0, 0.2, 1);
   --hairline: rgba(14, 25, 60, 0.08);
-}
-
-/* [v2-1] Typography: serif accent on display-scale elements & numbers */
-.hero-h1-box-main,
-.heading-display,
-.metric-value,
-.case-headline {
-  font-family: var(--serif-display);
-  font-weight: 700;
-  letter-spacing: 0.005em;
-}
-.hero-h1-box-main {
-  font-weight: 700;
-  letter-spacing: 0.02em;
-}
-.compare-us strong,
-.compare-them strong,
-.metric-value,
-.feature-row-text h3 .blue,
-.feature-row-text h3 .gold {
-  font-feature-settings: "palt", "liga";
-}
-/* Numbers & percent in compare — serif & metallic gold */
-.compare-us strong {
-  font-family: var(--serif-display);
-  font-weight: 700;
 }
 
 /* [v2-2] Hairlines & breathing room */

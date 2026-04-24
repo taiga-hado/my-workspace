@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIマーケター 新卒採用 | 株式会社HADO</title>
+  <meta name="description" content="株式会社HADOのAIマーケター新卒採用ページ。初任給40万円、ChatGPT/Claude/KlingAIをフル課金で支給。AI×マーケティングで社会課題を解決する仲間を募集中。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: #F5F7FA; color: #111; overflow-x: hidden; }
+
+    /* ── variables ── */
+    :root {
+      --blue: #0055FF;
+      --blue-light: #3B82F6;
+      --cyan: #06B6D4;
+      --purple: #8B5CF6;
+      --pink: #EC4899;
+      --dark: #0a0a0f;
+      --cream: #F5F7FA;
+      --line-green: #06C755;
+    }
+
+    /* ── utility ── */
+    .grad { background: linear-gradient(120deg, var(--blue) 0%, var(--purple) 50%, var(--cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .grad-blue { background: linear-gradient(120deg, var(--blue) 0%, var(--blue-light) 55%, var(--blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .mono { font-family: 'Space Grotesk', sans-serif; }
+    img { display: block; }
+
+    /* ── fade in ── */
+    .fade { opacity: 0; transform: translateY(32px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
+    .fade.in { opacity: 1; transform: none; }
+    .fade.d1 { transition-delay: .1s; }
+    .fade.d2 { transition-delay: .2s; }
+    .fade.d3 { transition-delay: .3s; }
+    .fade.d4 { transition-delay: .4s; }
+    .h-el { opacity: 0; transform: translateY(48px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+    .h-el.in { opacity: 1; transform: none; }
+
+    /* ── nav (always light) ── */
+    #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,.06); transition: background .4s, border-color .4s; }
+    #nav .logo { height: 24px; }
+    #nav .nav-links { display: none; }
+    @media(min-width: 768px) {
+      #nav .nav-links { display: flex; align-items: center; gap: 28px; }
+      #nav .nav-links a { font-size: .85rem; font-weight: 600; color: rgba(0,0,0,.6); text-decoration: none; transition: color .3s; }
+      #nav .nav-links a:hover { color: var(--blue); }
+    }
+
+    .btn-line { display: inline-flex; align-items: center; gap: 8px; background: var(--line-green); color: #fff; font-weight: 800; font-size: .875rem; padding: 10px 20px; border-radius: 100px; text-decoration: none; transition: background .3s, transform .3s; white-space: nowrap; }
+    .btn-line:hover { background: #05b34c; transform: translateY(-1px); }
+    .btn-line.lg { font-size: 1.05rem; padding: 16px 40px; }
+    .btn-line.xl { font-size: 1.25rem; padding: 22px 60px; max-width: 100%; box-shadow: 0 8px 32px rgba(6,199,85,.4); }
+    @media(max-width: 768px) { .btn-line.xl { font-size: 1rem; padding: 18px 32px; } }
+    .btn-line svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+
+    /* ── hero (white-based + AI animation) ── */
+    #hero { position: relative; background: #fff; overflow: hidden; min-height: 100vh; display: flex; align-items: center; padding: 120px 24px 80px; }
+    /* Soft animated gradient blobs */
+    #hero::before { content: ''; position: absolute; inset: -20%;
+      background:
+        radial-gradient(ellipse 40% 35% at 80% 20%, rgba(0,85,255,.18) 0%, transparent 60%),
+        radial-gradient(ellipse 35% 30% at 20% 75%, rgba(139,92,246,.15) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 25% at 60% 60%, rgba(6,182,212,.12) 0%, transparent 60%);
+      filter: blur(12px);
+      animation: blobMove 18s ease-in-out infinite alternate;
+      pointer-events: none; z-index: 0; }
+    @keyframes blobMove {
+      0%   { transform: translate(0, 0) scale(1); }
+      50%  { transform: translate(-3%, 2%) scale(1.05); }
+      100% { transform: translate(2%, -3%) scale(.98); }
+    }
+    /* Subtle dot grid */
+    #hero::after { content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(0,85,255,.08) 1px, transparent 1.5px);
+      background-size: 28px 28px;
+      mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+      pointer-events: none; z-index: 0; }
+
+    /* AI animated SVG canvas */
+    .hero-anim { position: absolute; inset: 0; pointer-events: none; z-index: 1; opacity: .55; }
+    .hero-anim svg { width: 100%; height: 100%; display: block; }
+    .ha-line { stroke-dasharray: 4 8; animation: haLineFlow 6s linear infinite; }
+    .ha-line.b { animation-duration: 9s; animation-direction: reverse; }
+    .ha-line.c { animation-duration: 7.5s; }
+    @keyframes haLineFlow { to { stroke-dashoffset: -120; } }
+    .ha-node { transform-box: fill-box; transform-origin: center; animation: haPulse 4s ease-in-out infinite; }
+    .ha-node.n2 { animation-delay: -1s; }
+    .ha-node.n3 { animation-delay: -2s; }
+    .ha-node.n4 { animation-delay: -3s; }
+    .ha-node.n5 { animation-delay: -2.5s; }
+    .ha-node.n6 { animation-delay: -1.5s; }
+    @keyframes haPulse {
+      0%, 100% { opacity: .5; r: 4; }
+      50%      { opacity: 1; r: 6; }
+    }
+    .ha-glow { filter: blur(12px); opacity: .6; transform-box: fill-box; transform-origin: center; animation: haGlow 5s ease-in-out infinite; }
+    .ha-glow.b { animation-delay: -2s; }
+    @keyframes haGlow {
+      0%, 100% { transform: scale(.9); }
+      50%      { transform: scale(1.1); }
+    }
+
+    #hero-content { position: relative; z-index: 3; max-width: 1100px; margin: 0 auto; width: 100%; }
+    #hero-content .tag-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+    #hero-content .tag { font-size: .72rem; font-weight: 700; letter-spacing: .15em; color: var(--blue); padding: 6px 14px; border: 1px solid rgba(0,85,255,.25); border-radius: 100px; background: rgba(0,85,255,.05); backdrop-filter: blur(8px); }
+    #hero-content h1 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; line-height: 1.05; color: #0a0a0f; font-size: clamp(2.6rem, 8.5vw, 6rem); margin-bottom: 28px; letter-spacing: -.02em; }
+    #hero-content .sub { font-size: clamp(1rem, 2.4vw, 1.3rem); font-weight: 700; color: rgba(0,0,0,.78); margin-bottom: 12px; line-height: 1.5; }
+    #hero-content .note { font-size: clamp(.85rem, 2vw, 1rem); color: rgba(0,0,0,.52); line-height: 1.8; margin-bottom: 40px; max-width: 600px; }
+    .scroll-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 3; color: rgba(0,0,0,.3); animation: sb 2s ease-in-out infinite; }
+    @keyframes sb { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+
+    /* ── mission / social issues ── */
+    #mission { background: linear-gradient(180deg, #0a0a0f 0%, #080814 100%); padding: 100px 24px 120px; position: relative; overflow: hidden; }
+    #mission::before { content: ''; position: absolute; inset: 0; background:
+      radial-gradient(circle at 20% 30%, rgba(139,92,246,.12) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(6,182,212,.1) 0%, transparent 50%);
+      pointer-events: none; }
+    .mission-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+    .mission-head { text-align: center; margin-bottom: 64px; }
+    .mission-head h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.8rem, 4.5vw, 2.8rem); color: #fff; line-height: 1.4; margin-bottom: 20px; }
+    .mission-head .sub { color: rgba(255,255,255,.55); font-size: clamp(.9rem, 2vw, 1.05rem); line-height: 2; max-width: 720px; margin: 0 auto; }
+    .mission-viz { max-width: 880px; margin: 0 auto; border-radius: 24px; overflow: hidden; padding: 32px 16px; }
+    .mission-viz svg { width: 100%; height: auto; display: block; max-width: 760px; margin: 0 auto; }
+
+    /* Animated nodes */
+    .nv-line { stroke-dasharray: 4 6; animation: lineFlow 4s linear infinite; }
+    .nv-line.d1 { animation-delay: -.6s; }
+    .nv-line.d2 { animation-delay: -1.2s; }
+    .nv-line.d3 { animation-delay: -1.8s; }
+    .nv-line.d4 { animation-delay: -2.4s; }
+    .nv-line.d5 { animation-delay: -3s; }
+    @keyframes lineFlow { to { stroke-dashoffset: -100; } }
+
+    .nv-pulse { transform-origin: 400px 230px; animation: corePulse 3s ease-out infinite; transform-box: fill-box; }
+    .nv-pulse.d2 { animation-delay: 1s; }
+    .nv-pulse.d3 { animation-delay: 2s; }
+    @keyframes corePulse {
+      0% { opacity: .8; r: 70; }
+      100% { opacity: 0; r: 160; }
+    }
+
+    .nv-core { transform-origin: 400px 230px; animation: coreBreathe 3.5s ease-in-out infinite; }
+    @keyframes coreBreathe {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 12px rgba(0,85,255,.6)); }
+      50% { transform: scale(1.06); filter: drop-shadow(0 0 28px rgba(139,92,246,.8)); }
+    }
+
+    .nv-node { transform-origin: center; animation: nodeFloat 6s ease-in-out infinite; }
+    .nv-node.n1 { animation-delay: 0s; }
+    .nv-node.n2 { animation-delay: -1s; }
+    .nv-node.n3 { animation-delay: -2s; }
+    .nv-node.n4 { animation-delay: -3s; }
+    .nv-node.n5 { animation-delay: -4s; }
+    .nv-node.n6 { animation-delay: -5s; }
+    @keyframes nodeFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .nv-particle { animation: particleDrift 8s linear infinite; opacity: 0; }
+    @keyframes particleDrift {
+      0% { opacity: 0; transform: translate(0,0); }
+      20% { opacity: .8; }
+      80% { opacity: .8; }
+      100% { opacity: 0; transform: translate(var(--dx, 80px), var(--dy, -60px)); }
+    }
+    .issue-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 980px; margin: 0 auto; }
+    @media(max-width: 768px) { .issue-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width: 480px) { .issue-grid { grid-template-columns: 1fr; } }
+    .issue-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 16px; padding: 24px 20px; backdrop-filter: blur(8px); transition: transform .3s, border-color .3s; }
+    .issue-card:hover { transform: translateY(-3px); border-color: rgba(0,85,255,.4); }
+    .issue-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-size: 1.4rem; background: linear-gradient(135deg, rgba(0,85,255,.2), rgba(139,92,246,.2)); }
+    .issue-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1rem; color: #fff; margin-bottom: 6px; }
+    .issue-desc { font-size: .78rem; line-height: 1.7; color: rgba(255,255,255,.55); }
+
+    /* ── salary section ── */
+    #salary { background: var(--cream); padding: 100px 24px 120px; position: relative; overflow: hidden; }
+    .salary-inner { max-width: 1000px; margin: 0 auto; }
+    .salary-head { text-align: center; margin-bottom: 56px; }
+    .salary-head .sec-label { color: var(--blue); }
+    .salary-head h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.8rem, 5vw, 3rem); line-height: 1.4; }
+    .salary-head h2 .accent { background: linear-gradient(120deg, var(--blue) 0%, var(--purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .salary-bars { display: flex; flex-direction: column; gap: 32px; padding: 48px 0; }
+    .bar-row { display: flex; align-items: center; gap: 24px; }
+    @media(max-width: 640px) { .bar-row { flex-direction: column; align-items: flex-start; gap: 8px; } }
+    .bar-label { flex: 0 0 200px; font-weight: 700; font-size: .95rem; color: rgba(0,0,0,.7); }
+    .bar-label .small { font-size: .72rem; font-weight: 500; color: rgba(0,0,0,.45); display: block; margin-top: 2px; }
+    @media(max-width: 640px) { .bar-label { flex: none; } }
+    .bar-track { flex: 1; height: 56px; background: rgba(0,0,0,.05); border-radius: 12px; position: relative; overflow: hidden; width: 100%; }
+    .bar-fill { height: 100%; border-radius: 12px; display: flex; align-items: center; padding: 0 20px; color: #fff; font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.2rem; width: 0; transition: width 1.6s cubic-bezier(.16,1,.3,1); }
+    .bar-fill.avg { background: linear-gradient(90deg, #94a3b8, #64748b); }
+    .bar-fill.hado { background: linear-gradient(90deg, var(--blue) 0%, var(--purple) 60%, var(--cyan) 100%); box-shadow: 0 4px 24px rgba(0,85,255,.3); }
+    .salary-callout { background: #fff; border-radius: 24px; padding: 40px; text-align: center; box-shadow: 0 4px 40px rgba(0,0,0,.06); margin-top: 48px; }
+    .salary-callout .big { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(2.5rem, 8vw, 5rem); line-height: 1; }
+    .salary-callout .big .yen { font-size: .5em; margin-left: 8px; }
+    .salary-callout .label { color: rgba(0,0,0,.55); font-size: .9rem; margin-top: 12px; line-height: 1.8; }
+    .salary-callout .desc { color: rgba(0,0,0,.45); font-size: .82rem; margin-top: 20px; line-height: 1.85; max-width: 580px; margin-left: auto; margin-right: auto; }
+    .salary-source { text-align: center; font-size: .72rem; color: rgba(0,0,0,.35); margin-top: 24px; }
+
+    /* ── ticker (logos) ── */
+    #ticker { background: #fff; padding: 18px 0 24px; overflow: hidden; border-top: 1px solid rgba(0,0,0,.04); border-bottom: 1px solid rgba(0,0,0,.04); margin-top: -1px; }
+    #ticker .label { text-align: center; color: rgba(0,0,0,.45); font-size: .8rem; font-weight: 700; letter-spacing: .12em; margin-bottom: 14px; }
+    .ticker-track { display: flex; width: max-content; animation: tick 32s linear infinite; }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes tick { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .ticker-item { display: flex; align-items: center; margin: 0 36px; }
+    .ticker-item img { height: 28px; object-fit: contain; opacity: .7; transition: opacity .3s; }
+    .ticker-item:hover img { opacity: 1; }
+
+    /* ── stats (light) ── */
+    #stats { background: #fff; padding: 56px 24px 96px; }
+    .stats-head { max-width: 1100px; margin: 0 auto 40px; text-align: center; }
+    .stats-head h2 { color: #0a0a0f; }
+    .stats-inner { max-width: 1100px; margin: 0 auto; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .stat-card { background: var(--cream); padding: 28px 24px 32px; text-align: center; border-radius: 20px; border: 1px solid rgba(0,0,0,.04); }
+    .stat-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; margin-bottom: 16px; }
+    .stat-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1; }
+    .stat-unit { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+    .stat-label { color: rgba(0,0,0,.7); font-size: .95rem; font-weight: 700; margin-top: 12px; letter-spacing: .05em; }
+    @media(max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr; gap: 12px; }
+    }
+
+    /* ── university breakdown (donut chart with surrounding labels) ── */
+    #university { background: var(--cream); padding: 100px 24px 120px; }
+    .uni-inner { max-width: 700px; margin: 0 auto; }
+    .uni-head { text-align: center; margin-bottom: 56px; }
+    .uni-donut-wrap { position: relative; width: 100%; max-width: 560px; margin: 0 auto; aspect-ratio: 1/1; }
+    .uni-donut-svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .donut-segment { fill: none; stroke-width: 28; transition: stroke-dasharray 1.4s cubic-bezier(.16,1,.3,1); stroke-linecap: butt; }
+    .uni-label { opacity: 0; transition: opacity .5s ease .8s; }
+    .uni-label.in { opacity: 1; }
+    .uni-label-name { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 13px; fill: #0a0a0f; }
+    .uni-label-pct { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 13px; }
+    .uni-label-line { stroke-width: 1.2; opacity: .55; }
+    .uni-donut-center-text { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; }
+    @media(max-width: 480px) {
+      .uni-label-name { font-size: 11px; }
+      .uni-label-pct { font-size: 11px; }
+    }
+
+    /* ── about / business ── */
+    #about { padding: 80px 24px 100px; background: var(--cream); }
+    .biz-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .biz-card { background: #fff; border-radius: 20px; overflow: hidden; transition: transform .4s, box-shadow .4s; }
+    .biz-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,.08); }
+    .biz-card .biz-photo { aspect-ratio: 16/10; overflow: hidden; }
+    .biz-card .biz-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .biz-card:hover .biz-photo img { transform: scale(1.06); }
+    .biz-card-body { padding: 28px 24px; }
+    .biz-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; letter-spacing: .1em; }
+    .biz-tag { display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .12em; color: var(--blue); background: rgba(0,85,255,.08); padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
+    .biz-heading { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.2rem; line-height: 1.4; margin-bottom: 12px; }
+    .biz-text { font-size: .85rem; line-height: 1.85; color: rgba(0,0,0,.55); }
+    @media(max-width: 768px) {
+      .biz-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 24px; margin: 0 -24px; }
+      .biz-grid::-webkit-scrollbar { display: none; }
+      .biz-card { flex: 0 0 280px; scroll-snap-align: start; }
+    }
+
+    /* ── tools section ── */
+    #tools { background: var(--dark); padding: 100px 24px 120px; position: relative; overflow: hidden; }
+    #tools::before { content: ''; position: absolute; inset: 0;
+      background-image: url('images/gen/tools_bg.png');
+      background-size: cover; background-position: center;
+      opacity: .35; pointer-events: none; }
+    #tools::after { content: ''; position: absolute; inset: 0;
+      background:
+        linear-gradient(180deg, rgba(10,10,15,.5) 0%, rgba(10,10,15,.7) 100%),
+        radial-gradient(ellipse at 30% 20%, rgba(0,85,255,.18) 0%, transparent 50%),
+        radial-gradient(ellipse at 70% 80%, rgba(139,92,246,.15) 0%, transparent 50%);
+      pointer-events: none; }
+    .tools-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+    .tools-head { text-align: center; margin-bottom: 64px; }
+    .tools-head h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.6rem, 4vw, 2.4rem); color: #fff; line-height: 1.4; }
+    .tools-head .sub { color: rgba(255,255,255,.5); margin-top: 16px; font-size: clamp(.9rem, 2vw, 1.05rem); line-height: 1.8; }
+    .tools-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media(max-width: 768px) { .tools-grid { grid-template-columns: 1fr; } }
+    .tool-card { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 24px; padding: 36px 28px; text-align: center; backdrop-filter: blur(12px); transition: transform .3s, border-color .3s, background .3s; }
+    .tool-card:hover { transform: translateY(-4px); border-color: rgba(0,85,255,.4); background: rgba(255,255,255,.06); }
+    .tool-icon { width: 64px; height: 64px; border-radius: 16px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 900; color: #fff; }
+    .tool-icon.gpt { background: linear-gradient(135deg, #10A37F, #1A7F64); }
+    .tool-icon.claude { background: linear-gradient(135deg, #D97757, #C04B2D); }
+    .tool-icon.kling { background: linear-gradient(135deg, #8B5CF6, #6D28D9); }
+    .tool-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.4rem; color: #fff; margin-bottom: 8px; letter-spacing: -.01em; }
+    .tool-tier { display: inline-block; font-family: 'Space Grotesk', sans-serif; font-size: .7rem; font-weight: 700; color: var(--cyan); background: rgba(6,182,212,.1); border: 1px solid rgba(6,182,212,.3); padding: 4px 12px; border-radius: 100px; letter-spacing: .1em; margin-bottom: 14px; }
+    .tool-desc { color: rgba(255,255,255,.55); font-size: .82rem; line-height: 1.8; }
+
+    /* ── voice ── */
+    #voice { background: #0a0a0a; padding: 80px 0 100px; }
+    #voice .sec-head { max-width: 1100px; margin: 0 auto; padding: 0 24px; margin-bottom: 48px; }
+    #voice .sec-head h2 { color: #fff; }
+    #voice .sec-head .sec-sub { color: rgba(255,255,255,.4); }
+    .voice-swiper { overflow: hidden; padding: 0 24px; max-width: 1148px; margin: 0 auto; }
+
+    /* Mobile: split photo + text vertically */
+    .voice-slide { border-radius: 20px; overflow: hidden; background: #111; display: flex; flex-direction: column; }
+    .voice-photo { position: relative; aspect-ratio: 4/3; overflow: hidden; }
+    .voice-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .voice-photo .voice-quote { position: absolute; bottom: 16px; left: 16px; right: 16px; z-index: 2; }
+    .voice-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,.85) 100%); pointer-events: none; }
+    .voice-quote p { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(0.95rem, 2.5vw, 1.2rem); line-height: 1.45; color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.5); }
+    .voice-text { padding: 22px 22px 26px; }
+    .voice-role { font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--cyan); margin-bottom: 6px; }
+    .voice-name { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.15rem; color: #fff; }
+    .voice-meta { font-size: .8rem; color: rgba(255,255,255,.5); margin-top: 4px; }
+    .voice-body { margin-top: 14px; font-size: .85rem; line-height: 1.8; color: rgba(255,255,255,.7); }
+
+    /* Desktop: overlay style */
+    @media(min-width: 768px) {
+      .voice-slide { display: block; position: relative; aspect-ratio: 4/5; background: transparent; }
+      .voice-photo { position: absolute; inset: 0; aspect-ratio: auto; }
+      .voice-photo::after { background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(0,0,0,.1) 35%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.92) 100%); }
+      .voice-photo .voice-quote { top: 20px; bottom: auto; left: 24px; right: 24px; }
+      .voice-text { position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 28px 28px; z-index: 2; }
+    }
+    .swiper-button-next, .swiper-button-prev { color: var(--blue-light) !important; }
+    .swiper-pagination-bullet { background: rgba(255,255,255,.35) !important; }
+    .swiper-pagination-bullet-active { background: var(--blue-light) !important; }
+
+    /* ── schedule ── */
+    #schedule { background: var(--cream); padding: 80px 0 100px; overflow: hidden; }
+    #schedule .sec-head { max-width: 1100px; margin: 0 auto; padding: 0 24px; margin-bottom: 48px; }
+    .sch-track { display: flex; gap: 20px; padding: 0 24px; overflow-x: auto; cursor: grab; user-select: none; scrollbar-width: none; }
+    .sch-track::-webkit-scrollbar { display: none; }
+    .sch-track.grabbing { cursor: grabbing; }
+    .sch-card { flex: 0 0 260px; background: #fff; border-radius: 20px; overflow: hidden; }
+    @media(min-width: 768px) { .sch-card { flex: 0 0 300px; } }
+    .sch-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .sch-body { padding: 20px; }
+    .sch-time { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.8rem; color: var(--blue); line-height: 1; margin-bottom: 8px; }
+    .sch-title { font-weight: 800; font-size: 1rem; margin-bottom: 8px; }
+    .sch-desc { font-size: .8rem; line-height: 1.75; color: rgba(0,0,0,.5); }
+
+    /* ── Gallery (HADOの日常) ── */
+    #gallery { padding: 0; background: #1a1a1a; overflow: hidden; }
+    .gal-text { padding: 64px 24px; text-align: center; background: #1a1a1a; }
+    .gal-text p { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; color: #fff; font-size: clamp(1.1rem, 3.5vw, 1.6rem); line-height: 1.8; letter-spacing: .04em; }
+    .gal-text .gal-highlight { font-size: clamp(1.5rem, 5vw, 2.4rem); background: linear-gradient(120deg, var(--blue) 0%, var(--purple) 50%, var(--cyan) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; margin-top: 8px; line-height: 1.4; }
+    .gal-mosaic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; padding: 0; }
+    .gal-mosaic img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+    .gal-mosaic .pc-only { display: none; }
+    @media(min-width: 768px) {
+      .gal-mosaic { grid-template-columns: repeat(5, 1fr); gap: 4px; }
+      .gal-mosaic .pc-only { display: block; }
+    }
+
+    /* ── benefits ── */
+    #benefits { background: linear-gradient(160deg, #0a0a1a 0%, #0d1b3e 30%, #0a0a1a 60%, #111827 100%); padding: 80px 24px 100px; position: relative; overflow: hidden; }
+    #benefits::before { content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 200%; background: radial-gradient(ellipse, rgba(0,85,255,.12) 0%, transparent 60%); pointer-events: none; }
+    #benefits::after { content: ''; position: absolute; bottom: -40%; left: -20%; width: 60%; height: 150%; background: radial-gradient(ellipse, rgba(139,92,246,.1) 0%, transparent 60%); pointer-events: none; }
+    .ben-inner { max-width: 1000px; margin: 0 auto; position: relative; z-index: 2; }
+    .ben-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media(max-width: 768px) { .ben-grid { grid-template-columns: 1fr; } }
+    .ben-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 36px 28px; text-align: center; transition: background .3s, border-color .3s; backdrop-filter: blur(8px); }
+    .ben-card:hover { background: rgba(255,255,255,.1); border-color: rgba(0,85,255,.3); }
+    .ben-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 3.5rem; line-height: 1; margin-bottom: 16px; }
+    .ben-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.15rem; color: #fff; margin-bottom: 12px; }
+    .ben-desc { font-size: .85rem; line-height: 1.85; color: rgba(255,255,255,.5); }
+
+    /* ── job card ── */
+    #job { background: var(--cream); padding: 80px 24px 100px; }
+    .job-inner { max-width: 900px; margin: 0 auto; }
+    .job-card { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 40px rgba(0,0,0,.07); }
+    .job-photo { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: center top; }
+    .job-body { padding: 40px 36px; }
+    .job-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+    .job-tag { background: rgba(0,85,255,.08); color: var(--blue); font-size: .78rem; font-weight: 700; padding: 5px 14px; border-radius: 100px; border: 1px solid rgba(0,85,255,.2); }
+    .job-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: 16px; }
+    .job-table { width: 100%; margin: 24px 0 32px; border-top: 1px solid rgba(0,0,0,.08); }
+    .job-table dt, .job-table dd { padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,.08); font-size: .88rem; line-height: 1.7; }
+    .job-table dt { font-weight: 800; color: rgba(0,0,0,.7); float: left; width: 32%; clear: both; }
+    .job-table dd { padding-left: 34%; color: rgba(0,0,0,.65); }
+    @media(max-width: 600px) {
+      .job-body { padding: 28px 24px; }
+      .job-table dt { float: none; width: 100%; padding-bottom: 4px; border-bottom: none; }
+      .job-table dd { padding-left: 0; padding-top: 0; }
+    }
+
+    /* ── flow ── */
+    #flow { background: #fff; padding: 80px 24px 100px; }
+    .flow-inner { max-width: 900px; margin: 0 auto; }
+    .flow-steps { display: flex; flex-direction: column; gap: 0; }
+    @media(min-width: 640px) { .flow-steps { flex-direction: row; align-items: flex-start; } }
+    .flow-step { flex: 1; text-align: center; padding: 28px 16px; position: relative; }
+    .flow-step:not(:last-child)::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 24px; height: 24px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230055FF'%3E%3Cpath d='M12 16l-6-6h12z'/%3E%3C/svg%3E") center/contain no-repeat; }
+    @media(min-width: 640px) {
+      .flow-step:not(:last-child)::after { bottom: auto; top: 56px; left: auto; right: -12px; transform: rotate(-90deg); }
+    }
+    .flow-icon { width: 72px; height: 72px; border-radius: 20px; background: linear-gradient(135deg, rgba(0,85,255,.08), rgba(139,92,246,.15)); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 2rem; }
+    .flow-step-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .72rem; color: var(--blue); letter-spacing: .15em; margin-bottom: 6px; }
+    .flow-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.05rem; margin-bottom: 8px; }
+    .flow-desc { font-size: .8rem; color: rgba(0,0,0,.45); line-height: 1.75; }
+
+    /* ── final cta ── */
+    #entry { position: relative; overflow: hidden; background: var(--dark); padding: 96px 24px 120px; text-align: center; }
+    #entry::before { content: ''; position: absolute; inset: 0; background:
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(0,85,255,.3) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(139,92,246,.25) 0%, transparent 60%);
+      pointer-events: none; }
+    #entry-content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+    #entry .label { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .75rem; letter-spacing: .25em; color: var(--cyan); display: block; margin-bottom: 20px; }
+    #entry h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(2rem, 6vw, 3.5rem); color: #fff; line-height: 1.3; margin-bottom: 24px; }
+    #entry p { font-size: clamp(.9rem, 2vw, 1.05rem); color: rgba(255,255,255,.55); line-height: 1.9; margin-bottom: 12px; }
+    .entry-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 32px 0 40px; }
+    .entry-chip { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 100px; padding: 8px 18px; font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.85); }
+    #entry .note { font-size: .78rem; color: rgba(255,255,255,.3); margin-top: 16px; }
+
+    /* ── footer ── */
+    footer { background: #060606; color: rgba(255,255,255,.35); padding: 48px 24px 100px; text-align: center; font-size: .8rem; line-height: 2; }
+    @media(min-width: 768px) { footer { padding-bottom: 48px; } }
+    footer .f-logo { height: 22px; filter: invert(1) brightness(10); opacity: .25; margin: 0 auto 16px; }
+
+    /* ── sticky cta ── */
+    #sticky { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(0,0,0,.07); padding: 12px 16px; transform: translateY(100%); transition: transform .4s ease; }
+    #sticky.show { transform: none; }
+    @media(min-width: 768px) { #sticky { display: none; } }
+
+    /* ── section headers ── */
+    .sec-label { font-family: 'Space Grotesk', sans-serif; font-size: .72rem; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; margin-bottom: 12px; color: var(--blue); }
+    .sec-h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.5rem, 3.8vw, 2.2rem); line-height: 1.3; }
+    .sec-sub { margin-top: 14px; font-size: clamp(.9rem, 2vw, 1.05rem); line-height: 1.9; color: rgba(0,0,0,.5); }
+
+    /* ── floating SVG animation ── */
+    .pulse-ring { transform-origin: center; animation: pulse 3s ease-out infinite; }
+    @keyframes pulse {
+      0% { opacity: .8; transform: scale(.85); }
+      100% { opacity: 0; transform: scale(1.4); }
+    }
+    .pulse-ring.d2 { animation-delay: 1s; }
+    .pulse-ring.d3 { animation-delay: 2s; }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="#"><img class="logo" src="images/hado-logo-cropped.png" alt="HADO"></a>
+  <div class="nav-links">
+    <a href="#mission">ミッション</a>
+    <a href="#university">メンバー</a>
+    <a href="#salary">待遇</a>
+    <a href="#about">事業</a>
+    <a href="#job">募集要項</a>
+  </div>
+  <a href="#entry" class="btn-line">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINEで応募
+  </a>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <!-- AI animated background SVG -->
+  <div class="hero-anim" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="haLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#0055FF" stop-opacity=".7"/>
+          <stop offset="100%" stop-color="#8B5CF6" stop-opacity=".15"/>
+        </linearGradient>
+        <radialGradient id="haGlowGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#0055FF" stop-opacity=".55"/>
+          <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <!-- soft glows -->
+      <circle class="ha-glow" cx="900" cy="180" r="160" fill="url(#haGlowGrad)"/>
+      <circle class="ha-glow b" cx="180" cy="620" r="180" fill="url(#haGlowGrad)"/>
+      <!-- network lines -->
+      <line class="ha-line" x1="120" y1="180" x2="380" y2="320" stroke="url(#haLineGrad)" stroke-width="1.4"/>
+      <line class="ha-line b" x1="380" y1="320" x2="640" y2="200" stroke="url(#haLineGrad)" stroke-width="1.4"/>
+      <line class="ha-line c" x1="640" y1="200" x2="900" y2="380" stroke="url(#haLineGrad)" stroke-width="1.4"/>
+      <line class="ha-line" x1="900" y1="380" x2="1080" y2="220" stroke="url(#haLineGrad)" stroke-width="1.4"/>
+      <line class="ha-line b" x1="380" y1="320" x2="520" y2="540" stroke="url(#haLineGrad)" stroke-width="1.4"/>
+      <line class="ha-line c" x1="520" y1="540" x2="780" y2="640" stroke="url(#haLineGrad)" stroke-width="1.4"/>
+      <line class="ha-line" x1="780" y1="640" x2="1040" y2="560" stroke="url(#haLineGrad)" stroke-width="1.4"/>
+      <line class="ha-line b" x1="200" y1="480" x2="520" y2="540" stroke="url(#haLineGrad)" stroke-width="1.4"/>
+      <line class="ha-line c" x1="900" y1="380" x2="780" y2="640" stroke="url(#haLineGrad)" stroke-width="1.4"/>
+      <line class="ha-line" x1="120" y1="180" x2="200" y2="480" stroke="url(#haLineGrad)" stroke-width="1.4"/>
+      <!-- nodes -->
+      <circle class="ha-node n1" cx="120" cy="180" r="5" fill="#0055FF"/>
+      <circle class="ha-node n2" cx="380" cy="320" r="5" fill="#8B5CF6"/>
+      <circle class="ha-node n3" cx="640" cy="200" r="5" fill="#06B6D4"/>
+      <circle class="ha-node n4" cx="900" cy="380" r="5" fill="#0055FF"/>
+      <circle class="ha-node n5" cx="1080" cy="220" r="5" fill="#8B5CF6"/>
+      <circle class="ha-node n6" cx="520" cy="540" r="5" fill="#06B6D4"/>
+      <circle class="ha-node n2" cx="780" cy="640" r="5" fill="#0055FF"/>
+      <circle class="ha-node n4" cx="1040" cy="560" r="5" fill="#8B5CF6"/>
+      <circle class="ha-node n3" cx="200" cy="480" r="5" fill="#06B6D4"/>
+    </svg>
+  </div>
+
+  <div id="hero-content">
+    <div class="tag-row h-el">
+      <span class="tag">2027卒 新卒採用</span>
+      <span class="tag">AI MARKETER</span>
+      <span class="tag">渋谷・桜丘</span>
+    </div>
+    <h1 class="h-el">
+      AI×マーケティングで、<br>
+      <span class="grad">社会課題を</span><br>
+      <span class="grad">解決する。</span>
+    </h1>
+    <p class="sub h-el">初任給40万円 ／ 最新AIツールをフル課金で支給</p>
+    <p class="note h-el">「人材」「教育」「新規事業」——あらゆる領域の課題に、AI×マーケティングで挑む。<br>株式会社HADOは、未来を創る新卒AIマーケターを募集しています。</p>
+    <a href="#entry" class="btn-line lg h-el">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで詳細を受け取る
+    </a>
+  </div>
+  <div class="scroll-hint">
+    <svg width="22" height="30" viewBox="0 0 22 30" fill="none"><rect x="1" y="1" width="20" height="28" rx="10" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="8" r="2.5" fill="currentColor"/></svg>
+  </div>
+</section>
+
+<!-- ── LOGO TICKER (right after hero) ── -->
+<section id="ticker">
+  <p class="label">支援企業の一例</p>
+  <div class="ticker-track">
+    <div class="ticker-item"><img src="images/logos/persol.png" alt="PERSOL"></div>
+    <div class="ticker-item"><img src="images/logos/type.png" alt="type"></div>
+    <div class="ticker-item"><img src="images/logos/chocozap.svg" alt="chocoZAP"></div>
+    <div class="ticker-item"><img src="images/logos/clinique.svg" alt="CLINIQUE"></div>
+    <div class="ticker-item"><img src="images/logos/kao.png" alt="KAO"></div>
+    <div class="ticker-item"><img src="images/logos/tirtir.png" alt="TIRTIR"></div>
+    <div class="ticker-item"><img src="images/logos/kate.png" alt="KATE"></div>
+    <div class="ticker-item"><img src="images/logos/zozo.svg" alt="ZOZO"></div>
+    <div class="ticker-item"><img src="images/logos/persol.png" alt="PERSOL"></div>
+    <div class="ticker-item"><img src="images/logos/type.png" alt="type"></div>
+    <div class="ticker-item"><img src="images/logos/chocozap.svg" alt="chocoZAP"></div>
+    <div class="ticker-item"><img src="images/logos/clinique.svg" alt="CLINIQUE"></div>
+    <div class="ticker-item"><img src="images/logos/kao.png" alt="KAO"></div>
+    <div class="ticker-item"><img src="images/logos/tirtir.png" alt="TIRTIR"></div>
+    <div class="ticker-item"><img src="images/logos/kate.png" alt="KATE"></div>
+    <div class="ticker-item"><img src="images/logos/zozo.svg" alt="ZOZO"></div>
+  </div>
+</section>
+
+<!-- ── STATS (after ticker) ── -->
+<section id="stats">
+  <div class="stats-head fade">
+    <p class="sec-label" style="color:var(--blue-light);">Data</p>
+    <h2 class="sec-h2">数字で見るHADO</h2>
+  </div>
+  <div class="stats-inner">
+    <div class="stats-grid">
+      <div class="stat-card fade">
+        <img class="stat-photo" src="images/member-narita.jpg" alt="">
+        <p class="stat-num grad-blue" data-countup data-target="675">675<span class="stat-unit">万円</span></p>
+        <p class="stat-label">SNSマーケター平均年収</p>
+      </div>
+      <div class="stat-card fade d1">
+        <img class="stat-photo" src="images/group-photo.png" alt="" style="object-position:top;">
+        <p class="stat-num grad-blue" data-countup data-target="25">25<span class="stat-unit">歳</span></p>
+        <p class="stat-label">チームの平均年齢</p>
+      </div>
+      <div class="stat-card fade d2">
+        <img class="stat-photo" src="images/work-office.jpg" alt="">
+        <p class="stat-num grad-blue" data-countup data-target="90">90<span class="stat-unit">%</span></p>
+        <p class="stat-label">未経験からのスタート率</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── UNIVERSITY BREAKDOWN (donut chart) ── -->
+<section id="university">
+  <div class="uni-inner">
+    <div class="uni-head fade">
+      <p class="sec-label">Members</p>
+      <h2 class="sec-h2">メンバーの卒業大学</h2>
+      <p class="sec-sub">難関大出身者が集まり、互いに刺激しあう環境です。</p>
+    </div>
+    <div class="uni-donut-wrap fade d1">
+      <svg id="uniDonut" class="uni-donut-svg" viewBox="-110 -110 420 420">
+        <!-- background ring -->
+        <circle cx="100" cy="100" r="80" fill="none" stroke="rgba(0,0,0,.05)" stroke-width="28" transform="rotate(-90 100 100)"/>
+        <!-- center text -->
+        <text class="uni-donut-center-text" x="100" y="96" text-anchor="middle" fill="#0a0a0f" font-size="34">100<tspan font-size="20">%</tspan></text>
+        <text x="100" y="118" text-anchor="middle" fill="rgba(0,0,0,.5)" font-size="10" font-weight="700" letter-spacing="2">MEMBERS</text>
+        <!-- segments + labels are inserted by JS -->
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ── MISSION: AI × MARKETING SOLVES SOCIAL ISSUES ── -->
+<section id="mission">
+  <div class="mission-inner">
+    <div class="mission-head fade">
+      <p class="sec-label" style="color:var(--cyan);">Our Mission</p>
+      <h2>あらゆる社会課題に、<br><span class="grad">AI × マーケティング</span>で挑む。</h2>
+      <p class="sub">「人と機会の出会い」「学びの格差」「新規事業の停滞」——<br>HADOは、3つの事業を通じて、社会の構造的な課題に正面から挑んでいます。<br>その武器が、AIとマーケティングの掛け算です。</p>
+    </div>
+
+    <!-- AI × Marketing animated viz -->
+    <div class="mission-viz fade d1">
+      <svg viewBox="0 0 800 460" xmlns="http://www.w3.org/2000/svg" aria-label="AI×マーケティングで社会課題を解決">
+        <defs>
+          <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#0055FF" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#8B5CF6" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#0055FF" stop-opacity=".8"/>
+            <stop offset="100%" stop-color="#06B6D4" stop-opacity=".15"/>
+          </linearGradient>
+          <linearGradient id="coreFill" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0055FF"/>
+            <stop offset="50%" stop-color="#8B5CF6"/>
+            <stop offset="100%" stop-color="#06B6D4"/>
+          </linearGradient>
+        </defs>
+
+        <!-- glow halo -->
+        <circle cx="400" cy="230" r="180" fill="url(#coreGlow)" opacity=".5"/>
+
+        <!-- pulse rings -->
+        <circle cx="400" cy="230" r="70" fill="none" stroke="#0055FF" stroke-width="1.5" opacity=".5" class="nv-pulse"/>
+        <circle cx="400" cy="230" r="70" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity=".5" class="nv-pulse d2"/>
+        <circle cx="400" cy="230" r="70" fill="none" stroke="#06B6D4" stroke-width="1.5" opacity=".5" class="nv-pulse d3"/>
+
+        <!-- spoke lines (animated) -->
+        <line x1="400" y1="230" x2="120" y2="100" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line"/>
+        <line x1="400" y1="230" x2="680" y2="100" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d1"/>
+        <line x1="400" y1="230" x2="80"  y2="280" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d2"/>
+        <line x1="400" y1="230" x2="720" y2="280" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d3"/>
+        <line x1="400" y1="230" x2="220" y2="410" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d4"/>
+        <line x1="400" y1="230" x2="580" y2="410" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d5"/>
+
+        <!-- core node (breathing) -->
+        <g class="nv-core">
+          <circle cx="400" cy="230" r="68" fill="url(#coreFill)"/>
+          <text x="400" y="222" text-anchor="middle" fill="#fff" font-family="Zen Kaku Gothic New, sans-serif" font-weight="900" font-size="22">AI×</text>
+          <text x="400" y="252" text-anchor="middle" fill="#fff" font-family="Zen Kaku Gothic New, sans-serif" font-weight="900" font-size="20">マーケ</text>
+        </g>
+
+        <!-- spoke nodes (floating) -->
+        <g class="nv-node n1">
+          <circle cx="120" cy="100" r="44" fill="#0a0a0f" stroke="#0055FF" stroke-width="1.2"/>
+          <text x="120" y="95" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">就活</text>
+          <text x="120" y="112" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">情報の格差</text>
+        </g>
+        <g class="nv-node n2">
+          <circle cx="680" cy="100" r="44" fill="#0a0a0f" stroke="#8B5CF6" stroke-width="1.2"/>
+          <text x="680" y="95" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">教育</text>
+          <text x="680" y="112" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">学力の格差</text>
+        </g>
+        <g class="nv-node n3">
+          <circle cx="80" cy="280" r="44" fill="#0a0a0f" stroke="#06B6D4" stroke-width="1.2"/>
+          <text x="80" y="275" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">転職</text>
+          <text x="80" y="292" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">機会の不均衡</text>
+        </g>
+        <g class="nv-node n4">
+          <circle cx="720" cy="280" r="44" fill="#0a0a0f" stroke="#0055FF" stroke-width="1.2"/>
+          <text x="720" y="275" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">起業</text>
+          <text x="720" y="292" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">挑戦の停滞</text>
+        </g>
+        <g class="nv-node n5">
+          <circle cx="220" cy="410" r="44" fill="#0a0a0f" stroke="#8B5CF6" stroke-width="1.2"/>
+          <text x="220" y="405" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">中小企業</text>
+          <text x="220" y="422" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">DX遅れ</text>
+        </g>
+        <g class="nv-node n6">
+          <circle cx="580" cy="410" r="44" fill="#0a0a0f" stroke="#06B6D4" stroke-width="1.2"/>
+          <text x="580" y="405" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">地方</text>
+          <text x="580" y="422" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">情報の偏り</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ── SALARY (independent section) ── -->
+<section id="salary">
+  <div class="salary-inner">
+    <div class="salary-head fade">
+      <p class="sec-label">Salary</p>
+      <h2>新卒初任給<br><span class="accent">40万円</span></h2>
+      <p class="sec-sub">大卒新卒の全国平均と比べて、約1.7倍。</p>
+    </div>
+
+    <div class="salary-bars fade d1">
+      <div class="bar-row">
+        <div class="bar-label">大卒新卒の全国平均<span class="small">※令和5年 厚労省「賃金構造基本統計調査」</span></div>
+        <div class="bar-track"><div class="bar-fill avg" data-width="56.75">22.7万円</div></div>
+      </div>
+      <div class="bar-row">
+        <div class="bar-label">HADO AIマーケター<span class="small">※当社新卒採用 初任給</span></div>
+        <div class="bar-track"><div class="bar-fill hado" data-width="100">40万円</div></div>
+      </div>
+    </div>
+
+    <div class="salary-callout fade d2">
+      <p class="big grad">＋17.3<span class="yen">万円 / 月</span></p>
+      <p class="label">大卒新卒の全国平均との差額</p>
+      <p class="desc">AIを使いこなし、社会課題に挑む人材に、正当な対価を払う。<br>HADOは「投資」として、新卒に業界トップクラスの待遇を用意します。</p>
+    </div>
+    <p class="salary-source fade d3">出典：厚生労働省「令和5年 賃金構造基本統計調査」大学卒・男女計の所定内給与額</p>
+  </div>
+</section>
+
+<!-- ── BUSINESS (AI × Marketing) ── -->
+<section id="about">
+  <div class="sec-head fade" style="max-width:1100px;margin:0 auto 40px;">
+    <p class="sec-label">Business</p>
+    <h2 class="sec-h2">AI × マーケティング事業</h2>
+    <p class="sec-sub">3つの事業すべてで、AIを使い倒したマーケティングを展開しています。</p>
+  </div>
+  <div class="biz-grid fade">
+    <div class="biz-card">
+      <div class="biz-photo"><img src="images/business_career.png" alt="求職者送客の窓口"></div>
+      <div class="biz-card-body">
+        <p class="biz-num grad-blue">01</p>
+        <p class="biz-tag">CAREER × AI</p>
+        <h3 class="biz-heading">求職者送客の窓口</h3>
+        <p class="biz-text">求職者と人材紹介会社をつなぐプラットフォーム。AIで集客広告・LINEシナリオ・コンテンツ生成を自動化し、出会いの非対称性を解消します。</p>
+      </div>
+    </div>
+    <div class="biz-card">
+      <div class="biz-photo"><img src="images/gen/business_education.png" alt="東大式逆転塾"></div>
+      <div class="biz-card-body">
+        <p class="biz-num grad-blue">02</p>
+        <p class="biz-tag">EDUCATION × AI</p>
+        <h3 class="biz-heading">東大式逆転塾</h3>
+        <p class="biz-text">難関大合格を支える学習塾。AIで個別最適な学習設計とマーケティングを構築し、努力が正しく報われる教育を全国へ届けます。</p>
+      </div>
+    </div>
+    <div class="biz-card">
+      <div class="biz-photo"><img src="images/gen/business_newbiz.png" alt="AIマーケティングコンサル"></div>
+      <div class="biz-card-body">
+        <p class="biz-num grad-blue">03</p>
+        <p class="biz-tag">CONSULTING × AI</p>
+        <h3 class="biz-heading">AIマーケティングコンサル事業</h3>
+        <p class="biz-text">企業のマーケティング活動にAIを実装するコンサルティング事業。広告運用・コンテンツ生成・業務自動化まで、AI×マーケのノウハウを外部にも提供します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VOICE ── -->
+<section id="voice">
+  <div class="sec-head fade">
+    <p class="sec-label" style="color:var(--cyan);">Voice</p>
+    <h2 class="sec-h2">先輩社員の声</h2>
+    <p class="sec-sub">共に働くメンバーたちのリアルな言葉。</p>
+  </div>
+
+  <div class="swiper voice-swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <div class="voice-photo">
+            <img src="images/member-male.png" alt="">
+            <div class="voice-quote">
+              <p>「入社半年で自分が組んだ自動化が、事業のKPIを動かした。」</p>
+            </div>
+          </div>
+          <div class="voice-text">
+            <p class="voice-role">AIマーケター</p>
+            <p class="voice-name">Aさん（24歳）</p>
+            <p class="voice-meta">新卒入社 → 2年目</p>
+            <p class="voice-body">入社直後からClaudeとChatGPTをフル活用。手作業を見つけては自動化する毎日。事業の数字に直結している実感があります。</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <div class="voice-photo">
+            <img src="images/member-female-1.png" alt="">
+            <div class="voice-quote">
+              <p>「KlingAIで動画を量産。1年でCPA半分、CV数3倍に。」</p>
+            </div>
+          </div>
+          <div class="voice-text">
+            <p class="voice-role">クリエイティブ</p>
+            <p class="voice-name">Bさん（23歳）</p>
+            <p class="voice-meta">新卒入社 → 1年目</p>
+            <p class="voice-body">朝のリサーチも素材作りも、ほとんどAIと一緒。新ツールが出たらすぐ試せる環境が、自分の成長スピードを押し上げてくれます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <div class="voice-photo">
+            <img src="images/member-female-2.png" alt="">
+            <div class="voice-quote">
+              <p>「AIで仮説検証が爆速になり、新規事業の責任者に。」</p>
+            </div>
+          </div>
+          <div class="voice-text">
+            <p class="voice-role">新規事業</p>
+            <p class="voice-name">Cさん（25歳）</p>
+            <p class="voice-meta">新卒入社 → 2年目</p>
+            <p class="voice-body">「やりたい」と手を挙げた人間に、社歴関係なくチャンスをくれる。日々、自分の市場価値が上がっているのを感じます。</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <div class="voice-photo">
+            <img src="images/member-okamoto.jpg" alt="" style="">
+            <div class="voice-quote">
+              <p>「20代でこれだけの経験ができる場所は、ここしかない。」</p>
+            </div>
+          </div>
+          <div class="voice-text">
+            <p class="voice-role">マーケティング</p>
+            <p class="voice-name">Dさん（22歳）</p>
+            <p class="voice-meta">新卒入社 → 1年目</p>
+            <p class="voice-body">大手だったら会議室にもいられないような戦略会議に、入社すぐから参加できる。成長の密度が全然違います。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination" style="position:relative;margin-top:32px;"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<!-- ── SCHEDULE ── -->
+<section id="schedule">
+  <div class="sec-head fade">
+    <p class="sec-label">One Day</p>
+    <h2 class="sec-h2">AIマーケターの1日</h2>
+    <p class="sec-sub">← スクロールして確認</p>
+  </div>
+  <div class="sch-track" id="schTrack">
+    <div class="sch-card">
+      <img class="sch-photo" src="images/team-meeting.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">09:00</p>
+        <p class="sch-title">出社・チームMTG</p>
+        <p class="sch-desc">渋谷桜丘オフィスへ出社。当日のKPIとタスクをチームで確認。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/work-laptop.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">09:30</p>
+        <p class="sch-title">AIで朝のリサーチ</p>
+        <p class="sch-desc">ChatGPT・Claudeで競合・トレンド・最新AIニュースを15分で総ざらい。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/work-office.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">10:00</p>
+        <p class="sch-title">クリエイティブ制作</p>
+        <p class="sch-desc">KlingAIで広告動画を量産、文章はClaudeで仕上げ。1日10本ペース。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/fun-food.png" alt="">
+      <div class="sch-body">
+        <p class="sch-time">12:00</p>
+        <p class="sch-title">ランチ</p>
+        <p class="sch-desc">渋谷の美味しいお店をチームで開拓。新しいAIツールの話で盛り上がる。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/work-meeting.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">13:00</p>
+        <p class="sch-title">広告運用・分析</p>
+        <p class="sch-desc">前日の数値を分析、ChatGPTにデータを投げて改善仮説を一緒に考える。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/team-meeting.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">15:00</p>
+        <p class="sch-title">自動化構築</p>
+        <p class="sch-desc">手作業を見つけたらClaudeでコード化。LINEシナリオ・スプレッドシート連携を構築。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/work-office.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">17:00</p>
+        <p class="sch-title">新規事業ブレスト</p>
+        <p class="sch-desc">事業責任者と新しい事業アイデアを議論。AIで市場調査を即時実行。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/bbq-cheers.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">18:00</p>
+        <p class="sch-title">退社</p>
+        <p class="sch-desc">日次KPIを確認して退社。たまにチームで飲みに行くことも。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY (HADOの日常) ── -->
+<section id="gallery">
+  <div class="gal-text fade">
+    <p>普通の会社だと<strong>10年</strong>かかる<br>挑戦や経験が、<br><span class="gal-highlight">20代で全部できる場所。</span></p>
+  </div>
+  <div class="gal-mosaic">
+    <img src="images/P1430721.JPG" alt="">
+    <img src="images/IMG_3570.JPG" alt="">
+    <img src="images/IMG_7911.JPG" alt="">
+    <img src="images/IMG_1665.jpg" alt="">
+    <img src="images/IMG_1780.jpg" alt="">
+    <img src="images/P1430806.JPG" alt="">
+    <img src="images/IMG_3588.jpeg" alt="">
+    <img src="images/IMG_1980.jpg" alt="">
+    <img src="images/Gemini_Generated_Image_pwswerpwswerpwsw.png" alt="">
+    <img src="images/715E99B5-6047-430F-B4B5-816C4EAF2031.jpeg" alt="" class="pc-only">
+  </div>
+</section>
+
+<!-- ── LINE BENEFITS ── -->
+<section id="benefits">
+  <div class="ben-inner">
+    <div style="text-align:center;margin-bottom:56px;" class="fade">
+      <p class="sec-label" style="color:var(--cyan);display:block;margin-bottom:12px;">LINE Benefits</p>
+      <h2 class="sec-h2" style="color:#fff;">LINE登録者<span class="grad">限定</span><br>3大特典</h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-card fade">
+        <p class="ben-num grad">01</p>
+        <h3 class="ben-title">特別先行ルート</h3>
+        <p class="ben-desc">通常とは別枠の、LINE登録者限定の特別選考ルートをご案内します。</p>
+      </div>
+      <div class="ben-card fade d1">
+        <p class="ben-num grad">02</p>
+        <h3 class="ben-title">プレミアムスカウト</h3>
+        <p class="ben-desc">書類選考・カジュアル面談をスキップできる特別スカウトが届くことも！</p>
+      </div>
+      <div class="ben-card fade d2">
+        <p class="ben-num grad">03</p>
+        <h3 class="ben-title">非公開求人の案内</h3>
+        <p class="ben-desc">LINEでしか公開されない限定ポジションをいち早くチェックできます。</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="fade">
+      <a href="#entry" class="btn-line lg">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINEで非公開求人を受け取る
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── JOB CARD ── -->
+<section id="job">
+  <div class="job-inner fade">
+    <div style="margin-bottom:40px;">
+      <p class="sec-label">Job Opening</p>
+      <h2 class="sec-h2">募集要項</h2>
+    </div>
+    <div class="job-card">
+      <img class="job-photo" src="images/team-hado-sign.jpg" alt="HADOチーム">
+      <div class="job-body">
+        <div class="job-tags">
+          <span class="job-tag">2027卒</span>
+          <span class="job-tag">未経験OK</span>
+          <span class="job-tag">最新AIフル装備</span>
+          <span class="job-tag">渋谷オフィス</span>
+          <span class="job-tag">1dayインターン必須</span>
+        </div>
+        <h3 class="job-title">AIマーケター（新卒）</h3>
+        <dl class="job-table">
+          <dt>業務内容</dt>
+          <dd>AIを活用したマーケティング活動全般。SNSコンテンツ制作、広告運用、コンテンツ生成、データ分析、業務自動化の構築まで担当します。</dd>
+          <dt>関わる事業</dt>
+          <dd>求職者送客の窓口事業 ／ 東大式逆転塾 ／ 新規事業（すべてAI×マーケ領域）</dd>
+          <dt>使用ツール</dt>
+          <dd>ChatGPT（フル課金）／ Claude（フル課金）／ KlingAI（フル課金）／ その他最新AIツール</dd>
+          <dt>初任給</dt>
+          <dd>月給 40万円</dd>
+          <dt>応募条件</dt>
+          <dd>新卒採用のため、特定のスキル・経験は不問。<br>ただし、応募過程で1dayインターンへの参加が必須となります。</dd>
+          <dt>求める人物像</dt>
+          <dd>最新情報のキャッチアップを楽しめる人。AIや新しいツールを触ることが好きな人。</dd>
+          <dt>勤務地</dt>
+          <dd>東京都渋谷区桜丘町21-4 渋谷桜丘町ビル3F<br><span style="color:rgba(0,0,0,.45);font-size:.82rem;">※リモートワーク不可</span></dd>
+          <dt>勤務時間</dt>
+          <dd>平日 9:00 〜 18:00</dd>
+          <dt>福利厚生</dt>
+          <dd>最新AIツールをフル課金で支給（業務利用・学習利用ともに自由）</dd>
+        </dl>
+        <a href="#entry" class="btn-line lg" style="width:100%;justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          LINEから応募する
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FLOW ── -->
+<section id="flow">
+  <div class="flow-inner">
+    <div style="text-align:center;margin-bottom:56px;" class="fade">
+      <p class="sec-label" style="display:block;margin-bottom:12px;">Selection Flow</p>
+      <h2 class="sec-h2">選考フロー</h2>
+      <p class="sec-sub">3ステップ。応募はLINEから</p>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step fade">
+        <div class="flow-icon">💬</div>
+        <p class="flow-step-num">STEP 01</p>
+        <p class="flow-title">カジュアル面談</p>
+        <p class="flow-desc">事業内容や働き方について気軽にお話します。質問だけでもOK。</p>
+      </div>
+      <div class="flow-step fade d1">
+        <div class="flow-icon">🛠</div>
+        <p class="flow-step-num">STEP 02</p>
+        <p class="flow-title">1dayインターン</p>
+        <p class="flow-desc">実際の業務を体験。チームの空気感とAIワークフローを肌で確認。</p>
+      </div>
+      <div class="flow-step fade d2">
+        <div class="flow-icon">🎯</div>
+        <p class="flow-step-num">STEP 03</p>
+        <p class="flow-title">最終面接</p>
+        <p class="flow-desc">経営陣との最終面接。お互いの本気を確かめ合うステップ。</p>
+      </div>
+      <div class="flow-step fade d3">
+        <div class="flow-icon">🚀</div>
+        <p class="flow-step-num">STEP 04</p>
+        <p class="flow-title">内定者インターン開始</p>
+        <p class="flow-desc">内定後すぐに有給インターンへ。入社前から実務を通じて、AIマーケターとしての武器を身につける。</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:56px;" class="fade">
+      <p style="font-size:.85rem;color:rgba(0,0,0,.4);margin-bottom:16px;">まずはLINE登録から。質問だけでも大歓迎です。</p>
+      <a href="#entry" class="btn-line lg">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        LINEで応募する
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section id="entry">
+  <div id="entry-content" class="fade">
+    <span class="label">Join Us</span>
+    <h2>AI×マーケで、<span class="grad">社会の<br>未来</span>を作ろう。</h2>
+    <p>HADOは、AIを「使う側」になりたい新卒を全力で受け入れます。<br>初任給40万円・最新AIフル装備・3事業横断の経験。<br>その全てが、ここからスタートします。</p>
+    <div class="entry-chips">
+      <span class="entry-chip">2027卒採用</span>
+      <span class="entry-chip">初任給40万円</span>
+      <span class="entry-chip">AIフル装備</span>
+      <span class="entry-chip">渋谷オフィス</span>
+    </div>
+    <a href="#" class="btn-line xl">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで応募する
+    </a>
+    <p class="note">カジュアル面談OK ／ 質問だけでも歓迎</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <img class="f-logo" src="images/hado-logo-cropped.png" alt="HADO">
+  <p>株式会社HADO（Hado Inc.）</p>
+  <p>東京都渋谷区桜丘町21-4 渋谷桜丘町ビル3F</p>
+  <p style="margin-top:16px;">&copy; 2026 HADO Inc. All rights reserved.</p>
+</footer>
+
+<!-- ── STICKY CTA ── -->
+<div id="sticky">
+  <a href="#entry" class="btn-line" style="width:100%;justify-content:center;padding:14px;">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    LINEで応募する
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Swiper voice
+  new Swiper('.voice-swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    breakpoints: {
+      640: { slidesPerView: 1.5, spaceBetween: 20 },
+      900: { slidesPerView: 2.2, spaceBetween: 24 },
+      1200: { slidesPerView: 3, spaceBetween: 24 },
+    }
+  });
+
+  // NAV switch
+  const nav = document.getElementById('nav');
+  const hero = document.getElementById('hero');
+  new IntersectionObserver(([e]) => nav.classList.toggle('light', !e.isIntersecting), { threshold: 0.1 }).observe(hero);
+
+  // Scroll fade
+  const fadeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.fade').forEach(el => fadeObs.observe(el));
+
+  // Hero stagger
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.h-el').forEach((el, i) => {
+      setTimeout(() => el.classList.add('in'), 120 + i * 170);
+    });
+  });
+
+  // Countup
+  const cuObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      const unit = el.querySelector('span');
+      const unitText = unit ? unit.outerHTML : '';
+      let start = null;
+      const run = ts => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / 1800, 1);
+        const v = Math.round((1 - Math.pow(1 - p, 3)) * target);
+        el.innerHTML = v + unitText;
+        if (p < 1) requestAnimationFrame(run);
+      };
+      requestAnimationFrame(run);
+      cuObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-countup]').forEach(el => cuObs.observe(el));
+
+  // Salary bars animation
+  const barObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll('.bar-fill').forEach((bar, i) => {
+        setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, i * 250);
+      });
+      barObs.unobserve(e.target);
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.salary-bars').forEach(el => barObs.observe(el));
+
+  // University donut chart with surrounding labels
+  (function buildDonut(){
+    const svg = document.getElementById('uniDonut');
+    if (!svg) return;
+    const SVG_NS = 'http://www.w3.org/2000/svg';
+    const data = [
+      { name: '慶應義塾大学', pct: 30, color: '#0055FF' },
+      { name: '東京大学',     pct: 20, color: '#8B5CF6' },
+      { name: '法政大学',     pct: 10, color: '#06B6D4' },
+      { name: '青山学院大学', pct: 10, color: '#3B82F6' },
+      { name: '明治大学',     pct: 10, color: '#A78BFA' },
+      { name: 'その他',       pct: 20, color: '#94a3b8' },
+    ];
+    const cx = 100, cy = 100, r = 80;
+    const C = 2 * Math.PI * r;
+
+    // Donut segments — drawn on a circle that's rotated -90deg so dasharray starts at top
+    const segGroup = document.createElementNS(SVG_NS, 'g');
+    segGroup.setAttribute('transform', `rotate(-90 ${cx} ${cy})`);
+    svg.appendChild(segGroup);
+
+    let offset = 0;
+    const segs = [];
+    data.forEach(d => {
+      const len = (d.pct / 100) * C;
+      const c = document.createElementNS(SVG_NS, 'circle');
+      c.setAttribute('cx', cx); c.setAttribute('cy', cy); c.setAttribute('r', r);
+      c.setAttribute('fill', 'none'); c.setAttribute('stroke', d.color);
+      c.setAttribute('class', 'donut-segment');
+      c.setAttribute('stroke-dasharray', `0 ${C}`);
+      c.setAttribute('stroke-dashoffset', -offset);
+      segGroup.appendChild(c);
+      segs.push({ el: c, len });
+      offset += len;
+    });
+
+    // Surrounding labels
+    const labelGroup = document.createElementNS(SVG_NS, 'g');
+    svg.appendChild(labelGroup);
+
+    const innerR = r + 18;          // line start (just outside donut)
+    const outerR = r + 38;          // label position
+    const labelEls = [];
+    let pctAcc = 0;
+    data.forEach(d => {
+      // angle of segment midpoint, measured from top (-90deg), clockwise
+      const midPctFromTop = pctAcc + d.pct / 2;
+      pctAcc += d.pct;
+      const theta = -Math.PI / 2 + (midPctFromTop / 100) * 2 * Math.PI;
+      const cos = Math.cos(theta), sin = Math.sin(theta);
+      const x1 = cx + cos * innerR;
+      const y1 = cy + sin * innerR;
+      const x2 = cx + cos * outerR;
+      const y2 = cy + sin * outerR;
+      // Anchor text on the appropriate side
+      const isRight = cos >= 0;
+      const tx = x2 + (isRight ? 6 : -6);
+      const anchor = isRight ? 'start' : 'end';
+
+      const g = document.createElementNS(SVG_NS, 'g');
+      g.setAttribute('class', 'uni-label');
+
+      const line = document.createElementNS(SVG_NS, 'line');
+      line.setAttribute('x1', x1); line.setAttribute('y1', y1);
+      line.setAttribute('x2', x2); line.setAttribute('y2', y2);
+      line.setAttribute('stroke', d.color);
+      line.setAttribute('class', 'uni-label-line');
+      g.appendChild(line);
+
+      const dot = document.createElementNS(SVG_NS, 'circle');
+      dot.setAttribute('cx', x2); dot.setAttribute('cy', y2);
+      dot.setAttribute('r', 3); dot.setAttribute('fill', d.color);
+      g.appendChild(dot);
+
+      const tName = document.createElementNS(SVG_NS, 'text');
+      tName.setAttribute('x', tx);
+      tName.setAttribute('y', y2 - 2);
+      tName.setAttribute('text-anchor', anchor);
+      tName.setAttribute('class', 'uni-label-name');
+      tName.textContent = d.name;
+      g.appendChild(tName);
+
+      const tPct = document.createElementNS(SVG_NS, 'text');
+      tPct.setAttribute('x', tx);
+      tPct.setAttribute('y', y2 + 14);
+      tPct.setAttribute('text-anchor', anchor);
+      tPct.setAttribute('class', 'uni-label-pct');
+      tPct.setAttribute('fill', d.color);
+      tPct.textContent = d.pct + '%';
+      g.appendChild(tPct);
+
+      labelGroup.appendChild(g);
+      labelEls.push(g);
+    });
+
+    const donutObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        segs.forEach(({ el, len }, i) => {
+          setTimeout(() => { el.setAttribute('stroke-dasharray', `${len} ${C - len}`); }, i * 120);
+        });
+        labelEls.forEach((el, i) => {
+          setTimeout(() => el.classList.add('in'), 600 + i * 80);
+        });
+        donutObs.unobserve(e.target);
+      });
+    }, { threshold: 0.3 });
+    donutObs.observe(svg);
+  })();
+
+  // Sticky CTA
+  const sticky = document.getElementById('sticky');
+  const entry = document.getElementById('entry');
+  const sObs = new IntersectionObserver((entries) => {
+    const inHero = entries.find(e => e.target === hero)?.isIntersecting;
+    const inEntry = entries.find(e => e.target === entry)?.isIntersecting;
+    sticky.classList.toggle('show', !inHero && !inEntry);
+  }, { threshold: 0.1 });
+  sObs.observe(hero);
+  sObs.observe(entry);
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  // Schedule drag scroll
+  const track = document.getElementById('schTrack');
+  let isDown = false, startX, scrollLeft;
+  track.addEventListener('mousedown', e => { isDown = true; track.classList.add('grabbing'); startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
+  track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('grabbing'); });
+  track.addEventListener('mouseup', () => { isDown = false; track.classList.remove('grabbing'); });
+  track.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); const x = e.pageX - track.offsetLeft; track.scrollLeft = scrollLeft - (x - startX) * 1.5; });
+</script>
+</body>
+</html>

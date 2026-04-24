@@ -249,11 +249,17 @@
     /* ── about / business ── */
     #about { padding: 80px 24px 100px; background: var(--cream); }
     .biz-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .biz-card { background: #fff; border-radius: 20px; overflow: hidden; transition: transform .4s, box-shadow .4s; }
+    .biz-card { background: #fff; border-radius: 20px; overflow: hidden; transition: transform .4s, box-shadow .4s; display: block; color: inherit; text-decoration: none; }
     .biz-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,.08); }
     .biz-card .biz-photo { aspect-ratio: 16/10; overflow: hidden; }
     .biz-card .biz-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
     .biz-card:hover .biz-photo img { transform: scale(1.06); }
+    /* Logo-style image variant: contain on white, padded */
+    .biz-card .biz-photo.logo { background: #fff; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid rgba(0,0,0,.04); }
+    .biz-card .biz-photo.logo img { width: 100%; height: 100%; object-fit: contain; padding: 24px 32px; transition: transform .6s ease; }
+    .biz-card:hover .biz-photo.logo img { transform: scale(1.04); }
+    .biz-card .ext-icon { display: inline-flex; align-items: center; gap: 4px; font-size: .72rem; font-weight: 700; color: var(--blue); letter-spacing: .08em; margin-top: 14px; }
+    .biz-card .ext-icon svg { width: 12px; height: 12px; }
     .biz-card-body { padding: 28px 24px; }
     .biz-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; margin-bottom: 12px; letter-spacing: .1em; }
     .biz-tag { display: inline-block; font-size: .68rem; font-weight: 700; letter-spacing: .12em; color: var(--blue); background: rgba(0,85,255,.08); padding: 4px 10px; border-radius: 4px; margin-bottom: 12px; }
@@ -628,13 +634,14 @@
         <circle cx="400" cy="230" r="70" fill="none" stroke="#8B5CF6" stroke-width="1.5" opacity=".5" class="nv-pulse d2"/>
         <circle cx="400" cy="230" r="70" fill="none" stroke="#06B6D4" stroke-width="1.5" opacity=".5" class="nv-pulse d3"/>
 
-        <!-- spoke lines (animated) -->
-        <line x1="400" y1="230" x2="120" y2="100" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line"/>
-        <line x1="400" y1="230" x2="680" y2="100" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d1"/>
-        <line x1="400" y1="230" x2="80"  y2="280" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d2"/>
-        <line x1="400" y1="230" x2="720" y2="280" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d3"/>
-        <line x1="400" y1="230" x2="220" y2="410" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d4"/>
-        <line x1="400" y1="230" x2="580" y2="410" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d5"/>
+        <!-- 7 spoke lines (animated) — angles evenly distributed -->
+        <line x1="400" y1="230" x2="400" y2="40"  stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line"/>
+        <line x1="400" y1="230" x2="548" y2="111" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d1"/>
+        <line x1="400" y1="230" x2="585" y2="272" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d2"/>
+        <line x1="400" y1="230" x2="482" y2="401" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d3"/>
+        <line x1="400" y1="230" x2="318" y2="401" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d4"/>
+        <line x1="400" y1="230" x2="215" y2="272" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line d5"/>
+        <line x1="400" y1="230" x2="252" y2="111" stroke="url(#lineGrad)" stroke-width="1.8" class="nv-line"/>
 
         <!-- core node (breathing) -->
         <g class="nv-core">
@@ -643,36 +650,35 @@
           <text x="400" y="252" text-anchor="middle" fill="#fff" font-family="Zen Kaku Gothic New, sans-serif" font-weight="900" font-size="20">マーケ</text>
         </g>
 
-        <!-- spoke nodes (floating) -->
+        <!-- 7 spoke nodes (floating) -->
         <g class="nv-node n1">
-          <circle cx="120" cy="100" r="44" fill="#0a0a0f" stroke="#0055FF" stroke-width="1.2"/>
-          <text x="120" y="95" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">就活</text>
-          <text x="120" y="112" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">情報の格差</text>
+          <circle cx="400" cy="40" r="46" fill="#0a0a0f" stroke="#0055FF" stroke-width="1.2"/>
+          <text x="400" y="44" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">事業承継</text>
         </g>
         <g class="nv-node n2">
-          <circle cx="680" cy="100" r="44" fill="#0a0a0f" stroke="#8B5CF6" stroke-width="1.2"/>
-          <text x="680" y="95" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">教育</text>
-          <text x="680" y="112" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">学力の格差</text>
+          <circle cx="548" cy="111" r="48" fill="#0a0a0f" stroke="#8B5CF6" stroke-width="1.2"/>
+          <text x="548" y="108" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">エンタ</text>
+          <text x="548" y="122" text-anchor="middle" fill="#fff" font-size="11" font-weight="700">テイメント</text>
         </g>
         <g class="nv-node n3">
-          <circle cx="80" cy="280" r="44" fill="#0a0a0f" stroke="#06B6D4" stroke-width="1.2"/>
-          <text x="80" y="275" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">転職</text>
-          <text x="80" y="292" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">機会の不均衡</text>
+          <circle cx="585" cy="272" r="46" fill="#0a0a0f" stroke="#06B6D4" stroke-width="1.2"/>
+          <text x="585" y="276" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">キャリア</text>
         </g>
         <g class="nv-node n4">
-          <circle cx="720" cy="280" r="44" fill="#0a0a0f" stroke="#0055FF" stroke-width="1.2"/>
-          <text x="720" y="275" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">起業</text>
-          <text x="720" y="292" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">挑戦の停滞</text>
+          <circle cx="482" cy="401" r="44" fill="#0a0a0f" stroke="#0055FF" stroke-width="1.2"/>
+          <text x="482" y="406" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">教育</text>
         </g>
         <g class="nv-node n5">
-          <circle cx="220" cy="410" r="44" fill="#0a0a0f" stroke="#8B5CF6" stroke-width="1.2"/>
-          <text x="220" y="405" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">中小企業</text>
-          <text x="220" y="422" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">DX遅れ</text>
+          <circle cx="318" cy="401" r="44" fill="#0a0a0f" stroke="#8B5CF6" stroke-width="1.2"/>
+          <text x="318" y="406" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">医療</text>
         </g>
         <g class="nv-node n6">
-          <circle cx="580" cy="410" r="44" fill="#0a0a0f" stroke="#06B6D4" stroke-width="1.2"/>
-          <text x="580" y="405" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">地方</text>
-          <text x="580" y="422" text-anchor="middle" fill="rgba(255,255,255,.6)" font-size="10">情報の偏り</text>
+          <circle cx="215" cy="272" r="46" fill="#0a0a0f" stroke="#06B6D4" stroke-width="1.2"/>
+          <text x="215" y="276" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">不動産</text>
+        </g>
+        <g class="nv-node n1">
+          <circle cx="252" cy="111" r="48" fill="#0a0a0f" stroke="#0055FF" stroke-width="1.2"/>
+          <text x="252" y="116" text-anchor="middle" fill="#fff" font-size="13" font-weight="700">インバウンド</text>
         </g>
       </svg>
     </div>
@@ -716,24 +722,26 @@
     <p class="sec-sub">3つの事業すべてで、AIを使い倒したマーケティングを展開しています。</p>
   </div>
   <div class="biz-grid fade">
-    <div class="biz-card">
-      <div class="biz-photo"><img src="images/business_career.png" alt="求職者送客の窓口"></div>
+    <a class="biz-card" href="https://kyusyokusyasokyaku-no-madoguchi.com/" target="_blank" rel="noopener">
+      <div class="biz-photo logo"><img src="images/biz-career-logo.png" alt="求職者送客の窓口"></div>
       <div class="biz-card-body">
         <p class="biz-num grad-blue">01</p>
         <p class="biz-tag">CAREER × AI</p>
         <h3 class="biz-heading">求職者送客の窓口</h3>
         <p class="biz-text">求職者と人材紹介会社をつなぐプラットフォーム。AIで集客広告・LINEシナリオ・コンテンツ生成を自動化し、出会いの非対称性を解消します。</p>
+        <span class="ext-icon">サイトを見る <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
       </div>
-    </div>
-    <div class="biz-card">
-      <div class="biz-photo"><img src="images/gen/business_education.png" alt="東大式逆転塾"></div>
+    </a>
+    <a class="biz-card" href="https://todai-gyakuten-lp.vercel.app/" target="_blank" rel="noopener">
+      <div class="biz-photo logo"><img src="images/biz-todai-logo.png" alt="東大式逆転塾"></div>
       <div class="biz-card-body">
         <p class="biz-num grad-blue">02</p>
         <p class="biz-tag">EDUCATION × AI</p>
         <h3 class="biz-heading">東大式逆転塾</h3>
         <p class="biz-text">難関大合格を支える学習塾。AIで個別最適な学習設計とマーケティングを構築し、努力が正しく報われる教育を全国へ届けます。</p>
+        <span class="ext-icon">サイトを見る <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M17 7H8M17 7v9"/></svg></span>
       </div>
-    </div>
+    </a>
     <div class="biz-card">
       <div class="biz-photo"><img src="images/gen/business_newbiz.png" alt="AIマーケティングコンサル"></div>
       <div class="biz-card-body">

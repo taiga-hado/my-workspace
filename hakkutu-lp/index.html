@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ハックツ就職 | 未経験転職は、エージェント選びで9割決まる。</title>
+  <meta name="description" content="20代未経験・フリーター・ニートのための、隠れホワイト企業転職サービス。提携エージェント100社以上から、あなたに合う1社だけをご紹介。利用料完全無料。">
+  <meta property="og:title" content="ハックツ就職 | 未経験転職は、エージェント選びで9割決まる。">
+  <meta property="og:description" content="提携エージェント100社以上。未経験歓迎の隠れホワイト求人を、丁寧なカウンセリングでご紹介します。">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: #1F2937;
+      background: #f6f7f4;
+      padding-bottom: 110px;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    .wrap {
+      max-width: 420px;
+      margin: 0 auto;
+      background: #fff;
+      box-shadow: 0 0 40px rgba(0,0,0,0.05);
+      position: relative;
+    }
+
+    /* ===== HEADER (ロゴ差し替えスロット) ===== */
+    .lp-header {
+      padding: 12px 16px;
+      background: #fff;
+      border-bottom: 1px solid #f0f0f0;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .logo-slot {
+      /* ここにロゴ画像を入れる: <img src="logo.png" alt="ハックツ就職"> */
+      min-height: 34px;
+      min-width: 140px;
+      background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 4px, #fafafa 4px, #fafafa 8px);
+      border: 1px dashed #ccc;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .logo-slot::after { content: "LOGO"; }
+
+    .header-badge {
+      display: inline-block;
+      background: #FFD93D;
+      color: #1F2937;
+      font-size: 10px;
+      font-weight: 900;
+      padding: 5px 10px;
+      border-radius: 10px;
+      white-space: nowrap;
+    }
+
+    /* ===== SECTION IMAGES ===== */
+    .section-img {
+      width: 100%;
+      display: block;
+    }
+
+    /* ===== INLINE CTA SLOT ===== */
+    .cta-slot {
+      padding: 16px 16px;
+      background: #fff;
+      text-align: center;
+      border-top: 1px solid #f0f0f0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .cta-slot .placeholder {
+      display: block;
+      background: repeating-linear-gradient(45deg, #FFF6CF, #FFF6CF 6px, #FFEFAA 6px, #FFEFAA 12px);
+      border: 2px dashed #F0A83E;
+      border-radius: 16px;
+      padding: 22px 20px;
+      color: #9c7a1c;
+      font-size: 13px;
+      font-weight: 900;
+    }
+    .cta-slot .placeholder::before {
+      content: "CTA ボタンスロット（LINE無料相談など）";
+    }
+
+    /* ===== FLOATING CTA (差し替え用) ===== */
+    .floating-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid #e5e7eb;
+      padding: 10px 16px;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+    }
+    .floating-cta-slot {
+      display: block;
+      width: 100%;
+      max-width: 388px;
+      min-height: 60px;
+      background: repeating-linear-gradient(45deg, #FFF6CF, #FFF6CF 6px, #FFEFAA 6px, #FFEFAA 12px);
+      border: 2px dashed #F0A83E;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #9c7a1c;
+      font-size: 13px;
+      font-weight: 900;
+      text-align: center;
+      padding: 8px 14px;
+    }
+    .floating-cta-slot::before {
+      content: "固定CTAボタンスロット（LINE相談へ）";
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      padding: 28px 20px 20px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #6b7280;
+      background: #f9fafb;
+    }
+    .footer-logo-slot {
+      min-height: 36px;
+      max-width: 180px;
+      margin: 0 auto 14px;
+      background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 4px, #fafafa 4px, #fafafa 8px);
+      border: 1px dashed #ccc;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .footer-logo-slot::after { content: "LOGO"; }
+    footer .fnav {
+      margin-bottom: 14px;
+    }
+    footer .fnav a {
+      margin: 0 8px;
+      color: #6b7280;
+    }
+    footer .fnav a:hover { color: #3DB66A; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="lp-header">
+      <!-- ロゴ差し替え: 以下の .logo-slot を <img src="logo.png" alt="ハックツ就職"> に置き換え -->
+      <div class="logo-slot"></div>
+    </header>
+
+    <img src="images/01_fv.png" alt="隠れホワイト企業へ / 未経験転職は、エージェント選びで9割決まる。" class="section-img">
+
+    <!-- 1回目CTA挿入位置 -->
+    <div class="cta-slot">
+      <a href="#" class="placeholder"></a>
+    </div>
+
+    <img src="images/02_success.png" alt="未経験でも成功者が続出" class="section-img">
+    <img src="images/03_worry.png" alt="転職のお悩みチェックリスト" class="section-img">
+    <img src="images/04_gacha.png" alt="エージェントガチャに外れて後悔した人は約6割" class="section-img">
+    <img src="images/05_rely.png" alt="転職エージェントに頼りましょう" class="section-img">
+    <img src="images/06_solution.png" alt="ハックツ就職にお任せください" class="section-img">
+    <img src="images/07_100agents.png" alt="提携エージェント100社以上から1社を紹介" class="section-img">
+
+    <!-- 2回目CTA挿入位置 -->
+    <div class="cta-slot">
+      <a href="#" class="placeholder"></a>
+    </div>
+
+    <img src="images/08_reasons.png" alt="選ばれる3つの理由" class="section-img">
+    <img src="images/09_white_criteria.png" alt="隠れホワイト求人の基準" class="section-img">
+    <img src="images/10_compare.png" alt="他の方法と何が違う" class="section-img">
+    <img src="images/11_jobs.png" alt="隠れホワイト求人例" class="section-img">
+    <img src="images/12_voice.png" alt="ご利用者様の声" class="section-img">
+    <img src="images/13_steps.png" alt="ご利用の流れ 5STEP" class="section-img">
+    <img src="images/14_faq.png" alt="よくある質問" class="section-img">
+    <img src="images/15_final.png" alt="今動けば、半年後の給料明細が変わる" class="section-img">
+
+    <!-- 3回目（最終）CTA挿入位置 -->
+    <div class="cta-slot">
+      <a href="#" class="placeholder"></a>
+    </div>
+
+    <footer>
+      <div class="footer-logo-slot"></div>
+      <div class="fnav">
+        <a href="#">プライバシーポリシー</a> |
+        <a href="#">運営社情報</a>
+      </div>
+      <div>copyright©ハックツ就職</div>
+    </footer>
+
+  </div>
+
+  <!-- 固定フローティングCTA -->
+  <div class="floating-cta">
+    <a href="#" class="floating-cta-slot"></a>
+  </div>
+
+</body>
+</html>

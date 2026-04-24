@@ -18,7 +18,7 @@
       font-family: 'Noto Sans JP', sans-serif;
       color: #1F2937;
       background: #f6f7f4;
-      padding-bottom: 110px;
+      padding-bottom: 96px;
     }
     img { max-width: 100%; height: auto; display: block; }
     a { text-decoration: none; color: inherit; }
@@ -31,44 +31,17 @@
       position: relative;
     }
 
-    /* ===== HEADER (ロゴ差し替えスロット) ===== */
+    /* ===== HEADER (ロゴ差し替え) ===== */
     .lp-header {
-      padding: 12px 16px;
+      padding: 14px 18px;
       background: #fff;
-      border-bottom: 1px solid #f0f0f0;
       position: sticky;
       top: 0;
       z-index: 20;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
     }
     .logo-slot {
-      /* ここにロゴ画像を入れる: <img src="logo.png" alt="ハックツ就職"> */
-      min-height: 34px;
-      min-width: 140px;
-      background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 4px, #fafafa 4px, #fafafa 8px);
-      border: 1px dashed #ccc;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #aaa;
-      font-size: 11px;
-      font-weight: 700;
-    }
-    .logo-slot::after { content: "LOGO"; }
-
-    .header-badge {
-      display: inline-block;
-      background: #FFD93D;
-      color: #1F2937;
-      font-size: 10px;
-      font-weight: 900;
-      padding: 5px 10px;
-      border-radius: 10px;
-      white-space: nowrap;
+      /* ここにロゴ画像を入れる: <img src="logo.png" alt="ハックツ就職" style="max-height:32px"> */
+      height: 32px;
     }
 
     /* ===== SECTION IMAGES ===== */
@@ -79,27 +52,16 @@
 
     /* ===== INLINE CTA SLOT ===== */
     .cta-slot {
-      padding: 16px 16px;
+      padding: 20px 18px;
       background: #fff;
-      text-align: center;
-      border-top: 1px solid #f0f0f0;
-      border-bottom: 1px solid #f0f0f0;
     }
     .cta-slot .placeholder {
+      /* ここにCTAボタンを入れる。空の場合はシンプルな余白 */
       display: block;
-      background: repeating-linear-gradient(45deg, #FFF6CF, #FFF6CF 6px, #FFEFAA 6px, #FFEFAA 12px);
-      border: 2px dashed #F0A83E;
-      border-radius: 16px;
-      padding: 22px 20px;
-      color: #9c7a1c;
-      font-size: 13px;
-      font-weight: 900;
-    }
-    .cta-slot .placeholder::before {
-      content: "CTA ボタンスロット（LINE無料相談など）";
+      height: 60px;
     }
 
-    /* ===== FLOATING CTA (差し替え用) ===== */
+    /* ===== FLOATING CTA (差し替え) ===== */
     .floating-cta {
       position: fixed;
       bottom: 0;
@@ -107,31 +69,17 @@
       right: 0;
       background: rgba(255,255,255,0.97);
       backdrop-filter: blur(10px);
-      border-top: 1px solid #e5e7eb;
-      padding: 10px 16px;
+      padding: 10px 18px;
       z-index: 100;
       display: flex;
       justify-content: center;
     }
     .floating-cta-slot {
+      /* ここに追従CTAボタンを入れる。空の場合は目に見えない余白 */
       display: block;
       width: 100%;
       max-width: 388px;
-      min-height: 60px;
-      background: repeating-linear-gradient(45deg, #FFF6CF, #FFF6CF 6px, #FFEFAA 6px, #FFEFAA 12px);
-      border: 2px dashed #F0A83E;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #9c7a1c;
-      font-size: 13px;
-      font-weight: 900;
-      text-align: center;
-      padding: 8px 14px;
-    }
-    .floating-cta-slot::before {
-      content: "固定CTAボタンスロット（LINE相談へ）";
+      height: 60px;
     }
 
     /* ===== FOOTER ===== */
@@ -143,20 +91,10 @@
       background: #f9fafb;
     }
     .footer-logo-slot {
-      min-height: 36px;
-      max-width: 180px;
+      /* ここにロゴ画像を入れる */
+      height: 36px;
       margin: 0 auto 14px;
-      background: repeating-linear-gradient(45deg, #f0f0f0, #f0f0f0 4px, #fafafa 4px, #fafafa 8px);
-      border: 1px dashed #ccc;
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #aaa;
-      font-size: 11px;
-      font-weight: 700;
     }
-    .footer-logo-slot::after { content: "LOGO"; }
     footer .fnav {
       margin-bottom: 14px;
     }
@@ -171,7 +109,7 @@
   <div class="wrap">
 
     <header class="lp-header">
-      <!-- ロゴ差し替え: 以下の .logo-slot を <img src="logo.png" alt="ハックツ就職"> に置き換え -->
+      <!-- ロゴ差し替え: <div class="logo-slot"><img src="images/logo.png" alt="ハックツ就職" style="height:32px"></div> -->
       <div class="logo-slot"></div>
     </header>
 
@@ -194,7 +132,7 @@
       <a href="#" class="placeholder"></a>
     </div>
 
-    <img src="images/08_reasons.png" alt="選ばれる3つの理由" class="section-img">
+    <img src="images/08_reasons.png" alt="ハックツ就職が選ばれる3つの理由" class="section-img">
     <img src="images/09_white_criteria.png" alt="隠れホワイト求人の基準" class="section-img">
     <img src="images/10_compare.png" alt="他の方法と何が違う" class="section-img">
     <img src="images/11_jobs.png" alt="隠れホワイト求人例" class="section-img">

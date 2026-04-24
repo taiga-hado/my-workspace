@@ -1,6 +1,6 @@
 """
 ハックツ就職LP画像生成スクリプト (gpt-image-2)
-ロゴ・CTAボタンは画像に含めず、HTML側で差し込む前提。
+v2: 写真×イラストのミックス、信頼感強化、サービス名「ハックツ就職」をそのまま入れる
 """
 import base64
 import os
@@ -18,232 +18,316 @@ OUT_DIR = Path(__file__).parent / "images"
 OUT_DIR.mkdir(exist_ok=True)
 
 BRAND_STYLE = (
-    "Mobile landing page section image, vertical portrait orientation, "
-    "Japanese recruitment LP for 20s first-time job seekers (フリーター・ニート・未経験). "
-    "Brand palette: bright leaf green (#3DB66A) primary, vivid yellow (#FFD93D) for accents/highlights, "
-    "warm orange (#F08A3E) for call-outs, white background. "
-    "Pop, friendly, youthful tone — illustration style with cartoon-like human figures "
-    "(not photo-realistic). Bold Japanese typography. "
-    "IMPORTANT: Do NOT include any logo, brand name image, or LINE CTA button in the image — "
-    "leave clean space where those would go. No typos, accurate Japanese text rendering. "
-    "Rounded corners, friendly shapes."
+    "Mobile landing page section image, vertical portrait orientation. "
+    "Japanese professional recruitment service LP for 20s first-time job seekers "
+    "(フリーター・ニート・未経験). "
+    "Brand palette: deep trustworthy green (#2F9A56) as primary, "
+    "muted gold/yellow (#E8B94E) for accents (NOT neon), "
+    "warm brick orange (#D97742) for call-outs, clean white (#FFFFFF) background, "
+    "dark charcoal (#1F2937) for primary text. "
+    "TRUST-FIRST design: feel more like a corporate recruitment agency than a cartoon service. "
+    "Typography: bold modern Japanese sans-serif, clean spacing. "
+    "Soft drop shadows, subtle rounded corners (not cartoonish), thin border accents. "
+    "IMPORTANT: No logo mark, no LINE CTA button, no placeholder button rectangle in the image. "
+    "No typos, accurate Japanese text rendering."
+)
+
+PHOTO_STYLE = (
+    "Use photo-realistic / stock-photo style imagery for people and places "
+    "(real Japanese people, real offices, real apparel stores) rather than flat cartoon illustrations. "
+    "Photos should feel like professional recruitment site photography: natural lighting, slight warmth, "
+    "genuine expressions, business-casual attire. 20s Japanese cast, diverse gender mix."
+)
+
+ILLUSTRATION_STYLE = (
+    "Use clean, semi-realistic editorial illustration — NOT childish cartoon. "
+    "Thin line style with restrained color fills, natural proportions, "
+    "approachable but mature (think modern business infographic, not a children's book)."
 )
 
 SECTIONS = {
     "01_fv": {
-        "label": "FV: 隠れホワイト企業へ",
+        "label": "FV: 隠れホワイト企業へ（信頼感強化）",
+        "style": PHOTO_STYLE,
         "prompt": (
-            "Hero section image. Top area left blank (30px padding) for service logo that will be added later. "
-            "Small yellow badge at the top-right saying 「未経験専門就職サービス」. "
-            "Three small green hashtag labels below: 「#フリーター」「#スキルゼロ」「でも!!」. "
-            "Central massive bold headline stacked in two lines: "
-            "「隠れホワイト企業へ」 with the word 「ホワイト」 in extra-huge white outlined text on green, "
-            "rest in bold dark green. "
-            "Below the headline a slim subline: 「未経験転職は、エージェント選びで9割決まる。」 "
-            "To the right: cheerful cartoon illustration of a 20s Japanese man in a suit jumping with arms raised, confident smile. "
-            "Three horizontal pill-shaped condition badges in orange rounded rectangles with yellow highlight bars: "
+            "Hero section. The TOP 70px is completely blank white (room for the service logo). "
+            "Below that, a narrow yellow pill badge aligned right: 「未経験専門就職サービス」 in dark text. "
+            "Three small tag labels in a row: 「#フリーター」「#スキルゼロ」「でも…」 in muted green. "
+            "Central massive headline stacked in two lines: "
+            "「隠れホワイト」「企業へ」 — 「ホワイト」 in huge outlined-bold white text filled with crisp green "
+            "so it pops from the background, 「隠れ」 and 「企業へ」 in dark charcoal. "
+            "Below headline a clean subline: 「未経験転職は、エージェント選びで9割決まる。」 "
+            "in neutral grey, 「9割」 emphasized. "
+            "To the right: PHOTO-REALISTIC portrait of a confident 20s Japanese man in a neat navy suit, "
+            "mild smile (not jumping, not cartoon — a professional head-and-shoulders photo-style rendering "
+            "against a soft bokeh modern office window). "
+            "Below the portrait, a clean horizontal row of three condition pill badges in brick-orange background + yellow highlight: "
             "「年収500万円以上」「土日祝休み」「残業なし」. "
-            "Below badges, a golden No.1 RANKING medal badge saying 「ホワイト求人数 No.1」. "
-            "Footer tiny grey text: 「※2025年度当社実績調べ」. "
-            "At the very bottom, leave empty rounded rectangle placeholder space (about 80px tall) "
-            "with subtle dashed outline indicating where a LINE CTA button will be placed — DO NOT draw a button."
+            "Under the pills, a small trusted-seal badge: gold medallion with 「ホワイト求人数 No.1」 "
+            "and grey footnote 「※2025年度当社実績調べ」. "
+            "Bottom 120px is completely blank white space (room for the CTA button — do NOT draw any button). "
+            "Overall: professional, trustworthy, premium feel."
         ),
     },
     "02_success": {
-        "label": "成功事例: 160万UP",
+        "label": "成功事例: 160万UP（写真ベース）",
+        "style": PHOTO_STYLE,
         "prompt": (
-            "Section with top headline: 「未経験でも、成功者が続出!!」 "
-            "The word 「成功者」 highlighted with yellow underline/marker. "
-            "Below headline, two horizontally-arranged testimonial cards: "
-            "Card 1: photo-style illustration of a smiling 24-year-old Japanese woman at a reception desk, green label overlay saying "
-            "「フリーター から 受付事務職 に」 plus orange tag 「Iさん・24歳女性」. "
-            "Below Card 1: a bar chart with 「160万 UP」 orange badge, showing 「転職前 飲食店 220万円」 → 「転職後 受付事務 380万円」 arrow. "
-            "Card 2 (partially visible): young professional in suit, labels 「土日祝」「リモート」, job category 「IT業界」 with badge 「80万 UP」. "
-            "Green background with yellow accent. Clean pop infographic style."
+            "Trust-oriented results section. Top headline: 「未経験でも、成功者が続出」 with underline-style yellow highlight under 「成功者」. "
+            "Two stacked testimonial cards with clean white background and soft shadow: "
+            "Card 1: left side photo-realistic portrait of a smiling 24-year-old Japanese woman in business casual at a reception desk "
+            "(warm indoor lighting, real-photo feel). "
+            "Right side label set: green tag 「Iさん・24歳女性」, bold title 「フリーター → 受付事務職」, "
+            "and a clean before-after bar chart — grey bar 「転職前 飲食店 220万円」 vs taller orange bar "
+            "「転職後 受付事務 380万円」 with orange badge 「年収 160万円UP」. "
+            "Card 2: photo-realistic portrait of a 26-year-old Japanese man at an IT office (laptop in background). "
+            "Green tag 「Sさん・26歳男性」, bold title 「販売員 → ITエンジニア」, "
+            "bar chart grey 「転職前 300万円」 vs taller orange 「転職後 380万円」 with orange badge 「年収 80万円UP」. "
+            "Bottom small text: 「※実際のハックツ就職利用者の事例です」. "
+            "Overall: looks like a real results page from a premium recruitment brand."
         ),
     },
     "03_worry": {
-        "label": "お悩みチェックリスト",
+        "label": "お悩みチェックリスト（落ち着いたトーン）",
+        "style": ILLUSTRATION_STYLE,
         "prompt": (
-            "Section with a dark grey/black card background. Top small yellow label: 「いくつ当てはまりますか？」. "
-            "Main bold white headline: 「転職のお悩み」 with 「お悩み」 in yellow. "
-            "Below, a checklist of 4 items each with a green check-circle icon on the left and white text: "
+            "Dark charcoal (#1F2937) section with subtle noise texture. "
+            "Top small muted yellow label 「いくつ当てはまりますか？」. "
+            "Main bold white headline: 「転職のお悩み」 with 「お悩み」 in muted gold. "
+            "Below, four checklist items each with a green check-circle and white text: "
             "・「学歴なしでもホワイト企業に入れる？」 "
             "・「自分に合った仕事がわからない」 "
-            "・「入社できる会社のラインがわからない」 "
+            "・「どの会社に応募すべきか判断できない」 "
             "・「書類選考が全然通らない」 "
-            "Bottom: cartoon illustration of a troubled young Japanese man and woman, sweatdrops on heads, "
-            "worried expressions. "
-            "Footer green bar transitioning to the next section with text 「1つでも当てはまる方」 in yellow."
+            "On the right side (not bottom): an editorial-style semi-realistic illustration of a 20s man and woman "
+            "looking thoughtful (not exaggerated cartoon — subtle worry expressions, natural proportions). "
+            "Bottom: a narrow green bar transitioning to next section with 「1つでも当てはまる方へ」 in soft yellow text."
         ),
     },
     "04_gacha": {
-        "label": "エージェントガチャ失敗データ",
+        "label": "エージェントガチャ失敗データ（クリーンなインフォグラフィック）",
+        "style": ILLUSTRATION_STYLE,
         "prompt": (
-            "Section titled in bold 「『エージェントガチャ』に外れて 後悔した人は 約6割も」 "
-            "with 「6割」 in huge orange font. "
-            "Central element: a donut/pie chart showing 60% filled in orange labeled 「ある・少しある」, "
-            "40% grey labeled 「あまりない・ない」. "
-            "Left side of chart: an illustrated worried 20s Japanese woman. "
-            "Above chart small grey label: 「Q. 過去に転職エージェントを利用した際、"
-            "『後悔・失敗』と思ったことはありますか？」 "
-            "Below the chart, three red-cross bullet points: "
-            "×「担当者の対応が雑」 "
-            "×「時間をとったのに興味ない求人ばかり」 "
-            "×「返信が遅くて転職活動が進まない」 "
-            "Footer small grey caption: 「※利用経験者に回答いただいた当社アンケート調査の結果」. "
-            "White background, dark green and orange as primary colors."
+            "Clean white background section with premium infographic feel. "
+            "Header in bold charcoal: 「『エージェントガチャ』に外れて、後悔した人は 約6割」 "
+            "with 「6割」 in large orange. "
+            "Small label above donut chart: 「Q. 過去に転職エージェントを利用した際、"
+            "『後悔・失敗』と思ったことはありますか？」 in neutral grey. "
+            "Large precision donut chart: 60% brick-orange segment labeled 「ある・少しある」 "
+            "bold inside 「60%」, 40% light-grey segment labeled 「あまりない・ない」 with 「40%」. "
+            "Below the chart, three card-style rows with red X icons (not cartoon crosses): "
+            "「担当者の対応が雑」 / 「時間をかけたのに興味ない求人ばかり」 / 「返信が遅くて活動が停滞」 "
+            "Footer grey caption: 「※当社が転職エージェント利用経験者に実施したアンケート調査結果」. "
+            "Overall: looks like a legitimate data-driven insight from a professional agency."
         ),
     },
     "05_rely": {
         "label": "転職エージェントに頼ろう（落とし穴）",
+        "style": ILLUSTRATION_STYLE,
         "prompt": (
-            "Green background section. Top yellow badge 「1つでも当てはまる方」. "
-            "Central huge bold headline: 「転職エージェントに 頼りましょう！」 with 「エージェント」 in yellow. "
-            "Below headline, six slanted green ribbons stacked like strips listing what agents do: "
-            "「自己分析」「履歴書作成」「オンライン面接対策」「非公開求人の紹介」「給与UPの交渉」. "
-            "Bottom section: illustrated Japanese career woman in business suit smiling. "
-            "Orange callout box with: 「転職のプロが すべてサポート してくれます」. "
-            "Red-background warning banner with alert icons: 「⚠ ただし 落とし穴も ⚠」 "
-            "and grey text: 「自分に合ったエージェントを選べなければ 転職を後悔することも。」"
-            "Small worried woman illustration at bottom."
+            "Clean sectioned layout. Top: muted yellow pill badge 「1つでも当てはまる方は」 in charcoal text. "
+            "Central large headline: 「転職エージェントに 頼りましょう」 with 「エージェント」 in deep green. "
+            "Below headline, a 2x3 grid of white capability cards, each with a simple line-icon and black title: "
+            "「自己分析」「書類作成」「面接対策」「非公開求人の紹介」「給与交渉」「企業とのマッチング」. "
+            "Bottom two-row layout: "
+            "Left: semi-realistic editorial portrait of a 30s woman career advisor in business attire (friendly but professional). "
+            "Right: orange callout box 「転職のプロが "
+            "すべてサポートしてくれます」 in charcoal. "
+            "Below, a refined warning banner (not cartoonish) with a small red alert icon: "
+            "「ただし、落とし穴も。」 "
+            "and a line: 「自分に合ったエージェントを選べないと、転職を後悔することも。」 in dark red. "
+            "Overall: corporate infographic feel."
         ),
     },
     "06_solution": {
-        "label": "ハックツ就職にお任せ",
+        "label": "ハックツ就職にお任せ（写真・チーム）",
+        "style": PHOTO_STYLE,
         "prompt": (
-            "Section with light green background. Top small yellow badge 「そこで!!」. "
-            "Big headline: 「【サービス名】に お任せください」 (note: leave the service name area as plain text 「【サービス名】」 — "
-            "so the brand logo can be overlaid later). "
-            "Large realistic-style illustration of 4 professional young Japanese career advisors (2 men, 2 women) "
-            "in business attire, standing together smiling, holding folders/tablets, looking approachable. "
-            "Bottom: a small mascot-style green character icon next to the text 「【サービス名】とは？」. "
-            "Below that, text 「あなたの理想を叶える」 in bold with 「理想」 in orange."
+            "Trust hero section. Light green background with subtle gradient. "
+            "Top small yellow pill 「そこで」 in charcoal text. "
+            "Main bold charcoal headline: 「ハックツ就職に、お任せください。」 "
+            "CRITICAL: The service name is 「ハックツ就職」 — the third katakana is 「ツ」 (tsu), "
+            "NOT 「ス」 (su). Render as ハ-ッ-ク-ツ-就-職. Do not write 「ハックス就職」. "
+            "Below headline: large PHOTO-REALISTIC group portrait of FOUR professional Japanese career advisors "
+            "(2 men, 2 women, all 20s-30s, wearing tasteful business-casual / suits, standing together in a bright modern office, "
+            "holding tablets or portfolios, confident but warm expressions). "
+            "This should look like a real recruitment company team photo — natural lighting, high quality. "
+            "Below the photo, centered tagline: 「あなたの "
+            "理想のキャリアを叶える、専任チームが伴走します。」 "
+            "with 「理想のキャリア」 in deep green. "
+            "Small supporting line: 「業界経験・面接官経験のある認定アドバイザーが対応」."
         ),
     },
     "07_100agents": {
-        "label": "100社から1社を紹介",
+        "label": "100社から1社を紹介（控えめ信頼感）",
+        "style": PHOTO_STYLE,
         "prompt": (
-            "Section with green gradient background. Top golden 「認定」 seal badge. "
-            "Massive headline stacked: 「提携エージェント100社以上の中から、あなたの理想を叶える"
-            "1社を紹介！」 "
-            "「100社以上」 in huge yellow text, 「1社」 in orange, 「紹介！」 in bold white. "
-            "Two cartoon-illustrated young people (a man and a woman) below, smiling. "
-            "Below them small green text 「100社から選び抜いたベストマッチ」. "
-            "At the bottom leave empty dashed rectangle (about 80px tall) as placeholder "
-            "for a LINE CTA button — DO NOT draw the button."
+            "Premium typographic section. Deep green gradient background with subtle light rays. "
+            "Top: small golden certification seal 「認定ネットワーク」 at the center top. "
+            "Large layered headline on three lines: "
+            "「提携エージェント」 in smaller white, "
+            "「100社以上」 MASSIVE yellow outlined bold text, "
+            "「の中から、あなたに合う1社を厳選紹介」 in white. "
+            "「1社」 in brick orange for emphasis. "
+            "Below headline: photo-realistic wide composite strip of professional career advisors "
+            "(soft-focus row of 5-6 smiling Japanese professionals — showing "
+            "the breadth of the network). "
+            "Small grey caption: 「2026年4月時点 / ハックツ就職 提携実績」. "
+            "Bottom 120px completely blank white (room for CTA — draw NO button). "
+            "Overall: feels like an enterprise B2B service page, not a cartoon site."
         ),
     },
     "08_reasons": {
-        "label": "選ばれる3つの理由",
+        "label": "ハックツ就職が選ばれる3つの理由（コーポレート）",
+        "style": ILLUSTRATION_STYLE,
         "prompt": (
-            "Section with white background. Top headline: 「【サービス名】が 選ばれる3つの理由」 "
-            "(leave 「【サービス名】」 as placeholder text). "
-            "Three stacked reason cards with yellow numbered circle badges REASON 01 / 02 / 03: "
-            "REASON 01 card: 「厳しい審査をクリアした プロが所属」 "
-            "  - 「提携する全エージェントは自社基準で厳選」 "
-            "REASON 02 card: 「1人で転職するより 成功率が大幅UP」 "
-            "  - 「書類・面接まで二人三脚でサポート」 "
-            "REASON 03 card: 「プロによる転職サポートが 完全無料」 "
-            "  - ribbon of 6 slanted green strips: 「カウンセリング」「オンライン面接」「求人紹介」「書類作成」「面接対策」「内定」 "
-            "Orange POINT light-bulb icon in each card."
+            "Clean white background section. "
+            "Top centered bold headline 「ハックツ就職が 選ばれる3つの理由」. "
+            "Three vertically stacked cards, each with a gold circular badge top-center saying REASON 01 / 02 / 03 and thin green border: "
+            "Card 1: Title 「厳しい審査をクリアした プロだけが所属」. "
+            "  Body 「全ての提携エージェントを自社基準で審査。内定実績・求職者評価を元に認定制度を運用」. "
+            "  Small line-icon: shield with checkmark. "
+            "Card 2: Title 「1人で転職するより、 内定獲得率が大幅UP」. "
+            "  Body 「書類添削から面接対策まで、経験豊富なアドバイザーが二人三脚でサポート」. "
+            "  Small line-icon: two people silhouette. "
+            "Card 3: Title 「プロによる転職サポートが、 すべて完全無料」. "
+            "  Body 「カウンセリング／求人紹介／書類作成／面接対策／内定後フォロー まで一切の料金は発生しません」. "
+            "  Small line-icon: coin with slash. "
+            "No cartoon characters. Focus on typography and iconography. Corporate, premium feel."
         ),
     },
     "09_white_criteria": {
-        "label": "隠れホワイト求人の基準",
+        "label": "隠れホワイト求人の基準（写真混在）",
+        "style": PHOTO_STYLE,
         "prompt": (
-            "Section titled 「『隠れホワイト』の基準、明確にしています」 "
-            "with 「隠れホワイト」 in orange. "
-            "Below, a cleanly styled list of five criteria each with a yellow check-circle icon: "
+            "Professional layout on white background. "
+            "Top headline: 「『隠れホワイト』求人の基準、 明確にしています。」 "
+            "with 「隠れホワイト」 in deep green. "
+            "Left side: a vertical list of five criteria with small gold check icons: "
             "✓「年間休日 120日以上」 "
-            "✓「月残業時間 20時間以下」 "
+            "✓「月平均残業 20時間以下」 "
             "✓「離職率 10%以下」 "
-            "✓「未経験者研修あり」 "
+            "✓「未経験者向け研修制度あり」 "
             "✓「年収レンジ 350万円以上」 "
-            "Right side: illustration of a modern office building with a golden shield badge. "
-            "Bottom closing line: 「この基準をクリアした求人だけを、厳選してご紹介します。」 "
-            "White background, green and orange color scheme."
+            "Right side: photo-realistic image of a modern clean Japanese office — natural daylight through windows, "
+            "plants, employees working calmly. "
+            "Bottom line: 「この基準をクリアした求人のみ、ハックツ就職ではご紹介しています。」 "
+            "Small grey line: 「※2025年度 当社基準調べ」. "
+            "CRITICAL: The service name is 「ハックツ就職」 — the third katakana is 「ツ」 (tsu), "
+            "NOT 「ス」 (su). Render as ハ-ッ-ク-ツ-就-職. Do not write 「ハックス就職」."
         ),
     },
     "10_compare": {
-        "label": "他手段との比較表",
+        "label": "比較表（コーポレート）",
+        "style": ILLUSTRATION_STYLE,
         "prompt": (
-            "Section titled 「他の方法と、何が違う？」. "
-            "A clean comparison table with 3 columns: left header 「転職サイト」 grey, "
-            "middle 「1社のエージェント」 light green, right 「【サービス名】」 bright green (highlighted). "
-            "Rows (from top to bottom): "
-            "「ホワイト求人の多さ」 / 「エージェント選択の自由度」 / 「未経験OK求人」 / 「合わない時の変更」 / 「費用」 "
-            "Fill cells with circle/triangle/cross marks: ○△× for left two columns, all ◎ (double-circle) for the right column except "
-            "費用 row showing 「無料」 for all. "
-            "Right column is highlighted with yellow background band. "
-            "Mobile-friendly stacked table style."
+            "White background section. Bold headline 「他の方法と、何が違う？」. "
+            "A clean 3-column comparison table, mobile-friendly, thin grey borders: "
+            "Column headers (left to right): "
+            "「転職サイト」 in grey, 「1社のエージェント」 in light green, "
+            "「ハックツ就職」 in deep green with yellow background highlight. "
+            "CRITICAL: The service name is 「ハックツ就職」 — the third katakana is 「ツ」 (tsu), NOT 「ス」 (su). "
+            "Render as ハ-ッ-ク-ツ-就-職. Do not write 「ハックス就職」. "
+            "Rows from top to bottom with small line-icons on the left: "
+            "「ホワイト求人の多さ」 / 「エージェント選択の自由度」 / 「未経験OK求人」 / 「合わない時の変更」 / 「利用料」 "
+            "Fill cells: ○ △ × etc. for the left two columns, all ◎ (double-circle) for the ハックツ就職 column "
+            "except 利用料 row showing 「無料」 for all. "
+            "Bottom small line: 「ハックツ就職なら、100社以上のエージェントから"
+            "『あなたに合う1社』を厳選。」 "
+            "Premium corporate design, no cartoon."
         ),
     },
     "11_jobs": {
-        "label": "求人事例",
+        "label": "求人事例（写真）",
+        "style": PHOTO_STYLE,
         "prompt": (
-            "Section titled 「『隠れホワイト』求人例」. "
-            "Two job example cards stacked vertically. "
-            "Card 1: photo-style illustration of a modern IT office, workers at laptops. "
-            "Yellow condition tags row: 「未経験OK」「フレックス」「住宅手当」. "
-            "Bold title 「IT業界 大手K社」. Orange price box: 「初年度年収 490万円」. "
-            "Card 2: photo-style illustration of a bright apparel/fashion store interior. "
-            "Yellow condition tags row: 「未経験OK」「家賃補助」「残業ゼロ」. "
-            "Bold title 「アパレル業界 Y社」. Orange price box: 「初年度年収 500万円」. "
-            "Green accent theme."
+            "Section titled bold 「『隠れホワイト』求人の一例」. "
+            "Two job cards stacked vertically on clean white background with subtle shadows: "
+            "Card 1: Top half is a PHOTO-REALISTIC image of a bright modern IT office "
+            "(open-space layout, employees collaborating over laptops, natural light, plants). "
+            "Bottom half: row of three muted-yellow condition tags 「未経験OK」「フレックス」「住宅手当」, "
+            "bold title 「IT業界 大手 K社」, clean price pill 「初年度年収 490万円」 in deep green. "
+            "Card 2: Top half is a PHOTO-REALISTIC image of a stylish apparel retail store interior "
+            "(clothes racks, warm lighting, friendly staff, modern shopfront). "
+            "Bottom half: condition tags 「未経験OK」「家賃補助」「残業ゼロ」, "
+            "bold title 「アパレル業界 Y社」, price pill 「初年度年収 500万円」. "
+            "Overall feels like premium job board listings."
         ),
     },
     "12_voice": {
-        "label": "ご利用者の声",
+        "label": "ご利用者の声（写真ポートレート）",
+        "style": PHOTO_STYLE,
         "prompt": (
-            "Section titled 「ご利用者様の声」 in bold. "
-            "Two testimonial cards stacked vertically, each with an illustrated portrait on the left side. "
-            "Card 1 portrait: smiling 20s Japanese man at a gym (athletic background). "
-            "Green label overlay: 「安心して任せられました」. "
-            "Below body text in orange+grey: 「自分に向いている仕事がわからなかったのですが、ゆっくり丁寧に向き合ってくれるキャリアアドバイザーさんと出会えました。全てを肯定しながら相談に乗ってくださり、安心して転職活動を任せられました。」 "
-            "Card 2 portrait: gentle-smile 20s Japanese woman with casual top. "
-            "Green label overlay: 「ドタキャンも 考えてました…」. "
-            "Body text: 「3年間無職という私の状況を受け入れてくださるのか不安で、最初はドタキャンを考えていました。しかし勇気を出して話してみると、私の理想を叶える求人に出会えて、本当に良かったです。」"
+            "Section titled 「ご利用者様の声」 bold charcoal, subline 「ハックツ就職で転職を成功させた方々」. "
+            "Two testimonial cards on clean white background, each with a refined thin-line border: "
+            "Card 1: Left side: PHOTO-REALISTIC portrait of a smiling 20s Japanese man at a gym/athletic setting "
+            "(casual athletic wear, genuine warm smile, natural gym background). "
+            "Right side body: small green tag 「Tさん・27歳男性 / 元飲食店→現 営業職」. "
+            "Bold pull-quote: 「安心して任せられました。」 "
+            "Body text: 「自分に向いている仕事がわからなかったのですが、ゆっくり丁寧に向き合ってくれる"
+            "キャリアアドバイザーと出会えました。全てを肯定しながら相談に乗ってくださり、"
+            "安心して転職活動を任せられました。」 "
+            "Card 2: Left side: PHOTO-REALISTIC portrait of a gentle-smiling 20s Japanese woman "
+            "(casual blouse, indoor natural-light setting, genuine expression). "
+            "Right side body: green tag 「Mさん・25歳女性 / 元無職3年→現 事務職」. "
+            "Bold pull-quote: 「ドタキャンも考えていました…」 "
+            "Body text: 「3年間無職という私の状況を受け入れてもらえるか不安で、最初はドタキャンを"
+            "考えていました。しかし勇気を出して話してみると、私の理想を叶える求人に出会えて本当に良かったです。」 "
+            "Refined premium look, not cartoon."
         ),
     },
     "13_steps": {
-        "label": "ご利用の流れ 5STEP",
+        "label": "ご利用の流れ 5STEP（クリーン）",
+        "style": ILLUSTRATION_STYLE,
         "prompt": (
-            "Section titled 「ご利用の流れ」 with bold header on pale green background. "
-            "Five vertically stacked step blocks, each with a yellow STEP circle badge in top-left: "
-            "STEP 01: cartoon illustration of a young man using a smartphone. Orange pill badge 「30秒でカンタン」. Text: 「公式LINEから カウンセリング予約」. "
-            "STEP 02: illustration of a smartphone showing an online video-call face. Orange pill 「スマホから参加OK!」. Text: 「オンラインカウンセリング」. "
-            "STEP 03: illustration of a friendly career advisor character. Orange pill 「プロがヒアリング」. Text: 「あなたに合うエージェントを選定」. "
-            "STEP 04: illustration showing document/resume with a checkmark. Orange pill 「二人三脚サポート」. Text: 「書類作成・面接対策」. "
-            "STEP 05: illustration of a happy person with a celebration confetti. Orange pill 「ゴール!」. Text: 「内定・入社」. "
-            "Green downward triangle arrow between each step."
+            "Section titled 「ご利用の流れ」 bold charcoal on pale green background. "
+            "Subtitle 「最短2週間で内定まで」 in deep green. "
+            "Five vertically stacked step blocks, each with a gold STEP circle badge in the top-left and white card with soft shadow: "
+            "STEP 01: clean line-illustration of a smartphone with LINE icon. "
+            "  Pill badge 「30秒で完了」 in orange. Text: 「公式LINEから カウンセリング予約」. "
+            "STEP 02: clean line-illustration of a laptop with a video call screen. "
+            "  Pill 「完全オンライン」. Text: 「専任アドバイザーと ヒアリング面談」. "
+            "STEP 03: clean line-illustration of a matching graph. "
+            "  Pill 「100社から厳選」. Text: 「あなたに合うエージェントを 厳選マッチング」. "
+            "STEP 04: clean line-illustration of a resume document with pen. "
+            "  Pill 「二人三脚」. Text: 「書類作成・面接対策 サポート」. "
+            "STEP 05: clean line-illustration of a confident handshake. "
+            "  Pill 「ゴール」. Text: 「内定・入社 後もフォロー」. "
+            "Thin green line connecting each step. No cartoon characters — icon-driven editorial style."
         ),
     },
     "14_faq": {
-        "label": "よくある質問",
+        "label": "よくある質問（洗練・コーポレート）",
+        "style": ILLUSTRATION_STYLE,
         "prompt": (
-            "Section with a bright green background. Top centered white header banner: 「よくある質問」. "
-            "Below, six Q&A cards stacked vertically on white background, each with a grey 「Q」 circle icon for question and green 「A」 circle icon for answer. "
-            "Q1: 「利用は無料ですか？」 / A: 「はい。転職サポートは0から内定獲得まですべて無料ですので安心してご利用ください。」 "
-            "Q2: 「紹介されたキャリアアドバイザーと合わなかった場合、別のキャリアアドバイザーを紹介していただけますか？」 / A: 「はい。合わないと感じた部分を再度ヒアリングし、別のキャリアアドバイザーを紹介させていただきます。」 "
-            "Q3: 「オンラインで相談は可能ですか？」 / A: 「はい。サポートは完全オンラインで行っております。」 "
-            "Q4: 「今すぐ転職する予定がなくても大丈夫？」 / A: 「はい、キャリア相談からお気軽にご利用いただけます。」 "
-            "Q5: 「未経験でも本当に紹介してもらえますか？」 / A: 「はい、未経験歓迎の求人を中心にご紹介しています。」 "
-            "Q6: 「どれくらいの期間で転職できますか？」 / A: 「最短2週間、平均1〜2ヶ月で内定獲得される方が多いです。」"
+            "Section with clean white background. "
+            "Top centered bold headline 「よくある質問」 in deep green. "
+            "Below, six Q&A cards stacked vertically with refined thin border and soft shadow: "
+            "each card has a green 「Q」 circle on the left of the question, a grey 「A」 circle for answer. "
+            "Q1: 「利用は無料ですか？」 / A: 「はい。ハックツ就職のサポートは、ご相談から内定獲得まですべて完全無料です。」 "
+            "Q2: 「紹介されたキャリアアドバイザーと合わなかった場合、別の方を紹介していただけますか？」 / A: 「はい。合わないと感じた部分を再ヒアリングした上で、別のアドバイザーをご紹介します。」 "
+            "Q3: 「オンラインで相談は可能ですか？」 / A: 「はい。ハックツ就職のサポートは完全オンラインで行っております。」 "
+            "Q4: 「今すぐ転職する予定がなくても大丈夫ですか？」 / A: 「はい、キャリア相談のみのご利用も歓迎しています。」 "
+            "Q5: 「本当に未経験でも紹介してもらえますか？」 / A: 「はい。ハックツ就職は未経験歓迎求人の紹介を専門としています。」 "
+            "Q6: 「どれくらいの期間で転職できますか？」 / A: 「最短2週間、平均1〜2ヶ月で内定を獲得される方が多いです。」 "
+            "Use the katakana 「ハックツ」 (NOT 「ハックズ」). Make all Japanese text perfectly accurate."
         ),
     },
     "15_final": {
-        "label": "最終CTA前セクション",
+        "label": "最終CTA前セクション（写真＋力強さ）",
+        "style": PHOTO_STYLE,
         "prompt": (
             "Full-bleed emotional final push section. "
-            "Bright green gradient background with subtle light rays. "
-            "Huge bold white headline stacked on two lines: "
-            "「今 動けば、」「半年後の給料明細が 変わる。」 "
-            "「変わる。」 in yellow. "
-            "Below subcopy in white: 「3年後のあなたは、今のあなたの決断に感謝するはず。」 "
-            "Center illustration: a confident 20s Japanese man and woman stepping forward together, bright smiles. "
-            "Below them three small white pill labels: 「最短2週間で転職成功」「利用料完全無料」「LINEで気軽に相談」. "
-            "At the very bottom leave empty dashed rectangle (about 100px tall) as placeholder for the final LINE CTA button — DO NOT draw a button."
+            "Background: a dimmed photo-realistic image of a confident 20s Japanese man and woman "
+            "walking forward side-by-side out of an office building entrance, golden-hour backlight. "
+            "On top of the background: large bold WHITE headline on two lines: "
+            "「今動けば、」「半年後の給料明細が、変わる。」 "
+            "「変わる」 in muted gold. "
+            "Below headline, white subcopy: 「3年後のあなたは、今のあなたの決断に感謝するはず。」 "
+            "Below subcopy, a thin row of 3 small white outlined pill labels: "
+            "「最短2週間で転職成功」「利用料 完全無料」「LINEで気軽に相談」. "
+            "Bottom 140px completely blank (room for the final CTA button — do NOT draw a button). "
+            "Overall: emotionally compelling, professional, like an end-of-LP conversion moment for a premium service."
         ),
     },
 }
@@ -253,7 +337,7 @@ def generate(section_id: str):
     if section_id not in SECTIONS:
         sys.exit(f"unknown section: {section_id}")
     spec = SECTIONS[section_id]
-    prompt = spec["prompt"] + "\n\nSTYLE: " + BRAND_STYLE
+    prompt = spec["prompt"] + "\n\nSTYLE: " + BRAND_STYLE + "\n\nIMAGE APPROACH: " + spec["style"]
     print(f"[{section_id}] {spec['label']} ... generating")
 
     body = json.dumps({

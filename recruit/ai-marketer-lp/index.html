@@ -309,12 +309,7 @@
     /* ── training (新卒研修 reassurance) ── */
     #training { background: #fff; padding: 80px 24px 100px; position: relative; overflow: hidden; }
     .train-inner { max-width: 1100px; margin: 0 auto; }
-    .train-head { text-align: center; margin-bottom: 32px; }
-    .train-hero-img { max-width: 720px; margin: 32px auto 56px; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,85,255,.08); }
-    .train-hero-img img { width: 100%; height: auto; display: block; }
-    @media(max-width: 640px) {
-      .train-hero-img { margin: 20px auto 36px; border-radius: 16px; }
-    }
+    .train-head { text-align: center; margin-bottom: 56px; }
     .train-head h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; line-height: 1.45; font-size: clamp(1.6rem, 4.2vw, 2.4rem); }
     .train-head h2 .accent { background: linear-gradient(120deg, var(--blue) 0%, var(--purple) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
     .train-head .lead { color: rgba(0,0,0,.55); font-size: clamp(.92rem, 2vw, 1.05rem); line-height: 1.9; margin-top: 18px; max-width: 640px; margin-left: auto; margin-right: auto; }
@@ -324,12 +319,7 @@
 
     .train-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 48px; }
     @media(max-width: 768px) { .train-grid { grid-template-columns: 1fr; } }
-    .train-card { background: var(--cream); border-radius: 24px; padding: 0; border: 1px solid rgba(0,0,0,.04); position: relative; overflow: hidden; transition: transform .35s, box-shadow .35s; display: flex; flex-direction: column; }
-    .train-card-img { aspect-ratio: 16/10; overflow: hidden; background: #fff; position: relative; z-index: 2; }
-    .train-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
-    .train-card:hover .train-card-img img { transform: scale(1.04); }
-    .train-card-body { padding: 28px 28px 32px; position: relative; z-index: 2; }
-    @media(max-width: 480px) { .train-card-body { padding: 24px 22px 28px; } }
+    .train-card { background: var(--cream); border-radius: 24px; padding: 36px 32px; border: 1px solid rgba(0,0,0,.04); position: relative; overflow: hidden; transition: transform .35s, box-shadow .35s; }
     .train-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,85,255,.08); }
     .train-card.ai::before { content: ''; position: absolute; top: -40%; right: -20%; width: 60%; height: 80%; background: radial-gradient(ellipse, rgba(0,85,255,.18) 0%, transparent 60%); pointer-events: none; }
     .train-card.mk::before { content: ''; position: absolute; top: -40%; right: -20%; width: 60%; height: 80%; background: radial-gradient(ellipse, rgba(139,92,246,.18) 0%, transparent 60%); pointer-events: none; }
@@ -344,17 +334,12 @@
     .train-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .85rem; line-height: 1.6; color: rgba(0,0,0,.75); }
     .train-list .check { width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--purple)); color: #fff; font-size: .65rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; font-weight: 900; }
 
-    .train-timeline { background: var(--cream); border-radius: 24px; padding: 32px 24px; }
-    .train-tl-head { text-align: center; margin-bottom: 28px; }
-    .train-tl-head h3 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.2rem; }
-    .train-tl-head p { color: rgba(0,0,0,.5); font-size: .82rem; margin-top: 6px; }
-    .train-tl-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
-    @media(max-width: 768px) { .train-tl-steps { grid-template-columns: repeat(2, 1fr); } }
-    @media(max-width: 480px) { .train-tl-steps { grid-template-columns: 1fr; } }
-    .train-tl-step { background: #fff; border-radius: 16px; padding: 20px 18px; text-align: left; }
-    .train-tl-month { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .72rem; letter-spacing: .12em; color: var(--blue); margin-bottom: 6px; }
-    .train-tl-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: .98rem; margin-bottom: 8px; }
-    .train-tl-desc { font-size: .76rem; line-height: 1.7; color: rgba(0,0,0,.55); }
+    .train-roadmap { max-width: 880px; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,85,255,.08); background: #fff; }
+    .train-roadmap img { width: 100%; height: auto; display: block; }
+    .train-roadmap-cap { text-align: center; color: rgba(0,0,0,.5); font-size: .82rem; margin-top: 16px; line-height: 1.7; }
+    @media(max-width: 640px) {
+      .train-roadmap { border-radius: 16px; }
+    }
 
     /* ── voice ── */
     #voice { background: #0a0a0a; padding: 80px 0 100px; }
@@ -825,82 +810,48 @@
       </div>
     </div>
 
-    <div class="train-hero-img fade d1">
-      <img src="images/gen/training_hero.png" alt="未経験から一流のAIマーケターへの成長ジャーニー">
-    </div>
-
     <div class="train-grid">
       <div class="train-card ai fade">
-        <div class="train-card-img"><img src="images/gen/training_ai.png" alt="AIを使いこなす研修"></div>
-        <div class="train-card-body">
-          <div class="train-card-head">
-            <div class="train-icon ai">🤖</div>
-            <div>
-              <p class="train-card-tag">AI TRAINING</p>
-              <h3 class="train-card-title">AIを使いこなす研修</h3>
-            </div>
+        <div class="train-card-head">
+          <div class="train-icon ai">🤖</div>
+          <div>
+            <p class="train-card-tag">AI TRAINING</p>
+            <h3 class="train-card-title">AIを使いこなす研修</h3>
           </div>
-          <p class="train-card-desc">ChatGPT・Claude・KlingAIをゼロから習得。プロンプト設計・自動化構築まで、最新AIを"道具"として自在に操る力を身につけます。</p>
-          <ul class="train-list">
-            <li><span class="check">✓</span>プロンプトエンジニアリング基礎</li>
-            <li><span class="check">✓</span>ChatGPT / Claude 実務活用ワークショップ</li>
-            <li><span class="check">✓</span>KlingAIで動画クリエイティブ量産</li>
-            <li><span class="check">✓</span>業務自動化（LINE / スプレッドシート連携）</li>
-            <li><span class="check">✓</span>毎週のAI最新情報キャッチアップ会</li>
-          </ul>
         </div>
+        <p class="train-card-desc">ChatGPT・Claude・KlingAIをゼロから習得。プロンプト設計・自動化構築まで、最新AIを"道具"として自在に操る力を身につけます。</p>
+        <ul class="train-list">
+          <li><span class="check">✓</span>プロンプトエンジニアリング基礎</li>
+          <li><span class="check">✓</span>ChatGPT / Claude 実務活用ワークショップ</li>
+          <li><span class="check">✓</span>KlingAIで動画クリエイティブ量産</li>
+          <li><span class="check">✓</span>業務自動化（LINE / スプレッドシート連携）</li>
+          <li><span class="check">✓</span>毎週のAI最新情報キャッチアップ会</li>
+        </ul>
       </div>
 
       <div class="train-card mk fade d1">
-        <div class="train-card-img"><img src="images/gen/training_marketing.png" alt="マーケティング研修"></div>
-        <div class="train-card-body">
-          <div class="train-card-head">
-            <div class="train-icon mk">📊</div>
-            <div>
-              <p class="train-card-tag">MARKETING TRAINING</p>
-              <h3 class="train-card-title">マーケティング研修</h3>
-            </div>
+        <div class="train-card-head">
+          <div class="train-icon mk">📊</div>
+          <div>
+            <p class="train-card-tag">MARKETING TRAINING</p>
+            <h3 class="train-card-title">マーケティング研修</h3>
           </div>
-          <p class="train-card-desc">マーケの王道を体系的に。広告運用・SNS戦略・データ分析・ファネル設計まで、現場で通用する実践スキルを叩き込みます。</p>
-          <ul class="train-list">
-            <li><span class="check">✓</span>マーケティングの基礎理論（4P / STP / カスタマージャーニー）</li>
-            <li><span class="check">✓</span>SNS広告運用（Meta / TikTok / X）実践演習</li>
-            <li><span class="check">✓</span>LP制作・コピーライティング基礎</li>
-            <li><span class="check">✓</span>GA4・スプレッドシートでのデータ分析</li>
-            <li><span class="check">✓</span>事業責任者と進める実案件 OJT</li>
-          </ul>
         </div>
+        <p class="train-card-desc">マーケの王道を体系的に。広告運用・SNS戦略・データ分析・ファネル設計まで、現場で通用する実践スキルを叩き込みます。</p>
+        <ul class="train-list">
+          <li><span class="check">✓</span>マーケティングの基礎理論（4P / STP / カスタマージャーニー）</li>
+          <li><span class="check">✓</span>SNS広告運用（Meta / TikTok / X）実践演習</li>
+          <li><span class="check">✓</span>LP制作・コピーライティング基礎</li>
+          <li><span class="check">✓</span>GA4・スプレッドシートでのデータ分析</li>
+          <li><span class="check">✓</span>事業責任者と進める実案件 OJT</li>
+        </ul>
       </div>
     </div>
 
-    <div class="train-timeline fade d2">
-      <div class="train-tl-head">
-        <h3>未経験 → 実戦投入 まで <span class="grad-blue">3ヶ月ロードマップ</span></h3>
-        <p>段階的にステップアップ。1人で抱え込まず、メンターと並走できる環境です。</p>
-      </div>
-      <div class="train-tl-steps">
-        <div class="train-tl-step">
-          <p class="train-tl-month">MONTH 1</p>
-          <p class="train-tl-title">基礎インプット</p>
-          <p class="train-tl-desc">AI・マーケ両方の基礎を集中インプット。プロンプト基礎・マーケ用語・ツール操作を習得。</p>
-        </div>
-        <div class="train-tl-step">
-          <p class="train-tl-month">MONTH 2</p>
-          <p class="train-tl-title">模擬案件演習</p>
-          <p class="train-tl-desc">先輩がメンターについて模擬案件に挑戦。広告制作・コンテンツ生成・分析を一通り体験。</p>
-        </div>
-        <div class="train-tl-step">
-          <p class="train-tl-month">MONTH 3</p>
-          <p class="train-tl-title">実案件 OJT</p>
-          <p class="train-tl-desc">既存事業に配属、メンターと並走しながら実案件を担当。小さな成功体験を積み重ねる。</p>
-        </div>
-        <div class="train-tl-step">
-          <p class="train-tl-month">MONTH 4 〜</p>
-          <p class="train-tl-title">独り立ち</p>
-          <p class="train-tl-desc">担当業務を持って独立稼働。「やりたい」と手を挙げれば社歴関係なくチャンスが回ってくる。</p>
-        </div>
-      </div>
+    <div class="train-roadmap fade d2">
+      <img src="images/gen/training_roadmap.png" alt="3ヶ月ロードマップ：基礎インプット→模擬案件演習→実案件OJT→独り立ち">
     </div>
+    <p class="train-roadmap-cap fade d3">段階的にステップアップ。1人で抱え込まず、メンターと並走できる環境です。</p>
   </div>
 </section>
 

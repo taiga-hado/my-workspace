@@ -47,6 +47,18 @@ const JOBS = {
     size: '1024x1024',
     prompt: `Square illustration: a stylized marketing analytics dashboard. Floating cards showing bar charts, line graphs, social media engagement bubbles, and a target/funnel icon. Soft purple and pink gradient on white background, subtle particles and grid pattern, premium modern flat-illustration aesthetic. Clean, friendly, educational feel. No text, no logos, no human faces.`,
   },
+  training_roadmap: {
+    size: '1536x1024',
+    prompt: `Wide horizontal infographic illustration of a 4-step training roadmap titled "3ヶ月ロードマップ" displayed at top center. Below the title, 4 milestone stops are arranged left-to-right at increasing heights, connected by a smooth ascending glowing path line.
+
+Each milestone is a rounded badge card with a clear circular icon and clean Japanese text labels:
+1) "MONTH 1 / 基礎インプット" — open book + lightbulb icon, soft blue color (#3B82F6)
+2) "MONTH 2 / 模擬案件演習" — sparkles + clipboard icon, blue-purple (#6366F1)
+3) "MONTH 3 / 実案件 OJT" — handshake + briefcase icon, purple (#8B5CF6)
+4) "MONTH 4〜 / 独り立ち" — trophy + star icon, purple-pink (#EC4899)
+
+Soft white background with subtle blue/purple gradient blobs and a delicate dot grid. Premium modern flat-illustration infographic style, clean Japanese typography (sans-serif), high contrast readable text. No human faces, no logos. The Japanese characters must be rendered clearly and correctly.`,
+  },
 };
 
 const targets = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(JOBS);

@@ -334,12 +334,54 @@
     .train-list li { display: flex; align-items: flex-start; gap: 10px; font-size: .85rem; line-height: 1.6; color: rgba(0,0,0,.75); }
     .train-list .check { width: 18px; height: 18px; border-radius: 50%; background: linear-gradient(135deg, var(--blue), var(--purple)); color: #fff; font-size: .65rem; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; font-weight: 900; }
 
-    .train-roadmap { max-width: 880px; margin: 0 auto; border-radius: 24px; overflow: hidden; box-shadow: 0 16px 48px rgba(0,85,255,.08); background: #fff; }
-    .train-roadmap img { width: 100%; height: auto; display: block; }
-    .train-roadmap-cap { text-align: center; color: rgba(0,0,0,.5); font-size: .82rem; margin-top: 16px; line-height: 1.7; }
-    @media(max-width: 640px) {
-      .train-roadmap { border-radius: 16px; }
+    /* ── 3ヶ月ロードマップ (animated timeline) ── */
+    .train-roadmap-wrap { max-width: 980px; margin: 0 auto; }
+    .train-rm-head { text-align: center; margin-bottom: 36px; }
+    .train-rm-head h3 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.2rem, 2.6vw, 1.5rem); }
+    .train-rm-head p { color: rgba(0,0,0,.5); font-size: .85rem; margin-top: 8px; line-height: 1.7; }
+
+    .train-rm { position: relative; padding: 0 8px; }
+
+    /* connecting line behind icons */
+    .train-rm-line { position: absolute; top: 36px; left: 12.5%; right: 12.5%; height: 4px; pointer-events: none; z-index: 1; }
+    .train-rm-line svg { width: 100%; height: 100%; display: block; overflow: visible; }
+    .train-rm-line .bg { stroke: rgba(0,0,0,.07); stroke-width: 3; }
+    .train-rm-line .fill { stroke-width: 3; stroke-dasharray: 1000; stroke-dashoffset: 1000; transition: stroke-dashoffset 2.4s cubic-bezier(.16,1,.3,1); }
+    .train-rm.in .train-rm-line .fill { stroke-dashoffset: 0; }
+
+    .train-rm-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; z-index: 2; }
+    @media(max-width: 640px) { .train-rm-grid { grid-template-columns: 1fr; gap: 28px; } .train-rm-line { display: none; } }
+
+    .train-rm-step { text-align: center; padding: 0 6px; opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .train-rm-step.in { opacity: 1; transform: none; }
+
+    .train-rm-icon-wrap { position: relative; width: 72px; height: 72px; margin: 0 auto 18px; }
+    .train-rm-icon { width: 72px; height: 72px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.7rem; background: #fff; box-shadow: 0 8px 24px rgba(0,85,255,.12); border: 3px solid; position: relative; z-index: 2; transition: transform .35s; }
+    .train-rm-step:hover .train-rm-icon { transform: scale(1.06) translateY(-2px); }
+    .train-rm-icon.s1 { border-color: #3B82F6; }
+    .train-rm-icon.s2 { border-color: #6366F1; }
+    .train-rm-icon.s3 { border-color: #8B5CF6; }
+    .train-rm-icon.s4 { border-color: #EC4899; }
+    /* pulse ring */
+    .train-rm-pulse { position: absolute; inset: 0; border-radius: 50%; border: 2px solid; opacity: 0; pointer-events: none; }
+    .train-rm.in .train-rm-step.in .train-rm-pulse { animation: rmPulse 2.4s ease-out infinite; }
+    .train-rm-pulse.s1 { border-color: #3B82F6; }
+    .train-rm-pulse.s2 { border-color: #6366F1; }
+    .train-rm-pulse.s3 { border-color: #8B5CF6; }
+    .train-rm-pulse.s4 { border-color: #EC4899; }
+    @keyframes rmPulse {
+      0% { opacity: .6; transform: scale(1); }
+      100% { opacity: 0; transform: scale(1.6); }
     }
+
+    .train-rm-month { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: .7rem; letter-spacing: .14em; margin-bottom: 6px; }
+    .train-rm-month.s1 { color: #3B82F6; }
+    .train-rm-month.s2 { color: #6366F1; }
+    .train-rm-month.s3 { color: #8B5CF6; }
+    .train-rm-month.s4 { color: #EC4899; }
+    .train-rm-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1rem; margin-bottom: 8px; }
+    .train-rm-desc { font-size: .78rem; line-height: 1.75; color: rgba(0,0,0,.55); }
+    .train-roadmap-cap { text-align: center; color: rgba(0,0,0,.5); font-size: .82rem; margin-top: 32px; line-height: 1.7; }
 
     /* ── voice ── */
     #voice { background: #0a0a0a; padding: 80px 0 100px; }
@@ -848,10 +890,66 @@
       </div>
     </div>
 
-    <div class="train-roadmap fade d2">
-      <img src="images/gen/training_roadmap.png" alt="3ヶ月ロードマップ：基礎インプット→模擬案件演習→実案件OJT→独り立ち">
+    <div class="train-roadmap-wrap fade d2">
+      <div class="train-rm-head">
+        <h3>未経験 → 実戦投入 まで <span class="grad-blue">3ヶ月ロードマップ</span></h3>
+        <p>段階的にステップアップ。1人で抱え込まず、メンターと並走できる環境です。</p>
+      </div>
+      <div class="train-rm" id="trainRm">
+        <div class="train-rm-line">
+          <svg viewBox="0 0 1000 4" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="rmLineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#3B82F6"/>
+                <stop offset="33%" stop-color="#6366F1"/>
+                <stop offset="66%" stop-color="#8B5CF6"/>
+                <stop offset="100%" stop-color="#EC4899"/>
+              </linearGradient>
+            </defs>
+            <line class="bg" x1="0" y1="2" x2="1000" y2="2"/>
+            <line class="fill" x1="0" y1="2" x2="1000" y2="2" stroke="url(#rmLineGrad)"/>
+          </svg>
+        </div>
+        <div class="train-rm-grid">
+          <div class="train-rm-step">
+            <div class="train-rm-icon-wrap">
+              <span class="train-rm-pulse s1"></span>
+              <div class="train-rm-icon s1">📚</div>
+            </div>
+            <p class="train-rm-month s1">MONTH 1</p>
+            <p class="train-rm-title">基礎インプット</p>
+            <p class="train-rm-desc">AI・マーケ両方の基礎を集中インプット。プロンプト基礎・マーケ用語・ツール操作を習得。</p>
+          </div>
+          <div class="train-rm-step">
+            <div class="train-rm-icon-wrap">
+              <span class="train-rm-pulse s2"></span>
+              <div class="train-rm-icon s2">🧪</div>
+            </div>
+            <p class="train-rm-month s2">MONTH 2</p>
+            <p class="train-rm-title">模擬案件演習</p>
+            <p class="train-rm-desc">先輩メンターと一緒に模擬案件へ挑戦。広告制作・コンテンツ生成・分析を一通り体験。</p>
+          </div>
+          <div class="train-rm-step">
+            <div class="train-rm-icon-wrap">
+              <span class="train-rm-pulse s3"></span>
+              <div class="train-rm-icon s3">🤝</div>
+            </div>
+            <p class="train-rm-month s3">MONTH 3</p>
+            <p class="train-rm-title">実案件 OJT</p>
+            <p class="train-rm-desc">既存事業に配属、メンターと並走しながら実案件を担当。小さな成功体験を積み重ねる。</p>
+          </div>
+          <div class="train-rm-step">
+            <div class="train-rm-icon-wrap">
+              <span class="train-rm-pulse s4"></span>
+              <div class="train-rm-icon s4">🏆</div>
+            </div>
+            <p class="train-rm-month s4">MONTH 4 〜</p>
+            <p class="train-rm-title">独り立ち</p>
+            <p class="train-rm-desc">担当業務を持って独立稼働。「やりたい」と手を挙げれば社歴関係なくチャンスが回ってくる。</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <p class="train-roadmap-cap fade d3">段階的にステップアップ。1人で抱え込まず、メンターと並走できる環境です。</p>
   </div>
 </section>
 
@@ -1258,6 +1356,19 @@
     });
   }, { threshold: 0.3 });
   document.querySelectorAll('.salary-bars').forEach(el => barObs.observe(el));
+
+  // Roadmap timeline animation
+  const rmObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.train-rm-step').forEach((step, i) => {
+        setTimeout(() => step.classList.add('in'), 250 + i * 280);
+      });
+      rmObs.unobserve(e.target);
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('#trainRm').forEach(el => rmObs.observe(el));
 
   // University donut chart with surrounding labels
   (function buildDonut(){

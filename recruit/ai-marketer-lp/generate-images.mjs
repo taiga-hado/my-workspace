@@ -35,6 +35,18 @@ const JOBS = {
     size: '1536x1024',
     prompt: `Wide abstract background: glowing AI neural-network mesh made of thin cyan/blue/violet lines and small bright nodes, deep dark navy background, soft radial glow in the center, subtle digital noise, premium futuristic tech aesthetic. No text, no logos, no characters.`,
   },
+  training_hero: {
+    size: '1536x1024',
+    prompt: `Wide hero illustration: an abstract growth journey from beginner to expert. Left side shows soft glowing question marks and small floating particles, transitioning rightward into an ascending arrow made of light, with floating geometric icons of laptops, AI brain symbols, charts, and graduation caps along the path. Soft white background with subtle blue, purple, and cyan gradient blobs and a delicate dot grid. Premium minimal modern flat-illustration aesthetic, hopeful and inspiring. No text, no logos, no human faces.`,
+  },
+  training_ai: {
+    size: '1024x1024',
+    prompt: `Square illustration: a glowing holographic interface representing AI learning. A central translucent screen displays abstract chat bubbles and prompt cards, surrounded by floating icons (lightbulb, robot head, neural network sphere). Soft blue and cyan gradient on white background, subtle particles and grid pattern, premium modern flat-illustration aesthetic. Clean, friendly, educational feel. No text, no logos, no human faces.`,
+  },
+  training_marketing: {
+    size: '1024x1024',
+    prompt: `Square illustration: a stylized marketing analytics dashboard. Floating cards showing bar charts, line graphs, social media engagement bubbles, and a target/funnel icon. Soft purple and pink gradient on white background, subtle particles and grid pattern, premium modern flat-illustration aesthetic. Clean, friendly, educational feel. No text, no logos, no human faces.`,
+  },
 };
 
 const targets = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(JOBS);

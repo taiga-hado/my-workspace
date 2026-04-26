@@ -359,6 +359,7 @@
 
     function buildSubmission(){
       var d = new FormData(form);
+      var attr = (window.MADOGUCHI_ATTRIBUTION && window.MADOGUCHI_ATTRIBUTION.get()) || {};
       return {
         id: Date.now().toString(36) + Math.random().toString(36).slice(2,8),
         submittedAt: new Date().toISOString(),
@@ -370,6 +371,14 @@
         service: d.get('service')||'',
         monthly: d.get('monthly')||'',
         message: d.get('message')||'',
+        utm_source: attr.utm_source||'',
+        utm_medium: attr.utm_medium||'',
+        utm_campaign: attr.utm_campaign||'',
+        utm_term: attr.utm_term||'',
+        utm_content: attr.utm_content||'',
+        gclid: attr.gclid||'',
+        yclid: attr.yclid||'',
+        landing_page: attr.landing_page||'',
         userAgent: navigator.userAgent,
         referer: document.referrer || location.href
       };

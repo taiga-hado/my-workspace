@@ -108,3 +108,64 @@ vercel --prod
 - Sheet の列ヘッダー（日本語）は自動マッピングされます。順序や列名を変えた場合は `dashboard/index.html` の `mapSheetRow()` を調整してください。
 - `SHEET_CSV_URL` が未設定の場合、ダッシュボードは従来通り `localStorage` のブラウザ内履歴を表示します。
 - フォームを no-cors で POST しているため、送信成功/失敗のステータスは取得できません（Google フォーム側に届いても取得できない制約）。確実性のため Slack メール + Sheet の二重で受け取れるようにしています。
+
+---
+
+## 7. リスティング広告のUTM計測（任意）
+
+広告経由のコンバージョンを判別するため、フォーム送信時に以下のフィールドを自動付与します（`assets/site.js` で実装済み）。
+
+| フィールド | 内容 | 例 |
+|------------|------|-----|
+| `utm_source` | 流入元 | `google` / `yahoo` |
+| `utm_medium` | メディア | `cpc` / `display` |
+| `utm_campaign` | キャンペーン名 | `brand-2026q2` |
+| `utm_term` | キーワード（検索広告） | `求職者集客` |
+| `utm_content` | 広告クリエイティブ識別 | `banner-a` |
+| `gclid` | Google Ads クリックID | 自動付与 |
+| `yclid` | Yahoo広告 クリックID | 自動付与 |
+| `landing_page` | 広告流入時の着地ページ | `/` |
+
+### 動作仕様
+
+- ユーザーが広告URL（例: `https://kyusyokusyasokyaku-no-madoguchi.com/?utm_source=google&utm_medium=cpc&utm_campaign=brand`）でアクセスすると、UTMパラメータが localStorage に保存される
+- **last-touch attribution**: 後から別のUTM付きURLでアクセスした場合は上書き
+- **有効期間**: 30日間。期限切れは自動破棄
+- フォーム送信時に上記フィールドを送信ペイロードに自動付与
+
+### Google フォーム側の対応
+
+Google フォームに以下の質問を追加してください（タイプ「記述式」、必須なし）:
+
+| # | 質問タイトル | タイプ | 必須 |
+|---|------------|-------|------|
+| 9 | utm_source | 記述式 | — |
+| 10 | utm_medium | 記述式 | — |
+| 11 | utm_campaign | 記述式 | — |
+| 12 | utm_term | 記述式 | — |
+| 13 | utm_content | 記述式 | — |
+| 14 | gclid | 記述式 | — |
+| 15 | yclid | 記述式 | — |
+| 16 | landing_page | 記述式 | — |
+
+追加後、`assets/form-config.js` の `FIELD_ENTRIES` にも対応する `entry.XXXX` を追加します（手順2と同じ要領で取得）。
+
+```js
+FIELD_ENTRIES: {
+  // ...既存のフィールド
+  utm_source:   'entry.999991',
+  utm_medium:   'entry.999992',
+  utm_campaign: 'entry.999993',
+  utm_term:     'entry.999994',
+  utm_content:  'entry.999995',
+  gclid:        'entry.999996',
+  yclid:        'entry.999997',
+  landing_page: 'entry.999998'
+}
+```
+
+### 動作確認方法
+
+1. ブラウザで `?utm_source=test&utm_medium=cpc&utm_campaign=qa` 付きのURLでサイトにアクセス
+2. DevTools → Application → Local Storage → `madoguchi_attribution` に値が入っていることを確認
+3. その状態でフォーム送信 → Sheet の該当列にUTM値が入っていればOK

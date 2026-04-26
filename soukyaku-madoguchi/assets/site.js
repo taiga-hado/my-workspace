@@ -1,4 +1,50 @@
 /* 求職者送客の窓口 Service Site - interactions */
+
+/* ---------- UTM / Click ID Attribution Capture ---------- */
+/* 広告流入を識別するためのトラッキング。URLにutm_*やgclid/yclidが付いていれば
+   localStorageに保存し、フォーム送信時に同梱する（last-touch / 30日間有効）。 */
+(() => {
+  'use strict';
+  const KEY = 'madoguchi_attribution';
+  const ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'yclid'];
+  const EXPIRY_MS = 30 * 24 * 60 * 60 * 1000;
+
+  try {
+    const params = new URLSearchParams(location.search);
+    const captured = {};
+    let hasAttr = false;
+    ATTR_KEYS.forEach(k => {
+      const v = params.get(k);
+      if (v) { captured[k] = v; hasAttr = true; }
+    });
+
+    if (hasAttr) {
+      const data = {
+        ...captured,
+        landing_page: location.pathname,
+        referrer: document.referrer || '',
+        captured_at: Date.now()
+      };
+      localStorage.setItem(KEY, JSON.stringify(data));
+    }
+  } catch (err) { /* localStorage unavailable */ }
+
+  window.MADOGUCHI_ATTRIBUTION = {
+    get() {
+      try {
+        const raw = localStorage.getItem(KEY);
+        if (!raw) return {};
+        const data = JSON.parse(raw);
+        if (Date.now() - (data.captured_at || 0) > EXPIRY_MS) {
+          localStorage.removeItem(KEY);
+          return {};
+        }
+        return data;
+      } catch (err) { return {}; }
+    }
+  };
+})();
+
 (() => {
   'use strict';
 

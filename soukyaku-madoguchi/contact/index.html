@@ -426,9 +426,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       var submission = buildSubmission();
       saveLocal(submission);
       postToAppsScript(submission).catch(function(){ /* no-cors: opaque, ignore */ }).then(function(){
-        form.style.display = 'none';
-        success.classList.add('is-visible');
-        if(success.scrollIntoView) success.scrollIntoView({behavior:'smooth', block:'start'});
+        // 広告コンバージョン計測用に専用サンクスページへ遷移
+        location.href = '/thanks/';
       });
     });
   })();

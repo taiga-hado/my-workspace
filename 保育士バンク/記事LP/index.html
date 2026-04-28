@@ -491,6 +491,30 @@
     }
     .punch-h2 .x { color: #ff8da8; margin: 0 4px; }
 
+    /* ===== NO.1 BADGES ===== */
+    .no1-badges {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+      margin: 14px 0 10px;
+      padding: 0 8px;
+    }
+    .no1-badges img {
+      flex: 1 1 0;
+      width: 33.33%;
+      max-width: 33.33%;
+      height: auto;
+      object-fit: contain;
+    }
+    .no1-note {
+      text-align: center;
+      font-size: 0.68rem;
+      color: #888;
+      line-height: 1.7;
+      margin: 4px 12px 24px;
+    }
+
     /* ===== STEPS LIST ===== */
     ol.point-list {
       counter-reset: pt;
@@ -859,15 +883,23 @@
     </div>
 
     <!-- ============================
-         No.1 PUNCH
+         No.1 PUNCH (3冠バッジ)
          ============================ -->
     <h2 class="punch-h2" style="background:none;border-left:none;padding:0;">
       実際に <span class="pink">保育士バンク！</span> は<br>
-      <span class="red">職場環境<span class="x">×</span>給与満足度<span class="no1">No.1</span></span>
+      <span class="red">3冠を達成</span>しています
     </h2>
 
-    <p style="text-align:center; font-size:0.78rem; color:#888;">
-      ※2025年4月 自社実施／保育士向けインターネット調査・3社比較
+    <div class="no1-badges">
+      <img src="images/21_no1_users.png" alt="登録者数No.1">
+      <img src="images/20_no1_jobs.png" alt="求人数No.1">
+      <img src="images/22_no1_support.png" alt="転職支援実績数No.1">
+    </div>
+
+    <p class="no1-note">
+      ※公開求人数・保育士転職支援実績数（累計）No.1を指す。<br>
+      「保育士特化職業紹介サービス」に関する市場調査《No.1検証調査》（㈱未来トレンド研究機構　調べ）<br>
+      ※2025年9月25日時点
     </p>
 
     <!-- 利用者の声 -->

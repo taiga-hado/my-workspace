@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ハックツ就職 - ユーザー登録動線</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: #0f1117;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .presentation {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Title slide ── */
+  .title-slide {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: linear-gradient(135deg, #0f1117 0%, #1a1d2e 100%);
+    opacity: 1;
+    transition: opacity .8s ease;
+  }
+  .title-slide.hidden { opacity: 0; pointer-events: none; }
+  .title-slide h1 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #06C755, #4ecdc4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: .5rem;
+  }
+  .title-slide h2 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #8b8fa3;
+    margin-bottom: 2.5rem;
+  }
+  .start-btn {
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #06C755, #05a648);
+    border: none;
+    border-radius: 60px;
+    cursor: pointer;
+    transition: transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 24px rgba(6,199,85,.3);
+  }
+  .start-btn:hover { transform: scale(1.05); box-shadow: 0 6px 32px rgba(6,199,85,.45); }
+
+  /* ── Progress bar ── */
+  .progress-container {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0;
+    z-index: 50;
+    opacity: 0;
+    transition: opacity .5s ease;
+  }
+  .progress-container.visible { opacity: 1; }
+
+  .step-indicator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 120px;
+    position: relative;
+  }
+  .step-dot {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #2a2d3e;
+    border: 3px solid #3a3d4e;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85rem;
+    font-weight: 700;
+    color: #555;
+    transition: all .5s ease;
+    position: relative;
+    z-index: 2;
+  }
+  .step-dot.active {
+    background: linear-gradient(135deg, #06C755, #4ecdc4);
+    border-color: #06C755;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(6,199,85,.4);
+  }
+  .step-dot.done {
+    background: #06C755;
+    border-color: #06C755;
+    color: #fff;
+  }
+  .step-label {
+    margin-top: 8px;
+    font-size: .7rem;
+    font-weight: 500;
+    color: #555;
+    transition: color .5s ease;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .step-label.active { color: #06C755; }
+  .step-label.done { color: #8b8fa3; }
+
+  .step-line {
+    width: 84px;
+    height: 3px;
+    background: #2a2d3e;
+    margin-bottom: 24px;
+    transition: background .5s ease;
+    position: relative;
+    z-index: 1;
+  }
+  .step-line.done { background: #06C755; }
+
+  /* ── Phone mockup ── */
+  .phone-area {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .phone {
+    width: 320px;
+    height: 640px;
+    background: #000;
+    border-radius: 40px;
+    border: 4px solid #2a2d3e;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 20px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.05);
+    flex-shrink: 0;
+  }
+  .phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 28px;
+    background: #000;
+    border-radius: 0 0 20px 20px;
+    z-index: 10;
+  }
+  .phone-screen {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── Description panel ── */
+  .desc-panel {
+    width: 380px;
+    flex-shrink: 0;
+  }
+  .desc-step-num {
+    font-size: .85rem;
+    font-weight: 700;
+    color: #06C755;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: .5rem;
+  }
+  .desc-title {
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  .desc-body {
+    font-size: .95rem;
+    color: #8b8fa3;
+    line-height: 1.8;
+  }
+  .desc-body strong { color: #ccc; }
+  .desc-panel {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .desc-panel.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ── Screens ── */
+  .screen {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity .6s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .screen.active { opacity: 1; }
+
+  /* Screen 1: LP */
+  .screen-lp {
+    background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+  .lp-hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 20px 20px;
+    text-align: center;
+  }
+  .lp-logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+  }
+  .lp-logo span { color: #06C755; }
+  .lp-sub {
+    font-size: .75rem;
+    color: #666;
+    margin-bottom: 24px;
+  }
+  .lp-visual {
+    width: 180px;
+    height: 120px;
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+  .lp-visual-icon { font-size: 3rem; }
+  .lp-catch {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 6px;
+    line-height: 1.4;
+  }
+  .lp-catch-sub {
+    font-size: .7rem;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  .line-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 32px;
+    background: #06C755;
+    color: #fff;
+    border-radius: 8px;
+    font-size: .9rem;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(6,199,85,.3);
+    position: relative;
+  }
+  .line-btn .line-icon {
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: #06C755;
+    font-size: .7rem;
+  }
+
+  /* Tap animation */
+  .tap-ring {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 3px solid rgba(6,199,85,.6);
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 20;
+  }
+  .tap-ring.animate {
+    animation: tapPulse 1s ease forwards;
+  }
+  @keyframes tapPulse {
+    0% { opacity: 1; transform: scale(.3); }
+    50% { opacity: .8; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.3); }
+  }
+
+  /* Screen 2: LINE Auth */
+  .screen-auth {
+    background: #fff;
+  }
+  .auth-header {
+    background: #06C755;
+    padding: 40px 20px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .auth-header-logo {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #fff;
+  }
+  .auth-body {
+    flex: 1;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .auth-icon-circle {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+  .auth-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+  }
+  .auth-desc {
+    font-size: .75rem;
+    color: #888;
+    text-align: center;
+    margin-bottom: 24px;
+    line-height: 1.5;
+  }
+  .auth-perms {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  .auth-perm-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: .8rem;
+    color: #333;
+  }
+  .auth-perm-check {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #06C755;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .65rem;
+    flex-shrink: 0;
+  }
+  .auth-allow-btn {
+    width: 100%;
+    padding: 14px;
+    background: #06C755;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: .9rem;
+  }
+
+  /* Screen 3: Chatbot form */
+  .screen-chatbot {
+    background: #e8e4df;
+  }
+  .chat-header {
+    background: #06C755;
+    padding: 40px 16px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .chat-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .7rem;
+    font-weight: 900;
+    color: #06C755;
+  }
+  .chat-name {
+    font-size: .9rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .chat-body {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow: hidden;
+  }
+  .chat-msg {
+    max-width: 82%;
+    padding: 10px 14px;
+    border-radius: 16px;
+    font-size: .78rem;
+    line-height: 1.5;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  .chat-msg.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+  .chat-msg.bot {
+    background: #fff;
+    color: #333;
+    border-bottom-left-radius: 4px;
+    align-self: flex-start;
+  }
+  .chat-msg.user {
+    background: #06C755;
+    color: #fff;
+    border-bottom-right-radius: 4px;
+    align-self: flex-end;
+  }
+  .chat-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-self: flex-start;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  .chat-options.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+  .chat-opt-btn {
+    padding: 8px 14px;
+    border: 2px solid #06C755;
+    border-radius: 20px;
+    font-size: .72rem;
+    color: #06C755;
+    background: #fff;
+    font-weight: 500;
+  }
+  .chat-opt-btn.selected {
+    background: #06C755;
+    color: #fff;
+  }
+
+  /* Screen 4: Schedule */
+  .screen-schedule {
+    background: #fff;
+  }
+  .sched-header {
+    background: #06C755;
+    padding: 40px 16px 14px;
+    text-align: center;
+  }
+  .sched-header-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+  }
+  .sched-body {
+    flex: 1;
+    padding: 16px;
+  }
+  .sched-month {
+    text-align: center;
+    font-size: .9rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 12px;
+  }
+  .sched-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+    margin-bottom: 16px;
+  }
+  .sched-day-header {
+    font-size: .6rem;
+    color: #999;
+    text-align: center;
+    padding: 4px 0;
+  }
+  .sched-day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .72rem;
+    color: #333;
+    border-radius: 50%;
+  }
+  .sched-day.empty { visibility: hidden; }
+  .sched-day.available {
+    background: #e8f5e9;
+    color: #06C755;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .sched-day.selected {
+    background: #06C755;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(6,199,85,.3);
+  }
+  .sched-times {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .sched-time-slot {
+    padding: 10px 14px;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: .8rem;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .sched-time-slot.available { border-color: #06C755; }
+  .sched-time-slot.selected {
+    background: #06C755;
+    color: #fff;
+    border-color: #06C755;
+  }
+  .sched-time-badge {
+    font-size: .6rem;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #e8f5e9;
+    color: #06C755;
+    font-weight: 700;
+  }
+  .sched-time-slot.selected .sched-time-badge {
+    background: rgba(255,255,255,.25);
+    color: #fff;
+  }
+  .sched-confirm-btn {
+    margin-top: 16px;
+    width: 100%;
+    padding: 14px;
+    background: #06C755;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: .9rem;
+    opacity: 0;
+  }
+  .sched-confirm-btn.visible {
+    opacity: 1;
+    transition: opacity .4s ease;
+  }
+
+  /* Screen 5: LINE notification */
+  .screen-line-notif {
+    background: #e8e4df;
+  }
+  .notif-header {
+    background: #06C755;
+    padding: 40px 16px 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .notif-body {
+    flex: 1;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .notif-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    align-self: flex-start;
+    max-width: 88%;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  .notif-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+  .notif-card-header {
+    background: #06C755;
+    padding: 12px 16px;
+    color: #fff;
+    font-size: .8rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .notif-card-body {
+    padding: 14px 16px;
+  }
+  .notif-card-row {
+    display: flex;
+    gap: 8px;
+    padding: 6px 0;
+    font-size: .75rem;
+    color: #333;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .notif-card-row:last-child { border: none; }
+  .notif-card-label {
+    color: #999;
+    width: 60px;
+    flex-shrink: 0;
+    font-size: .68rem;
+  }
+  .notif-card-val { font-weight: 500; }
+  .notif-url-btn {
+    display: block;
+    margin: 10px 16px 14px;
+    padding: 10px;
+    background: #06C755;
+    color: #fff;
+    border-radius: 8px;
+    text-align: center;
+    font-size: .78rem;
+    font-weight: 700;
+  }
+  .notif-actions {
+    display: flex;
+    gap: 8px;
+    align-self: flex-start;
+    padding: 0 0 8px;
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  .notif-actions.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity .4s ease, transform .4s ease;
+  }
+  .notif-action-btn {
+    padding: 8px 14px;
+    border: 2px solid #06C755;
+    border-radius: 20px;
+    font-size: .72rem;
+    color: #06C755;
+    background: #fff;
+    font-weight: 500;
+  }
+
+  /* ── Navigation ── */
+  .nav-controls {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 16px;
+    z-index: 50;
+    opacity: 0;
+    transition: opacity .5s ease;
+  }
+  .nav-controls.visible { opacity: 1; }
+  .nav-btn {
+    padding: 12px 28px;
+    border: 2px solid #2a2d3e;
+    background: transparent;
+    color: #8b8fa3;
+    border-radius: 12px;
+    font-size: .9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .2s ease;
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+  .nav-btn:hover {
+    border-color: #06C755;
+    color: #06C755;
+  }
+  .nav-btn.primary {
+    background: linear-gradient(135deg, #06C755, #05a648);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(6,199,85,.3);
+  }
+  .nav-btn.primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(6,199,85,.4); }
+  .nav-btn:disabled { opacity: .3; pointer-events: none; }
+
+  /* ── Autoplay indicator ── */
+  .autoplay-badge {
+    position: absolute;
+    top: 90px;
+    right: 40px;
+    font-size: .7rem;
+    color: #555;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    transition: opacity .5s ease;
+  }
+  .autoplay-badge.visible { opacity: 1; }
+  .autoplay-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #06C755;
+    animation: pulse 1.5s ease infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .3; }
+  }
+</style>
+</head>
+<body>
+
+<div class="presentation">
+  <!-- Title Slide -->
+  <div class="title-slide" id="titleSlide">
+    <h1>ハックツ就職</h1>
+    <h2>ユーザー登録動線フロー</h2>
+    <button class="start-btn" onclick="startPresentation()">プレゼンテーション開始 ▶</button>
+  </div>
+
+  <!-- Progress -->
+  <div class="progress-container" id="progress">
+    <div class="step-indicator">
+      <div class="step-dot" id="dot1">1</div>
+      <div class="step-label" id="label1">LP閲覧</div>
+    </div>
+    <div class="step-line" id="line1"></div>
+    <div class="step-indicator">
+      <div class="step-dot" id="dot2">2</div>
+      <div class="step-label" id="label2">LINE認証</div>
+    </div>
+    <div class="step-line" id="line2"></div>
+    <div class="step-indicator">
+      <div class="step-dot" id="dot3">3</div>
+      <div class="step-label" id="label3">情報入力</div>
+    </div>
+    <div class="step-line" id="line3"></div>
+    <div class="step-indicator">
+      <div class="step-dot" id="dot4">4</div>
+      <div class="step-label" id="label4">日程調整</div>
+    </div>
+    <div class="step-line" id="line4"></div>
+    <div class="step-indicator">
+      <div class="step-dot" id="dot5">5</div>
+      <div class="step-label" id="label5">確定通知</div>
+    </div>
+  </div>
+
+  <!-- Autoplay badge -->
+  <div class="autoplay-badge" id="autoplayBadge">
+    <div class="autoplay-dot"></div>
+    自動再生中 — クリックで操作
+  </div>
+
+  <!-- Phone + Description -->
+  <div class="phone-area" style="opacity:0" id="phoneArea">
+    <div class="phone">
+      <div class="phone-notch"></div>
+      <div class="phone-screen" id="phoneScreen">
+        <!-- Tap ring -->
+        <div class="tap-ring" id="tapRing"></div>
+
+        <!-- Screen 1: LP -->
+        <div class="screen screen-lp" id="screen1">
+          <div class="lp-hero">
+            <div class="lp-logo"><span>ハックツ</span>就職</div>
+            <div class="lp-sub">20代のキャリアを、もっと自由に。</div>
+            <div class="lp-visual">
+              <div class="lp-visual-icon">💼</div>
+            </div>
+            <div class="lp-catch">ホワイト企業の求人を<br>無料でご紹介</div>
+            <div class="lp-catch-sub">最短30秒で簡単登録</div>
+            <div class="line-btn" id="lineBtnLP">
+              <div class="line-icon">L</div>
+              LINEで無料相談する
+            </div>
+          </div>
+        </div>
+
+        <!-- Screen 2: LINE Auth -->
+        <div class="screen screen-auth" id="screen2">
+          <div class="auth-header">
+            <div class="auth-header-logo">LINE</div>
+          </div>
+          <div class="auth-body">
+            <div class="auth-icon-circle">🔒</div>
+            <div class="auth-title">ハックツ就職がアクセスを求めています</div>
+            <div class="auth-desc">以下の情報へのアクセスを<br>許可しますか？</div>
+            <div class="auth-perms">
+              <div class="auth-perm-item">
+                <div class="auth-perm-check">✓</div>
+                プロフィール情報
+              </div>
+              <div class="auth-perm-item">
+                <div class="auth-perm-check">✓</div>
+                メッセージの送受信
+              </div>
+            </div>
+            <div class="auth-allow-btn" id="authAllowBtn">許可する</div>
+          </div>
+        </div>
+
+        <!-- Screen 3: Chatbot -->
+        <div class="screen screen-chatbot" id="screen3">
+          <div class="chat-header">
+            <div class="chat-avatar">H</div>
+            <div class="chat-name">ハックツ就職</div>
+          </div>
+          <div class="chat-body" id="chatBody">
+            <div class="chat-msg bot" id="chatMsg1">
+              ご登録ありがとうございます！🎉<br>いくつか質問させてください
+            </div>
+            <div class="chat-msg bot" id="chatMsg2">
+              現在の就業状況を教えてください
+            </div>
+            <div class="chat-options" id="chatOpts1">
+              <div class="chat-opt-btn">在職中</div>
+              <div class="chat-opt-btn selected">離職中</div>
+              <div class="chat-opt-btn">学生</div>
+            </div>
+            <div class="chat-msg user" id="chatMsg3">離職中</div>
+            <div class="chat-msg bot" id="chatMsg4">
+              希望の職種を教えてください
+            </div>
+            <div class="chat-options" id="chatOpts2">
+              <div class="chat-opt-btn selected">営業</div>
+              <div class="chat-opt-btn">事務</div>
+              <div class="chat-opt-btn">エンジニア</div>
+              <div class="chat-opt-btn">その他</div>
+            </div>
+            <div class="chat-msg user" id="chatMsg5">営業</div>
+            <div class="chat-msg bot" id="chatMsg6">
+              ありがとうございます！<br>次に面談の日程を選択してください📅
+            </div>
+          </div>
+        </div>
+
+        <!-- Screen 4: Schedule -->
+        <div class="screen screen-schedule" id="screen4">
+          <div class="sched-header">
+            <div class="sched-header-title">📅 面談日程の選択</div>
+          </div>
+          <div class="sched-body">
+            <div class="sched-month">2026年5月</div>
+            <div class="sched-grid">
+              <div class="sched-day-header">日</div>
+              <div class="sched-day-header">月</div>
+              <div class="sched-day-header">火</div>
+              <div class="sched-day-header">水</div>
+              <div class="sched-day-header">木</div>
+              <div class="sched-day-header">金</div>
+              <div class="sched-day-header">土</div>
+              <div class="sched-day empty"></div>
+              <div class="sched-day empty"></div>
+              <div class="sched-day empty"></div>
+              <div class="sched-day empty"></div>
+              <div class="sched-day empty"></div>
+              <div class="sched-day">1</div>
+              <div class="sched-day">2</div>
+              <div class="sched-day">3</div>
+              <div class="sched-day">4</div>
+              <div class="sched-day available">5</div>
+              <div class="sched-day available">6</div>
+              <div class="sched-day selected" id="schedDay7">7</div>
+              <div class="sched-day available">8</div>
+              <div class="sched-day">9</div>
+              <div class="sched-day">10</div>
+              <div class="sched-day">11</div>
+              <div class="sched-day available">12</div>
+              <div class="sched-day available">13</div>
+              <div class="sched-day available">14</div>
+              <div class="sched-day">15</div>
+            </div>
+            <div class="sched-times" id="schedTimes">
+              <div class="sched-time-slot available" id="slot1">
+                10:00 ~ 10:30
+                <span class="sched-time-badge">空き</span>
+              </div>
+              <div class="sched-time-slot selected" id="slot2">
+                14:00 ~ 14:30
+                <span class="sched-time-badge">空き</span>
+              </div>
+              <div class="sched-time-slot available" id="slot3">
+                16:00 ~ 16:30
+                <span class="sched-time-badge">空き</span>
+              </div>
+            </div>
+            <div class="sched-confirm-btn" id="schedConfirm">この日程で予約する</div>
+          </div>
+        </div>
+
+        <!-- Screen 5: LINE notification -->
+        <div class="screen screen-line-notif" id="screen5">
+          <div class="notif-header">
+            <div class="chat-avatar">H</div>
+            <div class="chat-name">ハックツ就職</div>
+          </div>
+          <div class="notif-body">
+            <div class="notif-card" id="notifCard">
+              <div class="notif-card-header">
+                ✅ 面談予約が確定しました
+              </div>
+              <div class="notif-card-body">
+                <div class="notif-card-row">
+                  <span class="notif-card-label">日時</span>
+                  <span class="notif-card-val">5/7（木）14:00〜14:30</span>
+                </div>
+                <div class="notif-card-row">
+                  <span class="notif-card-label">形式</span>
+                  <span class="notif-card-val">オンライン（Zoom）</span>
+                </div>
+                <div class="notif-card-row">
+                  <span class="notif-card-label">担当</span>
+                  <span class="notif-card-val">キャリアアドバイザー</span>
+                </div>
+              </div>
+              <div class="notif-url-btn">面談URLを開く 🔗</div>
+            </div>
+            <div class="notif-actions" id="notifActions">
+              <div class="notif-action-btn">日程を変更する</div>
+              <div class="notif-action-btn">キャンセルする</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desc-panel" id="descPanel">
+      <div class="desc-step-num" id="descStepNum"></div>
+      <div class="desc-title" id="descTitle"></div>
+      <div class="desc-body" id="descBody"></div>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <div class="nav-controls" id="navControls">
+    <button class="nav-btn" id="prevBtn" onclick="prevStep()" disabled>← 戻る</button>
+    <button class="nav-btn primary" id="nextBtn" onclick="nextStep()">次へ →</button>
+  </div>
+</div>
+
+<script>
+const steps = [
+  {
+    num: 'STEP 01',
+    title: 'LP上でLINE登録を<br>タップ',
+    body: 'ユーザーはランディングページの<strong>「LINEで無料相談する」</strong>ボタンをタップ。<br><br>LINEの認証フローに遷移します。',
+    setup: (dir) => {
+      activateScreen('screen1');
+      if (dir === 'forward') {
+        setTimeout(() => showTapRing('lineBtnLP'), 800);
+      }
+    }
+  },
+  {
+    num: 'STEP 02',
+    title: 'LINE認証で<br>アカウント連携',
+    body: 'LINEのOAuth認証画面が表示され、<strong>プロフィール情報</strong>と<strong>メッセージ送受信</strong>の許可を求めます。<br><br>ユーザーが「許可する」をタップすると、アカウントが連携されます。',
+    setup: (dir) => {
+      activateScreen('screen2');
+      if (dir === 'forward') {
+        setTimeout(() => showTapRing('authAllowBtn'), 1200);
+      }
+    }
+  },
+  {
+    num: 'STEP 03',
+    title: 'チャットボット型<br>フォームで情報入力',
+    body: 'LINE連携後、<strong>チャットボット形式</strong>のフォームに自動遷移。<br><br>就業状況や希望職種など、対話形式で必要な情報をヒアリングします。<br><br><strong>会話型UIで離脱率を低減</strong>しています。',
+    setup: (dir) => {
+      activateScreen('screen3');
+      if (dir === 'forward') {
+        animateChatMessages();
+      } else {
+        showAllChatMessages();
+      }
+    }
+  },
+  {
+    num: 'STEP 04',
+    title: '日程調整ツールで<br>面談日時を選択',
+    body: '情報入力完了後、そのまま<strong>日程調整ツール</strong>に遷移。<br><br>カレンダーから空き日程を選択し、希望の時間帯を選ぶだけで面談予約が完了。<br><br><strong>別サイトへの遷移なし</strong>でシームレスに完結します。',
+    setup: (dir) => {
+      activateScreen('screen4');
+      if (dir === 'forward') {
+        setTimeout(() => {
+          document.getElementById('schedConfirm').classList.add('visible');
+          showTapRing('schedConfirm');
+        }, 800);
+      } else {
+        document.getElementById('schedConfirm').classList.add('visible');
+      }
+    }
+  },
+  {
+    num: 'STEP 05',
+    title: 'LINEで確定通知が<br>届く',
+    body: '日程確定後、<strong>LINE通知</strong>で面談の確定情報が届きます。<br><br>面談URLや日程変更・キャンセルもLINE上から<strong>ワンタップで操作可能</strong>。<br><br>ユーザーは登録から面談参加まで<strong>すべてLINE内で完結</strong>できます。',
+    setup: (dir) => {
+      activateScreen('screen5');
+      if (dir === 'forward') {
+        animateNotification();
+      } else {
+        showAllNotification();
+      }
+    }
+  }
+];
+
+let currentStep = -1;
+let isAnimating = false;
+let autoplayTimer = null;
+let autoplayActive = false;
+
+function startPresentation() {
+  document.getElementById('titleSlide').classList.add('hidden');
+  setTimeout(() => {
+    document.getElementById('progress').classList.add('visible');
+    document.getElementById('phoneArea').style.opacity = '1';
+    document.getElementById('phoneArea').style.transition = 'opacity .6s ease';
+    document.getElementById('navControls').classList.add('visible');
+    document.getElementById('autoplayBadge').classList.add('visible');
+    goToStep(0, 'forward');
+    startAutoplay();
+  }, 600);
+}
+
+function startAutoplay() {
+  autoplayActive = true;
+  scheduleAutoAdvance();
+}
+
+function scheduleAutoAdvance() {
+  clearTimeout(autoplayTimer);
+  if (!autoplayActive) return;
+  const delay = currentStep === 2 ? 6000 : 4500;
+  autoplayTimer = setTimeout(() => {
+    if (currentStep < steps.length - 1) {
+      nextStep();
+      scheduleAutoAdvance();
+    } else {
+      autoplayActive = false;
+      document.getElementById('autoplayBadge').classList.remove('visible');
+    }
+  }, delay);
+}
+
+function stopAutoplay() {
+  autoplayActive = false;
+  clearTimeout(autoplayTimer);
+  document.getElementById('autoplayBadge').classList.remove('visible');
+}
+
+function nextStep() {
+  stopAutoplay();
+  if (isAnimating || currentStep >= steps.length - 1) return;
+  goToStep(currentStep + 1, 'forward');
+}
+
+function prevStep() {
+  stopAutoplay();
+  if (isAnimating || currentStep <= 0) return;
+  goToStep(currentStep - 1, 'backward');
+}
+
+function goToStep(idx, dir) {
+  if (isAnimating) return;
+  isAnimating = true;
+  currentStep = idx;
+
+  updateProgress(idx);
+
+  // Description panel
+  const dp = document.getElementById('descPanel');
+  dp.classList.remove('visible');
+  setTimeout(() => {
+    document.getElementById('descStepNum').textContent = steps[idx].num;
+    document.getElementById('descTitle').innerHTML = steps[idx].title;
+    document.getElementById('descBody').innerHTML = steps[idx].body;
+    dp.classList.add('visible');
+  }, 300);
+
+  steps[idx].setup(dir);
+
+  // Nav buttons
+  document.getElementById('prevBtn').disabled = idx === 0;
+  document.getElementById('nextBtn').disabled = idx === steps.length - 1;
+  if (idx === steps.length - 1) {
+    document.getElementById('nextBtn').textContent = '完了 ✓';
+  } else {
+    document.getElementById('nextBtn').textContent = '次へ →';
+  }
+
+  setTimeout(() => { isAnimating = false; }, 800);
+}
+
+function updateProgress(idx) {
+  for (let i = 1; i <= 5; i++) {
+    const dot = document.getElementById('dot' + i);
+    const label = document.getElementById('label' + i);
+    dot.classList.remove('active', 'done');
+    label.classList.remove('active', 'done');
+
+    if (i - 1 < idx) {
+      dot.classList.add('done');
+      dot.textContent = '✓';
+      label.classList.add('done');
+    } else if (i - 1 === idx) {
+      dot.classList.add('active');
+      dot.textContent = i;
+      label.classList.add('active');
+    } else {
+      dot.textContent = i;
+    }
+  }
+  for (let i = 1; i <= 4; i++) {
+    const line = document.getElementById('line' + i);
+    line.classList.toggle('done', i - 1 < idx);
+  }
+}
+
+function activateScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function showTapRing(targetId) {
+  const target = document.getElementById(targetId);
+  const ring = document.getElementById('tapRing');
+  const rect = target.getBoundingClientRect();
+  const screenRect = document.getElementById('phoneScreen').getBoundingClientRect();
+  ring.style.left = (rect.left - screenRect.left + rect.width / 2 - 25) + 'px';
+  ring.style.top = (rect.top - screenRect.top + rect.height / 2 - 25) + 'px';
+  ring.classList.remove('animate');
+  void ring.offsetWidth;
+  ring.classList.add('animate');
+}
+
+function animateChatMessages() {
+  const ids = ['chatMsg1','chatMsg2','chatOpts1','chatMsg3','chatMsg4','chatOpts2','chatMsg5','chatMsg6'];
+  ids.forEach(id => document.getElementById(id).classList.remove('visible'));
+  ids.forEach((id, i) => {
+    setTimeout(() => {
+      document.getElementById(id).classList.add('visible');
+    }, 400 + i * 450);
+  });
+}
+
+function showAllChatMessages() {
+  ['chatMsg1','chatMsg2','chatOpts1','chatMsg3','chatMsg4','chatOpts2','chatMsg5','chatMsg6']
+    .forEach(id => document.getElementById(id).classList.add('visible'));
+}
+
+function animateNotification() {
+  const card = document.getElementById('notifCard');
+  const actions = document.getElementById('notifActions');
+  card.classList.remove('visible');
+  actions.classList.remove('visible');
+  setTimeout(() => card.classList.add('visible'), 600);
+  setTimeout(() => actions.classList.add('visible'), 1400);
+}
+
+function showAllNotification() {
+  document.getElementById('notifCard').classList.add('visible');
+  document.getElementById('notifActions').classList.add('visible');
+}
+
+// Keyboard nav
+document.addEventListener('keydown', (e) => {
+  if (currentStep < 0) {
+    if (e.key === 'Enter' || e.key === ' ') startPresentation();
+    return;
+  }
+  if (e.key === 'ArrowRight' || e.key === ' ') nextStep();
+  if (e.key === 'ArrowLeft') prevStep();
+});
+</script>
+</body>
+</html>

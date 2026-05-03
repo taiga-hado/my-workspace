@@ -2,8 +2,9 @@ name: Keio Shukatsu CAMP — Daily Instagram Post
 
 on:
   schedule:
-    # JST 7:00 = UTC 22:00 (前日)
-    - cron: '0 22 * * *'
+    # JST 7:15 = UTC 22:15 (前日)
+    # GitHub Actions cron は毎時0分が高負荷で遅延するため、:15 にズラしている
+    - cron: '15 22 * * *'
   workflow_dispatch:
     inputs:
       theme_key:

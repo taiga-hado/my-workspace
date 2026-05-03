@@ -1,0 +1,24 @@
+{
+  "name": "keio-shukatsu-camp",
+  "version": "0.1.0",
+  "description": "Auto-posting system for @keioshukatsucamp Instagram",
+  "type": "module",
+  "scripts": {
+    "test:connection": "node scripts/test-connection.js",
+    "exchange:long-lived": "node scripts/exchange-long-lived-token.js",
+    "refresh:token": "node scripts/refresh-token.js",
+    "post": "node scripts/post.js",
+    "post:carousel": "node scripts/post-carousel.js",
+    "post:reel": "node scripts/post-reel.js",
+    "generate:reel": "node scripts/generate-reel-test.js",
+    "generate:post": "node scripts/generate-post.js",
+    "post:daily": "node scripts/daily-post.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "puppeteer": "^24.42.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

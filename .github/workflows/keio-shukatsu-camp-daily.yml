@@ -1,0 +1,65 @@
+name: Keio Shukatsu CAMP — Daily Instagram Post
+
+on:
+  schedule:
+    # JST 7:00 = UTC 22:00 (前日)
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+    inputs:
+      theme_key:
+        description: 'Theme key (monday/tuesday/.../sunday). Empty = today'
+        required: false
+        type: string
+      title_override:
+        description: 'Custom post title (optional)'
+        required: false
+        type: string
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: keio-shukatsu-camp
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: keio-shukatsu-camp/package-lock.json
+
+      - name: Install dependencies (skip puppeteer Chromium download)
+        env:
+          PUPPETEER_SKIP_CHROMIUM_DOWNLOAD: 'true'
+          PUPPETEER_SKIP_DOWNLOAD: 'true'
+        run: npm ci
+
+      - name: Run daily post
+        env:
+          TZ: Asia/Tokyo
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          META_APP_ID: ${{ secrets.META_APP_ID }}
+          META_APP_SECRET: ${{ secrets.META_APP_SECRET }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_BUSINESS_ACCOUNT_ID: ${{ secrets.INSTAGRAM_BUSINESS_ACCOUNT_ID }}
+        run: |
+          if [ -n "${{ inputs.theme_key }}" ] || [ -n "${{ inputs.title_override }}" ]; then
+            ARGS=""
+            if [ -n "${{ inputs.theme_key }}" ]; then ARGS="$ARGS ${{ inputs.theme_key }}"; fi
+            if [ -n "${{ inputs.title_override }}" ]; then ARGS="$ARGS --title \"${{ inputs.title_override }}\""; fi
+            node scripts/generate-post.js $ARGS
+          else
+            npm run post:daily
+          fi
+
+      - name: Upload generated content as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: post-${{ github.run_id }}
+          path: keio-shukatsu-camp/content/
+          retention-days: 30
+          if-no-files-found: ignore

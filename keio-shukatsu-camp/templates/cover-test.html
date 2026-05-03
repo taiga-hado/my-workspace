@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>Cover</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Bebas+Neue&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy: #0B1B3D;
+    --navy-light: #1A2F66;
+    --keio-red: #C8102E;
+    --gold: #FFC93A;
+    --cream: #FFF8E7;
+    --white: #FFFFFF;
+  }
+
+  body {
+    width: 1080px;
+    height: 1350px;
+    background: linear-gradient(140deg, #0B1B3D 0%, #182C5C 60%, #0B1B3D 100%);
+    font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .grid-bg {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+  }
+
+  .glow {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 201, 58, 0.18) 0%, transparent 65%);
+    top: -250px;
+    right: -250px;
+    pointer-events: none;
+  }
+
+  .container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 56px 64px 60px;
+    z-index: 2;
+  }
+
+  /* バッジ群 */
+  .badges {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+
+  .badge {
+    padding: 12px 24px;
+    font-size: 28px;
+    font-weight: 900;
+    border-radius: 8px;
+    letter-spacing: 0.02em;
+  }
+
+  .badge-red { background: var(--keio-red); color: var(--white); }
+  .badge-gold { background: var(--gold); color: var(--navy); }
+
+  /* プリタイトル */
+  .pretitle {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--gold);
+    margin-bottom: 16px;
+    letter-spacing: 0.02em;
+  }
+
+  .pretitle::before {
+    content: '◆ ';
+  }
+
+  /* メインタイトル */
+  .title-block {
+    margin-bottom: 28px;
+  }
+
+  .title-line1 {
+    font-size: 76px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 14px;
+    color: var(--white);
+  }
+
+  .title-highlight {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 6px 22px;
+    font-size: 84px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .rank-row {
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+    margin-top: 18px;
+  }
+
+  .rank-prefix {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 80px;
+    color: var(--white);
+    line-height: 0.85;
+    letter-spacing: 0.02em;
+  }
+
+  .rank-digit {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 200px;
+    color: var(--gold);
+    line-height: 0.8;
+    letter-spacing: -0.04em;
+    text-shadow:
+      6px 6px 0 var(--keio-red),
+      8px 8px 24px rgba(0,0,0,0.4);
+  }
+
+  .rank-suffix {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 16px;
+  }
+
+  /* サブタイトル */
+  .subtitle {
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--cream);
+    margin-bottom: 32px;
+    border-left: 6px solid var(--keio-red);
+    padding-left: 18px;
+  }
+
+  /* プレビューカード */
+  .preview {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 201, 58, 0.3);
+    border-radius: 16px;
+    padding: 22px 28px;
+    margin-bottom: 28px;
+  }
+
+  .preview-title {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--gold);
+    margin-bottom: 14px;
+    letter-spacing: 0.05em;
+  }
+
+  .preview-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .preview-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-weight: 700;
+    padding: 4px 0;
+  }
+
+  .rank-pill {
+    font-family: 'Bebas Neue', sans-serif;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 30px;
+    min-width: 64px;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  .company {
+    flex: 1;
+    color: var(--white);
+    font-size: 28px;
+  }
+
+  .industry {
+    color: var(--cream);
+    opacity: 0.7;
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  .more {
+    text-align: center;
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: 700;
+    padding-top: 12px;
+    margin-top: 8px;
+    border-top: 1px dashed rgba(255, 201, 58, 0.3);
+    letter-spacing: 0.05em;
+  }
+
+  /* フッター */
+  .footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid rgba(255, 201, 58, 0.3);
+    padding-top: 22px;
+  }
+
+  .account {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--white);
+  }
+
+  .swipe {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+<div class="glow"></div>
+<div class="container">
+  <div class="badges">
+    <span class="badge badge-red">28卒・29卒必見</span>
+    <span class="badge badge-gold">📌 保存必須</span>
+  </div>
+
+  <p class="pretitle">慶應生1,200人の内定先を徹底集計</p>
+
+  <div class="title-block">
+    <div class="title-line1">慶應生が選ぶ</div>
+    <span class="title-highlight">人気就職先ランキング</span>
+    <div class="rank-row">
+      <span class="rank-prefix">TOP</span>
+      <span class="rank-digit">15</span>
+    </div>
+  </div>
+
+  <p class="subtitle">
+    商社・コンサル・外銀・デベ・広告まで<br>
+    慶應生のリアルな最新内定先を完全公開
+  </p>
+
+  <div class="preview">
+    <div class="preview-title">▼ ランキング先出し（1〜3位）</div>
+    <div class="preview-rows">
+      <div class="preview-row">
+        <span class="rank-pill">1</span>
+        <span class="company">三菱商事</span>
+        <span class="industry">総合商社</span>
+      </div>
+      <div class="preview-row">
+        <span class="rank-pill">2</span>
+        <span class="company">マッキンゼー</span>
+        <span class="industry">戦略コンサル</span>
+      </div>
+      <div class="preview-row">
+        <span class="rank-pill">3</span>
+        <span class="company">ゴールドマン・サックス</span>
+        <span class="industry">外資投資銀行</span>
+      </div>
+      <div class="more">▼ 4位〜15位は次のスライドへ →</div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span class="account">@keioshukatsucamp</span>
+    <span class="swipe">スワイプして全部見る →</span>
+  </div>
+</div>
+</body>
+</html>

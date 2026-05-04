@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SNSマーケター インターン採用 | 株式会社HADO</title>
+  <meta name="description" content="AI×SNSマーケティングを実戦で学べる学生インターン。時給1,250円、最新AIツールフル装備、内定直結型。優秀者は新卒採用（初任給40万円）へ。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Zen+Kaku+Gothic+New:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: #F5F7FA; color: #111; overflow-x: hidden; }
+
+    /* ── variables ── */
+    :root {
+      --blue: #0055FF;
+      --blue-light: #3B82F6;
+      --dark: #0f0f0f;
+      --cream: #F5F7FA;
+      --line-green: #06C755;
+    }
+
+    /* ── utility ── */
+    .grad { background: linear-gradient(120deg, var(--blue) 0%, var(--blue-light) 55%, var(--blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .section-label { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.45; }
+    img { display: block; }
+
+    /* ── fade in ── */
+    .fade { opacity: 0; transform: translateY(32px); transition: opacity 0.8s cubic-bezier(.16,1,.3,1), transform 0.8s cubic-bezier(.16,1,.3,1); }
+    .fade.in { opacity: 1; transform: none; }
+    .fade.d1 { transition-delay: .1s; }
+    .fade.d2 { transition-delay: .2s; }
+    .fade.d3 { transition-delay: .3s; }
+    .fade.d4 { transition-delay: .4s; }
+
+    /* ── hero stagger ── */
+    .h-el { opacity: 0; transform: translateY(48px); transition: opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); }
+    .h-el.in { opacity: 1; transform: none; }
+
+    /* ── nav ── */
+    #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 0 24px; height: 64px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,.06); transition: background .4s, border-color .4s; }
+    #nav .logo { height: 26px; transition: filter .4s; }
+    #nav .nav-links { display: none; }
+    @media(min-width: 768px) {
+      #nav .nav-links { display: flex; align-items: center; gap: 32px; }
+      #nav .nav-links a { font-size: .875rem; font-weight: 600; color: rgba(0,0,0,.6); text-decoration: none; transition: color .3s; }
+      #nav .nav-links a:hover { color: var(--blue); }
+    }
+    .btn-line { display: inline-flex; align-items: center; gap: 8px; background: var(--line-green); color: #fff; font-weight: 800; font-size: .875rem; padding: 10px 20px; border-radius: 100px; text-decoration: none; transition: background .3s, transform .3s; white-space: nowrap; }
+    #nav > .btn-line { display: none; }
+    .btn-line:hover { background: #05b34c; transform: translateY(-1px); }
+    .btn-line.lg { font-size: 1.1rem; padding: 18px 48px; }
+    .btn-line.xl { font-size: 1.25rem; padding: 22px 60px; max-width: 100%; }
+    @media(max-width: 768px) { .btn-line.xl { font-size: 1rem; padding: 18px 32px; } }
+    .btn-line svg { width: 20px; height: 20px; fill: currentColor; flex-shrink: 0; }
+
+    /* ── hero (photo collage + glass text card) ── */
+    #hero { position: relative; background: #0A0F1A; overflow: hidden; margin-top: 64px; }
+    .hero-collage { position: relative; display: grid; gap: 3px; width: 100%; }
+    @media(min-width: 769px) {
+      .hero-collage { grid-template-columns: 1.4fr 1fr 1.4fr; grid-template-rows: 320px 320px; height: 643px; }
+      .ci-1 { grid-column: 1; grid-row: 1; }
+      .ci-2 { grid-column: 2; grid-row: 1 / 3; }
+      .ci-3 { grid-column: 3; grid-row: 1; }
+      .ci-5 { grid-column: 1; grid-row: 2; }
+      .ci-6 { grid-column: 3; grid-row: 2; }
+      .ci-4 { display: none; }
+    }
+    @media(max-width: 768px) {
+      .hero-collage { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px 180px; height: 540px; }
+      .ci-1 { grid-column: 1 / 3; grid-row: 1; }
+      .ci-2 { grid-column: 1; grid-row: 2; }
+      .ci-3 { grid-column: 2; grid-row: 2; }
+      .ci-5 { grid-column: 1 / 3; grid-row: 3; }
+      .ci-4, .ci-6 { display: none; }
+    }
+    .ci { overflow: hidden; position: relative; }
+    .ci img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .8s cubic-bezier(.16,1,.3,1); }
+    .ci:hover img { transform: scale(1.04); }
+    .hero-overlay { position: absolute; inset: 0; background: radial-gradient(ellipse 65% 60% at center, rgba(8,12,28,.85) 0%, rgba(8,12,28,.5) 55%, rgba(8,12,28,.3) 100%); pointer-events: none; z-index: 2; }
+    #hero-content { position: absolute; inset: 0; z-index: 3; display: flex; align-items: center; justify-content: center; padding: 24px; }
+    .hero-text { max-width: 720px; width: 100%; text-align: center; padding: 36px 32px; background: rgba(10,15,30,.55); backdrop-filter: blur(18px) saturate(1.2); -webkit-backdrop-filter: blur(18px) saturate(1.2); border: 1px solid rgba(255,255,255,.18); border-radius: 20px; box-shadow: 0 30px 80px rgba(0,0,0,.5); }
+    @media(max-width: 768px) {
+      .hero-text { padding: 28px 22px; max-width: 96%; }
+      #hero-content .btn-line.lg { font-size: .8rem; padding: 12px 22px; }
+      .scroll-hint { display: none; }
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 22px; justify-content: center; }
+    .hero-tag { display: inline-block; background: rgba(255,255,255,.13); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.28); border-radius: 100px; padding: 6px 14px; color: #fff; font-weight: 700; font-size: clamp(.66rem, 1.3vw, .78rem); white-space: nowrap; }
+    .hero-h1 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; line-height: 1.35; color: #fff; font-size: clamp(1.5rem, 4vw, 2.8rem); margin-bottom: 16px; text-shadow: 0 2px 12px rgba(0,0,0,.5); letter-spacing: -.01em; }
+    .hero-h1 .accent { color: #1E66FF; text-shadow: 0 2px 16px rgba(0,85,255,.45); }
+    .hero-sub { font-size: clamp(.82rem, 1.6vw, 1rem); font-weight: 700; color: rgba(255,255,255,.92); margin-bottom: 22px; text-shadow: 0 2px 8px rgba(0,0,0,.4); line-height: 1.7; }
+    .scroll-hint { position: absolute; bottom: 28px; left: 50%; transform: translateX(-50%); z-index: 4; color: rgba(255,255,255,.55); animation: sb 2s ease-in-out infinite; }
+    @keyframes sb { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(7px)} }
+
+    /* ── hero badge ── */
+    #hero-badge { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; padding: 32px 24px; background: #fff; }
+    .hero-badge-text { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(.95rem, 2.5vw, 1.2rem); letter-spacing: .08em; background: linear-gradient(120deg, var(--blue) 0%, var(--blue-light) 55%, var(--blue) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-badge-logo { height: 48px; }
+    #hero-badge .btn-line.lg { margin-top: 8px; }
+    @media(max-width: 768px) {
+      #hero-badge { padding: 24px 16px; }
+      #hero-badge .btn-line.lg { font-size: .8rem; padding: 12px 24px; }
+    }
+
+    /* ── ticker ── */
+    #ticker { background: #fff; padding: 28px 0; overflow: hidden; border-top: 1px solid rgba(0,0,0,.06); border-bottom: 1px solid rgba(0,0,0,.06); }
+    #ticker .label { text-align: center; color: rgba(0,0,0,.5); font-size: 1rem; font-weight: 700; letter-spacing: .1em; margin-bottom: 20px; }
+    .ticker-track { display: flex; width: max-content; animation: tick 28s linear infinite; }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes tick { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .ticker-item { display: flex; align-items: center; margin: 0 36px; }
+    .ticker-item img { height: 28px; object-fit: contain; }
+
+    /* ── stats ── */
+    #stats { background: #080808; padding: 48px 24px 56px; }
+    .stats-inner { max-width: 1100px; margin: 0 auto; }
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+    .stat-card { background: #111; padding: 32px 24px; text-align: center; }
+    .stat-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 12px; margin-bottom: 16px; }
+    .stat-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(3rem, 8vw, 5.5rem); line-height: 1; }
+    .stat-unit { font-size: clamp(1rem, 2.5vw, 1.5rem); }
+    .stat-label { color: rgba(255,255,255,.85); font-size: 1rem; font-weight: 700; margin-top: 12px; letter-spacing: .05em; }
+    @media(max-width: 600px) {
+      .stats-grid { grid-template-columns: 1fr; gap: 2px; }
+    }
+
+    /* ── business cards (3-col) ── */
+    #about { padding: 80px 24px; background: var(--cream); }
+    .biz-grid { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .biz-card { background: #fff; border-radius: 16px; overflow: hidden; }
+    .biz-card .biz-photo { aspect-ratio: 16/10; }
+    .biz-card .biz-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; }
+    .biz-card .biz-photo:hover img { transform: scale(1.04); }
+    .biz-card-body { padding: 24px; }
+    .biz-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 2.5rem; line-height: 1; margin-bottom: 8px; }
+    .biz-heading { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.15rem; line-height: 1.35; margin-bottom: 12px; }
+    .biz-text { font-size: .85rem; line-height: 1.85; color: rgba(0,0,0,.55); }
+    @media(max-width: 768px) {
+      .biz-grid { display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 24px; }
+      .biz-grid::-webkit-scrollbar { display: none; }
+      .biz-card { flex: 0 0 280px; scroll-snap-align: start; }
+    }
+
+    /* ── voice ── */
+    #voice { background: #0a0a0a; padding: 80px 0 100px; }
+    #voice .sec-head { max-width: 1100px; margin: 0 auto; padding: 0 24px; margin-bottom: 48px; }
+    .voice-swiper { overflow: hidden; padding: 0 24px; max-width: 1148px; margin: 0 auto; }
+    .voice-slide { border-radius: 20px; overflow: hidden; position: relative; aspect-ratio: 3/4; }
+    @media(min-width: 768px) { .voice-slide { aspect-ratio: 4/5; } }
+    .voice-slide img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
+    .voice-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,.55) 0%, rgba(0,0,0,.1) 35%, rgba(0,0,0,.35) 55%, rgba(0,0,0,.88) 100%); }
+    .voice-quote { position: absolute; top: 20px; left: 20px; right: 20px; z-index: 2; }
+    .voice-quote p { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(0.95rem, 2.5vw, 1.25rem); line-height: 1.5; color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,.5); }
+    .voice-bottom { position: absolute; bottom: 28px; left: 28px; right: 28px; z-index: 2; }
+    .voice-role { font-size: .7rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--blue); margin-bottom: 6px; }
+    .voice-name { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.2rem; color: #fff; }
+    .voice-meta { font-size: .8rem; color: rgba(255,255,255,.5); margin-top: 4px; }
+    .voice-body { margin-top: 16px; font-size: .85rem; line-height: 1.8; color: rgba(255,255,255,.65); }
+    .swiper-button-next, .swiper-button-prev { color: var(--blue) !important; }
+    .swiper-pagination-bullet { background: rgba(255,255,255,.35) !important; }
+    .swiper-pagination-bullet-active { background: var(--blue) !important; }
+
+    /* ── schedule ── */
+    #schedule { background: var(--cream); padding: 80px 0 100px; overflow: hidden; }
+    #schedule .sec-head { max-width: 1100px; margin: 0 auto; padding: 0 24px; margin-bottom: 48px; }
+    .sch-track { display: flex; gap: 20px; padding: 0 24px; overflow-x: auto; cursor: grab; user-select: none; scrollbar-width: none; }
+    .sch-track::-webkit-scrollbar { display: none; }
+    .sch-track.grabbing { cursor: grabbing; }
+
+    /* ── Gallery Collage (HADOの日常) ── */
+    #gallery { padding: 0; background: #1a1a1a; overflow: hidden; }
+    .gal-text { padding: 48px 24px; text-align: center; background: #1a1a1a; }
+    .gal-text p { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; color: #fff; font-size: clamp(1.1rem, 3.5vw, 1.6rem); line-height: 1.8; letter-spacing: .04em; }
+    .gal-text .gal-highlight { font-size: clamp(1.5rem, 5vw, 2.4rem); background: linear-gradient(120deg, #3B82F6 0%, #60a5fa 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; margin-top: 8px; line-height: 1.4; }
+    .gal-mosaic { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; padding: 0; }
+    .gal-mosaic img { width: 100%; aspect-ratio: 1/1; object-fit: cover; display: block; }
+    .gal-mosaic .pc-only { display: none; }
+    @media(min-width: 768px) {
+      .gal-mosaic { grid-template-columns: repeat(5, 1fr); gap: 4px; }
+      .gal-mosaic .pc-only { display: block; }
+    }
+    .sch-card { flex: 0 0 260px; background: #fff; border-radius: 20px; overflow: hidden; }
+    @media(min-width: 768px) { .sch-card { flex: 0 0 300px; } }
+    .sch-photo { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .sch-body { padding: 20px; }
+    .sch-time { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--blue); line-height: 1; margin-bottom: 8px; }
+    .sch-title { font-weight: 800; font-size: 1rem; margin-bottom: 8px; }
+    .sch-desc { font-size: .8rem; line-height: 1.75; color: rgba(0,0,0,.5); }
+
+    /* ── benefits ── */
+    #benefits { background: linear-gradient(160deg, #0a0a1a 0%, #0d1b3e 30%, #0a0a1a 60%, #111827 100%); padding: 80px 24px 100px; position: relative; overflow: hidden; }
+    #benefits::before { content: ''; position: absolute; top: -50%; right: -30%; width: 80%; height: 200%; background: radial-gradient(ellipse, rgba(0,85,255,.12) 0%, transparent 60%); pointer-events: none; }
+    #benefits::after { content: ''; position: absolute; bottom: -40%; left: -20%; width: 60%; height: 150%; background: radial-gradient(ellipse, rgba(59,130,246,.08) 0%, transparent 60%); pointer-events: none; }
+    .ben-inner { max-width: 900px; margin: 0 auto; }
+    .ben-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media(max-width: 640px) { .ben-grid { grid-template-columns: 1fr; } }
+    .ben-card { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); border-radius: 20px; padding: 32px 24px; text-align: center; transition: background .3s, border-color .3s; backdrop-filter: blur(8px); }
+    .ben-card:hover { background: rgba(255,255,255,.1); border-color: rgba(0,85,255,.3); }
+    .ben-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 3.5rem; line-height: 1; margin-bottom: 16px; }
+    .ben-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.1rem; color: #fff; margin-bottom: 10px; }
+    .ben-desc { font-size: .82rem; line-height: 1.75; color: rgba(255,255,255,.45); }
+
+    /* ── job card ── */
+    #job { background: var(--cream); padding: 80px 24px 100px; }
+    .job-inner { max-width: 900px; margin: 0 auto; }
+    .job-card { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 40px rgba(0,0,0,.07); }
+    .job-photo { width: 100%; aspect-ratio: 16/9; object-fit: cover; object-position: center top; }
+    .job-body { padding: 40px 36px; }
+    .job-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+    .job-tag { background: rgba(0,85,255,.08); color: var(--blue); font-size: .78rem; font-weight: 700; padding: 5px 14px; border-radius: 100px; border: 1px solid rgba(0,85,255,.2); }
+    .job-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 4vw, 2rem); margin-bottom: 12px; }
+    .job-salary { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.4rem; color: var(--blue); margin-bottom: 20px; }
+    .job-desc { font-size: .9rem; line-height: 2; color: rgba(0,0,0,.6); margin-bottom: 32px; }
+    @media(max-width: 600px) { .job-body { padding: 28px 24px; } }
+
+    /* ── flow ── */
+    #flow { background: #fff; padding: 80px 24px 100px; }
+    .flow-inner { max-width: 900px; margin: 0 auto; }
+    .flow-steps { display: flex; flex-direction: column; gap: 0; }
+    @media(min-width: 640px) { .flow-steps { flex-direction: row; align-items: flex-start; } }
+    .flow-step { flex: 1; text-align: center; padding: 28px 16px; position: relative; }
+    .flow-step:not(:last-child)::after { content: ''; position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 24px; height: 24px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230055FF'%3E%3Cpath d='M12 16l-6-6h12z'/%3E%3C/svg%3E") center/contain no-repeat; }
+    @media(min-width: 640px) {
+      .flow-step:not(:last-child)::after { bottom: auto; top: 56px; left: auto; right: -12px; transform: rotate(-90deg); }
+    }
+    .flow-icon { width: 72px; height: 72px; border-radius: 20px; background: linear-gradient(135deg, rgba(0,85,255,.08), rgba(59,130,246,.15)); display: flex; align-items: center; justify-content: center; margin: 0 auto 14px; font-size: 2rem; }
+    .flow-step-num { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: .7rem; color: var(--blue); letter-spacing: .1em; margin-bottom: 6px; }
+    .flow-title { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: 1.05rem; margin-bottom: 8px; }
+    .flow-desc { font-size: .8rem; color: rgba(0,0,0,.45); line-height: 1.75; }
+
+    /* ── final cta ── */
+    #entry { position: relative; overflow: hidden; background: var(--dark); padding: 96px 24px 120px; text-align: center; }
+    #entry-bg { position: absolute; inset: 0; background-image: url('images/bbq-group.jpg'); background-size: cover; background-position: center; opacity: .2; }
+    #entry-content { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+    #entry h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(2rem, 6vw, 3.5rem); color: #fff; line-height: 1.2; margin-bottom: 20px; }
+    #entry p { font-size: clamp(.9rem, 2vw, 1.05rem); color: rgba(255,255,255,.5); line-height: 1.9; margin-bottom: 12px; }
+    .entry-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 24px 0 40px; }
+    .entry-chip { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); border-radius: 100px; padding: 8px 18px; font-size: .85rem; font-weight: 700; color: rgba(255,255,255,.8); }
+    #entry .note { font-size: .78rem; color: rgba(255,255,255,.2); margin-top: 16px; }
+
+    /* ── footer ── */
+    footer { background: #060606; color: rgba(255,255,255,.35); padding: 48px 24px 100px; text-align: center; font-size: .8rem; line-height: 2; }
+    @media(min-width: 768px) { footer { padding-bottom: 48px; } }
+    footer .f-logo { height: 22px; filter: invert(1) brightness(10); opacity: .25; margin: 0 auto 16px; }
+
+    /* ── sticky cta ── */
+    #sticky { position: fixed; bottom: 0; left: 0; right: 0; z-index: 99; background: rgba(255,255,255,.95); backdrop-filter: blur(12px); border-top: 1px solid rgba(0,0,0,.07); padding: 12px 16px; transform: translateY(100%); transition: transform .4s ease; }
+    #sticky.show { transform: none; }
+    @media(min-width: 768px) { #sticky { display: none; } }
+
+    /* ── section headers ── */
+    .sec-label { font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 12px; }
+    .sec-h2 { font-family: 'Zen Kaku Gothic New', sans-serif; font-weight: 900; font-size: clamp(1.4rem, 3.5vw, 2rem); line-height: 1.3; }
+    .sec-sub { margin-top: 12px; font-size: clamp(.9rem, 2vw, 1.05rem); line-height: 1.9; }
+  </style>
+</head>
+<body>
+
+<!-- LINE SVG template -->
+<template id="line-svg">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+</template>
+
+<!-- ── NAV ── -->
+<nav id="nav">
+  <a href="#"><img class="logo" src="images/hado-logo-cropped.png" alt="HADO"></a>
+  <div class="nav-links"></div>
+  <a href="#entry" class="btn-line">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    カジュアル面談を予約
+  </a>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-collage" aria-hidden="true">
+    <div class="ci ci-1"><img src="images/hero-real-1.png" alt=""></div>
+    <div class="ci ci-2"><img src="images/hero-real-2.png" alt=""></div>
+    <div class="ci ci-3"><img src="images/hero-real-3.png" alt=""></div>
+    <div class="ci ci-4"><img src="images/hero-real-4.png" alt=""></div>
+    <div class="ci ci-5"><img src="images/hero-real-5.png" alt=""></div>
+    <div class="ci ci-6"><img src="images/hero-real-6.png" alt=""></div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div id="hero-content">
+    <div class="hero-text">
+      <div class="hero-tags">
+        <span class="hero-tag">#内定直結型インターン</span>
+        <span class="hero-tag">#AI×SNSマーケティング</span>
+        <span class="hero-tag">#初任給40万円</span>
+      </div>
+      <h1 class="hero-h1">
+        AI×SNSマーケティングを学べる<br>
+        <span class="accent">実践型インターンシップ</span>
+      </h1>
+      <p class="hero-sub">時給1,250円 ／ 最新AIツールをフル課金で支給</p>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <svg width="22" height="30" viewBox="0 0 22 30" fill="none"><rect x="1" y="1" width="20" height="28" rx="10" stroke="currentColor" stroke-width="1.5"/><circle cx="11" cy="8" r="2.5" fill="currentColor"/></svg>
+  </div>
+</section>
+
+<!-- ── HERO BADGE ── -->
+<div id="hero-badge">
+  <p class="hero-badge-text">急成長中のAI×マーケティングカンパニー</p>
+  <img src="images/hado-logo-cropped.png" alt="HADO" class="hero-badge-logo">
+  <a href="#entry" class="btn-line lg">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    カジュアル面談を予約する
+  </a>
+</div>
+
+<!-- ── LOGO TICKER ── -->
+<section id="ticker">
+  <p class="label">支援企業の一例</p>
+  <div class="ticker-track">
+    <!-- set A -->
+    <div class="ticker-item"><img src="images/logos/persol.png" alt="PERSOL"></div>
+    <div class="ticker-item"><img src="images/logos/type.png" alt="type"></div>
+    <div class="ticker-item"><img src="images/logos/chocozap.svg" alt="chocoZAP"></div>
+    <div class="ticker-item"><img src="images/logos/clinique.svg" alt="CLINIQUE"></div>
+    <div class="ticker-item"><img src="images/logos/kao.png" alt="KAO"></div>
+    <div class="ticker-item"><img src="images/logos/tirtir.png" alt="TIRTIR"></div>
+    <div class="ticker-item"><img src="images/logos/kate.png" alt="KATE"></div>
+    <div class="ticker-item"><img src="images/logos/zozo.svg" alt="ZOZO"></div>
+    <!-- set B (duplicate) -->
+    <div class="ticker-item"><img src="images/logos/persol.png" alt="PERSOL"></div>
+    <div class="ticker-item"><img src="images/logos/type.png" alt="type"></div>
+    <div class="ticker-item"><img src="images/logos/chocozap.svg" alt="chocoZAP"></div>
+    <div class="ticker-item"><img src="images/logos/clinique.svg" alt="CLINIQUE"></div>
+    <div class="ticker-item"><img src="images/logos/kao.png" alt="KAO"></div>
+    <div class="ticker-item"><img src="images/logos/tirtir.png" alt="TIRTIR"></div>
+    <div class="ticker-item"><img src="images/logos/kate.png" alt="KATE"></div>
+    <div class="ticker-item"><img src="images/logos/zozo.svg" alt="ZOZO"></div>
+  </div>
+</section>
+
+<!-- ── STATS ── -->
+<section id="stats">
+  <div class="stats-head fade" style="max-width:1100px;margin:0 auto;padding:0 24px 16px;text-align:center;">
+    <p class="sec-label" style="color:var(--blue);">Data</p>
+    <h2 class="sec-h2" style="color:#fff;">数字で見るHADO</h2>
+  </div>
+  <div class="stats-inner">
+    <div class="stats-grid">
+      <div class="stat-card fade">
+        <img class="stat-photo" src="images/member-narita.jpg" alt="">
+        <p class="stat-num grad" data-countup data-target="1250">1,250<span class="stat-unit">円/h</span></p>
+        <p class="stat-label">インターン時給</p>
+      </div>
+      <div class="stat-card fade d1">
+        <img class="stat-photo" src="images/group-photo.png" alt="" style="object-position:top;">
+        <p class="stat-num grad" data-countup data-target="23">23<span class="stat-unit">歳</span></p>
+        <p class="stat-label">チームの平均年齢</p>
+      </div>
+      <div class="stat-card fade d2">
+        <img class="stat-photo" src="images/work-office.jpg" alt="">
+        <p class="stat-num grad" data-countup data-target="90">90<span class="stat-unit">%</span></p>
+        <p class="stat-label">未経験スタート率</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── BUSINESS CARDS ── -->
+<section id="about">
+  <div class="sec-head fade" style="max-width:1100px;margin:0 auto 40px;padding:0 24px;">
+    <p class="sec-label" style="color:var(--blue);">Business</p>
+    <h2 class="sec-h2">事業内容</h2>
+  </div>
+  <div class="biz-grid fade">
+    <div class="biz-card">
+      <div class="biz-photo"><img src="images/work-laptop.jpg" alt="SNS広告"></div>
+      <div class="biz-card-body">
+        <p class="biz-num grad">01</p>
+        <h3 class="biz-heading">SNS広告事業</h3>
+        <p class="biz-text">TikTok・Instagram・YouTubeなどの主要SNSにおいて、クリエイティブ制作から広告運用まで一気通貫で支援。バズを数字に変える、それが私たちの仕事。</p>
+      </div>
+    </div>
+    <div class="biz-card">
+      <div class="biz-photo"><img src="images/work-meeting.jpg" alt="キャリア支援"></div>
+      <div class="biz-card-body">
+        <p class="biz-num grad">02</p>
+        <h3 class="biz-heading">キャリア支援事業</h3>
+        <p class="biz-text">若い才能が正しく評価される社会をつくる。人材紹介を通じて企業と個人の最適な出会いを創出。「売り方」がわかる人材を社会に送り出す。</p>
+      </div>
+    </div>
+    <div class="biz-card">
+      <div class="biz-photo"><img src="images/team-meeting.jpg" alt="新規事業"></div>
+      <div class="biz-card-body">
+        <p class="biz-num grad">03</p>
+        <h3 class="biz-heading">新規事業開発</h3>
+        <p class="biz-text">D2Cブランド開発やメディア運営など多角的に事業を展開。「売る力で０→１を創出」。社員が新しい価値を生み出し、直接利益に繋げる環境がある。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── VOICE ── -->
+<section id="voice">
+  <div class="sec-head fade">
+    <p class="sec-label" style="color:var(--blue);">Voice</p>
+    <h2 class="sec-h2" style="color:#fff;">先輩社員の声</h2>
+    <p class="sec-sub" style="color:rgba(255,255,255,.4);">共に働くメンバーたちのリアルな言葉。</p>
+  </div>
+
+  <div class="swiper voice-swiper">
+    <div class="swiper-wrapper">
+      <!-- slide 1 -->
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <img src="images/member-male.png" alt="">
+          <div class="voice-overlay"></div>
+          <div class="voice-quote">
+            <p>「自分が回した<br>アカウントが<br>3ヶ月でフォロワー10倍。」</p>
+          </div>
+          <div class="voice-bottom">
+            <p class="voice-role">SNSマーケターインターン</p>
+            <p class="voice-name">Aさん（21歳）</p>
+            <p class="voice-meta">大学3年 / インターン1年目</p>
+            <p class="voice-body">最初は普通にバイト感覚でしたが、AIで投稿を量産する仕組みを覚えてからが転機。今では自分の手柄として数字を動かせるのが楽しい。</p>
+          </div>
+        </div>
+      </div>
+      <!-- slide 2 -->
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <img src="images/member-female-1.png" alt="">
+          <div class="voice-overlay"></div>
+          <div class="voice-quote">
+            <p>「KlingAIで動画を量産。<br>1日10本のリール制作も<br>余裕でこなせる。」</p>
+          </div>
+          <div class="voice-bottom">
+            <p class="voice-role">クリエイティブインターン</p>
+            <p class="voice-name">Bさん（20歳）</p>
+            <p class="voice-meta">大学2年 / インターン半年</p>
+            <p class="voice-body">前は素材作りに何時間もかかっていたのが、今は朝のリサーチから動画完成までAIと一緒に。就活の自己PRに困らない実績が積めます。</p>
+          </div>
+        </div>
+      </div>
+      <!-- slide 3 -->
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <img src="images/member-female-2.png" alt="">
+          <div class="voice-overlay"></div>
+          <div class="voice-quote">
+            <p>「インスタもTikTokも、<br>データを見て改善する側に<br>回れた。」</p>
+          </div>
+          <div class="voice-bottom">
+            <p class="voice-role">SNS運用インターン</p>
+            <p class="voice-name">Cさん（22歳）</p>
+            <p class="voice-meta">大学4年 / インターン1年半</p>
+            <p class="voice-body">普通に見ていたSNSが「データの塊」に見えるように。仮説と検証のサイクルが回せると、SNSの面白さが100倍になります。</p>
+          </div>
+        </div>
+      </div>
+      <!-- slide 4 -->
+      <div class="swiper-slide">
+        <div class="voice-slide">
+          <img src="images/member-okamoto.jpg" alt="" style="object-position:top;">
+          <div class="voice-overlay"></div>
+          <div class="voice-quote">
+            <p>「学生でこれだけの<br>SNS実績、ぶっちゃけ<br>周りより圧倒的に強い。」</p>
+          </div>
+          <div class="voice-bottom">
+            <p class="voice-role">SNSマーケターインターン</p>
+            <p class="voice-name">Dさん（22歳）</p>
+            <p class="voice-meta">大学3年 / インターン1年</p>
+            <p class="voice-body">同年代と話すと、自分が触れているAI×SNSの量と深さが全然違うのを実感。普通のバイトでは絶対に身につかない武器を持てています。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination" style="position:relative;margin-top:32px;"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</section>
+
+<!-- ── SCHEDULE ── -->
+<section id="schedule">
+  <div class="sec-head fade">
+    <p class="sec-label" style="color:var(--blue);">One Day Schedule</p>
+    <h2 class="sec-h2">SNSマーケターインターンの1日</h2>
+    <p class="sec-sub" style="color:rgba(0,0,0,.45);">← スクロールして確認</p>
+  </div>
+  <div class="sch-track" id="schTrack">
+    <div class="sch-card">
+      <img class="sch-photo" src="images/team-meeting.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">13:00</p>
+        <p class="sch-title">出社・チェックイン</p>
+        <p class="sch-desc">大学帰りに渋谷オフィスへ。担当アカウントの数値とタスクを確認。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/work-laptop.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">13:30</p>
+        <p class="sch-title">AIでトレンドリサーチ</p>
+        <p class="sch-desc">TikTok・Instagramの伸びている投稿をAIで分析。今日のネタを15分で決める。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/work-office.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">14:00</p>
+        <p class="sch-title">投稿・リール制作</p>
+        <p class="sch-desc">KlingAIで動画を量産、台本はClaudeで仕上げ。1日5〜10本ペース。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/fun-food.png" alt="">
+      <div class="sch-body">
+        <p class="sch-time">16:00</p>
+        <p class="sch-title">休憩・カフェタイム</p>
+        <p class="sch-desc">オフィス内のドリンクで一息。新しいSNSトレンドの話で盛り上がる。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/work-meeting.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">16:30</p>
+        <p class="sch-title">投稿の分析・改善</p>
+        <p class="sch-desc">昨日の投稿数値をChatGPTに投げて、改善仮説を一緒に考える。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/fun-smartphone.png" alt="">
+      <div class="sch-body">
+        <p class="sch-time">17:30</p>
+        <p class="sch-title">チームMTG</p>
+        <p class="sch-desc">先輩マーケターと数字を振り返り。次の打ち手をブレスト。</p>
+      </div>
+    </div>
+    <div class="sch-card">
+      <img class="sch-photo" src="images/bbq-cheers.jpg" alt="">
+      <div class="sch-body">
+        <p class="sch-time">19:00</p>
+        <p class="sch-title">退社</p>
+        <p class="sch-desc">学業との両立を最優先。たまにチームで飲みに行くことも。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GALLERY (HADOの日常) ── -->
+<section id="gallery">
+  <!-- テキスト -->
+  <div class="gal-text fade">
+    <p>普通のバイトでは絶対に<br>身につかない経験が、<br><span class="gal-highlight">学生のうちに手に入る場所。</span></p>
+  </div>
+  <!-- コラージュ写真 -->
+  <div class="gal-mosaic">
+    <img src="images/P1430721.JPG" alt="">
+    <img src="images/IMG_3570.JPG" alt="">
+    <img src="images/IMG_7911.JPG" alt="">
+    <img src="images/IMG_1665.jpg" alt="">
+    <img src="images/IMG_1780.jpg" alt="">
+    <img src="images/P1430806.JPG" alt="">
+    <img src="images/IMG_3588.jpeg" alt="">
+    <img src="images/IMG_1980.jpg" alt="">
+    <img src="images/Gemini_Generated_Image_pwswerpwswerpwsw.png" alt="">
+    <img src="images/715E99B5-6047-430F-B4B5-816C4EAF2031.jpeg" alt="" class="pc-only">
+  </div>
+</section>
+
+<!-- ── LINE BENEFITS ── -->
+<section id="benefits">
+  <div class="ben-inner">
+    <div style="text-align:center;margin-bottom:56px;" class="fade">
+      <p class="sec-label" style="color:var(--blue);display:block;margin-bottom:12px;">LINE Benefits</p>
+      <h2 class="sec-h2" style="color:#fff;">カジュアル面談を予約者<span class="grad">限定</span><br>3大特典</h2>
+    </div>
+    <div class="ben-grid">
+      <div class="ben-card fade">
+        <p class="ben-num grad">01</p>
+        <h3 class="ben-title">特別先行ルート</h3>
+        <p class="ben-desc">通常とは別枠の、カジュアル面談を予約者限定の特別選考ルートをご案内します。</p>
+      </div>
+      <div class="ben-card fade d1">
+        <p class="ben-num grad">02</p>
+        <h3 class="ben-title">プレミアムスカウト</h3>
+        <p class="ben-desc">書類選考・一次面接をスキップできる特別スカウトが届くことも！</p>
+      </div>
+      <div class="ben-card fade d2">
+        <p class="ben-num grad">03</p>
+        <h3 class="ben-title">非公開求人の案内</h3>
+        <p class="ben-desc">LINEでしか公開されない限定求人をいち早くチェックできます。</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:48px;" class="fade">
+      <a href="#entry" class="btn-line lg">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        カジュアル面談を予約する
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── JOB CARD ── -->
+<section id="job">
+  <div class="job-inner fade">
+    <div style="margin-bottom:40px;">
+      <p class="sec-label" style="color:var(--blue);">Job Opening</p>
+      <h2 class="sec-h2">募集求人</h2>
+    </div>
+    <div class="job-card">
+      <img class="job-photo" src="images/team-hado-sign.jpg" alt="HADOチーム">
+      <div class="job-body">
+        <div class="job-tags">
+          <span class="job-tag">学生インターン</span>
+          <span class="job-tag">未経験OK</span>
+          <span class="job-tag">週2日〜OK</span>
+          <span class="job-tag">最新AIフル装備</span>
+          <span class="job-tag">渋谷オフィス</span>
+          <span class="job-tag">内定直結型</span>
+        </div>
+        <h3 class="job-title">SNSマーケター（インターン）</h3>
+        <p class="job-salary">時給 1,250円＋交通費全額支給</p>
+        <p class="job-desc">TikTok・Instagram・YouTubeのコンテンツ制作からデータ分析・改善まで担当。最新AIツール（ChatGPT / Claude / KlingAI 等）をフル課金で使い、AI×SNSの最前線スキルを実戦で習得できます。<br><br>研修期間（3ヶ月）はマンツーマンでサポート。優秀者はそのまま新卒採用（初任給40万円）への内定直結ルートへ。<br><br>SNSが好き、AIに興味がある。学生のうちに本気で挑戦したい人を募集中です。</p>
+        <a href="#entry" class="btn-line lg" style="width:100%;justify-content:center;">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+          カジュアル面談を予約する
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ENTRY FLOW ── -->
+<section id="flow">
+  <div class="flow-inner">
+    <div style="text-align:center;margin-bottom:56px;" class="fade">
+      <p class="sec-label" style="color:var(--blue);display:block;margin-bottom:12px;">Entry Flow</p>
+      <h2 class="sec-h2">選考までの流れ</h2>
+      <p class="sec-sub" style="color:rgba(0,0,0,.45);">応募はLINEから3ステップ</p>
+    </div>
+    <div class="flow-steps">
+      <div class="flow-step fade">
+        <div class="flow-icon">📱</div>
+        <p class="flow-step-num">STEP 01</p>
+        <p class="flow-title">カジュアル面談を予約</p>
+        <p class="flow-desc">ボタンからHADO採用LINEを友だち追加するだけ</p>
+      </div>
+      <div class="flow-step fade d1">
+        <div class="flow-icon">💬</div>
+        <p class="flow-step-num">STEP 02</p>
+        <p class="flow-title">カジュアル面談</p>
+        <p class="flow-desc">30分のオンライン面談。選考ではありません。質問だけでもOK</p>
+      </div>
+      <div class="flow-step fade d2">
+        <div class="flow-icon">🎉</div>
+        <p class="flow-step-num">STEP 03</p>
+        <p class="flow-title">選考・内定</p>
+        <p class="flow-desc">入社意欲のある方から選考へ。最短1週間で内定も</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:56px;" class="fade">
+      <p style="font-size:.85rem;color:rgba(0,0,0,.4);margin-bottom:16px;">質問だけでも大歓迎です。まずは話を聞いてみませんか？</p>
+      <a href="#entry" class="btn-line lg">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+        カジュアル面談を予約する
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ── -->
+<section id="entry">
+  <div id="entry-bg"></div>
+  <div id="entry-content" class="fade">
+    <p class="sec-label" style="color:var(--blue);display:block;text-align:center;margin-bottom:16px;">Join Us</p>
+    <h2>毎日、<span class="grad">文化祭</span>のように<br>働こう。</h2>
+    <p>AI×SNSマーケティングを実戦で学べる、<br>内定直結型の学生インターン。</p>
+    <div class="entry-chips">
+      <span class="entry-chip">学生インターン</span>
+      <span class="entry-chip">時給1,250円</span>
+      <span class="entry-chip">週2日〜OK</span>
+      <span class="entry-chip">内定直結</span>
+    </div>
+    <a href="#" class="btn-line xl">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      カジュアル面談を予約する
+    </a>
+    <p class="note">カジュアル面談OK ／ 服装自由 ／ オンライン対応可</p>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <img class="f-logo" src="images/hado-logo-cropped.png" alt="HADO">
+  <p>株式会社HADO（ハドウ）</p>
+  <p>東京都渋谷区桜丘町21-4 渋谷桜丘町ビル3F</p>
+  <p style="margin-top:16px;">&copy; 2025 HADO Inc. All rights reserved.</p>
+</footer>
+
+<!-- ── STICKY CTA ── -->
+<div id="sticky">
+  <a href="#entry" class="btn-line" style="width:100%;justify-content:center;padding:14px;">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+    カジュアル面談を予約する
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  // Swiper
+  new Swiper('.voice-swiper', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 16,
+    autoplay: { delay: 5000, disableOnInteraction: false },
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    breakpoints: {
+      640: { slidesPerView: 1.5, spaceBetween: 20 },
+      900: { slidesPerView: 2.2, spaceBetween: 24 },
+      1200: { slidesPerView: 3, spaceBetween: 24 },
+    }
+  });
+
+  // NAV switch
+  const nav = document.getElementById('nav');
+  const hero = document.getElementById('hero');
+  new IntersectionObserver(([e]) => nav.classList.toggle('light', !e.isIntersecting), { threshold: 0.1 }).observe(hero);
+
+  // Scroll fade
+  const fadeObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
+  document.querySelectorAll('.fade').forEach(el => fadeObs.observe(el));
+
+  // Hero stagger
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.h-el').forEach((el, i) => {
+      setTimeout(() => el.classList.add('in'), 120 + i * 170);
+    });
+  });
+
+  // Countup
+  const cuObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const target = parseInt(el.dataset.target);
+      const unit = el.querySelector('span');
+      const unitText = unit ? unit.outerHTML : '';
+      let start = null;
+      const run = ts => {
+        if (!start) start = ts;
+        const p = Math.min((ts - start) / 1800, 1);
+        const v = Math.round((1 - Math.pow(1 - p, 3)) * target);
+        el.innerHTML = v + unitText;
+        if (p < 1) requestAnimationFrame(run);
+      };
+      requestAnimationFrame(run);
+      cuObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-countup]').forEach(el => cuObs.observe(el));
+
+  // Parallax hero
+  const heroImg = document.getElementById('hero-img');
+  let raf = false;
+  window.addEventListener('scroll', () => {
+    if (!raf) {
+      requestAnimationFrame(() => {
+        const y = window.scrollY;
+        if (y < window.innerHeight * 1.5) heroImg.style.transform = `scale(1.08) translateY(${y * 0.2}px)`;
+        raf = false;
+      });
+      raf = true;
+    }
+  });
+
+  // Sticky CTA
+  const sticky = document.getElementById('sticky');
+  const entry = document.getElementById('entry');
+  const sObs = new IntersectionObserver((entries) => {
+    const inHero = entries.find(e => e.target === hero)?.isIntersecting;
+    const inEntry = entries.find(e => e.target === entry)?.isIntersecting;
+    sticky.classList.toggle('show', !inHero && !inEntry);
+  }, { threshold: 0.1 });
+  sObs.observe(hero);
+  sObs.observe(entry);
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+
+  // Schedule drag scroll
+  const track = document.getElementById('schTrack');
+  let isDown = false, startX, scrollLeft;
+  track.addEventListener('mousedown', e => { isDown = true; track.classList.add('grabbing'); startX = e.pageX - track.offsetLeft; scrollLeft = track.scrollLeft; });
+  track.addEventListener('mouseleave', () => { isDown = false; track.classList.remove('grabbing'); });
+  track.addEventListener('mouseup', () => { isDown = false; track.classList.remove('grabbing'); });
+  track.addEventListener('mousemove', e => { if (!isDown) return; e.preventDefault(); const x = e.pageX - track.offsetLeft; track.scrollLeft = scrollLeft - (x - startX) * 1.5; });
+</script>
+</body>
+</html>

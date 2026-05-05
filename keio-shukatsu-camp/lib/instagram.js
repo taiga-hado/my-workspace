@@ -99,3 +99,43 @@ export async function postCarousel({ imageUrls, caption }) {
   await new Promise((r) => setTimeout(r, 5000));
   return publishMediaContainer({ creationId: parent.id, igUserId: me.id });
 }
+
+export async function postReel({ videoUrl, caption }) {
+  const me = await getMe();
+  const token = process.env.INSTAGRAM_ACCESS_TOKEN;
+  const params = new URLSearchParams({
+    media_type: 'REELS',
+    video_url: videoUrl,
+    caption,
+    access_token: token,
+  });
+  const containerRes = await fetch(`${BASE}/${me.id}/media?${params}`, { method: 'POST' });
+  const container = await containerRes.json();
+  if (!container.id) throw new Error(`Reels container failed: ${JSON.stringify(container)}`);
+  for (let i = 0; i < 30; i++) {
+    await new Promise((r) => setTimeout(r, 5000));
+    const statusRes = await fetch(
+      `${BASE}/${container.id}?fields=status_code&access_token=${token}`
+    );
+    const status = await statusRes.json();
+    if (status.status_code === 'FINISHED') break;
+    if (status.status_code === 'ERROR') throw new Error('Reels processing error');
+    if (i === 29) throw new Error('Reels processing timeout (150s)');
+  }
+  return publishMediaContainer({ creationId: container.id, igUserId: me.id });
+}
+
+export async function postStory({ imageUrl }) {
+  const me = await getMe();
+  const token = process.env.INSTAGRAM_ACCESS_TOKEN;
+  const params = new URLSearchParams({
+    media_type: 'STORIES',
+    image_url: imageUrl,
+    access_token: token,
+  });
+  const res = await fetch(`${BASE}/${me.id}/media?${params}`, { method: 'POST' });
+  const container = await res.json();
+  if (!container.id) throw new Error(`Story container failed: ${JSON.stringify(container)}`);
+  await new Promise((r) => setTimeout(r, 3000));
+  return publishMediaContainer({ creationId: container.id, igUserId: me.id });
+}

@@ -5,8 +5,9 @@ import { generateCarouselContent } from '../lib/content-generator.js';
 import { buildCoverPrompt, buildSlidePrompt } from '../lib/image-prompt-builder.js';
 import { generateImage } from '../lib/openai.js';
 import { getThemeForToday, pickRandomExample } from '../lib/themes.js';
-import { postCarousel } from '../lib/instagram.js';
+import { postCarousel, postReel, postStory } from '../lib/instagram.js';
 import { uploadToTempHost } from '../lib/upload.js';
+import { makeSlideshowReel } from '../lib/ffmpeg.js';
 
 const startTime = Date.now();
 const log = (msg) => console.log(`[${new Date().toISOString()}] ${msg}`);
@@ -62,11 +63,34 @@ try {
   log('Step 3/4: Uploading images to temp host...');
   const imageUrls = await Promise.all(paths.map((p) => uploadToTempHost(p)));
 
-  log('Step 4/4: Publishing carousel to Instagram...');
-  const result = await postCarousel({ imageUrls, caption: content.caption });
-  log(`✅ Published! Media ID: ${result.id}`);
-  log(`URL: https://www.instagram.com/keioshukatsucamp/`);
+  log('Step 4/6: Publishing carousel to Instagram...');
+  const carouselResult = await postCarousel({ imageUrls, caption: content.caption });
+  log(`✅ Carousel published! Media ID: ${carouselResult.id}`);
 
+  log('Step 5/6: Generating and publishing Reel from same images...');
+  try {
+    const reelPath = join(outDir, 'reel.mp4');
+    await makeSlideshowReel({
+      images: paths,
+      durations: paths.map(() => 3),
+      outputPath: reelPath,
+    });
+    const reelUrl = await uploadToTempHost(reelPath);
+    const reelResult = await postReel({ videoUrl: reelUrl, caption: content.caption });
+    log(`✅ Reel published! Media ID: ${reelResult.id}`);
+  } catch (err) {
+    log(`⚠️  Reel skipped: ${err.message}`);
+  }
+
+  log('Step 6/6: Publishing Story (cover image)...');
+  try {
+    const storyResult = await postStory({ imageUrl: imageUrls[0] });
+    log(`✅ Story published! Media ID: ${storyResult.id}`);
+  } catch (err) {
+    log(`⚠️  Story skipped: ${err.message}`);
+  }
+
+  log(`URL: https://www.instagram.com/keioshukatsucamp/`);
   const elapsed = Math.round((Date.now() - startTime) / 1000);
   log(`===== Done in ${elapsed}s =====`);
 } catch (err) {

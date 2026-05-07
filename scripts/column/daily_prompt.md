@@ -103,9 +103,9 @@ python3 "/Users/taiga/Desktop/Documents-My Vault/.claude/worktrees/amazing-clark
 
 このスクリプトが画像生成（gpt-image-2）、HTML書き出し、`column/index.html` の更新、`sitemap.xml` への追加、`_metadata.json` の更新を実行します。
 
-### 5. queue.jsonから先頭1件を削除
+### 5. queue.jsonの自動更新を確認
 
-`/Users/taiga/Desktop/Documents-My Vault/.claude/worktrees/amazing-clarke-640732/scripts/column/queue.json` から、先頭1件を削除して保存し直してください。
+`build_article.py` は `process_articles` 内で `auto_pop_queue` を呼び、処理済みのslugを自動的に `queue.json` から削除します。同時に `column/_kw_index.json`（社内ダッシュボード用）も自動更新されます。手動でpopする必要はありません。スクリプト出力に `[queue OK] removed 1 item(s)` が表示されていることを確認してください。
 
 ### 6. デプロイ
 

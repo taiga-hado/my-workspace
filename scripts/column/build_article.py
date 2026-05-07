@@ -394,7 +394,33 @@ def process_articles(articles: list, published: str = None):
     all_meta = list(by_slug.values())
     save_metadata(all_meta)
     update_listing(articles, all_articles_meta=all_meta)
+    auto_pop_queue([a["slug"] for a in articles])
+    refresh_kw_index()
     print("\n=== Done ===")
+
+
+def auto_pop_queue(processed_slugs: list):
+    """Remove processed slugs from queue.json so the next run picks the next item."""
+    queue_path = Path(__file__).parent / "queue.json"
+    if not queue_path.exists():
+        return
+    queue = json.loads(queue_path.read_text(encoding="utf-8"))
+    if not queue:
+        return
+    before = len(queue)
+    queue = [item for item in queue if item.get("slug") not in processed_slugs]
+    if len(queue) != before:
+        queue_path.write_text(json.dumps(queue, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"  [queue OK] removed {before - len(queue)} item(s); {len(queue)} remaining")
+
+
+def refresh_kw_index():
+    """Regenerate _kw_index.json (used by /column-dashboard/)."""
+    try:
+        from build_kw_index import build_kw_index
+        build_kw_index()
+    except Exception as e:
+        print(f"  [WARN] failed to refresh _kw_index.json: {e}")
 
 
 def process_queue():

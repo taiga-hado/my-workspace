@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /dashboard/
+Disallow: /column-dashboard/
 
 Sitemap: https://kyusyokusyasokyaku-no-madoguchi.com/sitemap.xml

@@ -13,6 +13,7 @@ ARTICLE_SLUG="${1:-new-article}"
 
 # Stage column-related files
 git add soukyaku-madoguchi/column \
+        soukyaku-madoguchi/column-dashboard \
         soukyaku-madoguchi/sitemap.xml \
         soukyaku-madoguchi/images/column \
         scripts/column/queue.json 2>/dev/null || true

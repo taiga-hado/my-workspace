@@ -1,20 +1,5 @@
 [
   {
-    "slug": "recruitment-cpa-calculation",
-    "title": "人材紹介のCPA計算方法と業界平均｜応募・面談・決定の3階層で正しく評価する",
-    "description": "人材紹介業のCPAを正しく計算・評価するための3階層フレームワーク（応募CPA・面談着座CPA・決定CPA）と業界平均値を解説。応募CPAだけ追ってROAS悪化を見逃す典型パターンとその防ぎ方。",
-    "keywords": "人材紹介 CPA 計算,人材紹介 CPA 平均,応募CPA,面談CPA,決定CPA,人材紹介 業界平均",
-    "category": "用語解説",
-    "image_prompt": "Editorial illustration about calculating CPA in recruitment. Flat design showing three stacked horizontal layers in deep navy blue, with the topmost layer in gold (#f5b400) representing the most important metric. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
-    "key_points": [
-      "応募CPAだけを追う運用の落とし穴",
-      "3階層CPAの計算式と相互関係",
-      "業界平均値（若手未経験/第二新卒/専門職別）",
-      "決定CPA起点のチャネル評価",
-      "CPA計算でよくあるミス"
-    ]
-  },
-  {
     "slug": "recruitment-funnel-design",
     "title": "人材紹介のファネル設計｜応募→面談→決定の最適化フレームワーク",
     "description": "応募→面談→決定までの歩留まりを構造化するファネル設計の考え方を、各段階の業界平均・ボトルネック診断・改善施策とセットで解説。事業フェーズ別の優先順位付けまで実務ガイド。",

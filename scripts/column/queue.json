@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-funnel-design",
-    "title": "人材紹介のファネル設計｜応募→面談→決定の最適化フレームワーク",
-    "description": "応募→面談→決定までの歩留まりを構造化するファネル設計の考え方を、各段階の業界平均・ボトルネック診断・改善施策とセットで解説。事業フェーズ別の優先順位付けまで実務ガイド。",
-    "keywords": "人材紹介 ファネル,人材紹介 歩留まり,応募 面談 決定,人材紹介 KPI設計,人材紹介 ファネル分析",
-    "category": "課題解決",
-    "image_prompt": "Editorial illustration of a recruitment funnel diagram. Flat design with stylized inverted triangle in deep navy blue with gold (#f5b400) accent at the bottom. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
-    "key_points": [
-      "ファネルの基本構造と各段階の業界平均値",
-      "ボトルネック診断の方法",
-      "段階別の改善優先順位",
-      "事業フェーズによる最適化の違い"
-    ]
-  },
-  {
     "slug": "shinsotsu-recruitment-trends",
     "title": "新卒紹介事業の最新トレンド2026｜Z世代の就活行動とエージェント戦略",
     "description": "Z世代の就活行動の変化、就活サイト離れ、SNSでの企業選定など、新卒紹介事業を取り巻く最新トレンドを総合的に解説。エージェント側の戦略再設計のためのインサイト。",

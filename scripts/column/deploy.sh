@@ -11,12 +11,14 @@ cd "$WORKTREE_ROOT"
 
 ARTICLE_SLUG="${1:-new-article}"
 
-# Stage column-related files
+# Stage column-related files (including ready/published transitions)
 git add soukyaku-madoguchi/column \
         soukyaku-madoguchi/column-dashboard \
         soukyaku-madoguchi/sitemap.xml \
         soukyaku-madoguchi/images/column \
-        scripts/column/queue.json 2>/dev/null || true
+        scripts/column/queue.json \
+        scripts/column/ready \
+        scripts/column/published 2>/dev/null || true
 
 # Skip commit if nothing staged
 if git diff --cached --quiet; then

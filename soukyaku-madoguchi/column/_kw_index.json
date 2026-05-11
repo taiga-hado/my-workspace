@@ -277,53 +277,43 @@
   {
     "slug": "recruitment-agent-business-model",
     "title": "人材紹介事業のビジネスモデル｜売上構造とKPI設計の基本",
-    "description": "人材紹介事業の収益構造、平均単価、コスト構造、主要KPIを体系的に整理。事業計画の精度を上げるための前提知識として、新規参入者・経営者向けに解説。",
+    "description": "人材紹介事業の収益構造・平均単価・主要コスト・経営KPIを体系的に整理。新規参入を検討する経営者や、自社の事業計画の精度を上げたいマーケ責任者向けに、業界の標準的な経済性を実数値レンジ付きで解説します。",
     "category": "用語解説",
     "keywords": [
       "人材紹介 ビジネスモデル",
       "人材紹介 売上",
       "人材紹介 単価",
       "人材紹介 KPI",
-      "人材紹介 収益構造"
+      "人材紹介 収益構造",
+      "人材紹介 コスト構造"
     ],
     "primary_keyword": "人材紹介 ビジネスモデル",
-    "key_points": [
-      "人材紹介の収益構造",
-      "平均決定単価とその決まり方",
-      "主要なコスト項目",
-      "経営KPIと運用KPIの分離"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-05-12",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agent-business-model/"
   },
   {
     "slug": "recruitment-instagram-marketing",
     "title": "人材紹介のInstagram集客｜リール・フィード・ストーリーズの使い分け",
-    "description": "Instagramを使った求職者集客の実践ガイド。リール動画・フィード投稿・ストーリーズの役割の違いと、それぞれの運用設計を人材紹介業向けに解説。",
+    "description": "Instagramを使った人材紹介業の求職者集客を、リール動画・フィード投稿・ストーリーズの3機能ごとの役割と運用設計の観点で実務レベルで解説。20〜30代女性をはじめとした優良母集団形成のためのチャネル戦略ガイド。",
     "category": "ハウツー",
     "keywords": [
       "人材紹介 Instagram",
       "Instagram 採用",
       "Instagram リール 採用",
-      "人材紹介 SNS"
+      "人材紹介 SNS",
+      "インスタ 採用",
+      "Instagram運用"
     ],
     "primary_keyword": "人材紹介 Instagram",
-    "key_points": [
-      "Instagramの3機能の役割分担",
-      "リール運用のベストプラクティス",
-      "フィード投稿の世界観設計",
-      "ストーリーズでの信頼形成",
-      "プロフィール最適化"
-    ],
-    "status": "queued",
-    "queue_position": 2,
+    "status": "ready",
+    "scheduled": "2026-05-13",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-instagram-marketing/"
   },
   {
     "slug": "recruitment-lp-cvr-optimization",
     "title": "人材紹介LPのCVR改善｜ファーストビュー・訴求設計・離脱対策",
-    "description": "人材紹介業のランディングページのCVR（応募率）を改善する実務ガイド。ファーストビュー・訴求設計・フォーム最適化・離脱対策まで、CVR2倍を目指す施策集。",
+    "description": "人材紹介業のランディングページ（LP）のCVR（応募率）を改善する実務ガイド。ファーストビューの設計原則、訴求の優先順位、フォーム最適化、離脱ポイントの特定と対策まで、CVRを1.5〜2倍に引き上げるための施策を体系的に解説します。",
     "category": "ハウツー",
     "keywords": [
       "人材紹介 LP",
@@ -331,62 +321,48 @@
       "LP改善",
       "LPO",
       "応募率改善",
-      "人材紹介 ランディングページ"
+      "人材紹介 ランディングページ",
+      "LP CVR"
     ],
     "primary_keyword": "人材紹介 LP",
-    "key_points": [
-      "CVRを左右する5要素",
-      "ファーストビューの設計原則",
-      "訴求の優先順位付け",
-      "フォーム最適化",
-      "離脱ポイントの特定と対策"
-    ],
-    "status": "queued",
-    "queue_position": 3,
+    "status": "ready",
+    "scheduled": "2026-05-14",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-lp-cvr-optimization/"
   },
   {
     "slug": "recruitment-engineer-acquisition",
     "title": "未経験エンジニア向け人材紹介の集客戦略｜需給ギャップを攻める",
-    "description": "未経験エンジニア領域の求職者集客戦略を、市場特性・主要チャネル・訴求設計の観点で解説。ITスクール提携、SNS、メディア掲載までの全体像。",
+    "description": "未経験エンジニア領域の求職者集客戦略を、市場特性・主要チャネル・ITスクールとの提携設計・訴求設計・歩留まり改善の観点から体系的に整理。エンジニア専業エージェントの立ち上げや、未経験エンジニア領域への参入を検討する事業者向けの実務ガイドです。",
     "category": "セグメント別",
     "keywords": [
       "未経験エンジニア 集客",
       "未経験エンジニア 転職",
       "IT未経験 集客",
-      "エンジニア 人材紹介"
+      "エンジニア 人材紹介",
+      "プログラミングスクール 提携",
+      "未経験エンジニア エージェント"
     ],
     "primary_keyword": "未経験エンジニア 集客",
-    "key_points": [
-      "未経験エンジニア市場の現状",
-      "主要集客チャネル",
-      "ITスクールとの提携",
-      "訴求設計と歩留まり改善"
-    ],
-    "status": "queued",
-    "queue_position": 4,
+    "status": "ready",
+    "scheduled": "2026-05-15",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-engineer-acquisition/"
   },
   {
     "slug": "recruitment-cs-acquisition",
     "title": "カスタマーサクセス職向けの求職者集客戦略",
-    "description": "カスタマーサクセス（CS）職の求職者集客の実務ガイド。市場成長性、求職者属性、訴求設計、主要チャネルを人材紹介業向けに解説。",
+    "description": "成長領域として注目されるカスタマーサクセス（CS）職の人材紹介における求職者集客戦略を、市場の成長性・求職者属性・営業職経験者からの転換訴求・主要チャネル・相場の観点から体系的に解説。CS特化型エージェントの差別化設計のための実務ガイド。",
     "category": "セグメント別",
     "keywords": [
       "カスタマーサクセス 集客",
       "CS 転職",
       "カスタマーサクセス 人材紹介",
-      "CS求人"
+      "CS求人",
+      "SaaS CS 採用",
+      "カスタマーサクセス エージェント"
     ],
     "primary_keyword": "カスタマーサクセス 集客",
-    "key_points": [
-      "CS職市場の成長と求職者属性",
-      "業界・スキル別の訴求設計",
-      "営業職経験者からの転換訴求",
-      "主要チャネルと相場"
-    ],
-    "status": "queued",
-    "queue_position": 5,
+    "status": "ready",
+    "scheduled": "2026-05-16",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cs-acquisition/"
   },
   {
@@ -408,7 +384,7 @@
       "高単価決定を狙うチャネル"
     ],
     "status": "queued",
-    "queue_position": 6,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-saas-sales-acquisition/"
   },
   {
@@ -430,7 +406,7 @@
       "ホワイト訴求の差別化"
     ],
     "status": "queued",
-    "queue_position": 7,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-housing-allowance-appeal/"
   },
   {
@@ -451,7 +427,7 @@
       "主要チャネルとLP設計"
     ],
     "status": "queued",
-    "queue_position": 8,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-female-acquisition/"
   },
   {
@@ -473,7 +449,7 @@
       "歩留まり管理のポイント"
     ],
     "status": "queued",
-    "queue_position": 9,
+    "queue_position": 4,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-uta-acquisition/"
   },
   {
@@ -494,7 +470,7 @@
       "主要チャネルと相場"
     ],
     "status": "queued",
-    "queue_position": 10,
+    "queue_position": 5,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-30s-acquisition/"
   },
   {
@@ -516,7 +492,7 @@
       "地域特化の訴求設計"
     ],
     "status": "queued",
-    "queue_position": 11,
+    "queue_position": 6,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-aichi-acquisition/"
   },
   {
@@ -538,7 +514,7 @@
       "地域特化の訴求設計"
     ],
     "status": "queued",
-    "queue_position": 12,
+    "queue_position": 7,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-osaka-acquisition/"
   },
   {
@@ -560,7 +536,7 @@
       "地域特化訴求"
     ],
     "status": "queued",
-    "queue_position": 13,
+    "queue_position": 8,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-fukuoka-acquisition/"
   },
   {
@@ -583,7 +559,7 @@
       "計測精度の検証方法"
     ],
     "status": "queued",
-    "queue_position": 14,
+    "queue_position": 9,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-conversion-tracking/"
   },
   {
@@ -605,7 +581,7 @@
       "ABテストの設計"
     ],
     "status": "queued",
-    "queue_position": 15,
+    "queue_position": 10,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ad-creative/"
   },
   {
@@ -627,7 +603,7 @@
       "リッチメニュー・タグ管理"
     ],
     "status": "queued",
-    "queue_position": 16,
+    "queue_position": 11,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-line-marketing/"
   },
   {
@@ -649,7 +625,7 @@
       "期待値調整のテクニック"
     ],
     "status": "queued",
-    "queue_position": 17,
+    "queue_position": 12,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-pre-counseling/"
   },
   {
@@ -671,7 +647,7 @@
       "KPI設計"
     ],
     "status": "queued",
-    "queue_position": 18,
+    "queue_position": 13,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ca-productivity/"
   },
   {
@@ -693,7 +669,7 @@
       "運用立ち上げの注意点"
     ],
     "status": "queued",
-    "queue_position": 19,
+    "queue_position": 14,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ats-comparison/"
   },
   {
@@ -715,7 +691,7 @@
       "事業計画の精度を上げる方法"
     ],
     "status": "queued",
-    "queue_position": 20,
+    "queue_position": 15,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-monthly-volume-planning/"
   },
   {
@@ -737,7 +713,7 @@
       "ポリシー設計と求職者教育"
     ],
     "status": "queued",
-    "queue_position": 21,
+    "queue_position": 16,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cancellation-rate/"
   },
   {
@@ -759,7 +735,7 @@
       "ハイクラス向け訴求設計"
     ],
     "status": "queued",
-    "queue_position": 22,
+    "queue_position": 17,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-jma-acquisition/"
   },
   {
@@ -781,7 +757,7 @@
       "主要チャネルと相場"
     ],
     "status": "queued",
-    "queue_position": 23,
+    "queue_position": 18,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-international-acquisition/"
   },
   {
@@ -803,7 +779,7 @@
       "交渉実務"
     ],
     "status": "queued",
-    "queue_position": 24,
+    "queue_position": 19,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-shoukai-fee/"
   },
   {
@@ -825,7 +801,7 @@
       "コンプライアンス実務"
     ],
     "status": "queued",
-    "queue_position": 25,
+    "queue_position": 20,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-licensing/"
   }
 ]

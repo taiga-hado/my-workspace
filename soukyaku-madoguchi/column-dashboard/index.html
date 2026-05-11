@@ -113,6 +113,7 @@
       white-space: nowrap;
     }
     .kw-pill.published { background: #d1fae5; color: #065f46; }
+    .kw-pill.ready { background: #dbeafe; color: #1e40af; }
     .kw-pill.queued { background: #fef3c7; color: #92400e; }
     .kw-pill.cat { background: var(--brand-blue-soft); color: var(--brand-blue); }
 
@@ -224,13 +225,13 @@
         <div class="kw-stat-label">公開済み</div>
         <div class="kw-stat-value" id="stat-published">—<span class="unit">本</span></div>
       </div>
-      <div class="kw-stat gold">
-        <div class="kw-stat-label">キュー（投稿予定）</div>
-        <div class="kw-stat-value" id="stat-queued">—<span class="unit">本</span></div>
-      </div>
       <div class="kw-stat">
-        <div class="kw-stat-label">カテゴリ数</div>
-        <div class="kw-stat-value" id="stat-categories">—</div>
+        <div class="kw-stat-label">予約済み（事前執筆）</div>
+        <div class="kw-stat-value" id="stat-ready">—<span class="unit">本</span></div>
+      </div>
+      <div class="kw-stat gold">
+        <div class="kw-stat-label">キュー（未着手）</div>
+        <div class="kw-stat-value" id="stat-queued">—<span class="unit">本</span></div>
       </div>
     </div>
 
@@ -239,6 +240,7 @@
       <select id="filter-status">
         <option value="">すべてのステータス</option>
         <option value="published">公開済みのみ</option>
+        <option value="ready">予約済みのみ</option>
         <option value="queued">キューのみ</option>
       </select>
       <select id="filter-category">
@@ -294,12 +296,12 @@
 
     function buildStats() {
       const published = articles.filter(a => a.status === 'published').length;
+      const ready = articles.filter(a => a.status === 'ready').length;
       const queued = articles.filter(a => a.status === 'queued').length;
-      const cats = new Set(articles.map(a => a.category).filter(Boolean));
       document.getElementById('stat-total').textContent = articles.length;
       document.getElementById('stat-published').innerHTML = published + '<span class="unit">本</span>';
+      document.getElementById('stat-ready').innerHTML = ready + '<span class="unit">本</span>';
       document.getElementById('stat-queued').innerHTML = queued + '<span class="unit">本</span>';
-      document.getElementById('stat-categories').textContent = cats.size;
     }
 
     function buildCategoryFilter() {
@@ -344,8 +346,13 @@
         return;
       }
       tbody.innerHTML = filtered.map(a => {
-        const statusPill = `<span class="kw-pill ${a.status}">${a.status === 'published' ? '公開済み' : 'キュー#' + a.queue_position}</span>`;
-        const dateOrPos = a.status === 'published' ? `<span class="col-date">${(a.published || '').replace(/-/g, '.')}</span>` : `<span class="col-date">—</span>`;
+        const statusLabel = a.status === 'published' ? '公開済み'
+          : a.status === 'ready' ? `予約 ${a.scheduled || ''}`
+          : 'キュー#' + a.queue_position;
+        const statusPill = `<span class="kw-pill ${a.status}">${statusLabel}</span>`;
+        const dateOrPos = a.status === 'published' ? `<span class="col-date">${(a.published || '').replace(/-/g, '.')}</span>`
+          : a.status === 'ready' ? `<span class="col-date">${(a.scheduled || '').replace(/-/g, '.')}</span>`
+          : `<span class="col-date">—</span>`;
         const categoryPill = a.category ? `<span class="kw-pill cat">${escape(a.category)}</span>` : '';
         const titleHtml = a.status === 'published'
           ? `<a href="${a.url}" target="_blank" rel="noopener">${escape(a.title)}</a>`
@@ -353,7 +360,9 @@
         const tags = (a.keywords || []).slice(1).map(k => `<span class="kw-tag">${escape(k)}</span>`).join('');
         const actionsHtml = a.status === 'published'
           ? `<a href="${a.url}" target="_blank" rel="noopener">記事を開く</a>`
-          : `<a class="disabled" style="opacity:0.5">未公開</a>`;
+          : a.status === 'ready'
+          ? `<a class="disabled" style="opacity:0.6">執筆済</a>`
+          : `<a class="disabled" style="opacity:0.5">未着手</a>`;
         return `<tr>
           <td>${statusPill}</td>
           <td>${dateOrPos}</td>
@@ -371,10 +380,12 @@
     }
 
     function copyCSV() {
-      const headers = ['状態', '公開日', 'カテゴリ', 'タイトル', 'URL', '主要KW', '関連KW'];
+      const headers = ['状態', '公開日/予定日', 'カテゴリ', 'タイトル', 'URL', '主要KW', '関連KW'];
       const rows = articles.map(a => [
-        a.status === 'published' ? '公開済み' : 'キュー#' + a.queue_position,
-        a.published || '',
+        a.status === 'published' ? '公開済み'
+          : a.status === 'ready' ? '予約済み'
+          : 'キュー#' + a.queue_position,
+        a.published || a.scheduled || '',
         a.category || '',
         a.title || '',
         a.status === 'published' ? a.url : '',

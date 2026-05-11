@@ -1,49 +1,5 @@
 [
   {
-    "slug": "shinsotsu-recruitment-trends",
-    "title": "新卒紹介事業の最新トレンド2026｜Z世代の就活行動とエージェント戦略",
-    "description": "Z世代の就活行動の変化、就活サイト離れ、SNSでの企業選定など、新卒紹介事業を取り巻く最新トレンドを総合的に解説。エージェント側の戦略再設計のためのインサイト。",
-    "keywords": "新卒 トレンド,Z世代 就活,新卒紹介事業,新卒採用 変化,新卒エージェント",
-    "category": "業界トレンド",
-    "image_prompt": "Editorial illustration about new graduate recruitment trends. Flat design with abstract young professional silhouettes connected by stylized network lines in deep navy blue and gold (#f5b400). Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
-    "key_points": [
-      "Z世代就活生の情報収集行動の変化",
-      "従来型ナビ媒体の機能不全",
-      "SNS×就活の最前線",
-      "エージェント側の戦略再設計"
-    ]
-  },
-  {
-    "slug": "recruitment-content-marketing",
-    "title": "人材紹介のコンテンツマーケティング｜SEO記事で求職者を集める実践ガイド",
-    "description": "人材紹介業がオウンドメディアで求職者を集客するためのコンテンツマーケティング戦略を、キーワード設計・記事構成・運用体制まで実務レベルで解説。",
-    "keywords": "人材紹介 コンテンツマーケティング,人材紹介 SEO,人材紹介 オウンドメディア,求職者 SEO",
-    "category": "ハウツー",
-    "image_prompt": "Editorial illustration of content marketing for recruitment. Flat design with stylized article/document icons connected by lines in deep navy blue with one gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
-    "key_points": [
-      "コンテンツマーケの基本フレーム",
-      "求職者検索キーワードの構造化",
-      "記事構成のテンプレート",
-      "成果が出るまでの期間と投資判断",
-      "運用体制の組み方"
-    ]
-  },
-  {
-    "slug": "recruitment-tiktok-marketing",
-    "title": "人材紹介のTikTok集客｜運用ノウハウと成功事例の作り方",
-    "description": "TikTokを使った求職者集客の実践ガイド。コンテンツ設計・投稿頻度・分析指標・伸びる動画の特徴を、人材紹介業の特性に合わせて解説。",
-    "keywords": "人材紹介 TikTok,TikTok 採用,TikTok 求人,人材紹介 動画マーケティング,TikTok 運用",
-    "category": "ハウツー",
-    "image_prompt": "Editorial illustration about TikTok marketing for recruitment. Flat design with stylized vertical phone screen showing abstract content blocks in deep navy blue with gold (#f5b400) play button accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
-    "key_points": [
-      "TikTokアルゴリズムの基本理解",
-      "人材紹介で伸びるコンテンツパターン",
-      "投稿頻度と運用体制",
-      "分析指標と改善サイクル",
-      "失敗パターンと回避策"
-    ]
-  },
-  {
     "slug": "recruitment-agent-business-model",
     "title": "人材紹介事業のビジネスモデル｜売上構造とKPI設計の基本",
     "description": "人材紹介事業の収益構造、平均単価、コスト構造、主要KPIを体系的に整理。事業計画の精度を上げるための前提知識として、新規参入者・経営者向けに解説。",

@@ -396,7 +396,20 @@ def process_articles(articles: list, published: str = None):
     update_listing(articles, all_articles_meta=all_meta)
     auto_pop_queue([a["slug"] for a in articles])
     refresh_kw_index()
+    refresh_related_articles()
     print("\n=== Done ===")
+
+
+def refresh_related_articles():
+    """Regenerate the related-articles section in every published article.
+    Bidirectional: when a new article is published, every existing article
+    may pick up a link to it (if it scores in the top N for that target)."""
+    try:
+        from inject_related_articles import refresh_all_related
+        n = refresh_all_related(verbose=False)
+        print(f"  [related OK] refreshed related sections in {n} article(s)")
+    except Exception as e:
+        print(f"  [WARN] related-articles refresh failed: {e}")
 
 
 def auto_pop_queue(processed_slugs: list):

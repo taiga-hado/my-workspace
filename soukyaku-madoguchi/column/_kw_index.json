@@ -1,5 +1,42 @@
 [
   {
+    "slug": "recruitment-lp-cvr-optimization",
+    "title": "人材紹介LPのCVR改善｜ファーストビュー・訴求設計・離脱対策",
+    "description": "人材紹介業のランディングページ（LP）のCVR（応募率）を改善する実務ガイド。ファーストビューの設計原則、訴求の優先順位、フォーム最適化、離脱ポイントの特定と対策まで、CVRを1.5〜2倍に引き上げるための施策を体系的に解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 LP",
+      "人材紹介 CVR",
+      "LP改善",
+      "LPO",
+      "応募率改善",
+      "人材紹介 ランディングページ",
+      "LP CVR"
+    ],
+    "primary_keyword": "人材紹介 LP",
+    "status": "published",
+    "published": "2026-05-14",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-lp-cvr-optimization/"
+  },
+  {
+    "slug": "recruitment-instagram-marketing",
+    "title": "人材紹介のInstagram集客｜リール・フィード・ストーリーズの使い分け",
+    "description": "Instagramを使った人材紹介業の求職者集客を、リール動画・フィード投稿・ストーリーズの3機能ごとの役割と運用設計の観点で実務レベルで解説。20〜30代女性をはじめとした優良母集団形成のためのチャネル戦略ガイド。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 Instagram",
+      "Instagram 採用",
+      "Instagram リール 採用",
+      "人材紹介 SNS",
+      "インスタ 採用",
+      "Instagram運用"
+    ],
+    "primary_keyword": "人材紹介 Instagram",
+    "status": "published",
+    "published": "2026-05-13",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-instagram-marketing/"
+  },
+  {
     "slug": "recruitment-agent-business-model",
     "title": "人材紹介事業のビジネスモデル｜売上構造とKPI設計の基本",
     "description": "人材紹介事業の収益構造・平均単価・主要コスト・経営KPIを体系的に整理。新規参入を検討する経営者や、自社の事業計画の精度を上げたいマーケ責任者向けに、業界の標準的な経済性を実数値レンジ付きで解説します。",
@@ -291,42 +328,6 @@
     "status": "published",
     "published": "2026-05-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
-  },
-  {
-    "slug": "recruitment-agent-business-model",
-    "title": "人材紹介事業のビジネスモデル｜売上構造とKPI設計の基本",
-    "description": "人材紹介事業の収益構造・平均単価・主要コスト・経営KPIを体系的に整理。新規参入を検討する経営者や、自社の事業計画の精度を上げたいマーケ責任者向けに、業界の標準的な経済性を実数値レンジ付きで解説します。",
-    "category": "用語解説",
-    "keywords": [
-      "人材紹介 ビジネスモデル",
-      "人材紹介 売上",
-      "人材紹介 単価",
-      "人材紹介 KPI",
-      "人材紹介 収益構造",
-      "人材紹介 コスト構造"
-    ],
-    "primary_keyword": "人材紹介 ビジネスモデル",
-    "status": "ready",
-    "scheduled": "2026-05-12",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agent-business-model/"
-  },
-  {
-    "slug": "recruitment-instagram-marketing",
-    "title": "人材紹介のInstagram集客｜リール・フィード・ストーリーズの使い分け",
-    "description": "Instagramを使った人材紹介業の求職者集客を、リール動画・フィード投稿・ストーリーズの3機能ごとの役割と運用設計の観点で実務レベルで解説。20〜30代女性をはじめとした優良母集団形成のためのチャネル戦略ガイド。",
-    "category": "ハウツー",
-    "keywords": [
-      "人材紹介 Instagram",
-      "Instagram 採用",
-      "Instagram リール 採用",
-      "人材紹介 SNS",
-      "インスタ 採用",
-      "Instagram運用"
-    ],
-    "primary_keyword": "人材紹介 Instagram",
-    "status": "ready",
-    "scheduled": "2026-05-13",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-instagram-marketing/"
   },
   {
     "slug": "recruitment-lp-cvr-optimization",

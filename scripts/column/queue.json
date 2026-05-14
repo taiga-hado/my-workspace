@@ -1,47 +1,5 @@
 [
   {
-    "slug": "recruitment-saas-sales-acquisition",
-    "title": "SaaS営業の求職者集客｜キャリアアップ訴求の設計",
-    "description": "SaaS営業（インサイドセールス・フィールドセールス・カスタマーサクセス）の求職者集客戦略を、キャリアアップ訴求と高単価決定の観点から解説。",
-    "keywords": "SaaS営業 集客,SaaS営業 転職,インサイドセールス 集客,フィールドセールス 集客",
-    "category": "セグメント別",
-    "image_prompt": "Editorial illustration about SaaS sales talent acquisition. Flat design with abstract upward arrow and dashboard elements in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
-    "key_points": [
-      "SaaS営業市場の特殊性",
-      "キャリアアップ訴求の作り方",
-      "未経験から経験者への分岐設計",
-      "高単価決定を狙うチャネル"
-    ]
-  },
-  {
-    "slug": "recruitment-housing-allowance-appeal",
-    "title": "住宅手当・福利厚生を訴求軸にした求職者集客の設計",
-    "description": "年収訴求が頭打ちになる中で、住宅手当・福利厚生・働き方を訴求軸にした集客設計の実務ガイド。Z世代・第二新卒のホワイト企業志向に合わせた訴求設計。",
-    "keywords": "福利厚生 採用,住宅手当 採用訴求,ホワイト企業 訴求,働き方 採用",
-    "category": "ハウツー",
-    "image_prompt": "Editorial illustration about benefits-focused recruitment. Flat design with abstract house/home icons surrounded by comfort elements in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
-    "key_points": [
-      "Z世代の価値観の変化",
-      "住宅手当訴求の作り方",
-      "残業時間・休日訴求の見せ方",
-      "ホワイト訴求の差別化"
-    ]
-  },
-  {
-    "slug": "recruitment-female-acquisition",
-    "title": "女性求職者向け人材紹介の集客戦略｜訴求設計と主要チャネル",
-    "description": "女性求職者（特に20〜30代）に特化した集客戦略を、ライフイベント配慮・キャリア訴求・主要チャネル・LP設計の観点から解説。",
-    "keywords": "女性 求職者 集客,女性 転職 マーケティング,女性向け 人材紹介",
-    "category": "セグメント別",
-    "image_prompt": "Editorial illustration about female talent acquisition. Flat design with abstract professional figures in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
-    "key_points": [
-      "女性求職者の市場特性",
-      "ライフイベント配慮の訴求",
-      "キャリアの不安解消訴求",
-      "主要チャネルとLP設計"
-    ]
-  },
-  {
     "slug": "recruitment-uta-acquisition",
     "title": "U・Iターン求職者向けの集客戦略｜地方人材紹介の実務",
     "description": "U・Iターン転職市場における求職者集客戦略を、訴求設計・主要チャネル・地方特化のメッセージ・送客サービス活用までの観点で解説。",

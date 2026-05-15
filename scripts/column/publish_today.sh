@@ -48,12 +48,12 @@ if [ ! -f "$READY_FILE" ]; then
 fi
 
 # Extract slug for the commit message
-SLUG=$(python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print(d[0]['slug'])" "$READY_FILE")
+SLUG=$(/usr/bin/python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print(d[0]['slug'])" "$READY_FILE")
 echo "Ready article slug: $SLUG"
 
 # Build the article (image gen + html + sitemap + listing + kw-index)
 echo "[1/3] Building article..."
-python3 "$SCRIPT_DIR/build_article.py" "$READY_FILE"
+/usr/bin/python3 "$SCRIPT_DIR/build_article.py" "$READY_FILE"
 
 # Archive the consumed ready file
 echo "[2/3] Archiving ready file..."

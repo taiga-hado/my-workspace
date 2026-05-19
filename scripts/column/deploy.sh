@@ -1,15 +1,19 @@
 #!/bin/bash
 # Daily column article deployment script
-# Commits column changes, pushes to remote, and deploys to Vercel
-
-set -e
+# Commits column changes, pushes to remote, and deploys to Vercel.
+#
+# NOTE: We deliberately do NOT use `set -e`. A transient git push failure
+# (DNS hiccup, GitHub auth expiry) must not block vercel deploy, since
+# vercel publishes from the local filesystem state — Vercel does not need
+# the GitHub remote to be in sync. Each step reports its own failure.
 
 WORKTREE_ROOT="/Users/taiga/Desktop/Documents-My Vault/.claude/worktrees/amazing-clarke-640732"
 PROJECT_DIR="$WORKTREE_ROOT/soukyaku-madoguchi"
 
-cd "$WORKTREE_ROOT"
+cd "$WORKTREE_ROOT" || exit 1
 
 ARTICLE_SLUG="${1:-new-article}"
+OVERALL_EXIT=0
 
 # Stage column-related files (including ready/published transitions)
 git add soukyaku-madoguchi/column \
@@ -27,28 +31,31 @@ else
   git commit -m "Add column article: $ARTICLE_SLUG
 
 Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
-  git push origin HEAD
+  if ! git push origin HEAD; then
+    echo "WARNING: git push failed (network? auth?) — continuing to vercel deploy"
+    OVERALL_EXIT=1
+  fi
 fi
 
-# Vercel auto-deploys on git push (project linked to GitHub).
-# If the link is not yet set up, fall back to invoking vercel CLI.
-#
-# To enable git-push auto-deploy:
-#   1. https://vercel.com/taiga-hados-projects/soukyaku-madoguchi/settings/git
-#   2. Click "Connect Git Repository" → choose taiga-hado/my-workspace
-#   3. Set Production Branch to "claude/amazing-clarke-640732"
-#   4. Set Root Directory to "soukyaku-madoguchi"
-# After that, this block can be removed entirely.
-USE_VERCEL_CLI="${USE_VERCEL_CLI:-auto}"
-if [ "$USE_VERCEL_CLI" = "yes" ] || { [ "$USE_VERCEL_CLI" = "auto" ] && ! git config --get remote.origin.url | grep -q "github.com"; }; then
-  cd "$PROJECT_DIR"
-  if command -v vercel >/dev/null 2>&1; then
-    vercel deploy --prod --yes
+# Vercel deploy is independent of GitHub state — it uploads the local
+# filesystem to Vercel directly. Always invoke the CLI so a git push
+# failure does not block the production deployment.
+cd "$PROJECT_DIR" || exit 1
+if command -v vercel >/dev/null 2>&1; then
+  if vercel deploy --prod --yes; then
+    echo "✓ vercel deploy succeeded"
   else
-    echo "WARNING: vercel CLI not found; skipping deploy"
+    echo "ERROR: vercel deploy failed"
+    OVERALL_EXIT=2
   fi
 else
-  echo "Vercel deploys via GitHub integration on git push (no CLI invocation needed)."
+  echo "WARNING: vercel CLI not found; skipping deploy"
+  OVERALL_EXIT=3
 fi
 
-echo "✓ deploy complete: $ARTICLE_SLUG"
+if [ "$OVERALL_EXIT" = "0" ]; then
+  echo "✓ deploy complete: $ARTICLE_SLUG"
+else
+  echo "⚠ deploy partially complete: $ARTICLE_SLUG (exit=$OVERALL_EXIT)"
+fi
+exit $OVERALL_EXIT

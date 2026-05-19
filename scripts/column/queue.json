@@ -1,0 +1,240 @@
+[
+  {
+    "slug": "recruitment-uta-acquisition",
+    "title": "U・Iターン求職者向けの集客戦略｜地方人材紹介の実務",
+    "description": "U・Iターン転職市場における求職者集客戦略を、訴求設計・主要チャネル・地方特化のメッセージ・送客サービス活用までの観点で解説。",
+    "keywords": "Uターン 転職,Iターン 転職,地方 人材紹介,地方転職 集客",
+    "category": "セグメント別",
+    "image_prompt": "Editorial illustration about regional talent acquisition. Flat design with abstract map or location pins in deep navy blue with gold (#f5b400) accent on one location. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "U・Iターン市場の特性",
+      "都市部→地方の動機設計",
+      "主要チャネルと媒体選定",
+      "歩留まり管理のポイント"
+    ]
+  },
+  {
+    "slug": "recruitment-30s-acquisition",
+    "title": "30代求職者向けの人材紹介集客戦略",
+    "description": "30代求職者向け人材紹介の集客戦略を、市場特性・キャリア訴求・主要チャネル・歩留まり管理の観点で解説。30代の転職市場の構造的特徴を踏まえた実務ガイド。",
+    "keywords": "30代 転職,30代 求職者集客,30代 人材紹介",
+    "category": "セグメント別",
+    "image_prompt": "Editorial illustration about thirties talent acquisition. Flat design with abstract career path visualization in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "30代の転職市場の特殊性",
+      "キャリアアップ vs キャリアチェンジの分岐",
+      "ファミリー要素の訴求設計",
+      "主要チャネルと相場"
+    ]
+  },
+  {
+    "slug": "recruitment-aichi-acquisition",
+    "title": "東海エリアの人材紹介集客｜地域特性とチャネル選定",
+    "description": "愛知・名古屋を中心とした東海エリアの人材紹介事業向け集客戦略を、地域特性・主要産業・媒体選定の観点で解説。",
+    "keywords": "東海 人材紹介,愛知 求職者集客,名古屋 転職,東海エリア 採用",
+    "category": "セグメント別",
+    "image_prompt": "Editorial illustration about regional recruitment in Tokai/Nagoya area. Flat design with abstract industrial/automotive icons in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "東海エリアの主要産業と求職者特性",
+      "首都圏との違い",
+      "主要媒体・チャネル選定",
+      "地域特化の訴求設計"
+    ]
+  },
+  {
+    "slug": "recruitment-osaka-acquisition",
+    "title": "関西・大阪エリアの人材紹介集客戦略",
+    "description": "関西・大阪エリアの人材紹介事業向け集客戦略を、地域特性・求職者属性・主要媒体・訴求設計の観点で解説。",
+    "keywords": "関西 人材紹介,大阪 求職者集客,大阪 転職,関西 採用",
+    "category": "セグメント別",
+    "image_prompt": "Editorial illustration about Osaka/Kansai area recruitment. Flat design with abstract regional cityscape elements in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "関西・大阪エリアの市場特性",
+      "首都圏との求職者属性の違い",
+      "主要媒体と相場",
+      "地域特化の訴求設計"
+    ]
+  },
+  {
+    "slug": "recruitment-fukuoka-acquisition",
+    "title": "九州・福岡エリアの人材紹介集客戦略",
+    "description": "九州・福岡エリアの人材紹介事業向け集客戦略を、市場成長性・求職者属性・主要チャネル・地方特化訴求の観点で解説。",
+    "keywords": "九州 人材紹介,福岡 求職者集客,福岡 転職,九州 採用",
+    "category": "セグメント別",
+    "image_prompt": "Editorial illustration about Fukuoka/Kyushu recruitment. Flat design with abstract regional elements in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "福岡市場の成長性",
+      "首都圏移住組の取り込み",
+      "主要媒体と相場",
+      "地域特化訴求"
+    ]
+  },
+  {
+    "slug": "recruitment-conversion-tracking",
+    "title": "人材紹介のコンバージョン計測｜GTM・GA4・コンバージョンAPI完全ガイド",
+    "description": "人材紹介業のWebマーケティングにおけるコンバージョン計測の実務ガイド。GTM設定、GA4のカスタムイベント、Google広告のコンバージョンAPI連携までの完全版。",
+    "keywords": "人材紹介 GTM,人材紹介 GA4,人材紹介 コンバージョン計測,コンバージョンAPI,オフラインCV",
+    "category": "ハウツー",
+    "image_prompt": "Editorial illustration about conversion tracking. Flat design with abstract data flow diagram in deep navy blue with gold (#f5b400) endpoint. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "計測の基本3階層（GTM・GA4・広告側）",
+      "面談実施・決定をオフラインCVで取り込む",
+      "コンバージョンAPI連携",
+      "計測精度の検証方法"
+    ]
+  },
+  {
+    "slug": "recruitment-ad-creative",
+    "title": "人材紹介の広告クリエイティブ｜CTRが2倍になる訴求と画像の作り方",
+    "description": "人材紹介業の広告クリエイティブ（バナー・動画）の制作実務を、ターゲット別の訴求設計・画像構成・コピーライティング・ABテスト設計の観点で解説。",
+    "keywords": "人材紹介 広告クリエイティブ,人材紹介 バナー,広告コピー,CTR改善",
+    "category": "ハウツー",
+    "image_prompt": "Editorial illustration about ad creative design for recruitment. Flat design with stylized banner/ad rectangles in deep navy blue with one gold (#f5b400) highlighted version. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "ターゲット別クリエイティブ設計",
+      "強い訴求コピーの作り方",
+      "画像構成の原則",
+      "ABテストの設計"
+    ]
+  },
+  {
+    "slug": "recruitment-line-marketing",
+    "title": "人材紹介のLINE活用｜友だち追加から面談誘導までの設計",
+    "description": "LINE公式アカウントを活用した人材紹介業の集客・育成・面談誘導設計を、LSTEP等のステップ配信ツールも含めて実務レベルで解説。",
+    "keywords": "人材紹介 LINE,LINE公式アカウント 採用,LSTEP 採用,LINE 求職者",
+    "category": "ハウツー",
+    "image_prompt": "Editorial illustration about LINE marketing for recruitment. Flat design with abstract chat bubble flow in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "LINE公式の友だち追加導線設計",
+      "ステップ配信での育成",
+      "面談予約までの誘導",
+      "リッチメニュー・タグ管理"
+    ]
+  },
+  {
+    "slug": "recruitment-pre-counseling",
+    "title": "人材紹介の事前カウンセリング設計｜面談着座率を80%にする運用",
+    "description": "応募者と面談の間に挟む事前カウンセリングの設計を、目的・実施フロー・ヒアリング項目・期待値調整の観点から実務レベルで解説。",
+    "keywords": "事前カウンセリング,人材紹介 ヒアリング,面談着座率 上げる,期待値調整",
+    "category": "ハウツー",
+    "image_prompt": "Editorial illustration about pre-interview counseling. Flat design with abstract conversation/dialogue icons in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "事前カウンセリングの目的",
+      "実施フロー設計",
+      "必須ヒアリング項目",
+      "期待値調整のテクニック"
+    ]
+  },
+  {
+    "slug": "recruitment-ca-productivity",
+    "title": "キャリアアドバイザー（CA）の生産性を2倍にする運用設計",
+    "description": "キャリアアドバイザーの生産性を上げるためのオペレーション設計、ツール選定、面談前準備の最適化、求人マッチング自動化までの実務ガイド。",
+    "keywords": "CA 生産性,キャリアアドバイザー 効率化,人材紹介 オペレーション,CA ツール",
+    "category": "ハウツー",
+    "image_prompt": "Editorial illustration about career advisor productivity. Flat design with abstract gear/workflow icons in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "CAの時間配分の理想形",
+      "事前準備の自動化",
+      "求人マッチングツールの活用",
+      "KPI設計"
+    ]
+  },
+  {
+    "slug": "recruitment-ats-comparison",
+    "title": "人材紹介向けATS比較｜選び方と主要システムの特徴",
+    "description": "人材紹介業向けの応募者管理システム（ATS/CRM）の選定軸と主要製品の比較。ハーモス、ジョブカン、SmartHRなどの特徴を機能・料金・運用面で整理。",
+    "keywords": "人材紹介 ATS,人材紹介 CRM,応募者管理システム,人材紹介 システム",
+    "category": "比較検討",
+    "image_prompt": "Editorial illustration about applicant tracking systems comparison. Flat design with abstract dashboard/system icons in deep navy blue with gold (#f5b400) accent on one. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "ATSの基本機能",
+      "選定の判断軸",
+      "主要製品の特徴比較",
+      "運用立ち上げの注意点"
+    ]
+  },
+  {
+    "slug": "recruitment-monthly-volume-planning",
+    "title": "人材紹介の月次面談数の事業計画｜KPI設計と必要広告予算の算出",
+    "description": "月次の決定数目標から逆算して、必要面談数・必要応募数・必要広告予算を算出する実務フレーム。事業計画の精度を上げるためのKPI設計ガイド。",
+    "keywords": "人材紹介 事業計画,人材紹介 KPI,人材紹介 広告予算,月次面談数",
+    "category": "課題解決",
+    "image_prompt": "Editorial illustration about business planning and KPI design. Flat design with abstract chart/graph elements in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "決定数→面談数→応募数の逆算",
+      "歩留まり率の前提整理",
+      "必要広告予算の算出",
+      "事業計画の精度を上げる方法"
+    ]
+  },
+  {
+    "slug": "recruitment-cancellation-rate",
+    "title": "人材紹介の面談キャンセル率を下げる｜原因分析と運用改善",
+    "description": "面談キャンセル率の業界平均、典型的な原因パターン、運用改善のレバーを実務レベルで解説。前日リマインドからキャンセルポリシー設計まで。",
+    "keywords": "面談キャンセル,人材紹介 キャンセル率,面談キャンセル 対策,リマインド設計",
+    "category": "課題解決",
+    "image_prompt": "Editorial illustration about reducing cancellation rate. Flat design with abstract calendar with red X turning into checkmark in deep navy blue and gold (#f5b400). Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "キャンセル率の業界平均",
+      "典型的キャンセル原因",
+      "リマインド設計",
+      "ポリシー設計と求職者教育"
+    ]
+  },
+  {
+    "slug": "recruitment-jma-acquisition",
+    "title": "ハイクラス人材紹介の集客戦略｜年収600万円以上の求職者を集める",
+    "description": "ハイクラス領域（年収600万円以上）の求職者集客戦略を、媒体選定・スカウト型運用・SNS活用・送客サービスの観点で解説。",
+    "keywords": "ハイクラス 人材紹介,ハイクラス 求職者集客,年収600万 転職,エグゼクティブ 採用",
+    "category": "セグメント別",
+    "image_prompt": "Editorial illustration about high-class executive recruitment. Flat design with abstract premium/elite icons in deep navy blue with gold (#f5b400) crown or star accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "ハイクラス市場の特性",
+      "主要媒体（Bizreach等）",
+      "スカウト型運用",
+      "ハイクラス向け訴求設計"
+    ]
+  },
+  {
+    "slug": "recruitment-international-acquisition",
+    "title": "外国人材紹介の集客戦略｜訴求設計と主要チャネル",
+    "description": "外国人材紹介の求職者集客戦略を、市場特性・主要チャネル・多言語訴求・在留資格別の設計の観点で解説。",
+    "keywords": "外国人材 人材紹介,外国人 採用,外国人材 集客,多言語 採用",
+    "category": "セグメント別",
+    "image_prompt": "Editorial illustration about international talent recruitment. Flat design with abstract globe and people icons in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "外国人材市場の特性",
+      "在留資格別の集客設計",
+      "多言語訴求のポイント",
+      "主要チャネルと相場"
+    ]
+  },
+  {
+    "slug": "recruitment-shoukai-fee",
+    "title": "人材紹介の手数料設計｜成功報酬の業界標準と差別化のポイント",
+    "description": "人材紹介の手数料（成功報酬）の業界標準、決定単価の決まり方、料金体系の差別化、企業との交渉実務まで解説。",
+    "keywords": "人材紹介 手数料,人材紹介 成功報酬,人材紹介 単価,人材紹介 料金",
+    "category": "用語解説",
+    "image_prompt": "Editorial illustration about recruitment fee structure. Flat design with abstract scale or balance icon in deep navy blue with gold (#f5b400) accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "成功報酬の業界標準",
+      "返金規定の設計",
+      "料金体系の差別化",
+      "交渉実務"
+    ]
+  },
+  {
+    "slug": "recruitment-licensing",
+    "title": "人材紹介事業の許認可｜有料職業紹介免許の取得と維持",
+    "description": "人材紹介事業の有料職業紹介免許の取得要件、申請フロー、維持要件、実務で気をつけるべきコンプライアンスを解説。",
+    "keywords": "有料職業紹介 免許,人材紹介 許認可,有料職業紹介事業 開業,職業安定法",
+    "category": "用語解説",
+    "image_prompt": "Editorial illustration about licensing for recruitment business. Flat design with abstract certificate/document icon in deep navy blue with gold (#f5b400) seal accent. Soft white background, premium SaaS aesthetic, no text in image, 3:2 aspect.",
+    "key_points": [
+      "免許取得の要件",
+      "申請フロー",
+      "維持要件と更新",
+      "コンプライアンス実務"
+    ]
+  }
+]

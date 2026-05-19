@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>コラムKWダッシュボード | 求職者送客の窓口</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <link rel="shortcut icon" href="../images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/site.css">
+  <style>
+    body { background: var(--bg-muted); }
+    .kw-wrap { max-width: 1400px; margin: 0 auto; padding: 96px 24px 64px; }
+
+    .kw-head {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      gap: 16px; margin-bottom: 28px; flex-wrap: wrap;
+    }
+    .kw-head-left h1 {
+      font-size: 1.75rem; font-weight: 800; color: var(--ink);
+      letter-spacing: -0.01em; margin-bottom: 6px;
+    }
+    .kw-head-left .subtitle {
+      font-size: 0.88rem; color: var(--text-sub);
+    }
+    .kw-head-meta {
+      display: flex; gap: 12px; align-items: center;
+      font-size: 0.78rem; color: var(--text-mute);
+    }
+    .kw-head-meta .updated {
+      padding: 6px 12px; background: #fff;
+      border: 1px solid var(--border); border-radius: var(--r-pill);
+    }
+    .kw-head-meta .copy-btn {
+      padding: 6px 12px; background: var(--brand-blue); color: #fff;
+      border: none; border-radius: var(--r-pill); font-weight: 600; cursor: pointer;
+      font-size: 0.78rem; transition: background 0.2s;
+    }
+    .kw-head-meta .copy-btn:hover { background: var(--brand-blue-hover); }
+    .kw-head-meta .copy-btn.copied { background: #16a34a; }
+
+    .kw-stats {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px;
+      margin-bottom: 24px;
+    }
+    .kw-stat {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--r-lg); padding: 18px 20px;
+    }
+    .kw-stat-label {
+      font-size: 0.72rem; color: var(--text-sub); font-weight: 600;
+      letter-spacing: 0.08em; margin-bottom: 6px; text-transform: uppercase;
+    }
+    .kw-stat-value {
+      font-size: 1.6rem; font-weight: 800; color: var(--ink);
+      letter-spacing: -0.02em; font-feature-settings: "tnum";
+    }
+    .kw-stat-value .unit {
+      font-size: 0.6em; color: var(--text-sub);
+      margin-left: 4px; font-weight: 600;
+    }
+    .kw-stat.accent .kw-stat-value { color: var(--brand-blue); }
+    .kw-stat.gold .kw-stat-value { color: var(--gold-dark); }
+
+    .kw-toolbar {
+      display: grid; grid-template-columns: 1fr 220px 220px;
+      gap: 10px; padding: 14px;
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--r-lg); margin-bottom: 18px;
+      align-items: center;
+    }
+    .kw-toolbar input, .kw-toolbar select {
+      font-family: inherit; font-size: 0.9rem;
+      padding: 10px 12px; border: 1.5px solid var(--border);
+      border-radius: var(--r-md); background: #fff; color: var(--ink);
+      -webkit-appearance: none; appearance: none;
+    }
+    .kw-toolbar input:focus, .kw-toolbar select:focus {
+      outline: none; border-color: var(--brand-blue);
+    }
+
+    .kw-table-wrap {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--r-lg); overflow: hidden;
+      max-height: 70vh; overflow-y: auto;
+    }
+    .kw-table {
+      width: 100%; border-collapse: collapse; font-size: 0.86rem;
+    }
+    .kw-table th, .kw-table td {
+      text-align: left; padding: 12px 14px;
+      border-bottom: 1px solid var(--border-soft);
+      vertical-align: top;
+    }
+    .kw-table th {
+      background: var(--bg-muted); font-weight: 700; font-size: 0.78rem;
+      color: var(--text-sub); letter-spacing: 0.04em;
+      position: sticky; top: 0; z-index: 1;
+      cursor: pointer; user-select: none; white-space: nowrap;
+    }
+    .kw-table th:hover { color: var(--ink); }
+    .kw-table th .arrow { font-size: 0.7em; opacity: 0.5; margin-left: 4px; }
+    .kw-table th.sorted .arrow { opacity: 1; color: var(--brand-blue); }
+    .kw-table tr:last-child td { border-bottom: none; }
+    .kw-table tr:hover td { background: #fafbff; }
+
+    .kw-pill {
+      display: inline-block; font-size: 0.7rem; font-weight: 700;
+      padding: 3px 9px; border-radius: var(--r-pill);
+      white-space: nowrap;
+    }
+    .kw-pill.published { background: #d1fae5; color: #065f46; }
+    .kw-pill.ready { background: #dbeafe; color: #1e40af; }
+    .kw-pill.queued { background: #fef3c7; color: #92400e; }
+    .kw-pill.cat { background: var(--brand-blue-soft); color: var(--brand-blue); }
+
+    .kw-table .col-date {
+      white-space: nowrap; font-variant-numeric: tabular-nums;
+      color: var(--text-sub); font-size: 0.82rem;
+    }
+    .kw-table .col-pos {
+      font-variant-numeric: tabular-nums; color: var(--text-mute);
+      font-size: 0.78rem; text-align: right;
+    }
+    .kw-table .col-title {
+      font-weight: 600; color: var(--ink);
+      max-width: 360px; line-height: 1.5;
+    }
+    .kw-table .col-title a {
+      color: inherit; text-decoration: none;
+      transition: color 0.2s;
+    }
+    .kw-table .col-title a:hover { color: var(--brand-blue); }
+    .kw-table .col-title a.disabled {
+      color: var(--text-mute); pointer-events: none;
+    }
+    .kw-table .col-primary-kw {
+      font-weight: 700; color: var(--brand-navy);
+      white-space: nowrap;
+    }
+    .kw-table .col-keywords {
+      font-size: 0.78rem; color: var(--text);
+      max-width: 360px; line-height: 1.7;
+    }
+    .kw-table .col-keywords .kw-tag {
+      display: inline-block;
+      padding: 2px 8px; margin: 2px 3px 2px 0;
+      background: var(--bg-soft); border-radius: var(--r-sm);
+      color: var(--text-sub); font-size: 0.74rem;
+    }
+    .kw-table .col-actions {
+      white-space: nowrap;
+    }
+    .kw-table .col-actions a {
+      display: inline-block;
+      padding: 5px 10px; font-size: 0.74rem;
+      border: 1px solid var(--border); border-radius: var(--r-sm);
+      color: var(--text); background: #fff;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .kw-table .col-actions a:hover {
+      border-color: var(--brand-blue);
+      color: var(--brand-blue); background: #fff;
+    }
+
+    .kw-empty {
+      text-align: center; padding: 80px 24px;
+      color: var(--text-sub); font-size: 0.95rem;
+    }
+
+    .kw-loader {
+      text-align: center; padding: 64px 24px;
+      color: var(--text-sub); font-size: 0.9rem;
+    }
+
+    @media (max-width: 980px) {
+      .kw-stats { grid-template-columns: repeat(2, 1fr); }
+      .kw-toolbar { grid-template-columns: 1fr; }
+      .kw-table th, .kw-table td { padding: 10px 10px; }
+      .kw-table .col-keywords { max-width: 200px; }
+    }
+    @media (max-width: 640px) {
+      .kw-wrap { padding: 80px 12px 48px; }
+      .kw-table { font-size: 0.78rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="../index.html" class="site-logo">
+        <img src="../images/logo.png" alt="求職者送客の窓口">
+      </a>
+      <nav class="site-nav">
+        <div class="site-nav-links">
+          <a href="../index.html">トップ</a>
+          <a href="../column/">コラム</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="kw-wrap">
+    <div class="kw-head">
+      <div class="kw-head-left">
+        <h1>コラムKWダッシュボード</h1>
+        <div class="subtitle">公開済み記事と次に投稿予定の記事のキーワードを一覧で管理（社内共有用 / 検索エンジン非掲載）</div>
+      </div>
+      <div class="kw-head-meta">
+        <span class="updated" id="updated-at">読み込み中…</span>
+        <button class="copy-btn" id="copy-csv-btn" onclick="copyCSV()">CSVコピー</button>
+      </div>
+    </div>
+
+    <div class="kw-stats">
+      <div class="kw-stat">
+        <div class="kw-stat-label">合計記事数</div>
+        <div class="kw-stat-value" id="stat-total">—</div>
+      </div>
+      <div class="kw-stat accent">
+        <div class="kw-stat-label">公開済み</div>
+        <div class="kw-stat-value" id="stat-published">—<span class="unit">本</span></div>
+      </div>
+      <div class="kw-stat">
+        <div class="kw-stat-label">予約済み（事前執筆）</div>
+        <div class="kw-stat-value" id="stat-ready">—<span class="unit">本</span></div>
+      </div>
+      <div class="kw-stat gold">
+        <div class="kw-stat-label">キュー（未着手）</div>
+        <div class="kw-stat-value" id="stat-queued">—<span class="unit">本</span></div>
+      </div>
+    </div>
+
+    <div class="kw-toolbar">
+      <input type="search" id="search-input" placeholder="キーワード・タイトルで検索（例：CPA、SNS、第二新卒…）">
+      <select id="filter-status">
+        <option value="">すべてのステータス</option>
+        <option value="published">公開済みのみ</option>
+        <option value="ready">予約済みのみ</option>
+        <option value="queued">キューのみ</option>
+      </select>
+      <select id="filter-category">
+        <option value="">すべてのカテゴリ</option>
+      </select>
+    </div>
+
+    <div class="kw-table-wrap">
+      <table class="kw-table">
+        <thead>
+          <tr>
+            <th data-sort="status">状態<span class="arrow">▾</span></th>
+            <th data-sort="date">公開日<span class="arrow">▾</span></th>
+            <th data-sort="category">カテゴリ<span class="arrow">▾</span></th>
+            <th data-sort="title">タイトル<span class="arrow">▾</span></th>
+            <th data-sort="primary_keyword">主要KW<span class="arrow">▾</span></th>
+            <th>関連KW</th>
+            <th>アクション</th>
+          </tr>
+        </thead>
+        <tbody id="kw-tbody">
+          <tr><td colspan="7" class="kw-loader">データを読み込み中…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    let articles = [];
+    let sortKey = null;
+    let sortDir = 'asc';
+
+    async function loadData() {
+      const res = await fetch('../column/_kw_index.json?_=' + Date.now());
+      if (!res.ok) {
+        document.getElementById('kw-tbody').innerHTML =
+          '<tr><td colspan="7" class="kw-empty">データを取得できませんでした。</td></tr>';
+        return;
+      }
+      articles = await res.json();
+      const lastModified = res.headers.get('last-modified');
+      if (lastModified) {
+        const d = new Date(lastModified);
+        document.getElementById('updated-at').textContent =
+          '更新：' + d.toLocaleString('ja-JP', {year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit'});
+      } else {
+        document.getElementById('updated-at').textContent = '更新：今';
+      }
+      buildStats();
+      buildCategoryFilter();
+      render();
+    }
+
+    function buildStats() {
+      const published = articles.filter(a => a.status === 'published').length;
+      const ready = articles.filter(a => a.status === 'ready').length;
+      const queued = articles.filter(a => a.status === 'queued').length;
+      document.getElementById('stat-total').textContent = articles.length;
+      document.getElementById('stat-published').innerHTML = published + '<span class="unit">本</span>';
+      document.getElementById('stat-ready').innerHTML = ready + '<span class="unit">本</span>';
+      document.getElementById('stat-queued').innerHTML = queued + '<span class="unit">本</span>';
+    }
+
+    function buildCategoryFilter() {
+      const sel = document.getElementById('filter-category');
+      const cats = [...new Set(articles.map(a => a.category).filter(Boolean))].sort();
+      cats.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c; opt.textContent = c;
+        sel.appendChild(opt);
+      });
+    }
+
+    function render() {
+      const search = document.getElementById('search-input').value.toLowerCase().trim();
+      const status = document.getElementById('filter-status').value;
+      const category = document.getElementById('filter-category').value;
+
+      let filtered = articles.filter(a => {
+        if (status && a.status !== status) return false;
+        if (category && a.category !== category) return false;
+        if (search) {
+          const haystack = (a.title + ' ' + (a.keywords || []).join(' ') + ' ' + (a.primary_keyword || '')).toLowerCase();
+          if (!haystack.includes(search)) return false;
+        }
+        return true;
+      });
+
+      if (sortKey) {
+        filtered.sort((a, b) => {
+          let av, bv;
+          if (sortKey === 'date') { av = a.published || ''; bv = b.published || ''; }
+          else if (sortKey === 'status') { av = a.status; bv = b.status; }
+          else { av = (a[sortKey] || '').toString(); bv = (b[sortKey] || '').toString(); }
+          const cmp = av < bv ? -1 : av > bv ? 1 : 0;
+          return sortDir === 'asc' ? cmp : -cmp;
+        });
+      }
+
+      const tbody = document.getElementById('kw-tbody');
+      if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" class="kw-empty">該当する記事がありません。</td></tr>';
+        return;
+      }
+      tbody.innerHTML = filtered.map(a => {
+        const statusLabel = a.status === 'published' ? '公開済み'
+          : a.status === 'ready' ? `予約 ${a.scheduled || ''}`
+          : 'キュー#' + a.queue_position;
+        const statusPill = `<span class="kw-pill ${a.status}">${statusLabel}</span>`;
+        const dateOrPos = a.status === 'published' ? `<span class="col-date">${(a.published || '').replace(/-/g, '.')}</span>`
+          : a.status === 'ready' ? `<span class="col-date">${(a.scheduled || '').replace(/-/g, '.')}</span>`
+          : `<span class="col-date">—</span>`;
+        const categoryPill = a.category ? `<span class="kw-pill cat">${escape(a.category)}</span>` : '';
+        const titleHtml = a.status === 'published'
+          ? `<a href="${a.url}" target="_blank" rel="noopener">${escape(a.title)}</a>`
+          : `<a class="disabled">${escape(a.title)}</a>`;
+        const tags = (a.keywords || []).slice(1).map(k => `<span class="kw-tag">${escape(k)}</span>`).join('');
+        const actionsHtml = a.status === 'published'
+          ? `<a href="${a.url}" target="_blank" rel="noopener">記事を開く</a>`
+          : a.status === 'ready'
+          ? `<a class="disabled" style="opacity:0.6">執筆済</a>`
+          : `<a class="disabled" style="opacity:0.5">未着手</a>`;
+        return `<tr>
+          <td>${statusPill}</td>
+          <td>${dateOrPos}</td>
+          <td>${categoryPill}</td>
+          <td class="col-title">${titleHtml}</td>
+          <td class="col-primary-kw">${escape(a.primary_keyword || '')}</td>
+          <td class="col-keywords">${tags}</td>
+          <td class="col-actions">${actionsHtml}</td>
+        </tr>`;
+      }).join('');
+    }
+
+    function escape(s) {
+      return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]);
+    }
+
+    function copyCSV() {
+      const headers = ['状態', '公開日/予定日', 'カテゴリ', 'タイトル', 'URL', '主要KW', '関連KW'];
+      const rows = articles.map(a => [
+        a.status === 'published' ? '公開済み'
+          : a.status === 'ready' ? '予約済み'
+          : 'キュー#' + a.queue_position,
+        a.published || a.scheduled || '',
+        a.category || '',
+        a.title || '',
+        a.status === 'published' ? a.url : '',
+        a.primary_keyword || '',
+        (a.keywords || []).join(' / ')
+      ]);
+      const tsv = [headers, ...rows].map(r => r.map(c => String(c).replace(/\t/g, ' ').replace(/\n/g, ' ')).join('\t')).join('\n');
+      navigator.clipboard.writeText(tsv).then(() => {
+        const btn = document.getElementById('copy-csv-btn');
+        btn.textContent = 'コピー済み';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'CSVコピー';
+          btn.classList.remove('copied');
+        }, 1800);
+      });
+    }
+
+    document.getElementById('search-input').addEventListener('input', render);
+    document.getElementById('filter-status').addEventListener('change', render);
+    document.getElementById('filter-category').addEventListener('change', render);
+    document.querySelectorAll('.kw-table th[data-sort]').forEach(th => {
+      th.addEventListener('click', () => {
+        const k = th.dataset.sort;
+        if (sortKey === k) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+        else { sortKey = k; sortDir = 'asc'; }
+        document.querySelectorAll('.kw-table th').forEach(x => x.classList.remove('sorted'));
+        th.classList.add('sorted');
+        render();
+      });
+    });
+
+    loadData();
+  </script>
+</body>
+</html>

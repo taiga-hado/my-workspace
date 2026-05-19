@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  macOS launchd job for daily column auto-publish.
+  Install location: ~/Library/LaunchAgents/com.hado.soukyaku-column-daily.plist
+  Install/reload: launchctl unload <plist>; launchctl load -w <plist>
+  Status: launchctl list | grep hado
+  Logs: /tmp/column-publish.out.log + /tmp/column-publish.err.log
+
+  IMPORTANT: ProgramArguments uses direct script invocation (NOT bash -c)
+  because the script path contains a space ("Documents-My Vault"). Wrapping
+  in `bash -c` causes shell word-splitting and exit 127.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.hado.soukyaku-column-daily</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/taiga/Desktop/Documents-My Vault/.claude/worktrees/amazing-clarke-640732/scripts/column/publish_today.sh</string>
+    </array>
+
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>9</integer>
+        <key>Minute</key>
+        <integer>40</integer>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/column-publish.out.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/column-publish.err.log</string>
+
+    <key>RunAtLoad</key>
+    <false/>
+</dict>
+</plist>

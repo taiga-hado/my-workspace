@@ -1,0 +1,811 @@
+[
+  {
+    "slug": "recruitment-female-acquisition",
+    "title": "女性求職者向け人材紹介の集客戦略｜訴求設計と主要チャネル",
+    "description": "女性求職者（特に20〜30代）に特化した人材紹介の集客戦略を、市場特性・ライフイベント配慮の訴求設計・キャリア不安解消の訴求・主要チャネル・LP設計の観点から整理。男女兼用LPでは取れない優良母集団形成のための実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "女性 求職者 集客",
+      "女性 転職 マーケティング",
+      "女性向け 人材紹介",
+      "女性キャリア 転職",
+      "女性 転職エージェント"
+    ],
+    "primary_keyword": "女性 求職者 集客",
+    "status": "published",
+    "published": "2026-05-19",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-female-acquisition/"
+  },
+  {
+    "slug": "recruitment-engineer-acquisition",
+    "title": "未経験エンジニア向け人材紹介の集客戦略｜需給ギャップを攻める",
+    "description": "未経験エンジニア領域の求職者集客戦略を、市場特性・主要チャネル・ITスクールとの提携設計・訴求設計・歩留まり改善の観点から体系的に整理。エンジニア専業エージェントの立ち上げや、未経験エンジニア領域への参入を検討する事業者向けの実務ガイドです。",
+    "category": "セグメント別",
+    "keywords": [
+      "未経験エンジニア 集客",
+      "未経験エンジニア 転職",
+      "IT未経験 集客",
+      "エンジニア 人材紹介",
+      "プログラミングスクール 提携",
+      "未経験エンジニア エージェント"
+    ],
+    "primary_keyword": "未経験エンジニア 集客",
+    "status": "published",
+    "published": "2026-05-15",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-engineer-acquisition/"
+  },
+  {
+    "slug": "recruitment-lp-cvr-optimization",
+    "title": "人材紹介LPのCVR改善｜ファーストビュー・訴求設計・離脱対策",
+    "description": "人材紹介業のランディングページ（LP）のCVR（応募率）を改善する実務ガイド。ファーストビューの設計原則、訴求の優先順位、フォーム最適化、離脱ポイントの特定と対策まで、CVRを1.5〜2倍に引き上げるための施策を体系的に解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 LP",
+      "人材紹介 CVR",
+      "LP改善",
+      "LPO",
+      "応募率改善",
+      "人材紹介 ランディングページ",
+      "LP CVR"
+    ],
+    "primary_keyword": "人材紹介 LP",
+    "status": "published",
+    "published": "2026-05-14",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-lp-cvr-optimization/"
+  },
+  {
+    "slug": "recruitment-instagram-marketing",
+    "title": "人材紹介のInstagram集客｜リール・フィード・ストーリーズの使い分け",
+    "description": "Instagramを使った人材紹介業の求職者集客を、リール動画・フィード投稿・ストーリーズの3機能ごとの役割と運用設計の観点で実務レベルで解説。20〜30代女性をはじめとした優良母集団形成のためのチャネル戦略ガイド。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 Instagram",
+      "Instagram 採用",
+      "Instagram リール 採用",
+      "人材紹介 SNS",
+      "インスタ 採用",
+      "Instagram運用"
+    ],
+    "primary_keyword": "人材紹介 Instagram",
+    "status": "published",
+    "published": "2026-05-13",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-instagram-marketing/"
+  },
+  {
+    "slug": "recruitment-agent-business-model",
+    "title": "人材紹介事業のビジネスモデル｜売上構造とKPI設計の基本",
+    "description": "人材紹介事業の収益構造・平均単価・主要コスト・経営KPIを体系的に整理。新規参入を検討する経営者や、自社の事業計画の精度を上げたいマーケ責任者向けに、業界の標準的な経済性を実数値レンジ付きで解説します。",
+    "category": "用語解説",
+    "keywords": [
+      "人材紹介 ビジネスモデル",
+      "人材紹介 売上",
+      "人材紹介 単価",
+      "人材紹介 KPI",
+      "人材紹介 収益構造",
+      "人材紹介 コスト構造"
+    ],
+    "primary_keyword": "人材紹介 ビジネスモデル",
+    "status": "published",
+    "published": "2026-05-12",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agent-business-model/"
+  },
+  {
+    "slug": "recruitment-tiktok-marketing",
+    "title": "人材紹介のTikTok集客｜運用ノウハウと成功事例の作り方",
+    "description": "人材紹介業のTikTok集客を実務レベルで体系化。アルゴリズムの基本理解、人材紹介で伸びるコンテンツパターン、投稿頻度と運用体制、分析指標と改善サイクル、失敗パターンと回避策まで、20代求職者を低CPAで集める実践ガイド。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 TikTok",
+      "TikTok 採用",
+      "TikTok 求人",
+      "人材紹介 動画マーケティング",
+      "TikTok 運用",
+      "TikTok 採用マーケティング"
+    ],
+    "primary_keyword": "人材紹介 TikTok",
+    "status": "published",
+    "published": "2026-05-11",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-tiktok-marketing/"
+  },
+  {
+    "slug": "recruitment-content-marketing",
+    "title": "人材紹介のコンテンツマーケティング｜SEO記事で求職者を集める実践ガイド",
+    "description": "人材紹介業がオウンドメディアでSEO経由の求職者集客を実現するための実践ガイド。キーワード設計・記事構成テンプレート・運用体制・成果が出るまでの期間・投資判断の基準までを、累積で勝つチャネルの作り方として体系的に解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 コンテンツマーケティング",
+      "人材紹介 SEO",
+      "人材紹介 オウンドメディア",
+      "求職者 SEO",
+      "コンテンツSEO 人材紹介",
+      "オウンドメディア 立ち上げ"
+    ],
+    "primary_keyword": "人材紹介 コンテンツマーケティング",
+    "status": "published",
+    "published": "2026-05-10",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-content-marketing/"
+  },
+  {
+    "slug": "shinsotsu-recruitment-trends",
+    "title": "新卒紹介事業の最新トレンド2026｜Z世代の就活行動とエージェント戦略",
+    "description": "2026年時点の新卒紹介事業を取り巻く変化を、Z世代の情報収集行動・就活サイト離れ・SNS就活・スカウト型の伸長の観点から総合的に整理。母集団形成戦略を再設計するためのインサイトを、新卒紹介事業の経営者・マーケ責任者向けに解説します。",
+    "category": "業界トレンド",
+    "keywords": [
+      "新卒 トレンド",
+      "Z世代 就活",
+      "新卒紹介事業",
+      "新卒採用 変化",
+      "新卒エージェント",
+      "新卒 SNS",
+      "Z世代 採用"
+    ],
+    "primary_keyword": "新卒 トレンド",
+    "status": "published",
+    "published": "2026-05-09",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/shinsotsu-recruitment-trends/"
+  },
+  {
+    "slug": "recruitment-funnel-design",
+    "title": "人材紹介のファネル設計｜応募→面談→決定の最適化フレームワーク",
+    "description": "応募→面談→決定までの歩留まりを構造化するファネル設計の考え方を、各段階の業界平均値・ボトルネック診断・改善施策・事業フェーズ別の優先順位までセットで解説。CPAだけ追っても見えない歩留まりの最適化を、人材紹介事業の経営者・マーケ責任者向けに整理した実務ガイド。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 ファネル",
+      "人材紹介 歩留まり",
+      "応募 面談 決定",
+      "人材紹介 KPI設計",
+      "人材紹介 ファネル分析",
+      "人材紹介 ボトルネック"
+    ],
+    "primary_keyword": "人材紹介 ファネル",
+    "status": "published",
+    "published": "2026-05-08",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-funnel-design/"
+  },
+  {
+    "slug": "recruitment-cpa-calculation",
+    "title": "人材紹介のCPA計算方法と業界平均｜応募・面談・決定の3階層で正しく評価する",
+    "description": "人材紹介業のCPAを正しく計算・評価するための3階層フレームワーク（応募CPA・面談着座CPA・決定CPA）と業界平均値を解説。応募CPAだけ追ってROAS悪化を見逃す典型パターンとその防ぎ方を、若手未経験・第二新卒・専門職領域のレンジ感つきで整理します。",
+    "category": "用語解説",
+    "keywords": [
+      "人材紹介 CPA 計算",
+      "人材紹介 CPA 平均",
+      "応募CPA",
+      "面談CPA",
+      "決定CPA",
+      "人材紹介 業界平均",
+      "人材紹介 KPI"
+    ],
+    "primary_keyword": "人材紹介 CPA 計算",
+    "status": "published",
+    "published": "2026-05-07",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cpa-calculation/"
+  },
+  {
+    "slug": "recruitment-cpa-rising",
+    "title": "人材紹介の求職者集客でCPAが高騰する6つの原因と対策",
+    "description": "人材紹介業のCPAが年々上がり続ける構造的な原因を6つに分解し、現場で打てる具体的な対策を解説。チャネル分散、SNS集客、歩留まり改善、着座成果報酬型送客の活用まで、若手未経験・第二新卒・新卒領域の集客責任者向けの実務ガイド。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 CPA",
+      "人材紹介 CPA 高騰",
+      "求職者集客 CPA",
+      "人材紹介 集客コスト",
+      "人材紹介 ROAS",
+      "着座成果報酬",
+      "求職者送客"
+    ],
+    "primary_keyword": "人材紹介 CPA",
+    "status": "published",
+    "published": "2026-05-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cpa-rising/"
+  },
+  {
+    "slug": "interview-show-rate",
+    "title": "人材紹介の面談着座率を上げる7つの方法【現場で効いた施策】",
+    "description": "人材紹介業の面談着座率（実施率）が低い原因と、現場で実際に効いた7つの改善施策を解説。応募から面談までの歩留まり改善はROASを大きく押し上げる、最も費用対効果の高い領域です。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 面談着座率",
+      "人材紹介 面談実施率",
+      "面談キャンセル",
+      "人材紹介 歩留まり",
+      "応募 面談 歩留まり",
+      "着座率 改善"
+    ],
+    "primary_keyword": "人材紹介 面談着座率",
+    "status": "published",
+    "published": "2026-05-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/interview-show-rate/"
+  },
+  {
+    "slug": "recruitment-acquisition-services",
+    "title": "人材紹介の集客代行サービス比較｜選び方と主要7タイプの特徴",
+    "description": "人材紹介業の求職者集客を外部に委託する場合のサービス類型を7タイプに分類し、料金体系・契約形態・専門性・成果のリスクを比較。自社のフェーズと課題に応じた選び方の判断軸も解説します。",
+    "category": "比較検討",
+    "keywords": [
+      "人材紹介 集客代行",
+      "求職者集客 代行",
+      "人材紹介 集客サービス",
+      "送客サービス 比較",
+      "人材紹介 マーケティング代行",
+      "人材紹介 広告運用代行"
+    ],
+    "primary_keyword": "人材紹介 集客代行",
+    "status": "published",
+    "published": "2026-05-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-acquisition-services/"
+  },
+  {
+    "slug": "recruitment-sns-marketing",
+    "title": "人材紹介のSNS集客完全ガイド｜TikTok・Instagram・Xの使い分け",
+    "description": "20代求職者の情報収集経路の主軸となったSNS集客を、人材紹介業向けに体系的に解説。TikTok・Instagram・Xそれぞれの特性、運用設計、成果が出るまでの期間、失敗パターンまで実務レベルで整理します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 SNS集客",
+      "TikTok 採用",
+      "Instagram 採用",
+      "人材紹介 TikTok",
+      "人材紹介 Instagram",
+      "SNS運用 採用",
+      "SNSマーケティング 人材紹介"
+    ],
+    "primary_keyword": "人材紹介 SNS集客",
+    "status": "published",
+    "published": "2026-05-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sns-marketing/"
+  },
+  {
+    "slug": "second-shinsotsu-acquisition",
+    "title": "第二新卒の求職者を集客する5つのチャネルと訴求設計",
+    "description": "第二新卒層（社会人経験1〜3年）に特化した求職者集客の戦略を、5つの主要チャネルと訴求設計の観点から解説。各チャネルの特性、CPA相場、第二新卒特有の心理・行動を踏まえた実践ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "第二新卒 集客",
+      "第二新卒 求職者集客",
+      "第二新卒 転職",
+      "Re就活",
+      "第二新卒 SNS",
+      "第二新卒 マーケティング",
+      "人材紹介 第二新卒"
+    ],
+    "primary_keyword": "第二新卒 集客",
+    "status": "published",
+    "published": "2026-05-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/second-shinsotsu-acquisition/"
+  },
+  {
+    "slug": "recruitment-roas-improvement",
+    "title": "人材紹介のROAS改善｜計算式と現場でできる10の打ち手",
+    "description": "人材紹介業のROAS（広告費用対効果）を改善するための計算式の整理と、現場ですぐ実装できる10の具体的な打ち手を解説。決定CPAを起点とした逆算思考、チャネル別評価、歩留まり改善まで実務ガイド。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 ROAS",
+      "人材紹介 ROAS改善",
+      "人材紹介 広告費用対効果",
+      "人材紹介 LTV",
+      "人材紹介 ROI",
+      "決定CPA"
+    ],
+    "primary_keyword": "人材紹介 ROAS",
+    "status": "published",
+    "published": "2026-05-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-roas-improvement/"
+  },
+  {
+    "slug": "shinsotsu-pool-formation",
+    "title": "新卒紹介事業の母集団形成2026｜SNS・スカウト・送客の最適配分",
+    "description": "新卒紹介事業における母集団形成の2026年最新トレンドを、SNS集客・スカウト型・送客サービスの3チャネルから整理。Z世代の情報収集行動と、各チャネルの単価・リードタイム・決定率の比較も含めた実務ガイド。",
+    "category": "業界トレンド",
+    "keywords": [
+      "新卒 集客",
+      "新卒紹介 母集団形成",
+      "新卒 スカウト",
+      "新卒紹介事業",
+      "Z世代 採用",
+      "新卒 SNS"
+    ],
+    "primary_keyword": "新卒 集客",
+    "status": "published",
+    "published": "2026-05-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/shinsotsu-pool-formation/"
+  },
+  {
+    "slug": "recruitment-listing-ads",
+    "title": "リスティング広告で人材紹介の求職者を獲得する方法と相場",
+    "description": "人材紹介業がリスティング広告（Google・Yahoo!）で求職者を獲得するための実務ガイド。キーワード選定、入札戦略、LP設計、CPA相場、よくある失敗パターンまで、運用開始時から最適化フェーズまでを網羅的に解説。",
+    "category": "ハウツー",
+    "keywords": [
+      "リスティング広告 人材紹介",
+      "人材紹介 リスティング",
+      "求職者 リスティング",
+      "Google広告 人材紹介",
+      "人材紹介 広告運用",
+      "リスティング CPA"
+    ],
+    "primary_keyword": "リスティング広告 人材紹介",
+    "status": "published",
+    "published": "2026-05-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-listing-ads/"
+  },
+  {
+    "slug": "seat-performance-fee",
+    "title": "着座成果報酬型の求職者送客とは？仕組み・相場・他モデルとの違い",
+    "description": "着座成果報酬型の求職者送客サービスについて、その仕組み・課金タイミング・相場感を、応募課金型・成功報酬型などの他モデルとの比較で詳しく解説。人材紹介事業者が選定する際の判断軸と注意点まで。",
+    "category": "用語解説",
+    "keywords": [
+      "着座成果報酬",
+      "着座成果報酬 人材紹介",
+      "求職者送客 仕組み",
+      "面談課金",
+      "人材紹介 成果報酬",
+      "送客サービス 課金モデル"
+    ],
+    "primary_keyword": "着座成果報酬",
+    "status": "published",
+    "published": "2026-05-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/seat-performance-fee/"
+  },
+  {
+    "slug": "inexperienced-talent-acquisition",
+    "title": "未経験向け人材紹介エージェントの集客チャネル完全ガイド",
+    "description": "未経験層に特化した人材紹介エージェントの求職者集客戦略を、市場特性・主要チャネル・訴求設計・歩留まりの観点から完全網羅。営業未経験・施工管理未経験・SaaS営業未経験など、典型セグメント別の実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "未経験 集客",
+      "未経験 人材紹介",
+      "未経験 求職者集客",
+      "未経験営業 集客",
+      "人材紹介 未経験エージェント",
+      "若手未経験 集客"
+    ],
+    "primary_keyword": "未経験 集客",
+    "status": "published",
+    "published": "2026-05-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
+  },
+  {
+    "slug": "recruitment-cs-acquisition",
+    "title": "カスタマーサクセス職向けの求職者集客戦略",
+    "description": "成長領域として注目されるカスタマーサクセス（CS）職の人材紹介における求職者集客戦略を、市場の成長性・求職者属性・営業職経験者からの転換訴求・主要チャネル・相場の観点から体系的に解説。CS特化型エージェントの差別化設計のための実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "カスタマーサクセス 集客",
+      "CS 転職",
+      "カスタマーサクセス 人材紹介",
+      "CS求人",
+      "SaaS CS 採用",
+      "カスタマーサクセス エージェント"
+    ],
+    "primary_keyword": "カスタマーサクセス 集客",
+    "status": "ready",
+    "scheduled": "2026-05-16",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cs-acquisition/"
+  },
+  {
+    "slug": "recruitment-saas-sales-acquisition",
+    "title": "SaaS営業の求職者集客｜キャリアアップ訴求の設計",
+    "description": "SaaS営業（インサイドセールス・フィールドセールス・カスタマーサクセス）に特化した求職者集客の実務ガイド。市場の特殊性、キャリアアップ訴求の設計、未経験から経験者への分岐、高単価決定を狙うチャネル設計までを、SaaS企業の急成長を背景にした集客機会の捉え方として解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "SaaS営業 集客",
+      "SaaS営業 転職",
+      "インサイドセールス 集客",
+      "フィールドセールス 集客",
+      "SaaS求人",
+      "SaaS人材紹介"
+    ],
+    "primary_keyword": "SaaS営業 集客",
+    "status": "ready",
+    "scheduled": "2026-05-17",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-saas-sales-acquisition/"
+  },
+  {
+    "slug": "recruitment-housing-allowance-appeal",
+    "title": "住宅手当・福利厚生を訴求軸にした求職者集客の設計",
+    "description": "年収訴求の頭打ち時代に、住宅手当・福利厚生・働き方を集客の主訴求軸として設計する実務ガイド。Z世代・第二新卒のホワイト企業志向と価値観の変化に合わせた訴求パターン、競合との差別化、応募率・面談着座率への影響まで解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "福利厚生 採用",
+      "住宅手当 採用訴求",
+      "ホワイト企業 訴求",
+      "働き方 採用",
+      "福利厚生 求職者集客"
+    ],
+    "primary_keyword": "福利厚生 採用",
+    "status": "ready",
+    "scheduled": "2026-05-18",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-housing-allowance-appeal/"
+  },
+  {
+    "slug": "recruitment-female-acquisition",
+    "title": "女性求職者向け人材紹介の集客戦略｜訴求設計と主要チャネル",
+    "description": "女性求職者（特に20〜30代）に特化した人材紹介の集客戦略を、市場特性・ライフイベント配慮の訴求設計・キャリア不安解消の訴求・主要チャネル・LP設計の観点から整理。男女兼用LPでは取れない優良母集団形成のための実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "女性 求職者 集客",
+      "女性 転職 マーケティング",
+      "女性向け 人材紹介",
+      "女性キャリア 転職",
+      "女性 転職エージェント"
+    ],
+    "primary_keyword": "女性 求職者 集客",
+    "status": "ready",
+    "scheduled": "2026-05-19",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-female-acquisition/"
+  },
+  {
+    "slug": "recruitment-uta-acquisition",
+    "title": "U・Iターン求職者向けの集客戦略｜地方人材紹介の実務",
+    "description": "U・Iターン転職市場における求職者集客戦略を、訴求設計・主要チャネル・地方特化のメッセージ・送客サービス活用までの観点で解説。",
+    "category": "セグメント別",
+    "keywords": [
+      "Uターン 転職",
+      "Iターン 転職",
+      "地方 人材紹介",
+      "地方転職 集客"
+    ],
+    "primary_keyword": "Uターン 転職",
+    "key_points": [
+      "U・Iターン市場の特性",
+      "都市部→地方の動機設計",
+      "主要チャネルと媒体選定",
+      "歩留まり管理のポイント"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-uta-acquisition/"
+  },
+  {
+    "slug": "recruitment-30s-acquisition",
+    "title": "30代求職者向けの人材紹介集客戦略",
+    "description": "30代求職者向け人材紹介の集客戦略を、市場特性・キャリア訴求・主要チャネル・歩留まり管理の観点で解説。30代の転職市場の構造的特徴を踏まえた実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "30代 転職",
+      "30代 求職者集客",
+      "30代 人材紹介"
+    ],
+    "primary_keyword": "30代 転職",
+    "key_points": [
+      "30代の転職市場の特殊性",
+      "キャリアアップ vs キャリアチェンジの分岐",
+      "ファミリー要素の訴求設計",
+      "主要チャネルと相場"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-30s-acquisition/"
+  },
+  {
+    "slug": "recruitment-aichi-acquisition",
+    "title": "東海エリアの人材紹介集客｜地域特性とチャネル選定",
+    "description": "愛知・名古屋を中心とした東海エリアの人材紹介事業向け集客戦略を、地域特性・主要産業・媒体選定の観点で解説。",
+    "category": "セグメント別",
+    "keywords": [
+      "東海 人材紹介",
+      "愛知 求職者集客",
+      "名古屋 転職",
+      "東海エリア 採用"
+    ],
+    "primary_keyword": "東海 人材紹介",
+    "key_points": [
+      "東海エリアの主要産業と求職者特性",
+      "首都圏との違い",
+      "主要媒体・チャネル選定",
+      "地域特化の訴求設計"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-aichi-acquisition/"
+  },
+  {
+    "slug": "recruitment-osaka-acquisition",
+    "title": "関西・大阪エリアの人材紹介集客戦略",
+    "description": "関西・大阪エリアの人材紹介事業向け集客戦略を、地域特性・求職者属性・主要媒体・訴求設計の観点で解説。",
+    "category": "セグメント別",
+    "keywords": [
+      "関西 人材紹介",
+      "大阪 求職者集客",
+      "大阪 転職",
+      "関西 採用"
+    ],
+    "primary_keyword": "関西 人材紹介",
+    "key_points": [
+      "関西・大阪エリアの市場特性",
+      "首都圏との求職者属性の違い",
+      "主要媒体と相場",
+      "地域特化の訴求設計"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-osaka-acquisition/"
+  },
+  {
+    "slug": "recruitment-fukuoka-acquisition",
+    "title": "九州・福岡エリアの人材紹介集客戦略",
+    "description": "九州・福岡エリアの人材紹介事業向け集客戦略を、市場成長性・求職者属性・主要チャネル・地方特化訴求の観点で解説。",
+    "category": "セグメント別",
+    "keywords": [
+      "九州 人材紹介",
+      "福岡 求職者集客",
+      "福岡 転職",
+      "九州 採用"
+    ],
+    "primary_keyword": "九州 人材紹介",
+    "key_points": [
+      "福岡市場の成長性",
+      "首都圏移住組の取り込み",
+      "主要媒体と相場",
+      "地域特化訴求"
+    ],
+    "status": "queued",
+    "queue_position": 5,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-fukuoka-acquisition/"
+  },
+  {
+    "slug": "recruitment-conversion-tracking",
+    "title": "人材紹介のコンバージョン計測｜GTM・GA4・コンバージョンAPI完全ガイド",
+    "description": "人材紹介業のWebマーケティングにおけるコンバージョン計測の実務ガイド。GTM設定、GA4のカスタムイベント、Google広告のコンバージョンAPI連携までの完全版。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 GTM",
+      "人材紹介 GA4",
+      "人材紹介 コンバージョン計測",
+      "コンバージョンAPI",
+      "オフラインCV"
+    ],
+    "primary_keyword": "人材紹介 GTM",
+    "key_points": [
+      "計測の基本3階層（GTM・GA4・広告側）",
+      "面談実施・決定をオフラインCVで取り込む",
+      "コンバージョンAPI連携",
+      "計測精度の検証方法"
+    ],
+    "status": "queued",
+    "queue_position": 6,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-conversion-tracking/"
+  },
+  {
+    "slug": "recruitment-ad-creative",
+    "title": "人材紹介の広告クリエイティブ｜CTRが2倍になる訴求と画像の作り方",
+    "description": "人材紹介業の広告クリエイティブ（バナー・動画）の制作実務を、ターゲット別の訴求設計・画像構成・コピーライティング・ABテスト設計の観点で解説。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 広告クリエイティブ",
+      "人材紹介 バナー",
+      "広告コピー",
+      "CTR改善"
+    ],
+    "primary_keyword": "人材紹介 広告クリエイティブ",
+    "key_points": [
+      "ターゲット別クリエイティブ設計",
+      "強い訴求コピーの作り方",
+      "画像構成の原則",
+      "ABテストの設計"
+    ],
+    "status": "queued",
+    "queue_position": 7,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ad-creative/"
+  },
+  {
+    "slug": "recruitment-line-marketing",
+    "title": "人材紹介のLINE活用｜友だち追加から面談誘導までの設計",
+    "description": "LINE公式アカウントを活用した人材紹介業の集客・育成・面談誘導設計を、LSTEP等のステップ配信ツールも含めて実務レベルで解説。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 LINE",
+      "LINE公式アカウント 採用",
+      "LSTEP 採用",
+      "LINE 求職者"
+    ],
+    "primary_keyword": "人材紹介 LINE",
+    "key_points": [
+      "LINE公式の友だち追加導線設計",
+      "ステップ配信での育成",
+      "面談予約までの誘導",
+      "リッチメニュー・タグ管理"
+    ],
+    "status": "queued",
+    "queue_position": 8,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-line-marketing/"
+  },
+  {
+    "slug": "recruitment-pre-counseling",
+    "title": "人材紹介の事前カウンセリング設計｜面談着座率を80%にする運用",
+    "description": "応募者と面談の間に挟む事前カウンセリングの設計を、目的・実施フロー・ヒアリング項目・期待値調整の観点から実務レベルで解説。",
+    "category": "ハウツー",
+    "keywords": [
+      "事前カウンセリング",
+      "人材紹介 ヒアリング",
+      "面談着座率 上げる",
+      "期待値調整"
+    ],
+    "primary_keyword": "事前カウンセリング",
+    "key_points": [
+      "事前カウンセリングの目的",
+      "実施フロー設計",
+      "必須ヒアリング項目",
+      "期待値調整のテクニック"
+    ],
+    "status": "queued",
+    "queue_position": 9,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-pre-counseling/"
+  },
+  {
+    "slug": "recruitment-ca-productivity",
+    "title": "キャリアアドバイザー（CA）の生産性を2倍にする運用設計",
+    "description": "キャリアアドバイザーの生産性を上げるためのオペレーション設計、ツール選定、面談前準備の最適化、求人マッチング自動化までの実務ガイド。",
+    "category": "ハウツー",
+    "keywords": [
+      "CA 生産性",
+      "キャリアアドバイザー 効率化",
+      "人材紹介 オペレーション",
+      "CA ツール"
+    ],
+    "primary_keyword": "CA 生産性",
+    "key_points": [
+      "CAの時間配分の理想形",
+      "事前準備の自動化",
+      "求人マッチングツールの活用",
+      "KPI設計"
+    ],
+    "status": "queued",
+    "queue_position": 10,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ca-productivity/"
+  },
+  {
+    "slug": "recruitment-ats-comparison",
+    "title": "人材紹介向けATS比較｜選び方と主要システムの特徴",
+    "description": "人材紹介業向けの応募者管理システム（ATS/CRM）の選定軸と主要製品の比較。ハーモス、ジョブカン、SmartHRなどの特徴を機能・料金・運用面で整理。",
+    "category": "比較検討",
+    "keywords": [
+      "人材紹介 ATS",
+      "人材紹介 CRM",
+      "応募者管理システム",
+      "人材紹介 システム"
+    ],
+    "primary_keyword": "人材紹介 ATS",
+    "key_points": [
+      "ATSの基本機能",
+      "選定の判断軸",
+      "主要製品の特徴比較",
+      "運用立ち上げの注意点"
+    ],
+    "status": "queued",
+    "queue_position": 11,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ats-comparison/"
+  },
+  {
+    "slug": "recruitment-monthly-volume-planning",
+    "title": "人材紹介の月次面談数の事業計画｜KPI設計と必要広告予算の算出",
+    "description": "月次の決定数目標から逆算して、必要面談数・必要応募数・必要広告予算を算出する実務フレーム。事業計画の精度を上げるためのKPI設計ガイド。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 事業計画",
+      "人材紹介 KPI",
+      "人材紹介 広告予算",
+      "月次面談数"
+    ],
+    "primary_keyword": "人材紹介 事業計画",
+    "key_points": [
+      "決定数→面談数→応募数の逆算",
+      "歩留まり率の前提整理",
+      "必要広告予算の算出",
+      "事業計画の精度を上げる方法"
+    ],
+    "status": "queued",
+    "queue_position": 12,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-monthly-volume-planning/"
+  },
+  {
+    "slug": "recruitment-cancellation-rate",
+    "title": "人材紹介の面談キャンセル率を下げる｜原因分析と運用改善",
+    "description": "面談キャンセル率の業界平均、典型的な原因パターン、運用改善のレバーを実務レベルで解説。前日リマインドからキャンセルポリシー設計まで。",
+    "category": "課題解決",
+    "keywords": [
+      "面談キャンセル",
+      "人材紹介 キャンセル率",
+      "面談キャンセル 対策",
+      "リマインド設計"
+    ],
+    "primary_keyword": "面談キャンセル",
+    "key_points": [
+      "キャンセル率の業界平均",
+      "典型的キャンセル原因",
+      "リマインド設計",
+      "ポリシー設計と求職者教育"
+    ],
+    "status": "queued",
+    "queue_position": 13,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cancellation-rate/"
+  },
+  {
+    "slug": "recruitment-jma-acquisition",
+    "title": "ハイクラス人材紹介の集客戦略｜年収600万円以上の求職者を集める",
+    "description": "ハイクラス領域（年収600万円以上）の求職者集客戦略を、媒体選定・スカウト型運用・SNS活用・送客サービスの観点で解説。",
+    "category": "セグメント別",
+    "keywords": [
+      "ハイクラス 人材紹介",
+      "ハイクラス 求職者集客",
+      "年収600万 転職",
+      "エグゼクティブ 採用"
+    ],
+    "primary_keyword": "ハイクラス 人材紹介",
+    "key_points": [
+      "ハイクラス市場の特性",
+      "主要媒体（Bizreach等）",
+      "スカウト型運用",
+      "ハイクラス向け訴求設計"
+    ],
+    "status": "queued",
+    "queue_position": 14,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-jma-acquisition/"
+  },
+  {
+    "slug": "recruitment-international-acquisition",
+    "title": "外国人材紹介の集客戦略｜訴求設計と主要チャネル",
+    "description": "外国人材紹介の求職者集客戦略を、市場特性・主要チャネル・多言語訴求・在留資格別の設計の観点で解説。",
+    "category": "セグメント別",
+    "keywords": [
+      "外国人材 人材紹介",
+      "外国人 採用",
+      "外国人材 集客",
+      "多言語 採用"
+    ],
+    "primary_keyword": "外国人材 人材紹介",
+    "key_points": [
+      "外国人材市場の特性",
+      "在留資格別の集客設計",
+      "多言語訴求のポイント",
+      "主要チャネルと相場"
+    ],
+    "status": "queued",
+    "queue_position": 15,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-international-acquisition/"
+  },
+  {
+    "slug": "recruitment-shoukai-fee",
+    "title": "人材紹介の手数料設計｜成功報酬の業界標準と差別化のポイント",
+    "description": "人材紹介の手数料（成功報酬）の業界標準、決定単価の決まり方、料金体系の差別化、企業との交渉実務まで解説。",
+    "category": "用語解説",
+    "keywords": [
+      "人材紹介 手数料",
+      "人材紹介 成功報酬",
+      "人材紹介 単価",
+      "人材紹介 料金"
+    ],
+    "primary_keyword": "人材紹介 手数料",
+    "key_points": [
+      "成功報酬の業界標準",
+      "返金規定の設計",
+      "料金体系の差別化",
+      "交渉実務"
+    ],
+    "status": "queued",
+    "queue_position": 16,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-shoukai-fee/"
+  },
+  {
+    "slug": "recruitment-licensing",
+    "title": "人材紹介事業の許認可｜有料職業紹介免許の取得と維持",
+    "description": "人材紹介事業の有料職業紹介免許の取得要件、申請フロー、維持要件、実務で気をつけるべきコンプライアンスを解説。",
+    "category": "用語解説",
+    "keywords": [
+      "有料職業紹介 免許",
+      "人材紹介 許認可",
+      "有料職業紹介事業 開業",
+      "職業安定法"
+    ],
+    "primary_keyword": "有料職業紹介 免許",
+    "key_points": [
+      "免許取得の要件",
+      "申請フロー",
+      "維持要件と更新",
+      "コンプライアンス実務"
+    ],
+    "status": "queued",
+    "queue_position": 17,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-licensing/"
+  }
+]

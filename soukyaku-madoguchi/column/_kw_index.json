@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-uta-acquisition",
+    "title": "U・Iターン求職者向けの集客戦略｜地方人材紹介の実務",
+    "description": "U・Iターン転職市場における求職者集客戦略を、市場の特性・都市部から地方への動機設計・主要チャネル・歩留まり管理の観点で実務レベルで解説。地方特化型エージェントの差別化や、首都圏エージェントが地方求人を扱う際の集客モデルを整理します。",
+    "category": "セグメント別",
+    "keywords": [
+      "Uターン 転職",
+      "Iターン 転職",
+      "地方 人材紹介",
+      "地方転職 集客",
+      "Uターン Iターン エージェント"
+    ],
+    "primary_keyword": "Uターン 転職",
+    "status": "published",
+    "published": "2026-05-20",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-uta-acquisition/"
+  },
+  {
     "slug": "recruitment-female-acquisition",
     "title": "女性求職者向け人材紹介の集客戦略｜訴求設計と主要チャネル",
     "description": "女性求職者（特に20〜30代）に特化した人材紹介の集客戦略を、市場特性・ライフイベント配慮の訴求設計・キャリア不安解消の訴求・主要チャネル・LP設計の観点から整理。男女兼用LPでは取れない優良母集団形成のための実務ガイド。",
@@ -15,6 +32,59 @@
     "status": "published",
     "published": "2026-05-19",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-female-acquisition/"
+  },
+  {
+    "slug": "recruitment-housing-allowance-appeal",
+    "title": "住宅手当・福利厚生を訴求軸にした求職者集客の設計",
+    "description": "年収訴求の頭打ち時代に、住宅手当・福利厚生・働き方を集客の主訴求軸として設計する実務ガイド。Z世代・第二新卒のホワイト企業志向と価値観の変化に合わせた訴求パターン、競合との差別化、応募率・面談着座率への影響まで解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "福利厚生 採用",
+      "住宅手当 採用訴求",
+      "ホワイト企業 訴求",
+      "働き方 採用",
+      "福利厚生 求職者集客"
+    ],
+    "primary_keyword": "福利厚生 採用",
+    "status": "published",
+    "published": "2026-05-18",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-housing-allowance-appeal/"
+  },
+  {
+    "slug": "recruitment-saas-sales-acquisition",
+    "title": "SaaS営業の求職者集客｜キャリアアップ訴求の設計",
+    "description": "SaaS営業（インサイドセールス・フィールドセールス・カスタマーサクセス）に特化した求職者集客の実務ガイド。市場の特殊性、キャリアアップ訴求の設計、未経験から経験者への分岐、高単価決定を狙うチャネル設計までを、SaaS企業の急成長を背景にした集客機会の捉え方として解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "SaaS営業 集客",
+      "SaaS営業 転職",
+      "インサイドセールス 集客",
+      "フィールドセールス 集客",
+      "SaaS求人",
+      "SaaS人材紹介"
+    ],
+    "primary_keyword": "SaaS営業 集客",
+    "status": "published",
+    "published": "2026-05-17",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-saas-sales-acquisition/"
+  },
+  {
+    "slug": "recruitment-cs-acquisition",
+    "title": "カスタマーサクセス職向けの求職者集客戦略",
+    "description": "成長領域として注目されるカスタマーサクセス（CS）職の人材紹介における求職者集客戦略を、市場の成長性・求職者属性・営業職経験者からの転換訴求・主要チャネル・相場の観点から体系的に解説。CS特化型エージェントの差別化設計のための実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "カスタマーサクセス 集客",
+      "CS 転職",
+      "カスタマーサクセス 人材紹介",
+      "CS求人",
+      "SaaS CS 採用",
+      "カスタマーサクセス エージェント"
+    ],
+    "primary_keyword": "カスタマーサクセス 集客",
+    "status": "published",
+    "published": "2026-05-16",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cs-acquisition/"
   },
   {
     "slug": "recruitment-engineer-acquisition",
@@ -365,182 +435,88 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-cs-acquisition",
-    "title": "カスタマーサクセス職向けの求職者集客戦略",
-    "description": "成長領域として注目されるカスタマーサクセス（CS）職の人材紹介における求職者集客戦略を、市場の成長性・求職者属性・営業職経験者からの転換訴求・主要チャネル・相場の観点から体系的に解説。CS特化型エージェントの差別化設計のための実務ガイド。",
-    "category": "セグメント別",
-    "keywords": [
-      "カスタマーサクセス 集客",
-      "CS 転職",
-      "カスタマーサクセス 人材紹介",
-      "CS求人",
-      "SaaS CS 採用",
-      "カスタマーサクセス エージェント"
-    ],
-    "primary_keyword": "カスタマーサクセス 集客",
-    "status": "ready",
-    "scheduled": "2026-05-16",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cs-acquisition/"
-  },
-  {
-    "slug": "recruitment-saas-sales-acquisition",
-    "title": "SaaS営業の求職者集客｜キャリアアップ訴求の設計",
-    "description": "SaaS営業（インサイドセールス・フィールドセールス・カスタマーサクセス）に特化した求職者集客の実務ガイド。市場の特殊性、キャリアアップ訴求の設計、未経験から経験者への分岐、高単価決定を狙うチャネル設計までを、SaaS企業の急成長を背景にした集客機会の捉え方として解説します。",
-    "category": "セグメント別",
-    "keywords": [
-      "SaaS営業 集客",
-      "SaaS営業 転職",
-      "インサイドセールス 集客",
-      "フィールドセールス 集客",
-      "SaaS求人",
-      "SaaS人材紹介"
-    ],
-    "primary_keyword": "SaaS営業 集客",
-    "status": "ready",
-    "scheduled": "2026-05-17",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-saas-sales-acquisition/"
-  },
-  {
-    "slug": "recruitment-housing-allowance-appeal",
-    "title": "住宅手当・福利厚生を訴求軸にした求職者集客の設計",
-    "description": "年収訴求の頭打ち時代に、住宅手当・福利厚生・働き方を集客の主訴求軸として設計する実務ガイド。Z世代・第二新卒のホワイト企業志向と価値観の変化に合わせた訴求パターン、競合との差別化、応募率・面談着座率への影響まで解説します。",
-    "category": "ハウツー",
-    "keywords": [
-      "福利厚生 採用",
-      "住宅手当 採用訴求",
-      "ホワイト企業 訴求",
-      "働き方 採用",
-      "福利厚生 求職者集客"
-    ],
-    "primary_keyword": "福利厚生 採用",
-    "status": "ready",
-    "scheduled": "2026-05-18",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-housing-allowance-appeal/"
-  },
-  {
-    "slug": "recruitment-female-acquisition",
-    "title": "女性求職者向け人材紹介の集客戦略｜訴求設計と主要チャネル",
-    "description": "女性求職者（特に20〜30代）に特化した人材紹介の集客戦略を、市場特性・ライフイベント配慮の訴求設計・キャリア不安解消の訴求・主要チャネル・LP設計の観点から整理。男女兼用LPでは取れない優良母集団形成のための実務ガイド。",
-    "category": "セグメント別",
-    "keywords": [
-      "女性 求職者 集客",
-      "女性 転職 マーケティング",
-      "女性向け 人材紹介",
-      "女性キャリア 転職",
-      "女性 転職エージェント"
-    ],
-    "primary_keyword": "女性 求職者 集客",
-    "status": "ready",
-    "scheduled": "2026-05-19",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-female-acquisition/"
-  },
-  {
     "slug": "recruitment-uta-acquisition",
     "title": "U・Iターン求職者向けの集客戦略｜地方人材紹介の実務",
-    "description": "U・Iターン転職市場における求職者集客戦略を、訴求設計・主要チャネル・地方特化のメッセージ・送客サービス活用までの観点で解説。",
+    "description": "U・Iターン転職市場における求職者集客戦略を、市場の特性・都市部から地方への動機設計・主要チャネル・歩留まり管理の観点で実務レベルで解説。地方特化型エージェントの差別化や、首都圏エージェントが地方求人を扱う際の集客モデルを整理します。",
     "category": "セグメント別",
     "keywords": [
       "Uターン 転職",
       "Iターン 転職",
       "地方 人材紹介",
-      "地方転職 集客"
+      "地方転職 集客",
+      "Uターン Iターン エージェント"
     ],
     "primary_keyword": "Uターン 転職",
-    "key_points": [
-      "U・Iターン市場の特性",
-      "都市部→地方の動機設計",
-      "主要チャネルと媒体選定",
-      "歩留まり管理のポイント"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-05-20",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-uta-acquisition/"
   },
   {
     "slug": "recruitment-30s-acquisition",
     "title": "30代求職者向けの人材紹介集客戦略",
-    "description": "30代求職者向け人材紹介の集客戦略を、市場特性・キャリア訴求・主要チャネル・歩留まり管理の観点で解説。30代の転職市場の構造的特徴を踏まえた実務ガイド。",
+    "description": "30代求職者に特化した人材紹介の集客戦略を、市場特性・キャリアアップとキャリアチェンジの分岐・ファミリー要素の訴求設計・主要チャネル・相場の観点から体系的に解説。20代と40代の中間層特有の意思決定プロセスを踏まえた実務ガイドです。",
     "category": "セグメント別",
     "keywords": [
       "30代 転職",
       "30代 求職者集客",
-      "30代 人材紹介"
+      "30代 人材紹介",
+      "30代 転職エージェント",
+      "30代 キャリアチェンジ"
     ],
     "primary_keyword": "30代 転職",
-    "key_points": [
-      "30代の転職市場の特殊性",
-      "キャリアアップ vs キャリアチェンジの分岐",
-      "ファミリー要素の訴求設計",
-      "主要チャネルと相場"
-    ],
-    "status": "queued",
-    "queue_position": 2,
+    "status": "ready",
+    "scheduled": "2026-05-21",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-30s-acquisition/"
   },
   {
     "slug": "recruitment-aichi-acquisition",
     "title": "東海エリアの人材紹介集客｜地域特性とチャネル選定",
-    "description": "愛知・名古屋を中心とした東海エリアの人材紹介事業向け集客戦略を、地域特性・主要産業・媒体選定の観点で解説。",
+    "description": "愛知・名古屋を中心とした東海エリア（愛知・岐阜・三重・静岡）の人材紹介事業向け集客戦略を、地域特性・主要産業・媒体選定・首都圏との違いの観点で整理。製造業中心の経済構造を踏まえた地域特化型エージェントの実務ガイド。",
     "category": "セグメント別",
     "keywords": [
       "東海 人材紹介",
       "愛知 求職者集客",
       "名古屋 転職",
-      "東海エリア 採用"
+      "東海エリア 採用",
+      "東海 転職エージェント"
     ],
     "primary_keyword": "東海 人材紹介",
-    "key_points": [
-      "東海エリアの主要産業と求職者特性",
-      "首都圏との違い",
-      "主要媒体・チャネル選定",
-      "地域特化の訴求設計"
-    ],
-    "status": "queued",
-    "queue_position": 3,
+    "status": "ready",
+    "scheduled": "2026-05-22",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-aichi-acquisition/"
   },
   {
     "slug": "recruitment-osaka-acquisition",
     "title": "関西・大阪エリアの人材紹介集客戦略",
-    "description": "関西・大阪エリアの人材紹介事業向け集客戦略を、地域特性・求職者属性・主要媒体・訴求設計の観点で解説。",
+    "description": "関西・大阪エリア（大阪・京都・兵庫・奈良）の人材紹介事業向け集客戦略を、市場特性・首都圏との求職者属性の違い・主要媒体・地域特化の訴求設計の観点で整理。商業・サービス業を軸とした関西経済圏での集客モデル構築ガイド。",
     "category": "セグメント別",
     "keywords": [
       "関西 人材紹介",
       "大阪 求職者集客",
       "大阪 転職",
-      "関西 採用"
+      "関西 採用",
+      "関西 転職エージェント"
     ],
     "primary_keyword": "関西 人材紹介",
-    "key_points": [
-      "関西・大阪エリアの市場特性",
-      "首都圏との求職者属性の違い",
-      "主要媒体と相場",
-      "地域特化の訴求設計"
-    ],
-    "status": "queued",
-    "queue_position": 4,
+    "status": "ready",
+    "scheduled": "2026-05-23",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-osaka-acquisition/"
   },
   {
     "slug": "recruitment-fukuoka-acquisition",
     "title": "九州・福岡エリアの人材紹介集客戦略",
-    "description": "九州・福岡エリアの人材紹介事業向け集客戦略を、市場成長性・求職者属性・主要チャネル・地方特化訴求の観点で解説。",
+    "description": "九州・福岡エリアの人材紹介事業向け集客戦略を、市場の急成長性・首都圏移住組の取り込み・主要チャネル・地域特化訴求の観点から整理。IT・スタートアップ集積地として急成長する福岡市場での集客モデル構築の実務ガイド。",
     "category": "セグメント別",
     "keywords": [
       "九州 人材紹介",
       "福岡 求職者集客",
       "福岡 転職",
-      "九州 採用"
+      "九州 採用",
+      "福岡 転職エージェント"
     ],
     "primary_keyword": "九州 人材紹介",
-    "key_points": [
-      "福岡市場の成長性",
-      "首都圏移住組の取り込み",
-      "主要媒体と相場",
-      "地域特化訴求"
-    ],
-    "status": "queued",
-    "queue_position": 5,
+    "status": "ready",
+    "scheduled": "2026-05-24",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-fukuoka-acquisition/"
   },
   {
@@ -563,7 +539,7 @@
       "計測精度の検証方法"
     ],
     "status": "queued",
-    "queue_position": 6,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-conversion-tracking/"
   },
   {
@@ -585,7 +561,7 @@
       "ABテストの設計"
     ],
     "status": "queued",
-    "queue_position": 7,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ad-creative/"
   },
   {
@@ -607,7 +583,7 @@
       "リッチメニュー・タグ管理"
     ],
     "status": "queued",
-    "queue_position": 8,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-line-marketing/"
   },
   {
@@ -629,7 +605,7 @@
       "期待値調整のテクニック"
     ],
     "status": "queued",
-    "queue_position": 9,
+    "queue_position": 4,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-pre-counseling/"
   },
   {
@@ -651,7 +627,7 @@
       "KPI設計"
     ],
     "status": "queued",
-    "queue_position": 10,
+    "queue_position": 5,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ca-productivity/"
   },
   {
@@ -673,7 +649,7 @@
       "運用立ち上げの注意点"
     ],
     "status": "queued",
-    "queue_position": 11,
+    "queue_position": 6,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ats-comparison/"
   },
   {
@@ -695,7 +671,7 @@
       "事業計画の精度を上げる方法"
     ],
     "status": "queued",
-    "queue_position": 12,
+    "queue_position": 7,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-monthly-volume-planning/"
   },
   {
@@ -717,7 +693,7 @@
       "ポリシー設計と求職者教育"
     ],
     "status": "queued",
-    "queue_position": 13,
+    "queue_position": 8,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cancellation-rate/"
   },
   {
@@ -739,7 +715,7 @@
       "ハイクラス向け訴求設計"
     ],
     "status": "queued",
-    "queue_position": 14,
+    "queue_position": 9,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-jma-acquisition/"
   },
   {
@@ -761,7 +737,7 @@
       "主要チャネルと相場"
     ],
     "status": "queued",
-    "queue_position": 15,
+    "queue_position": 10,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-international-acquisition/"
   },
   {
@@ -783,7 +759,7 @@
       "交渉実務"
     ],
     "status": "queued",
-    "queue_position": 16,
+    "queue_position": 11,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-shoukai-fee/"
   },
   {
@@ -805,7 +781,7 @@
       "コンプライアンス実務"
     ],
     "status": "queued",
-    "queue_position": 17,
+    "queue_position": 12,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-licensing/"
   }
 ]

@@ -135,4 +135,24 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cs-acquisition/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-saas-sales-acquisition/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-housing-allowance-appeal/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-uta-acquisition/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

@@ -222,6 +222,24 @@ def generate_image(prompt: str, output_path: Path) -> bool:
         method="POST",
     )
 
+    # Catch a wide net of network/IO errors so a single transient blip
+    # (DNS, TCP reset, SSL timeout) does not bubble up and kill the entire
+    # publish flow via `set -e`. Every error here is recoverable and a
+    # missing image can be regenerated later without re-publishing.
+    import socket
+    import time
+    network_errors = (
+        urllib.error.HTTPError,
+        urllib.error.URLError,
+        ConnectionResetError,
+        ConnectionError,
+        TimeoutError,
+        socket.timeout,
+        socket.gaierror,
+        OSError,
+        KeyError,
+        ValueError,  # json decode
+    )
     for attempt in range(3):
         try:
             with urllib.request.urlopen(req, timeout=180) as resp:
@@ -232,10 +250,15 @@ def generate_image(prompt: str, output_path: Path) -> bool:
                 f.write(base64.b64decode(b64))
             print(f"  [image OK] {output_path.name}")
             return True
-        except (urllib.error.HTTPError, urllib.error.URLError, KeyError) as e:
-            print(f"  [image attempt {attempt+1} failed] {e}")
-            if attempt == 2:
-                return False
+        except network_errors as e:
+            print(f"  [image attempt {attempt+1} failed] {type(e).__name__}: {e}")
+            if attempt < 2:
+                time.sleep(2 * (attempt + 1))  # backoff: 2s, 4s
+        except Exception as e:  # noqa: BLE001 — final safety net
+            print(f"  [image attempt {attempt+1} unexpected error] {type(e).__name__}: {e}")
+            if attempt < 2:
+                time.sleep(2 * (attempt + 1))
+    print(f"  [image FAILED after 3 attempts] continuing with broken img src; regenerate later")
     return False
 
 

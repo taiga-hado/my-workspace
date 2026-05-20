@@ -17,6 +17,26 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-uta-acquisition/"
   },
   {
+    "slug": "recruitment-acquisition-complete-guide",
+    "title": "求職者集客の完全ガイド｜10チャネル比較・CPA相場・歩留まり管理まで",
+    "description": "求職者集客の全体像を、主要10チャネル（リスティング・SNS・媒体・送客サービス・SEO・LINE・リファラル等）の比較、CPA相場、歩留まり管理、セグメント別の戦略まで網羅的に解説。人材紹介事業の経営者・マーケ責任者向けの決定版ガイドとして、各論記事への動線も完備しています。",
+    "category": "完全ガイド",
+    "keywords": [
+      "求職者集客",
+      "求職者集客 方法",
+      "求職者集客 ガイド",
+      "求職者集客 サービス",
+      "人材紹介 集客",
+      "人材紹介 求職者集客",
+      "人材紹介 集客方法",
+      "求職者 マーケティング"
+    ],
+    "primary_keyword": "求職者集客",
+    "status": "published",
+    "published": "2026-05-20",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-acquisition-complete-guide/"
+  },
+  {
     "slug": "recruitment-female-acquisition",
     "title": "女性求職者向け人材紹介の集客戦略｜訴求設計と主要チャネル",
     "description": "女性求職者（特に20〜30代）に特化した人材紹介の集客戦略を、市場特性・ライフイベント配慮の訴求設計・キャリア不安解消の訴求・主要チャネル・LP設計の観点から整理。男女兼用LPでは取れない優良母集団形成のための実務ガイド。",
@@ -433,23 +453,6 @@
     "status": "published",
     "published": "2026-05-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
-  },
-  {
-    "slug": "recruitment-uta-acquisition",
-    "title": "U・Iターン求職者向けの集客戦略｜地方人材紹介の実務",
-    "description": "U・Iターン転職市場における求職者集客戦略を、市場の特性・都市部から地方への動機設計・主要チャネル・歩留まり管理の観点で実務レベルで解説。地方特化型エージェントの差別化や、首都圏エージェントが地方求人を扱う際の集客モデルを整理します。",
-    "category": "セグメント別",
-    "keywords": [
-      "Uターン 転職",
-      "Iターン 転職",
-      "地方 人材紹介",
-      "地方転職 集客",
-      "Uターン Iターン エージェント"
-    ],
-    "primary_keyword": "Uターン 転職",
-    "status": "ready",
-    "scheduled": "2026-05-20",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-uta-acquisition/"
   },
   {
     "slug": "recruitment-30s-acquisition",

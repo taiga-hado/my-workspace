@@ -160,4 +160,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-30s-acquisition/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

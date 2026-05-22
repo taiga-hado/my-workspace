@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-aichi-acquisition",
+    "title": "東海エリアの人材紹介集客｜地域特性とチャネル選定",
+    "description": "愛知・名古屋を中心とした東海エリア（愛知・岐阜・三重・静岡）の人材紹介事業向け集客戦略を、地域特性・主要産業・媒体選定・首都圏との違いの観点で整理。製造業中心の経済構造を踏まえた地域特化型エージェントの実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "東海 人材紹介",
+      "愛知 求職者集客",
+      "名古屋 転職",
+      "東海エリア 採用",
+      "東海 転職エージェント"
+    ],
+    "primary_keyword": "東海 人材紹介",
+    "status": "published",
+    "published": "2026-05-22",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-aichi-acquisition/"
+  },
+  {
     "slug": "recruitment-30s-acquisition",
     "title": "30代求職者向けの人材紹介集客戦略",
     "description": "30代求職者に特化した人材紹介の集客戦略を、市場特性・キャリアアップとキャリアチェンジの分岐・ファミリー要素の訴求設計・主要チャネル・相場の観点から体系的に解説。20代と40代の中間層特有の意思決定プロセスを踏まえた実務ガイドです。",
@@ -470,23 +487,6 @@
     "status": "published",
     "published": "2026-05-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
-  },
-  {
-    "slug": "recruitment-30s-acquisition",
-    "title": "30代求職者向けの人材紹介集客戦略",
-    "description": "30代求職者に特化した人材紹介の集客戦略を、市場特性・キャリアアップとキャリアチェンジの分岐・ファミリー要素の訴求設計・主要チャネル・相場の観点から体系的に解説。20代と40代の中間層特有の意思決定プロセスを踏まえた実務ガイドです。",
-    "category": "セグメント別",
-    "keywords": [
-      "30代 転職",
-      "30代 求職者集客",
-      "30代 人材紹介",
-      "30代 転職エージェント",
-      "30代 キャリアチェンジ"
-    ],
-    "primary_keyword": "30代 転職",
-    "status": "ready",
-    "scheduled": "2026-05-21",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-30s-acquisition/"
   },
   {
     "slug": "recruitment-aichi-acquisition",

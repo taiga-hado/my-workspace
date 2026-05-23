@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-osaka-acquisition",
+    "title": "関西・大阪エリアの人材紹介集客戦略",
+    "description": "関西・大阪エリア（大阪・京都・兵庫・奈良）の人材紹介事業向け集客戦略を、市場特性・首都圏との求職者属性の違い・主要媒体・地域特化の訴求設計の観点で整理。商業・サービス業を軸とした関西経済圏での集客モデル構築ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "関西 人材紹介",
+      "大阪 求職者集客",
+      "大阪 転職",
+      "関西 採用",
+      "関西 転職エージェント"
+    ],
+    "primary_keyword": "関西 人材紹介",
+    "status": "published",
+    "published": "2026-05-23",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-osaka-acquisition/"
+  },
+  {
     "slug": "recruitment-aichi-acquisition",
     "title": "東海エリアの人材紹介集客｜地域特性とチャネル選定",
     "description": "愛知・名古屋を中心とした東海エリア（愛知・岐阜・三重・静岡）の人材紹介事業向け集客戦略を、地域特性・主要産業・媒体選定・首都圏との違いの観点で整理。製造業中心の経済構造を踏まえた地域特化型エージェントの実務ガイド。",
@@ -487,23 +504,6 @@
     "status": "published",
     "published": "2026-05-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
-  },
-  {
-    "slug": "recruitment-aichi-acquisition",
-    "title": "東海エリアの人材紹介集客｜地域特性とチャネル選定",
-    "description": "愛知・名古屋を中心とした東海エリア（愛知・岐阜・三重・静岡）の人材紹介事業向け集客戦略を、地域特性・主要産業・媒体選定・首都圏との違いの観点で整理。製造業中心の経済構造を踏まえた地域特化型エージェントの実務ガイド。",
-    "category": "セグメント別",
-    "keywords": [
-      "東海 人材紹介",
-      "愛知 求職者集客",
-      "名古屋 転職",
-      "東海エリア 採用",
-      "東海 転職エージェント"
-    ],
-    "primary_keyword": "東海 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-05-22",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-aichi-acquisition/"
   },
   {
     "slug": "recruitment-osaka-acquisition",

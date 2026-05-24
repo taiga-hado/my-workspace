@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-fukuoka-acquisition",
+    "title": "九州・福岡エリアの人材紹介集客戦略",
+    "description": "九州・福岡エリアの人材紹介事業向け集客戦略を、市場の急成長性・首都圏移住組の取り込み・主要チャネル・地域特化訴求の観点から整理。IT・スタートアップ集積地として急成長する福岡市場での集客モデル構築の実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "九州 人材紹介",
+      "福岡 求職者集客",
+      "福岡 転職",
+      "九州 採用",
+      "福岡 転職エージェント"
+    ],
+    "primary_keyword": "九州 人材紹介",
+    "status": "published",
+    "published": "2026-05-24",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-fukuoka-acquisition/"
+  },
+  {
     "slug": "recruitment-osaka-acquisition",
     "title": "関西・大阪エリアの人材紹介集客戦略",
     "description": "関西・大阪エリア（大阪・京都・兵庫・奈良）の人材紹介事業向け集客戦略を、市場特性・首都圏との求職者属性の違い・主要媒体・地域特化の訴求設計の観点で整理。商業・サービス業を軸とした関西経済圏での集客モデル構築ガイド。",
@@ -504,23 +521,6 @@
     "status": "published",
     "published": "2026-05-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
-  },
-  {
-    "slug": "recruitment-osaka-acquisition",
-    "title": "関西・大阪エリアの人材紹介集客戦略",
-    "description": "関西・大阪エリア（大阪・京都・兵庫・奈良）の人材紹介事業向け集客戦略を、市場特性・首都圏との求職者属性の違い・主要媒体・地域特化の訴求設計の観点で整理。商業・サービス業を軸とした関西経済圏での集客モデル構築ガイド。",
-    "category": "セグメント別",
-    "keywords": [
-      "関西 人材紹介",
-      "大阪 求職者集客",
-      "大阪 転職",
-      "関西 採用",
-      "関西 転職エージェント"
-    ],
-    "primary_keyword": "関西 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-05-23",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-osaka-acquisition/"
   },
   {
     "slug": "recruitment-fukuoka-acquisition",

@@ -1,5 +1,76 @@
 [
   {
+    "slug": "recruitment-pre-counseling",
+    "title": "人材紹介の事前カウンセリング設計｜面談着座率を80%にする運用",
+    "description": "応募者と面談の間に挟む事前カウンセリングを、目的・実施フロー・必須ヒアリング項目・期待値調整のテクニックまで実務レベルで解説。面談着座率を40%台から80%台に引き上げる運用フレームを、CAの教育マニュアルとしても使える形で整理します。",
+    "category": "ハウツー",
+    "keywords": [
+      "事前カウンセリング",
+      "人材紹介 ヒアリング",
+      "面談着座率 上げる",
+      "期待値調整",
+      "人材紹介 事前対応"
+    ],
+    "primary_keyword": "事前カウンセリング",
+    "status": "published",
+    "published": "2026-05-28",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-pre-counseling/"
+  },
+  {
+    "slug": "recruitment-line-marketing",
+    "title": "人材紹介のLINE活用｜友だち追加から面談誘導までの設計",
+    "description": "LINE公式アカウントを活用した人材紹介業の集客・育成・面談誘導設計を、LSTEP等のステップ配信ツールも含めて実務レベルで解説。応募〜面談着座の歩留まりを大きく改善するLINE運用フレームを、リッチメニュー設計から自動配信シナリオまで具体的に整理します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 LINE",
+      "LINE公式アカウント 採用",
+      "LSTEP 採用",
+      "LINE 求職者",
+      "人材紹介 ステップ配信",
+      "LINE 面談予約"
+    ],
+    "primary_keyword": "人材紹介 LINE",
+    "status": "published",
+    "published": "2026-05-27",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-line-marketing/"
+  },
+  {
+    "slug": "recruitment-ad-creative",
+    "title": "人材紹介の広告クリエイティブ｜CTRが2倍になる訴求と画像の作り方",
+    "description": "人材紹介業の広告クリエイティブ（バナー・動画）制作実務を、ターゲット別の訴求設計・強い訴求コピーの作り方・画像構成の原則・ABテストの設計の観点で解説。CTR・CPAを大きく動かすクリエイティブの作り方を、現場で使える具体的なフレームで整理します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 広告クリエイティブ",
+      "人材紹介 バナー",
+      "広告コピー",
+      "CTR改善",
+      "人材紹介 動画広告",
+      "広告ABテスト"
+    ],
+    "primary_keyword": "人材紹介 広告クリエイティブ",
+    "status": "published",
+    "published": "2026-05-26",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ad-creative/"
+  },
+  {
+    "slug": "recruitment-conversion-tracking",
+    "title": "人材紹介のコンバージョン計測｜GTM・GA4・コンバージョンAPI完全ガイド",
+    "description": "人材紹介業のWebマーケティングにおけるコンバージョン計測を、GTM設定・GA4のカスタムイベント・Google広告のコンバージョンAPI連携・オフラインCV取り込みまで体系的に解説。決定単価ベースの広告最適化を可能にする計測基盤の作り方を、現場の運用担当者向けに整理した実務ガイド。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 GTM",
+      "人材紹介 GA4",
+      "人材紹介 コンバージョン計測",
+      "コンバージョンAPI",
+      "オフラインCV",
+      "GTM 設定 人材紹介"
+    ],
+    "primary_keyword": "人材紹介 GTM",
+    "status": "published",
+    "published": "2026-05-25",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-conversion-tracking/"
+  },
+  {
     "slug": "recruitment-fukuoka-acquisition",
     "title": "九州・福岡エリアの人材紹介集客戦略",
     "description": "九州・福岡エリアの人材紹介事業向け集客戦略を、市場の急成長性・首都圏移住組の取り込み・主要チャネル・地域特化訴求の観点から整理。IT・スタートアップ集積地として急成長する福岡市場での集客モデル構築の実務ガイド。",
@@ -523,263 +594,123 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-fukuoka-acquisition",
-    "title": "九州・福岡エリアの人材紹介集客戦略",
-    "description": "九州・福岡エリアの人材紹介事業向け集客戦略を、市場の急成長性・首都圏移住組の取り込み・主要チャネル・地域特化訴求の観点から整理。IT・スタートアップ集積地として急成長する福岡市場での集客モデル構築の実務ガイド。",
-    "category": "セグメント別",
-    "keywords": [
-      "九州 人材紹介",
-      "福岡 求職者集客",
-      "福岡 転職",
-      "九州 採用",
-      "福岡 転職エージェント"
-    ],
-    "primary_keyword": "九州 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-05-24",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-fukuoka-acquisition/"
-  },
-  {
-    "slug": "recruitment-conversion-tracking",
-    "title": "人材紹介のコンバージョン計測｜GTM・GA4・コンバージョンAPI完全ガイド",
-    "description": "人材紹介業のWebマーケティングにおけるコンバージョン計測の実務ガイド。GTM設定、GA4のカスタムイベント、Google広告のコンバージョンAPI連携までの完全版。",
-    "category": "ハウツー",
-    "keywords": [
-      "人材紹介 GTM",
-      "人材紹介 GA4",
-      "人材紹介 コンバージョン計測",
-      "コンバージョンAPI",
-      "オフラインCV"
-    ],
-    "primary_keyword": "人材紹介 GTM",
-    "key_points": [
-      "計測の基本3階層（GTM・GA4・広告側）",
-      "面談実施・決定をオフラインCVで取り込む",
-      "コンバージョンAPI連携",
-      "計測精度の検証方法"
-    ],
-    "status": "queued",
-    "queue_position": 1,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-conversion-tracking/"
-  },
-  {
-    "slug": "recruitment-ad-creative",
-    "title": "人材紹介の広告クリエイティブ｜CTRが2倍になる訴求と画像の作り方",
-    "description": "人材紹介業の広告クリエイティブ（バナー・動画）の制作実務を、ターゲット別の訴求設計・画像構成・コピーライティング・ABテスト設計の観点で解説。",
-    "category": "ハウツー",
-    "keywords": [
-      "人材紹介 広告クリエイティブ",
-      "人材紹介 バナー",
-      "広告コピー",
-      "CTR改善"
-    ],
-    "primary_keyword": "人材紹介 広告クリエイティブ",
-    "key_points": [
-      "ターゲット別クリエイティブ設計",
-      "強い訴求コピーの作り方",
-      "画像構成の原則",
-      "ABテストの設計"
-    ],
-    "status": "queued",
-    "queue_position": 2,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ad-creative/"
-  },
-  {
-    "slug": "recruitment-line-marketing",
-    "title": "人材紹介のLINE活用｜友だち追加から面談誘導までの設計",
-    "description": "LINE公式アカウントを活用した人材紹介業の集客・育成・面談誘導設計を、LSTEP等のステップ配信ツールも含めて実務レベルで解説。",
-    "category": "ハウツー",
-    "keywords": [
-      "人材紹介 LINE",
-      "LINE公式アカウント 採用",
-      "LSTEP 採用",
-      "LINE 求職者"
-    ],
-    "primary_keyword": "人材紹介 LINE",
-    "key_points": [
-      "LINE公式の友だち追加導線設計",
-      "ステップ配信での育成",
-      "面談予約までの誘導",
-      "リッチメニュー・タグ管理"
-    ],
-    "status": "queued",
-    "queue_position": 3,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-line-marketing/"
-  },
-  {
-    "slug": "recruitment-pre-counseling",
-    "title": "人材紹介の事前カウンセリング設計｜面談着座率を80%にする運用",
-    "description": "応募者と面談の間に挟む事前カウンセリングの設計を、目的・実施フロー・ヒアリング項目・期待値調整の観点から実務レベルで解説。",
-    "category": "ハウツー",
-    "keywords": [
-      "事前カウンセリング",
-      "人材紹介 ヒアリング",
-      "面談着座率 上げる",
-      "期待値調整"
-    ],
-    "primary_keyword": "事前カウンセリング",
-    "key_points": [
-      "事前カウンセリングの目的",
-      "実施フロー設計",
-      "必須ヒアリング項目",
-      "期待値調整のテクニック"
-    ],
-    "status": "queued",
-    "queue_position": 4,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-pre-counseling/"
-  },
-  {
     "slug": "recruitment-ca-productivity",
     "title": "キャリアアドバイザー（CA）の生産性を2倍にする運用設計",
-    "description": "キャリアアドバイザーの生産性を上げるためのオペレーション設計、ツール選定、面談前準備の最適化、求人マッチング自動化までの実務ガイド。",
+    "description": "キャリアアドバイザー（CA）の生産性を上げるためのオペレーション設計、ツール選定、面談前準備の最適化、求人マッチングの効率化までを実務レベルで解説。CA1人あたり月間決定数を倍増させるための運用フレームを整理した実務ガイドです。",
     "category": "ハウツー",
     "keywords": [
       "CA 生産性",
       "キャリアアドバイザー 効率化",
       "人材紹介 オペレーション",
-      "CA ツール"
+      "CA ツール",
+      "CA マネジメント"
     ],
     "primary_keyword": "CA 生産性",
-    "key_points": [
-      "CAの時間配分の理想形",
-      "事前準備の自動化",
-      "求人マッチングツールの活用",
-      "KPI設計"
-    ],
-    "status": "queued",
-    "queue_position": 5,
+    "status": "ready",
+    "scheduled": "2026-05-29",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ca-productivity/"
   },
   {
     "slug": "recruitment-ats-comparison",
     "title": "人材紹介向けATS比較｜選び方と主要システムの特徴",
-    "description": "人材紹介業向けの応募者管理システム（ATS/CRM）の選定軸と主要製品の比較。ハーモス、ジョブカン、SmartHRなどの特徴を機能・料金・運用面で整理。",
+    "description": "人材紹介業向けの応募者管理システム（ATS/CRM）の選定軸と主要製品の比較。ハーモス、ジョブカン、SmartHR、HRMOS、Mochicaなどの特徴を、機能・料金・運用面で実務レベルで整理。事業規模・成長フェーズ別の最適な選定ガイド。",
     "category": "比較検討",
     "keywords": [
       "人材紹介 ATS",
       "人材紹介 CRM",
       "応募者管理システム",
-      "人材紹介 システム"
+      "人材紹介 システム",
+      "ATS 比較"
     ],
     "primary_keyword": "人材紹介 ATS",
-    "key_points": [
-      "ATSの基本機能",
-      "選定の判断軸",
-      "主要製品の特徴比較",
-      "運用立ち上げの注意点"
-    ],
-    "status": "queued",
-    "queue_position": 6,
+    "status": "ready",
+    "scheduled": "2026-05-30",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ats-comparison/"
   },
   {
     "slug": "recruitment-monthly-volume-planning",
     "title": "人材紹介の月次面談数の事業計画｜KPI設計と必要広告予算の算出",
-    "description": "月次の決定数目標から逆算して、必要面談数・必要応募数・必要広告予算を算出する実務フレーム。事業計画の精度を上げるためのKPI設計ガイド。",
+    "description": "月次の決定数目標から逆算して、必要面談数・必要応募数・必要広告予算を算出する実務フレーム。事業計画の精度を上げるためのKPI設計と歩留まり率の前提整理、シナリオ別の感度分析までを網羅した経営者向けガイド。",
     "category": "課題解決",
     "keywords": [
       "人材紹介 事業計画",
       "人材紹介 KPI",
       "人材紹介 広告予算",
-      "月次面談数"
+      "月次面談数",
+      "人材紹介 売上計画"
     ],
     "primary_keyword": "人材紹介 事業計画",
-    "key_points": [
-      "決定数→面談数→応募数の逆算",
-      "歩留まり率の前提整理",
-      "必要広告予算の算出",
-      "事業計画の精度を上げる方法"
-    ],
-    "status": "queued",
-    "queue_position": 7,
+    "status": "ready",
+    "scheduled": "2026-05-31",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-monthly-volume-planning/"
   },
   {
     "slug": "recruitment-cancellation-rate",
     "title": "人材紹介の面談キャンセル率を下げる｜原因分析と運用改善",
-    "description": "面談キャンセル率の業界平均、典型的な原因パターン、運用改善のレバーを実務レベルで解説。前日リマインドからキャンセルポリシー設計まで。",
+    "description": "面談キャンセル率の業界平均と典型的な原因パターン、運用改善のレバーを実務レベルで解説。前日リマインドからキャンセルポリシー設計、当日無断欠席への対応まで、着座率を構造的に引き上げる運用設計をまとめます。",
     "category": "課題解決",
     "keywords": [
       "面談キャンセル",
       "人材紹介 キャンセル率",
       "面談キャンセル 対策",
-      "リマインド設計"
+      "リマインド設計",
+      "面談 無断欠席"
     ],
     "primary_keyword": "面談キャンセル",
-    "key_points": [
-      "キャンセル率の業界平均",
-      "典型的キャンセル原因",
-      "リマインド設計",
-      "ポリシー設計と求職者教育"
-    ],
-    "status": "queued",
-    "queue_position": 8,
+    "status": "ready",
+    "scheduled": "2026-06-01",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cancellation-rate/"
   },
   {
     "slug": "recruitment-jma-acquisition",
     "title": "ハイクラス人材紹介の集客戦略｜年収600万円以上の求職者を集める",
-    "description": "ハイクラス領域（年収600万円以上）の求職者集客戦略を、媒体選定・スカウト型運用・SNS活用・送客サービスの観点で解説。",
+    "description": "ハイクラス領域（年収600万円以上）の求職者集客戦略を、市場特性・主要媒体（Bizreach等）・スカウト型運用・SNS活用・ハイクラス向け訴求設計の観点から解説。決定単価300万円超の世界で勝つための実務ガイド。",
     "category": "セグメント別",
     "keywords": [
       "ハイクラス 人材紹介",
       "ハイクラス 求職者集客",
       "年収600万 転職",
-      "エグゼクティブ 採用"
+      "エグゼクティブ 採用",
+      "ハイクラス エージェント"
     ],
     "primary_keyword": "ハイクラス 人材紹介",
-    "key_points": [
-      "ハイクラス市場の特性",
-      "主要媒体（Bizreach等）",
-      "スカウト型運用",
-      "ハイクラス向け訴求設計"
-    ],
-    "status": "queued",
-    "queue_position": 9,
+    "status": "ready",
+    "scheduled": "2026-06-02",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-jma-acquisition/"
   },
   {
     "slug": "recruitment-international-acquisition",
     "title": "外国人材紹介の集客戦略｜訴求設計と主要チャネル",
-    "description": "外国人材紹介の求職者集客戦略を、市場特性・主要チャネル・多言語訴求・在留資格別の設計の観点で解説。",
+    "description": "外国人材紹介の求職者集客戦略を、市場特性・在留資格別の集客設計・多言語訴求のポイント・主要チャネルと相場の観点から整理。技能実習・特定技能・高度人材・留学生まで、セグメント別の実務ガイド。",
     "category": "セグメント別",
     "keywords": [
       "外国人材 人材紹介",
       "外国人 採用",
       "外国人材 集客",
-      "多言語 採用"
+      "多言語 採用",
+      "特定技能 集客",
+      "在留資格"
     ],
     "primary_keyword": "外国人材 人材紹介",
-    "key_points": [
-      "外国人材市場の特性",
-      "在留資格別の集客設計",
-      "多言語訴求のポイント",
-      "主要チャネルと相場"
-    ],
-    "status": "queued",
-    "queue_position": 10,
+    "status": "ready",
+    "scheduled": "2026-06-03",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-international-acquisition/"
   },
   {
     "slug": "recruitment-shoukai-fee",
     "title": "人材紹介の手数料設計｜成功報酬の業界標準と差別化のポイント",
-    "description": "人材紹介の手数料（成功報酬）の業界標準、決定単価の決まり方、料金体系の差別化、企業との交渉実務まで解説。",
+    "description": "人材紹介の手数料（成功報酬）の業界標準、決定単価の決まり方、返金規定の設計、料金体系の差別化、企業との交渉実務までを実務レベルで解説。事業の収益性を直接決定する手数料設計の判断ガイド。",
     "category": "用語解説",
     "keywords": [
       "人材紹介 手数料",
       "人材紹介 成功報酬",
       "人材紹介 単価",
-      "人材紹介 料金"
+      "人材紹介 料金",
+      "人材紹介 手数料率"
     ],
     "primary_keyword": "人材紹介 手数料",
-    "key_points": [
-      "成功報酬の業界標準",
-      "返金規定の設計",
-      "料金体系の差別化",
-      "交渉実務"
-    ],
-    "status": "queued",
-    "queue_position": 11,
+    "status": "ready",
+    "scheduled": "2026-06-04",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-shoukai-fee/"
   },
   {
@@ -801,7 +732,7 @@
       "コンプライアンス実務"
     ],
     "status": "queued",
-    "queue_position": 12,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-licensing/"
   }
 ]

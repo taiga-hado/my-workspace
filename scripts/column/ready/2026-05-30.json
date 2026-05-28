@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "recruitment-ats-comparison",
+    "title": "人材紹介向けATS比較｜選び方と主要システムの特徴",
+    "description": "人材紹介業向けの応募者管理システム（ATS/CRM）の選定軸と主要製品の比較。ハーモス、ジョブカン、SmartHR、HRMOS、Mochicaなどの特徴を、機能・料金・運用面で実務レベルで整理。事業規模・成長フェーズ別の最適な選定ガイド。",
+    "keywords": "人材紹介 ATS,人材紹介 CRM,応募者管理システム,人材紹介 システム,ATS 比較",
+    "category": "比較検討",
+    "read_time": "10分",
+    "image_prompt": "Modern editorial illustration about applicant tracking systems comparison. Clean SaaS-style flat illustration showing abstract dashboard interface tiles arranged in a comparison grid, deep navy blue (#1a3a8a) primary with gold (#f5b400) accent on one highlighted tile. Soft white background, premium business publication aesthetic, minimalist, no text or letters in the image. Wide aspect 3:2.",
+    "summary": [
+      "ATS（応募者管理システム）は人材紹介業の運用基盤。選定を誤ると年間数百時間の工数ロスに直結",
+      "選定の4つの判断軸は「事業規模適合性」「機能の必要十分性」「料金」「他システム連携性」",
+      "立ち上げ期はHRMOS・Mochicaなど月数万円のSaaS型、確立期は自社カスタマイズATSへの移行が一般的な経路",
+      "選定で見落としがちなのは「外部システム連携」と「データエクスポート性」。後の事業拡大で詰むケース多発"
+    ],
+    "bridge_title": "ATS導入と並行して「集客側の不確実性も下げたい」場合",
+    "bridge": [
+      "ATS導入は応募〜決定までのオペレーション効率化に直結しますが、集客側（応募数・応募の質）の問題はATSでは解決できません。事業計画の予測精度を上げるには、ATSの整備と並行して、面談数の予測可能性を高める集客チャネルの確保が必要になります。",
+      "「求職者送客の窓口」は、面談着座1件あたりの単価が契約時に固定される着座成果報酬型サービスです。<strong>初期費用0円・月額費用0円・面談着座率80〜90%</strong>のため、ATSの整備中・事業の立ち上げ期から確立期まで、面談数を「予測可能な定数」として事業計画に組み込めます。"
+    ],
+    "body_html": "\n    <div class=\"art-lead\">\n      <p>人材紹介事業の運用効率を決定するのが、応募者管理システム（ATS）の選定です。月数万円のSaaS型から年数百万円の自社カスタマイズ型まで、市場には多様な選択肢があり、事業規模・フェーズ・運用フローに合った選定をしないと、年間数百時間の工数ロスや、後の事業拡大時の制約として現れます。</p>\n      <p>本記事では、人材紹介業向けATSの選定軸と主要製品の特徴を、機能・料金・運用面で実務レベルで比較整理します。新規導入の検討、既存ATSからの乗り換えの判断材料としてご活用ください。</p>\n    </div>\n\n    <nav class=\"art-toc\">\n      <h3>目次</h3>\n      <ol>\n        <li><a href=\"#functions\">ATSの基本機能</a></li>\n        <li><a href=\"#axes\">選定の判断軸</a></li>\n        <li><a href=\"#products\">主要製品の特徴比較</a></li>\n        <li><a href=\"#launch\">運用立ち上げの注意点</a></li>\n      </ol>\n    </nav>\n\n    <h2 id=\"functions\">ATSの基本機能</h2>\n\n    <p>人材紹介業向けATSの必須機能：</p>\n\n    <ul>\n      <li><strong>応募者管理</strong>：氏名・連絡先・履歴書・職歴・希望条件の一元管理</li>\n      <li><strong>求人管理</strong>：求人企業・ポジション・条件・選考状況の管理</li>\n      <li><strong>マッチング</strong>：求職者プロフィールと求人の自動マッチング</li>\n      <li><strong>選考進捗管理</strong>：書類選考・面接・内定の各段階</li>\n      <li><strong>コミュニケーション履歴</strong>：メール・電話・LINE・面談メモの統合</li>\n      <li><strong>カレンダー連携</strong>：面談日程の調整・自動リマインド</li>\n      <li><strong>レポート機能</strong>：KPI・歩留まり・CA別実績の可視化</li>\n    </ul>\n\n    <h2 id=\"axes\">選定の判断軸</h2>\n\n    <h3>1. 事業規模適合性</h3>\n\n    <p>CA人数・月間応募数・年間決定数に応じて、適切なATSは変わります。<strong>小規模（CA 1〜5名）はSaaS型、中規模（CA 5〜30名）は専門ATS、大規模はカスタム型</strong>が標準的な選定経路。</p>\n\n    <h3>2. 機能の必要十分性</h3>\n\n    <p>必須機能が揃っているか、不要な機能で料金が高くなっていないか。<strong>「使わない機能の50%は払い損」</strong>の原則を意識して選ぶ。</p>\n\n    <h3>3. 料金体系</h3>\n\n    <p>初期費用・月額・ユーザー単価・従量課金などの組み合わせ。事業成長に応じて単価がどう変動するかも必ず確認。</p>\n\n    <h3>4. 他システム連携性</h3>\n\n    <p>マーケティングツール（GA4、コンバージョンAPI、LINE）、会計、給与システムとの連携可否。APIの公開状況、Zapier連携対応など。</p>\n\n    <h2 id=\"products\">主要製品の特徴比較</h2>\n\n    <h3>HRMOS（株式会社ビズリーチ）</h3>\n\n    <p>大手も使う高機能ATS。月額数万円〜数十万円。<strong>レポート機能・連携性が強い</strong>。中規模以上向け。</p>\n\n    <h3>ジョブカン採用管理</h3>\n\n    <p>SaaS型で導入しやすい。月額1〜5万円。<strong>小〜中規模に最適</strong>。シンプルで使いやすいが、高度なカスタマイズは難しい。</p>\n\n    <h3>Mochica（株式会社モチカ）</h3>\n\n    <p>LINE連携が強い新興ATS。月額3〜10万円。<strong>20代求職者を扱う事業者に向く</strong>。LINEファーストの設計。</p>\n\n    <h3>HERP Nexus</h3>\n\n    <p>採用ピッチ・SCOUT連動など、能動的な求職者獲得にも対応。月額5〜20万円。<strong>HR業界向けの専門機能が豊富</strong>。</p>\n\n    <h3>自社カスタマイズ（Salesforce等）</h3>\n\n    <p>Salesforce、HubSpot、kintoneなどをベースにカスタマイズ。初期費用100〜500万円、月額10〜30万円。<strong>大規模・特殊なフロー向け</strong>。</p>\n\n    <div class=\"art-callout\">\n      <p><strong>選定の落とし穴</strong>：機能比較で「あれもこれも」と望むと、結局使わない機能で料金が高くなる。<strong>「自社の必須業務フロー」を明文化してから比較するのが鉄則</strong>。</p>\n    </div>\n\n    <h2 id=\"launch\">運用立ち上げの注意点</h2>\n\n    <p>ATS導入を成功させる運用ポイント：</p>\n\n    <ul>\n      <li><strong>導入前の業務フロー設計</strong>：「ATSがあるから業務が変わる」のではなく、「変えたい業務をATSで支える」順序</li>\n      <li><strong>データ移行の計画</strong>：旧システムからのデータエクスポート、フォーマット変換の工数を確保</li>\n      <li><strong>CA教育の徹底</strong>：使いこなせないと意味がない。初月は集中教育期間に</li>\n      <li><strong>KPIの再設計</strong>：ATSで取れる指標に合わせてKPIを見直す</li>\n      <li><strong>3ヶ月後のレビュー</strong>：実運用に乗ってからの再調整が必須</li>\n    </ul>\n"
+  }
+]

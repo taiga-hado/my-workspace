@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-ca-productivity",
+    "title": "キャリアアドバイザー（CA）の生産性を2倍にする運用設計",
+    "description": "キャリアアドバイザー（CA）の生産性を上げるためのオペレーション設計、ツール選定、面談前準備の最適化、求人マッチングの効率化までを実務レベルで解説。CA1人あたり月間決定数を倍増させるための運用フレームを整理した実務ガイドです。",
+    "category": "ハウツー",
+    "keywords": [
+      "CA 生産性",
+      "キャリアアドバイザー 効率化",
+      "人材紹介 オペレーション",
+      "CA ツール",
+      "CA マネジメント"
+    ],
+    "primary_keyword": "CA 生産性",
+    "status": "published",
+    "published": "2026-05-29",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ca-productivity/"
+  },
+  {
     "slug": "recruitment-pre-counseling",
     "title": "人材紹介の事前カウンセリング設計｜面談着座率を80%にする運用",
     "description": "応募者と面談の間に挟む事前カウンセリングを、目的・実施フロー・必須ヒアリング項目・期待値調整のテクニックまで実務レベルで解説。面談着座率を40%台から80%台に引き上げる運用フレームを、CAの教育マニュアルとしても使える形で整理します。",
@@ -658,22 +675,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-licensing",
-    "title": "人材紹介事業の許認可｜有料職業紹介免許の取得と維持",
-    "description": "人材紹介事業の有料職業紹介免許の取得要件、申請フロー、維持要件、実務で気をつけるべきコンプライアンスを解説。",
-    "category": "用語解説",
-    "keywords": [
-      "有料職業紹介 免許",
-      "人材紹介 許認可",
-      "有料職業紹介事業 開業",
-      "職業安定法"
-    ],
-    "primary_keyword": "有料職業紹介 免許",
-    "status": "ready",
-    "scheduled": "2026-05-28",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-licensing/"
-  },
-  {
     "slug": "recruitment-ca-productivity",
     "title": "キャリアアドバイザー（CA）の生産性を2倍にする運用設計",
     "description": "キャリアアドバイザー（CA）の生産性を上げるためのオペレーション設計、ツール選定、面談前準備の最適化、求人マッチングの効率化までを実務レベルで解説。CA1人あたり月間決定数を倍増させるための運用フレームを整理した実務ガイドです。",
@@ -805,14 +806,8 @@
       "ハイクラス 集客"
     ],
     "primary_keyword": "40代 転職 集客",
-    "key_points": [
-      "40代求職者の転職動機とインサイト｜年収・役職・働き方",
-      "SNS・スカウト・リファラルなどミドル向けチャネルの優先順位",
-      "ハイクラス訴求のLPとカウンセリング設計",
-      "面談着座率を高める年代別フォロー設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-middle-acquisition/"
   },
   {
@@ -834,7 +829,7 @@
       "AI活用時の個人情報・ハルシネーション・差別表現リスク管理"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ai-utilization/"
   }
 ]

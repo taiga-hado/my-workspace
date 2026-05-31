@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-monthly-volume-planning",
+    "title": "人材紹介の月次面談数の事業計画｜KPI設計と必要広告予算の算出",
+    "description": "月次の決定数目標から逆算して、必要面談数・必要応募数・必要広告予算を算出する実務フレーム。事業計画の精度を上げるためのKPI設計と歩留まり率の前提整理、シナリオ別の感度分析までを網羅した経営者向けガイド。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 事業計画",
+      "人材紹介 KPI",
+      "人材紹介 広告予算",
+      "月次面談数",
+      "人材紹介 売上計画"
+    ],
+    "primary_keyword": "人材紹介 事業計画",
+    "status": "published",
+    "published": "2026-05-31",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-monthly-volume-planning/"
+  },
+  {
     "slug": "recruitment-ats-comparison",
     "title": "人材紹介向けATS比較｜選び方と主要システムの特徴",
     "description": "人材紹介業向けの応募者管理システム（ATS/CRM）の選定軸と主要製品の比較。ハーモス、ジョブカン、SmartHR、HRMOS、Mochicaなどの特徴を、機能・料金・運用面で実務レベルで整理。事業規模・成長フェーズ別の最適な選定ガイド。",
@@ -690,23 +707,6 @@
     "status": "published",
     "published": "2026-05-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
-  },
-  {
-    "slug": "recruitment-ats-comparison",
-    "title": "人材紹介向けATS比較｜選び方と主要システムの特徴",
-    "description": "人材紹介業向けの応募者管理システム（ATS/CRM）の選定軸と主要製品の比較。ハーモス、ジョブカン、SmartHR、HRMOS、Mochicaなどの特徴を、機能・料金・運用面で実務レベルで整理。事業規模・成長フェーズ別の最適な選定ガイド。",
-    "category": "比較検討",
-    "keywords": [
-      "人材紹介 ATS",
-      "人材紹介 CRM",
-      "応募者管理システム",
-      "人材紹介 システム",
-      "ATS 比較"
-    ],
-    "primary_keyword": "人材紹介 ATS",
-    "status": "ready",
-    "scheduled": "2026-05-30",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ats-comparison/"
   },
   {
     "slug": "recruitment-monthly-volume-planning",

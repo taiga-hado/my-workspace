@@ -75,4 +75,25 @@ if [ "$OVERALL_EXIT" = "0" ]; then
 else
   echo "⚠ deploy partially complete: $ARTICLE_SLUG (exit=$OVERALL_EXIT)"
 fi
+
+# Post-deploy smoke test: verify production site is intact.
+# Catches regressions like "important page disappeared" or "GTM ID changed".
+# Vercel CDN propagation takes ~10-15s, so we wait briefly.
+if [ "$OVERALL_EXIT" = "0" ]; then
+  SMOKE_TEST="$WORKTREE_ROOT/scripts/column/smoke_test.sh"
+  if [ -x "$SMOKE_TEST" ]; then
+    echo ""
+    echo "Waiting 15s for Vercel CDN propagation before smoke test..."
+    sleep 15
+    if "$SMOKE_TEST"; then
+      echo "✓ post-deploy smoke test passed"
+    else
+      SMOKE_EXIT=$?
+      echo "✗ POST-DEPLOY SMOKE TEST FAILED (exit=$SMOKE_EXIT)"
+      echo "  → Site may have regressed. Investigate before next launchd run."
+      OVERALL_EXIT=$((100 + SMOKE_EXIT))
+    fi
+  fi
+fi
+
 exit $OVERALL_EXIT

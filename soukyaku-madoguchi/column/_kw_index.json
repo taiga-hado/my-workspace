@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-cancellation-rate",
+    "title": "人材紹介の面談キャンセル率を下げる｜原因分析と運用改善",
+    "description": "面談キャンセル率の業界平均と典型的な原因パターン、運用改善のレバーを実務レベルで解説。前日リマインドからキャンセルポリシー設計、当日無断欠席への対応まで、着座率を構造的に引き上げる運用設計をまとめます。",
+    "category": "課題解決",
+    "keywords": [
+      "面談キャンセル",
+      "人材紹介 キャンセル率",
+      "面談キャンセル 対策",
+      "リマインド設計",
+      "面談 無断欠席"
+    ],
+    "primary_keyword": "面談キャンセル",
+    "status": "published",
+    "published": "2026-06-01",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cancellation-rate/"
+  },
+  {
     "slug": "recruitment-monthly-volume-planning",
     "title": "人材紹介の月次面談数の事業計画｜KPI設計と必要広告予算の算出",
     "description": "月次の決定数目標から逆算して、必要面談数・必要応募数・必要広告予算を算出する実務フレーム。事業計画の精度を上げるためのKPI設計と歩留まり率の前提整理、シナリオ別の感度分析までを網羅した経営者向けガイド。",
@@ -707,23 +724,6 @@
     "status": "published",
     "published": "2026-05-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
-  },
-  {
-    "slug": "recruitment-monthly-volume-planning",
-    "title": "人材紹介の月次面談数の事業計画｜KPI設計と必要広告予算の算出",
-    "description": "月次の決定数目標から逆算して、必要面談数・必要応募数・必要広告予算を算出する実務フレーム。事業計画の精度を上げるためのKPI設計と歩留まり率の前提整理、シナリオ別の感度分析までを網羅した経営者向けガイド。",
-    "category": "課題解決",
-    "keywords": [
-      "人材紹介 事業計画",
-      "人材紹介 KPI",
-      "人材紹介 広告予算",
-      "月次面談数",
-      "人材紹介 売上計画"
-    ],
-    "primary_keyword": "人材紹介 事業計画",
-    "status": "ready",
-    "scheduled": "2026-05-31",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-monthly-volume-planning/"
   },
   {
     "slug": "recruitment-cancellation-rate",

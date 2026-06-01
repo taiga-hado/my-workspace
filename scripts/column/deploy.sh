@@ -41,6 +41,23 @@ fi
 # filesystem to Vercel directly. Always invoke the CLI so a git push
 # failure does not block the production deployment.
 cd "$PROJECT_DIR" || exit 1
+
+# Self-heal: ensure .vercel is a directory (not an empty/corrupted file).
+# Symptom seen in production: vercel CLI sometimes leaves .vercel as an
+# empty regular file, then every subsequent `vercel deploy` errors with
+# "ENOTDIR: not a directory, lstat '.../.vercel/repo.json'".
+if [ -e ".vercel" ] && [ ! -d ".vercel" ]; then
+  echo "WARNING: .vercel exists but is not a directory; removing and relinking"
+  rm -f .vercel
+fi
+if [ ! -d ".vercel" ]; then
+  echo "Re-linking vercel project..."
+  if ! vercel link --yes --project soukyaku-madoguchi; then
+    echo "ERROR: vercel link failed; cannot deploy"
+    OVERALL_EXIT=4
+  fi
+fi
+
 if command -v vercel >/dev/null 2>&1; then
   if vercel deploy --prod --yes; then
     echo "✓ vercel deploy succeeded"

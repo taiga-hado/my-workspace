@@ -17,6 +17,24 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cancellation-rate/"
   },
   {
+    "slug": "recruitment-soukyaku-comparison",
+    "title": "求職者送客サービス徹底比較6選【2026年6月最新】｜面談単価・着座率・選び方の3軸",
+    "description": "求職者送客サービス主要6社（求職者送客の窓口・L reach・ミチフル・求職者送客ナビ・転職会議clubhouse・キミナラ）の面談単価・着座率・スクリーニング方式を徹底比較。人材紹介事業者向けに決定単価×ターゲット属性で選ぶ完全ガイド。",
+    "category": "比較検討",
+    "keywords": [
+      "求職者送客",
+      "求職者送客 比較",
+      "求職者送客サービス",
+      "人材紹介 集客代行",
+      "着座成果報酬",
+      "送客サービス"
+    ],
+    "primary_keyword": "求職者送客",
+    "status": "published",
+    "published": "2026-06-01",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-soukyaku-comparison/"
+  },
+  {
     "slug": "recruitment-monthly-volume-planning",
     "title": "人材紹介の月次面談数の事業計画｜KPI設計と必要広告予算の算出",
     "description": "月次の決定数目標から逆算して、必要面談数・必要応募数・必要広告予算を算出する実務フレーム。事業計画の精度を上げるためのKPI設計と歩留まり率の前提整理、シナリオ別の感度分析までを網羅した経営者向けガイド。",
@@ -726,23 +744,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-cancellation-rate",
-    "title": "人材紹介の面談キャンセル率を下げる｜原因分析と運用改善",
-    "description": "面談キャンセル率の業界平均と典型的な原因パターン、運用改善のレバーを実務レベルで解説。前日リマインドからキャンセルポリシー設計、当日無断欠席への対応まで、着座率を構造的に引き上げる運用設計をまとめます。",
-    "category": "課題解決",
-    "keywords": [
-      "面談キャンセル",
-      "人材紹介 キャンセル率",
-      "面談キャンセル 対策",
-      "リマインド設計",
-      "面談 無断欠席"
-    ],
-    "primary_keyword": "面談キャンセル",
-    "status": "ready",
-    "scheduled": "2026-06-01",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cancellation-rate/"
-  },
-  {
     "slug": "recruitment-jma-acquisition",
     "title": "ハイクラス人材紹介の集客戦略｜年収600万円以上の求職者を集める",
     "description": "ハイクラス領域（年収600万円以上）の求職者集客戦略を、市場特性・主要媒体（Bizreach等）・スカウト型運用・SNS活用・ハイクラス向け訴求設計の観点から解説。決定単価300万円超の世界で勝つための実務ガイド。",
@@ -809,6 +810,24 @@
     "status": "ready",
     "scheduled": "2026-06-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-middle-acquisition/"
+  },
+  {
+    "slug": "recruitment-soukyaku-comparison",
+    "title": "求職者送客サービス徹底比較6選【2026年6月最新】｜面談単価・着座率・選び方の3軸",
+    "description": "求職者送客サービス主要6社（求職者送客の窓口・L reach・ミチフル・求職者送客ナビ・転職会議clubhouse・キミナラ）の面談単価・着座率・スクリーニング方式を徹底比較。人材紹介事業者向けに決定単価×ターゲット属性で選ぶ完全ガイド。",
+    "category": "比較検討",
+    "keywords": [
+      "求職者送客",
+      "求職者送客 比較",
+      "求職者送客サービス",
+      "人材紹介 集客代行",
+      "着座成果報酬",
+      "送客サービス"
+    ],
+    "primary_keyword": "求職者送客",
+    "status": "ready",
+    "scheduled": "recruitment-soukyaku-comparison",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-soukyaku-comparison/"
   },
   {
     "slug": "recruitment-ai-utilization",

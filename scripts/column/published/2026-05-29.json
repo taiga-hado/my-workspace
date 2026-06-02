@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "recruitment-ca-productivity",
+    "title": "キャリアアドバイザー（CA）の生産性を2倍にする運用設計",
+    "description": "キャリアアドバイザー（CA）の生産性を上げるためのオペレーション設計、ツール選定、面談前準備の最適化、求人マッチングの効率化までを実務レベルで解説。CA1人あたり月間決定数を倍増させるための運用フレームを整理した実務ガイドです。",
+    "keywords": "CA 生産性,キャリアアドバイザー 効率化,人材紹介 オペレーション,CA ツール,CA マネジメント",
+    "category": "ハウツー",
+    "read_time": "10分",
+    "image_prompt": "Modern editorial illustration about career advisor productivity. Clean SaaS-style flat illustration showing abstract gear/workflow icons in a cycle, deep navy blue (#1a3a8a) primary with gold (#f5b400) accent on the central gear. Soft white background, premium business publication aesthetic, minimalist, no text or letters in the image. Wide aspect 3:2.",
+    "summary": [
+      "CAの生産性は「面談前準備の自動化」「求人マッチング効率化」「ノンコア業務の削減」の3軸で大きく変わる。1人月10件→20件決定も実現可能",
+      "理想的な時間配分は面談60%・準備20%・事務10%・新規開拓10%。実態は面談30%・事務40%が多く、改善余地大",
+      "ATS・求人DB・カレンダー連携を整備することで、面談前準備の工数を1件30分→10分に圧縮可能",
+      "CA1人あたりの月間決定数（4〜15件）と決定単価（120万〜300万円）の組み合わせで、事業の収益性が決まる"
+    ],
+    "bridge_title": "CAの工数を「集客側」で削減したい場合",
+    "bridge": [
+      "CAの生産性改善は社内オペレーションの最適化が中心ですが、応募〜面談着座までの工程（集客・初回コンタクト・事前カウンセリング・日程調整）を外部化することで、CAの時間配分を抜本的に変えられます。「面談に集中するCA」が事業の収益性を決める前提に立つと、それ以外の工程は外部化候補です。",
+      "「求職者送客の窓口」は、SNSを軸とした独自集客で求職者を集め、事前カウンセリング・日程調整まで完全代行する着座成果報酬型サービスです。<strong>初期費用0円・月額費用0円・面談着座率80〜90%</strong>のため、CAは「事前情報が整い、温度が高い求職者と話す」ことに集中できます。CA1人あたりの面談数・決定数を、社内改善と並行して構造的に引き上げる選択肢です。"
+    ],
+    "body_html": "\n    <div class=\"art-lead\">\n      <p>人材紹介事業の収益性を決定する最大の変数は、キャリアアドバイザー（CA）1人あたりの生産性です。CA1人月10件の決定を出すチームと、月5件しか出せないチームでは、同じ人件費でも事業の利益率が2倍違います。一方で、多くの事業者はCAの生産性向上を「個人の頑張り」に依存しており、オペレーション・ツール・体制で改善できる領域に手を付けていないのが現状です。</p>\n      <p>本記事では、CAの生産性を構造的に2倍にするための運用設計を、時間配分の理想形・面談前準備の自動化・求人マッチングの効率化・KPI設計の観点で実務レベルで整理します。</p>\n    </div>\n\n    <nav class=\"art-toc\">\n      <h3>目次</h3>\n      <ol>\n        <li><a href=\"#allocation\">CAの時間配分の理想形</a></li>\n        <li><a href=\"#prep\">事前準備の自動化</a></li>\n        <li><a href=\"#matching\">求人マッチングツールの活用</a></li>\n        <li><a href=\"#kpi\">KPI設計</a></li>\n      </ol>\n    </nav>\n\n    <h2 id=\"allocation\">CAの時間配分の理想形</h2>\n\n    <p>多くの事業者のCAの実態時間配分は、面談30%・事務40%・移動10%・準備15%・営業5%。理想形は：</p>\n\n    <ul>\n      <li><strong>面談（求職者・企業）：60%</strong></li>\n      <li><strong>面談前準備：20%</strong></li>\n      <li><strong>事務作業：10%</strong></li>\n      <li><strong>新規企業開拓：10%</strong></li>\n    </ul>\n\n    <p>面談時間を倍に増やせば、単純計算で決定数も倍。<strong>事務作業を40%から10%に削るのが、最大のレバー</strong>です。</p>\n\n    <h2 id=\"prep\">事前準備の自動化</h2>\n\n    <p>CAが面談前に行う作業の標準化と自動化で、1件あたり30分→10分に圧縮できます：</p>\n\n    <ul>\n      <li><strong>カルテ自動生成</strong>：応募フォーム・事前カウンセリング情報をATSで自動構造化</li>\n      <li><strong>求人候補リスト自動抽出</strong>：希望条件タグから合致求人を自動表示</li>\n      <li><strong>カレンダー連携</strong>：Spir/TimeRex/Calendlyで日程調整工数ゼロ</li>\n      <li><strong>テンプレート活用</strong>：初回メッセージ・面談リマインド・フォローメールの定型化</li>\n    </ul>\n\n    <h2 id=\"matching\">求人マッチングツールの活用</h2>\n\n    <p>求人DBの検索性が低いとCAは「過去の経験」で求人を提案します。これは属人化・取りこぼしの原因。求人DBにタグ・属性を入れて、希望条件 → 候補求人の自動マッチングを設計します。</p>\n\n    <ul>\n      <li>HRMOS、Workday、ジョブカン、自社開発DBの活用</li>\n      <li>求人タグ：年収・業界・職種・勤務地・働き方・必須スキル</li>\n      <li>「未経験OK」「リモート可」など特殊条件のフラグ</li>\n      <li>CAランキング・成約率の高い求人の優先表示</li>\n    </ul>\n\n    <div class=\"art-callout\">\n      <p><strong>効果の目安</strong>：求人DB整備後、CA1人あたり月間提案数は1.5〜2倍、決定率は10〜20%改善。立ち上げに2〜4ヶ月かかりますが、ROIが極めて高い投資領域です。</p>\n    </div>\n\n    <h2 id=\"kpi\">KPI設計</h2>\n\n    <p>CAの生産性を可視化するKPI設計：</p>\n\n    <ul>\n      <li><strong>月間面談数</strong>：CA1人あたり40〜80件が標準</li>\n      <li><strong>面談→提案転換率</strong>：60〜85%</li>\n      <li><strong>提案→応募転換率</strong>：30〜60%</li>\n      <li><strong>応募→決定率</strong>：15〜30%</li>\n      <li><strong>月間決定数</strong>：4〜15件</li>\n      <li><strong>1決定あたり工数</strong>：8〜20時間</li>\n    </ul>\n\n    <p>これらを週次・月次で可視化し、上位CAのノウハウを言語化・展開することで、チーム全体の生産性が底上げされます。<strong>「個人の成果」ではなく「再現可能な型」を作る</strong>のがCA組織マネジメントの本質です。</p>\n"
+  }
+]

@@ -36,15 +36,42 @@ if [ -z "${OPENAI_API_KEY:-}" ]; then
     exit 2
 fi
 
+# Autonomous fallback: if today's ready file is missing, generate one via Anthropic API.
+# Step A: ensure queue.json has at least 1 entry (refill via API if empty)
+# Step B: generate_article_via_api.py → writes ready/{today}.json
 if [ ! -f "$READY_FILE" ]; then
-    echo "ERROR: No ready article for $TODAY at:"
-    echo "  $READY_FILE"
-    echo ""
-    echo "Available ready files:"
-    ls -1 "$SCRIPT_DIR/ready/" 2>/dev/null || echo "  (none)"
-    echo ""
-    echo "Action: write tomorrow's article to ready/<date>.json or restock the queue."
-    exit 3
+    echo "[fallback] No ready article for $TODAY. Attempting auto-generation via Anthropic API..."
+
+    if [ -z "${ANTHROPIC_API_KEY:-}" ]; then
+        echo "ERROR: ANTHROPIC_API_KEY is not set; cannot auto-generate article."
+        echo "Add it to ~/.zshrc and ensure launchd plist sources zshrc."
+        exit 4
+    fi
+
+    QUEUE_FILE="$SCRIPT_DIR/queue.json"
+    QUEUE_SIZE=$(/usr/bin/python3 -c "import json; print(len(json.load(open('$QUEUE_FILE'))))" 2>/dev/null || echo "0")
+    echo "[fallback] queue.json size: $QUEUE_SIZE"
+
+    if [ "$QUEUE_SIZE" -lt 1 ]; then
+        echo "[fallback] queue is empty. Refilling with 5 new keywords..."
+        if ! /usr/bin/python3 "$SCRIPT_DIR/generate_keyword_via_api.py" 5; then
+            echo "ERROR: keyword generation failed"
+            exit 5
+        fi
+    fi
+
+    echo "[fallback] Generating article for $TODAY..."
+    if ! /usr/bin/python3 "$SCRIPT_DIR/generate_article_via_api.py" "$TODAY"; then
+        echo "ERROR: article generation failed"
+        exit 6
+    fi
+
+    if [ ! -f "$READY_FILE" ]; then
+        echo "ERROR: article generation completed but $READY_FILE not found"
+        exit 7
+    fi
+
+    echo "[fallback] Article generated successfully."
 fi
 
 # Extract slug for the commit message

@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "recruitment-jma-acquisition",
+    "title": "ハイクラス人材紹介の集客戦略｜年収600万円以上の求職者を集める",
+    "description": "ハイクラス領域（年収600万円以上）の求職者集客戦略を、市場特性・主要媒体（Bizreach等）・スカウト型運用・SNS活用・ハイクラス向け訴求設計の観点から解説。決定単価300万円超の世界で勝つための実務ガイド。",
+    "keywords": "ハイクラス 人材紹介,ハイクラス 求職者集客,年収600万 転職,エグゼクティブ 採用,ハイクラス エージェント",
+    "category": "セグメント別",
+    "read_time": "10分",
+    "image_prompt": "Modern editorial illustration about high-class executive recruitment. Clean SaaS-style flat illustration with abstract premium/elite icons (stylized crown or star shape) in deep navy blue (#1a3a8a) primary with gold (#f5b400) accent on the central premium element. Soft white background, premium business publication aesthetic, minimalist, no text or letters in the image. Wide aspect 3:2.",
+    "summary": [
+      "ハイクラス領域（年収600万円以上）は、決定単価300万円超で収益性が高い反面、求職者の絶対数が少なく集客難易度が高い",
+      "主要チャネルはBizreach、JAC、LinkedInのスカウト型媒体。リスティングは効果薄、SNS（X・LinkedIn）の補完が有効",
+      "訴求は「成長性」「責任範囲の拡大」「キャリアの希少性」が中心。年収訴求だけでは不十分",
+      "スカウト返信率の最大化が運用の核。求職者プロフィールに対する個別カスタマイズの精度が成果を決める"
+    ],
+    "bridge_title": "ハイクラスの母集団を「待ちではなく能動的に作りたい」場合",
+    "bridge": [
+      "ハイクラス領域は経験者の絶対数が少なく、スカウト型運用の精度を上げても返信率には限界があります。求職者にこちらを認知してもらい、向こうから連絡が来る状態を作るには、コンテンツマーケ・SNS・PRを組み合わせた中長期的なブランディング投資が必要です。",
+      "「求職者送客の窓口」は、ハイクラス領域は直接の主力サービス対象ではないものの、第二新卒〜30代経験者層のうち、年収500万円台で「ハイクラスへステップアップしたい」層を多く扱っています。<strong>初期費用0円・月額費用0円・面談着座率80〜90%</strong>で、ハイクラス領域の周辺セグメントの母集団形成として併用いただけます。"
+    ],
+    "body_html": "\n    <div class=\"art-lead\">\n      <p>ハイクラス領域（年収600万円以上、決定単価300万円超）は、人材紹介事業の中で最も収益性が高いセグメントです。1件の決定で中堅エージェントの月商に匹敵する単価を稼げる一方、求職者の絶対数は市場全体の5〜10%にとどまり、競合も大手＆専門エージェントが集中する激戦区。集客戦略を誤ると、年間の決定数が一桁にとどまるリスクがあります。</p>\n      <p>本記事では、ハイクラス領域の求職者集客戦略を、市場特性・主要媒体・スカウト型運用・訴求設計の観点から実務レベルで整理します。</p>\n    </div>\n\n    <nav class=\"art-toc\">\n      <h3>目次</h3>\n      <ol>\n        <li><a href=\"#market\">ハイクラス市場の特性</a></li>\n        <li><a href=\"#channels\">主要媒体（Bizreach等）</a></li>\n        <li><a href=\"#scout\">スカウト型運用</a></li>\n        <li><a href=\"#messaging\">ハイクラス向け訴求設計</a></li>\n      </ol>\n    </nav>\n\n    <h2 id=\"market\">ハイクラス市場の特性</h2>\n\n    <p>ハイクラス求職者の特徴：</p>\n\n    <ul>\n      <li><strong>転職回数が少ない</strong>：30〜40代で1〜3回程度</li>\n      <li><strong>能動的に動かない</strong>：自分から応募するより、スカウトを待つ</li>\n      <li><strong>信頼性重視</strong>：エージェントの実績・担当者の質が決定打</li>\n      <li><strong>意思決定が慎重</strong>：応募から決定まで3〜6ヶ月</li>\n      <li><strong>並行検討が当然</strong>：3〜5社のエージェントを同時に使う</li>\n    </ul>\n\n    <p>応募ベースの集客モデルは機能しづらく、<strong>スカウト型 + 紹介型のハイブリッドが主流</strong>です。</p>\n\n    <h2 id=\"channels\">主要媒体（Bizreach等）</h2>\n\n    <h3>Bizreach（ビズリーチ）</h3>\n\n    <p>ハイクラス市場の最大手。登録者数200万人超、年収600万円以上のプロフィールが集中。<strong>エージェント側からのスカウト送信が中心の運用</strong>。月額数万円のプラン + スカウト課金で運用。</p>\n\n    <h3>JAC Recruitment / JAC Group</h3>\n\n    <p>海外案件・グローバル人材に強い大手。求職者の質が高く、決定率も安定。<strong>提携エージェントとして案件をシェアする形態</strong>もあり。</p>\n\n    <h3>LinkedIn</h3>\n\n    <p>外資系・グローバル系の候補者リーチに最適。Recruiter Liteで月10〜20万円。<strong>英語圏との接点を作るなら必須チャネル</strong>。</p>\n\n    <h3>doda X / リクルートエージェント（ハイクラス面）</h3>\n\n    <p>ボリュームベースでハイクラス層を取り込む大手の専用面。媒体内競合は激しいが、リーチ規模は最大。</p>\n\n    <h2 id=\"scout\">スカウト型運用</h2>\n\n    <p>スカウトの返信率・コンタクト成立率を上げる運用が、ハイクラス集客のすべて：</p>\n\n    <h3>スカウトメッセージの最適化</h3>\n\n    <ul>\n      <li><strong>件名は具体的に</strong>：「貴方の◯◯のご経験を活かせるポジションがございます」</li>\n      <li><strong>冒頭5行で価値を提示</strong>：年収レンジ・ポジション・企業の特色</li>\n      <li><strong>定型文を避ける</strong>：プロフィール記載内容に1〜2ヶ所触れる</li>\n      <li><strong>CTA</strong>：「30分のZoomでお話を伺えればと存じます」のような低ハードル提案</li>\n    </ul>\n\n    <h3>運用KPI</h3>\n\n    <ul>\n      <li>スカウト送信数：月100〜300通/担当者</li>\n      <li>開封率：30〜50%</li>\n      <li>返信率：5〜15%</li>\n      <li>面談実施率（返信→面談）：60〜80%</li>\n    </ul>\n\n    <div class=\"art-callout\">\n      <p><strong>運用の落とし穴</strong>：スカウト数を増やせば返信が増えると考え、テンプレートを大量送信するアプローチは逆効果。<strong>個別カスタマイズの精度の方が、量より結果に直結</strong>します。</p>\n    </div>\n\n    <h2 id=\"messaging\">ハイクラス向け訴求設計</h2>\n\n    <p>ハイクラス求職者には、年収訴求だけでは不十分です：</p>\n\n    <ul>\n      <li><strong>成長性</strong>：会社・事業・自身の専門性の成長機会</li>\n      <li><strong>責任範囲</strong>：マネジメント、P/L責任、戦略策定への関与</li>\n      <li><strong>キャリアの希少性</strong>：「ここでしか得られない経験」</li>\n      <li><strong>働き方・自由度</strong>：リモート、副業、フレックスなど</li>\n      <li><strong>業界・企業のブランド</strong>：転職先のレピュテーション</li>\n    </ul>\n\n    <p>年収UPは「自然な結果」として提示し、メインメッセージはキャリアの本質的価値に置くのが、ハイクラス層に刺さる訴求設計です。</p>\n"
+  }
+]

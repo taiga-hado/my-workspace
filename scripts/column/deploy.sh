@@ -41,6 +41,23 @@ fi
 # filesystem to Vercel directly. Always invoke the CLI so a git push
 # failure does not block the production deployment.
 cd "$PROJECT_DIR" || exit 1
+
+# Self-heal: ensure .vercel is a directory (not an empty/corrupted file).
+# Symptom seen in production: vercel CLI sometimes leaves .vercel as an
+# empty regular file, then every subsequent `vercel deploy` errors with
+# "ENOTDIR: not a directory, lstat '.../.vercel/repo.json'".
+if [ -e ".vercel" ] && [ ! -d ".vercel" ]; then
+  echo "WARNING: .vercel exists but is not a directory; removing and relinking"
+  rm -f .vercel
+fi
+if [ ! -d ".vercel" ]; then
+  echo "Re-linking vercel project..."
+  if ! vercel link --yes --project soukyaku-madoguchi; then
+    echo "ERROR: vercel link failed; cannot deploy"
+    OVERALL_EXIT=4
+  fi
+fi
+
 if command -v vercel >/dev/null 2>&1; then
   if vercel deploy --prod --yes; then
     echo "✓ vercel deploy succeeded"
@@ -58,4 +75,25 @@ if [ "$OVERALL_EXIT" = "0" ]; then
 else
   echo "⚠ deploy partially complete: $ARTICLE_SLUG (exit=$OVERALL_EXIT)"
 fi
+
+# Post-deploy smoke test: verify production site is intact.
+# Catches regressions like "important page disappeared" or "GTM ID changed".
+# Vercel CDN propagation takes ~10-15s, so we wait briefly.
+if [ "$OVERALL_EXIT" = "0" ]; then
+  SMOKE_TEST="$WORKTREE_ROOT/scripts/column/smoke_test.sh"
+  if [ -x "$SMOKE_TEST" ]; then
+    echo ""
+    echo "Waiting 15s for Vercel CDN propagation before smoke test..."
+    sleep 15
+    if "$SMOKE_TEST"; then
+      echo "✓ post-deploy smoke test passed"
+    else
+      SMOKE_EXIT=$?
+      echo "✗ POST-DEPLOY SMOKE TEST FAILED (exit=$SMOKE_EXIT)"
+      echo "  → Site may have regressed. Investigate before next launchd run."
+      OVERALL_EXIT=$((100 + SMOKE_EXIT))
+    fi
+  fi
+fi
+
 exit $OVERALL_EXIT

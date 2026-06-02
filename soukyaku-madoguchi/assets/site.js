@@ -1,15 +1,20 @@
 /* 求職者送客の窓口 Service Site - interactions */
 
-/* ---------- UTM / Click ID Attribution Capture ---------- */
-/* 広告流入を識別するためのトラッキング。URLにutm_*やgclid/yclidが付いていれば
-   localStorageに保存し、フォーム送信時に同梱する（last-touch / 30日間有効）。 */
+/* ---------- Attribution Capture (UTM + Click ID + First-touch landing/referrer) ---------- */
+/* 流入元を識別するためのトラッキング。
+   - utm_* / gclid / yclid / ref がURLにあれば最新の値で上書き保存（last-touch、30日間）
+   - 初回訪問時の landing_page / referrer は別キーで永続保存（first-touch、30日間）
+   - フォーム送信時にすべて同梱する。
+   - SEO流入の判定は first_referrer を使う。広告は utm_source、内部リンクは ref を使う。 */
 (() => {
   'use strict';
   const KEY = 'madoguchi_attribution';
-  const ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'yclid'];
+  const FIRST_KEY = 'madoguchi_first_touch';
+  const ATTR_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'yclid', 'ref'];
   const EXPIRY_MS = 30 * 24 * 60 * 60 * 1000;
 
   try {
+    // --- last-touch: UTM/click IDが付いていれば上書き ---
     const params = new URLSearchParams(location.search);
     const captured = {};
     let hasAttr = false;
@@ -27,19 +32,56 @@
       };
       localStorage.setItem(KEY, JSON.stringify(data));
     }
+
+    // --- first-touch: UTM有無に関わらず、初回訪問のリファラと着地ページを保存 ---
+    const firstRaw = localStorage.getItem(FIRST_KEY);
+    let first = firstRaw ? JSON.parse(firstRaw) : null;
+    // 30日経過していたらリセット
+    if (first && Date.now() - (first.captured_at || 0) > EXPIRY_MS) {
+      first = null;
+    }
+    if (!first) {
+      const ref = document.referrer || '';
+      const sameOrigin = ref.indexOf(location.origin) === 0;
+      // 同一オリジンからの遷移は「初回」ではないので、外部からの初回着地のみ記録
+      // ただし referrer が空（直接訪問・SNSアプリ経由）の場合も記録する
+      if (!sameOrigin) {
+        const data = {
+          first_landing: location.pathname,
+          first_referrer: ref,
+          captured_at: Date.now()
+        };
+        localStorage.setItem(FIRST_KEY, JSON.stringify(data));
+      }
+    }
   } catch (err) { /* localStorage unavailable */ }
 
   window.MADOGUCHI_ATTRIBUTION = {
     get() {
       try {
+        // last-touch (UTM)
         const raw = localStorage.getItem(KEY);
-        if (!raw) return {};
-        const data = JSON.parse(raw);
-        if (Date.now() - (data.captured_at || 0) > EXPIRY_MS) {
-          localStorage.removeItem(KEY);
-          return {};
+        let result = {};
+        if (raw) {
+          const data = JSON.parse(raw);
+          if (Date.now() - (data.captured_at || 0) <= EXPIRY_MS) {
+            result = { ...data };
+          } else {
+            localStorage.removeItem(KEY);
+          }
         }
-        return data;
+        // first-touch
+        const firstRaw = localStorage.getItem(FIRST_KEY);
+        if (firstRaw) {
+          const first = JSON.parse(firstRaw);
+          if (Date.now() - (first.captured_at || 0) <= EXPIRY_MS) {
+            result.first_landing = first.first_landing || '';
+            result.first_referrer = first.first_referrer || '';
+          } else {
+            localStorage.removeItem(FIRST_KEY);
+          }
+        }
+        return result;
       } catch (err) { return {}; }
     }
   };

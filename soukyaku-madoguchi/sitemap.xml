@@ -16,11 +16,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/hoiku/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://kyusyokusyasokyaku-no-madoguchi.com/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -162,6 +157,102 @@
   </url>
   <url>
     <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-acquisition-complete-guide/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-30s-acquisition/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-aichi-acquisition/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-osaka-acquisition/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-fukuoka-acquisition/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-conversion-tracking/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ad-creative/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-line-marketing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-pre-counseling/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-indeed-acquisition/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-fee-structure/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-personal-information-protection/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-licensing/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ca-productivity/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ats-comparison/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-monthly-volume-planning/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cancellation-rate/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-soukyaku-comparison/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/hoiku/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-jma-acquisition/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

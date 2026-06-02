@@ -6,7 +6,7 @@
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PSZ9PPQ9');</script>
+})(window,document,'script','dataLayer','GTM-T4VBNNNN');</script>
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -161,31 +161,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       grid-template-columns: 1fr 1fr;
       gap: 14px;
     }
-    .ct-checkbox-group {
-      display: flex; flex-direction: column; gap: 10px;
-    }
-    .ct-checkbox-item {
-      display: flex; align-items: center; gap: 10px;
-      padding: 12px 16px;
-      border: 1.5px solid var(--border);
-      border-radius: var(--r-md);
-      cursor: pointer;
-      transition: border-color 0.2s, background 0.2s;
-      font-size: 0.95rem; color: var(--ink);
-    }
-    .ct-checkbox-item:hover {
-      border-color: var(--brand-blue);
-      background: var(--brand-blue-tint);
-    }
-    .ct-checkbox-item input[type="checkbox"] {
-      width: 18px; height: 18px; flex-shrink: 0;
-      accent-color: var(--brand-blue);
-      cursor: pointer;
-    }
-    .ct-checkbox-item.is-checked {
-      border-color: var(--brand-blue);
-      background: var(--brand-blue-tint);
-    }
     .ct-consent {
       display: flex; align-items: flex-start; gap: 10px;
       padding: 18px; background: var(--brand-blue-tint);
@@ -248,7 +223,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSZ9PPQ9"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4VBNNNN"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
@@ -335,21 +310,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="ct-field">
-            <div class="ct-label">ご興味のあるサービス <span class="ct-required">必須</span></div>
-            <div class="ct-checkbox-group" id="serviceGroup">
-              <label class="ct-checkbox-item">
-                <input type="checkbox" name="service" value="第二新卒・未経験領域">第二新卒・未経験領域（18〜34歳）
-              </label>
-              <label class="ct-checkbox-item">
-                <input type="checkbox" name="service" value="新卒領域">新卒領域（27卒〜28卒）
-              </label>
-              <label class="ct-checkbox-item">
-                <input type="checkbox" name="service" value="保育領域">保育領域（保育士・幼稚園教諭）
-              </label>
-              <label class="ct-checkbox-item">
-                <input type="checkbox" name="service" value="相談して決めたい">相談して決めたい
-              </label>
-            </div>
+            <label class="ct-label" for="service">ご興味のあるサービス <span class="ct-required">必須</span></label>
+            <select class="ct-select" id="service" name="service" required>
+              <option value="">選択してください</option>
+              <option value="第二新卒・未経験領域">第二新卒・未経験領域（18〜34歳）</option>
+              <option value="新卒領域">新卒領域（27卒〜28卒）</option>
+              <option value="両方">両方の領域</option>
+              <option value="相談して決めたい">相談して決めたい</option>
+            </select>
           </div>
 
           <div class="ct-field">
@@ -400,18 +368,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var submitBtn = document.getElementById('submitBtn');
     if(!form) return;
 
-    // チェックボックスのchecked状態スタイル
-    document.querySelectorAll('.ct-checkbox-item input[type="checkbox"]').forEach(function(cb){
-      cb.addEventListener('change', function(){
-        this.closest('.ct-checkbox-item').classList.toggle('is-checked', this.checked);
-      });
-    });
-
-    function getServiceValues(){
-      var checked = form.querySelectorAll('input[name="service"]:checked');
-      return Array.prototype.map.call(checked, function(c){ return c.value; }).join('、');
-    }
-
     function buildSubmission(){
       var d = new FormData(form);
       var attr = (window.MADOGUCHI_ATTRIBUTION && window.MADOGUCHI_ATTRIBUTION.get()) || {};
@@ -423,7 +379,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         lastName: d.get('lastName')||'',
         firstName: d.get('firstName')||'',
         email: d.get('email')||'',
-        service: getServiceValues(),
+        service: d.get('service')||'',
         monthly: d.get('monthly')||'',
         message: d.get('message')||'',
         utm_source: attr.utm_source||'',
@@ -434,6 +390,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         gclid: attr.gclid||'',
         yclid: attr.yclid||'',
         landing_page: attr.landing_page||'',
+        first_landing: attr.first_landing||'',
+        first_referrer: attr.first_referrer||'',
+        ref: attr.ref||'',
         userAgent: navigator.userAgent,
         referer: document.referrer || location.href
       };
@@ -464,10 +423,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       e.preventDefault();
       if(!form.checkValidity()){
         form.reportValidity();
-        return;
-      }
-      if(!getServiceValues()){
-        alert('ご興味のあるサービスを1つ以上選択してください。');
         return;
       }
       if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = '送信中...'; }

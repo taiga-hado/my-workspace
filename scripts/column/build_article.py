@@ -34,7 +34,7 @@ ARTICLE_TEMPLATE = """<!DOCTYPE html>
 new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-}})(window,document,'script','dataLayer','GTM-PSZ9PPQ9');</script>
+}})(window,document,'script','dataLayer','GTM-T4VBNNNN');</script>
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -84,7 +84,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSZ9PPQ9"
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4VBNNNN"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
@@ -145,7 +145,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="art-cta-inner">
         <h3>面談だけに集中できる、<br><span class="gold">新しい求職者獲得モデル</span>へ。</h3>
         <p>御社の獲得したい求職者像・月間希望面談数に合わせた送客プランを、無料でご提案いたします。</p>
-        <a href="{site_url}/" class="btn btn-lg btn-arrow">サービス詳細を見る</a>
+        <a href="{site_url}/?ref=column-{slug}" class="btn btn-lg btn-arrow">サービス詳細を見る</a>
       </div>
     </div>
 

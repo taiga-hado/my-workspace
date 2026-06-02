@@ -1,21 +1,34 @@
 #!/bin/bash
-# Daily column article deployment script
-# Commits column changes, pushes to remote, and deploys to Vercel.
+# Daily column article deployment (git-based, consolidated 2026-06).
 #
-# NOTE: We deliberately do NOT use `set -e`. A transient git push failure
-# (DNS hiccup, GitHub auth expiry) must not block vercel deploy, since
-# vercel publishes from the local filesystem state — Vercel does not need
-# the GitHub remote to be in sync. Each step reports its own failure.
+# The Vercel project "soukyaku-madoguchi" is connected to GitHub and
+# AUTO-DEPLOYS on push to `main` (root directory = soukyaku-madoguchi).
+# So this script just commits the freshly-built column article to main and
+# pushes it — Vercel builds and aliases the production domain automatically.
+# There is NO `vercel` CLI step anymore: main is the single source of truth.
+#
+# Deliberately NO `set -e`: a transient git failure must not skip the smoke test.
 
 WORKTREE_ROOT="/Users/taiga/Desktop/Documents-My Vault/.claude/worktrees/amazing-clarke-640732"
-PROJECT_DIR="$WORKTREE_ROOT/soukyaku-madoguchi"
-
-cd "$WORKTREE_ROOT" || exit 1
-
 ARTICLE_SLUG="${1:-new-article}"
 OVERALL_EXIT=0
 
-# Stage column-related files (including ready/published transitions)
+cd "$WORKTREE_ROOT" || exit 1
+
+# --- Safety guard: this worktree MUST be on main, or we'd deploy nothing ---
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
+if [ "$CURRENT_BRANCH" != "main" ]; then
+  echo "ERROR: deploy worktree is on '$CURRENT_BRANCH', not 'main'. Aborting to avoid wrong-branch deploy."
+  exit 9
+fi
+
+# Sync with remote main first (other pushes may have landed)
+if ! git pull --rebase origin main; then
+  echo "WARNING: 'git pull --rebase origin main' failed; continuing with local state"
+  OVERALL_EXIT=1
+fi
+
+# Stage the column build outputs (article HTML, hero image, dashboard, sitemap, queue state)
 git add soukyaku-madoguchi/column \
         soukyaku-madoguchi/column-dashboard \
         soukyaku-madoguchi/sitemap.xml \
@@ -24,76 +37,38 @@ git add soukyaku-madoguchi/column \
         scripts/column/ready \
         scripts/column/published 2>/dev/null || true
 
-# Skip commit if nothing staged
 if git diff --cached --quiet; then
-  echo "No staged changes; skipping commit"
+  echo "No staged changes; nothing to commit/deploy"
 else
   git commit -m "Add column article: $ARTICLE_SLUG
 
 Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
-  if ! git push origin HEAD; then
-    echo "WARNING: git push failed (network? auth?) — continuing to vercel deploy"
-    OVERALL_EXIT=1
-  fi
-fi
-
-# Vercel deploy is independent of GitHub state — it uploads the local
-# filesystem to Vercel directly. Always invoke the CLI so a git push
-# failure does not block the production deployment.
-cd "$PROJECT_DIR" || exit 1
-
-# Self-heal: ensure .vercel is a directory (not an empty/corrupted file).
-# Symptom seen in production: vercel CLI sometimes leaves .vercel as an
-# empty regular file, then every subsequent `vercel deploy` errors with
-# "ENOTDIR: not a directory, lstat '.../.vercel/repo.json'".
-if [ -e ".vercel" ] && [ ! -d ".vercel" ]; then
-  echo "WARNING: .vercel exists but is not a directory; removing and relinking"
-  rm -f .vercel
-fi
-if [ ! -d ".vercel" ]; then
-  echo "Re-linking vercel project..."
-  if ! vercel link --yes --project soukyaku-madoguchi; then
-    echo "ERROR: vercel link failed; cannot deploy"
-    OVERALL_EXIT=4
-  fi
-fi
-
-if command -v vercel >/dev/null 2>&1; then
-  if vercel deploy --prod --yes; then
-    echo "✓ vercel deploy succeeded"
+  if git push origin HEAD:main; then
+    echo "✓ pushed to main — Vercel auto-deploy triggered"
   else
-    echo "ERROR: vercel deploy failed"
+    echo "ERROR: git push to main failed; production will NOT update until this is pushed"
     OVERALL_EXIT=2
   fi
-else
-  echo "WARNING: vercel CLI not found; skipping deploy"
-  OVERALL_EXIT=3
+fi
+
+# --- Post-deploy smoke test (Vercel auto-deploy + CDN propagation needs time) ---
+SMOKE_TEST="$WORKTREE_ROOT/scripts/column/smoke_test.sh"
+if [ -x "$SMOKE_TEST" ]; then
+  echo "Waiting 60s for Vercel auto-deploy + CDN propagation before smoke test..."
+  sleep 60
+  if "$SMOKE_TEST"; then
+    echo "✓ post-deploy smoke test passed"
+  else
+    SMOKE_EXIT=$?
+    echo "✗ POST-DEPLOY SMOKE TEST FAILED (exit=$SMOKE_EXIT)"
+    echo "  → Site may have regressed. Investigate before next launchd run."
+    OVERALL_EXIT=$((100 + SMOKE_EXIT))
+  fi
 fi
 
 if [ "$OVERALL_EXIT" = "0" ]; then
   echo "✓ deploy complete: $ARTICLE_SLUG"
 else
-  echo "⚠ deploy partially complete: $ARTICLE_SLUG (exit=$OVERALL_EXIT)"
+  echo "⚠ deploy completed with issues: $ARTICLE_SLUG (exit=$OVERALL_EXIT)"
 fi
-
-# Post-deploy smoke test: verify production site is intact.
-# Catches regressions like "important page disappeared" or "GTM ID changed".
-# Vercel CDN propagation takes ~10-15s, so we wait briefly.
-if [ "$OVERALL_EXIT" = "0" ]; then
-  SMOKE_TEST="$WORKTREE_ROOT/scripts/column/smoke_test.sh"
-  if [ -x "$SMOKE_TEST" ]; then
-    echo ""
-    echo "Waiting 15s for Vercel CDN propagation before smoke test..."
-    sleep 15
-    if "$SMOKE_TEST"; then
-      echo "✓ post-deploy smoke test passed"
-    else
-      SMOKE_EXIT=$?
-      echo "✗ POST-DEPLOY SMOKE TEST FAILED (exit=$SMOKE_EXIT)"
-      echo "  → Site may have regressed. Investigate before next launchd run."
-      OVERALL_EXIT=$((100 + SMOKE_EXIT))
-    fi
-  fi
-fi
-
 exit $OVERALL_EXIT

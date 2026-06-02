@@ -3,9 +3,13 @@
 #
 # The Vercel project "soukyaku-madoguchi" is connected to GitHub and
 # AUTO-DEPLOYS on push to `main` (root directory = soukyaku-madoguchi).
-# So this script just commits the freshly-built column article to main and
-# pushes it — Vercel builds and aliases the production domain automatically.
-# There is NO `vercel` CLI step anymore: main is the single source of truth.
+# This script commits the freshly-built column article and pushes it to main;
+# Vercel builds and aliases the production domain automatically. There is NO
+# `vercel` CLI step anymore: main is the single source of truth.
+#
+# This worktree's branch is kept aligned to origin/main, so we always push
+# HEAD:main. Order matters: the build wrote files into the working tree, so we
+# COMMIT first, then rebase onto the latest main, then push.
 #
 # Deliberately NO `set -e`: a transient git failure must not skip the smoke test.
 
@@ -14,19 +18,6 @@ ARTICLE_SLUG="${1:-new-article}"
 OVERALL_EXIT=0
 
 cd "$WORKTREE_ROOT" || exit 1
-
-# --- Safety guard: this worktree MUST be on main, or we'd deploy nothing ---
-CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null)
-if [ "$CURRENT_BRANCH" != "main" ]; then
-  echo "ERROR: deploy worktree is on '$CURRENT_BRANCH', not 'main'. Aborting to avoid wrong-branch deploy."
-  exit 9
-fi
-
-# Sync with remote main first (other pushes may have landed)
-if ! git pull --rebase origin main; then
-  echo "WARNING: 'git pull --rebase origin main' failed; continuing with local state"
-  OVERALL_EXIT=1
-fi
 
 # Stage the column build outputs (article HTML, hero image, dashboard, sitemap, queue state)
 git add soukyaku-madoguchi/column \
@@ -43,11 +34,18 @@ else
   git commit -m "Add column article: $ARTICLE_SLUG
 
 Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>"
-  if git push origin HEAD:main; then
-    echo "✓ pushed to main — Vercel auto-deploy triggered"
+  # Incorporate any commits that landed on main since, keeping our new commit on top
+  if git pull --rebase origin main; then
+    if git push origin HEAD:main; then
+      echo "✓ pushed to main — Vercel auto-deploy triggered"
+    else
+      echo "ERROR: git push to main failed; production will NOT update until pushed"
+      OVERALL_EXIT=2
+    fi
   else
-    echo "ERROR: git push to main failed; production will NOT update until this is pushed"
-    OVERALL_EXIT=2
+    echo "ERROR: rebase onto origin/main failed (conflict?); aborting push"
+    git rebase --abort 2>/dev/null
+    OVERALL_EXIT=3
   fi
 fi
 

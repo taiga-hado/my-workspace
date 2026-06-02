@@ -36,9 +36,9 @@ If you ever need to restore logo-hoiku.png from git, use commit **`007f844`** (c
 ### Deployment
 - Vercel project: `taiga-hados-projects/soukyaku-madoguchi`
 - Production URL: `https://kyusyokusyasokyaku-no-madoguchi.com/`
-- Deploy command: `vercel deploy --prod --yes` from this directory
-- `.vercel/` directory must be a real directory; if it ever becomes an empty file, `deploy.sh` will self-heal via `vercel link`.
-- Auto-publish runs daily at 09:40 JST via macOS launchd (`~/Library/LaunchAgents/com.hado.soukyaku-column-daily.plist`)
+- **Deploy = push to `main`.** The Vercel project is Git-connected (repo `taiga-hado/my-workspace`, Production Branch `main`, Root Directory `soukyaku-madoguchi`); pushing to `main` auto-builds and aliases the production domain. The old manual `vercel --prod` / worktree-filesystem deploy was retired 2026-06 — do NOT reintroduce it.
+- Auto-publish runs daily at 09:40 JST via macOS launchd (`~/Library/LaunchAgents/com.hado.soukyaku-column-daily.plist`). `scripts/column/deploy.sh` now just commits the built article and runs `git push origin HEAD:main` → Vercel auto-deploys.
+- `*.md` files are excluded from the public site via `soukyaku-madoguchi/.vercelignore`.
 - After every deploy, `scripts/column/smoke_test.sh` MUST pass. It checks that:
   - All critical pages return 200
   - All 3 service cards exist on top page

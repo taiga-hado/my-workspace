@@ -1,5 +1,23 @@
 [
   {
+    "slug": "recruitment-international-acquisition",
+    "title": "外国人材紹介の集客戦略｜訴求設計と主要チャネル",
+    "description": "外国人材紹介の求職者集客戦略を、市場特性・在留資格別の集客設計・多言語訴求のポイント・主要チャネルと相場の観点から整理。技能実習・特定技能・高度人材・留学生まで、セグメント別の実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "外国人材 人材紹介",
+      "外国人 採用",
+      "外国人材 集客",
+      "多言語 採用",
+      "特定技能 集客",
+      "在留資格"
+    ],
+    "primary_keyword": "外国人材 人材紹介",
+    "status": "published",
+    "published": "2026-06-03",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-international-acquisition/"
+  },
+  {
     "slug": "recruitment-jma-acquisition",
     "title": "ハイクラス人材紹介の集客戦略｜年収600万円以上の求職者を集める",
     "description": "ハイクラス領域（年収600万円以上）の求職者集客戦略を、市場特性・主要媒体（Bizreach等）・スカウト型運用・SNS活用・ハイクラス向け訴求設計の観点から解説。決定単価300万円超の世界で勝つための実務ガイド。",
@@ -760,23 +778,6 @@
     "status": "published",
     "published": "2026-05-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
-  },
-  {
-    "slug": "recruitment-jma-acquisition",
-    "title": "ハイクラス人材紹介の集客戦略｜年収600万円以上の求職者を集める",
-    "description": "ハイクラス領域（年収600万円以上）の求職者集客戦略を、市場特性・主要媒体（Bizreach等）・スカウト型運用・SNS活用・ハイクラス向け訴求設計の観点から解説。決定単価300万円超の世界で勝つための実務ガイド。",
-    "category": "セグメント別",
-    "keywords": [
-      "ハイクラス 人材紹介",
-      "ハイクラス 求職者集客",
-      "年収600万 転職",
-      "エグゼクティブ 採用",
-      "ハイクラス エージェント"
-    ],
-    "primary_keyword": "ハイクラス 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-06-02",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-jma-acquisition/"
   },
   {
     "slug": "recruitment-international-acquisition",

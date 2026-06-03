@@ -77,6 +77,31 @@ for url in "${SITEMAP_REQUIRED[@]}"; do
   fi
 done
 
+# === 5. contact form has checkbox UI with all 4 service options ===
+# Past regression: GTM sweep replaced contact/index.html with an older
+# dropdown-based version, silently removing the 保育領域 option and the
+# checkbox UI. This guards against that.
+CONTACT_HTML=$(curl -s "$BASE/contact/")
+EXPECTED_SERVICE_VALUES=(
+  "第二新卒・未経験領域"
+  "新卒領域"
+  "保育領域"
+  "相談して決めたい"
+)
+
+for opt in "${EXPECTED_SERVICE_VALUES[@]}"; do
+  if ! echo "$CONTACT_HTML" | grep -q "value=\"$opt\""; then
+    REPORT="$REPORT\n✗ contact page missing service option: \"$opt\""
+    FAILED=14
+  fi
+done
+
+CHECKBOX_COUNT=$(echo "$CONTACT_HTML" | grep -c 'type="checkbox" name="service"')
+if [ "$CHECKBOX_COUNT" -lt 4 ]; then
+  REPORT="$REPORT\n✗ contact page should have ≥4 service checkboxes (got $CHECKBOX_COUNT). The dropdown version may have been re-introduced."
+  FAILED=14
+fi
+
 # === Report ===
 if [ "$FAILED" = "0" ]; then
   echo "✓ smoke test passed: ${#CRITICAL_PAGES[@]} pages, ${#EXPECTED_CARDS[@]} cards, $EXPECTED_GTM, sitemap OK"

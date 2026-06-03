@@ -102,6 +102,17 @@ if [ "$CHECKBOX_COUNT" -lt 4 ]; then
   FAILED=14
 fi
 
+# === 6. contact form submits to the current Apps Script Web App URL ===
+# Past regression: GAS endpoint failed silently for 5 days; nobody noticed
+# because mode:'no-cors' fetch always reports success. This guards against
+# the WEB_APP_URL drifting from the deployed Apps Script endpoint.
+EXPECTED_GAS_URL='https://script.google.com/macros/s/AKfycbxKPd--F16UiULPqRmbz_jLjWGt-Xy9y_aipISPsgFhFiHcdZsOaSHNoc2AsCZXgQcR/exec'
+if ! echo "$CONTACT_HTML" | grep -q "$EXPECTED_GAS_URL"; then
+  ACTUAL=$(echo "$CONTACT_HTML" | grep -oE "https://script\.google\.com/macros/s/[^']+/exec" | head -1)
+  REPORT="$REPORT\n✗ contact form WEB_APP_URL changed.\n    Expected: $EXPECTED_GAS_URL\n    Got:      $ACTUAL"
+  FAILED=15
+fi
+
 # === Report ===
 if [ "$FAILED" = "0" ]; then
   echo "✓ smoke test passed: ${#CRITICAL_PAGES[@]} pages, ${#EXPECTED_CARDS[@]} cards, $EXPECTED_GTM, sitemap OK"

@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-middle-acquisition",
+    "title": "40代・ミドル層求職者の集客戦略｜管理職転職を狙う訴求設計",
+    "description": "40代以上のミドル・管理職層を対象にした人材紹介の集客手法を解説。チャネル選定、ペルソナ別の訴求軸、ハイクラス求人との接続、面談着座までの導線設計をまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "40代 転職 集客",
+      "ミドル 人材紹介",
+      "管理職 求職者集客",
+      "ハイクラス 集客"
+    ],
+    "primary_keyword": "40代 転職 集客",
+    "status": "published",
+    "published": "2026-06-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-middle-acquisition/"
+  },
+  {
     "slug": "recruitment-shoukai-fee",
     "title": "人材紹介の手数料設計｜成功報酬の業界標準と差別化のポイント",
     "description": "人材紹介の手数料（成功報酬）の業界標準、決定単価の決まり方、返金規定の設計、料金体系の差別化、企業との交渉実務までを実務レベルで解説。事業の収益性を直接決定する手数料設計の判断ガイド。",
@@ -795,23 +811,6 @@
     "status": "published",
     "published": "2026-05-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
-  },
-  {
-    "slug": "recruitment-shoukai-fee",
-    "title": "人材紹介の手数料設計｜成功報酬の業界標準と差別化のポイント",
-    "description": "人材紹介の手数料（成功報酬）の業界標準、決定単価の決まり方、返金規定の設計、料金体系の差別化、企業との交渉実務までを実務レベルで解説。事業の収益性を直接決定する手数料設計の判断ガイド。",
-    "category": "用語解説",
-    "keywords": [
-      "人材紹介 手数料",
-      "人材紹介 成功報酬",
-      "人材紹介 単価",
-      "人材紹介 料金",
-      "人材紹介 手数料率"
-    ],
-    "primary_keyword": "人材紹介 手数料",
-    "status": "ready",
-    "scheduled": "2026-06-04",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-shoukai-fee/"
   },
   {
     "slug": "recruitment-middle-acquisition",

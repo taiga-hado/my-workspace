@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-media-comparison",
+    "title": "人材紹介向け求人媒体比較｜リクナビ・doda・マイナビ等の使い分け",
+    "description": "人材紹介エージェントが求職者集客で使える主要求人媒体7種を比較。掲載料金・集まる層・CPAの目安・自社集客との併用設計まで実務目線で解説します。",
+    "category": "比較検討",
+    "keywords": [
+      "求人媒体 比較",
+      "人材紹介 媒体",
+      "doda 人材紹介",
+      "求人媒体 選び方"
+    ],
+    "primary_keyword": "求人媒体 比較",
+    "status": "published",
+    "published": "2026-06-07",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-media-comparison/"
+  },
+  {
     "slug": "recruitment-ai-utilization",
     "title": "人材紹介のAI・ChatGPT活用｜集客から面談まで効率化する7つの使い方",
     "description": "人材紹介事業でChatGPTや生成AIを活用する具体的な方法を解説。求人原稿作成、スカウト文、LINE自動応答、カウンセリング補助、データ分析まで現場で使える7パターンを紹介します。",
@@ -829,19 +845,107 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-ai-utilization",
-    "title": "人材紹介のAI・ChatGPT活用｜集客から面談まで効率化する7つの使い方",
-    "description": "人材紹介事業でChatGPTや生成AIを活用する具体的な方法を解説。求人原稿作成、スカウト文、LINE自動応答、カウンセリング補助、データ分析まで現場で使える7パターンを紹介します。",
-    "category": "業界トレンド",
+    "slug": "recruitment-media-comparison",
+    "title": "人材紹介向け求人媒体比較｜リクナビ・doda・マイナビ等の使い分け",
+    "description": "人材紹介エージェントが求職者集客で使える主要求人媒体7種を比較。掲載料金・集まる層・CPAの目安・自社集客との併用設計まで実務目線で解説します。",
+    "category": "比較検討",
     "keywords": [
-      "人材紹介 AI活用",
-      "ChatGPT 人材紹介",
-      "生成AI 求職者集客",
-      "AIエージェント 採用"
+      "求人媒体 比較",
+      "人材紹介 媒体",
+      "doda 人材紹介",
+      "求人媒体 選び方"
     ],
-    "primary_keyword": "人材紹介 AI活用",
+    "primary_keyword": "求人媒体 比較",
     "status": "ready",
-    "scheduled": "2026-06-06",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ai-utilization/"
+    "scheduled": "2026-06-07",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-media-comparison/"
+  },
+  {
+    "slug": "recruitment-candidate-db-reactivation",
+    "title": "候補者DBの再アプローチ戦略｜休眠求職者から面談を再創出する運用",
+    "description": "人材紹介の候補者DBに眠る休眠求職者を掘り起こし、追加コストゼロで面談着座を生む再アプローチの設計。セグメント・配信内容・頻度・KPIまで解説。",
+    "category": "課題解決",
+    "keywords": [
+      "候補者DB 活用",
+      "休眠求職者",
+      "人材紹介 リテンション",
+      "再アプローチ"
+    ],
+    "primary_keyword": "候補者DB 活用",
+    "key_points": [
+      "候補者DBに眠る休眠求職者の経済価値とCPA削減インパクト",
+      "再アプローチ対象のセグメント設計（登録経過月数・職種・希望条件）",
+      "メール・LINE・架電のチャネル別配信内容と頻度設計",
+      "再面談着座率を測るKPIと禁止事項（個人情報保護法の留意点）"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-db-reactivation/"
+  },
+  {
+    "slug": "recruitment-medical-care-acquisition",
+    "title": "医療・介護業界特化の人材紹介集客｜看護師・介護士の獲得チャネル設計",
+    "description": "医療・介護領域の人材紹介で求職者を集める実務ガイド。看護師・介護士のチャネル選定、訴求設計、規制・倫理面の注意点、CPA相場まで解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "医療 人材紹介 集客",
+      "看護師 集客",
+      "介護士 求職者",
+      "医療介護 エージェント"
+    ],
+    "primary_keyword": "医療 人材紹介 集客",
+    "key_points": [
+      "医療・介護領域の求職者市場と人材紹介の事業性",
+      "看護師・介護士に効くチャネル（指定検索・SNS・口コミ）の使い分け",
+      "資格・勤務形態・夜勤手当を軸にした訴求設計",
+      "医療広告ガイドラインと有料職業紹介における規制対応"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-medical-care-acquisition/"
+  },
+  {
+    "slug": "recruitment-persona-design",
+    "title": "求職者ペルソナ設計の作り方｜人材紹介の集客精度を上げる5ステップ",
+    "description": "人材紹介の集客チャネル選定と訴求設計の起点となる求職者ペルソナの作り方。インタビュー設計・属性整理・訴求への落とし込みまで5ステップで解説。",
+    "category": "ハウツー",
+    "keywords": [
+      "求職者 ペルソナ",
+      "人材紹介 ペルソナ設計",
+      "ターゲット設計",
+      "カスタマージャーニー"
+    ],
+    "primary_keyword": "求職者 ペルソナ",
+    "key_points": [
+      "なぜ人材紹介にペルソナ設計が必要なのか（集客精度とCPAの関係）",
+      "既存登録者データとインタビューからペルソナを抽出する手順",
+      "属性・志向・転職動機・接触チャネルを整理するフレームワーク",
+      "ペルソナを広告クリエイティブ・LP・カウンセリング台本に落とす方法"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-persona-design/"
+  },
+  {
+    "slug": "recruitment-cookie-itp-response",
+    "title": "人材紹介のCookie規制・ITP対応｜計測精度を守る実務ガイド",
+    "description": "ITP・Cookie規制で計測精度が落ちる中、人材紹介の広告運用で打つべき対策を解説。サーバーサイド計測・同意管理・1stパーティデータ活用まで実務目線でカバー。",
+    "category": "用語解説",
+    "keywords": [
+      "Cookie規制",
+      "ITP 対応",
+      "サーバーサイド計測",
+      "人材紹介 計測"
+    ],
+    "primary_keyword": "Cookie規制",
+    "key_points": [
+      "ITP・Cookie規制の概要と人材紹介広告に与えるインパクト",
+      "3rdパーティCookie廃止で崩れる計測・リターゲティングの代替策",
+      "サーバーサイドGTM・コンバージョンAPIによる計測補完",
+      "同意管理（CMP）と1stパーティデータ基盤の構築ステップ"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-itp-response/"
   }
 ]

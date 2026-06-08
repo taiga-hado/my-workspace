@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-candidate-db-reactivation",
+    "title": "候補者DBの再アプローチ戦略｜休眠求職者から面談を再創出する運用",
+    "description": "人材紹介の候補者DBに眠る休眠求職者を掘り起こし、追加コストゼロで面談着座を生む再アプローチの設計。セグメント・配信内容・頻度・KPIまで解説。",
+    "category": "課題解決",
+    "keywords": [
+      "候補者DB 活用",
+      "休眠求職者",
+      "人材紹介 リテンション",
+      "再アプローチ"
+    ],
+    "primary_keyword": "候補者DB 活用",
+    "status": "published",
+    "published": "2026-06-08",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-db-reactivation/"
+  },
+  {
     "slug": "recruitment-media-comparison",
     "title": "人材紹介向け求人媒体比較｜リクナビ・doda・マイナビ等の使い分け",
     "description": "人材紹介エージェントが求職者集客で使える主要求人媒体7種を比較。掲載料金・集まる層・CPAの目安・自社集客との併用設計まで実務目線で解説します。",
@@ -845,22 +861,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-media-comparison",
-    "title": "人材紹介向け求人媒体比較｜リクナビ・doda・マイナビ等の使い分け",
-    "description": "人材紹介エージェントが求職者集客で使える主要求人媒体7種を比較。掲載料金・集まる層・CPAの目安・自社集客との併用設計まで実務目線で解説します。",
-    "category": "比較検討",
-    "keywords": [
-      "求人媒体 比較",
-      "人材紹介 媒体",
-      "doda 人材紹介",
-      "求人媒体 選び方"
-    ],
-    "primary_keyword": "求人媒体 比較",
-    "status": "ready",
-    "scheduled": "2026-06-07",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-media-comparison/"
-  },
-  {
     "slug": "recruitment-candidate-db-reactivation",
     "title": "候補者DBの再アプローチ戦略｜休眠求職者から面談を再創出する運用",
     "description": "人材紹介の候補者DBに眠る休眠求職者を掘り起こし、追加コストゼロで面談着座を生む再アプローチの設計。セグメント・配信内容・頻度・KPIまで解説。",
@@ -872,14 +872,8 @@
       "再アプローチ"
     ],
     "primary_keyword": "候補者DB 活用",
-    "key_points": [
-      "候補者DBに眠る休眠求職者の経済価値とCPA削減インパクト",
-      "再アプローチ対象のセグメント設計（登録経過月数・職種・希望条件）",
-      "メール・LINE・架電のチャネル別配信内容と頻度設計",
-      "再面談着座率を測るKPIと禁止事項（個人情報保護法の留意点）"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-08",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-db-reactivation/"
   },
   {
@@ -901,7 +895,7 @@
       "医療広告ガイドラインと有料職業紹介における規制対応"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-medical-care-acquisition/"
   },
   {
@@ -923,7 +917,7 @@
       "ペルソナを広告クリエイティブ・LP・カウンセリング台本に落とす方法"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-persona-design/"
   },
   {
@@ -945,7 +939,7 @@
       "同意管理（CMP）と1stパーティデータ基盤の構築ステップ"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-itp-response/"
   }
 ]

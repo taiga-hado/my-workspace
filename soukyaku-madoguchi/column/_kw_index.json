@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-medical-care-acquisition",
+    "title": "医療・介護業界特化の人材紹介集客｜看護師・介護士の獲得チャネル設計",
+    "description": "医療・介護領域の人材紹介で求職者を集める実務ガイド。看護師・介護士のチャネル選定、訴求設計、規制・倫理面の注意点、CPA相場まで解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "医療 人材紹介 集客",
+      "看護師 集客",
+      "介護士 求職者",
+      "医療介護 エージェント"
+    ],
+    "primary_keyword": "医療 人材紹介 集客",
+    "status": "published",
+    "published": "2026-06-09",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-medical-care-acquisition/"
+  },
+  {
     "slug": "recruitment-candidate-db-reactivation",
     "title": "候補者DBの再アプローチ戦略｜休眠求職者から面談を再創出する運用",
     "description": "人材紹介の候補者DBに眠る休眠求職者を掘り起こし、追加コストゼロで面談着座を生む再アプローチの設計。セグメント・配信内容・頻度・KPIまで解説。",
@@ -861,22 +877,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-candidate-db-reactivation",
-    "title": "候補者DBの再アプローチ戦略｜休眠求職者から面談を再創出する運用",
-    "description": "人材紹介の候補者DBに眠る休眠求職者を掘り起こし、追加コストゼロで面談着座を生む再アプローチの設計。セグメント・配信内容・頻度・KPIまで解説。",
-    "category": "課題解決",
-    "keywords": [
-      "候補者DB 活用",
-      "休眠求職者",
-      "人材紹介 リテンション",
-      "再アプローチ"
-    ],
-    "primary_keyword": "候補者DB 活用",
-    "status": "ready",
-    "scheduled": "2026-06-08",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-db-reactivation/"
-  },
-  {
     "slug": "recruitment-medical-care-acquisition",
     "title": "医療・介護業界特化の人材紹介集客｜看護師・介護士の獲得チャネル設計",
     "description": "医療・介護領域の人材紹介で求職者を集める実務ガイド。看護師・介護士のチャネル選定、訴求設計、規制・倫理面の注意点、CPA相場まで解説します。",
@@ -888,14 +888,8 @@
       "医療介護 エージェント"
     ],
     "primary_keyword": "医療 人材紹介 集客",
-    "key_points": [
-      "医療・介護領域の求職者市場と人材紹介の事業性",
-      "看護師・介護士に効くチャネル（指定検索・SNS・口コミ）の使い分け",
-      "資格・勤務形態・夜勤手当を軸にした訴求設計",
-      "医療広告ガイドラインと有料職業紹介における規制対応"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-09",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-medical-care-acquisition/"
   },
   {
@@ -917,7 +911,7 @@
       "ペルソナを広告クリエイティブ・LP・カウンセリング台本に落とす方法"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-persona-design/"
   },
   {
@@ -939,7 +933,7 @@
       "同意管理（CMP）と1stパーティデータ基盤の構築ステップ"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-itp-response/"
   }
 ]

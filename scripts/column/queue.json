@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-persona-design",
-    "title": "求職者ペルソナ設計の作り方｜人材紹介の集客精度を上げる5ステップ",
-    "description": "人材紹介の集客チャネル選定と訴求設計の起点となる求職者ペルソナの作り方。インタビュー設計・属性整理・訴求への落とし込みまで5ステップで解説。",
-    "keywords": "求職者 ペルソナ,人材紹介 ペルソナ設計,ターゲット設計,カスタマージャーニー",
-    "category": "ハウツー",
-    "image_prompt": "Flat editorial illustration of a central candidate persona profile card surrounded by attribute icons (career, motivation, channel, life-stage) connected by elegant lines, deep navy blue (#1a3a8a) background with gold (#f5b400) accent rings, premium SaaS aesthetic, soft white highlights, 3:2 aspect ratio, no text or letters",
-    "key_points": [
-      "なぜ人材紹介にペルソナ設計が必要なのか（集客精度とCPAの関係）",
-      "既存登録者データとインタビューからペルソナを抽出する手順",
-      "属性・志向・転職動機・接触チャネルを整理するフレームワーク",
-      "ペルソナを広告クリエイティブ・LP・カウンセリング台本に落とす方法"
-    ]
-  },
-  {
     "slug": "recruitment-cookie-itp-response",
     "title": "人材紹介のCookie規制・ITP対応｜計測精度を守る実務ガイド",
     "description": "ITP・Cookie規制で計測精度が落ちる中、人材紹介の広告運用で打つべき対策を解説。サーバーサイド計測・同意管理・1stパーティデータ活用まで実務目線でカバー。",

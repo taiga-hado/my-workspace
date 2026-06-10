@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-persona-design",
+    "title": "求職者ペルソナ設計の作り方｜人材紹介の集客精度を上げる5ステップ",
+    "description": "人材紹介の集客チャネル選定と訴求設計の起点となる求職者ペルソナの作り方。インタビュー設計・属性整理・訴求への落とし込みまで5ステップで解説。",
+    "category": "ハウツー",
+    "keywords": [
+      "求職者 ペルソナ",
+      "人材紹介 ペルソナ設計",
+      "ターゲット設計",
+      "カスタマージャーニー"
+    ],
+    "primary_keyword": "求職者 ペルソナ",
+    "status": "published",
+    "published": "2026-06-10",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-persona-design/"
+  },
+  {
     "slug": "recruitment-medical-care-acquisition",
     "title": "医療・介護業界特化の人材紹介集客｜看護師・介護士の獲得チャネル設計",
     "description": "医療・介護領域の人材紹介で求職者を集める実務ガイド。看護師・介護士のチャネル選定、訴求設計、規制・倫理面の注意点、CPA相場まで解説します。",
@@ -877,22 +893,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-medical-care-acquisition",
-    "title": "医療・介護業界特化の人材紹介集客｜看護師・介護士の獲得チャネル設計",
-    "description": "医療・介護領域の人材紹介で求職者を集める実務ガイド。看護師・介護士のチャネル選定、訴求設計、規制・倫理面の注意点、CPA相場まで解説します。",
-    "category": "セグメント別",
-    "keywords": [
-      "医療 人材紹介 集客",
-      "看護師 集客",
-      "介護士 求職者",
-      "医療介護 エージェント"
-    ],
-    "primary_keyword": "医療 人材紹介 集客",
-    "status": "ready",
-    "scheduled": "2026-06-09",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-medical-care-acquisition/"
-  },
-  {
     "slug": "recruitment-persona-design",
     "title": "求職者ペルソナ設計の作り方｜人材紹介の集客精度を上げる5ステップ",
     "description": "人材紹介の集客チャネル選定と訴求設計の起点となる求職者ペルソナの作り方。インタビュー設計・属性整理・訴求への落とし込みまで5ステップで解説。",
@@ -904,14 +904,8 @@
       "カスタマージャーニー"
     ],
     "primary_keyword": "求職者 ペルソナ",
-    "key_points": [
-      "なぜ人材紹介にペルソナ設計が必要なのか（集客精度とCPAの関係）",
-      "既存登録者データとインタビューからペルソナを抽出する手順",
-      "属性・志向・転職動機・接触チャネルを整理するフレームワーク",
-      "ペルソナを広告クリエイティブ・LP・カウンセリング台本に落とす方法"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-10",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-persona-design/"
   },
   {
@@ -933,7 +927,7 @@
       "同意管理（CMP）と1stパーティデータ基盤の構築ステップ"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-itp-response/"
   }
 ]

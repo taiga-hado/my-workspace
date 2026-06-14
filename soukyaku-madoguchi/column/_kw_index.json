@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-youtube-marketing",
+    "title": "人材紹介のYouTube集客｜動画コンテンツで求職者を集める運用設計",
+    "description": "人材紹介事業者がYouTubeで求職者を集客する方法を解説。チャンネル設計、動画企画、SEO、面談誘導までの導線設計と、TikTok・Instagramとの使い分けを実務目線でまとめます。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 YouTube",
+      "YouTube 求職者集客",
+      "動画マーケティング 採用",
+      "YouTube SEO 転職"
+    ],
+    "primary_keyword": "人材紹介 YouTube",
+    "status": "published",
+    "published": "2026-06-14",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-youtube-marketing/"
+  },
+  {
     "slug": "recruitment-persona-design",
     "title": "求職者ペルソナ設計の作り方｜人材紹介の集客精度を上げる5ステップ",
     "description": "人材紹介の集客チャネル選定と訴求設計の起点となる求職者ペルソナの作り方。インタビュー設計・属性整理・訴求への落とし込みまで5ステップで解説。",
@@ -893,41 +909,108 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-persona-design",
-    "title": "求職者ペルソナ設計の作り方｜人材紹介の集客精度を上げる5ステップ",
-    "description": "人材紹介の集客チャネル選定と訴求設計の起点となる求職者ペルソナの作り方。インタビュー設計・属性整理・訴求への落とし込みまで5ステップで解説。",
+    "slug": "recruitment-youtube-marketing",
+    "title": "人材紹介のYouTube集客｜動画コンテンツで求職者を集める運用設計",
+    "description": "人材紹介事業者がYouTubeで求職者を集客する方法を解説。チャンネル設計、動画企画、SEO、面談誘導までの導線設計と、TikTok・Instagramとの使い分けを実務目線でまとめます。",
     "category": "ハウツー",
     "keywords": [
-      "求職者 ペルソナ",
-      "人材紹介 ペルソナ設計",
-      "ターゲット設計",
-      "カスタマージャーニー"
+      "人材紹介 YouTube",
+      "YouTube 求職者集客",
+      "動画マーケティング 採用",
+      "YouTube SEO 転職"
     ],
-    "primary_keyword": "求職者 ペルソナ",
+    "primary_keyword": "人材紹介 YouTube",
     "status": "ready",
-    "scheduled": "2026-06-10",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-persona-design/"
+    "scheduled": "2026-06-14",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-youtube-marketing/"
   },
   {
-    "slug": "recruitment-cookie-itp-response",
-    "title": "人材紹介のCookie規制・ITP対応｜計測精度を守る実務ガイド",
-    "description": "ITP・Cookie規制で計測精度が落ちる中、人材紹介の広告運用で打つべき対策を解説。サーバーサイド計測・同意管理・1stパーティデータ活用まで実務目線でカバー。",
-    "category": "用語解説",
+    "slug": "recruitment-offer-acceptance-rate",
+    "title": "内定承諾率を上げる人材紹介エージェントのオファー設計と運用",
+    "description": "人材紹介の内定承諾率を高めるためのオファー設計、年収交渉、競合エージェント対策、辞退理由の分析手法を解説。決定数を増やすための面談以降の運用改善を実務視点でまとめます。",
+    "category": "課題解決",
     "keywords": [
-      "Cookie規制",
-      "ITP 対応",
-      "サーバーサイド計測",
-      "人材紹介 計測"
+      "内定承諾率",
+      "オファー設計",
+      "内定辞退 防止",
+      "人材紹介 決定率"
     ],
-    "primary_keyword": "Cookie規制",
+    "primary_keyword": "内定承諾率",
     "key_points": [
-      "ITP・Cookie規制の概要と人材紹介広告に与えるインパクト",
-      "3rdパーティCookie廃止で崩れる計測・リターゲティングの代替策",
-      "サーバーサイドGTM・コンバージョンAPIによる計測補完",
-      "同意管理（CMP）と1stパーティデータ基盤の構築ステップ"
+      "内定承諾率の業界平均と決定数への影響度",
+      "内定辞退の主要因と段階別フレームワーク（金銭・心理・競合）",
+      "オファー面談・条件交渉・クロージングの実務スクリプト",
+      "承諾率を可視化するKPI設計とCA研修の進め方"
     ],
     "status": "queued",
     "queue_position": 1,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-itp-response/"
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-offer-acceptance-rate/"
+  },
+  {
+    "slug": "recruitment-it-industry-acquisition",
+    "title": "IT業界特化型人材紹介の求職者集客戦略｜エンジニア・PM・SREの獲得",
+    "description": "IT業界に特化した人材紹介事業者向けの求職者集客戦略を解説。エンジニア・PM・SRE等の職種別チャネル、技術コミュニティ活用、年収訴求の設計を実務目線でまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "IT人材紹介 集客",
+      "エンジニア 求職者獲得",
+      "IT特化エージェント",
+      "技術職 集客"
+    ],
+    "primary_keyword": "IT人材紹介 集客",
+    "key_points": [
+      "IT人材市場の構造とエージェント選定における求職者心理",
+      "職種別（Web・SRE・PM・データ）の主要集客チャネル",
+      "技術コミュニティ・勉強会・OSS文脈での信頼構築",
+      "年収訴求とリファラル設計でCPAを下げる運用"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-it-industry-acquisition/"
+  },
+  {
+    "slug": "recruitment-referral-acquisition",
+    "title": "人材紹介のリファラル集客｜紹介経由で求職者を増やす仕組み設計",
+    "description": "人材紹介事業者がリファラル（紹介）経由で求職者を獲得する仕組みを解説。紹介インセンティブ設計、依頼タイミング、決定者起点のループ構築までを実務視点でまとめます。",
+    "category": "ハウツー",
+    "keywords": [
+      "リファラル集客",
+      "紹介経由 求職者",
+      "リファラル採用",
+      "人材紹介 紹介インセンティブ"
+    ],
+    "primary_keyword": "リファラル集客",
+    "key_points": [
+      "リファラル集客がCPAと面談着座率に与えるインパクト",
+      "紹介インセンティブの相場と法令上の留意点（職安法）",
+      "決定者・未決定者それぞれへの依頼タイミングと運用フロー",
+      "リファラルループを継続させるCRM・MA設計"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-referral-acquisition/"
+  },
+  {
+    "slug": "recruitment-cookie-regulation",
+    "title": "人材紹介マーケのCookie規制・ITP対応｜計測精度を守る2026年の打ち手",
+    "description": "ITP・Cookie規制で人材紹介の広告計測がどう変わるかを解説。サーバーサイドGTM、コンバージョンAPI、ファーストパーティデータ活用など計測精度を保つ実務対応をまとめます。",
+    "category": "業界トレンド",
+    "keywords": [
+      "Cookie規制",
+      "ITP 対応",
+      "コンバージョン計測",
+      "ファーストパーティデータ",
+      "人材紹介 広告"
+    ],
+    "primary_keyword": "Cookie規制",
+    "key_points": [
+      "ITP・Cookie規制の現状と人材紹介広告への影響",
+      "サーバーサイドGTM・コンバージョンAPI導入の実務",
+      "ファーストパーティデータ基盤（CRM・CDP）の整備",
+      "2026年以降の広告運用と計測設計のロードマップ"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-regulation/"
   }
 ]

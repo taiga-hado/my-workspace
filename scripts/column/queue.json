@@ -1,16 +1,58 @@
 [
   {
-    "slug": "recruitment-cookie-itp-response",
-    "title": "人材紹介のCookie規制・ITP対応｜計測精度を守る実務ガイド",
-    "description": "ITP・Cookie規制で計測精度が落ちる中、人材紹介の広告運用で打つべき対策を解説。サーバーサイド計測・同意管理・1stパーティデータ活用まで実務目線でカバー。",
-    "keywords": "Cookie規制,ITP 対応,サーバーサイド計測,人材紹介 計測",
-    "category": "用語解説",
-    "image_prompt": "Flat editorial illustration of a shielded data flow diagram with cookie icons being filtered and rerouted to a secure server-side container, deep navy blue (#1a3a8a) background with gold (#f5b400) shield and accent lines, premium SaaS aesthetic, soft white highlights, 3:2 aspect ratio, no text or letters",
+    "slug": "recruitment-offer-acceptance-rate",
+    "title": "内定承諾率を上げる人材紹介エージェントのオファー設計と運用",
+    "description": "人材紹介の内定承諾率を高めるためのオファー設計、年収交渉、競合エージェント対策、辞退理由の分析手法を解説。決定数を増やすための面談以降の運用改善を実務視点でまとめます。",
+    "keywords": "内定承諾率,オファー設計,内定辞退 防止,人材紹介 決定率",
+    "category": "課題解決",
+    "image_prompt": "Deep navy blue (#1a3a8a) background with gold (#f5b400) accents, flat editorial illustration of a handshake forming over a contract document with rising arrow, premium SaaS aesthetic, soft white negative space, 3:2 aspect ratio, no text or letters",
     "key_points": [
-      "ITP・Cookie規制の概要と人材紹介広告に与えるインパクト",
-      "3rdパーティCookie廃止で崩れる計測・リターゲティングの代替策",
-      "サーバーサイドGTM・コンバージョンAPIによる計測補完",
-      "同意管理（CMP）と1stパーティデータ基盤の構築ステップ"
+      "内定承諾率の業界平均と決定数への影響度",
+      "内定辞退の主要因と段階別フレームワーク（金銭・心理・競合）",
+      "オファー面談・条件交渉・クロージングの実務スクリプト",
+      "承諾率を可視化するKPI設計とCA研修の進め方"
+    ]
+  },
+  {
+    "slug": "recruitment-it-industry-acquisition",
+    "title": "IT業界特化型人材紹介の求職者集客戦略｜エンジニア・PM・SREの獲得",
+    "description": "IT業界に特化した人材紹介事業者向けの求職者集客戦略を解説。エンジニア・PM・SRE等の職種別チャネル、技術コミュニティ活用、年収訴求の設計を実務目線でまとめます。",
+    "keywords": "IT人材紹介 集客,エンジニア 求職者獲得,IT特化エージェント,技術職 集客",
+    "category": "セグメント別",
+    "image_prompt": "Deep navy blue (#1a3a8a) background with gold (#f5b400) accents, flat editorial illustration of abstract code brackets, server stacks, and a rising career path arrow, premium SaaS aesthetic, soft white negative space, 3:2 aspect ratio, no text or letters",
+    "key_points": [
+      "IT人材市場の構造とエージェント選定における求職者心理",
+      "職種別（Web・SRE・PM・データ）の主要集客チャネル",
+      "技術コミュニティ・勉強会・OSS文脈での信頼構築",
+      "年収訴求とリファラル設計でCPAを下げる運用"
+    ]
+  },
+  {
+    "slug": "recruitment-referral-acquisition",
+    "title": "人材紹介のリファラル集客｜紹介経由で求職者を増やす仕組み設計",
+    "description": "人材紹介事業者がリファラル（紹介）経由で求職者を獲得する仕組みを解説。紹介インセンティブ設計、依頼タイミング、決定者起点のループ構築までを実務視点でまとめます。",
+    "keywords": "リファラル集客,紹介経由 求職者,リファラル採用,人材紹介 紹介インセンティブ",
+    "category": "ハウツー",
+    "image_prompt": "Deep navy blue (#1a3a8a) background with gold (#f5b400) accents, flat editorial illustration of interconnected network nodes expanding outward from a central point, premium SaaS aesthetic, soft white negative space, 3:2 aspect ratio, no text or letters",
+    "key_points": [
+      "リファラル集客がCPAと面談着座率に与えるインパクト",
+      "紹介インセンティブの相場と法令上の留意点（職安法）",
+      "決定者・未決定者それぞれへの依頼タイミングと運用フロー",
+      "リファラルループを継続させるCRM・MA設計"
+    ]
+  },
+  {
+    "slug": "recruitment-cookie-regulation",
+    "title": "人材紹介マーケのCookie規制・ITP対応｜計測精度を守る2026年の打ち手",
+    "description": "ITP・Cookie規制で人材紹介の広告計測がどう変わるかを解説。サーバーサイドGTM、コンバージョンAPI、ファーストパーティデータ活用など計測精度を保つ実務対応をまとめます。",
+    "keywords": "Cookie規制,ITP 対応,コンバージョン計測,ファーストパーティデータ,人材紹介 広告",
+    "category": "業界トレンド",
+    "image_prompt": "Deep navy blue (#1a3a8a) background with gold (#f5b400) accents, flat editorial illustration of a shield protecting data flow lines with abstract cookie icon fading, premium SaaS aesthetic, soft white negative space, 3:2 aspect ratio, no text or letters",
+    "key_points": [
+      "ITP・Cookie規制の現状と人材紹介広告への影響",
+      "サーバーサイドGTM・コンバージョンAPI導入の実務",
+      "ファーストパーティデータ基盤（CRM・CDP）の整備",
+      "2026年以降の広告運用と計測設計のロードマップ"
     ]
   }
 ]

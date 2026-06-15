@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-offer-acceptance-rate",
-    "title": "内定承諾率を上げる人材紹介エージェントのオファー設計と運用",
-    "description": "人材紹介の内定承諾率を高めるためのオファー設計、年収交渉、競合エージェント対策、辞退理由の分析手法を解説。決定数を増やすための面談以降の運用改善を実務視点でまとめます。",
-    "keywords": "内定承諾率,オファー設計,内定辞退 防止,人材紹介 決定率",
-    "category": "課題解決",
-    "image_prompt": "Deep navy blue (#1a3a8a) background with gold (#f5b400) accents, flat editorial illustration of a handshake forming over a contract document with rising arrow, premium SaaS aesthetic, soft white negative space, 3:2 aspect ratio, no text or letters",
-    "key_points": [
-      "内定承諾率の業界平均と決定数への影響度",
-      "内定辞退の主要因と段階別フレームワーク（金銭・心理・競合）",
-      "オファー面談・条件交渉・クロージングの実務スクリプト",
-      "承諾率を可視化するKPI設計とCA研修の進め方"
-    ]
-  },
-  {
     "slug": "recruitment-it-industry-acquisition",
     "title": "IT業界特化型人材紹介の求職者集客戦略｜エンジニア・PM・SREの獲得",
     "description": "IT業界に特化した人材紹介事業者向けの求職者集客戦略を解説。エンジニア・PM・SRE等の職種別チャネル、技術コミュニティ活用、年収訴求の設計を実務目線でまとめます。",

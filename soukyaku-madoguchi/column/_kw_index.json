@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-offer-acceptance-rate",
+    "title": "内定承諾率を上げる人材紹介エージェントのオファー設計と運用",
+    "description": "人材紹介の内定承諾率を高めるためのオファー設計、年収交渉、競合エージェント対策、辞退理由の分析手法を解説。決定数を増やすための面談以降の運用改善を実務視点でまとめます。",
+    "category": "課題解決",
+    "keywords": [
+      "内定承諾率",
+      "オファー設計",
+      "内定辞退 防止",
+      "人材紹介 決定率"
+    ],
+    "primary_keyword": "内定承諾率",
+    "status": "published",
+    "published": "2026-06-15",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-offer-acceptance-rate/"
+  },
+  {
     "slug": "recruitment-youtube-marketing",
     "title": "人材紹介のYouTube集客｜動画コンテンツで求職者を集める運用設計",
     "description": "人材紹介事業者がYouTubeで求職者を集客する方法を解説。チャンネル設計、動画企画、SEO、面談誘導までの導線設計と、TikTok・Instagramとの使い分けを実務目線でまとめます。",
@@ -909,22 +925,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-youtube-marketing",
-    "title": "人材紹介のYouTube集客｜動画コンテンツで求職者を集める運用設計",
-    "description": "人材紹介事業者がYouTubeで求職者を集客する方法を解説。チャンネル設計、動画企画、SEO、面談誘導までの導線設計と、TikTok・Instagramとの使い分けを実務目線でまとめます。",
-    "category": "ハウツー",
-    "keywords": [
-      "人材紹介 YouTube",
-      "YouTube 求職者集客",
-      "動画マーケティング 採用",
-      "YouTube SEO 転職"
-    ],
-    "primary_keyword": "人材紹介 YouTube",
-    "status": "ready",
-    "scheduled": "2026-06-14",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-youtube-marketing/"
-  },
-  {
     "slug": "recruitment-offer-acceptance-rate",
     "title": "内定承諾率を上げる人材紹介エージェントのオファー設計と運用",
     "description": "人材紹介の内定承諾率を高めるためのオファー設計、年収交渉、競合エージェント対策、辞退理由の分析手法を解説。決定数を増やすための面談以降の運用改善を実務視点でまとめます。",
@@ -936,14 +936,8 @@
       "人材紹介 決定率"
     ],
     "primary_keyword": "内定承諾率",
-    "key_points": [
-      "内定承諾率の業界平均と決定数への影響度",
-      "内定辞退の主要因と段階別フレームワーク（金銭・心理・競合）",
-      "オファー面談・条件交渉・クロージングの実務スクリプト",
-      "承諾率を可視化するKPI設計とCA研修の進め方"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-15",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-offer-acceptance-rate/"
   },
   {
@@ -965,7 +959,7 @@
       "年収訴求とリファラル設計でCPAを下げる運用"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-it-industry-acquisition/"
   },
   {
@@ -987,7 +981,7 @@
       "リファラルループを継続させるCRM・MA設計"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-referral-acquisition/"
   },
   {
@@ -1010,7 +1004,7 @@
       "2026年以降の広告運用と計測設計のロードマップ"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-regulation/"
   }
 ]

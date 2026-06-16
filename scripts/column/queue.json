@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-it-industry-acquisition",
-    "title": "IT業界特化型人材紹介の求職者集客戦略｜エンジニア・PM・SREの獲得",
-    "description": "IT業界に特化した人材紹介事業者向けの求職者集客戦略を解説。エンジニア・PM・SRE等の職種別チャネル、技術コミュニティ活用、年収訴求の設計を実務目線でまとめます。",
-    "keywords": "IT人材紹介 集客,エンジニア 求職者獲得,IT特化エージェント,技術職 集客",
-    "category": "セグメント別",
-    "image_prompt": "Deep navy blue (#1a3a8a) background with gold (#f5b400) accents, flat editorial illustration of abstract code brackets, server stacks, and a rising career path arrow, premium SaaS aesthetic, soft white negative space, 3:2 aspect ratio, no text or letters",
-    "key_points": [
-      "IT人材市場の構造とエージェント選定における求職者心理",
-      "職種別（Web・SRE・PM・データ）の主要集客チャネル",
-      "技術コミュニティ・勉強会・OSS文脈での信頼構築",
-      "年収訴求とリファラル設計でCPAを下げる運用"
-    ]
-  },
-  {
     "slug": "recruitment-referral-acquisition",
     "title": "人材紹介のリファラル集客｜紹介経由で求職者を増やす仕組み設計",
     "description": "人材紹介事業者がリファラル（紹介）経由で求職者を獲得する仕組みを解説。紹介インセンティブ設計、依頼タイミング、決定者起点のループ構築までを実務視点でまとめます。",

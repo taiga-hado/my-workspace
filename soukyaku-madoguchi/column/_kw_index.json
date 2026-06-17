@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-referral-acquisition",
+    "title": "人材紹介のリファラル集客｜紹介経由で求職者を増やす仕組み設計",
+    "description": "人材紹介事業者がリファラル（紹介）経由で求職者を獲得する仕組みを解説。紹介インセンティブ設計、依頼タイミング、決定者起点のループ構築までを実務視点でまとめます。",
+    "category": "ハウツー",
+    "keywords": [
+      "リファラル集客",
+      "紹介経由 求職者",
+      "リファラル採用",
+      "人材紹介 紹介インセンティブ"
+    ],
+    "primary_keyword": "リファラル集客",
+    "status": "published",
+    "published": "2026-06-17",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-referral-acquisition/"
+  },
+  {
     "slug": "recruitment-it-industry-acquisition",
     "title": "IT業界特化型人材紹介の求職者集客戦略｜エンジニア・PM・SREの獲得",
     "description": "IT業界に特化した人材紹介事業者向けの求職者集客戦略を解説。エンジニア・PM・SRE等の職種別チャネル、技術コミュニティ活用、年収訴求の設計を実務目線でまとめます。",
@@ -941,22 +957,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-it-industry-acquisition",
-    "title": "IT業界特化型人材紹介の求職者集客戦略｜エンジニア・PM・SREの獲得",
-    "description": "IT業界に特化した人材紹介事業者向けの求職者集客戦略を解説。エンジニア・PM・SRE等の職種別チャネル、技術コミュニティ活用、年収訴求の設計を実務目線でまとめます。",
-    "category": "セグメント別",
-    "keywords": [
-      "IT人材紹介 集客",
-      "エンジニア 求職者獲得",
-      "IT特化エージェント",
-      "技術職 集客"
-    ],
-    "primary_keyword": "IT人材紹介 集客",
-    "status": "ready",
-    "scheduled": "2026-06-16",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-it-industry-acquisition/"
-  },
-  {
     "slug": "recruitment-referral-acquisition",
     "title": "人材紹介のリファラル集客｜紹介経由で求職者を増やす仕組み設計",
     "description": "人材紹介事業者がリファラル（紹介）経由で求職者を獲得する仕組みを解説。紹介インセンティブ設計、依頼タイミング、決定者起点のループ構築までを実務視点でまとめます。",
@@ -968,14 +968,8 @@
       "人材紹介 紹介インセンティブ"
     ],
     "primary_keyword": "リファラル集客",
-    "key_points": [
-      "リファラル集客がCPAと面談着座率に与えるインパクト",
-      "紹介インセンティブの相場と法令上の留意点（職安法）",
-      "決定者・未決定者それぞれへの依頼タイミングと運用フロー",
-      "リファラルループを継続させるCRM・MA設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-17",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-referral-acquisition/"
   },
   {
@@ -998,7 +992,7 @@
       "2026年以降の広告運用と計測設計のロードマップ"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-regulation/"
   }
 ]

@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-cookie-regulation",
+    "title": "人材紹介マーケのCookie規制・ITP対応｜計測精度を守る2026年の打ち手",
+    "description": "ITP・Cookie規制で人材紹介の広告計測がどう変わるかを解説。サーバーサイドGTM、コンバージョンAPI、ファーストパーティデータ活用など計測精度を保つ実務対応をまとめます。",
+    "category": "業界トレンド",
+    "keywords": [
+      "Cookie規制",
+      "ITP 対応",
+      "コンバージョン計測",
+      "ファーストパーティデータ",
+      "人材紹介 広告"
+    ],
+    "primary_keyword": "Cookie規制",
+    "status": "published",
+    "published": "2026-06-18",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-regulation/"
+  },
+  {
     "slug": "recruitment-referral-acquisition",
     "title": "人材紹介のリファラル集客｜紹介経由で求職者を増やす仕組み設計",
     "description": "人材紹介事業者がリファラル（紹介）経由で求職者を獲得する仕組みを解説。紹介インセンティブ設計、依頼タイミング、決定者起点のループ構築までを実務視点でまとめます。",
@@ -957,22 +974,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-referral-acquisition",
-    "title": "人材紹介のリファラル集客｜紹介経由で求職者を増やす仕組み設計",
-    "description": "人材紹介事業者がリファラル（紹介）経由で求職者を獲得する仕組みを解説。紹介インセンティブ設計、依頼タイミング、決定者起点のループ構築までを実務視点でまとめます。",
-    "category": "ハウツー",
-    "keywords": [
-      "リファラル集客",
-      "紹介経由 求職者",
-      "リファラル採用",
-      "人材紹介 紹介インセンティブ"
-    ],
-    "primary_keyword": "リファラル集客",
-    "status": "ready",
-    "scheduled": "2026-06-17",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-referral-acquisition/"
-  },
-  {
     "slug": "recruitment-cookie-regulation",
     "title": "人材紹介マーケのCookie規制・ITP対応｜計測精度を守る2026年の打ち手",
     "description": "ITP・Cookie規制で人材紹介の広告計測がどう変わるかを解説。サーバーサイドGTM、コンバージョンAPI、ファーストパーティデータ活用など計測精度を保つ実務対応をまとめます。",
@@ -985,14 +986,8 @@
       "人材紹介 広告"
     ],
     "primary_keyword": "Cookie規制",
-    "key_points": [
-      "ITP・Cookie規制の現状と人材紹介広告への影響",
-      "サーバーサイドGTM・コンバージョンAPI導入の実務",
-      "ファーストパーティデータ基盤（CRM・CDP）の整備",
-      "2026年以降の広告運用と計測設計のロードマップ"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-18",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-regulation/"
   }
 ]

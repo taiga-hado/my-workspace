@@ -1,16 +1,1 @@
-[
-  {
-    "slug": "recruitment-cookie-regulation",
-    "title": "人材紹介マーケのCookie規制・ITP対応｜計測精度を守る2026年の打ち手",
-    "description": "ITP・Cookie規制で人材紹介の広告計測がどう変わるかを解説。サーバーサイドGTM、コンバージョンAPI、ファーストパーティデータ活用など計測精度を保つ実務対応をまとめます。",
-    "keywords": "Cookie規制,ITP 対応,コンバージョン計測,ファーストパーティデータ,人材紹介 広告",
-    "category": "業界トレンド",
-    "image_prompt": "Deep navy blue (#1a3a8a) background with gold (#f5b400) accents, flat editorial illustration of a shield protecting data flow lines with abstract cookie icon fading, premium SaaS aesthetic, soft white negative space, 3:2 aspect ratio, no text or letters",
-    "key_points": [
-      "ITP・Cookie規制の現状と人材紹介広告への影響",
-      "サーバーサイドGTM・コンバージョンAPI導入の実務",
-      "ファーストパーティデータ基盤（CRM・CDP）の整備",
-      "2026年以降の広告運用と計測設計のロードマップ"
-    ]
-  }
-]
+[]

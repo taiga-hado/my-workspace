@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-logistics-acquisition",
+    "title": "物流・運送業界特化型人材紹介の集客戦略｜ドライバー・倉庫人材の獲得設計",
+    "description": "2024年問題で需要が急増する物流業界向け人材紹介の集客戦略を解説。ドライバー・倉庫管理・物流企画など職種別の訴求設計と主要チャネルの選び方を実務目線でまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "物流 人材紹介",
+      "ドライバー 集客",
+      "2024年問題 採用",
+      "運送業界 転職"
+    ],
+    "primary_keyword": "物流 人材紹介",
+    "status": "published",
+    "published": "2026-06-19",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-logistics-acquisition/"
+  },
+  {
     "slug": "recruitment-cookie-regulation",
     "title": "人材紹介マーケのCookie規制・ITP対応｜計測精度を守る2026年の打ち手",
     "description": "ITP・Cookie規制で人材紹介の広告計測がどう変わるかを解説。サーバーサイドGTM、コンバージョンAPI、ファーストパーティデータ活用など計測精度を保つ実務対応をまとめます。",
@@ -974,20 +990,107 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-cookie-regulation",
-    "title": "人材紹介マーケのCookie規制・ITP対応｜計測精度を守る2026年の打ち手",
-    "description": "ITP・Cookie規制で人材紹介の広告計測がどう変わるかを解説。サーバーサイドGTM、コンバージョンAPI、ファーストパーティデータ活用など計測精度を保つ実務対応をまとめます。",
-    "category": "業界トレンド",
+    "slug": "recruitment-logistics-acquisition",
+    "title": "物流・運送業界特化型人材紹介の集客戦略｜ドライバー・倉庫人材の獲得設計",
+    "description": "2024年問題で需要が急増する物流業界向け人材紹介の集客戦略を解説。ドライバー・倉庫管理・物流企画など職種別の訴求設計と主要チャネルの選び方を実務目線でまとめます。",
+    "category": "セグメント別",
     "keywords": [
-      "Cookie規制",
-      "ITP 対応",
-      "コンバージョン計測",
-      "ファーストパーティデータ",
-      "人材紹介 広告"
+      "物流 人材紹介",
+      "ドライバー 集客",
+      "2024年問題 採用",
+      "運送業界 転職"
     ],
-    "primary_keyword": "Cookie規制",
+    "primary_keyword": "物流 人材紹介",
     "status": "ready",
-    "scheduled": "2026-06-18",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cookie-regulation/"
+    "scheduled": "2026-06-19",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-logistics-acquisition/"
+  },
+  {
+    "slug": "recruitment-marketing-automation",
+    "title": "人材紹介のマーケティングオートメーション｜MAツール活用と求職者ナーチャリング設計",
+    "description": "求職者のリード獲得から面談着座までを自動化するMA活用法を解説。シナリオ設計・スコアリング・主要MAツールの選定基準まで人材紹介の現場視点で整理します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 MA",
+      "マーケティングオートメーション",
+      "求職者 ナーチャリング",
+      "リード スコアリング"
+    ],
+    "primary_keyword": "人材紹介 MA",
+    "key_points": [
+      "人材紹介でMAが効く領域と効かない領域",
+      "求職者ナーチャリングのシナリオ設計5ステップ",
+      "スコアリングモデルと面談誘導タイミング",
+      "HubSpot・Marketo・SATORI等の選定基準"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-marketing-automation/"
+  },
+  {
+    "slug": "recruitment-job-ad-vs-agent",
+    "title": "求人広告と人材紹介の使い分け｜採用手法の特徴・費用・成果を比較",
+    "description": "求人広告と人材紹介の違いを費用・スピード・マッチ精度の3軸で比較。企業の採用フェーズ別の使い分けと、紹介会社が顧客提案で押さえるべきポイントを解説します。",
+    "category": "比較検討",
+    "keywords": [
+      "求人広告 人材紹介 違い",
+      "採用手法 比較",
+      "人材紹介 メリット",
+      "求人広告 費用"
+    ],
+    "primary_keyword": "求人広告 人材紹介 違い",
+    "key_points": [
+      "求人広告と人材紹介のビジネスモデル比較",
+      "費用・スピード・マッチ精度の3軸評価",
+      "採用フェーズ・職種別の最適な使い分け",
+      "紹介会社が法人提案で訴求すべき差別化ポイント"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-ad-vs-agent/"
+  },
+  {
+    "slug": "recruitment-kpi-dashboard",
+    "title": "人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー",
+    "description": "人材紹介事業の意思決定を加速するKPIダッシュボード設計を解説。応募〜決定までの15指標、BIツール選定、週次オペレーションへの落とし込みまで実務的にまとめます。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 KPI",
+      "ダッシュボード 設計",
+      "BIツール 人材",
+      "KPI 可視化"
+    ],
+    "primary_keyword": "人材紹介 KPI",
+    "key_points": [
+      "人材紹介で可視化すべき15のKPI体系",
+      "集客・面談・決定の階層別ダッシュボード設計",
+      "Looker Studio・Tableau等のBIツール選定",
+      "週次・月次のレビュー運用フロー"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-kpi-dashboard/"
+  },
+  {
+    "slug": "recruitment-senior-acquisition",
+    "title": "シニア・50代以上の求職者集客戦略｜セカンドキャリア需要を捉える人材紹介設計",
+    "description": "50代以上のシニア求職者を集めるための訴求軸とチャネル設計を解説。再雇用・顧問・専門職などキャリア類型別のアプローチと、紹介会社が押さえるべきマッチング設計をまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "シニア 人材紹介",
+      "50代 転職",
+      "セカンドキャリア 集客",
+      "シニア求職者"
+    ],
+    "primary_keyword": "シニア 人材紹介",
+    "key_points": [
+      "シニア人材市場の需給構造と紹介ニーズ",
+      "50代の転職動機と訴求軸の設計",
+      "シニア求職者に効く集客チャネルと媒体選定",
+      "面談着座率を高めるカウンセリング設計"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-senior-acquisition/"
   }
 ]

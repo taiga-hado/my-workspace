@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-marketing-automation",
-    "title": "人材紹介のマーケティングオートメーション｜MAツール活用と求職者ナーチャリング設計",
-    "description": "求職者のリード獲得から面談着座までを自動化するMA活用法を解説。シナリオ設計・スコアリング・主要MAツールの選定基準まで人材紹介の現場視点で整理します。",
-    "keywords": "人材紹介 MA,マーケティングオートメーション,求職者 ナーチャリング,リード スコアリング",
-    "category": "ハウツー",
-    "image_prompt": "deep navy blue (#1a3a8a) dashboard interface with gold (#f5b400) flowchart nodes and funnel icons, flat editorial illustration showing automated workflow, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect ratio",
-    "key_points": [
-      "人材紹介でMAが効く領域と効かない領域",
-      "求職者ナーチャリングのシナリオ設計5ステップ",
-      "スコアリングモデルと面談誘導タイミング",
-      "HubSpot・Marketo・SATORI等の選定基準"
-    ]
-  },
-  {
     "slug": "recruitment-job-ad-vs-agent",
     "title": "求人広告と人材紹介の使い分け｜採用手法の特徴・費用・成果を比較",
     "description": "求人広告と人材紹介の違いを費用・スピード・マッチ精度の3軸で比較。企業の採用フェーズ別の使い分けと、紹介会社が顧客提案で押さえるべきポイントを解説します。",

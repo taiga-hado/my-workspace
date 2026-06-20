@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-marketing-automation",
+    "title": "人材紹介のマーケティングオートメーション｜MAツール活用と求職者ナーチャリング設計",
+    "description": "求職者のリード獲得から面談着座までを自動化するMA活用法を解説。シナリオ設計・スコアリング・主要MAツールの選定基準まで人材紹介の現場視点で整理します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 MA",
+      "マーケティングオートメーション",
+      "求職者 ナーチャリング",
+      "リード スコアリング"
+    ],
+    "primary_keyword": "人材紹介 MA",
+    "status": "published",
+    "published": "2026-06-20",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-marketing-automation/"
+  },
+  {
     "slug": "recruitment-logistics-acquisition",
     "title": "物流・運送業界特化型人材紹介の集客戦略｜ドライバー・倉庫人材の獲得設計",
     "description": "2024年問題で需要が急増する物流業界向け人材紹介の集客戦略を解説。ドライバー・倉庫管理・物流企画など職種別の訴求設計と主要チャネルの選び方を実務目線でまとめます。",
@@ -990,22 +1006,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-logistics-acquisition",
-    "title": "物流・運送業界特化型人材紹介の集客戦略｜ドライバー・倉庫人材の獲得設計",
-    "description": "2024年問題で需要が急増する物流業界向け人材紹介の集客戦略を解説。ドライバー・倉庫管理・物流企画など職種別の訴求設計と主要チャネルの選び方を実務目線でまとめます。",
-    "category": "セグメント別",
-    "keywords": [
-      "物流 人材紹介",
-      "ドライバー 集客",
-      "2024年問題 採用",
-      "運送業界 転職"
-    ],
-    "primary_keyword": "物流 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-06-19",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-logistics-acquisition/"
-  },
-  {
     "slug": "recruitment-marketing-automation",
     "title": "人材紹介のマーケティングオートメーション｜MAツール活用と求職者ナーチャリング設計",
     "description": "求職者のリード獲得から面談着座までを自動化するMA活用法を解説。シナリオ設計・スコアリング・主要MAツールの選定基準まで人材紹介の現場視点で整理します。",
@@ -1017,14 +1017,8 @@
       "リード スコアリング"
     ],
     "primary_keyword": "人材紹介 MA",
-    "key_points": [
-      "人材紹介でMAが効く領域と効かない領域",
-      "求職者ナーチャリングのシナリオ設計5ステップ",
-      "スコアリングモデルと面談誘導タイミング",
-      "HubSpot・Marketo・SATORI等の選定基準"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-20",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-marketing-automation/"
   },
   {
@@ -1046,7 +1040,7 @@
       "紹介会社が法人提案で訴求すべき差別化ポイント"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-ad-vs-agent/"
   },
   {
@@ -1068,7 +1062,7 @@
       "週次・月次のレビュー運用フロー"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-kpi-dashboard/"
   },
   {
@@ -1090,7 +1084,7 @@
       "面談着座率を高めるカウンセリング設計"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-senior-acquisition/"
   }
 ]

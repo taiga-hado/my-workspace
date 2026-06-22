@@ -4,7 +4,7 @@
 #
 # Verifies:
 #   1. All critical pages return HTTP 200
-#   2. Top page contains the 3 service cards (第二新卒 / 新卒 / 保育)
+#   2. Top page contains the 2 service cards (第二新卒 / 新卒)
 #   3. GTM tag is the current ID (GTM-T4VBNNNN)
 #   4. sitemap.xml lists all important URLs
 #
@@ -27,7 +27,6 @@ CRITICAL_PAGES=(
   "/contact/"
   "/daini-shinsotsu/"
   "/shinsotsu/"
-  "/hoiku/"
   "/column/"
   "/thanks/"
 )
@@ -40,12 +39,11 @@ for path in "${CRITICAL_PAGES[@]}"; do
   fi
 done
 
-# === 2. Top page contains all 3 service cards ===
+# === 2. Top page contains all 2 service cards ===
 TOP_HTML=$(curl -s "$BASE/")
 EXPECTED_CARDS=(
   "第二新卒・未経験層特化パッケージ"
   "新卒特化パッケージ"
-  "保育特化パッケージ"
 )
 
 for card in "${EXPECTED_CARDS[@]}"; do
@@ -65,7 +63,6 @@ fi
 SITEMAP=$(curl -s "$BASE/sitemap.xml")
 SITEMAP_REQUIRED=(
   "kyusyokusyasokyaku-no-madoguchi.com/"
-  "kyusyokusyasokyaku-no-madoguchi.com/hoiku/"
   "kyusyokusyasokyaku-no-madoguchi.com/shinsotsu/"
   "kyusyokusyasokyaku-no-madoguchi.com/daini-shinsotsu/"
 )
@@ -77,15 +74,14 @@ for url in "${SITEMAP_REQUIRED[@]}"; do
   fi
 done
 
-# === 5. contact form has checkbox UI with all 4 service options ===
+# === 5. contact form has checkbox UI with all 3 service options ===
 # Past regression: GTM sweep replaced contact/index.html with an older
-# dropdown-based version, silently removing the 保育領域 option and the
+# dropdown-based version, silently removing service options and the
 # checkbox UI. This guards against that.
 CONTACT_HTML=$(curl -s "$BASE/contact/")
 EXPECTED_SERVICE_VALUES=(
   "第二新卒・未経験領域"
   "新卒領域"
-  "保育領域"
   "相談して決めたい"
 )
 
@@ -97,8 +93,8 @@ for opt in "${EXPECTED_SERVICE_VALUES[@]}"; do
 done
 
 CHECKBOX_COUNT=$(echo "$CONTACT_HTML" | grep -c 'type="checkbox" name="service"')
-if [ "$CHECKBOX_COUNT" -lt 4 ]; then
-  REPORT="$REPORT\n✗ contact page should have ≥4 service checkboxes (got $CHECKBOX_COUNT). The dropdown version may have been re-introduced."
+if [ "$CHECKBOX_COUNT" -lt 3 ]; then
+  REPORT="$REPORT\n✗ contact page should have ≥3 service checkboxes (got $CHECKBOX_COUNT). The dropdown version may have been re-introduced."
   FAILED=14
 fi
 

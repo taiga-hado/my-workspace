@@ -7,25 +7,23 @@
 - `/contact/` - contact form (posts to GAS Web App)
 - `/daini-shinsotsu/` - SERVICE 01 詳細
 - `/shinsotsu/` - SERVICE 02 詳細
-- `/hoiku/` - SERVICE 03 詳細 (added 2026-05-28)
 - `/column/` - SEO blog hub (37+ articles, auto-published daily)
 - `/thanks/` - form submission landing
 - `/interview/*` - case study pages (Nexil, ReWave, SmartForce)
 
-### Top page must contain 3 service cards
-In the 「領域別の送客プラン」 section, all three must be present with these EXACT h3 strings:
+### Top page must contain 2 service cards
+In the 「領域別の送客プラン」 section, both must be present with these EXACT h3 strings:
 1. `第二新卒・未経験層特化パッケージ` (SERVICE 01, links to `daini-shinsotsu/`)
 2. `新卒特化パッケージ` (SERVICE 02, links to `shinsotsu/`)
-3. `保育特化パッケージ` (SERVICE 03, links to `hoiku/`)
 
 The legacy 「向け」 naming (e.g. 「第二新卒・未経験層向け」) was deprecated 2026-05-28 — do NOT revert.
+The 保育特化パッケージ card (SERVICE 03 → `/hoiku/`) was REMOVED 2026-06-22 — do NOT re-add unless the 保育 offering is relaunched.
 
 ### Logos for service cards
 - `images/logo-daini.png` (91KB)
 - `images/logo-shinsotsu.png` (74KB)
-- `images/logo-hoiku.png` (71KB, composite-style matching the other two — NOT the original AI-generated 928KB version)
 
-If you ever need to restore logo-hoiku.png from git, use commit **`007f844`** (composite-style), NOT `06d333e` (AI-generated, deprecated).
+`images/logo-hoiku.png` was removed 2026-06-22 with the 保育 card. If 保育 is ever relaunched, the composite-style logo lives in git history at commit **`007f844`** (NOT `06d333e`, the deprecated AI-generated version).
 
 ### Analytics & tracking
 - **GTM container**: `GTM-T4VBNNNN` (account: 求職者送客の窓口, owner: t.tanaka@hadoinc.com)
@@ -41,7 +39,7 @@ If you ever need to restore logo-hoiku.png from git, use commit **`007f844`** (c
 - `*.md` files are excluded from the public site via `soukyaku-madoguchi/.vercelignore`.
 - After every deploy, `scripts/column/smoke_test.sh` MUST pass. It checks that:
   - All critical pages return 200
-  - All 3 service cards exist on top page
+  - All 2 service cards exist on top page
   - `GTM-T4VBNNNN` is present
   - sitemap.xml lists the required URLs
 
@@ -63,6 +61,6 @@ If you ever need to restore logo-hoiku.png from git, use commit **`007f844`** (c
 - 面談着座率: **80〜90%**
 - 初期費用・月額費用: 0円
 - 契約: 月単位、最低発注数なし
-- 対応領域: 第二新卒・若手未経験・新卒 + **保育士 (2026年〜)**
+- 対応領域: 第二新卒・若手未経験・新卒（**保育士は2026-06-22にサービスサイトから削除**）
 
 If any column article (under `/column/`) still references old prices (e.g. 「3.5万円」), update or note it.

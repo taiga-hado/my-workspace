@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-kpi-dashboard",
+    "title": "人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー",
+    "description": "人材紹介事業の意思決定を加速するKPIダッシュボード設計を解説。応募〜決定までの15指標、BIツール選定、週次オペレーションへの落とし込みまで実務的にまとめます。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 KPI",
+      "ダッシュボード 設計",
+      "BIツール 人材",
+      "KPI 可視化"
+    ],
+    "primary_keyword": "人材紹介 KPI",
+    "status": "published",
+    "published": "2026-06-22",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-kpi-dashboard/"
+  },
+  {
     "slug": "recruitment-job-ad-vs-agent",
     "title": "求人広告と人材紹介の使い分け｜採用手法の特徴・費用・成果を比較",
     "description": "求人広告と人材紹介の違いを費用・スピード・マッチ精度の3軸で比較。企業の採用フェーズ別の使い分けと、紹介会社が顧客提案で押さえるべきポイントを解説します。",
@@ -1022,22 +1038,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-job-ad-vs-agent",
-    "title": "求人広告と人材紹介の使い分け｜採用手法の特徴・費用・成果を比較",
-    "description": "求人広告と人材紹介の違いを費用・スピード・マッチ精度の3軸で比較。企業の採用フェーズ別の使い分けと、紹介会社が顧客提案で押さえるべきポイントを解説します。",
-    "category": "比較検討",
-    "keywords": [
-      "求人広告 人材紹介 違い",
-      "採用手法 比較",
-      "人材紹介 メリット",
-      "求人広告 費用"
-    ],
-    "primary_keyword": "求人広告 人材紹介 違い",
-    "status": "ready",
-    "scheduled": "2026-06-21",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-ad-vs-agent/"
-  },
-  {
     "slug": "recruitment-kpi-dashboard",
     "title": "人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー",
     "description": "人材紹介事業の意思決定を加速するKPIダッシュボード設計を解説。応募〜決定までの15指標、BIツール選定、週次オペレーションへの落とし込みまで実務的にまとめます。",
@@ -1049,14 +1049,8 @@
       "KPI 可視化"
     ],
     "primary_keyword": "人材紹介 KPI",
-    "key_points": [
-      "人材紹介で可視化すべき15のKPI体系",
-      "集客・面談・決定の階層別ダッシュボード設計",
-      "Looker Studio・Tableau等のBIツール選定",
-      "週次・月次のレビュー運用フロー"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-22",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-kpi-dashboard/"
   },
   {
@@ -1078,7 +1072,7 @@
       "面談着座率を高めるカウンセリング設計"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-senior-acquisition/"
   }
 ]

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T4VBNNNN');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー｜求職者送客の窓口</title>
+  <meta name="description" content="人材紹介事業の意思決定を加速するKPIダッシュボード設計を解説。応募〜決定までの15指標、BIツール選定、週次オペレーションへの落とし込みまで実務的にまとめます。">
+  <meta name="keywords" content="人材紹介 KPI,ダッシュボード 設計,BIツール 人材,KPI 可視化">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-kpi-dashboard/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー">
+  <meta property="og:description" content="人材紹介事業の意思決定を加速するKPIダッシュボード設計を解説。応募〜決定までの15指標、BIツール選定、週次オペレーションへの落とし込みまで実務的にまとめます。">
+  <meta property="og:url" content="https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-kpi-dashboard/">
+  <meta property="og:image" content="https://kyusyokusyasokyaku-no-madoguchi.com/images/column/recruitment-kpi-dashboard-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="shortcut icon" href="../../images/favicon.ico">
+  <link rel="apple-touch-icon" href="../../images/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー",
+    "description": "人材紹介事業の意思決定を加速するKPIダッシュボード設計を解説。応募〜決定までの15指標、BIツール選定、週次オペレーションへの落とし込みまで実務的にまとめます。",
+    "image": "https://kyusyokusyasokyaku-no-madoguchi.com/images/column/recruitment-kpi-dashboard-hero.png",
+    "author": {
+      "@type": "Organization",
+      "name": "株式会社HADO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "求職者送客の窓口",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://kyusyokusyasokyaku-no-madoguchi.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-06-22",
+    "dateModified": "2026-06-22",
+    "mainEntityOfPage": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-kpi-dashboard/"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <link rel="stylesheet" href="../../assets/column.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4VBNNNN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="../../index.html" class="site-logo">
+        <img src="../../images/logo.png" alt="求職者送客の窓口">
+      </a>
+      <nav class="site-nav">
+        <div class="site-nav-links">
+          <a href="../../index.html">トップ</a>
+          <a href="../../index.html#services">サービス</a>
+          <a href="../../index.html#cases">導入事例</a>
+          <a href="../" aria-current="page">コラム</a>
+        </div>
+        <a href="../../contact/" class="btn btn-dark btn-sm">お問い合わせ</a>
+      </nav>
+      <button class="burger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="art-hero">
+    <div class="art-hero-inner">
+      <div class="art-breadcrumb">
+        <a href="../../index.html">トップ</a><span class="sep"></span>
+        <a href="../">コラム</a><span class="sep"></span>
+        <span>人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー</span>
+      </div>
+      <span class="art-tag">ハウツー</span>
+      <h1 class="art-title">人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー</h1>
+      <div class="art-meta">
+        <div class="art-meta-item">公開日：<strong>2026.06.22</strong></div>
+        <div class="art-meta-item">読了時間：<strong>約10分</strong></div>
+        <div class="art-meta-item">カテゴリ：<strong>ハウツー</strong></div>
+      </div>
+      <div class="art-hero-img">
+        <img src="../../images/column/recruitment-kpi-dashboard-hero.png" alt="人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー">
+      </div>
+    </div>
+  </section>
+
+  <article class="art-body">
+
+    <div class="art-lead">
+      <p>人材紹介事業は「応募→面談→推薦→内定→決定」と多段階のファネルで成立しており、どの段階の歩留まりがボトルネックになっているかを正確に把握できなければ、改善投資の優先度を誤ります。感覚値で「最近決定が出ない」と語る組織と、「直近4週の推薦→内定通過率が28%→18%に落ちている」と語れる組織では、打ち手の速度が桁違いに変わります。</p>
+      <p>本記事では、人材紹介事業で可視化すべき15のKPI体系、集客・面談・決定の階層別ダッシュボード設計、Looker StudioやTableau等のBIツール選定基準、そして週次・月次のレビュー運用フローまでを実務目線で整理します。CA10名前後〜数十名規模の事業を想定した内容です。</p>
+    </div>
+
+    <nav class="art-toc">
+      <h3>目次</h3>
+      <ol>
+        <li><a href="#kpi15">人材紹介で可視化すべき15のKPI体系</a></li>
+        <li><a href="#layer">集客・面談・決定の階層別ダッシュボード設計</a></li>
+        <li><a href="#tool">BIツール選定（Looker Studio・Tableau等）</a></li>
+        <li><a href="#ops">週次・月次のレビュー運用フロー</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="kpi15">人材紹介で可視化すべき15のKPI体系</h2>
+
+    <p>人材紹介のKPIは「集客」「面談」「マッチング」「決定」「収益」の5層×3指標、合計15指標で網羅できます。これより多いと運用が破綻し、少ないと意思決定の解像度が落ちます。</p>
+
+    <h3>集客レイヤー（3指標）</h3>
+
+    <ul>
+      <li><strong>① 応募数</strong>：チャネル別の総応募件数。週次トラッキング</li>
+      <li><strong>② 応募CPA</strong>：媒体・広告ごとに算出。相場は15,000〜35,000円</li>
+      <li><strong>③ 有効応募率</strong>：応募のうち連絡可能・面談意向ありの比率。健全値は50〜70%</li>
+    </ul>
+
+    <h3>面談レイヤー（3指標）</h3>
+
+    <ul>
+      <li><strong>④ 面談アポ獲得率</strong>：有効応募→面談予約。標準は40〜60%</li>
+      <li><strong>⑤ 面談着座率</strong>：予約→実施。一般的には55〜70%、事前カウンセリング型で80〜90%</li>
+      <li><strong>⑥ 面談あたりCA工数</strong>：日程調整＋面談実施＋振り返り。1件あたり90〜150分が標準</li>
+    </ul>
+
+    <h3>マッチングレイヤー（3指標）</h3>
+
+    <ul>
+      <li><strong>⑦ 推薦化率</strong>：面談→求人推薦に至る比率。50〜70%が標準</li>
+      <li><strong>⑧ 1名あたり推薦社数</strong>：3〜6社が健全。少なすぎると決定率が落ち、多すぎると質が落ちる</li>
+      <li><strong>⑨ 書類通過率</strong>：推薦→書類選考通過。30〜50%が業界相場</li>
+    </ul>
+
+    <h3>決定レイヤー（3指標）</h3>
+
+    <ul>
+      <li><strong>⑩ 一次面接通過率</strong>：標準は40〜60%</li>
+      <li><strong>⑪ 内定率</strong>：面接突入→内定。15〜25%</li>
+      <li><strong>⑫ 内定承諾率（オファー受諾率）</strong>：50〜70%が健全</li>
+    </ul>
+
+    <h3>収益レイヤー（3指標）</h3>
+
+    <ul>
+      <li><strong>⑬ 決定単価（平均紹介手数料）</strong>：80〜150万円が一般的</li>
+      <li><strong>⑭ CA1名あたり月間売上</strong>：250〜500万円が標準</li>
+      <li><strong>⑮ ROAS（広告投資対売上）</strong>：500〜1000%が黒字ライン</li>
+    </ul>
+
+    <div class="art-callout">
+      <p><strong>15指標は「全部見る」ではなく「異常検知の網」</strong>。日常的に確認するのは6〜8指標で、残りは月次・四半期で異常値が出たときに掘る運用にすると現場が回ります。</p>
+    </div>
+
+    <h2 id="layer">集客・面談・決定の階層別ダッシュボード設計</h2>
+
+    <p>15指標を1画面に詰め込むと誰も見なくなります。役割別に3階層に分けるのが実務的です。</p>
+
+    <h3>レイヤー1：経営ダッシュボード（KGI中心）</h3>
+
+    <p>経営者・事業責任者向け。週次1回、3分で見終わる構成にする。</p>
+
+    <ul>
+      <li>月次決定数（着地予測含む）</li>
+      <li>売上・粗利・ROAS</li>
+      <li>CA1名あたり生産性</li>
+      <li>主要ファネル通過率の前月比</li>
+    </ul>
+
+    <h3>レイヤー2：マーケダッシュボード（集客KPI中心）</h3>
+
+    <p>マーケ責任者・運用担当向け。日次〜週次更新。</p>
+
+    <ul>
+      <li>チャネル別応募数・CPA・有効応募率</li>
+      <li>面談アポ獲得率・着座率</li>
+      <li>媒体別のROAS（応募→決定までトラッキング）</li>
+      <li>広告クリエイティブ別の歩留まり</li>
+    </ul>
+
+    <h3>レイヤー3：CAダッシュボード（個人別実績）</h3>
+
+    <p>CA本人・マネージャー向け。週次レビュー用。</p>
+
+    <ul>
+      <li>担当者別の面談数・推薦数・決定数</li>
+      <li>推薦化率・書類通過率・内定承諾率</li>
+      <li>未対応案件数・滞留日数</li>
+      <li>進行中の決定見込み（パイプライン）</li>
+    </ul>
+
+    <p>この3階層を分けず「全員が同じ画面を見る」運用は、<strong>経営は集客の詳細に振り回され、CAは経営指標の意味がわからず形骸化</strong>します。視聴者ペルソナを明確に分けるのが鉄則です。</p>
+
+    <h2 id="tool">BIツール選定（Looker Studio・Tableau等）</h2>
+
+    <p>人材紹介向けのBIツールは、事業規模とデータ基盤の成熟度で選びます。</p>
+
+    <h3>Looker Studio（旧Googleデータポータル）</h3>
+
+    <ul>
+      <li><strong>無料</strong>。スプレッドシート・BigQuery・Google広告と直接連携</li>
+      <li>CA10〜20名規模で十分機能する</li>
+      <li>複雑な計算指標やジョイン処理は苦手</li>
+      <li>応募CPAや媒体別ROASの可視化に向く</li>
+    </ul>
+
+    <h3>Tableau</h3>
+
+    <ul>
+      <li>月額1ユーザー約9,000円〜。CA30名超・複数事業部の組織向け</li>
+      <li>ドリルダウン・コホート分析が強力</li>
+      <li>導入には専任のアナリストが1名必要</li>
+    </ul>
+
+    <h3>Microsoft Power BI</h3>
+
+    <ul>
+      <li>月額1,000〜2,000円/ユーザー。Microsoft 365利用企業と相性◎</li>
+      <li>Excel資産をそのまま活用できる</li>
+    </ul>
+
+    <h3>ATSの標準レポート機能</h3>
+
+    <ul>
+      <li>HRMOS、MatchingGood、jinjerなど人材紹介向けATSの標準BI</li>
+      <li><strong>マッチング〜決定レイヤーは標準機能で十分</strong>。集客レイヤーは別ツール併用が現実的</li>
+    </ul>
+
+    <div class="art-callout">
+      <p><strong>選定の目安</strong>：年間決定数200件以下ならLooker Studio + ATS標準レポートで十分。それ以上の規模、または複数チャネル・複数事業部を持つ場合はTableauかPower BIに投資する価値が出ます。</p>
+    </div>
+
+    <h2 id="ops">週次・月次のレビュー運用フロー</h2>
+
+    <p>ダッシュボードは「作って終わり」では機能しません。レビュー会議と紐付けて初めてKPIが動きます。</p>
+
+    <h3>週次レビュー（30分）</h3>
+
+    <ul>
+      <li>参加者：事業責任者、マーケ責任者、CAマネージャー</li>
+      <li>確認指標：応募数、面談着座数、推薦数、決定数の対計画比</li>
+      <li><strong>「先週の数字」より「今週の予測」を議論</strong>する。パイプラインベースで残り着地を見る</li>
+      <li>異常値（前週比±20%超）が出た指標を深掘り</li>
+    </ul>
+
+    <h3>月次レビュー（90分）</h3>
+
+    <ul>
+      <li>参加者：経営層＋全マネージャー</li>
+      <li>15指標すべての月次推移をレビュー</li>
+      <li>媒体別ROAS・CA別生産性・推薦化率の3軸で改善優先度を決定</li>
+      <li>翌月の予算配分・人員配置に反映</li>
+    </ul>
+
+    <h3>四半期レビュー（半日）</h3>
+
+    <ul>
+      <li>KPI体系そのものの見直し</li>
+      <li>市場環境変化を踏まえた基準値の再設定</li>
+      <li>ダッシュボード自体の改修要件定義</li>
+    </ul>
+
+    <p>運用フローで重要なのは、<strong>「数字を見る場」と「打ち手を決める場」を分離しないこと</strong>です。レビュー会議で必ず「次の1週間で誰が何を変えるか」までを決めて議事録に残す運用が、KPIを事業成長と連動させる唯一の方法です。</p>
+
+
+    <div class="art-summary">
+      <h3>SUMMARY</h3>
+      <ul>
+        <li>人材紹介のKPIは集客・面談・マッチング・決定・収益の5層×3指標、計15指標で網羅できる。それ以上は運用破綻</li>
+        <li>ダッシュボードは経営・マーケ・CAの3階層に分けて設計する。全員同じ画面を見る運用は形骸化する</li>
+        <li>年間決定200件以下ならLooker Studio+ATS標準レポートで十分。それ以上はTableauやPower BIに投資価値</li>
+        <li>週次30分・月次90分・四半期半日のレビュー設計で初めてKPIが動く。「次に誰が何を変えるか」まで決める</li>
+      </ul>
+    </div>
+
+    <!-- art-related-start -->
+    <div class="art-related">
+      <div class="art-related-eyebrow">RELATED ARTICLES</div>
+      <h3>合わせて読みたい記事</h3>
+      <div class="art-related-grid">
+        <a href="../recruitment-marketing-automation/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-marketing-automation-hero.png" alt="人材紹介のマーケティングオートメーション｜MAツール活用と求職者ナーチャリング設計" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">ハウツー</span>
+            <h4>人材紹介のマーケティングオートメーション｜MAツール活用と求職者ナーチャリング設計</h4>
+          </div>
+        </a>
+        <a href="../recruitment-referral-acquisition/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-referral-acquisition-hero.png" alt="人材紹介のリファラル集客｜紹介経由で求職者を増やす仕組み設計" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">ハウツー</span>
+            <h4>人材紹介のリファラル集客｜紹介経由で求職者を増やす仕組み設計</h4>
+          </div>
+        </a>
+        <a href="../recruitment-youtube-marketing/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-youtube-marketing-hero.png" alt="人材紹介のYouTube集客｜動画コンテンツで求職者を集める運用設計" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">ハウツー</span>
+            <h4>人材紹介のYouTube集客｜動画コンテンツで求職者を集める運用設計</h4>
+          </div>
+        </a>
+        <a href="../recruitment-persona-design/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-persona-design-hero.png" alt="求職者ペルソナ設計の作り方｜人材紹介の集客精度を上げる5ステップ" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">ハウツー</span>
+            <h4>求職者ペルソナ設計の作り方｜人材紹介の集客精度を上げる5ステップ</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- art-related-end -->
+
+    <div class="art-bridge">
+      <h3>集客レイヤーのKPIを「外部委託で安定させたい」場合</h3>
+      <p>KPIダッシュボードを整備すると、集客レイヤー（応募CPA・面談着座率・有効応募率）が他のレイヤーよりも変動が大きく、かつ自社のコントロール範囲外の要因（媒体価格・季節性・競合状況）に左右されやすいことが見えてきます。広告運用やSNS集客の内製にCAの工数を割くより、集客レイヤーは外部の専門事業者に切り出し、自社CAは面談〜決定レイヤーの生産性向上に集中させる方が、ROASは安定しやすい構造があります。</p>
+      <p>「求職者送客の窓口」は、SNSを軸とした独自集客と事前カウンセリングを組み合わせ、第二新卒・若手未経験・新卒の求職者をエージェント様に送客する着座成果報酬型サービスです。<strong>初期費用0円・月額費用0円、面談着座1件あたりの成果報酬のみ・面談着座率80〜90%</strong>のため、CPAと面談着座率という2つのKPIを外部委託で固定化でき、ダッシュボード上のボラティリティを抑えられます。社内KPIは「決定率」「単価」「ROAS」に集中させる運用設計が可能です。</p>
+    </div>
+
+    <div class="art-cta">
+      <div class="art-cta-inner">
+        <h3>面談だけに集中できる、<br><span class="gold">新しい求職者獲得モデル</span>へ。</h3>
+        <p>御社の獲得したい求職者像・月間希望面談数に合わせた送客プランを、無料でご提案いたします。</p>
+        <a href="https://kyusyokusyasokyaku-no-madoguchi.com/?ref=column-recruitment-kpi-dashboard" class="btn btn-lg btn-arrow">サービス詳細を見る</a>
+      </div>
+    </div>
+
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../../images/logo.png" alt="求職者送客の窓口">
+          <p class="footer-tagline">人材紹介エージェント様のための、着座成果報酬型 求職者送客サービス。面談までの工数を一括代行し、事業成長を支援します。</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../../daini-shinsotsu/">第二新卒・未経験層向け</a></li>
+            <li><a href="../../shinsotsu/">新卒向け</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="../../index.html">トップ</a></li>
+            <li><a href="../../index.html#cases">導入事例</a></li>
+            <li><a href="../">コラム</a></li>
+            <li><a href="../../contact/">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <dl class="footer-company-list">
+            <dt>会社名</dt><dd>株式会社HADO</dd>
+            <dt>所在地</dt><dd>東京都渋谷区桜丘町21-4<br>渋谷桜丘町ビル3F</dd>
+            <dt>設立</dt><dd>2020年11月6日</dd>
+            <dt>Web</dt><dd><a href="https://hado.co.jp/" target="_blank" rel="noopener">hado.co.jp</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="footer-bottom">© 株式会社HADO. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="../../assets/site.js"></script>
+</body>
+</html>

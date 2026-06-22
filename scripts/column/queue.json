@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-kpi-dashboard",
-    "title": "人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー",
-    "description": "人材紹介事業の意思決定を加速するKPIダッシュボード設計を解説。応募〜決定までの15指標、BIツール選定、週次オペレーションへの落とし込みまで実務的にまとめます。",
-    "keywords": "人材紹介 KPI,ダッシュボード 設計,BIツール 人材,KPI 可視化",
-    "category": "ハウツー",
-    "image_prompt": "deep navy blue (#1a3a8a) analytics dashboard with gold (#f5b400) bar charts, KPI tiles and gauge meters, flat editorial illustration, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect ratio",
-    "key_points": [
-      "人材紹介で可視化すべき15のKPI体系",
-      "集客・面談・決定の階層別ダッシュボード設計",
-      "Looker Studio・Tableau等のBIツール選定",
-      "週次・月次のレビュー運用フロー"
-    ]
-  },
-  {
     "slug": "recruitment-senior-acquisition",
     "title": "シニア・50代以上の求職者集客戦略｜セカンドキャリア需要を捉える人材紹介設計",
     "description": "50代以上のシニア求職者を集めるための訴求軸とチャネル設計を解説。再雇用・顧問・専門職などキャリア類型別のアプローチと、紹介会社が押さえるべきマッチング設計をまとめます。",

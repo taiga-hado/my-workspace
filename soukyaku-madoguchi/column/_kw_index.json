@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-senior-acquisition",
+    "title": "シニア・50代以上の求職者集客戦略｜セカンドキャリア需要を捉える人材紹介設計",
+    "description": "50代以上のシニア求職者を集めるための訴求軸とチャネル設計を解説。再雇用・顧問・専門職などキャリア類型別のアプローチと、紹介会社が押さえるべきマッチング設計をまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "シニア 人材紹介",
+      "50代 転職",
+      "セカンドキャリア 集客",
+      "シニア求職者"
+    ],
+    "primary_keyword": "シニア 人材紹介",
+    "status": "published",
+    "published": "2026-06-23",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-senior-acquisition/"
+  },
+  {
     "slug": "recruitment-kpi-dashboard",
     "title": "人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー",
     "description": "人材紹介事業の意思決定を加速するKPIダッシュボード設計を解説。応募〜決定までの15指標、BIツール選定、週次オペレーションへの落とし込みまで実務的にまとめます。",
@@ -1038,22 +1054,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-kpi-dashboard",
-    "title": "人材紹介のKPIダッシュボード設計｜可視化すべき15指標と運用フロー",
-    "description": "人材紹介事業の意思決定を加速するKPIダッシュボード設計を解説。応募〜決定までの15指標、BIツール選定、週次オペレーションへの落とし込みまで実務的にまとめます。",
-    "category": "ハウツー",
-    "keywords": [
-      "人材紹介 KPI",
-      "ダッシュボード 設計",
-      "BIツール 人材",
-      "KPI 可視化"
-    ],
-    "primary_keyword": "人材紹介 KPI",
-    "status": "ready",
-    "scheduled": "2026-06-22",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-kpi-dashboard/"
-  },
-  {
     "slug": "recruitment-senior-acquisition",
     "title": "シニア・50代以上の求職者集客戦略｜セカンドキャリア需要を捉える人材紹介設計",
     "description": "50代以上のシニア求職者を集めるための訴求軸とチャネル設計を解説。再雇用・顧問・専門職などキャリア類型別のアプローチと、紹介会社が押さえるべきマッチング設計をまとめます。",
@@ -1065,14 +1065,8 @@
       "シニア求職者"
     ],
     "primary_keyword": "シニア 人材紹介",
-    "key_points": [
-      "シニア人材市場の需給構造と紹介ニーズ",
-      "50代の転職動機と訴求軸の設計",
-      "シニア求職者に効く集客チャネルと媒体選定",
-      "面談着座率を高めるカウンセリング設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-23",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-senior-acquisition/"
   }
 ]

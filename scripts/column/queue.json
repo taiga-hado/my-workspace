@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "slug": "recruitment-candidate-experience",
+    "title": "人材紹介の候補者体験（CX）設計｜離脱を防ぎ口コミを生む7つの接点",
+    "description": "求職者の登録〜内定までの7接点を可視化し、CX改善で離脱率・口コミ・再利用率を高める実務を解説。NPS計測とレビュー獲得の設計も網羅。",
+    "keywords": "候補者体験,候補者 CX,人材紹介 CX,求職者 満足度,人材紹介 NPS",
+    "category": "課題解決",
+    "image_prompt": "Flat editorial illustration of a candidate journey map with seven touchpoint icons connected by a smooth flowing path, deep navy blue #1a3a8a base with gold #f5b400 highlights on key nodes, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect ratio",
+    "key_points": [
+      "候補者体験（CX）が紹介事業の収益に効く理由",
+      "登録〜内定までの7つの主要接点と評価指標",
+      "NPS・口コミレビューを獲得する運用フロー",
+      "CXを下げる典型的な失敗パターンと改善策"
+    ]
+  },
+  {
+    "slug": "recruitment-manufacturing-acquisition",
+    "title": "製造業特化型人材紹介の集客戦略｜技術職・現場職の求職者を獲得する設計",
+    "description": "製造業の人材紹介で求職者を集めるためのチャネル選定・訴求軸・地方拠点との連携を解説。技術職と現場職それぞれのペルソナと相性の良い媒体も整理。",
+    "keywords": "製造業 人材紹介,製造業 求職者 集客,技術職 転職,工場 求人 集客,ものづくり 転職",
+    "category": "セグメント別",
+    "image_prompt": "Flat editorial illustration of factory gears and a worker silhouette merged with a magnet attracting candidate icons, deep navy blue #1a3a8a primary with gold #f5b400 highlights on gears and magnetic field, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect ratio",
+    "key_points": [
+      "製造業の求職者市場と技術職・現場職のペルソナ整理",
+      "効果的な集客チャネルと媒体の優先順位",
+      "年収・勤務地・キャリアパスの訴求設計",
+      "地方拠点・工場立地と連動した送客運用"
+    ]
+  },
+  {
+    "slug": "recruitment-market-size-2026",
+    "title": "人材紹介業界の市場規模と動向2026｜成長領域とエージェントの生存戦略",
+    "description": "人材紹介業界の市場規模・事業者数・倒産動向・成長セグメントを2026年最新データで整理。中小エージェントが取るべきポジショニング戦略を提示。",
+    "keywords": "人材紹介 市場規模,人材紹介 業界動向,人材紹介 倒産,人材紹介 2026,有料職業紹介 統計",
+    "category": "業界トレンド",
+    "image_prompt": "Flat editorial illustration of an upward trending bar chart and pie chart hybrid showing market segments, deep navy blue #1a3a8a bars with gold #f5b400 growth arrow and accents, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect ratio",
+    "key_points": [
+      "人材紹介業界の市場規模と事業者数の推移",
+      "成長セグメントと縮小セグメントの見極め",
+      "倒産・廃業データから読む構造変化",
+      "中小エージェントが取るべき生存戦略と差別化"
+    ]
+  },
+  {
+    "slug": "recruitment-scout-mail-reply-rate",
+    "title": "人材紹介のスカウトメール返信率を上げる文面設計｜開封率・面談化率の改善",
+    "description": "スカウトメールの開封率・返信率・面談化率を上げる件名と本文の型を解説。媒体別の最適文字数とパーソナライズの実務、ABテスト運用まで網羅。",
+    "keywords": "スカウトメール 文面,スカウト 返信率,スカウトメール 例文,人材紹介 スカウト,ダイレクトスカウト 運用",
+    "category": "ハウツー",
+    "image_prompt": "Flat editorial illustration of an email envelope opening with a reply arrow and rising response rate graph beside it, deep navy blue #1a3a8a envelope with gold #f5b400 reply arrow and graph line, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect ratio",
+    "key_points": [
+      "スカウトメールのKPI設計と業界平均ベンチマーク",
+      "開封率を上げる件名・送信タイミングの設計",
+      "返信率を上げる本文の型とパーソナライズ手法",
+      "媒体別の運用とABテスト・改善サイクル"
+    ]
+  }
+]

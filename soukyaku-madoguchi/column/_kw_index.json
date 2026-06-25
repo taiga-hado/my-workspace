@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-candidate-experience",
+    "title": "人材紹介の候補者体験（CX）設計｜離脱を防ぎ口コミを生む7つの接点",
+    "description": "求職者の登録〜内定までの7接点を可視化し、CX改善で離脱率・口コミ・再利用率を高める実務を解説。NPS計測とレビュー獲得の設計も網羅。",
+    "category": "課題解決",
+    "keywords": [
+      "候補者体験",
+      "候補者 CX",
+      "人材紹介 CX",
+      "求職者 満足度",
+      "人材紹介 NPS"
+    ],
+    "primary_keyword": "候補者体験",
+    "status": "published",
+    "published": "2026-06-25",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-experience/"
+  },
+  {
     "slug": "recruitment-direct-recruiting-comparison",
     "title": "ダイレクトリクルーティングと人材紹介の違い｜費用・成果・使い分けを徹底比較",
     "description": "ダイレクトリクルーティングと人材紹介の違いを、費用構造・成果速度・運用負荷の3軸で比較。エージェントが取るべき差別化戦略と送客サービスの活用法も解説。",
@@ -1071,23 +1088,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-direct-recruiting-comparison",
-    "title": "ダイレクトリクルーティングと人材紹介の違い｜費用・成果・使い分けを徹底比較",
-    "description": "ダイレクトリクルーティングと人材紹介の違いを、費用構造・成果速度・運用負荷の3軸で比較。エージェントが取るべき差別化戦略と送客サービスの活用法も解説。",
-    "category": "比較検討",
-    "keywords": [
-      "ダイレクトリクルーティング 人材紹介",
-      "ダイレクトリクルーティング 違い",
-      "人材紹介 比較",
-      "スカウト 人材紹介",
-      "採用手法 比較"
-    ],
-    "primary_keyword": "ダイレクトリクルーティング 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-06-24",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-direct-recruiting-comparison/"
-  },
-  {
     "slug": "recruitment-candidate-experience",
     "title": "人材紹介の候補者体験（CX）設計｜離脱を防ぎ口コミを生む7つの接点",
     "description": "求職者の登録〜内定までの7接点を可視化し、CX改善で離脱率・口コミ・再利用率を高める実務を解説。NPS計測とレビュー獲得の設計も網羅。",
@@ -1100,14 +1100,8 @@
       "人材紹介 NPS"
     ],
     "primary_keyword": "候補者体験",
-    "key_points": [
-      "候補者体験（CX）が紹介事業の収益に効く理由",
-      "登録〜内定までの7つの主要接点と評価指標",
-      "NPS・口コミレビューを獲得する運用フロー",
-      "CXを下げる典型的な失敗パターンと改善策"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-25",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-experience/"
   },
   {
@@ -1130,7 +1124,7 @@
       "地方拠点・工場立地と連動した送客運用"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-manufacturing-acquisition/"
   },
   {
@@ -1153,7 +1147,7 @@
       "中小エージェントが取るべき生存戦略と差別化"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-market-size-2026/"
   },
   {
@@ -1176,7 +1170,7 @@
       "媒体別の運用とABテスト・改善サイクル"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-scout-mail-reply-rate/"
   }
 ]

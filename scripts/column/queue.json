@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-candidate-experience",
-    "title": "人材紹介の候補者体験（CX）設計｜離脱を防ぎ口コミを生む7つの接点",
-    "description": "求職者の登録〜内定までの7接点を可視化し、CX改善で離脱率・口コミ・再利用率を高める実務を解説。NPS計測とレビュー獲得の設計も網羅。",
-    "keywords": "候補者体験,候補者 CX,人材紹介 CX,求職者 満足度,人材紹介 NPS",
-    "category": "課題解決",
-    "image_prompt": "Flat editorial illustration of a candidate journey map with seven touchpoint icons connected by a smooth flowing path, deep navy blue #1a3a8a base with gold #f5b400 highlights on key nodes, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect ratio",
-    "key_points": [
-      "候補者体験（CX）が紹介事業の収益に効く理由",
-      "登録〜内定までの7つの主要接点と評価指標",
-      "NPS・口コミレビューを獲得する運用フロー",
-      "CXを下げる典型的な失敗パターンと改善策"
-    ]
-  },
-  {
     "slug": "recruitment-manufacturing-acquisition",
     "title": "製造業特化型人材紹介の集客戦略｜技術職・現場職の求職者を獲得する設計",
     "description": "製造業の人材紹介で求職者を集めるためのチャネル選定・訴求軸・地方拠点との連携を解説。技術職と現場職それぞれのペルソナと相性の良い媒体も整理。",

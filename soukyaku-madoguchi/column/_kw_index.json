@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-manufacturing-acquisition",
+    "title": "製造業特化型人材紹介の集客戦略｜技術職・現場職の求職者を獲得する設計",
+    "description": "製造業の人材紹介で求職者を集めるためのチャネル選定・訴求軸・地方拠点との連携を解説。技術職と現場職それぞれのペルソナと相性の良い媒体も整理。",
+    "category": "セグメント別",
+    "keywords": [
+      "製造業 人材紹介",
+      "製造業 求職者 集客",
+      "技術職 転職",
+      "工場 求人 集客",
+      "ものづくり 転職"
+    ],
+    "primary_keyword": "製造業 人材紹介",
+    "status": "published",
+    "published": "2026-06-26",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-manufacturing-acquisition/"
+  },
+  {
     "slug": "recruitment-candidate-experience",
     "title": "人材紹介の候補者体験（CX）設計｜離脱を防ぎ口コミを生む7つの接点",
     "description": "求職者の登録〜内定までの7接点を可視化し、CX改善で離脱率・口コミ・再利用率を高める実務を解説。NPS計測とレビュー獲得の設計も網羅。",
@@ -1088,23 +1105,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-candidate-experience",
-    "title": "人材紹介の候補者体験（CX）設計｜離脱を防ぎ口コミを生む7つの接点",
-    "description": "求職者の登録〜内定までの7接点を可視化し、CX改善で離脱率・口コミ・再利用率を高める実務を解説。NPS計測とレビュー獲得の設計も網羅。",
-    "category": "課題解決",
-    "keywords": [
-      "候補者体験",
-      "候補者 CX",
-      "人材紹介 CX",
-      "求職者 満足度",
-      "人材紹介 NPS"
-    ],
-    "primary_keyword": "候補者体験",
-    "status": "ready",
-    "scheduled": "2026-06-25",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-experience/"
-  },
-  {
     "slug": "recruitment-manufacturing-acquisition",
     "title": "製造業特化型人材紹介の集客戦略｜技術職・現場職の求職者を獲得する設計",
     "description": "製造業の人材紹介で求職者を集めるためのチャネル選定・訴求軸・地方拠点との連携を解説。技術職と現場職それぞれのペルソナと相性の良い媒体も整理。",
@@ -1117,14 +1117,8 @@
       "ものづくり 転職"
     ],
     "primary_keyword": "製造業 人材紹介",
-    "key_points": [
-      "製造業の求職者市場と技術職・現場職のペルソナ整理",
-      "効果的な集客チャネルと媒体の優先順位",
-      "年収・勤務地・キャリアパスの訴求設計",
-      "地方拠点・工場立地と連動した送客運用"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-06-26",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-manufacturing-acquisition/"
   },
   {
@@ -1147,7 +1141,7 @@
       "中小エージェントが取るべき生存戦略と差別化"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-market-size-2026/"
   },
   {
@@ -1170,7 +1164,7 @@
       "媒体別の運用とABテスト・改善サイクル"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-scout-mail-reply-rate/"
   }
 ]

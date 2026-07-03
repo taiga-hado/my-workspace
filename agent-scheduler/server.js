@@ -210,7 +210,7 @@ async function fetchTimerexSlots(url, targetDate) {
 }
 
 // サービス停止: APIは全て404
-app.all("/api/*", (req, res) => {
+app.use("/api", (req, res) => {
   res.status(404).json({ error: "This service has been retired." });
 });
 
@@ -269,7 +269,7 @@ app.get("/api/agents", (req, res) => {
   res.json(agents);
 });
 
-const PORT = 3456;
+const PORT = process.env.PORT || 3456;
 app.listen(PORT, () => {
   console.log(`Agent Scheduler server running at http://localhost:${PORT}`);
 });

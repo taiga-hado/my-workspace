@@ -209,6 +209,11 @@ async function fetchTimerexSlots(url, targetDate) {
   }
 }
 
+// サービス停止: APIは全て404
+app.all("/api/*", (req, res) => {
+  res.status(404).json({ error: "This service has been retired." });
+});
+
 // Main endpoint: check availability for a specific date
 app.post("/api/check", async (req, res) => {
   const { date, agentFilter } = req.body;

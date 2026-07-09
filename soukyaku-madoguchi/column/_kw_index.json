@@ -1,5 +1,208 @@
 [
   {
+    "slug": "recruitment-retargeting-ads",
+    "title": "人材紹介のリターゲティング広告｜離脱ユーザーを面談まで引き戻す設計",
+    "description": "LP離脱者を再獲得するリタゲ広告の設計を、配信面・オーディエンス分岐・クリエイティブ・除外設定まで人材紹介の実務目線で解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 リターゲティング",
+      "リタゲ広告 CPA",
+      "人材紹介 広告運用",
+      "離脱ユーザー 再獲得"
+    ],
+    "primary_keyword": "人材紹介 リターゲティング",
+    "status": "published",
+    "published": "2026-07-09",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-retargeting-ads/"
+  },
+  {
+    "slug": "recruitment-talent-pool",
+    "title": "タレントプールとは｜人材紹介で候補者ストックを資産化する運用設計",
+    "description": "タレントプールの意味と、人材紹介事業における構築・運用方法を解説。候補者DBとの違い、セグメント設計、ナーチャリング施策、再アプローチ運用まで実務ベースでまとめます。",
+    "category": "用語解説",
+    "keywords": [
+      "タレントプール",
+      "タレントプール 人材紹介",
+      "候補者プール",
+      "人材データベース 運用",
+      "人材ストック"
+    ],
+    "primary_keyword": "タレントプール",
+    "status": "published",
+    "published": "2026-07-08",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-talent-pool/"
+  },
+  {
+    "slug": "recruitment-affiliate-marketing",
+    "title": "人材紹介のアフィリエイト集客｜成果報酬型メディアの選び方と運用",
+    "description": "人材紹介事業でアフィリエイト・成果報酬型メディアを活用する方法を解説。主要ASP・単価相場・提携先の選定基準・CPA管理まで、実務ベースで比較します。",
+    "category": "比較検討",
+    "keywords": [
+      "人材紹介 アフィリエイト",
+      "成果報酬 メディア",
+      "転職 ASP",
+      "アフィリエイト CPA",
+      "提携メディア 集客"
+    ],
+    "primary_keyword": "人材紹介 アフィリエイト",
+    "status": "published",
+    "published": "2026-07-07",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-affiliate-marketing/"
+  },
+  {
+    "slug": "recruitment-20s-acquisition",
+    "title": "20代求職者向け人材紹介の集客戦略｜若手層に刺さる訴求とチャネル",
+    "description": "20代求職者を集めたい人材紹介エージェント向けに、価値観・情報収集行動の特徴と、SNS・広告・オウンドメディアを組み合わせた集客チャネル設計を解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "20代 転職",
+      "若手 求職者集客",
+      "人材紹介 20代",
+      "若手層 集客",
+      "20代 訴求"
+    ],
+    "primary_keyword": "20代 転職",
+    "status": "published",
+    "published": "2026-07-06",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-20s-acquisition/"
+  },
+  {
+    "slug": "recruitment-finance-acquisition",
+    "title": "金融業界特化型人材紹介の集客戦略｜銀行・証券・保険人材の獲得設計",
+    "description": "金融業界に特化した人材紹介の集客戦略を解説。銀行・証券・保険・フィンテックの求職者属性、規制環境、効果的なチャネルと訴求設計を実務ベースでまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "金融 人材紹介",
+      "銀行 転職 集客",
+      "証券 求職者",
+      "フィンテック 採用",
+      "金融業界 エージェント"
+    ],
+    "primary_keyword": "金融 人材紹介",
+    "status": "published",
+    "published": "2026-07-06",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-finance-acquisition/"
+  },
+  {
+    "slug": "recruitment-job-description-writing",
+    "title": "応募が集まる求人票の書き方｜人材紹介の求人原稿改善ガイド",
+    "description": "人材紹介エージェント向けに、求人票・募集要項の書き方を解説。タイトル・仕事内容・条件欄の設計、NGワード、応募率を上げる訴求パターンまで実務ベースでまとめます。",
+    "category": "課題解決",
+    "keywords": [
+      "求人票 書き方",
+      "人材紹介 求人原稿",
+      "募集要項 応募率",
+      "求人 訴求",
+      "求人 原稿改善"
+    ],
+    "primary_keyword": "求人票 書き方",
+    "status": "published",
+    "published": "2026-07-04",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-description-writing/"
+  },
+  {
+    "slug": "recruitment-antisocial-check",
+    "title": "人材紹介の反社チェック実務｜求職者・取引先を確認する仕組みと頻度",
+    "description": "人材紹介事業における反社会的勢力チェックの実務を解説。求職者・求人企業それぞれの確認方法、データベース活用、契約書条項、運用フローまで実務担当者向けにまとめます。",
+    "category": "用語解説",
+    "keywords": [
+      "反社チェック 人材紹介",
+      "反社確認 求職者",
+      "コンプライアンス 人材紹介",
+      "反社データベース",
+      "人材紹介 リスク管理"
+    ],
+    "primary_keyword": "反社チェック 人材紹介",
+    "status": "published",
+    "published": "2026-07-03",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-antisocial-check/"
+  },
+  {
+    "slug": "recruitment-webinar-acquisition",
+    "title": "ウェビナー・転職セミナーで求職者を集める｜人材紹介の集客設計",
+    "description": "人材紹介事業者向けに、転職ウェビナー・キャリアセミナーを活用した求職者集客の設計手法を解説。テーマ選定・集客動線・面談誘導までのフローと成功事例をまとめます。",
+    "category": "ハウツー",
+    "keywords": [
+      "転職セミナー 集客",
+      "ウェビナー 求職者",
+      "転職フェア 人材紹介",
+      "キャリアセミナー 運営",
+      "人材紹介 イベント"
+    ],
+    "primary_keyword": "転職セミナー 集客",
+    "status": "published",
+    "published": "2026-07-02",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-webinar-acquisition/"
+  },
+  {
+    "slug": "recruitment-construction-acquisition",
+    "title": "建設業界特化型人材紹介の集客戦略｜施工管理・職人の求職者を獲得する",
+    "description": "建設業界に特化した人材紹介の求職者集客を解説。施工管理・職人・現場監督など職種別の訴求設計、効果的なチャネル、地方別の獲得単価相場までを実務目線でまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "建設業界 人材紹介",
+      "施工管理 求職者集客",
+      "建設 転職エージェント",
+      "職人 採用",
+      "建設 人材"
+    ],
+    "primary_keyword": "建設業界 人材紹介",
+    "status": "published",
+    "published": "2026-07-01",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-construction-acquisition/"
+  },
+  {
+    "slug": "recruitment-meta-ads",
+    "title": "人材紹介のMeta広告運用｜Facebook・Instagram広告でCPAを下げる設計",
+    "description": "人材紹介事業者向けにMeta広告（Facebook／Instagram広告）の運用設計を解説。ターゲティング・クリエイティブ・LP設計・CAPI連携まで、CPAを下げる実務ノウハウをまとめます。",
+    "category": "ハウツー",
+    "keywords": [
+      "Meta広告 人材紹介",
+      "Facebook広告 求職者",
+      "Instagram広告 集客",
+      "人材紹介 広告運用",
+      "CAPI 人材"
+    ],
+    "primary_keyword": "Meta広告 人材紹介",
+    "status": "published",
+    "published": "2026-06-30",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-meta-ads/"
+  },
+  {
+    "slug": "recruitment-insourcing-vs-outsourcing",
+    "title": "求職者集客は内製と外注どちらが得か｜CPA・体制・スピードで徹底比較",
+    "description": "人材紹介の求職者集客を内製化するか外部委託するかを、CPA・初期投資・運用工数・スピードの4軸で比較。判断フレームと外注先選定のチェックリストを解説します。",
+    "category": "比較検討",
+    "keywords": [
+      "求職者集客 内製",
+      "人材紹介 集客 外注",
+      "集客 内製化",
+      "集客代行 比較",
+      "人材紹介 マーケ 体制"
+    ],
+    "primary_keyword": "求職者集客 内製",
+    "status": "published",
+    "published": "2026-06-29",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-insourcing-vs-outsourcing/"
+  },
+  {
+    "slug": "recruitment-scout-mail-reply-rate",
+    "title": "人材紹介のスカウトメール返信率を上げる文面設計｜開封率・面談化率の改善",
+    "description": "スカウトメールの開封率・返信率・面談化率を上げる件名と本文の型を解説。媒体別の最適文字数とパーソナライズの実務、ABテスト運用まで網羅。",
+    "category": "ハウツー",
+    "keywords": [
+      "スカウトメール 文面",
+      "スカウト 返信率",
+      "スカウトメール 例文",
+      "人材紹介 スカウト",
+      "ダイレクトスカウト 運用"
+    ],
+    "primary_keyword": "スカウトメール 文面",
+    "status": "published",
+    "published": "2026-06-28",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-scout-mail-reply-rate/"
+  },
+  {
     "slug": "recruitment-market-size-2026",
     "title": "人材紹介業界の市場規模と動向2026｜成長領域とエージェントの生存戦略",
     "description": "人材紹介業界の市場規模・事業者数・倒産動向・成長セグメントを2026年最新データで整理。中小エージェントが取るべきポジショニング戦略を提示。",
@@ -1122,43 +1325,107 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-market-size-2026",
-    "title": "人材紹介業界の市場規模と動向2026｜成長領域とエージェントの生存戦略",
-    "description": "人材紹介業界の市場規模・事業者数・倒産動向・成長セグメントを2026年最新データで整理。中小エージェントが取るべきポジショニング戦略を提示。",
-    "category": "業界トレンド",
-    "keywords": [
-      "人材紹介 市場規模",
-      "人材紹介 業界動向",
-      "人材紹介 倒産",
-      "人材紹介 2026",
-      "有料職業紹介 統計"
-    ],
-    "primary_keyword": "人材紹介 市場規模",
-    "status": "ready",
-    "scheduled": "2026-06-27",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-market-size-2026/"
-  },
-  {
-    "slug": "recruitment-scout-mail-reply-rate",
-    "title": "人材紹介のスカウトメール返信率を上げる文面設計｜開封率・面談化率の改善",
-    "description": "スカウトメールの開封率・返信率・面談化率を上げる件名と本文の型を解説。媒体別の最適文字数とパーソナライズの実務、ABテスト運用まで網羅。",
+    "slug": "recruitment-retargeting-ads",
+    "title": "人材紹介のリターゲティング広告｜離脱ユーザーを面談まで引き戻す設計",
+    "description": "LP離脱者を再獲得するリタゲ広告の設計を、配信面・オーディエンス分岐・クリエイティブ・除外設定まで人材紹介の実務目線で解説します。",
     "category": "ハウツー",
     "keywords": [
-      "スカウトメール 文面",
-      "スカウト 返信率",
-      "スカウトメール 例文",
-      "人材紹介 スカウト",
-      "ダイレクトスカウト 運用"
+      "人材紹介 リターゲティング",
+      "リタゲ広告 CPA",
+      "人材紹介 広告運用",
+      "離脱ユーザー 再獲得"
     ],
-    "primary_keyword": "スカウトメール 文面",
+    "primary_keyword": "人材紹介 リターゲティング",
+    "status": "ready",
+    "scheduled": "2026-07-09",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-retargeting-ads/"
+  },
+  {
+    "slug": "recruitment-latent-candidates",
+    "title": "顕在層・潜在層とは｜人材紹介の求職者集客で使い分けるターゲット設計",
+    "description": "転職顕在層と潜在層の違い、それぞれの集客チャネル・訴求・CPAの目安を整理し、人材紹介の中長期パイプラインを作る考え方を解説します。",
+    "category": "用語解説",
+    "keywords": [
+      "転職 顕在層 潜在層",
+      "人材紹介 ターゲット",
+      "潜在層 集客",
+      "求職者 パイプライン"
+    ],
+    "primary_keyword": "転職 顕在層 潜在層",
     "key_points": [
-      "スカウトメールのKPI設計と業界平均ベンチマーク",
-      "開封率を上げる件名・送信タイミングの設計",
-      "返信率を上げる本文の型とパーソナライズ手法",
-      "媒体別の運用とABテスト・改善サイクル"
+      "顕在層・準顕在層・潜在層の定義とボリューム感",
+      "層別に効くチャネルと訴求メッセージの違い",
+      "層別CPA相場と面談着座までの歩留まり",
+      "潜在層を顕在化させるナーチャリング設計"
     ],
     "status": "queued",
     "queue_position": 1,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-scout-mail-reply-rate/"
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-latent-candidates/"
+  },
+  {
+    "slug": "recruitment-mid-career-trends-2026",
+    "title": "中途採用市場トレンド2026｜人材紹介エージェントが押さえる7つの変化",
+    "description": "2026年の中途採用市場の求人倍率・年収動向・求職者行動変化を整理し、人材紹介エージェントが取るべき集客・マッチング戦略を提示します。",
+    "category": "業界トレンド",
+    "keywords": [
+      "中途採用 トレンド 2026",
+      "転職市場 動向",
+      "人材紹介 市場",
+      "求人倍率 2026"
+    ],
+    "primary_keyword": "中途採用 トレンド 2026",
+    "key_points": [
+      "2026年の中途採用市場規模と求人倍率の見通し",
+      "職種別・年代別に見る求職者行動の変化",
+      "AI・リモート・副業が採用市場に与える影響",
+      "エージェントが取るべき集客・マッチングの打ち手"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-mid-career-trends-2026/"
+  },
+  {
+    "slug": "recruitment-review-management",
+    "title": "人材紹介の口コミ・評判管理｜Googleレビューと転職口コミサイト対策",
+    "description": "転職会議・OpenWork・Googleビジネスプロフィール等の口コミが集客に与える影響と、ネガティブレビューを減らす運用体制を解説します。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 口コミ",
+      "転職エージェント 評判",
+      "Googleレビュー 対策",
+      "転職会議 対策"
+    ],
+    "primary_keyword": "人材紹介 口コミ",
+    "key_points": [
+      "口コミ・評判が人材紹介の応募数に与えるインパクト",
+      "主要口コミサイトの特徴と監視すべきKPI",
+      "ネガティブレビューの発生原因とCXでの予防策",
+      "ポジティブ口コミを増やすアンケート・依頼運用"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-review-management/"
+  },
+  {
+    "slug": "recruitment-wantedly-marketing",
+    "title": "人材紹介のWantedly活用｜共感採用型メディアで求職者を集める運用",
+    "description": "Wantedlyの募集記事・ストーリー・スカウトを活用し、20〜30代の転職潜在層から人材紹介の求職者リードを集める運用手順を解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "Wantedly 人材紹介",
+      "Wantedly 集客",
+      "共感採用 求職者",
+      "Wantedly スカウト"
+    ],
+    "primary_keyword": "Wantedly 人材紹介",
+    "key_points": [
+      "Wantedlyの特徴と人材紹介エージェントに向く使い方",
+      "応募が集まる募集記事とストーリーの型",
+      "スカウト運用と返信率を上げる文面設計",
+      "面談着座までの導線とCPA・工数の目安"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-wantedly-marketing/"
   }
 ]

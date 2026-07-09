@@ -1,16 +1,58 @@
 [
   {
-    "slug": "recruitment-scout-mail-reply-rate",
-    "title": "人材紹介のスカウトメール返信率を上げる文面設計｜開封率・面談化率の改善",
-    "description": "スカウトメールの開封率・返信率・面談化率を上げる件名と本文の型を解説。媒体別の最適文字数とパーソナライズの実務、ABテスト運用まで網羅。",
-    "keywords": "スカウトメール 文面,スカウト 返信率,スカウトメール 例文,人材紹介 スカウト,ダイレクトスカウト 運用",
-    "category": "ハウツー",
-    "image_prompt": "Flat editorial illustration of an email envelope opening with a reply arrow and rising response rate graph beside it, deep navy blue #1a3a8a envelope with gold #f5b400 reply arrow and graph line, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect ratio",
+    "slug": "recruitment-latent-candidates",
+    "title": "顕在層・潜在層とは｜人材紹介の求職者集客で使い分けるターゲット設計",
+    "description": "転職顕在層と潜在層の違い、それぞれの集客チャネル・訴求・CPAの目安を整理し、人材紹介の中長期パイプラインを作る考え方を解説します。",
+    "keywords": "転職 顕在層 潜在層,人材紹介 ターゲット,潜在層 集客,求職者 パイプライン",
+    "category": "用語解説",
+    "image_prompt": "Editorial flat illustration of two concentric circles representing active and passive candidate segments, deep navy blue #1a3a8a with gold #f5b400 highlights, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
     "key_points": [
-      "スカウトメールのKPI設計と業界平均ベンチマーク",
-      "開封率を上げる件名・送信タイミングの設計",
-      "返信率を上げる本文の型とパーソナライズ手法",
-      "媒体別の運用とABテスト・改善サイクル"
+      "顕在層・準顕在層・潜在層の定義とボリューム感",
+      "層別に効くチャネルと訴求メッセージの違い",
+      "層別CPA相場と面談着座までの歩留まり",
+      "潜在層を顕在化させるナーチャリング設計"
+    ]
+  },
+  {
+    "slug": "recruitment-mid-career-trends-2026",
+    "title": "中途採用市場トレンド2026｜人材紹介エージェントが押さえる7つの変化",
+    "description": "2026年の中途採用市場の求人倍率・年収動向・求職者行動変化を整理し、人材紹介エージェントが取るべき集客・マッチング戦略を提示します。",
+    "keywords": "中途採用 トレンド 2026,転職市場 動向,人材紹介 市場,求人倍率 2026",
+    "category": "業界トレンド",
+    "image_prompt": "Editorial flat illustration of an upward trend line chart with candidate silhouettes and city skyline, deep navy blue #1a3a8a background with gold #f5b400 accent, premium SaaS aesthetic, soft white space, no text or letters, 3:2 aspect",
+    "key_points": [
+      "2026年の中途採用市場規模と求人倍率の見通し",
+      "職種別・年代別に見る求職者行動の変化",
+      "AI・リモート・副業が採用市場に与える影響",
+      "エージェントが取るべき集客・マッチングの打ち手"
+    ]
+  },
+  {
+    "slug": "recruitment-review-management",
+    "title": "人材紹介の口コミ・評判管理｜Googleレビューと転職口コミサイト対策",
+    "description": "転職会議・OpenWork・Googleビジネスプロフィール等の口コミが集客に与える影響と、ネガティブレビューを減らす運用体制を解説します。",
+    "keywords": "人材紹介 口コミ,転職エージェント 評判,Googleレビュー 対策,転職会議 対策",
+    "category": "課題解決",
+    "image_prompt": "Editorial flat illustration of five-star review badges and speech bubbles around an agent silhouette, deep navy blue #1a3a8a with gold #f5b400 stars, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "口コミ・評判が人材紹介の応募数に与えるインパクト",
+      "主要口コミサイトの特徴と監視すべきKPI",
+      "ネガティブレビューの発生原因とCXでの予防策",
+      "ポジティブ口コミを増やすアンケート・依頼運用"
+    ]
+  },
+  {
+    "slug": "recruitment-wantedly-marketing",
+    "title": "人材紹介のWantedly活用｜共感採用型メディアで求職者を集める運用",
+    "description": "Wantedlyの募集記事・ストーリー・スカウトを活用し、20〜30代の転職潜在層から人材紹介の求職者リードを集める運用手順を解説します。",
+    "keywords": "Wantedly 人材紹介,Wantedly 集客,共感採用 求職者,Wantedly スカウト",
+    "category": "ハウツー",
+    "image_prompt": "Editorial flat illustration of a story card and heart icons connecting candidate avatars, deep navy blue #1a3a8a with gold #f5b400 accents, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "Wantedlyの特徴と人材紹介エージェントに向く使い方",
+      "応募が集まる募集記事とストーリーの型",
+      "スカウト運用と返信率を上げる文面設計",
+      "面談着座までの導線とCPA・工数の目安"
     ]
   }
 ]

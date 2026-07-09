@@ -110,9 +110,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .ct-form p.ct-intro {
       font-size: 0.88rem; color: var(--text-sub); line-height: 1.8;
-      margin-bottom: 28px; padding: 14px 16px;
+      margin-bottom: 16px; padding: 14px 16px;
       background: var(--brand-blue-tint); border-radius: var(--r-md);
       border-left: 3px solid var(--brand-blue);
+    }
+    .ct-notice {
+      margin-bottom: 28px; padding: 14px 16px;
+      background: #fffbeb; border-radius: var(--r-md);
+      border-left: 3px solid #f59e0b;
+    }
+    .ct-notice-title {
+      font-size: 0.82rem; font-weight: 700; color: #92400e;
+      margin-bottom: 6px;
+    }
+    .ct-notice ul {
+      margin: 0; padding-left: 1.2em;
+      font-size: 0.85rem; color: var(--text-sub); line-height: 1.8;
     }
     .ct-field { margin-bottom: 20px; }
     .ct-label {
@@ -305,6 +318,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <form class="ct-form" id="contactForm" novalidate>
           <p class="ct-intro">必要事項をご記入の上、送信ボタンを押してください。記載内容の確認後、担当者よりご連絡いたします。</p>
+
+          <div class="ct-notice">
+            <div class="ct-notice-title">ご確認ください</div>
+            <ul>
+              <li>採用企業への直接送客は行なっておりません。</li>
+              <li>代理店とのアライアンスは組んでおりません。</li>
+            </ul>
+          </div>
 
           <div class="ct-field">
             <label class="ct-label" for="company">会社名 <span class="ct-required">必須</span></label>

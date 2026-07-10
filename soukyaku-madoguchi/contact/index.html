@@ -127,6 +127,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin: 0; padding-left: 1.2em;
       font-size: 0.85rem; color: var(--text-sub); line-height: 1.8;
     }
+    .ct-error {
+      margin-top: 8px;
+      font-size: 0.8rem; font-weight: 600; color: #dc2626;
+      line-height: 1.6;
+    }
+    .ct-input.is-invalid {
+      border-color: #dc2626;
+    }
     .ct-field { margin-bottom: 20px; }
     .ct-label {
       display: flex; align-items: center; gap: 8px;
@@ -352,8 +360,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
 
           <div class="ct-field">
-            <label class="ct-label" for="email">メールアドレス <span class="ct-required">必須</span></label>
-            <input class="ct-input" type="email" id="email" name="email" placeholder="name@example.com" required>
+            <label class="ct-label" for="email">会社のメールアドレス <span class="ct-required">必須</span></label>
+            <input class="ct-input" type="email" id="email" name="email" placeholder="name@company.co.jp" required>
+            <p class="ct-error" id="emailError" hidden>フリーメールアドレスはご利用いただけません。企業の独自ドメインのメールアドレスをご入力ください。</p>
           </div>
 
           <div class="ct-field">
@@ -418,6 +427,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var success = document.getElementById('successMsg');
     var submitBtn = document.getElementById('submitBtn');
     if(!form) return;
+
+    // フリーメール（独自ドメイン以外）は登録不可
+    var FREE_EMAIL_DOMAINS = [
+      'gmail.com','googlemail.com',
+      'yahoo.co.jp','yahoo.com','ymail.ne.jp',
+      'hotmail.com','hotmail.co.jp','outlook.com','outlook.jp','live.jp','live.com','msn.com',
+      'icloud.com','me.com','mac.com',
+      'aol.com','aol.jp',
+      'protonmail.com','proton.me','mail.com','gmx.com','gmx.net','yandex.com','zoho.com',
+      'docomo.ne.jp','ezweb.ne.jp','au.com','softbank.ne.jp','i.softbank.jp','ymobile.ne.jp',
+      'rakuten.jp','rakumail.jp','excite.co.jp','goo.jp','nifty.com','biglobe.ne.jp'
+    ];
+    var emailInput = document.getElementById('email');
+    var emailError = document.getElementById('emailError');
+
+    function isFreeEmail(email){
+      var at = email.lastIndexOf('@');
+      if(at < 0) return false;
+      var domain = email.slice(at + 1).trim().toLowerCase();
+      return FREE_EMAIL_DOMAINS.indexOf(domain) !== -1;
+    }
+
+    function validateEmailDomain(){
+      var bad = emailInput && isFreeEmail(emailInput.value || '');
+      if(emailError) emailError.hidden = !bad;
+      if(emailInput) emailInput.classList.toggle('is-invalid', !!bad);
+      return !bad;
+    }
+
+    if(emailInput){
+      emailInput.addEventListener('blur', validateEmailDomain);
+      emailInput.addEventListener('input', function(){
+        if(emailError && !emailError.hidden) validateEmailDomain();
+      });
+    }
 
     // チェックボックスのchecked状態スタイル
     document.querySelectorAll('.ct-checkbox-item input[type="checkbox"]').forEach(function(cb){
@@ -486,6 +530,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       e.preventDefault();
       if(!form.checkValidity()){
         form.reportValidity();
+        return;
+      }
+      if(!validateEmailDomain()){
+        emailInput.focus();
         return;
       }
       if(!getServiceValues()){

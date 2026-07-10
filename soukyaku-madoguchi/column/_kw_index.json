@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-latent-candidates",
+    "title": "顕在層・潜在層とは｜人材紹介の求職者集客で使い分けるターゲット設計",
+    "description": "転職顕在層と潜在層の違い、それぞれの集客チャネル・訴求・CPAの目安を整理し、人材紹介の中長期パイプラインを作る考え方を解説します。",
+    "category": "用語解説",
+    "keywords": [
+      "転職 顕在層 潜在層",
+      "人材紹介 ターゲット",
+      "潜在層 集客",
+      "求職者 パイプライン"
+    ],
+    "primary_keyword": "転職 顕在層 潜在層",
+    "status": "published",
+    "published": "2026-07-10",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-latent-candidates/"
+  },
+  {
     "slug": "recruitment-retargeting-ads",
     "title": "人材紹介のリターゲティング広告｜離脱ユーザーを面談まで引き戻す設計",
     "description": "LP離脱者を再獲得するリタゲ広告の設計を、配信面・オーディエンス分岐・クリエイティブ・除外設定まで人材紹介の実務目線で解説します。",
@@ -1325,22 +1341,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-retargeting-ads",
-    "title": "人材紹介のリターゲティング広告｜離脱ユーザーを面談まで引き戻す設計",
-    "description": "LP離脱者を再獲得するリタゲ広告の設計を、配信面・オーディエンス分岐・クリエイティブ・除外設定まで人材紹介の実務目線で解説します。",
-    "category": "ハウツー",
-    "keywords": [
-      "人材紹介 リターゲティング",
-      "リタゲ広告 CPA",
-      "人材紹介 広告運用",
-      "離脱ユーザー 再獲得"
-    ],
-    "primary_keyword": "人材紹介 リターゲティング",
-    "status": "ready",
-    "scheduled": "2026-07-09",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-retargeting-ads/"
-  },
-  {
     "slug": "recruitment-latent-candidates",
     "title": "顕在層・潜在層とは｜人材紹介の求職者集客で使い分けるターゲット設計",
     "description": "転職顕在層と潜在層の違い、それぞれの集客チャネル・訴求・CPAの目安を整理し、人材紹介の中長期パイプラインを作る考え方を解説します。",
@@ -1352,14 +1352,8 @@
       "求職者 パイプライン"
     ],
     "primary_keyword": "転職 顕在層 潜在層",
-    "key_points": [
-      "顕在層・準顕在層・潜在層の定義とボリューム感",
-      "層別に効くチャネルと訴求メッセージの違い",
-      "層別CPA相場と面談着座までの歩留まり",
-      "潜在層を顕在化させるナーチャリング設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-10",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-latent-candidates/"
   },
   {
@@ -1381,7 +1375,7 @@
       "エージェントが取るべき集客・マッチングの打ち手"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-mid-career-trends-2026/"
   },
   {
@@ -1403,7 +1397,7 @@
       "ポジティブ口コミを増やすアンケート・依頼運用"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-review-management/"
   },
   {
@@ -1425,7 +1419,7 @@
       "面談着座までの導線とCPA・工数の目安"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-wantedly-marketing/"
   }
 ]

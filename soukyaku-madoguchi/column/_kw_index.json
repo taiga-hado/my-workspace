@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-mid-career-trends-2026",
+    "title": "中途採用市場トレンド2026｜人材紹介エージェントが押さえる7つの変化",
+    "description": "2026年の中途採用市場の求人倍率・年収動向・求職者行動変化を整理し、人材紹介エージェントが取るべき集客・マッチング戦略を提示します。",
+    "category": "業界トレンド",
+    "keywords": [
+      "中途採用 トレンド 2026",
+      "転職市場 動向",
+      "人材紹介 市場",
+      "求人倍率 2026"
+    ],
+    "primary_keyword": "中途採用 トレンド 2026",
+    "status": "published",
+    "published": "2026-07-11",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-mid-career-trends-2026/"
+  },
+  {
     "slug": "recruitment-latent-candidates",
     "title": "顕在層・潜在層とは｜人材紹介の求職者集客で使い分けるターゲット設計",
     "description": "転職顕在層と潜在層の違い、それぞれの集客チャネル・訴求・CPAの目安を整理し、人材紹介の中長期パイプラインを作る考え方を解説します。",
@@ -1341,22 +1357,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-latent-candidates",
-    "title": "顕在層・潜在層とは｜人材紹介の求職者集客で使い分けるターゲット設計",
-    "description": "転職顕在層と潜在層の違い、それぞれの集客チャネル・訴求・CPAの目安を整理し、人材紹介の中長期パイプラインを作る考え方を解説します。",
-    "category": "用語解説",
-    "keywords": [
-      "転職 顕在層 潜在層",
-      "人材紹介 ターゲット",
-      "潜在層 集客",
-      "求職者 パイプライン"
-    ],
-    "primary_keyword": "転職 顕在層 潜在層",
-    "status": "ready",
-    "scheduled": "2026-07-10",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-latent-candidates/"
-  },
-  {
     "slug": "recruitment-mid-career-trends-2026",
     "title": "中途採用市場トレンド2026｜人材紹介エージェントが押さえる7つの変化",
     "description": "2026年の中途採用市場の求人倍率・年収動向・求職者行動変化を整理し、人材紹介エージェントが取るべき集客・マッチング戦略を提示します。",
@@ -1368,14 +1368,8 @@
       "求人倍率 2026"
     ],
     "primary_keyword": "中途採用 トレンド 2026",
-    "key_points": [
-      "2026年の中途採用市場規模と求人倍率の見通し",
-      "職種別・年代別に見る求職者行動の変化",
-      "AI・リモート・副業が採用市場に与える影響",
-      "エージェントが取るべき集客・マッチングの打ち手"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-11",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-mid-career-trends-2026/"
   },
   {
@@ -1397,7 +1391,7 @@
       "ポジティブ口コミを増やすアンケート・依頼運用"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-review-management/"
   },
   {
@@ -1419,7 +1413,7 @@
       "面談着座までの導線とCPA・工数の目安"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-wantedly-marketing/"
   }
 ]

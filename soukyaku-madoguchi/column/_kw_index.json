@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-review-management",
+    "title": "人材紹介の口コミ・評判管理｜Googleレビューと転職口コミサイト対策",
+    "description": "転職会議・OpenWork・Googleビジネスプロフィール等の口コミが集客に与える影響と、ネガティブレビューを減らす運用体制を解説します。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 口コミ",
+      "転職エージェント 評判",
+      "Googleレビュー 対策",
+      "転職会議 対策"
+    ],
+    "primary_keyword": "人材紹介 口コミ",
+    "status": "published",
+    "published": "2026-07-12",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-review-management/"
+  },
+  {
     "slug": "recruitment-mid-career-trends-2026",
     "title": "中途採用市場トレンド2026｜人材紹介エージェントが押さえる7つの変化",
     "description": "2026年の中途採用市場の求人倍率・年収動向・求職者行動変化を整理し、人材紹介エージェントが取るべき集客・マッチング戦略を提示します。",
@@ -1357,22 +1373,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-mid-career-trends-2026",
-    "title": "中途採用市場トレンド2026｜人材紹介エージェントが押さえる7つの変化",
-    "description": "2026年の中途採用市場の求人倍率・年収動向・求職者行動変化を整理し、人材紹介エージェントが取るべき集客・マッチング戦略を提示します。",
-    "category": "業界トレンド",
-    "keywords": [
-      "中途採用 トレンド 2026",
-      "転職市場 動向",
-      "人材紹介 市場",
-      "求人倍率 2026"
-    ],
-    "primary_keyword": "中途採用 トレンド 2026",
-    "status": "ready",
-    "scheduled": "2026-07-11",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-mid-career-trends-2026/"
-  },
-  {
     "slug": "recruitment-review-management",
     "title": "人材紹介の口コミ・評判管理｜Googleレビューと転職口コミサイト対策",
     "description": "転職会議・OpenWork・Googleビジネスプロフィール等の口コミが集客に与える影響と、ネガティブレビューを減らす運用体制を解説します。",
@@ -1384,14 +1384,8 @@
       "転職会議 対策"
     ],
     "primary_keyword": "人材紹介 口コミ",
-    "key_points": [
-      "口コミ・評判が人材紹介の応募数に与えるインパクト",
-      "主要口コミサイトの特徴と監視すべきKPI",
-      "ネガティブレビューの発生原因とCXでの予防策",
-      "ポジティブ口コミを増やすアンケート・依頼運用"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-12",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-review-management/"
   },
   {
@@ -1413,7 +1407,7 @@
       "面談着座までの導線とCPA・工数の目安"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-wantedly-marketing/"
   }
 ]

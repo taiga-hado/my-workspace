@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-wantedly-marketing",
+    "title": "人材紹介のWantedly活用｜共感採用型メディアで求職者を集める運用",
+    "description": "Wantedlyの募集記事・ストーリー・スカウトを活用し、20〜30代の転職潜在層から人材紹介の求職者リードを集める運用手順を解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "Wantedly 人材紹介",
+      "Wantedly 集客",
+      "共感採用 求職者",
+      "Wantedly スカウト"
+    ],
+    "primary_keyword": "Wantedly 人材紹介",
+    "status": "published",
+    "published": "2026-07-13",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-wantedly-marketing/"
+  },
+  {
     "slug": "recruitment-review-management",
     "title": "人材紹介の口コミ・評判管理｜Googleレビューと転職口コミサイト対策",
     "description": "転職会議・OpenWork・Googleビジネスプロフィール等の口コミが集客に与える影響と、ネガティブレビューを減らす運用体制を解説します。",
@@ -1373,22 +1389,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-review-management",
-    "title": "人材紹介の口コミ・評判管理｜Googleレビューと転職口コミサイト対策",
-    "description": "転職会議・OpenWork・Googleビジネスプロフィール等の口コミが集客に与える影響と、ネガティブレビューを減らす運用体制を解説します。",
-    "category": "課題解決",
-    "keywords": [
-      "人材紹介 口コミ",
-      "転職エージェント 評判",
-      "Googleレビュー 対策",
-      "転職会議 対策"
-    ],
-    "primary_keyword": "人材紹介 口コミ",
-    "status": "ready",
-    "scheduled": "2026-07-12",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-review-management/"
-  },
-  {
     "slug": "recruitment-wantedly-marketing",
     "title": "人材紹介のWantedly活用｜共感採用型メディアで求職者を集める運用",
     "description": "Wantedlyの募集記事・ストーリー・スカウトを活用し、20〜30代の転職潜在層から人材紹介の求職者リードを集める運用手順を解説します。",
@@ -1400,14 +1400,8 @@
       "Wantedly スカウト"
     ],
     "primary_keyword": "Wantedly 人材紹介",
-    "key_points": [
-      "Wantedlyの特徴と人材紹介エージェントに向く使い方",
-      "応募が集まる募集記事とストーリーの型",
-      "スカウト運用と返信率を上げる文面設計",
-      "面談着座までの導線とCPA・工数の目安"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-13",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-wantedly-marketing/"
   }
 ]

@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-google-for-jobs",
+    "title": "Google for Jobs対策で求職者を集める｜構造化データと求人ページ最適化",
+    "description": "Google for Jobsに求人を表示させる方法を、JobPosting構造化データの実装から求人ページSEO、指名検索対策まで人材紹介向けに解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "Google for Jobs",
+      "求人検索",
+      "構造化データ",
+      "JobPosting",
+      "人材紹介 SEO"
+    ],
+    "primary_keyword": "Google for Jobs",
+    "status": "published",
+    "published": "2026-07-14",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-google-for-jobs/"
+  },
+  {
     "slug": "recruitment-wantedly-marketing",
     "title": "人材紹介のWantedly活用｜共感採用型メディアで求職者を集める運用",
     "description": "Wantedlyの募集記事・ストーリー・スカウトを活用し、20〜30代の転職潜在層から人材紹介の求職者リードを集める運用手順を解説します。",
@@ -1389,19 +1406,110 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-wantedly-marketing",
-    "title": "人材紹介のWantedly活用｜共感採用型メディアで求職者を集める運用",
-    "description": "Wantedlyの募集記事・ストーリー・スカウトを活用し、20〜30代の転職潜在層から人材紹介の求職者リードを集める運用手順を解説します。",
+    "slug": "recruitment-google-for-jobs",
+    "title": "Google for Jobs対策で求職者を集める｜構造化データと求人ページ最適化",
+    "description": "Google for Jobsに求人を表示させる方法を、JobPosting構造化データの実装から求人ページSEO、指名検索対策まで人材紹介向けに解説します。",
     "category": "ハウツー",
     "keywords": [
-      "Wantedly 人材紹介",
-      "Wantedly 集客",
-      "共感採用 求職者",
-      "Wantedly スカウト"
+      "Google for Jobs",
+      "求人検索",
+      "構造化データ",
+      "JobPosting",
+      "人材紹介 SEO"
     ],
-    "primary_keyword": "Wantedly 人材紹介",
+    "primary_keyword": "Google for Jobs",
     "status": "ready",
-    "scheduled": "2026-07-13",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-wantedly-marketing/"
+    "scheduled": "2026-07-14",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-google-for-jobs/"
+  },
+  {
+    "slug": "recruitment-sge-aio-seo",
+    "title": "生成AI検索（SGE・AI Overviews）時代の人材紹介SEO戦略",
+    "description": "GoogleのSGE・AI Overviewsが検索行動を変える中、人材紹介エージェントが求職者流入を守るためのAIO対策とコンテンツ設計を解説します。",
+    "category": "業界トレンド",
+    "keywords": [
+      "SGE 対策",
+      "AI Overviews",
+      "生成AI検索",
+      "人材紹介 SEO",
+      "AIO"
+    ],
+    "primary_keyword": "SGE 対策",
+    "key_points": [
+      "SGE・AI Overviewsが求職者検索に与える影響",
+      "AI検索に引用されるコンテンツの要件",
+      "一次情報・E-E-A-Tと構造化データの強化",
+      "AI経由流入の計測とファネル再設計"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sge-aio-seo/"
+  },
+  {
+    "slug": "recruitment-inside-sales-acquisition",
+    "title": "インサイドセールス職の求職者集客戦略｜SDR・BDR志望者の獲得設計",
+    "description": "SaaS拡大で需要が高まるインサイドセールス職の求職者を集める訴求設計とチャネル戦略を、SDR・BDR志望のペルソナ別に解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "インサイドセールス 転職",
+      "SDR 求職者",
+      "BDR 集客",
+      "人材紹介 IS"
+    ],
+    "primary_keyword": "インサイドセールス 転職",
+    "key_points": [
+      "インサイドセールス求職者のペルソナと動機",
+      "SDR・BDR・フィールドセールス志向別の訴求",
+      "主要チャネル（SNS・SEO・広告）の使い分け",
+      "面談着座までのカウンセリング設計"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-inside-sales-acquisition/"
+  },
+  {
+    "slug": "recruitment-attribution-analysis",
+    "title": "人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する",
+    "description": "SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。",
+    "category": "用語解説",
+    "keywords": [
+      "アトリビューション分析",
+      "人材紹介 効果測定",
+      "ラストクリック",
+      "データドリブン集客"
+    ],
+    "primary_keyword": "アトリビューション分析",
+    "key_points": [
+      "アトリビューション分析の基本と5つのモデル",
+      "ラストクリック偏重が招く誤った予算配分",
+      "GA4・広告プラットフォームでの実装方法",
+      "面談・決定まで含めた貢献度評価の実務"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-attribution-analysis/"
+  },
+  {
+    "slug": "recruitment-candidate-nps",
+    "title": "求職者NPSで人材紹介の満足度を可視化する｜計測方法と改善サイクル",
+    "description": "求職者ロイヤリティを示すNPSの取り方と、面談離脱・辞退・口コミにつなげる改善サイクルを人材紹介エージェント向けに実務レベルで解説します。",
+    "category": "課題解決",
+    "keywords": [
+      "求職者 NPS",
+      "候補者満足度",
+      "人材紹介 CX",
+      "ロイヤリティ",
+      "口コミ"
+    ],
+    "primary_keyword": "求職者 NPS",
+    "key_points": [
+      "求職者NPSの計測タイミングと設問設計",
+      "スコアの分解とボトルネック特定",
+      "フォローアップ運用と改善アクション",
+      "NPS向上が口コミ・紹介経由集客に与える効果"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-nps/"
   }
 ]

@@ -646,5 +646,13 @@
     "category": "ハウツー",
     "published": "2026-07-13",
     "excerpt": "Wantedlyの募集記事・ストーリー・スカウトを活用し、20〜30代の転職潜在層から人材紹介の求職者リードを集める運用手順を解説します。"
+  },
+  {
+    "slug": "recruitment-google-for-jobs",
+    "title": "Google for Jobs対策で求職者を集める｜構造化データと求人ページ最適化",
+    "description": "Google for Jobsに求人を表示させる方法を、JobPosting構造化データの実装から求人ページSEO、指名検索対策まで人材紹介向けに解説します。",
+    "category": "ハウツー",
+    "published": "2026-07-14",
+    "excerpt": "Google for Jobsに求人を表示させる方法を、JobPosting構造化データの実装から求人ページSEO、指名検索対策まで人材紹介向けに解説します。"
   }
 ]

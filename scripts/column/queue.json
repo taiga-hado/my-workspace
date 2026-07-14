@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "slug": "recruitment-sge-aio-seo",
+    "title": "生成AI検索（SGE・AI Overviews）時代の人材紹介SEO戦略",
+    "description": "GoogleのSGE・AI Overviewsが検索行動を変える中、人材紹介エージェントが求職者流入を守るためのAIO対策とコンテンツ設計を解説します。",
+    "keywords": "SGE 対策,AI Overviews,生成AI検索,人材紹介 SEO,AIO",
+    "category": "業界トレンド",
+    "image_prompt": "deep navy blue (#1a3a8a) and gold (#f5b400) accent flat editorial illustration of an abstract AI neural network overlapping with a search result panel and a rising arrow, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "SGE・AI Overviewsが求職者検索に与える影響",
+      "AI検索に引用されるコンテンツの要件",
+      "一次情報・E-E-A-Tと構造化データの強化",
+      "AI経由流入の計測とファネル再設計"
+    ]
+  },
+  {
+    "slug": "recruitment-inside-sales-acquisition",
+    "title": "インサイドセールス職の求職者集客戦略｜SDR・BDR志望者の獲得設計",
+    "description": "SaaS拡大で需要が高まるインサイドセールス職の求職者を集める訴求設計とチャネル戦略を、SDR・BDR志望のペルソナ別に解説します。",
+    "keywords": "インサイドセールス 転職,SDR 求職者,BDR 集客,人材紹介 IS",
+    "category": "セグメント別",
+    "image_prompt": "deep navy blue (#1a3a8a) and gold (#f5b400) accent flat editorial illustration of a headset icon connected to a laptop with rising graph and pipeline funnel, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "インサイドセールス求職者のペルソナと動機",
+      "SDR・BDR・フィールドセールス志向別の訴求",
+      "主要チャネル（SNS・SEO・広告）の使い分け",
+      "面談着座までのカウンセリング設計"
+    ]
+  },
+  {
+    "slug": "recruitment-attribution-analysis",
+    "title": "人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する",
+    "description": "SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。",
+    "keywords": "アトリビューション分析,人材紹介 効果測定,ラストクリック,データドリブン集客",
+    "category": "用語解説",
+    "image_prompt": "deep navy blue (#1a3a8a) and gold (#f5b400) accent flat editorial illustration of multiple channel icons converging into a single conversion node with weighted paths, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "アトリビューション分析の基本と5つのモデル",
+      "ラストクリック偏重が招く誤った予算配分",
+      "GA4・広告プラットフォームでの実装方法",
+      "面談・決定まで含めた貢献度評価の実務"
+    ]
+  },
+  {
+    "slug": "recruitment-candidate-nps",
+    "title": "求職者NPSで人材紹介の満足度を可視化する｜計測方法と改善サイクル",
+    "description": "求職者ロイヤリティを示すNPSの取り方と、面談離脱・辞退・口コミにつなげる改善サイクルを人材紹介エージェント向けに実務レベルで解説します。",
+    "keywords": "求職者 NPS,候補者満足度,人材紹介 CX,ロイヤリティ,口コミ",
+    "category": "課題解決",
+    "image_prompt": "deep navy blue (#1a3a8a) and gold (#f5b400) accent flat editorial illustration of a satisfaction meter arc with smiling avatars and star ratings, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "求職者NPSの計測タイミングと設問設計",
+      "スコアの分解とボトルネック特定",
+      "フォローアップ運用と改善アクション",
+      "NPS向上が口コミ・紹介経由集客に与える効果"
+    ]
+  }
+]

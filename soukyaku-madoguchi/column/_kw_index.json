@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-sge-aio-seo",
+    "title": "生成AI検索（SGE・AI Overviews）時代の人材紹介SEO戦略",
+    "description": "GoogleのSGE・AI Overviewsが検索行動を変える中、人材紹介エージェントが求職者流入を守るためのAIO対策とコンテンツ設計を解説します。",
+    "category": "業界トレンド",
+    "keywords": [
+      "SGE 対策",
+      "AI Overviews",
+      "生成AI検索",
+      "人材紹介 SEO",
+      "AIO"
+    ],
+    "primary_keyword": "SGE 対策",
+    "status": "published",
+    "published": "2026-07-15",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sge-aio-seo/"
+  },
+  {
     "slug": "recruitment-google-for-jobs",
     "title": "Google for Jobs対策で求職者を集める｜構造化データと求人ページ最適化",
     "description": "Google for Jobsに求人を表示させる方法を、JobPosting構造化データの実装から求人ページSEO、指名検索対策まで人材紹介向けに解説します。",
@@ -1406,23 +1423,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-google-for-jobs",
-    "title": "Google for Jobs対策で求職者を集める｜構造化データと求人ページ最適化",
-    "description": "Google for Jobsに求人を表示させる方法を、JobPosting構造化データの実装から求人ページSEO、指名検索対策まで人材紹介向けに解説します。",
-    "category": "ハウツー",
-    "keywords": [
-      "Google for Jobs",
-      "求人検索",
-      "構造化データ",
-      "JobPosting",
-      "人材紹介 SEO"
-    ],
-    "primary_keyword": "Google for Jobs",
-    "status": "ready",
-    "scheduled": "2026-07-14",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-google-for-jobs/"
-  },
-  {
     "slug": "recruitment-sge-aio-seo",
     "title": "生成AI検索（SGE・AI Overviews）時代の人材紹介SEO戦略",
     "description": "GoogleのSGE・AI Overviewsが検索行動を変える中、人材紹介エージェントが求職者流入を守るためのAIO対策とコンテンツ設計を解説します。",
@@ -1435,14 +1435,8 @@
       "AIO"
     ],
     "primary_keyword": "SGE 対策",
-    "key_points": [
-      "SGE・AI Overviewsが求職者検索に与える影響",
-      "AI検索に引用されるコンテンツの要件",
-      "一次情報・E-E-A-Tと構造化データの強化",
-      "AI経由流入の計測とファネル再設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-15",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sge-aio-seo/"
   },
   {
@@ -1464,7 +1458,7 @@
       "面談着座までのカウンセリング設計"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-inside-sales-acquisition/"
   },
   {
@@ -1486,7 +1480,7 @@
       "面談・決定まで含めた貢献度評価の実務"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-attribution-analysis/"
   },
   {
@@ -1509,7 +1503,7 @@
       "NPS向上が口コミ・紹介経由集客に与える効果"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-nps/"
   }
 ]

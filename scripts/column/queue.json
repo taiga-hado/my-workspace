@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-sge-aio-seo",
-    "title": "生成AI検索（SGE・AI Overviews）時代の人材紹介SEO戦略",
-    "description": "GoogleのSGE・AI Overviewsが検索行動を変える中、人材紹介エージェントが求職者流入を守るためのAIO対策とコンテンツ設計を解説します。",
-    "keywords": "SGE 対策,AI Overviews,生成AI検索,人材紹介 SEO,AIO",
-    "category": "業界トレンド",
-    "image_prompt": "deep navy blue (#1a3a8a) and gold (#f5b400) accent flat editorial illustration of an abstract AI neural network overlapping with a search result panel and a rising arrow, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
-    "key_points": [
-      "SGE・AI Overviewsが求職者検索に与える影響",
-      "AI検索に引用されるコンテンツの要件",
-      "一次情報・E-E-A-Tと構造化データの強化",
-      "AI経由流入の計測とファネル再設計"
-    ]
-  },
-  {
     "slug": "recruitment-inside-sales-acquisition",
     "title": "インサイドセールス職の求職者集客戦略｜SDR・BDR志望者の獲得設計",
     "description": "SaaS拡大で需要が高まるインサイドセールス職の求職者を集める訴求設計とチャネル戦略を、SDR・BDR志望のペルソナ別に解説します。",

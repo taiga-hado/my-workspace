@@ -654,5 +654,13 @@
     "category": "ハウツー",
     "published": "2026-07-14",
     "excerpt": "Google for Jobsに求人を表示させる方法を、JobPosting構造化データの実装から求人ページSEO、指名検索対策まで人材紹介向けに解説します。"
+  },
+  {
+    "slug": "recruitment-sge-aio-seo",
+    "title": "生成AI検索（SGE・AI Overviews）時代の人材紹介SEO戦略",
+    "description": "GoogleのSGE・AI Overviewsが検索行動を変える中、人材紹介エージェントが求職者流入を守るためのAIO対策とコンテンツ設計を解説します。",
+    "category": "業界トレンド",
+    "published": "2026-07-15",
+    "excerpt": "GoogleのSGE・AI Overviewsが検索行動を変える中、人材紹介エージェントが求職者流入を守るためのAIO対策とコンテンツ設計を解説します。"
   }
 ]

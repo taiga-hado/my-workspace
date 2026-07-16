@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-inside-sales-acquisition",
-    "title": "インサイドセールス職の求職者集客戦略｜SDR・BDR志望者の獲得設計",
-    "description": "SaaS拡大で需要が高まるインサイドセールス職の求職者を集める訴求設計とチャネル戦略を、SDR・BDR志望のペルソナ別に解説します。",
-    "keywords": "インサイドセールス 転職,SDR 求職者,BDR 集客,人材紹介 IS",
-    "category": "セグメント別",
-    "image_prompt": "deep navy blue (#1a3a8a) and gold (#f5b400) accent flat editorial illustration of a headset icon connected to a laptop with rising graph and pipeline funnel, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
-    "key_points": [
-      "インサイドセールス求職者のペルソナと動機",
-      "SDR・BDR・フィールドセールス志向別の訴求",
-      "主要チャネル（SNS・SEO・広告）の使い分け",
-      "面談着座までのカウンセリング設計"
-    ]
-  },
-  {
     "slug": "recruitment-attribution-analysis",
     "title": "人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する",
     "description": "SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。",

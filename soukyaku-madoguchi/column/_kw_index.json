@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-inside-sales-acquisition",
+    "title": "インサイドセールス職の求職者集客戦略｜SDR・BDR志望者の獲得設計",
+    "description": "SaaS拡大で需要が高まるインサイドセールス職の求職者を集める訴求設計とチャネル戦略を、SDR・BDR志望のペルソナ別に解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "インサイドセールス 転職",
+      "SDR 求職者",
+      "BDR 集客",
+      "人材紹介 IS"
+    ],
+    "primary_keyword": "インサイドセールス 転職",
+    "status": "published",
+    "published": "2026-07-16",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-inside-sales-acquisition/"
+  },
+  {
     "slug": "recruitment-sge-aio-seo",
     "title": "生成AI検索（SGE・AI Overviews）時代の人材紹介SEO戦略",
     "description": "GoogleのSGE・AI Overviewsが検索行動を変える中、人材紹介エージェントが求職者流入を守るためのAIO対策とコンテンツ設計を解説します。",
@@ -1423,23 +1439,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-sge-aio-seo",
-    "title": "生成AI検索（SGE・AI Overviews）時代の人材紹介SEO戦略",
-    "description": "GoogleのSGE・AI Overviewsが検索行動を変える中、人材紹介エージェントが求職者流入を守るためのAIO対策とコンテンツ設計を解説します。",
-    "category": "業界トレンド",
-    "keywords": [
-      "SGE 対策",
-      "AI Overviews",
-      "生成AI検索",
-      "人材紹介 SEO",
-      "AIO"
-    ],
-    "primary_keyword": "SGE 対策",
-    "status": "ready",
-    "scheduled": "2026-07-15",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sge-aio-seo/"
-  },
-  {
     "slug": "recruitment-inside-sales-acquisition",
     "title": "インサイドセールス職の求職者集客戦略｜SDR・BDR志望者の獲得設計",
     "description": "SaaS拡大で需要が高まるインサイドセールス職の求職者を集める訴求設計とチャネル戦略を、SDR・BDR志望のペルソナ別に解説します。",
@@ -1451,14 +1450,8 @@
       "人材紹介 IS"
     ],
     "primary_keyword": "インサイドセールス 転職",
-    "key_points": [
-      "インサイドセールス求職者のペルソナと動機",
-      "SDR・BDR・フィールドセールス志向別の訴求",
-      "主要チャネル（SNS・SEO・広告）の使い分け",
-      "面談着座までのカウンセリング設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-16",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-inside-sales-acquisition/"
   },
   {
@@ -1480,7 +1473,7 @@
       "面談・決定まで含めた貢献度評価の実務"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-attribution-analysis/"
   },
   {
@@ -1503,7 +1496,7 @@
       "NPS向上が口コミ・紹介経由集客に与える効果"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-nps/"
   }
 ]

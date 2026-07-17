@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-attribution-analysis",
+    "title": "人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する",
+    "description": "SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。",
+    "category": "用語解説",
+    "keywords": [
+      "アトリビューション分析",
+      "人材紹介 効果測定",
+      "ラストクリック",
+      "データドリブン集客"
+    ],
+    "primary_keyword": "アトリビューション分析",
+    "status": "published",
+    "published": "2026-07-17",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-attribution-analysis/"
+  },
+  {
     "slug": "recruitment-inside-sales-acquisition",
     "title": "インサイドセールス職の求職者集客戦略｜SDR・BDR志望者の獲得設計",
     "description": "SaaS拡大で需要が高まるインサイドセールス職の求職者を集める訴求設計とチャネル戦略を、SDR・BDR志望のペルソナ別に解説します。",
@@ -1439,22 +1455,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-inside-sales-acquisition",
-    "title": "インサイドセールス職の求職者集客戦略｜SDR・BDR志望者の獲得設計",
-    "description": "SaaS拡大で需要が高まるインサイドセールス職の求職者を集める訴求設計とチャネル戦略を、SDR・BDR志望のペルソナ別に解説します。",
-    "category": "セグメント別",
-    "keywords": [
-      "インサイドセールス 転職",
-      "SDR 求職者",
-      "BDR 集客",
-      "人材紹介 IS"
-    ],
-    "primary_keyword": "インサイドセールス 転職",
-    "status": "ready",
-    "scheduled": "2026-07-16",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-inside-sales-acquisition/"
-  },
-  {
     "slug": "recruitment-attribution-analysis",
     "title": "人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する",
     "description": "SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。",
@@ -1466,14 +1466,8 @@
       "データドリブン集客"
     ],
     "primary_keyword": "アトリビューション分析",
-    "key_points": [
-      "アトリビューション分析の基本と5つのモデル",
-      "ラストクリック偏重が招く誤った予算配分",
-      "GA4・広告プラットフォームでの実装方法",
-      "面談・決定まで含めた貢献度評価の実務"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-17",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-attribution-analysis/"
   },
   {
@@ -1496,7 +1490,7 @@
       "NPS向上が口コミ・紹介経由集客に与える効果"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-nps/"
   }
 ]

@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-attribution-analysis",
-    "title": "人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する",
-    "description": "SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。",
-    "keywords": "アトリビューション分析,人材紹介 効果測定,ラストクリック,データドリブン集客",
-    "category": "用語解説",
-    "image_prompt": "deep navy blue (#1a3a8a) and gold (#f5b400) accent flat editorial illustration of multiple channel icons converging into a single conversion node with weighted paths, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
-    "key_points": [
-      "アトリビューション分析の基本と5つのモデル",
-      "ラストクリック偏重が招く誤った予算配分",
-      "GA4・広告プラットフォームでの実装方法",
-      "面談・決定まで含めた貢献度評価の実務"
-    ]
-  },
-  {
     "slug": "recruitment-candidate-nps",
     "title": "求職者NPSで人材紹介の満足度を可視化する｜計測方法と改善サイクル",
     "description": "求職者ロイヤリティを示すNPSの取り方と、面談離脱・辞退・口コミにつなげる改善サイクルを人材紹介エージェント向けに実務レベルで解説します。",

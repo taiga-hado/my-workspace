@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T4VBNNNN');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する｜求職者送客の窓口</title>
+  <meta name="description" content="SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。">
+  <meta name="keywords" content="アトリビューション分析,人材紹介 効果測定,ラストクリック,データドリブン集客">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-attribution-analysis/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する">
+  <meta property="og:description" content="SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。">
+  <meta property="og:url" content="https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-attribution-analysis/">
+  <meta property="og:image" content="https://kyusyokusyasokyaku-no-madoguchi.com/images/column/recruitment-attribution-analysis-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="shortcut icon" href="../../images/favicon.ico">
+  <link rel="apple-touch-icon" href="../../images/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する",
+    "description": "SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。",
+    "image": "https://kyusyokusyasokyaku-no-madoguchi.com/images/column/recruitment-attribution-analysis-hero.png",
+    "author": {
+      "@type": "Organization",
+      "name": "株式会社HADO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "求職者送客の窓口",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://kyusyokusyasokyaku-no-madoguchi.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-07-17",
+    "dateModified": "2026-07-17",
+    "mainEntityOfPage": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-attribution-analysis/"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <link rel="stylesheet" href="../../assets/column.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4VBNNNN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="../../index.html" class="site-logo">
+        <img src="../../images/logo.png" alt="求職者送客の窓口">
+      </a>
+      <nav class="site-nav">
+        <div class="site-nav-links">
+          <a href="../../index.html">トップ</a>
+          <a href="../../index.html#services">サービス</a>
+          <a href="../../index.html#cases">導入事例</a>
+          <a href="../" aria-current="page">コラム</a>
+        </div>
+        <a href="../../contact/" class="btn btn-dark btn-sm">お問い合わせ</a>
+      </nav>
+      <button class="burger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="art-hero">
+    <div class="art-hero-inner">
+      <div class="art-breadcrumb">
+        <a href="../../index.html">トップ</a><span class="sep"></span>
+        <a href="../">コラム</a><span class="sep"></span>
+        <span>人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する</span>
+      </div>
+      <span class="art-tag">用語解説</span>
+      <h1 class="art-title">人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する</h1>
+      <div class="art-meta">
+        <div class="art-meta-item">公開日：<strong>2026.07.17</strong></div>
+        <div class="art-meta-item">読了時間：<strong>約10分</strong></div>
+        <div class="art-meta-item">カテゴリ：<strong>用語解説</strong></div>
+      </div>
+      <div class="art-hero-img">
+        <img src="../../images/column/recruitment-attribution-analysis-hero.png" alt="人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する">
+      </div>
+    </div>
+  </section>
+
+  <article class="art-body">
+
+    <div class="art-lead">
+      <p>人材紹介の求職者集客は、SNS（Instagram・TikTok・X）、リスティング広告、ディスプレイ広告、SEO記事、リファラル、指名検索など、複数チャネルを横断して1人の応募につながるのが標準です。ある求職者は「Instagramで存在を知り、1週間後にGoogleで社名検索して応募」といった動きをします。この時、Instagramと指名検索のどちらに予算を寄せるべきかは、単純なCV計測では判断できません。</p>
+      <p>本記事では、人材紹介のアトリビューション分析の基本モデル、ラストクリック偏重が招く予算配分ミス、GA4・広告プラットフォームでの実装、面談着座・決定まで含めた貢献度評価の実務を、意思決定に使えるレベルで整理します。</p>
+    </div>
+
+    <nav class="art-toc">
+      <h3>目次</h3>
+      <ol>
+        <li><a href="#basic">アトリビューション分析の基本と5つのモデル</a></li>
+        <li><a href="#lastclick">ラストクリック偏重が招く誤った予算配分</a></li>
+        <li><a href="#implement">GA4・広告プラットフォームでの実装方法</a></li>
+        <li><a href="#downstream">面談・決定まで含めた貢献度評価の実務</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="basic">アトリビューション分析の基本と5つのモデル</h2>
+
+    <p>アトリビューション分析とは、コンバージョン（応募・面談予約など）に至るまでに接触した複数チャネルへ、貢献度を配分して評価する手法です。人材紹介の場合、応募までの平均接触回数は3〜7回、検討期間は2〜6週間が標準で、単一チャネル起因で応募に至るケースは全体の20〜30%に過ぎません。</p>
+
+    <p>主要な5つのモデル：</p>
+
+    <ul>
+      <li><strong>ラストクリック</strong>：最後にクリックしたチャネルに100%配分。GA4のデフォルト。実装は簡単だが上流チャネルを過小評価する</li>
+      <li><strong>ファーストクリック</strong>：最初の接触に100%配分。認知チャネル（SNS・記事広告）を評価しやすいが、CV直前の刈り取り施策を過小評価</li>
+      <li><strong>線形（Linear）</strong>：全接触チャネルに均等配分。中立だが差別化されにくい</li>
+      <li><strong>減衰（Time Decay）</strong>：CV直前のチャネルほど重く配分。検討期間が長い人材紹介と相性が良い</li>
+      <li><strong>データドリブン（DDA）</strong>：機械学習で貢献度を自動算出。GA4・Google広告で利用可能。データ量が一定以上必要（月間CV30件以上推奨）</li>
+    </ul>
+
+    <div class="art-callout">
+      <p><strong>人材紹介での推奨モデル</strong>：月間応募100件以上ならデータドリブン、それ未満なら減衰モデルが実用的です。ラストクリック単独評価は、SNSやSEOへの投資判断を誤らせるため避けるべきです。</p>
+    </div>
+
+    <h2 id="lastclick">ラストクリック偏重が招く誤った予算配分</h2>
+
+    <p>ラストクリック評価だけで予算配分を決めると、以下の歪みが発生します：</p>
+
+    <ul>
+      <li><strong>指名検索の過大評価</strong>：CV直前に「◯◯エージェント」で検索して応募したケースが、指名検索広告の成果としてカウントされる。実際は上流のSNS・記事広告が認知を作っている</li>
+      <li><strong>SNSの過小評価</strong>：Instagram・TikTokは認知〜比較検討フェーズで接触し、直接CVには繋がりにくい。ラストクリック評価だと「ROASが低い」と判断され、予算削減されがち</li>
+      <li><strong>SEO記事の過小評価</strong>：情報収集フェーズで読まれる記事は、直接CVよりアシスト貢献が多い。月間流入1万PVあっても、ラストクリックCVは10〜30件程度が標準</li>
+      <li><strong>リターゲティング広告の過大評価</strong>：既に他チャネルで温まった見込み客を刈り取っているだけで、新規獲得への貢献は限定的</li>
+    </ul>
+
+    <p>実際の事例として、あるエージェントがラストクリック評価でInstagram広告を停止したところ、3ヶ月後にリスティング広告の応募CPAが12,000円から19,000円に上昇したケースがあります。<strong>上流の認知チャネルが指名検索・リスティングのCV効率を支えている構造</strong>を、単一評価では見抜けません。</p>
+
+    <h2 id="implement">GA4・広告プラットフォームでの実装方法</h2>
+
+    <p>実装の基本ステップ：</p>
+
+    <h3>1. GA4でのアトリビューション設定</h3>
+
+    <ul>
+      <li>「広告」→「アトリビューション」→「アトリビューションモデル」から比較可能</li>
+      <li>2023年以降、GA4はデータドリブンモデルがデフォルト（旧UAはラストクリック）</li>
+      <li>「モデル比較」レポートで、ラストクリックとDDAの差分を確認</li>
+      <li>UTMパラメータ（utm_source, utm_medium, utm_campaign）を全チャネルで統一設計</li>
+    </ul>
+
+    <h3>2. Google広告・Meta広告の設定</h3>
+
+    <ul>
+      <li>Google広告：「ツール」→「アトリビューション」でDDAを選択</li>
+      <li>Meta広告：「アトリビューション設定」でクリック後7日・ビュースルー1日が標準</li>
+      <li><strong>プラットフォーム間の重複CVカウント</strong>に注意。Google・Meta・LINE広告を並行運用すると、CVが1.5〜2倍に膨らむ見え方をする</li>
+    </ul>
+
+    <h3>3. サーバーサイド計測とCAPI連携</h3>
+
+    <p>Cookie規制（ITP・第三者Cookie廃止）で、クライアント側計測の精度は年々低下しています。GA4のMeasurement Protocol、Meta Conversions API（CAPI）を使ったサーバーサイド計測で、面談着座・決定などのオフラインCVも広告プラットフォームに戻すのが、2025年以降の標準です。</p>
+
+    <div class="art-callout">
+      <p><strong>実装コスト感</strong>：GA4基本設定＋UTM整備＝内製で20〜40時間。CAPI連携＝開発30〜80万円、または月額5〜15万円のツール（Segment、Google Tag Manager Server-Side）を利用するのが現実的です。</p>
+    </div>
+
+    <h2 id="downstream">面談・決定まで含めた貢献度評価の実務</h2>
+
+    <p>人材紹介で最も重要なのは、応募CVではなく「面談着座」「求人紹介」「決定」までの下流KPIをアトリビューション対象に含めることです。応募数だけで評価すると、着座率30%のチャネルと着座率70%のチャネルが同列に扱われてしまいます。</p>
+
+    <p>実装ステップ：</p>
+
+    <ul>
+      <li><strong>ATS（採用管理システム）との連携</strong>：応募ID・UTMパラメータをATSに保存し、面談着座・決定時に流入元を紐付ける</li>
+      <li><strong>チャネル別の歩留まり指標</strong>：応募→着座率、着座→紹介率、紹介→決定率をチャネル別に集計</li>
+      <li><strong>チャネル別CPA（決定単価）</strong>：「応募CPA × 応募→決定率の逆数」で算出。決定単価は50万〜150万円が標準レンジ</li>
+      <li><strong>ROAS計算</strong>：決定単価と紹介手数料（年収の30〜35%＝100万〜200万円）を比較。ROAS 200%以上が事業として成立するライン</li>
+    </ul>
+
+    <p>チャネル別の傾向として、SNS経由の応募者は着座率が55〜70%と高い一方、決定までの検討期間が長い。リスティング経由は着座率75〜85%と高く、比較的短期決定。SEO経由は着座率が40〜60%と幅があるが、決定した際の定着率が高い、といった特性差があります。<strong>これらを踏まえて予算配分するのが、真のデータドリブン集客</strong>です。</p>
+
+
+    <div class="art-summary">
+      <h3>SUMMARY</h3>
+      <ul>
+        <li>アトリビューション分析は複数チャネルの貢献度を配分評価する手法。人材紹介は応募まで平均3〜7回接触が標準</li>
+        <li>ラストクリック評価は指名検索・リタゲを過大評価し、SNS・SEOなど上流チャネルを過小評価する構造的欠陥がある</li>
+        <li>GA4はデータドリブンモデルがデフォルト。Cookie規制対応でCAPI等サーバーサイド計測が2025年以降の標準</li>
+        <li>応募CVではなく面談着座・決定までATS連携で追跡し、チャネル別の決定単価・ROASで評価すべき</li>
+      </ul>
+    </div>
+
+    <!-- art-related-start -->
+    <div class="art-related">
+      <div class="art-related-eyebrow">RELATED ARTICLES</div>
+      <h3>合わせて読みたい記事</h3>
+      <div class="art-related-grid">
+        <a href="../recruitment-latent-candidates/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-latent-candidates-hero.png" alt="顕在層・潜在層とは｜人材紹介の求職者集客で使い分けるターゲット設計" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">用語解説</span>
+            <h4>顕在層・潜在層とは｜人材紹介の求職者集客で使い分けるターゲット設計</h4>
+          </div>
+        </a>
+        <a href="../recruitment-talent-pool/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-talent-pool-hero.png" alt="タレントプールとは｜人材紹介で候補者ストックを資産化する運用設計" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">用語解説</span>
+            <h4>タレントプールとは｜人材紹介で候補者ストックを資産化する運用設計</h4>
+          </div>
+        </a>
+        <a href="../recruitment-antisocial-check/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-antisocial-check-hero.png" alt="人材紹介の反社チェック実務｜求職者・取引先を確認する仕組みと頻度" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">用語解説</span>
+            <h4>人材紹介の反社チェック実務｜求職者・取引先を確認する仕組みと頻度</h4>
+          </div>
+        </a>
+        <a href="../recruitment-shoukai-fee/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-shoukai-fee-hero.png" alt="人材紹介の手数料設計｜成功報酬の業界標準と差別化のポイント" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">用語解説</span>
+            <h4>人材紹介の手数料設計｜成功報酬の業界標準と差別化のポイント</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- art-related-end -->
+
+    <div class="art-bridge">
+      <h3>データドリブン集客を「着座起点」で組み立てたい場合</h3>
+      <p>アトリビューション分析を精緻に実装しても、そもそも応募数が少なければ意思決定に足るデータが集まりません。月間応募30件未満のフェーズでは、統計的にDDAが機能せず、ラストクリック評価に依存してしまうジレンマがあります。この段階では、応募CPAではなく「面談着座CPA」を固定した状態で集客量を確保する、外部の成果報酬型送客を組み合わせるのが現実解です。</p>
+      <p>「求職者送客の窓口」は、SNSを軸とした独自集客で第二新卒・若手未経験・新卒求職者を集め、事前カウンセリングで志向性を確認してからエージェント様に送客する着座成果報酬型サービスです。<strong>初期費用0円・月額費用0円・面談着座率80〜90%</strong>で、着座単価が固定されているため、自社の他チャネルとのアトリビューション比較・ROAS算出が明確に行えます。</p>
+    </div>
+
+    <div class="art-cta">
+      <div class="art-cta-inner">
+        <h3>面談だけに集中できる、<br><span class="gold">新しい求職者獲得モデル</span>へ。</h3>
+        <p>御社の獲得したい求職者像・月間希望面談数に合わせた送客プランを、無料でご提案いたします。</p>
+        <a href="https://kyusyokusyasokyaku-no-madoguchi.com/?ref=column-recruitment-attribution-analysis" class="btn btn-lg btn-arrow">サービス詳細を見る</a>
+      </div>
+    </div>
+
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../../images/logo.png" alt="求職者送客の窓口">
+          <p class="footer-tagline">人材紹介エージェント様のための、着座成果報酬型 求職者送客サービス。面談までの工数を一括代行し、事業成長を支援します。</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../../daini-shinsotsu/">第二新卒・未経験層向け</a></li>
+            <li><a href="../../shinsotsu/">新卒向け</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="../../index.html">トップ</a></li>
+            <li><a href="../../index.html#cases">導入事例</a></li>
+            <li><a href="../">コラム</a></li>
+            <li><a href="../../contact/">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <dl class="footer-company-list">
+            <dt>会社名</dt><dd>株式会社HADO</dd>
+            <dt>所在地</dt><dd>東京都渋谷区桜丘町21-4<br>渋谷桜丘町ビル3F</dd>
+            <dt>設立</dt><dd>2020年11月6日</dd>
+            <dt>Web</dt><dd><a href="https://hado.co.jp/" target="_blank" rel="noopener">hado.co.jp</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="footer-bottom">© 株式会社HADO. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="../../assets/site.js"></script>
+</body>
+</html>

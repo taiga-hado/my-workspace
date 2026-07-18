@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-candidate-nps",
+    "title": "求職者NPSで人材紹介の満足度を可視化する｜計測方法と改善サイクル",
+    "description": "求職者ロイヤリティを示すNPSの取り方と、面談離脱・辞退・口コミにつなげる改善サイクルを人材紹介エージェント向けに実務レベルで解説します。",
+    "category": "課題解決",
+    "keywords": [
+      "求職者 NPS",
+      "候補者満足度",
+      "人材紹介 CX",
+      "ロイヤリティ",
+      "口コミ"
+    ],
+    "primary_keyword": "求職者 NPS",
+    "status": "published",
+    "published": "2026-07-18",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-nps/"
+  },
+  {
     "slug": "recruitment-attribution-analysis",
     "title": "人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する",
     "description": "SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。",
@@ -1455,22 +1472,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-attribution-analysis",
-    "title": "人材紹介のアトリビューション分析とは｜多チャネル流入の貢献度を正しく評価する",
-    "description": "SNS・広告・SEOが絡む人材紹介の求職者集客で、どのチャネルが面談・決定に貢献したかを可視化するアトリビューション分析の考え方と実装を解説します。",
-    "category": "用語解説",
-    "keywords": [
-      "アトリビューション分析",
-      "人材紹介 効果測定",
-      "ラストクリック",
-      "データドリブン集客"
-    ],
-    "primary_keyword": "アトリビューション分析",
-    "status": "ready",
-    "scheduled": "2026-07-17",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-attribution-analysis/"
-  },
-  {
     "slug": "recruitment-candidate-nps",
     "title": "求職者NPSで人材紹介の満足度を可視化する｜計測方法と改善サイクル",
     "description": "求職者ロイヤリティを示すNPSの取り方と、面談離脱・辞退・口コミにつなげる改善サイクルを人材紹介エージェント向けに実務レベルで解説します。",
@@ -1483,14 +1484,8 @@
       "口コミ"
     ],
     "primary_keyword": "求職者 NPS",
-    "key_points": [
-      "求職者NPSの計測タイミングと設問設計",
-      "スコアの分解とボトルネック特定",
-      "フォローアップ運用と改善アクション",
-      "NPS向上が口コミ・紹介経由集客に与える効果"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-18",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-nps/"
   }
 ]

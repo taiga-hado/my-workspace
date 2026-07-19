@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "slug": "recruitment-pmax-google-ads",
+    "title": "Google広告P-MAXを人材紹介で使う｜設定と成果を出す運用設計",
+    "description": "P-MAX（パフォーマンスマックス）は人材紹介の求職者集客で使えるか。設定手順・アセット準備・除外シグナル・CPA改善のコツまで運用者向けに解説します。",
+    "keywords": "P-MAX 人材紹介,パフォーマンスマックス 求職者集客,Google広告 P-MAX 運用,P-MAX CPA",
+    "category": "ハウツー",
+    "image_prompt": "Deep navy blue (#1a3a8a) flat editorial illustration of a multi-channel automated marketing hub with signals radiating outward in gold (#f5b400) beams, abstract dashboard tiles and gears, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "P-MAXの仕組みと人材紹介での適性・向いていないケース",
+      "アセット準備：見出し・説明文・画像・動画のベストプラクティス",
+      "オーディエンスシグナル・除外設定でCPAを下げる方法",
+      "P-MAXと検索広告の役割分担とレポート分析の実務"
+    ]
+  },
+  {
+    "slug": "recruitment-consulting-acquisition",
+    "title": "コンサルティング業界特化型人材紹介の集客戦略｜戦略・IT・FASコンサル志望者を集める",
+    "description": "コンサル志望者は情報感度が高く一般的な訴求が響きにくい層。戦略・IT・FASなど領域別の求職者インサイトと、有効な集客チャネル・訴求設計を解説します。",
+    "keywords": "コンサル 人材紹介 集客,コンサルタント 転職 集客,戦略コンサル 求職者,ポストコンサル",
+    "category": "セグメント別",
+    "image_prompt": "Deep navy blue (#1a3a8a) editorial illustration of a briefcase with abstract strategy diagrams, gold (#f5b400) chess pieces and framework grids floating around it, symbolizing consulting career, flat premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "コンサル志望者の属性と情報収集行動の特徴",
+      "戦略・IT・FAS・組織人事コンサルごとの訴求ポイント",
+      "ポストコンサル層を狙う集客チャネルとコンテンツ設計",
+      "面談前の期待値調整と着座率を高めるカウンセリング設計"
+    ]
+  },
+  {
+    "slug": "recruitment-employment-security-act",
+    "title": "職業安定法の遵守ポイント｜人材紹介の求人票・広告表現で違反しないための実務",
+    "description": "2024年改正職業安定法を含め、人材紹介事業者が求人票や広告表現で押さえるべき禁止事項・明示義務を整理。行政指導リスクを避ける社内チェック体制まで解説します。",
+    "keywords": "職業安定法 人材紹介,人材紹介 求人票 違反,職安法 改正,人材紹介 コンプライアンス",
+    "category": "用語解説",
+    "image_prompt": "Deep navy blue (#1a3a8a) flat editorial illustration of an open law book with a golden checkmark shield hovering above, abstract document icons and scales of justice, gold (#f5b400) accents, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "職業安定法の基本と2024年改正で強化された明示義務",
+      "求人票・広告で禁止される表現と誇大表示のNG例",
+      "求職者情報の取得・利用における同意取得の実務",
+      "行政指導を避けるための社内チェック体制と教育設計"
+    ]
+  },
+  {
+    "slug": "recruitment-retail-apparel-acquisition",
+    "title": "小売・アパレル業界特化型人材紹介の集客戦略｜販売職・店長・EC人材の獲得設計",
+    "description": "小売・アパレル業界の求職者は労働環境改善やキャリアチェンジ志向が強い層。販売職・店長・EC/MDなど職種別に有効な集客チャネルと訴求軸を解説します。",
+    "keywords": "小売 人材紹介 集客,アパレル 転職 集客,販売職 求職者,店長 転職",
+    "category": "セグメント別",
+    "image_prompt": "Deep navy blue (#1a3a8a) flat editorial illustration of a stylized retail storefront and hanging garments with a golden shopping bag and abstract e-commerce cart floating nearby, gold (#f5b400) accents, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "小売・アパレル求職者の転職動機と職種別のインサイト",
+      "販売職・店長層に刺さる訴求軸と労働環境改善メッセージ",
+      "EC・MD・バイヤーなど専門職に有効な集客チャネル",
+      "異業種転職を希望する層への訴求と面談前カウンセリング設計"
+    ]
+  }
+]

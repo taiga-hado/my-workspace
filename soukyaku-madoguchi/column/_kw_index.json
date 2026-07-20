@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-pmax-google-ads",
+    "title": "Google広告P-MAXを人材紹介で使う｜設定と成果を出す運用設計",
+    "description": "P-MAX（パフォーマンスマックス）は人材紹介の求職者集客で使えるか。設定手順・アセット準備・除外シグナル・CPA改善のコツまで運用者向けに解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "P-MAX 人材紹介",
+      "パフォーマンスマックス 求職者集客",
+      "Google広告 P-MAX 運用",
+      "P-MAX CPA"
+    ],
+    "primary_keyword": "P-MAX 人材紹介",
+    "status": "published",
+    "published": "2026-07-20",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-pmax-google-ads/"
+  },
+  {
     "slug": "recruitment-budget-allocation",
     "title": "人材紹介の広告予算配分｜チャネル別ROIで決める最適投資モデル",
     "description": "人材紹介事業の広告予算をどのチャネルにいくら振り分けるべきか。CPA・LTV・着座率から逆算する予算配分の考え方と、四半期ごとの見直しフレームを解説します。",
@@ -1488,22 +1504,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-budget-allocation",
-    "title": "人材紹介の広告予算配分｜チャネル別ROIで決める最適投資モデル",
-    "description": "人材紹介事業の広告予算をどのチャネルにいくら振り分けるべきか。CPA・LTV・着座率から逆算する予算配分の考え方と、四半期ごとの見直しフレームを解説します。",
-    "category": "課題解決",
-    "keywords": [
-      "人材紹介 広告予算",
-      "求職者集客 予算配分",
-      "チャネル別ROI",
-      "マーケティング予算 決め方"
-    ],
-    "primary_keyword": "人材紹介 広告予算",
-    "status": "ready",
-    "scheduled": "2026-07-19",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-budget-allocation/"
-  },
-  {
     "slug": "recruitment-pmax-google-ads",
     "title": "Google広告P-MAXを人材紹介で使う｜設定と成果を出す運用設計",
     "description": "P-MAX（パフォーマンスマックス）は人材紹介の求職者集客で使えるか。設定手順・アセット準備・除外シグナル・CPA改善のコツまで運用者向けに解説します。",
@@ -1515,14 +1515,8 @@
       "P-MAX CPA"
     ],
     "primary_keyword": "P-MAX 人材紹介",
-    "key_points": [
-      "P-MAXの仕組みと人材紹介での適性・向いていないケース",
-      "アセット準備：見出し・説明文・画像・動画のベストプラクティス",
-      "オーディエンスシグナル・除外設定でCPAを下げる方法",
-      "P-MAXと検索広告の役割分担とレポート分析の実務"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-20",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-pmax-google-ads/"
   },
   {
@@ -1544,7 +1538,7 @@
       "面談前の期待値調整と着座率を高めるカウンセリング設計"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-consulting-acquisition/"
   },
   {
@@ -1566,7 +1560,7 @@
       "行政指導を避けるための社内チェック体制と教育設計"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-employment-security-act/"
   },
   {
@@ -1588,7 +1582,7 @@
       "異業種転職を希望する層への訴求と面談前カウンセリング設計"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-retail-apparel-acquisition/"
   }
 ]

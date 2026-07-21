@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-consulting-acquisition",
+    "title": "コンサルティング業界特化型人材紹介の集客戦略｜戦略・IT・FASコンサル志望者を集める",
+    "description": "コンサル志望者は情報感度が高く一般的な訴求が響きにくい層。戦略・IT・FASなど領域別の求職者インサイトと、有効な集客チャネル・訴求設計を解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "コンサル 人材紹介 集客",
+      "コンサルタント 転職 集客",
+      "戦略コンサル 求職者",
+      "ポストコンサル"
+    ],
+    "primary_keyword": "コンサル 人材紹介 集客",
+    "status": "published",
+    "published": "2026-07-21",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-consulting-acquisition/"
+  },
+  {
     "slug": "recruitment-pmax-google-ads",
     "title": "Google広告P-MAXを人材紹介で使う｜設定と成果を出す運用設計",
     "description": "P-MAX（パフォーマンスマックス）は人材紹介の求職者集客で使えるか。設定手順・アセット準備・除外シグナル・CPA改善のコツまで運用者向けに解説します。",
@@ -1504,22 +1520,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-pmax-google-ads",
-    "title": "Google広告P-MAXを人材紹介で使う｜設定と成果を出す運用設計",
-    "description": "P-MAX（パフォーマンスマックス）は人材紹介の求職者集客で使えるか。設定手順・アセット準備・除外シグナル・CPA改善のコツまで運用者向けに解説します。",
-    "category": "ハウツー",
-    "keywords": [
-      "P-MAX 人材紹介",
-      "パフォーマンスマックス 求職者集客",
-      "Google広告 P-MAX 運用",
-      "P-MAX CPA"
-    ],
-    "primary_keyword": "P-MAX 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-07-20",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-pmax-google-ads/"
-  },
-  {
     "slug": "recruitment-consulting-acquisition",
     "title": "コンサルティング業界特化型人材紹介の集客戦略｜戦略・IT・FASコンサル志望者を集める",
     "description": "コンサル志望者は情報感度が高く一般的な訴求が響きにくい層。戦略・IT・FASなど領域別の求職者インサイトと、有効な集客チャネル・訴求設計を解説します。",
@@ -1531,14 +1531,8 @@
       "ポストコンサル"
     ],
     "primary_keyword": "コンサル 人材紹介 集客",
-    "key_points": [
-      "コンサル志望者の属性と情報収集行動の特徴",
-      "戦略・IT・FAS・組織人事コンサルごとの訴求ポイント",
-      "ポストコンサル層を狙う集客チャネルとコンテンツ設計",
-      "面談前の期待値調整と着座率を高めるカウンセリング設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-21",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-consulting-acquisition/"
   },
   {
@@ -1560,7 +1554,7 @@
       "行政指導を避けるための社内チェック体制と教育設計"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-employment-security-act/"
   },
   {
@@ -1582,7 +1576,7 @@
       "異業種転職を希望する層への訴求と面談前カウンセリング設計"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-retail-apparel-acquisition/"
   }
 ]

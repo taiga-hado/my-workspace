@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-employment-security-act",
+    "title": "職業安定法の遵守ポイント｜人材紹介の求人票・広告表現で違反しないための実務",
+    "description": "2024年改正職業安定法を含め、人材紹介事業者が求人票や広告表現で押さえるべき禁止事項・明示義務を整理。行政指導リスクを避ける社内チェック体制まで解説します。",
+    "category": "用語解説",
+    "keywords": [
+      "職業安定法 人材紹介",
+      "人材紹介 求人票 違反",
+      "職安法 改正",
+      "人材紹介 コンプライアンス"
+    ],
+    "primary_keyword": "職業安定法 人材紹介",
+    "status": "published",
+    "published": "2026-07-22",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-employment-security-act/"
+  },
+  {
     "slug": "recruitment-consulting-acquisition",
     "title": "コンサルティング業界特化型人材紹介の集客戦略｜戦略・IT・FASコンサル志望者を集める",
     "description": "コンサル志望者は情報感度が高く一般的な訴求が響きにくい層。戦略・IT・FASなど領域別の求職者インサイトと、有効な集客チャネル・訴求設計を解説します。",
@@ -1520,22 +1536,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-consulting-acquisition",
-    "title": "コンサルティング業界特化型人材紹介の集客戦略｜戦略・IT・FASコンサル志望者を集める",
-    "description": "コンサル志望者は情報感度が高く一般的な訴求が響きにくい層。戦略・IT・FASなど領域別の求職者インサイトと、有効な集客チャネル・訴求設計を解説します。",
-    "category": "セグメント別",
-    "keywords": [
-      "コンサル 人材紹介 集客",
-      "コンサルタント 転職 集客",
-      "戦略コンサル 求職者",
-      "ポストコンサル"
-    ],
-    "primary_keyword": "コンサル 人材紹介 集客",
-    "status": "ready",
-    "scheduled": "2026-07-21",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-consulting-acquisition/"
-  },
-  {
     "slug": "recruitment-employment-security-act",
     "title": "職業安定法の遵守ポイント｜人材紹介の求人票・広告表現で違反しないための実務",
     "description": "2024年改正職業安定法を含め、人材紹介事業者が求人票や広告表現で押さえるべき禁止事項・明示義務を整理。行政指導リスクを避ける社内チェック体制まで解説します。",
@@ -1547,14 +1547,8 @@
       "人材紹介 コンプライアンス"
     ],
     "primary_keyword": "職業安定法 人材紹介",
-    "key_points": [
-      "職業安定法の基本と2024年改正で強化された明示義務",
-      "求人票・広告で禁止される表現と誇大表示のNG例",
-      "求職者情報の取得・利用における同意取得の実務",
-      "行政指導を避けるための社内チェック体制と教育設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-22",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-employment-security-act/"
   },
   {
@@ -1576,7 +1570,7 @@
       "異業種転職を希望する層への訴求と面談前カウンセリング設計"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-retail-apparel-acquisition/"
   }
 ]

@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-x-twitter-marketing",
+    "title": "人材紹介のX(旧Twitter)集客｜運用設計とバズ設計で求職者を集める方法",
+    "description": "人材紹介事業者向けにX(旧Twitter)を活用した求職者集客の運用設計を解説。プロフィール設計・投稿ネタ・DM誘導・広告連携までCPAを抑える実践ノウハウをまとめました。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 X集客",
+      "Twitter 求職者集客",
+      "X運用 転職",
+      "SNS集客 エージェント"
+    ],
+    "primary_keyword": "人材紹介 X集客",
+    "status": "published",
+    "published": "2026-07-25",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-x-twitter-marketing/"
+  },
+  {
     "slug": "recruitment-retail-apparel-acquisition",
     "title": "小売・アパレル業界特化型人材紹介の集客戦略｜販売職・店長・EC人材の獲得設計",
     "description": "小売・アパレル業界の求職者は労働環境改善やキャリアチェンジ志向が強い層。販売職・店長・EC/MDなど職種別に有効な集客チャネルと訴求軸を解説します。",
@@ -1552,19 +1568,108 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-retail-apparel-acquisition",
-    "title": "小売・アパレル業界特化型人材紹介の集客戦略｜販売職・店長・EC人材の獲得設計",
-    "description": "小売・アパレル業界の求職者は労働環境改善やキャリアチェンジ志向が強い層。販売職・店長・EC/MDなど職種別に有効な集客チャネルと訴求軸を解説します。",
+    "slug": "recruitment-x-twitter-marketing",
+    "title": "人材紹介のX(旧Twitter)集客｜運用設計とバズ設計で求職者を集める方法",
+    "description": "人材紹介事業者向けにX(旧Twitter)を活用した求職者集客の運用設計を解説。プロフィール設計・投稿ネタ・DM誘導・広告連携までCPAを抑える実践ノウハウをまとめました。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 X集客",
+      "Twitter 求職者集客",
+      "X運用 転職",
+      "SNS集客 エージェント"
+    ],
+    "primary_keyword": "人材紹介 X集客",
+    "status": "ready",
+    "scheduled": "2026-07-25",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-x-twitter-marketing/"
+  },
+  {
+    "slug": "recruitment-influencer-marketing",
+    "title": "人材紹介のインフルエンサーマーケティング｜キャリア系発信者との協業設計",
+    "description": "キャリア系インフルエンサーやTikToker・YouTuberとタイアップして求職者を集める方法を解説。人選基準・報酬設計・計測方法・法令注意点までまとめた実務ガイド。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 インフルエンサー",
+      "キャリア系 タイアップ",
+      "転職 インフルエンサーマーケ",
+      "PR案件 求職者集客"
+    ],
+    "primary_keyword": "人材紹介 インフルエンサー",
+    "key_points": [
+      "キャリア系インフルエンサーの4タイプと選定基準",
+      "タイアップ料金相場と成果報酬型の設計",
+      "面談着座までのトラッキングとCPA試算",
+      "景表法・ステマ規制など法令チェックポイント"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-influencer-marketing/"
+  },
+  {
+    "slug": "recruitment-food-service-acquisition",
+    "title": "飲食業界特化型人材紹介の集客戦略｜店長・料理人・SV人材の獲得設計",
+    "description": "飲食業界に特化した人材紹介エージェント向けに、店長・料理人・スーパーバイザーなど職種別の求職者集客チャネルと訴求設計を解説。低CPAで面談を積み上げる実務ガイド。",
     "category": "セグメント別",
     "keywords": [
-      "小売 人材紹介 集客",
-      "アパレル 転職 集客",
-      "販売職 求職者",
-      "店長 転職"
+      "飲食 人材紹介",
+      "飲食業界 求職者集客",
+      "料理人 転職エージェント",
+      "店長 人材紹介"
     ],
-    "primary_keyword": "小売 人材紹介 集客",
-    "status": "ready",
-    "scheduled": "2026-07-23",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-retail-apparel-acquisition/"
+    "primary_keyword": "飲食 人材紹介",
+    "key_points": [
+      "飲食業界の労働市場と求職者動機の特徴",
+      "職種別(店長・料理人・SV・本部)の訴求設計",
+      "SNS・Indeed・地域媒体のチャネル配分",
+      "低CPA面談を実現する運用と歩留まり指標"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-food-service-acquisition/"
+  },
+  {
+    "slug": "recruitment-real-estate-acquisition",
+    "title": "不動産業界特化型人材紹介の集客戦略｜売買仲介・賃貸・PM人材の獲得設計",
+    "description": "不動産業界に特化した人材紹介向けに、売買仲介・賃貸・プロパティマネジメントの求職者を集めるチャネル設計と訴求軸を解説。歩合訴求や資格保有者の獲得ノウハウをまとめた。",
+    "category": "セグメント別",
+    "keywords": [
+      "不動産 人材紹介",
+      "不動産業界 求職者集客",
+      "宅建 転職エージェント",
+      "不動産営業 集客"
+    ],
+    "primary_keyword": "不動産 人材紹介",
+    "key_points": [
+      "不動産業界の転職市場と求職者インサイト",
+      "業態別(売買仲介・賃貸・PM・開発)の訴求設計",
+      "宅建士など有資格者を集める広告とSNS運用",
+      "面談着座までの導線と業界CPA相場"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-real-estate-acquisition/"
+  },
+  {
+    "slug": "recruitment-candidate-ltv",
+    "title": "求職者LTVとは｜人材紹介の集客投資判断を変える生涯価値の考え方",
+    "description": "求職者LTV(生涯価値)の定義と計算方法、CPA上限の考え方を解説。再転職・リファラル・両面決定を含めた収益貢献で集客予算を再設計するための実務ガイド。",
+    "category": "用語解説",
+    "keywords": [
+      "求職者LTV",
+      "人材紹介 LTV",
+      "LTV CPA",
+      "求職者 生涯価値",
+      "人材紹介 収益設計"
+    ],
+    "primary_keyword": "求職者LTV",
+    "key_points": [
+      "求職者LTVの定義と人材紹介での計算式",
+      "再転職・リファラル・両面決定を含む収益内訳",
+      "LTVから逆算するCPA上限と広告予算設計",
+      "LTVを最大化する候補者体験とDB運用施策"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-ltv/"
   }
 ]

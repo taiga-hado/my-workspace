@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-influencer-marketing",
+    "title": "人材紹介のインフルエンサーマーケティング｜キャリア系発信者との協業設計",
+    "description": "キャリア系インフルエンサーやTikToker・YouTuberとタイアップして求職者を集める方法を解説。人選基準・報酬設計・計測方法・法令注意点までまとめた実務ガイド。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 インフルエンサー",
+      "キャリア系 タイアップ",
+      "転職 インフルエンサーマーケ",
+      "PR案件 求職者集客"
+    ],
+    "primary_keyword": "人材紹介 インフルエンサー",
+    "status": "published",
+    "published": "2026-07-26",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-influencer-marketing/"
+  },
+  {
     "slug": "recruitment-x-twitter-marketing",
     "title": "人材紹介のX(旧Twitter)集客｜運用設計とバズ設計で求職者を集める方法",
     "description": "人材紹介事業者向けにX(旧Twitter)を活用した求職者集客の運用設計を解説。プロフィール設計・投稿ネタ・DM誘導・広告連携までCPAを抑える実践ノウハウをまとめました。",
@@ -1568,22 +1584,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-x-twitter-marketing",
-    "title": "人材紹介のX(旧Twitter)集客｜運用設計とバズ設計で求職者を集める方法",
-    "description": "人材紹介事業者向けにX(旧Twitter)を活用した求職者集客の運用設計を解説。プロフィール設計・投稿ネタ・DM誘導・広告連携までCPAを抑える実践ノウハウをまとめました。",
-    "category": "ハウツー",
-    "keywords": [
-      "人材紹介 X集客",
-      "Twitter 求職者集客",
-      "X運用 転職",
-      "SNS集客 エージェント"
-    ],
-    "primary_keyword": "人材紹介 X集客",
-    "status": "ready",
-    "scheduled": "2026-07-25",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-x-twitter-marketing/"
-  },
-  {
     "slug": "recruitment-influencer-marketing",
     "title": "人材紹介のインフルエンサーマーケティング｜キャリア系発信者との協業設計",
     "description": "キャリア系インフルエンサーやTikToker・YouTuberとタイアップして求職者を集める方法を解説。人選基準・報酬設計・計測方法・法令注意点までまとめた実務ガイド。",
@@ -1595,14 +1595,8 @@
       "PR案件 求職者集客"
     ],
     "primary_keyword": "人材紹介 インフルエンサー",
-    "key_points": [
-      "キャリア系インフルエンサーの4タイプと選定基準",
-      "タイアップ料金相場と成果報酬型の設計",
-      "面談着座までのトラッキングとCPA試算",
-      "景表法・ステマ規制など法令チェックポイント"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-26",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-influencer-marketing/"
   },
   {
@@ -1624,7 +1618,7 @@
       "低CPA面談を実現する運用と歩留まり指標"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-food-service-acquisition/"
   },
   {
@@ -1646,7 +1640,7 @@
       "面談着座までの導線と業界CPA相場"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-real-estate-acquisition/"
   },
   {
@@ -1669,7 +1663,7 @@
       "LTVを最大化する候補者体験とDB運用施策"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-ltv/"
   }
 ]

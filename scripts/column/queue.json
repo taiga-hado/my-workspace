@@ -1,33 +1,5 @@
 [
   {
-    "slug": "recruitment-food-service-acquisition",
-    "title": "飲食業界特化型人材紹介の集客戦略｜店長・料理人・SV人材の獲得設計",
-    "description": "飲食業界に特化した人材紹介エージェント向けに、店長・料理人・スーパーバイザーなど職種別の求職者集客チャネルと訴求設計を解説。低CPAで面談を積み上げる実務ガイド。",
-    "keywords": "飲食 人材紹介,飲食業界 求職者集客,料理人 転職エージェント,店長 人材紹介",
-    "category": "セグメント別",
-    "image_prompt": "Flat editorial illustration of a chef hat, kitchen utensils and a restaurant floorplan connected by candidate silhouettes, deep navy blue #1a3a8a with gold #f5b400 accents, premium SaaS aesthetic, soft white background, 3:2 aspect, no text",
-    "key_points": [
-      "飲食業界の労働市場と求職者動機の特徴",
-      "職種別(店長・料理人・SV・本部)の訴求設計",
-      "SNS・Indeed・地域媒体のチャネル配分",
-      "低CPA面談を実現する運用と歩留まり指標"
-    ]
-  },
-  {
-    "slug": "recruitment-real-estate-acquisition",
-    "title": "不動産業界特化型人材紹介の集客戦略｜売買仲介・賃貸・PM人材の獲得設計",
-    "description": "不動産業界に特化した人材紹介向けに、売買仲介・賃貸・プロパティマネジメントの求職者を集めるチャネル設計と訴求軸を解説。歩合訴求や資格保有者の獲得ノウハウをまとめた。",
-    "keywords": "不動産 人材紹介,不動産業界 求職者集客,宅建 転職エージェント,不動産営業 集客",
-    "category": "セグメント別",
-    "image_prompt": "Flat editorial illustration of stylized buildings, a house key and candidate figures linked by a funnel diagram, deep navy blue #1a3a8a with gold #f5b400 accents, premium SaaS aesthetic, soft white background, 3:2 aspect, no text",
-    "key_points": [
-      "不動産業界の転職市場と求職者インサイト",
-      "業態別(売買仲介・賃貸・PM・開発)の訴求設計",
-      "宅建士など有資格者を集める広告とSNS運用",
-      "面談着座までの導線と業界CPA相場"
-    ]
-  },
-  {
     "slug": "recruitment-candidate-ltv",
     "title": "求職者LTVとは｜人材紹介の集客投資判断を変える生涯価値の考え方",
     "description": "求職者LTV(生涯価値)の定義と計算方法、CPA上限の考え方を解説。再転職・リファラル・両面決定を含めた収益貢献で集客予算を再設計するための実務ガイド。",

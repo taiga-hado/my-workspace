@@ -16,6 +16,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/lite/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kyusyokusyasokyaku-no-madoguchi.com/contact/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

@@ -418,38 +418,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       line-height: 1.9;
     }
 
-    /* ====== Notes / rules box ====== */
-    .notes-box {
-      max-width: 780px;
-      margin: 56px auto 0;
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--r-xl);
-      padding: 40px;
-    }
-    .notes-list { list-style: none; display: grid; gap: 14px; }
-    .notes-list li {
-      display: flex;
-      gap: 14px;
-      padding-bottom: 14px;
-      border-bottom: 1px dashed var(--border-soft);
-      font-size: 0.92rem;
-      line-height: 1.8;
-      color: var(--text);
-    }
-    .notes-list li:last-child { border-bottom: none; padding-bottom: 0; }
-    .notes-list li::before {
-      content: '';
-      flex-shrink: 0;
-      width: 20px; height: 20px;
-      margin-top: 3px;
-      background-color: var(--brand-blue-soft);
-      border-radius: 50%;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232357d8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
-      background-size: 14px;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
+    /* ====== Flow bands (lite: 窓口=STEP01〜03 / エージェント=STEP04〜05 の3:2分割) ====== */
+    .flow-bands { grid-template-columns: 3fr 2fr; }
 
     /* ====== Support cards ====== */
     .share-grid {
@@ -507,7 +477,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .sim-funnel { grid-template-columns: repeat(3, 1fr); }
       .sim-stats { grid-template-columns: 1fr; }
       .share-grid { grid-template-columns: 1fr; }
-      .notes-box { padding: 28px 20px; }
+      .flow-bands { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -711,7 +681,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <div class="section-head" data-reveal>
         <span class="eyebrow">DATA</span>
-        <h2 class="heading-xl">若手未経験層が多く、<br>他社エージェントとの<span class="blue">バッティングが少ない</span>。</h2>
+        <h2 class="heading-xl">若手未経験層が多く、<br>他社エージェントとの<span class="blue" style="display:inline-block;">バッティングが少ない</span>。</h2>
         <p class="lead lead-center" style="margin-top: 16px;">登録者の78.3%が20代。平均利用エージェント数は0.6社と、他社サービスに登録していないフレッシュなリードが中心です。</p>
       </div>
       <div class="summary-grid">
@@ -810,29 +780,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- RULES -->
-  <section class="section bg-soft" id="rules">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">RULES</span>
-        <h2 class="heading-xl">ご利用にあたっての<span class="blue">ルール</span></h2>
-      </div>
-      <div class="notes-box" data-reveal>
-        <ul class="notes-list">
-          <li>応募者の情報の正確性については本サービスでは保証しておりません</li>
-          <li>「広告表示先・時間帯」は弊社にて策定いたします</li>
-          <li>集客に関わる数値・手法・入稿先・バナー広告等については開示いたしかねます</li>
-          <li>応募したタイミングでの通知方法はメールのみとなっております</li>
-          <li>応募後以降の転職者管理/対応は弊社は一切介入いたしかねます</li>
-          <li>申込書記載のとおり本サービスの利用料をご請求させていただきます</li>
-          <li>ご契約後の応募数変更/途中解約につきましては一切お受けできかねます</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- FAQ -->
-  <section class="section" id="faq">
+  <section class="section bg-soft" id="faq">
     <div class="container">
       <div class="section-head" data-reveal>
         <span class="eyebrow">FAQ</span>
@@ -872,7 +821,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <div class="cta-panel" data-reveal>
         <div class="cta-panel-inner">
-          <h2>低単価で応募リストを、<br><span class="gold">まずはお気軽にご相談</span>ください。</h2>
+          <h2>低単価での応募リード獲得、<br><span class="gold">まずはお気軽にご相談</span>ください。</h2>
           <p>料金・ご契約条件を含めた詳細は、オンライン面談にてご案内いたします。貴社のCA体制・目標面談数に合わせて最適なプランをご提案いたします。</p>
           <div class="cta-buttons">
             <a href="../contact/" class="btn btn-primary btn-lg btn-arrow">オンライン商談を予約</a>

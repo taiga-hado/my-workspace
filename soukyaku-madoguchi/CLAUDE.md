@@ -27,7 +27,9 @@ Below the service cards, a `#plans` section presents the 2 pricing plans:
 Keep both cards. ライトプラン is also linked from header nav, footer Services, and a top-page FAQ item.
 
 ### /lite/ policy: NO prices or billing-exclusion details on the public page (2026-07-29〜)
-料金プラン（単価・月額・契約期間・キャンペーン）と請求対象外ルールの詳細は**面談で案内する方針**のため、/lite/ とトップの表記は「1応募ごとの固定単価」「詳細は面談にてご案内」に統一。金額（10,000円/9,000円/45万円等）・10%OFF・50応募〜/3ヶ月〜・対象外の定義を**サイトに再掲しないこと**。試算セクションも金額系（売上・面談単価・ROAS）は削除済みで、人数・率のみ掲載。内部向けの正式条件は `soukyaku/salesdocuments/【DP】求職者送客の窓口ライト　サービス説明資料.pdf` を参照。
+料金プラン（単価・月額・契約期間・キャンペーン）と請求対象外ルールの詳細は**面談で案内する方針**のため、/lite/ とトップの表記は「1応募ごとの固定単価」「詳細は面談にてご案内」に統一。金額（10,000円/9,000円/45万円等）・10%OFF・50応募〜/3ヶ月〜・対象外の定義を**サイトに再掲しないこと**。試算セクションも金額系（売上・面談単価・ROAS）は削除済みで、人数・率のみ掲載。「ご利用にあたってのルール」セクションも削除済み（ユーザー指示）。内部向けの正式条件は `soukyaku/salesdocuments/【DP】求職者送客の窓口ライト　サービス説明資料.pdf` を参照。
+- /lite/ のフロー帯は `.flow-bands { grid-template-columns: 3fr 2fr; }` で上書き（site.css既定は通常フロー用の4:1。窓口=STEP01〜03/エージェント=STEP04〜05のため）。
+- トップの背景交互リズム: services(soft)→plans(白)→cases(soft)→pricing-model(白)。PRICING MODELセクションには「※通常プランのご説明です」の注記＋/lite/リンクあり。
 
 ### Contact form + GAS (v8, 2026-07-29)
 - /contact/ の「ご興味のあるサービス」checkbox に `ライトプラン（応募課金型）` を追加（value はこの文字列）。

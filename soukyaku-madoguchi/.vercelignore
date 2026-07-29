@@ -1,2 +1,5 @@
 # Internal docs — never publish these to the public static site
 *.md
+
+# Server-side Apps Script mirror (backup of the GAS form handler) — never publish
+apps-script/

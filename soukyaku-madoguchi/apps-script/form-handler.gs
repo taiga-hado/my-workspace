@@ -1,10 +1,13 @@
 // =============================================================================
-// 【ミラー / バックアップ】求職者送客の窓口 - 問い合わせフォーム受信 GAS（v8）
+// 【ミラー / バックアップ】求職者送客の窓口 - 問い合わせフォーム受信 GAS（v10）
 // -----------------------------------------------------------------------------
 // 本番GASの参照用ミラー（ここで実行されるコードではありません）。
 // 正本: スプレッドシート「求職者送客の窓口DB」にバインドされたコンテナバウンドGAS『コード.gs』。
 // SLACK_WEBHOOK_URL は秘密情報のため伏字。復元時は GAS エディタ側の実値を使うこと。
 //
+// v10 (2026-07-29): ライトプランはリリース前のため「事前登録受付」の文面に変更。
+//   - buildBody_ のライト案内文を「事前登録として承りました→詳細は面談でご案内」に更新
+// v9 (2026-07-29): 中途の説明動画URLを tldv から Google Drive（2026-07-29収録mp4・リンク公開）に差し替え。
 // v8 (2026-07-29): フォームに「ライトプラン（応募課金型）」チェックボックスを追加したことに対応。
 //   - buildBody_ に service「ライトプラン」選択時の案内文を追加
 //     （料金・提供条件は面談で案内する方針のため、動画ではなく面談誘導の一文のみ）
@@ -37,8 +40,8 @@ const SLACK_WEBHOOK_URL = '__SET_IN_GAS_EDITOR__'; // 秘密情報のため伏�
 const DRAFT_SUBJECT = '求職者送客の窓口のお打ち合わせについて';
 const SCHEDULE_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3I3OA0rCgTVGeRd0dgFnZX4-qzPcwhYerfWLX4yPs40cETVoq51xu1UGucxzUNu7TgWf9gfldD';
 
-// 領域別 面談動画（tldv）
-const VIDEO_CHUTO = 'https://tldv.io/app/meetings/6a21f138311684001393d03b/';
+// 領域別 説明動画（中途=Google Drive／新卒=tldv）
+const VIDEO_CHUTO = 'https://drive.google.com/file/d/1BCIvpJ7NvVYqOaUNCf1jnZr8DctOOWeP/view?usp=sharing';
 const VIDEO_SHINSOTSU = 'https://tldv.io/app/meetings/6a21f878b2719f0013b6ea5a/';
 
 // 領域別 サービス説明資料（Canva）※v7で本文から削除。復活用に残置（本文では未使用）
@@ -79,12 +82,12 @@ function buildBody_(p) {
       videos.join('\n\n');
   }
 
-  // ライトプラン（応募課金型）は料金・提供条件を面談で案内する方針のため、動画ではなく一文のみ
+  // ライトプラン（応募課金型）はリリース前＝事前登録受付。料金・提供条件は面談で案内する方針のため一文のみ
   var liteSection = '';
   if (showLite) {
     liteSection =
-      '\n\n応募課金型の「求職者送客の窓口 ライト」につきましては、\n' +
-      '料金・ご提供条件を含む詳細を、オンライン面談にて直接ご案内しております。';
+      '\n\n応募課金型の「求職者送客の窓口 ライト」は現在リリース準備中のため、事前登録として承りました。\n' +
+      '料金・ご提供条件・提供開始時期を含む詳細は、オンライン面談にて直接ご案内しております。';
   }
 
   return (p.company || '') + '\n' + (p.lastName || '') + ' ' + (p.firstName || '') + ' 様\n\n' +

@@ -7,6 +7,7 @@
 - `/contact/` - contact form (posts to GAS Web App)
 - `/daini-shinsotsu/` - SERVICE 01 詳細
 - `/shinsotsu/` - SERVICE 02 詳細
+- `/lite/` - 求職者送客の窓口 ライト（応募課金型プラン、added 2026-07-29）
 - `/column/` - SEO blog hub (37+ articles, auto-published daily)
 - `/thanks/` - form submission landing
 - `/interview/*` - case study pages (Nexil, ReWave, SmartForce)
@@ -18,6 +19,18 @@ In the 「領域別の送客プラン」 section, both must be present with thes
 
 The legacy 「向け」 naming (e.g. 「第二新卒・未経験層向け」) was deprecated 2026-05-28 — do NOT revert.
 The 保育特化パッケージ card (SERVICE 03 → `/hoiku/`) was REMOVED 2026-06-22 — do NOT re-add unless the 保育 offering is relaunched.
+
+### Top page PLANS section (added 2026-07-29)
+Below the service cards, a `#plans` section presents the 2 pricing plans:
+- 通常プラン（着座成果報酬型・面談着座1件 25,000円〜）
+- ライトプラン（応募課金型・1応募 10,000円）→ links to `/lite/`
+Keep both cards. ライトプラン is also linked from header nav, footer Services, and a top-page FAQ item.
+
+### /lite/ pricing facts (from 【DP】求職者送客の窓口ライト サービス説明資料, 2026-07)
+- 1応募 10,000円（税別）固定単価、リリース記念で初回お申込み分は10%OFF（9,000円）
+- 45万円〜/月 × 契約3ヶ月〜（月次分割払いのみ・途中解約不可）、枠数50応募〜
+- 運用代行費・動画制作費 0円／架電・面談は導入エージェント側CAが実施
+- 対象外ルール: 35歳以上・1ヶ月以内再応募・外国籍・不通番号／通電後発覚（障がい者手帳・外国籍・在学中）→ 毎月20日までにGoogle Form申請で追加送客
 
 ### Logos for service cards
 - `images/logo-daini.png` (91KB)

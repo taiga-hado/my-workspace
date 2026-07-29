@@ -31,9 +31,12 @@ Keep both cards. ライトプラン is also linked from header nav, footer Servi
 - /lite/ のフロー帯は `.flow-bands { grid-template-columns: 3fr 2fr; }` で上書き（site.css既定は通常フロー用の4:1。窓口=STEP01〜03/エージェント=STEP04〜05のため）。
 - トップの背景交互リズム: services(soft)→plans(白)→cases(soft)→pricing-model(白)。PRICING MODELセクションには「※通常プランのご説明です」の注記＋/lite/リンクあり。
 
-### Contact form + GAS (v8, 2026-07-29)
-- /contact/ の「ご興味のあるサービス」checkbox に `ライトプラン（応募課金型）` を追加（value はこの文字列）。
-- 受信GAS（apps-script/form-handler.gs ミラー、v8）: buildBody_ に「ライトプラン」部分一致でライト案内文（面談誘導のみ・動画なし）。Slack通知・submissions・シート1ダッシュボードは p.service に値が流れるだけで変更不要。手動リード追加ダイアログ（本番は dashboard.gs 側が有効）にも同オプションあり。本番はバージョン14として既存デプロイに反映済み。
+### Lite = pre-registration until launch (2026-07-29〜)
+ライトプランは**未リリース**のため、/lite/・トップ・/contact/ は「現在リリース準備中につき事前登録受付中」の打ち出しで統一（CTA=事前登録する）。正式リリース時にこの表記を外す。
+
+### Contact form + GAS (v10, 2026-07-29)
+- /contact/ の「ご興味のあるサービス」checkbox に `ライトプラン（応募課金型）` を追加（value はこの文字列。表示ラベルには「※リリース前・事前登録受付中」付き）。
+- 受信GAS（apps-script/form-handler.gs ミラー、v10）: buildBody_ に「ライトプラン」部分一致でライト案内文（「事前登録として承りました」＋面談誘導。動画なし）。Slack通知・submissions・シート1ダッシュボードは p.service に値が流れるだけで変更不要。手動リード追加ダイアログ（本番は dashboard.gs 側が有効）にも同オプションあり。本番はバージョン16として既存デプロイに反映済み。
 
 ### Logos for service cards
 - `images/logo-daini.png` (91KB)

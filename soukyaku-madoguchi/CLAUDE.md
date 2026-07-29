@@ -26,11 +26,12 @@ Below the service cards, a `#plans` section presents the 2 pricing plans:
 - ライトプラン（応募課金型・1応募 10,000円）→ links to `/lite/`
 Keep both cards. ライトプラン is also linked from header nav, footer Services, and a top-page FAQ item.
 
-### /lite/ pricing facts (from 【DP】求職者送客の窓口ライト サービス説明資料, 2026-07)
-- 1応募 10,000円（税別）固定単価、リリース記念で初回お申込み分は10%OFF（9,000円）
-- 45万円〜/月 × 契約3ヶ月〜（月次分割払いのみ・途中解約不可）、枠数50応募〜
-- 運用代行費・動画制作費 0円／架電・面談は導入エージェント側CAが実施
-- 対象外ルール: 35歳以上・1ヶ月以内再応募・外国籍・不通番号／通電後発覚（障がい者手帳・外国籍・在学中）→ 毎月20日までにGoogle Form申請で追加送客
+### /lite/ policy: NO prices or billing-exclusion details on the public page (2026-07-29〜)
+料金プラン（単価・月額・契約期間・キャンペーン）と請求対象外ルールの詳細は**面談で案内する方針**のため、/lite/ とトップの表記は「1応募ごとの固定単価」「詳細は面談にてご案内」に統一。金額（10,000円/9,000円/45万円等）・10%OFF・50応募〜/3ヶ月〜・対象外の定義を**サイトに再掲しないこと**。試算セクションも金額系（売上・面談単価・ROAS）は削除済みで、人数・率のみ掲載。内部向けの正式条件は `soukyaku/salesdocuments/【DP】求職者送客の窓口ライト　サービス説明資料.pdf` を参照。
+
+### Contact form + GAS (v8, 2026-07-29)
+- /contact/ の「ご興味のあるサービス」checkbox に `ライトプラン（応募課金型）` を追加（value はこの文字列）。
+- 受信GAS（apps-script/form-handler.gs ミラー、v8）: buildBody_ に「ライトプラン」部分一致でライト案内文（面談誘導のみ・動画なし）。Slack通知・submissions・シート1ダッシュボードは p.service に値が流れるだけで変更不要。手動リード追加ダイアログ（本番は dashboard.gs 側が有効）にも同オプションあり。本番はバージョン14として既存デプロイに反映済み。
 
 ### Logos for service cards
 - `images/logo-daini.png` (91KB)

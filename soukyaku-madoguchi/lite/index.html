@@ -11,13 +11,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>求職者送客の窓口 ライト | 応募課金型のSNS求職者集客サービス（1応募 固定単価） | 求職者送客の窓口</title>
-  <meta name="description" content="SNS広告で獲得した若手・未経験層の応募リードを1応募10,000円の固定単価でご提供する応募課金型プラン「求職者送客の窓口 ライト」。運用代行費・動画制作費0円。自社CAで架電からグリップしたい人材紹介エージェント様に最適です。">
+  <meta name="description" content="SNS広告で獲得した若手・未経験層の応募リードを1応募ごとの固定単価でご提供する応募課金型プラン「求職者送客の窓口 ライト」。運用代行費・動画制作費0円。自社CAで架電からグリップしたい人材紹介エージェント様に最適です。">
   <meta name="keywords" content="応募課金型 集客,応募課金 人材紹介,求職者 応募リード,リード獲得 人材紹介,固定単価 集客,SNS広告 求職者集客,若手未経験 リード,転職エージェント 集客,人材紹介業 集客,求職者送客,応募リスト 購入">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://kyusyokusyasokyaku-no-madoguchi.com/lite/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="求職者送客の窓口 ライト | 応募課金型のSNS求職者集客サービス">
-  <meta property="og:description" content="SNS広告で獲得した応募リードを1応募10,000円の固定単価でご提供。運用代行費・動画制作費0円の応募課金型プランです。">
+  <meta property="og:description" content="SNS広告で獲得した応募リードを1応募ごとの固定単価でご提供。運用代行費・動画制作費0円の応募課金型プランです。">
   <meta property="og:url" content="https://kyusyokusyasokyaku-no-madoguchi.com/lite/">
   <link rel="icon" type="image/png" href="../images/favicon.png">
   <link rel="shortcut icon" href="../images/favicon.ico">
@@ -192,11 +192,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-weight: 700;
       color: var(--gold-dark);
       line-height: 1.7;
-    }
-    .lite-price-card .campaign .strike {
-      text-decoration: line-through;
-      color: var(--text-mute);
-      font-weight: 500;
     }
     .lite-price-card .zero-rows {
       margin-top: 20px;
@@ -376,7 +371,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .sim-funnel {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 8px;
     }
     .sim-step {
@@ -404,7 +399,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .sim-step.final .value { color: var(--gold); }
     .sim-stats {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       margin-top: 24px;
     }
@@ -416,166 +411,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
     .sim-stat .k { font-size: 0.75rem; color: var(--text-sub); font-weight: 600; margin-bottom: 4px; }
     .sim-stat .v { font-size: 1.05rem; font-weight: 800; color: var(--brand-navy); }
-    .sim-stat.roas { background: var(--gold-soft); }
-    .sim-stat.roas .v { color: var(--gold-dark); }
     .sim-notes {
       margin-top: 24px;
       font-size: 0.8rem;
       color: var(--text-mute);
       line-height: 1.9;
-    }
-
-    /* ====== Pricing panel ====== */
-    .lite-pricing-panel {
-      max-width: 780px;
-      margin: 56px auto 0;
-      background: #fff;
-      border: 2px solid var(--brand-navy);
-      border-radius: var(--r-xl);
-      padding: 48px 40px;
-      text-align: center;
-      box-shadow: var(--shadow-md);
-    }
-    .lite-pricing-panel .plan-tag {
-      display: inline-block;
-      background: var(--brand-navy);
-      color: #fff;
-      font-size: 0.85rem;
-      font-weight: 700;
-      padding: 8px 22px;
-      border-radius: var(--r-pill);
-      margin-bottom: 20px;
-    }
-    .lite-pricing-panel .big-price {
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
-      font-weight: 800;
-      color: var(--ink);
-      line-height: 1.3;
-      letter-spacing: -0.02em;
-    }
-    .lite-pricing-panel .big-price .blue { color: var(--brand-blue); }
-    .lite-pricing-panel .big-price .small {
-      font-size: 0.45em;
-      font-weight: 700;
-      color: var(--text-sub);
-    }
-    .lite-pricing-panel .sub-price {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--gold-dark);
-      margin-top: 8px;
-    }
-    .lite-pricing-panel .campaign-band {
-      margin: 24px auto 0;
-      background: linear-gradient(90deg, var(--gold-soft), #fff7e0);
-      border: 1px solid var(--gold-dark);
-      border-radius: var(--r-pill);
-      padding: 12px 24px;
-      display: inline-block;
-      font-size: 0.9rem;
-      font-weight: 800;
-      color: var(--gold-dark);
-    }
-    .lite-pricing-panel .campaign-band .strike {
-      text-decoration: line-through;
-      font-weight: 500;
-      color: var(--text-mute);
-    }
-    .lite-pricing-conditions {
-      margin-top: 28px;
-      text-align: left;
-      display: grid;
-      gap: 10px;
-      max-width: 520px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .lite-pricing-conditions li {
-      list-style: none;
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      font-size: 0.9rem;
-      color: var(--text);
-      line-height: 1.8;
-    }
-    .lite-pricing-conditions li::before {
-      content: '';
-      flex-shrink: 0;
-      width: 18px; height: 18px;
-      margin-top: 5px;
-      border-radius: 50%;
-      background-color: var(--brand-blue-soft);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232357d8' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
-      background-size: 12px;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-    .lite-pricing-notes {
-      margin-top: 20px;
-      font-size: 0.78rem;
-      color: var(--text-mute);
-      line-height: 1.9;
-    }
-
-    /* ====== Exclusion rules (two columns) ====== */
-    .target-conditions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 56px;
-    }
-    .target-box {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--r-xl);
-      padding: 32px 28px;
-      position: relative;
-    }
-    .target-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 24px; right: 24px;
-      height: 3px;
-      border-radius: 0 0 2px 2px;
-    }
-    .target-box.ok::before { background: #22c55e; }
-    .target-box.ng::before { background: #ef4444; }
-    .target-box-title {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--ink);
-      margin-bottom: 18px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-    .target-box ul {
-      list-style: none;
-      display: grid;
-      gap: 12px;
-    }
-    .target-box li {
-      display: flex;
-      gap: 10px;
-      align-items: flex-start;
-      font-size: 0.92rem;
-      color: var(--text);
-      line-height: 1.7;
-    }
-    .target-box li::before {
-      content: '';
-      flex-shrink: 0;
-      width: 8px; height: 8px;
-      margin-top: 8px;
-      border-radius: 50%;
-      background: #22c55e;
-    }
-    .target-box-note {
-      margin-top: 16px;
-      font-size: 0.8rem;
-      color: var(--text-mute);
-      line-height: 1.8;
     }
 
     /* ====== Notes / rules box ====== */
@@ -665,11 +505,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .plan-compare { grid-template-columns: 1fr; }
       .summary-grid { grid-template-columns: 1fr; }
       .sim-funnel { grid-template-columns: repeat(3, 1fr); }
-      .sim-stats { grid-template-columns: repeat(2, 1fr); }
-      .target-conditions { grid-template-columns: 1fr; }
+      .sim-stats { grid-template-columns: 1fr; }
       .share-grid { grid-template-columns: 1fr; }
       .notes-box { padding: 28px 20px; }
-      .lite-pricing-panel { padding: 36px 24px; }
     }
   </style>
 </head>
@@ -734,9 +572,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="sub-hero-visual" data-reveal="right">
           <div class="lite-price-card">
             <span class="tag">応募課金型プラン</span>
-            <div class="price">1応募 10,000<span class="unit">円（税別）</span></div>
+            <div class="price">1応募 固定単価</div>
             <div class="per">費用は応募リード単価のみのシンプル設計</div>
-            <div class="campaign">リリース記念！初回お申込み分<br>応募単価10%OFF（1応募 <span class="strike">10,000円</span> → 9,000円）</div>
+            <div class="campaign">料金・ご契約条件の詳細は<br>オンライン面談にてご案内いたします</div>
             <div class="zero-rows">
               <div class="zero-row"><span>SNS運用・広告運用</span><span class="zero">0円（弊社が実施）</span></div>
               <div class="zero-row"><span>動画クリエイティブ制作</span><span class="zero">0円（弊社が制作）</span></div>
@@ -763,7 +601,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <ul>
               <li>集客〜カウンセリング〜面談設定まで弊社が代行</li>
               <li>貴社は面談だけに専念</li>
-              <li>面談着座1件 25,000円〜</li>
+              <li>面談が着座した件数分のみの成果報酬</li>
               <li>初期費用・月額費用 0円</li>
             </ul>
           </div>
@@ -777,7 +615,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <ul>
               <li>SNS広告で獲得した応募リードをそのままご提供</li>
               <li>架電・面談は貴社CAにて実施</li>
-              <li>1応募 10,000円の固定単価</li>
+              <li>1応募ごとの固定単価（金額は面談にてご案内）</li>
               <li>低単価で応募リストを大量獲得</li>
             </ul>
           </div>
@@ -913,8 +751,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="container">
       <div class="section-head" data-reveal>
         <span class="eyebrow">SIMULATION</span>
-        <h2 class="heading-xl">月50応募プランの<span class="blue">試算イメージ</span></h2>
-        <p class="lead lead-center" style="margin-top: 16px;">導入エージェント様の実績値レンジをもとにした、月50応募プランの試算イメージです。</p>
+        <h2 class="heading-xl">月50応募の場合の<span class="blue">試算イメージ</span></h2>
+        <p class="lead lead-center" style="margin-top: 16px;">導入エージェント様の実績値レンジをもとにした、月50応募の場合の試算イメージです。</p>
       </div>
       <div class="sim-panel" data-reveal>
         <div class="sim-funnel">
@@ -922,19 +760,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <div class="sim-step"><div class="label">通電数</div><div class="value">18名</div></div>
           <div class="sim-step"><div class="label">面談実施</div><div class="value">13名</div></div>
           <div class="sim-step"><div class="label">内定</div><div class="value">3名</div></div>
-          <div class="sim-step"><div class="label">決定</div><div class="value">2名</div></div>
-          <div class="sim-step final"><div class="label">売上</div><div class="value">140万円</div></div>
+          <div class="sim-step final"><div class="label">決定</div><div class="value">2名</div></div>
         </div>
         <div class="sim-stats">
           <div class="sim-stat"><div class="k">通電率</div><div class="v">36%</div></div>
           <div class="sim-stat"><div class="k">面談実施率</div><div class="v">26%</div></div>
-          <div class="sim-stat"><div class="k">面談単価</div><div class="v">¥34,615</div></div>
           <div class="sim-stat"><div class="k">面談からの決定率</div><div class="v">15%</div></div>
-          <div class="sim-stat roas"><div class="k">ROAS（売上/集客費）</div><div class="v">311%</div></div>
         </div>
         <div class="sim-notes">
           ※導入エージェント様の実績値レンジをもとにした試算イメージであり、成果を保証するものではありません<br>
-          ※売上は決定単価70万円、集客費45万円（50応募）と仮定した場合の試算です
+          ※料金を含めた収支シミュレーションは、オンライン面談にて個別にご案内いたします
         </div>
       </div>
     </div>
@@ -975,75 +810,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- PRICING -->
-  <section class="section bg-soft" id="pricing">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">PRICING</span>
-        <h2 class="heading-xl">料金プランの<span class="blue">ご案内</span></h2>
-      </div>
-      <div class="lite-pricing-panel" data-reveal>
-        <span class="plan-tag">お申込数：50応募〜</span>
-        <div class="big-price"><span class="blue">45万円〜</span><span class="small">/月</span> × 3ヶ月〜</div>
-        <div class="sub-price">（1応募 10,000円）</div>
-        <div class="campaign-band">リリース記念！初回お申込み分 応募単価10%OFF（1応募 <span class="strike">10,000円</span> → 9,000円）</div>
-        <ul class="lite-pricing-conditions">
-          <li>広告配信エリア：全国（都市部中心／エリア指定は応相談）</li>
-          <li>ご契約期間「3ヶ月〜」（月次分割払いのみ、一括払い不可）</li>
-          <li>枠数：50応募〜</li>
-        </ul>
-        <div class="lite-pricing-notes">
-          ※上記は基本プランでのお申し込みの場合の金額となります<br>
-          ※価格は税別の表記となります<br>
-          ※途中解約をすることはできませんので予めご了承ください
-        </div>
-        <div class="cta-buttons" style="margin-top: 28px; justify-content: center; display: flex;">
-          <a href="../contact/" class="btn btn-primary btn-lg btn-arrow">オンライン商談を予約</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- EXCLUSION RULES -->
-  <section class="section" id="exclusion">
-    <div class="container">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">BILLING RULES</span>
-        <h2 class="heading-xl">ご請求<span class="blue">対象外ルール</span></h2>
-        <p class="lead lead-center" style="margin-top: 16px;">広告運用の特性上、ターゲットに一致しない応募も少なからず発生します。"有効な応募リストの最大化"を目的として、以下の対象外ルールを設けています。<br>対象外が認められた応募件数分は追加送客（集客）いたします。</p>
-      </div>
-      <div class="target-conditions">
-        <div class="target-box ok" data-reveal>
-          <div class="target-box-title">応募時点で以下に該当する場合</div>
-          <ul>
-            <li>35歳以上の応募</li>
-            <li>1ヶ月以内の再応募</li>
-            <li>日本国籍ではないと認められる応募</li>
-            <li>存在しない番号だとみとめられる応募</li>
-          </ul>
-          <p class="target-box-note">※000-000／0123-4567／桁数不足など<br>※登録と違う方に繋がった、架電したが通電しない場合はご請求対象とさせていただきます</p>
-        </div>
-        <div class="target-box ng" data-reveal>
-          <div class="target-box-title">通電して以下が発覚した場合</div>
-          <ul>
-            <li>障がい者手帳を保有されていることが発覚</li>
-            <li>日本国籍ではないことが発覚</li>
-            <li>在学中であることが発覚</li>
-          </ul>
-          <p class="target-box-note">※教育機関の学校に限る<br>※社会人スクールや職業訓練校の場合はご請求対象とさせていただきますのでご容赦ください</p>
-        </div>
-      </div>
-      <div class="notes-box" data-reveal>
-        <ul class="notes-list">
-          <li>毎月20日までに、ご共有するGoogle Formにてご連絡をお願いいたします（20日が土日祝日の場合は前営業日まで）。該当の月内にて追加送客を実施いたします。</li>
-          <li>21日以降に送客された応募において対象外が発生した場合は次月にて追加送客を実施いたします（次月に契約がない場合は対象外の適応外となります）。</li>
-          <li>申請漏れ、期日外の申請につきましては対象外ルールの適応外となりますので予めご了承ください。</li>
-          <li>基本的にはどのような応募であっても1応募としてカウントされます。接触数・面談数などの数値確認にご協力をお願いいたします。</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
   <!-- RULES -->
   <section class="section bg-soft" id="rules">
     <div class="container">
@@ -1075,19 +841,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="faq-list">
         <details class="faq-item" data-reveal>
           <summary class="faq-q"><span class="faq-q-text">通常プランとの違いは何ですか？</span></summary>
-          <div class="faq-a">通常プランは集客〜カウンセリング〜面談設定まで弊社が代行し、面談着座1件ごとの成果報酬（25,000円〜）でご請求する着座成果報酬型です。ライトプランはSNS広告で獲得した応募リードをそのままご提供し、架電・面談は貴社CAにて実施いただく応募課金型（1応募10,000円）です。面談設定までお任せいただきたい方は通常プラン、自社CAで架電からグリップしたい方はライトプランがおすすめです。</div>
+          <div class="faq-a">通常プランは集客〜カウンセリング〜面談設定まで弊社が代行し、面談着座1件ごとの成果報酬でご請求する着座成果報酬型です。ライトプランはSNS広告で獲得した応募リードをそのままご提供し、架電・面談は貴社CAにて実施いただく応募課金型（1応募ごとの固定単価）です。面談設定までお任せいただきたい方は通常プラン、自社CAで架電からグリップしたい方はライトプランがおすすめです。</div>
         </details>
         <details class="faq-item" data-reveal>
           <summary class="faq-q"><span class="faq-q-text">どのような応募者が送客されますか？</span></summary>
           <div class="faq-a">若手・未経験層に特化したSNS広告で集客した応募リードをご提供します。登録者の78.3%が20代で、平均利用エージェント数は0.6社（68.3%が0社）と、他社エージェントとのバッティングが少ないのが特徴です。応募フォームでは氏名・年齢・性別・希望就業時期・勤務地・連絡先などを取得しています。</div>
         </details>
         <details class="faq-item" data-reveal>
-          <summary class="faq-q"><span class="faq-q-text">最低契約期間・最低応募数はありますか？</span></summary>
-          <div class="faq-a">ご契約期間は3ヶ月〜（月次分割払いのみ）、お申込数は月50応募〜となります。ご契約後の応募数変更・途中解約はお受けできかねますので、予めご了承ください。</div>
+          <summary class="faq-q"><span class="faq-q-text">料金体系・ご契約条件を教えてください。</span></summary>
+          <div class="faq-a">費用は1応募ごとの固定単価のみのシンプル設計です。具体的な単価・お申込数・ご契約期間などの詳細条件は、オンライン面談にてご案内いたします。まずはお気軽にお問い合わせください。</div>
         </details>
         <details class="faq-item" data-reveal>
           <summary class="faq-q"><span class="faq-q-text">ターゲット外の応募も請求対象になりますか？</span></summary>
-          <div class="faq-a">基本的にはどのような応募であっても1応募としてカウントされますが、35歳以上・1ヶ月以内の再応募・日本国籍ではないと認められる応募・存在しない電話番号など、所定の「ご請求対象外の定義」に該当する場合は、対象外として追加送客（集客）いたします。毎月20日までにGoogle Formでの申請が必要です。</div>
+          <div class="faq-a">広告運用の特性上、ターゲットに一致しない応募も少なからず発生するため、"有効な応募リストの最大化"を目的としたご請求対象外ルールを設けています。対象外の定義や申請方法の詳細は、オンライン面談にてご案内いたします。</div>
         </details>
         <details class="faq-item" data-reveal>
           <summary class="faq-q"><span class="faq-q-text">広告配信エリアの指定はできますか？</span></summary>
@@ -1107,7 +873,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="cta-panel" data-reveal>
         <div class="cta-panel-inner">
           <h2>低単価で応募リストを、<br><span class="gold">まずはお気軽にご相談</span>ください。</h2>
-          <p>初回お申込み分 応募単価10%OFFのリリース記念キャンペーン実施中。貴社のCA体制・目標面談数に合わせて最適なプランをご提案いたします。</p>
+          <p>料金・ご契約条件を含めた詳細は、オンライン面談にてご案内いたします。貴社のCA体制・目標面談数に合わせて最適なプランをご提案いたします。</p>
           <div class="cta-buttons">
             <a href="../contact/" class="btn btn-primary btn-lg btn-arrow">オンライン商談を予約</a>
           </div>

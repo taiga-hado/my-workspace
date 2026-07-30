@@ -1,1 +1,58 @@
-[]
+[
+  {
+    "slug": "recruitment-startup-acquisition",
+    "title": "スタートアップ特化型人材紹介の集客戦略｜資金調達期の即戦力人材を集める",
+    "description": "スタートアップ志望の求職者を集めるための訴求設計とチャネル選定を解説。ストックオプション訴求、シード〜シリーズB向けの候補者DB形成、CPA相場までまとめました。",
+    "keywords": "スタートアップ 人材紹介,ベンチャー 転職 集客,スタートアップ 求職者,SO ストックオプション 訴求",
+    "category": "セグメント別",
+    "image_prompt": "Illustration of a rocket launching from a laptop with abstract growth chart, deep navy blue (#1a3a8a) background elements with gold (#f5b400) accent stars and trajectory line, flat editorial style, premium SaaS aesthetic, soft white background, 3:2 aspect ratio, no text or letters",
+    "key_points": [
+      "スタートアップ志望求職者の属性と検索行動",
+      "刺さる訴求軸｜SO・裁量・成長環境の言語化",
+      "主要チャネルとCPA相場（X・note・キャリア系メディア）",
+      "候補者の目利きと事前カウンセリング設計"
+    ]
+  },
+  {
+    "slug": "recruitment-working-mom-acquisition",
+    "title": "ワーママ・育児中求職者の集客戦略｜時短・リモート訴求で母集団を形成する",
+    "description": "育児と両立したい女性求職者を集めるための訴求設計・チャネル・カウンセリング運用を解説。時短勤務・リモート・子育て支援を軸にした訴求で応募率を高める実務ガイド。",
+    "keywords": "ワーママ 転職 集客,時短勤務 求人,育児中 求職者,ママ向け人材紹介",
+    "category": "セグメント別",
+    "image_prompt": "Warm illustration of a laptop with home and family icons floating above, calendar with flexible time blocks, deep navy blue (#1a3a8a) main tones with gold (#f5b400) accent highlights, flat editorial illustration, premium SaaS aesthetic, soft white background, 3:2 aspect ratio, no text or letters",
+    "key_points": [
+      "ワーママ求職者のペルソナとキャリア観",
+      "時短・リモート・両立支援の訴求フレーム",
+      "Instagram・ママ系メディア・LINEの活用",
+      "面談着座率を上げる時間帯設計とカウンセリング配慮"
+    ]
+  },
+  {
+    "slug": "recruitment-cost-per-hire",
+    "title": "Cost per Hire（採用単価）とは｜人材紹介事業の決定単価の考え方と業界平均",
+    "description": "採用単価（Cost per Hire）の定義・計算式・業界平均を人材紹介事業者向けに整理。CPAとの違い、決定単価から逆算した集客予算の作り方まで解説します。",
+    "keywords": "Cost per Hire,採用単価,決定単価,採用コスト 計算",
+    "category": "用語解説",
+    "image_prompt": "Abstract funnel diagram converting candidate icons into a single hired candidate with coin symbols, deep navy blue (#1a3a8a) funnel structure with gold (#f5b400) coin accents, flat editorial illustration, premium SaaS aesthetic, soft white background, 3:2 aspect ratio, no text or letters",
+    "key_points": [
+      "Cost per Hireの定義とCPAとの違い",
+      "業界別・職種別の採用単価相場",
+      "決定単価から逆算する広告予算設計",
+      "採用単価を下げる送客・歩留まり改善の打ち手"
+    ]
+  },
+  {
+    "slug": "recruitment-offline-event-acquisition",
+    "title": "転職イベント・合同説明会で求職者を集める｜人材紹介のオフライン集客設計",
+    "description": "転職フェアや合同企業説明会を活用した求職者集客の設計方法を解説。ブース設計・面談誘導動線・CPA試算・オンラインとの連携までを人材紹介向けに整理しました。",
+    "keywords": "転職イベント 集客,合同説明会 人材紹介,転職フェア,オフライン 求職者集客",
+    "category": "ハウツー",
+    "image_prompt": "Overhead view illustration of an event venue with booths and people flowing between them, deep navy blue (#1a3a8a) booth structures with gold (#f5b400) highlight paths and spotlights, flat editorial illustration, premium SaaS aesthetic, soft white background, 3:2 aspect ratio, no text or letters",
+    "key_points": [
+      "転職イベント市場と主要イベントの特徴",
+      "ブース設計と当日の面談誘導フロー",
+      "集客CPAと決定単価の試算モデル",
+      "イベント後のリード育成とオンライン連携"
+    ]
+  }
+]

@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-rpo-comparison",
+    "title": "RPOと人材紹介の違い｜採用代行サービスの費用・成果・使い分けを徹底比較",
+    "description": "RPO（採用代行）と人材紹介の違いを費用体系・成果指標・向いている企業タイプで比較。両者の使い分けと、求職者送客サービスを組み合わせる最新の採用体制を解説します。",
+    "category": "比較検討",
+    "keywords": [
+      "RPO 人材紹介 違い",
+      "採用代行 比較",
+      "RPO 費用",
+      "採用アウトソーシング"
+    ],
+    "primary_keyword": "RPO 人材紹介 違い",
+    "status": "published",
+    "published": "2026-07-30",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-rpo-comparison/"
+  },
+  {
     "slug": "recruitment-candidate-ltv",
     "title": "求職者LTVとは｜人材紹介の集客投資判断を変える生涯価値の考え方",
     "description": "求職者LTV(生涯価値)の定義と計算方法、CPA上限の考え方を解説。再転職・リファラル・両面決定を含めた収益貢献で集客予算を再設計するための実務ガイド。",
@@ -1617,20 +1633,107 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-candidate-ltv",
-    "title": "求職者LTVとは｜人材紹介の集客投資判断を変える生涯価値の考え方",
-    "description": "求職者LTV(生涯価値)の定義と計算方法、CPA上限の考え方を解説。再転職・リファラル・両面決定を含めた収益貢献で集客予算を再設計するための実務ガイド。",
+    "slug": "recruitment-rpo-comparison",
+    "title": "RPOと人材紹介の違い｜採用代行サービスの費用・成果・使い分けを徹底比較",
+    "description": "RPO（採用代行）と人材紹介の違いを費用体系・成果指標・向いている企業タイプで比較。両者の使い分けと、求職者送客サービスを組み合わせる最新の採用体制を解説します。",
+    "category": "比較検討",
+    "keywords": [
+      "RPO 人材紹介 違い",
+      "採用代行 比較",
+      "RPO 費用",
+      "採用アウトソーシング"
+    ],
+    "primary_keyword": "RPO 人材紹介 違い",
+    "status": "ready",
+    "scheduled": "2026-07-30",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-rpo-comparison/"
+  },
+  {
+    "slug": "recruitment-startup-acquisition",
+    "title": "スタートアップ特化型人材紹介の集客戦略｜資金調達期の即戦力人材を集める",
+    "description": "スタートアップ志望の求職者を集めるための訴求設計とチャネル選定を解説。ストックオプション訴求、シード〜シリーズB向けの候補者DB形成、CPA相場までまとめました。",
+    "category": "セグメント別",
+    "keywords": [
+      "スタートアップ 人材紹介",
+      "ベンチャー 転職 集客",
+      "スタートアップ 求職者",
+      "SO ストックオプション 訴求"
+    ],
+    "primary_keyword": "スタートアップ 人材紹介",
+    "key_points": [
+      "スタートアップ志望求職者の属性と検索行動",
+      "刺さる訴求軸｜SO・裁量・成長環境の言語化",
+      "主要チャネルとCPA相場（X・note・キャリア系メディア）",
+      "候補者の目利きと事前カウンセリング設計"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-startup-acquisition/"
+  },
+  {
+    "slug": "recruitment-working-mom-acquisition",
+    "title": "ワーママ・育児中求職者の集客戦略｜時短・リモート訴求で母集団を形成する",
+    "description": "育児と両立したい女性求職者を集めるための訴求設計・チャネル・カウンセリング運用を解説。時短勤務・リモート・子育て支援を軸にした訴求で応募率を高める実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "ワーママ 転職 集客",
+      "時短勤務 求人",
+      "育児中 求職者",
+      "ママ向け人材紹介"
+    ],
+    "primary_keyword": "ワーママ 転職 集客",
+    "key_points": [
+      "ワーママ求職者のペルソナとキャリア観",
+      "時短・リモート・両立支援の訴求フレーム",
+      "Instagram・ママ系メディア・LINEの活用",
+      "面談着座率を上げる時間帯設計とカウンセリング配慮"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-working-mom-acquisition/"
+  },
+  {
+    "slug": "recruitment-cost-per-hire",
+    "title": "Cost per Hire（採用単価）とは｜人材紹介事業の決定単価の考え方と業界平均",
+    "description": "採用単価（Cost per Hire）の定義・計算式・業界平均を人材紹介事業者向けに整理。CPAとの違い、決定単価から逆算した集客予算の作り方まで解説します。",
     "category": "用語解説",
     "keywords": [
-      "求職者LTV",
-      "人材紹介 LTV",
-      "LTV CPA",
-      "求職者 生涯価値",
-      "人材紹介 収益設計"
+      "Cost per Hire",
+      "採用単価",
+      "決定単価",
+      "採用コスト 計算"
     ],
-    "primary_keyword": "求職者LTV",
-    "status": "ready",
-    "scheduled": "2026-07-29",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-ltv/"
+    "primary_keyword": "Cost per Hire",
+    "key_points": [
+      "Cost per Hireの定義とCPAとの違い",
+      "業界別・職種別の採用単価相場",
+      "決定単価から逆算する広告予算設計",
+      "採用単価を下げる送客・歩留まり改善の打ち手"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cost-per-hire/"
+  },
+  {
+    "slug": "recruitment-offline-event-acquisition",
+    "title": "転職イベント・合同説明会で求職者を集める｜人材紹介のオフライン集客設計",
+    "description": "転職フェアや合同企業説明会を活用した求職者集客の設計方法を解説。ブース設計・面談誘導動線・CPA試算・オンラインとの連携までを人材紹介向けに整理しました。",
+    "category": "ハウツー",
+    "keywords": [
+      "転職イベント 集客",
+      "合同説明会 人材紹介",
+      "転職フェア",
+      "オフライン 求職者集客"
+    ],
+    "primary_keyword": "転職イベント 集客",
+    "key_points": [
+      "転職イベント市場と主要イベントの特徴",
+      "ブース設計と当日の面談誘導フロー",
+      "集客CPAと決定単価の試算モデル",
+      "イベント後のリード育成とオンライン連携"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-offline-event-acquisition/"
   }
 ]

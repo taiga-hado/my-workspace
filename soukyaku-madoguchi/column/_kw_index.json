@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-startup-acquisition",
+    "title": "スタートアップ特化型人材紹介の集客戦略｜資金調達期の即戦力人材を集める",
+    "description": "スタートアップ志望の求職者を集めるための訴求設計とチャネル選定を解説。ストックオプション訴求、シード〜シリーズB向けの候補者DB形成、CPA相場までまとめました。",
+    "category": "セグメント別",
+    "keywords": [
+      "スタートアップ 人材紹介",
+      "ベンチャー 転職 集客",
+      "スタートアップ 求職者",
+      "SO ストックオプション 訴求"
+    ],
+    "primary_keyword": "スタートアップ 人材紹介",
+    "status": "published",
+    "published": "2026-07-31",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-startup-acquisition/"
+  },
+  {
     "slug": "recruitment-rpo-comparison",
     "title": "RPOと人材紹介の違い｜採用代行サービスの費用・成果・使い分けを徹底比較",
     "description": "RPO（採用代行）と人材紹介の違いを費用体系・成果指標・向いている企業タイプで比較。両者の使い分けと、求職者送客サービスを組み合わせる最新の採用体制を解説します。",
@@ -1633,22 +1649,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-rpo-comparison",
-    "title": "RPOと人材紹介の違い｜採用代行サービスの費用・成果・使い分けを徹底比較",
-    "description": "RPO（採用代行）と人材紹介の違いを費用体系・成果指標・向いている企業タイプで比較。両者の使い分けと、求職者送客サービスを組み合わせる最新の採用体制を解説します。",
-    "category": "比較検討",
-    "keywords": [
-      "RPO 人材紹介 違い",
-      "採用代行 比較",
-      "RPO 費用",
-      "採用アウトソーシング"
-    ],
-    "primary_keyword": "RPO 人材紹介 違い",
-    "status": "ready",
-    "scheduled": "2026-07-30",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-rpo-comparison/"
-  },
-  {
     "slug": "recruitment-startup-acquisition",
     "title": "スタートアップ特化型人材紹介の集客戦略｜資金調達期の即戦力人材を集める",
     "description": "スタートアップ志望の求職者を集めるための訴求設計とチャネル選定を解説。ストックオプション訴求、シード〜シリーズB向けの候補者DB形成、CPA相場までまとめました。",
@@ -1660,14 +1660,8 @@
       "SO ストックオプション 訴求"
     ],
     "primary_keyword": "スタートアップ 人材紹介",
-    "key_points": [
-      "スタートアップ志望求職者の属性と検索行動",
-      "刺さる訴求軸｜SO・裁量・成長環境の言語化",
-      "主要チャネルとCPA相場（X・note・キャリア系メディア）",
-      "候補者の目利きと事前カウンセリング設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-07-31",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-startup-acquisition/"
   },
   {
@@ -1689,7 +1683,7 @@
       "面談着座率を上げる時間帯設計とカウンセリング配慮"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-working-mom-acquisition/"
   },
   {
@@ -1711,7 +1705,7 @@
       "採用単価を下げる送客・歩留まり改善の打ち手"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cost-per-hire/"
   },
   {
@@ -1733,7 +1727,7 @@
       "イベント後のリード育成とオンライン連携"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-offline-event-acquisition/"
   }
 ]

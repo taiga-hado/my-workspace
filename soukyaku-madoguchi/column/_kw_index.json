@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-working-mom-acquisition",
+    "title": "ワーママ・育児中求職者の集客戦略｜時短・リモート訴求で母集団を形成する",
+    "description": "育児と両立したい女性求職者を集めるための訴求設計・チャネル・カウンセリング運用を解説。時短勤務・リモート・子育て支援を軸にした訴求で応募率を高める実務ガイド。",
+    "category": "セグメント別",
+    "keywords": [
+      "ワーママ 転職 集客",
+      "時短勤務 求人",
+      "育児中 求職者",
+      "ママ向け人材紹介"
+    ],
+    "primary_keyword": "ワーママ 転職 集客",
+    "status": "published",
+    "published": "2026-08-01",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-working-mom-acquisition/"
+  },
+  {
     "slug": "recruitment-startup-acquisition",
     "title": "スタートアップ特化型人材紹介の集客戦略｜資金調達期の即戦力人材を集める",
     "description": "スタートアップ志望の求職者を集めるための訴求設計とチャネル選定を解説。ストックオプション訴求、シード〜シリーズB向けの候補者DB形成、CPA相場までまとめました。",
@@ -1649,22 +1665,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-startup-acquisition",
-    "title": "スタートアップ特化型人材紹介の集客戦略｜資金調達期の即戦力人材を集める",
-    "description": "スタートアップ志望の求職者を集めるための訴求設計とチャネル選定を解説。ストックオプション訴求、シード〜シリーズB向けの候補者DB形成、CPA相場までまとめました。",
-    "category": "セグメント別",
-    "keywords": [
-      "スタートアップ 人材紹介",
-      "ベンチャー 転職 集客",
-      "スタートアップ 求職者",
-      "SO ストックオプション 訴求"
-    ],
-    "primary_keyword": "スタートアップ 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-07-31",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-startup-acquisition/"
-  },
-  {
     "slug": "recruitment-working-mom-acquisition",
     "title": "ワーママ・育児中求職者の集客戦略｜時短・リモート訴求で母集団を形成する",
     "description": "育児と両立したい女性求職者を集めるための訴求設計・チャネル・カウンセリング運用を解説。時短勤務・リモート・子育て支援を軸にした訴求で応募率を高める実務ガイド。",
@@ -1676,14 +1676,8 @@
       "ママ向け人材紹介"
     ],
     "primary_keyword": "ワーママ 転職 集客",
-    "key_points": [
-      "ワーママ求職者のペルソナとキャリア観",
-      "時短・リモート・両立支援の訴求フレーム",
-      "Instagram・ママ系メディア・LINEの活用",
-      "面談着座率を上げる時間帯設計とカウンセリング配慮"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-01",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-working-mom-acquisition/"
   },
   {
@@ -1705,7 +1699,7 @@
       "採用単価を下げる送客・歩留まり改善の打ち手"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cost-per-hire/"
   },
   {
@@ -1727,7 +1721,7 @@
       "イベント後のリード育成とオンライン連携"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-offline-event-acquisition/"
   }
 ]

@@ -16,6 +16,22 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cost-per-hire/"
   },
   {
+    "slug": "recruitment-offline-event-acquisition",
+    "title": "転職イベント・合同説明会で求職者を集める｜人材紹介のオフライン集客設計",
+    "description": "転職フェアや合同企業説明会を活用した求職者集客の設計方法を解説。ブース設計・面談誘導動線・CPA試算・オンラインとの連携までを人材紹介向けに整理しました。",
+    "category": "ハウツー",
+    "keywords": [
+      "転職イベント 集客",
+      "合同説明会 人材紹介",
+      "転職フェア",
+      "オフライン 求職者集客"
+    ],
+    "primary_keyword": "転職イベント 集客",
+    "status": "published",
+    "published": "2026-08-03",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-offline-event-acquisition/"
+  },
+  {
     "slug": "recruitment-working-mom-acquisition",
     "title": "ワーママ・育児中求職者の集客戦略｜時短・リモート訴求で母集団を形成する",
     "description": "育児と両立したい女性求職者を集めるための訴求設計・チャネル・カウンセリング運用を解説。時短勤務・リモート・子育て支援を軸にした訴求で応募率を高める実務ガイド。",
@@ -1681,22 +1697,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-cost-per-hire",
-    "title": "Cost per Hire（採用単価）とは｜人材紹介事業の決定単価の考え方と業界平均",
-    "description": "採用単価（Cost per Hire）の定義・計算式・業界平均を人材紹介事業者向けに整理。CPAとの違い、決定単価から逆算した集客予算の作り方まで解説します。",
-    "category": "用語解説",
-    "keywords": [
-      "Cost per Hire",
-      "採用単価",
-      "決定単価",
-      "採用コスト 計算"
-    ],
-    "primary_keyword": "Cost per Hire",
-    "status": "ready",
-    "scheduled": "2026-08-03",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cost-per-hire/"
-  },
-  {
     "slug": "recruitment-offline-event-acquisition",
     "title": "転職イベント・合同説明会で求職者を集める｜人材紹介のオフライン集客設計",
     "description": "転職フェアや合同企業説明会を活用した求職者集客の設計方法を解説。ブース設計・面談誘導動線・CPA試算・オンラインとの連携までを人材紹介向けに整理しました。",
@@ -1708,14 +1708,8 @@
       "オフライン 求職者集客"
     ],
     "primary_keyword": "転職イベント 集客",
-    "key_points": [
-      "転職イベント市場と主要イベントの特徴",
-      "ブース設計と当日の面談誘導フロー",
-      "集客CPAと決定単価の試算モデル",
-      "イベント後のリード育成とオンライン連携"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-03",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-offline-event-acquisition/"
   }
 ]

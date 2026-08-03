@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-cost-per-hire",
+    "title": "Cost per Hire（採用単価）とは｜人材紹介事業の決定単価の考え方と業界平均",
+    "description": "採用単価（Cost per Hire）の定義・計算式・業界平均を人材紹介事業者向けに整理。CPAとの違い、決定単価から逆算した集客予算の作り方まで解説します。",
+    "category": "用語解説",
+    "keywords": [
+      "Cost per Hire",
+      "採用単価",
+      "決定単価",
+      "採用コスト 計算"
+    ],
+    "primary_keyword": "Cost per Hire",
+    "status": "published",
+    "published": "2026-08-03",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cost-per-hire/"
+  },
+  {
     "slug": "recruitment-working-mom-acquisition",
     "title": "ワーママ・育児中求職者の集客戦略｜時短・リモート訴求で母集団を形成する",
     "description": "育児と両立したい女性求職者を集めるための訴求設計・チャネル・カウンセリング運用を解説。時短勤務・リモート・子育て支援を軸にした訴求で応募率を高める実務ガイド。",
@@ -1665,22 +1681,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-working-mom-acquisition",
-    "title": "ワーママ・育児中求職者の集客戦略｜時短・リモート訴求で母集団を形成する",
-    "description": "育児と両立したい女性求職者を集めるための訴求設計・チャネル・カウンセリング運用を解説。時短勤務・リモート・子育て支援を軸にした訴求で応募率を高める実務ガイド。",
-    "category": "セグメント別",
-    "keywords": [
-      "ワーママ 転職 集客",
-      "時短勤務 求人",
-      "育児中 求職者",
-      "ママ向け人材紹介"
-    ],
-    "primary_keyword": "ワーママ 転職 集客",
-    "status": "ready",
-    "scheduled": "2026-08-01",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-working-mom-acquisition/"
-  },
-  {
     "slug": "recruitment-cost-per-hire",
     "title": "Cost per Hire（採用単価）とは｜人材紹介事業の決定単価の考え方と業界平均",
     "description": "採用単価（Cost per Hire）の定義・計算式・業界平均を人材紹介事業者向けに整理。CPAとの違い、決定単価から逆算した集客予算の作り方まで解説します。",
@@ -1692,14 +1692,8 @@
       "採用コスト 計算"
     ],
     "primary_keyword": "Cost per Hire",
-    "key_points": [
-      "Cost per Hireの定義とCPAとの違い",
-      "業界別・職種別の採用単価相場",
-      "決定単価から逆算する広告予算設計",
-      "採用単価を下げる送客・歩留まり改善の打ち手"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-03",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-cost-per-hire/"
   },
   {
@@ -1721,7 +1715,7 @@
       "イベント後のリード育成とオンライン連携"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-offline-event-acquisition/"
   }
 ]

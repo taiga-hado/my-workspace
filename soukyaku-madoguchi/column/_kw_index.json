@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-decision-rate",
+    "title": "人材紹介の決定率を上げる方法｜面談から内定承諾までの改善設計",
+    "description": "人材紹介の決定率（面談→決定）が伸び悩む原因と、求人マッチング精度・推薦タイミング・クロージング設計で改善する具体策を、業界平均値とあわせて解説します。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 決定率",
+      "面談 決定率",
+      "人材紹介 KPI",
+      "決定率 改善",
+      "人材紹介 クロージング"
+    ],
+    "primary_keyword": "人材紹介 決定率",
+    "status": "published",
+    "published": "2026-08-04",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-decision-rate/"
+  },
+  {
     "slug": "recruitment-cost-per-hire",
     "title": "Cost per Hire（採用単価）とは｜人材紹介事業の決定単価の考え方と業界平均",
     "description": "採用単価（Cost per Hire）の定義・計算式・業界平均を人材紹介事業者向けに整理。CPAとの違い、決定単価から逆算した集客予算の作り方まで解説します。",
@@ -1697,19 +1714,112 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-offline-event-acquisition",
-    "title": "転職イベント・合同説明会で求職者を集める｜人材紹介のオフライン集客設計",
-    "description": "転職フェアや合同企業説明会を活用した求職者集客の設計方法を解説。ブース設計・面談誘導動線・CPA試算・オンラインとの連携までを人材紹介向けに整理しました。",
+    "slug": "recruitment-decision-rate",
+    "title": "人材紹介の決定率を上げる方法｜面談から内定承諾までの改善設計",
+    "description": "人材紹介の決定率（面談→決定）が伸び悩む原因と、求人マッチング精度・推薦タイミング・クロージング設計で改善する具体策を、業界平均値とあわせて解説します。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 決定率",
+      "面談 決定率",
+      "人材紹介 KPI",
+      "決定率 改善",
+      "人材紹介 クロージング"
+    ],
+    "primary_keyword": "人材紹介 決定率",
+    "status": "ready",
+    "scheduled": "2026-08-04",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-decision-rate/"
+  },
+  {
+    "slug": "recruitment-linkedin-marketing",
+    "title": "人材紹介のLinkedIn集客｜ハイクラス・外資人材を集める運用設計",
+    "description": "LinkedInを活用してハイクラス・バイリンガル・外資系人材を集めるための投稿設計、スカウト運用、広告出稿の実務を、人材紹介エージェント向けに解説します。",
     "category": "ハウツー",
     "keywords": [
-      "転職イベント 集客",
-      "合同説明会 人材紹介",
-      "転職フェア",
-      "オフライン 求職者集客"
+      "LinkedIn 集客",
+      "LinkedIn 人材紹介",
+      "LinkedIn スカウト",
+      "LinkedIn 広告",
+      "ハイクラス 集客"
     ],
-    "primary_keyword": "転職イベント 集客",
-    "status": "ready",
-    "scheduled": "2026-08-03",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-offline-event-acquisition/"
+    "primary_keyword": "LinkedIn 集客",
+    "key_points": [
+      "LinkedInで集まる求職者属性と他SNSとの棲み分け",
+      "会社ページ・個人アカウントの投稿設計と発信テーマ",
+      "スカウトメッセージの返信率を上げる文面と送信フロー",
+      "LinkedIn広告（Sponsored Content・InMail）の運用と相場CPA"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-linkedin-marketing/"
+  },
+  {
+    "slug": "recruitment-job-search-engine-comparison",
+    "title": "求人検索エンジン比較｜Indeed・求人ボックス・スタンバイの使い分け",
+    "description": "Indeed・求人ボックス・スタンバイ・キャリアジェットの4大求人検索エンジンを、人材紹介エージェント視点で流入規模・CPC相場・審査基準・成果で比較します。",
+    "category": "比較検討",
+    "keywords": [
+      "求人検索エンジン 比較",
+      "求人ボックス",
+      "スタンバイ",
+      "Indeed 比較",
+      "キャリアジェット"
+    ],
+    "primary_keyword": "求人検索エンジン 比較",
+    "key_points": [
+      "4大求人検索エンジンの流入規模・ユーザー属性比較",
+      "CPC・CPA相場と課金モデルの違い（クリック課金／掲載無料）",
+      "人材紹介事業者の掲載審査基準と落ちる理由",
+      "チャネル別歩留まりと予算配分の推奨パターン"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-search-engine-comparison/"
+  },
+  {
+    "slug": "recruitment-hr-tech-trends-2026",
+    "title": "HR Techトレンド2026｜人材紹介エージェントが導入すべき最新ツール",
+    "description": "AIマッチング・音声解析・面談予約自動化など、2026年に人材紹介事業で活用が進むHR Techツールのトレンドと、投資判断の基準を解説します。",
+    "category": "業界トレンド",
+    "keywords": [
+      "HR Tech トレンド",
+      "人材紹介 ツール",
+      "AIマッチング",
+      "面談予約 自動化",
+      "人材紹介 DX"
+    ],
+    "primary_keyword": "HR Tech トレンド",
+    "key_points": [
+      "2026年に注目すべきHR Techカテゴリ（AI・自動化・データ基盤）",
+      "AIマッチング・レコメンドエンジンの活用と成果事例",
+      "面談予約自動化・音声解析ツールの導入効果",
+      "ツール投資のROI試算と導入ロードマップ"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hr-tech-trends-2026/"
+  },
+  {
+    "slug": "recruitment-restaurant-acquisition",
+    "title": "飲食業界特化型人材紹介の集客戦略｜店長・シェフ・ホール人材の獲得設計",
+    "description": "飲食業界に特化した人材紹介で、店長候補・シェフ・ホールスタッフを集めるための訴求軸・チャネル選定・面談着座までの運用を実務目線で解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "飲食 人材紹介",
+      "飲食業界 集客",
+      "店長 転職",
+      "シェフ 求人",
+      "飲食 求職者"
+    ],
+    "primary_keyword": "飲食 人材紹介",
+    "key_points": [
+      "飲食業界の転職市場規模と求職者ニーズ（労働環境・年収）",
+      "職種別（店長・料理長・ホール・本部）の訴求ポイント",
+      "飲食求職者に効くチャネル（SNS・LINE・求人検索エンジン）",
+      "面談着座率を高める事前カウンセリング設計と歩留まり基準"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-restaurant-acquisition/"
   }
 ]

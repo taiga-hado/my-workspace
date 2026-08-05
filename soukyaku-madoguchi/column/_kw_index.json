@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-linkedin-marketing",
+    "title": "人材紹介のLinkedIn集客｜ハイクラス・外資人材を集める運用設計",
+    "description": "LinkedInを活用してハイクラス・バイリンガル・外資系人材を集めるための投稿設計、スカウト運用、広告出稿の実務を、人材紹介エージェント向けに解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "LinkedIn 集客",
+      "LinkedIn 人材紹介",
+      "LinkedIn スカウト",
+      "LinkedIn 広告",
+      "ハイクラス 集客"
+    ],
+    "primary_keyword": "LinkedIn 集客",
+    "status": "published",
+    "published": "2026-08-05",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-linkedin-marketing/"
+  },
+  {
     "slug": "recruitment-decision-rate",
     "title": "人材紹介の決定率を上げる方法｜面談から内定承諾までの改善設計",
     "description": "人材紹介の決定率（面談→決定）が伸び悩む原因と、求人マッチング精度・推薦タイミング・クロージング設計で改善する具体策を、業界平均値とあわせて解説します。",
@@ -1714,23 +1731,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-decision-rate",
-    "title": "人材紹介の決定率を上げる方法｜面談から内定承諾までの改善設計",
-    "description": "人材紹介の決定率（面談→決定）が伸び悩む原因と、求人マッチング精度・推薦タイミング・クロージング設計で改善する具体策を、業界平均値とあわせて解説します。",
-    "category": "課題解決",
-    "keywords": [
-      "人材紹介 決定率",
-      "面談 決定率",
-      "人材紹介 KPI",
-      "決定率 改善",
-      "人材紹介 クロージング"
-    ],
-    "primary_keyword": "人材紹介 決定率",
-    "status": "ready",
-    "scheduled": "2026-08-04",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-decision-rate/"
-  },
-  {
     "slug": "recruitment-linkedin-marketing",
     "title": "人材紹介のLinkedIn集客｜ハイクラス・外資人材を集める運用設計",
     "description": "LinkedInを活用してハイクラス・バイリンガル・外資系人材を集めるための投稿設計、スカウト運用、広告出稿の実務を、人材紹介エージェント向けに解説します。",
@@ -1743,14 +1743,8 @@
       "ハイクラス 集客"
     ],
     "primary_keyword": "LinkedIn 集客",
-    "key_points": [
-      "LinkedInで集まる求職者属性と他SNSとの棲み分け",
-      "会社ページ・個人アカウントの投稿設計と発信テーマ",
-      "スカウトメッセージの返信率を上げる文面と送信フロー",
-      "LinkedIn広告（Sponsored Content・InMail）の運用と相場CPA"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-05",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-linkedin-marketing/"
   },
   {
@@ -1773,7 +1767,7 @@
       "チャネル別歩留まりと予算配分の推奨パターン"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-search-engine-comparison/"
   },
   {
@@ -1796,7 +1790,7 @@
       "ツール投資のROI試算と導入ロードマップ"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hr-tech-trends-2026/"
   },
   {
@@ -1819,7 +1813,7 @@
       "面談着座率を高める事前カウンセリング設計と歩留まり基準"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-restaurant-acquisition/"
   }
 ]

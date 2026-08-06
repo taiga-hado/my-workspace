@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-job-search-engine-comparison",
+    "title": "求人検索エンジン比較｜Indeed・求人ボックス・スタンバイの使い分け",
+    "description": "Indeed・求人ボックス・スタンバイ・キャリアジェットの4大求人検索エンジンを、人材紹介エージェント視点で流入規模・CPC相場・審査基準・成果で比較します。",
+    "category": "比較検討",
+    "keywords": [
+      "求人検索エンジン 比較",
+      "求人ボックス",
+      "スタンバイ",
+      "Indeed 比較",
+      "キャリアジェット"
+    ],
+    "primary_keyword": "求人検索エンジン 比較",
+    "status": "published",
+    "published": "2026-08-06",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-search-engine-comparison/"
+  },
+  {
     "slug": "recruitment-linkedin-marketing",
     "title": "人材紹介のLinkedIn集客｜ハイクラス・外資人材を集める運用設計",
     "description": "LinkedInを活用してハイクラス・バイリンガル・外資系人材を集めるための投稿設計、スカウト運用、広告出稿の実務を、人材紹介エージェント向けに解説します。",
@@ -1731,23 +1748,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-linkedin-marketing",
-    "title": "人材紹介のLinkedIn集客｜ハイクラス・外資人材を集める運用設計",
-    "description": "LinkedInを活用してハイクラス・バイリンガル・外資系人材を集めるための投稿設計、スカウト運用、広告出稿の実務を、人材紹介エージェント向けに解説します。",
-    "category": "ハウツー",
-    "keywords": [
-      "LinkedIn 集客",
-      "LinkedIn 人材紹介",
-      "LinkedIn スカウト",
-      "LinkedIn 広告",
-      "ハイクラス 集客"
-    ],
-    "primary_keyword": "LinkedIn 集客",
-    "status": "ready",
-    "scheduled": "2026-08-05",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-linkedin-marketing/"
-  },
-  {
     "slug": "recruitment-job-search-engine-comparison",
     "title": "求人検索エンジン比較｜Indeed・求人ボックス・スタンバイの使い分け",
     "description": "Indeed・求人ボックス・スタンバイ・キャリアジェットの4大求人検索エンジンを、人材紹介エージェント視点で流入規模・CPC相場・審査基準・成果で比較します。",
@@ -1760,14 +1760,8 @@
       "キャリアジェット"
     ],
     "primary_keyword": "求人検索エンジン 比較",
-    "key_points": [
-      "4大求人検索エンジンの流入規模・ユーザー属性比較",
-      "CPC・CPA相場と課金モデルの違い（クリック課金／掲載無料）",
-      "人材紹介事業者の掲載審査基準と落ちる理由",
-      "チャネル別歩留まりと予算配分の推奨パターン"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-06",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-search-engine-comparison/"
   },
   {
@@ -1790,7 +1784,7 @@
       "ツール投資のROI試算と導入ロードマップ"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hr-tech-trends-2026/"
   },
   {
@@ -1813,7 +1807,7 @@
       "面談着座率を高める事前カウンセリング設計と歩留まり基準"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-restaurant-acquisition/"
   }
 ]

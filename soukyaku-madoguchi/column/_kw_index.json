@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-hr-tech-trends-2026",
+    "title": "HR Techトレンド2026｜人材紹介エージェントが導入すべき最新ツール",
+    "description": "AIマッチング・音声解析・面談予約自動化など、2026年に人材紹介事業で活用が進むHR Techツールのトレンドと、投資判断の基準を解説します。",
+    "category": "業界トレンド",
+    "keywords": [
+      "HR Tech トレンド",
+      "人材紹介 ツール",
+      "AIマッチング",
+      "面談予約 自動化",
+      "人材紹介 DX"
+    ],
+    "primary_keyword": "HR Tech トレンド",
+    "status": "published",
+    "published": "2026-08-07",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hr-tech-trends-2026/"
+  },
+  {
     "slug": "recruitment-job-search-engine-comparison",
     "title": "求人検索エンジン比較｜Indeed・求人ボックス・スタンバイの使い分け",
     "description": "Indeed・求人ボックス・スタンバイ・キャリアジェットの4大求人検索エンジンを、人材紹介エージェント視点で流入規模・CPC相場・審査基準・成果で比較します。",
@@ -1748,23 +1765,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-job-search-engine-comparison",
-    "title": "求人検索エンジン比較｜Indeed・求人ボックス・スタンバイの使い分け",
-    "description": "Indeed・求人ボックス・スタンバイ・キャリアジェットの4大求人検索エンジンを、人材紹介エージェント視点で流入規模・CPC相場・審査基準・成果で比較します。",
-    "category": "比較検討",
-    "keywords": [
-      "求人検索エンジン 比較",
-      "求人ボックス",
-      "スタンバイ",
-      "Indeed 比較",
-      "キャリアジェット"
-    ],
-    "primary_keyword": "求人検索エンジン 比較",
-    "status": "ready",
-    "scheduled": "2026-08-06",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-search-engine-comparison/"
-  },
-  {
     "slug": "recruitment-hr-tech-trends-2026",
     "title": "HR Techトレンド2026｜人材紹介エージェントが導入すべき最新ツール",
     "description": "AIマッチング・音声解析・面談予約自動化など、2026年に人材紹介事業で活用が進むHR Techツールのトレンドと、投資判断の基準を解説します。",
@@ -1777,14 +1777,8 @@
       "人材紹介 DX"
     ],
     "primary_keyword": "HR Tech トレンド",
-    "key_points": [
-      "2026年に注目すべきHR Techカテゴリ（AI・自動化・データ基盤）",
-      "AIマッチング・レコメンドエンジンの活用と成果事例",
-      "面談予約自動化・音声解析ツールの導入効果",
-      "ツール投資のROI試算と導入ロードマップ"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-07",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hr-tech-trends-2026/"
   },
   {
@@ -1807,7 +1801,7 @@
       "面談着座率を高める事前カウンセリング設計と歩留まり基準"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-restaurant-acquisition/"
   }
 ]

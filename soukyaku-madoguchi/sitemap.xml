@@ -560,4 +560,9 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hr-tech-trends-2026/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-ghosting-prevention",
+    "title": "求職者の音信不通・ゴースト対策｜面談前後の離脱を防ぐ運用設計",
+    "description": "人材紹介で発生する求職者の音信不通（ゴースティング）を防ぐ実践策を解説。応募直後・面談前日・面談後の3タイミング別に、連絡手段と文面設計、着座率を守る運用フローを紹介します。",
+    "category": "課題解決",
+    "keywords": [
+      "求職者 音信不通",
+      "人材紹介 ゴースティング",
+      "面談 ドタキャン",
+      "求職者 連絡取れない",
+      "人材紹介 リマインド"
+    ],
+    "primary_keyword": "求職者 音信不通",
+    "status": "published",
+    "published": "2026-08-09",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ghosting-prevention/"
+  },
+  {
     "slug": "recruitment-restaurant-acquisition",
     "title": "飲食業界特化型人材紹介の集客戦略｜店長・シェフ・ホール人材の獲得設計",
     "description": "飲食業界に特化した人材紹介で、店長候補・シェフ・ホールスタッフを集めるための訴求軸・チャネル選定・面談着座までの運用を実務目線で解説します。",
@@ -1782,20 +1799,112 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-restaurant-acquisition",
-    "title": "飲食業界特化型人材紹介の集客戦略｜店長・シェフ・ホール人材の獲得設計",
-    "description": "飲食業界に特化した人材紹介で、店長候補・シェフ・ホールスタッフを集めるための訴求軸・チャネル選定・面談着座までの運用を実務目線で解説します。",
+    "slug": "recruitment-ghosting-prevention",
+    "title": "求職者の音信不通・ゴースト対策｜面談前後の離脱を防ぐ運用設計",
+    "description": "人材紹介で発生する求職者の音信不通（ゴースティング）を防ぐ実践策を解説。応募直後・面談前日・面談後の3タイミング別に、連絡手段と文面設計、着座率を守る運用フローを紹介します。",
+    "category": "課題解決",
+    "keywords": [
+      "求職者 音信不通",
+      "人材紹介 ゴースティング",
+      "面談 ドタキャン",
+      "求職者 連絡取れない",
+      "人材紹介 リマインド"
+    ],
+    "primary_keyword": "求職者 音信不通",
+    "status": "ready",
+    "scheduled": "2026-08-09",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ghosting-prevention/"
+  },
+  {
+    "slug": "recruitment-valid-application-definition",
+    "title": "有効応募・有効面談とは｜人材紹介の成果定義とKPI設計",
+    "description": "人材紹介で使われる「有効応募」「有効面談」の定義を整理。無効判定基準、集客代行の成果報酬設計、CPA・着座率の正しい計測方法まで、事業者視点で解説します。",
+    "category": "用語解説",
+    "keywords": [
+      "有効応募 定義",
+      "有効面談 とは",
+      "人材紹介 KPI",
+      "着座 定義",
+      "無効応募 判定"
+    ],
+    "primary_keyword": "有効応募 定義",
+    "key_points": [
+      "有効応募・有効面談の一般的な定義と業界のばらつき",
+      "無効判定の基準（年齢・地域・職種・重複・虚偽）",
+      "有効面談ベースのCPA計測と成果報酬設計への反映",
+      "集客代行契約で有効定義を明文化する交渉ポイント"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-valid-application-definition/"
+  },
+  {
+    "slug": "recruitment-backoffice-acquisition",
+    "title": "バックオフィス人材紹介の集客戦略｜経理・人事・法務の求職者獲得",
+    "description": "経理・人事・法務・総務などバックオフィス職種に特化した人材紹介の集客戦略を解説。求職者の転職動機、有効なチャネル、資格別訴求設計まで実務ベースで紹介します。",
     "category": "セグメント別",
     "keywords": [
-      "飲食 人材紹介",
-      "飲食業界 集客",
-      "店長 転職",
-      "シェフ 求人",
-      "飲食 求職者"
+      "バックオフィス 人材紹介",
+      "経理 転職 集客",
+      "人事 求職者 獲得",
+      "管理部門 転職エージェント",
+      "士業 人材紹介"
     ],
-    "primary_keyword": "飲食 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-08-08",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-restaurant-acquisition/"
+    "primary_keyword": "バックオフィス 人材紹介",
+    "key_points": [
+      "バックオフィス求職者の転職動機とキャリア志向の特徴",
+      "経理・人事・法務・総務の職種別集客チャネル比較",
+      "簿記・社労士・USCPAなど資格保有者への訴求設計",
+      "面談着座率を高めるバックオフィス特化の事前カウンセリング"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-backoffice-acquisition/"
+  },
+  {
+    "slug": "recruitment-sms-marketing",
+    "title": "人材紹介のSMS活用｜開封率98%を面談着座率に変える運用設計",
+    "description": "人材紹介のSMSマーケティング活用法を解説。開封率98%のSMSを応募直後の初回連絡・リマインド・再アプローチにどう組み込むか、法令遵守と送信フローまで実務レベルで紹介します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 SMS",
+      "求職者 SMS 連絡",
+      "SMS リマインド",
+      "SMS マーケティング 採用",
+      "ショートメッセージ 面談"
+    ],
+    "primary_keyword": "人材紹介 SMS",
+    "key_points": [
+      "SMSがメール・LINEより効く場面と開封率のリアルな差",
+      "応募直後・面談前日・当日のSMS文面テンプレート",
+      "特定電子メール法・オプトアウトなど法令遵守の実務",
+      "主要SMS配信サービス比較とCRM連携の設計"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sms-marketing/"
+  },
+  {
+    "slug": "recruitment-bilingual-acquisition",
+    "title": "バイリンガル人材紹介の集客戦略｜英語話者・外資志望の求職者を集める",
+    "description": "バイリンガル・外資系志望の求職者を狙う人材紹介の集客戦略を解説。LinkedIn・英語求人媒体・オンラインイベントの使い分けと、TOEIC別ターゲティング、報酬レンジ訴求まで紹介します。",
+    "category": "セグメント別",
+    "keywords": [
+      "バイリンガル 人材紹介",
+      "外資系 転職エージェント",
+      "英語話者 求職者",
+      "LinkedIn バイリンガル",
+      "英語 求人 集客"
+    ],
+    "primary_keyword": "バイリンガル 人材紹介",
+    "key_points": [
+      "バイリンガル求職者の市場規模と年収レンジの特徴",
+      "英語力レベル別（TOEIC/ビジネスレベル）のターゲット設計",
+      "LinkedIn・Daijob・CareerCrossなど英語対応媒体の使い分け",
+      "外資カルチャー訴求と面談着座までの多言語コミュニケーション"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-bilingual-acquisition/"
   }
 ]

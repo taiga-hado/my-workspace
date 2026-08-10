@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-valid-application-definition",
-    "title": "有効応募・有効面談とは｜人材紹介の成果定義とKPI設計",
-    "description": "人材紹介で使われる「有効応募」「有効面談」の定義を整理。無効判定基準、集客代行の成果報酬設計、CPA・着座率の正しい計測方法まで、事業者視点で解説します。",
-    "keywords": "有効応募 定義,有効面談 とは,人材紹介 KPI,着座 定義,無効応募 判定",
-    "category": "用語解説",
-    "image_prompt": "Deep navy blue (#1a3a8a) background with gold (#f5b400) accent checkmark and filter funnel icons, flat editorial illustration showing valid vs invalid application concept, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect ratio",
-    "key_points": [
-      "有効応募・有効面談の一般的な定義と業界のばらつき",
-      "無効判定の基準（年齢・地域・職種・重複・虚偽）",
-      "有効面談ベースのCPA計測と成果報酬設計への反映",
-      "集客代行契約で有効定義を明文化する交渉ポイント"
-    ]
-  },
-  {
     "slug": "recruitment-backoffice-acquisition",
     "title": "バックオフィス人材紹介の集客戦略｜経理・人事・法務の求職者獲得",
     "description": "経理・人事・法務・総務などバックオフィス職種に特化した人材紹介の集客戦略を解説。求職者の転職動機、有効なチャネル、資格別訴求設計まで実務ベースで紹介します。",

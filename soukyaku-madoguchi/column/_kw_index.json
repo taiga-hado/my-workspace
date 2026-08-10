@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-valid-application-definition",
+    "title": "有効応募・有効面談とは｜人材紹介の成果定義とKPI設計",
+    "description": "人材紹介で使われる「有効応募」「有効面談」の定義を整理。無効判定基準、集客代行の成果報酬設計、CPA・着座率の正しい計測方法まで、事業者視点で解説します。",
+    "category": "用語解説",
+    "keywords": [
+      "有効応募 定義",
+      "有効面談 とは",
+      "人材紹介 KPI",
+      "着座 定義",
+      "無効応募 判定"
+    ],
+    "primary_keyword": "有効応募 定義",
+    "status": "published",
+    "published": "2026-08-10",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-valid-application-definition/"
+  },
+  {
     "slug": "recruitment-ghosting-prevention",
     "title": "求職者の音信不通・ゴースト対策｜面談前後の離脱を防ぐ運用設計",
     "description": "人材紹介で発生する求職者の音信不通（ゴースティング）を防ぐ実践策を解説。応募直後・面談前日・面談後の3タイミング別に、連絡手段と文面設計、着座率を守る運用フローを紹介します。",
@@ -1799,23 +1816,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-ghosting-prevention",
-    "title": "求職者の音信不通・ゴースト対策｜面談前後の離脱を防ぐ運用設計",
-    "description": "人材紹介で発生する求職者の音信不通（ゴースティング）を防ぐ実践策を解説。応募直後・面談前日・面談後の3タイミング別に、連絡手段と文面設計、着座率を守る運用フローを紹介します。",
-    "category": "課題解決",
-    "keywords": [
-      "求職者 音信不通",
-      "人材紹介 ゴースティング",
-      "面談 ドタキャン",
-      "求職者 連絡取れない",
-      "人材紹介 リマインド"
-    ],
-    "primary_keyword": "求職者 音信不通",
-    "status": "ready",
-    "scheduled": "2026-08-09",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ghosting-prevention/"
-  },
-  {
     "slug": "recruitment-valid-application-definition",
     "title": "有効応募・有効面談とは｜人材紹介の成果定義とKPI設計",
     "description": "人材紹介で使われる「有効応募」「有効面談」の定義を整理。無効判定基準、集客代行の成果報酬設計、CPA・着座率の正しい計測方法まで、事業者視点で解説します。",
@@ -1828,14 +1828,8 @@
       "無効応募 判定"
     ],
     "primary_keyword": "有効応募 定義",
-    "key_points": [
-      "有効応募・有効面談の一般的な定義と業界のばらつき",
-      "無効判定の基準（年齢・地域・職種・重複・虚偽）",
-      "有効面談ベースのCPA計測と成果報酬設計への反映",
-      "集客代行契約で有効定義を明文化する交渉ポイント"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-10",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-valid-application-definition/"
   },
   {
@@ -1858,7 +1852,7 @@
       "面談着座率を高めるバックオフィス特化の事前カウンセリング"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-backoffice-acquisition/"
   },
   {
@@ -1881,7 +1875,7 @@
       "主要SMS配信サービス比較とCRM連携の設計"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sms-marketing/"
   },
   {
@@ -1904,7 +1898,7 @@
       "外資カルチャー訴求と面談着座までの多言語コミュニケーション"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-bilingual-acquisition/"
   }
 ]

@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-backoffice-acquisition",
+    "title": "バックオフィス人材紹介の集客戦略｜経理・人事・法務の求職者獲得",
+    "description": "経理・人事・法務・総務などバックオフィス職種に特化した人材紹介の集客戦略を解説。求職者の転職動機、有効なチャネル、資格別訴求設計まで実務ベースで紹介します。",
+    "category": "セグメント別",
+    "keywords": [
+      "バックオフィス 人材紹介",
+      "経理 転職 集客",
+      "人事 求職者 獲得",
+      "管理部門 転職エージェント",
+      "士業 人材紹介"
+    ],
+    "primary_keyword": "バックオフィス 人材紹介",
+    "status": "published",
+    "published": "2026-08-11",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-backoffice-acquisition/"
+  },
+  {
     "slug": "recruitment-valid-application-definition",
     "title": "有効応募・有効面談とは｜人材紹介の成果定義とKPI設計",
     "description": "人材紹介で使われる「有効応募」「有効面談」の定義を整理。無効判定基準、集客代行の成果報酬設計、CPA・着座率の正しい計測方法まで、事業者視点で解説します。",
@@ -1816,23 +1833,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-valid-application-definition",
-    "title": "有効応募・有効面談とは｜人材紹介の成果定義とKPI設計",
-    "description": "人材紹介で使われる「有効応募」「有効面談」の定義を整理。無効判定基準、集客代行の成果報酬設計、CPA・着座率の正しい計測方法まで、事業者視点で解説します。",
-    "category": "用語解説",
-    "keywords": [
-      "有効応募 定義",
-      "有効面談 とは",
-      "人材紹介 KPI",
-      "着座 定義",
-      "無効応募 判定"
-    ],
-    "primary_keyword": "有効応募 定義",
-    "status": "ready",
-    "scheduled": "2026-08-10",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-valid-application-definition/"
-  },
-  {
     "slug": "recruitment-backoffice-acquisition",
     "title": "バックオフィス人材紹介の集客戦略｜経理・人事・法務の求職者獲得",
     "description": "経理・人事・法務・総務などバックオフィス職種に特化した人材紹介の集客戦略を解説。求職者の転職動機、有効なチャネル、資格別訴求設計まで実務ベースで紹介します。",
@@ -1845,14 +1845,8 @@
       "士業 人材紹介"
     ],
     "primary_keyword": "バックオフィス 人材紹介",
-    "key_points": [
-      "バックオフィス求職者の転職動機とキャリア志向の特徴",
-      "経理・人事・法務・総務の職種別集客チャネル比較",
-      "簿記・社労士・USCPAなど資格保有者への訴求設計",
-      "面談着座率を高めるバックオフィス特化の事前カウンセリング"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-11",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-backoffice-acquisition/"
   },
   {
@@ -1875,7 +1869,7 @@
       "主要SMS配信サービス比較とCRM連携の設計"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sms-marketing/"
   },
   {
@@ -1898,7 +1892,7 @@
       "外資カルチャー訴求と面談着座までの多言語コミュニケーション"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-bilingual-acquisition/"
   }
 ]

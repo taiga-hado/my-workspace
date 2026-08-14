@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-ryomen-vs-bungyou",
+    "title": "人材紹介の両面型と分業型を徹底比較｜組織設計とKPIの違い",
+    "description": "人材紹介事業の両面型（CA兼RA）と分業型（CA/RA分業）の違いを、生産性・KPI・向いている事業フェーズの3軸で比較。集客体制と面談着座数の関係まで解説します。",
+    "category": "比較検討",
+    "keywords": [
+      "人材紹介 両面型",
+      "人材紹介 分業型",
+      "CA RA 分業",
+      "人材紹介 組織設計"
+    ],
+    "primary_keyword": "人材紹介 両面型",
+    "status": "published",
+    "published": "2026-08-14",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ryomen-vs-bungyou/"
+  },
+  {
     "slug": "recruitment-bilingual-acquisition",
     "title": "バイリンガル人材紹介の集客戦略｜英語話者・外資志望の求職者を集める",
     "description": "バイリンガル・外資系志望の求職者を狙う人材紹介の集客戦略を解説。LinkedIn・英語求人媒体・オンラインイベントの使い分けと、TOEIC別ターゲティング、報酬レンジ訴求まで紹介します。",
@@ -1850,20 +1866,107 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-bilingual-acquisition",
-    "title": "バイリンガル人材紹介の集客戦略｜英語話者・外資志望の求職者を集める",
-    "description": "バイリンガル・外資系志望の求職者を狙う人材紹介の集客戦略を解説。LinkedIn・英語求人媒体・オンラインイベントの使い分けと、TOEIC別ターゲティング、報酬レンジ訴求まで紹介します。",
+    "slug": "recruitment-ryomen-vs-bungyou",
+    "title": "人材紹介の両面型と分業型を徹底比較｜組織設計とKPIの違い",
+    "description": "人材紹介事業の両面型（CA兼RA）と分業型（CA/RA分業）の違いを、生産性・KPI・向いている事業フェーズの3軸で比較。集客体制と面談着座数の関係まで解説します。",
+    "category": "比較検討",
+    "keywords": [
+      "人材紹介 両面型",
+      "人材紹介 分業型",
+      "CA RA 分業",
+      "人材紹介 組織設計"
+    ],
+    "primary_keyword": "人材紹介 両面型",
+    "status": "ready",
+    "scheduled": "2026-08-14",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ryomen-vs-bungyou/"
+  },
+  {
+    "slug": "recruitment-form-efo",
+    "title": "人材紹介LPのEFO（入力フォーム最適化）｜応募完了率を1.5倍にする15項目",
+    "description": "人材紹介のLPで離脱が最も起きるフォームを最適化するEFO実践ガイド。項目数・入力補助・エラー表示・スマホUXの改善ポイントを15項目で解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "EFO 人材紹介",
+      "応募フォーム 最適化",
+      "人材紹介 フォーム 離脱",
+      "LP CVR フォーム"
+    ],
+    "primary_keyword": "EFO 人材紹介",
+    "key_points": [
+      "フォーム離脱が起きる典型的な5つの原因",
+      "項目数と応募完了率の関係性",
+      "スマホファーストで設計するUXチェックリスト",
+      "EFO施策の効果測定とA/Bテストの回し方"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-form-efo/"
+  },
+  {
+    "slug": "recruitment-freelance-agent-acquisition",
+    "title": "フリーランスエージェントの集客戦略｜案件紹介型ビジネスの母集団形成",
+    "description": "急成長するフリーランスエージェント市場で、稼働可能な人材を集めるためのチャネル選定と訴求設計を解説。単価訴求・稼働率・継続率の観点で人材紹介との違いも整理します。",
     "category": "セグメント別",
     "keywords": [
-      "バイリンガル 人材紹介",
-      "外資系 転職エージェント",
-      "英語話者 求職者",
-      "LinkedIn バイリンガル",
-      "英語 求人 集客"
+      "フリーランス エージェント 集客",
+      "フリーランス 紹介",
+      "業務委託 集客",
+      "フリーランス 母集団"
     ],
-    "primary_keyword": "バイリンガル 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-08-13",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-bilingual-acquisition/"
+    "primary_keyword": "フリーランス エージェント 集客",
+    "key_points": [
+      "フリーランス市場の規模と職種別ニーズ",
+      "稼働可能人材を集める主要4チャネル",
+      "単価・稼働率を訴求軸にしたLP設計",
+      "人材紹介との違いとハイブリッド運用の可能性"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-freelance-agent-acquisition/"
+  },
+  {
+    "slug": "recruitment-candidate-scoring",
+    "title": "候補者スコアリングとは｜人材紹介で優先接触すべき求職者を可視化する",
+    "description": "求職者を属性・行動・志向性で点数化し、CAの接触優先度を最適化する候補者スコアリングの考え方を解説。スコア項目の設計例と面談着座率への影響まで整理します。",
+    "category": "用語解説",
+    "keywords": [
+      "候補者 スコアリング",
+      "求職者 スコア",
+      "人材紹介 リード スコア",
+      "人材紹介 優先度"
+    ],
+    "primary_keyword": "候補者 スコアリング",
+    "key_points": [
+      "候補者スコアリングの定義と目的",
+      "属性・行動・志向性の3軸で設計するスコア項目",
+      "スコアとCAアサインの連動設計",
+      "スコアリング導入で面談着座率がどう変わるか"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-scoring/"
+  },
+  {
+    "slug": "recruitment-education-industry-acquisition",
+    "title": "教育業界特化型人材紹介の集客戦略｜教員・スクール講師・EdTech人材",
+    "description": "学校法人・塾・EdTech企業へ人材を紹介するエージェント向けの求職者集客ガイド。教員免許保有者や指導経験者に届く訴求設計とチャネル選定を解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "教育業界 人材紹介",
+      "教員 転職 集客",
+      "EdTech 人材",
+      "塾講師 転職"
+    ],
+    "primary_keyword": "教育業界 人材紹介",
+    "key_points": [
+      "教育業界の求職者ニーズと転職動機の特徴",
+      "教員免許保有者に届く訴求軸の設計",
+      "EdTech志向人材を集める主要チャネル",
+      "教育業界特化エージェントのKPIと歩留まり相場"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-education-industry-acquisition/"
   }
 ]

@@ -1,33 +1,5 @@
 [
   {
-    "slug": "recruitment-form-efo",
-    "title": "人材紹介LPのEFO（入力フォーム最適化）｜応募完了率を1.5倍にする15項目",
-    "description": "人材紹介のLPで離脱が最も起きるフォームを最適化するEFO実践ガイド。項目数・入力補助・エラー表示・スマホUXの改善ポイントを15項目で解説します。",
-    "keywords": "EFO 人材紹介,応募フォーム 最適化,人材紹介 フォーム 離脱,LP CVR フォーム",
-    "category": "ハウツー",
-    "image_prompt": "Smartphone screen mockup showing a stylized form with checkmarks and progress bar, deep navy blue (#1a3a8a) interface with gold (#f5b400) highlights and completion indicators, flat editorial illustration, soft white background, 3:2 aspect ratio, no text, no letters, premium SaaS aesthetic",
-    "key_points": [
-      "フォーム離脱が起きる典型的な5つの原因",
-      "項目数と応募完了率の関係性",
-      "スマホファーストで設計するUXチェックリスト",
-      "EFO施策の効果測定とA/Bテストの回し方"
-    ]
-  },
-  {
-    "slug": "recruitment-freelance-agent-acquisition",
-    "title": "フリーランスエージェントの集客戦略｜案件紹介型ビジネスの母集団形成",
-    "description": "急成長するフリーランスエージェント市場で、稼働可能な人材を集めるためのチャネル選定と訴求設計を解説。単価訴求・稼働率・継続率の観点で人材紹介との違いも整理します。",
-    "keywords": "フリーランス エージェント 集客,フリーランス 紹介,業務委託 集客,フリーランス 母集団",
-    "category": "セグメント別",
-    "image_prompt": "Freelancer working with laptop and abstract project cards floating around, deep navy blue (#1a3a8a) figures and gold (#f5b400) briefcase and gear icons, flat editorial illustration, soft white background, 3:2 aspect ratio, no text, no letters, premium SaaS aesthetic",
-    "key_points": [
-      "フリーランス市場の規模と職種別ニーズ",
-      "稼働可能人材を集める主要4チャネル",
-      "単価・稼働率を訴求軸にしたLP設計",
-      "人材紹介との違いとハイブリッド運用の可能性"
-    ]
-  },
-  {
     "slug": "recruitment-candidate-scoring",
     "title": "候補者スコアリングとは｜人材紹介で優先接触すべき求職者を可視化する",
     "description": "求職者を属性・行動・志向性で点数化し、CAの接触優先度を最適化する候補者スコアリングの考え方を解説。スコア項目の設計例と面談着座率への影響まで整理します。",

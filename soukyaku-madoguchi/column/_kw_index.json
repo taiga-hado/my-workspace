@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-freelance-agent-acquisition",
+    "title": "フリーランスエージェントの集客戦略｜案件紹介型ビジネスの母集団形成",
+    "description": "急成長するフリーランスエージェント市場で、稼働可能な人材を集めるためのチャネル選定と訴求設計を解説。単価訴求・稼働率・継続率の観点で人材紹介との違いも整理します。",
+    "category": "セグメント別",
+    "keywords": [
+      "フリーランス エージェント 集客",
+      "フリーランス 紹介",
+      "業務委託 集客",
+      "フリーランス 母集団"
+    ],
+    "primary_keyword": "フリーランス エージェント 集客",
+    "status": "published",
+    "published": "2026-08-16",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-freelance-agent-acquisition/"
+  },
+  {
     "slug": "recruitment-ryomen-vs-bungyou",
     "title": "人材紹介の両面型と分業型を徹底比較｜組織設計とKPIの違い",
     "description": "人材紹介事業の両面型（CA兼RA）と分業型（CA/RA分業）の違いを、生産性・KPI・向いている事業フェーズの3軸で比較。集客体制と面談着座数の関係まで解説します。",
@@ -1866,44 +1882,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-ryomen-vs-bungyou",
-    "title": "人材紹介の両面型と分業型を徹底比較｜組織設計とKPIの違い",
-    "description": "人材紹介事業の両面型（CA兼RA）と分業型（CA/RA分業）の違いを、生産性・KPI・向いている事業フェーズの3軸で比較。集客体制と面談着座数の関係まで解説します。",
-    "category": "比較検討",
-    "keywords": [
-      "人材紹介 両面型",
-      "人材紹介 分業型",
-      "CA RA 分業",
-      "人材紹介 組織設計"
-    ],
-    "primary_keyword": "人材紹介 両面型",
-    "status": "ready",
-    "scheduled": "2026-08-14",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ryomen-vs-bungyou/"
-  },
-  {
-    "slug": "recruitment-form-efo",
-    "title": "人材紹介LPのEFO（入力フォーム最適化）｜応募完了率を1.5倍にする15項目",
-    "description": "人材紹介のLPで離脱が最も起きるフォームを最適化するEFO実践ガイド。項目数・入力補助・エラー表示・スマホUXの改善ポイントを15項目で解説します。",
-    "category": "ハウツー",
-    "keywords": [
-      "EFO 人材紹介",
-      "応募フォーム 最適化",
-      "人材紹介 フォーム 離脱",
-      "LP CVR フォーム"
-    ],
-    "primary_keyword": "EFO 人材紹介",
-    "key_points": [
-      "フォーム離脱が起きる典型的な5つの原因",
-      "項目数と応募完了率の関係性",
-      "スマホファーストで設計するUXチェックリスト",
-      "EFO施策の効果測定とA/Bテストの回し方"
-    ],
-    "status": "queued",
-    "queue_position": 1,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-form-efo/"
-  },
-  {
     "slug": "recruitment-freelance-agent-acquisition",
     "title": "フリーランスエージェントの集客戦略｜案件紹介型ビジネスの母集団形成",
     "description": "急成長するフリーランスエージェント市場で、稼働可能な人材を集めるためのチャネル選定と訴求設計を解説。単価訴求・稼働率・継続率の観点で人材紹介との違いも整理します。",
@@ -1915,14 +1893,8 @@
       "フリーランス 母集団"
     ],
     "primary_keyword": "フリーランス エージェント 集客",
-    "key_points": [
-      "フリーランス市場の規模と職種別ニーズ",
-      "稼働可能人材を集める主要4チャネル",
-      "単価・稼働率を訴求軸にしたLP設計",
-      "人材紹介との違いとハイブリッド運用の可能性"
-    ],
-    "status": "queued",
-    "queue_position": 2,
+    "status": "ready",
+    "scheduled": "2026-08-16",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-freelance-agent-acquisition/"
   },
   {
@@ -1944,7 +1916,7 @@
       "スコアリング導入で面談着座率がどう変わるか"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-scoring/"
   },
   {
@@ -1966,7 +1938,7 @@
       "教育業界特化エージェントのKPIと歩留まり相場"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-education-industry-acquisition/"
   }
 ]

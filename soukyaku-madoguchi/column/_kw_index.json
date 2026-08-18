@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-education-industry-acquisition",
+    "title": "教育業界特化型人材紹介の集客戦略｜教員・スクール講師・EdTech人材",
+    "description": "学校法人・塾・EdTech企業へ人材を紹介するエージェント向けの求職者集客ガイド。教員免許保有者や指導経験者に届く訴求設計とチャネル選定を解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "教育業界 人材紹介",
+      "教員 転職 集客",
+      "EdTech 人材",
+      "塾講師 転職"
+    ],
+    "primary_keyword": "教育業界 人材紹介",
+    "status": "published",
+    "published": "2026-08-18",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-education-industry-acquisition/"
+  },
+  {
     "slug": "recruitment-freelance-agent-acquisition",
     "title": "フリーランスエージェントの集客戦略｜案件紹介型ビジネスの母集団形成",
     "description": "急成長するフリーランスエージェント市場で、稼働可能な人材を集めるためのチャネル選定と訴求設計を解説。単価訴求・稼働率・継続率の観点で人材紹介との違いも整理します。",
@@ -1882,44 +1898,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-freelance-agent-acquisition",
-    "title": "フリーランスエージェントの集客戦略｜案件紹介型ビジネスの母集団形成",
-    "description": "急成長するフリーランスエージェント市場で、稼働可能な人材を集めるためのチャネル選定と訴求設計を解説。単価訴求・稼働率・継続率の観点で人材紹介との違いも整理します。",
-    "category": "セグメント別",
-    "keywords": [
-      "フリーランス エージェント 集客",
-      "フリーランス 紹介",
-      "業務委託 集客",
-      "フリーランス 母集団"
-    ],
-    "primary_keyword": "フリーランス エージェント 集客",
-    "status": "ready",
-    "scheduled": "2026-08-16",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-freelance-agent-acquisition/"
-  },
-  {
-    "slug": "recruitment-candidate-scoring",
-    "title": "候補者スコアリングとは｜人材紹介で優先接触すべき求職者を可視化する",
-    "description": "求職者を属性・行動・志向性で点数化し、CAの接触優先度を最適化する候補者スコアリングの考え方を解説。スコア項目の設計例と面談着座率への影響まで整理します。",
-    "category": "用語解説",
-    "keywords": [
-      "候補者 スコアリング",
-      "求職者 スコア",
-      "人材紹介 リード スコア",
-      "人材紹介 優先度"
-    ],
-    "primary_keyword": "候補者 スコアリング",
-    "key_points": [
-      "候補者スコアリングの定義と目的",
-      "属性・行動・志向性の3軸で設計するスコア項目",
-      "スコアとCAアサインの連動設計",
-      "スコアリング導入で面談着座率がどう変わるか"
-    ],
-    "status": "queued",
-    "queue_position": 1,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-scoring/"
-  },
-  {
     "slug": "recruitment-education-industry-acquisition",
     "title": "教育業界特化型人材紹介の集客戦略｜教員・スクール講師・EdTech人材",
     "description": "学校法人・塾・EdTech企業へ人材を紹介するエージェント向けの求職者集客ガイド。教員免許保有者や指導経験者に届く訴求設計とチャネル選定を解説します。",
@@ -1931,14 +1909,8 @@
       "塾講師 転職"
     ],
     "primary_keyword": "教育業界 人材紹介",
-    "key_points": [
-      "教育業界の求職者ニーズと転職動機の特徴",
-      "教員免許保有者に届く訴求軸の設計",
-      "EdTech志向人材を集める主要チャネル",
-      "教育業界特化エージェントのKPIと歩留まり相場"
-    ],
-    "status": "queued",
-    "queue_position": 2,
+    "status": "ready",
+    "scheduled": "2026-08-18",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-education-industry-acquisition/"
   }
 ]

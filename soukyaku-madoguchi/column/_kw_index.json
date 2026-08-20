@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-haken-vs-agent",
+    "title": "派遣と人材紹介の違い｜ビジネスモデル・許認可・収益構造を徹底比較",
+    "description": "労働者派遣事業と有料職業紹介事業の違いを、ビジネスモデル・許認可・収益構造・キャッシュフローの観点から徹底比較。両事業併営のメリットと開業判断のポイントも解説します。",
+    "category": "比較検討",
+    "keywords": [
+      "派遣 人材紹介 違い",
+      "労働者派遣 職業紹介",
+      "人材ビジネス 比較",
+      "派遣 紹介 併営",
+      "人材派遣 収益"
+    ],
+    "primary_keyword": "派遣 人材紹介 違い",
+    "status": "published",
+    "published": "2026-08-20",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-haken-vs-agent/"
+  },
+  {
     "slug": "recruitment-agent-startup-guide",
     "title": "人材紹介事業の開業完全ガイド｜許認可・初期費用・集客立ち上げまで",
     "description": "人材紹介事業を新規開業するための完全ガイド。有料職業紹介許可の要件、初期費用の目安、事業計画、集客チャネル立ち上げまで、開業初年度に必要な実務を体系的に解説します。",
@@ -1915,23 +1932,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-agent-startup-guide",
-    "title": "人材紹介事業の開業完全ガイド｜許認可・初期費用・集客立ち上げまで",
-    "description": "人材紹介事業を新規開業するための完全ガイド。有料職業紹介許可の要件、初期費用の目安、事業計画、集客チャネル立ち上げまで、開業初年度に必要な実務を体系的に解説します。",
-    "category": "完全ガイド",
-    "keywords": [
-      "人材紹介 開業",
-      "人材紹介 立ち上げ",
-      "職業紹介 免許",
-      "人材紹介 起業",
-      "人材紹介 事業計画"
-    ],
-    "primary_keyword": "人材紹介 開業",
-    "status": "ready",
-    "scheduled": "2026-08-19",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agent-startup-guide/"
-  },
-  {
     "slug": "recruitment-haken-vs-agent",
     "title": "派遣と人材紹介の違い｜ビジネスモデル・許認可・収益構造を徹底比較",
     "description": "労働者派遣事業と有料職業紹介事業の違いを、ビジネスモデル・許認可・収益構造・キャッシュフローの観点から徹底比較。両事業併営のメリットと開業判断のポイントも解説します。",
@@ -1944,14 +1944,8 @@
       "人材派遣 収益"
     ],
     "primary_keyword": "派遣 人材紹介 違い",
-    "key_points": [
-      "派遣と人材紹介のビジネスモデル・法的位置づけの違い",
-      "許認可要件・資本金・欠格事由の比較",
-      "収益構造とキャッシュフローの違い",
-      "両事業併営のメリット・デメリットと開業判断"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-20",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-haken-vs-agent/"
   },
   {
@@ -1974,7 +1968,7 @@
       "導入後の運用設計とKPI連携のポイント"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-crm-comparison/"
   },
   {
@@ -1997,7 +1991,7 @@
       "ポートフォリオ文化に対応した事前カウンセリング設計"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-game-entertainment-acquisition/"
   },
   {
@@ -2020,7 +2014,7 @@
       "MA・CRM連携によるスコア自動化と運用フロー"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-scoring/"
   }
 ]

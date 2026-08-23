@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-candidate-scoring",
+    "title": "求職者スコアリングの設計方法｜人材紹介で優先対応者を見極める運用",
+    "description": "人材紹介事業における求職者スコアリングの設計方法を解説。転職意欲・スキル・マッチ度を数値化し、CAが優先対応すべき候補者を可視化する評価軸と自動化の実装ポイントを紹介します。",
+    "category": "ハウツー",
+    "keywords": [
+      "求職者 スコアリング",
+      "候補者 優先順位",
+      "人材紹介 リードスコアリング",
+      "転職意欲 判定",
+      "人材紹介 効率化"
+    ],
+    "primary_keyword": "求職者 スコアリング",
+    "status": "published",
+    "published": "2026-08-23",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-scoring/"
+  },
+  {
     "slug": "recruitment-haken-vs-agent",
     "title": "派遣と人材紹介の違い｜ビジネスモデル・許認可・収益構造を徹底比較",
     "description": "労働者派遣事業と有料職業紹介事業の違いを、ビジネスモデル・許認可・収益構造・キャッシュフローの観点から徹底比較。両事業併営のメリットと開業判断のポイントも解説します。",
@@ -1932,69 +1949,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-haken-vs-agent",
-    "title": "派遣と人材紹介の違い｜ビジネスモデル・許認可・収益構造を徹底比較",
-    "description": "労働者派遣事業と有料職業紹介事業の違いを、ビジネスモデル・許認可・収益構造・キャッシュフローの観点から徹底比較。両事業併営のメリットと開業判断のポイントも解説します。",
-    "category": "比較検討",
-    "keywords": [
-      "派遣 人材紹介 違い",
-      "労働者派遣 職業紹介",
-      "人材ビジネス 比較",
-      "派遣 紹介 併営",
-      "人材派遣 収益"
-    ],
-    "primary_keyword": "派遣 人材紹介 違い",
-    "status": "ready",
-    "scheduled": "2026-08-20",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-haken-vs-agent/"
-  },
-  {
-    "slug": "recruitment-crm-comparison",
-    "title": "人材紹介向けCRM比較｜候補者管理・求人管理・KPI連携で選ぶ7選",
-    "description": "人材紹介事業に最適なCRM・候補者管理システムを比較。ATSとの違い、Salesforce・HubSpot・専用CRMの特徴、選定基準、料金相場を整理し、自社の規模に合う選び方を解説します。",
-    "category": "比較検討",
-    "keywords": [
-      "人材紹介 CRM",
-      "人材紹介 候補者管理",
-      "エージェント CRM",
-      "人材紹介 システム",
-      "人材紹介 顧客管理"
-    ],
-    "primary_keyword": "人材紹介 CRM",
-    "key_points": [
-      "人材紹介におけるCRMとATSの違いと役割",
-      "CRM選定の5つの評価軸（機能・料金・拡張性・連携・UX）",
-      "主要CRM7製品の特徴と向いている事業規模",
-      "導入後の運用設計とKPI連携のポイント"
-    ],
-    "status": "queued",
-    "queue_position": 1,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-crm-comparison/"
-  },
-  {
-    "slug": "recruitment-game-entertainment-acquisition",
-    "title": "ゲーム・エンタメ業界特化型人材紹介の集客戦略｜クリエイター獲得設計",
-    "description": "ゲーム・エンタメ業界に特化した人材紹介の求職者集客戦略。プランナー・エンジニア・デザイナー等のクリエイター層に刺さる訴求とチャネル選定、業界特有のペルソナ設計を解説します。",
-    "category": "セグメント別",
-    "keywords": [
-      "ゲーム業界 人材紹介",
-      "エンタメ 転職 エージェント",
-      "クリエイター 集客",
-      "ゲームクリエイター 転職",
-      "エンタメ 人材"
-    ],
-    "primary_keyword": "ゲーム業界 人材紹介",
-    "key_points": [
-      "ゲーム・エンタメ業界の求職者ペルソナと転職動機",
-      "職種別（プランナー・エンジニア・デザイナー）の訴求設計",
-      "業界特化メディア・SNS・イベントを活用したチャネル戦略",
-      "ポートフォリオ文化に対応した事前カウンセリング設計"
-    ],
-    "status": "queued",
-    "queue_position": 2,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-game-entertainment-acquisition/"
-  },
-  {
     "slug": "recruitment-candidate-scoring",
     "title": "求職者スコアリングの設計方法｜人材紹介で優先対応者を見極める運用",
     "description": "人材紹介事業における求職者スコアリングの設計方法を解説。転職意欲・スキル・マッチ度を数値化し、CAが優先対応すべき候補者を可視化する評価軸と自動化の実装ポイントを紹介します。",
@@ -2007,14 +1961,8 @@
       "人材紹介 効率化"
     ],
     "primary_keyword": "求職者 スコアリング",
-    "key_points": [
-      "求職者スコアリングが必要な理由と生産性への影響",
-      "スコアリング設計に使う3つの軸（意欲・スキル・マッチ度）",
-      "スコアの重み付けと閾値の決め方",
-      "MA・CRM連携によるスコア自動化と運用フロー"
-    ],
-    "status": "queued",
-    "queue_position": 3,
+    "status": "ready",
+    "scheduled": "2026-08-23",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-candidate-scoring/"
   }
 ]

@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-professional-license-acquisition",
+    "title": "士業・専門職特化型人材紹介の集客戦略｜弁護士・会計士・税理士の獲得設計",
+    "description": "弁護士・公認会計士・税理士など士業求職者の集客手法を解説。専門メディア・SNS・コミュニティ活用と、希少人材を面談着座まで導く訴求設計を紹介します。",
+    "category": "セグメント別",
+    "keywords": [
+      "士業 人材紹介",
+      "弁護士 転職 集客",
+      "会計士 転職",
+      "税理士 転職",
+      "専門職 エージェント"
+    ],
+    "primary_keyword": "士業 人材紹介",
+    "status": "published",
+    "published": "2026-08-27",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-professional-license-acquisition/"
+  },
+  {
     "slug": "recruitment-scout-media-comparison",
     "title": "スカウト媒体比較｜ビズリーチ・doda X・AMBIの使い分けと成果最大化",
     "description": "人材紹介エージェント向けにビズリーチ・doda X・AMBI・LinkedInなど主要スカウト媒体を比較。年収帯・返信率・料金体系・運用工数を軸に選び方を解説します。",
@@ -1966,23 +1983,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-scout-media-comparison",
-    "title": "スカウト媒体比較｜ビズリーチ・doda X・AMBIの使い分けと成果最大化",
-    "description": "人材紹介エージェント向けにビズリーチ・doda X・AMBI・LinkedInなど主要スカウト媒体を比較。年収帯・返信率・料金体系・運用工数を軸に選び方を解説します。",
-    "category": "比較検討",
-    "keywords": [
-      "スカウト媒体 比較",
-      "ビズリーチ 人材紹介",
-      "doda X",
-      "スカウト 返信率",
-      "ハイクラス スカウト"
-    ],
-    "primary_keyword": "スカウト媒体 比較",
-    "status": "ready",
-    "scheduled": "2026-08-26",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-scout-media-comparison/"
-  },
-  {
     "slug": "recruitment-professional-license-acquisition",
     "title": "士業・専門職特化型人材紹介の集客戦略｜弁護士・会計士・税理士の獲得設計",
     "description": "弁護士・公認会計士・税理士など士業求職者の集客手法を解説。専門メディア・SNS・コミュニティ活用と、希少人材を面談着座まで導く訴求設計を紹介します。",
@@ -1995,14 +1995,8 @@
       "専門職 エージェント"
     ],
     "primary_keyword": "士業 人材紹介",
-    "key_points": [
-      "士業市場の需給ギャップと年収相場の実態",
-      "弁護士・会計士・税理士それぞれの転職動機と訴求軸",
-      "専門メディア・コミュニティ・SNSの集客チャネル比較",
-      "希少人材ゆえの面談着座率を高める事前カウンセリング設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-27",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-professional-license-acquisition/"
   },
   {
@@ -2025,7 +2019,7 @@
       "審査を通過しCPAを下げる訴求・LP設計テンプレート"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ad-policy-compliance/"
   },
   {
@@ -2048,7 +2042,7 @@
       "チャットボット→面談着座までのシナリオ設計テンプレ"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-chatbot-screening/"
   },
   {
@@ -2071,7 +2065,7 @@
       "診断結果→カウンセリング面談への誘導フロー"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-diagnostic-content/"
   }
 ]

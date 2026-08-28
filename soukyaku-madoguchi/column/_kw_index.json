@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-ad-policy-compliance",
+    "title": "人材紹介の広告審査対策｜Google・Metaでリジェクトされない訴求設計",
+    "description": "Google広告・Meta広告における人材紹介・求人カテゴリの審査基準を解説。年収訴求・雇用差別NG表現・LP要件などリジェクト理由と回避テクニックをまとめます。",
+    "category": "課題解決",
+    "keywords": [
+      "Google広告 審査 人材紹介",
+      "Meta広告 雇用 審査",
+      "広告 リジェクト 対策",
+      "求人広告 審査基準",
+      "雇用カテゴリ 広告"
+    ],
+    "primary_keyword": "Google広告 審査 人材紹介",
+    "status": "published",
+    "published": "2026-08-28",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ad-policy-compliance/"
+  },
+  {
     "slug": "recruitment-professional-license-acquisition",
     "title": "士業・専門職特化型人材紹介の集客戦略｜弁護士・会計士・税理士の獲得設計",
     "description": "弁護士・公認会計士・税理士など士業求職者の集客手法を解説。専門メディア・SNS・コミュニティ活用と、希少人材を面談着座まで導く訴求設計を紹介します。",
@@ -1983,23 +2000,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-professional-license-acquisition",
-    "title": "士業・専門職特化型人材紹介の集客戦略｜弁護士・会計士・税理士の獲得設計",
-    "description": "弁護士・公認会計士・税理士など士業求職者の集客手法を解説。専門メディア・SNS・コミュニティ活用と、希少人材を面談着座まで導く訴求設計を紹介します。",
-    "category": "セグメント別",
-    "keywords": [
-      "士業 人材紹介",
-      "弁護士 転職 集客",
-      "会計士 転職",
-      "税理士 転職",
-      "専門職 エージェント"
-    ],
-    "primary_keyword": "士業 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-08-27",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-professional-license-acquisition/"
-  },
-  {
     "slug": "recruitment-ad-policy-compliance",
     "title": "人材紹介の広告審査対策｜Google・Metaでリジェクトされない訴求設計",
     "description": "Google広告・Meta広告における人材紹介・求人カテゴリの審査基準を解説。年収訴求・雇用差別NG表現・LP要件などリジェクト理由と回避テクニックをまとめます。",
@@ -2012,14 +2012,8 @@
       "雇用カテゴリ 広告"
     ],
     "primary_keyword": "Google広告 審査 人材紹介",
-    "key_points": [
-      "Google広告の雇用カテゴリ制限と主要リジェクト理由",
-      "Meta広告の特別広告カテゴリ（雇用）設定と制約",
-      "違反しやすいNG表現・NG画像と改善事例",
-      "審査を通過しCPAを下げる訴求・LP設計テンプレート"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-08-28",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ad-policy-compliance/"
   },
   {
@@ -2042,7 +2036,7 @@
       "チャットボット→面談着座までのシナリオ設計テンプレ"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-chatbot-screening/"
   },
   {
@@ -2065,7 +2059,7 @@
       "診断結果→カウンセリング面談への誘導フロー"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-diagnostic-content/"
   }
 ]

@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-ad-policy-compliance",
-    "title": "人材紹介の広告審査対策｜Google・Metaでリジェクトされない訴求設計",
-    "description": "Google広告・Meta広告における人材紹介・求人カテゴリの審査基準を解説。年収訴求・雇用差別NG表現・LP要件などリジェクト理由と回避テクニックをまとめます。",
-    "keywords": "Google広告 審査 人材紹介,Meta広告 雇用 審査,広告 リジェクト 対策,求人広告 審査基準,雇用カテゴリ 広告",
-    "category": "課題解決",
-    "image_prompt": "Deep navy blue (#1a3a8a) editorial illustration of a shield and checkmark with gold (#f5b400) accent, ad policy compliance concept, flat design, premium SaaS aesthetic, soft white background, no text or letters, 3:2 aspect ratio",
-    "key_points": [
-      "Google広告の雇用カテゴリ制限と主要リジェクト理由",
-      "Meta広告の特別広告カテゴリ（雇用）設定と制約",
-      "違反しやすいNG表現・NG画像と改善事例",
-      "審査を通過しCPAを下げる訴求・LP設計テンプレート"
-    ]
-  },
-  {
     "slug": "recruitment-chatbot-screening",
     "title": "AIチャットボットで求職者を一次スクリーニング｜人材紹介の自動応答設計",
     "description": "ChatGPT・LINE Bot等を活用した求職者の一次スクリーニング手法を解説。自動応答で希望条件を聞き出し、面談着座率を高めるフロー設計と導入事例を紹介します。",

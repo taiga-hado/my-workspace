@@ -1,30 +1,58 @@
 [
   {
-    "slug": "recruitment-chatbot-screening",
-    "title": "AIチャットボットで求職者を一次スクリーニング｜人材紹介の自動応答設計",
-    "description": "ChatGPT・LINE Bot等を活用した求職者の一次スクリーニング手法を解説。自動応答で希望条件を聞き出し、面談着座率を高めるフロー設計と導入事例を紹介します。",
-    "keywords": "求職者 チャットボット,人材紹介 自動応答,LINE Bot 転職,AI スクリーニング,一次面談 自動化",
-    "category": "ハウツー",
-    "image_prompt": "Deep navy blue (#1a3a8a) flat illustration of a friendly chatbot icon with speech bubbles and gold (#f5b400) accent nodes, conversational AI concept, premium editorial style, soft white background, no text or letters, 3:2 aspect ratio",
+    "slug": "recruitment-marketer-acquisition",
+    "title": "マーケター職の求職者集客戦略｜Webマーケ・広告運用人材の獲得設計",
+    "description": "デジタルマーケター・広告運用者・CRM人材など、マーケティング職の求職者を集めるためのチャネル選定と訴求設計を解説。競合エージェントとの差別化ポイントもまとめました。",
+    "keywords": "マーケター 転職,Webマーケター 求人,人材紹介 マーケター,広告運用 転職,マーケティング職 集客",
+    "category": "セグメント別",
+    "image_prompt": "Flat editorial illustration of marketing analytics dashboard with funnel chart and audience segments, deep navy blue (#1a3a8a) background with gold (#f5b400) accent bars and highlights, minimal premium SaaS aesthetic on soft white background, no text or letters, 3:2 aspect",
     "key_points": [
-      "チャットボット導入で削減できるCA工数の試算",
-      "LINE・Web接客・ChatGPT APIの選定と比較",
-      "一次スクリーニングで聞くべき7つの質問項目",
-      "チャットボット→面談着座までのシナリオ設計テンプレ"
+      "マーケター求職者の転職動機とキャリア志向",
+      "マーケター層に届くチャネル選定（SNS・オウンドメディア・スカウト）",
+      "スキル訴求と年収レンジで刺さるLP設計",
+      "歩留まりを高める事前カウンセリングの型"
     ]
   },
   {
-    "slug": "recruitment-diagnostic-content",
-    "title": "適職診断コンテンツで求職者を集める｜人材紹介のリード獲得設計",
-    "description": "適職診断・キャリア診断コンテンツで潜在層の求職者を集める手法を解説。診断設問設計・SEO集客・診断結果からの面談誘導までを実践的にまとめます。",
-    "keywords": "適職診断 集客,キャリア診断 リード,診断コンテンツ マーケ,人材紹介 リード獲得,転職 診断",
-    "category": "ハウツー",
-    "image_prompt": "Deep navy blue (#1a3a8a) flat illustration of a compass and branching pathways with gold (#f5b400) accent stars, career diagnosis concept, premium editorial style, soft white background, no text or letters, 3:2 aspect ratio",
+    "slug": "recruitment-disability-employment-acquisition",
+    "title": "障害者雇用特化型人材紹介の集客戦略｜法定雇用率を追い風にする設計",
+    "description": "法定雇用率引き上げで需要が拡大する障害者雇用特化人材紹介の集客戦略を解説。求職者チャネル・訴求設計・面談着座までの運用と配慮点を実務目線でまとめました。",
+    "keywords": "障害者雇用 人材紹介,法定雇用率,障害者 転職エージェント,人材紹介 集客,特化型エージェント",
+    "category": "セグメント別",
+    "image_prompt": "Flat editorial illustration of diverse abstract human silhouettes connected by network lines representing inclusive employment, deep navy blue (#1a3a8a) background with gold (#f5b400) accent nodes, soft white space, premium SaaS aesthetic, no text or letters, 3:2 aspect",
     "key_points": [
-      "診断コンテンツが潜在層獲得に効く3つの理由",
-      "診断設問の設計とタイプ分岐ロジックの作り方",
-      "診断ページのSEO対策とSNS拡散設計",
-      "診断結果→カウンセリング面談への誘導フロー"
+      "障害者雇用市場の需給と法定雇用率引き上げの影響",
+      "当事者・家族に届く集客チャネルと媒体",
+      "配慮点を踏まえた訴求設計とLP要件",
+      "面談着座率を高める合理的配慮の運用"
+    ]
+  },
+  {
+    "slug": "recruitment-side-job-agent",
+    "title": "副業・複業人材紹介の集客戦略｜週末ワーカー・パラレルキャリア層の獲得",
+    "description": "副業・複業マッチング型エージェントの求職者集客を解説。パラレルキャリア層の動機分析とチャネル設計、案件紹介型ビジネスの母集団形成KPIを整理しました。",
+    "keywords": "副業 マッチング,複業 人材紹介,パラレルキャリア,副業エージェント 集客,週末副業",
+    "category": "セグメント別",
+    "image_prompt": "Flat editorial illustration of two overlapping work environments, laptop with clock icons showing weekday and weekend, deep navy blue (#1a3a8a) with gold (#f5b400) accent, minimal premium SaaS aesthetic on soft white background, no text or letters, 3:2 aspect",
+    "key_points": [
+      "副業・複業市場の拡大と求職者の動機構造",
+      "副業志望者を集める主要チャネルと媒体特性",
+      "案件紹介型モデル特有の訴求設計",
+      "登録から初回稼働までのKPIと歩留まり管理"
+    ]
+  },
+  {
+    "slug": "recruitment-agent-branding",
+    "title": "人材紹介エージェントのブランディング戦略｜指名検索と口コミを増やす",
+    "description": "CPA高騰時代に効くエージェントブランド構築の設計方法を解説。指名検索・口コミ・SNSフォロワーを資産化し、広告依存から脱却するための運用フレームをまとめました。",
+    "keywords": "人材紹介 ブランディング,転職エージェント ブランド,指名検索,オウンドブランド,エージェント 差別化",
+    "category": "課題解決",
+    "image_prompt": "Flat editorial illustration of a shining brand emblem surrounded by radiating trust icons and user avatars, deep navy blue (#1a3a8a) background with gold (#f5b400) rays and accents, soft white space, premium SaaS editorial aesthetic, no text or letters, 3:2 aspect",
+    "key_points": [
+      "広告依存から脱却するブランド構築の意義",
+      "指名検索を伸ばすオウンド・PR施策",
+      "口コミとリファラルを増やす候補者体験設計",
+      "ブランド資産をKPIで可視化する運用"
     ]
   }
 ]

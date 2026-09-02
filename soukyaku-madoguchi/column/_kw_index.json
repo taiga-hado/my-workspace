@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-disability-employment-acquisition",
+    "title": "障害者雇用特化型人材紹介の集客戦略｜法定雇用率を追い風にする設計",
+    "description": "法定雇用率引き上げで需要が拡大する障害者雇用特化人材紹介の集客戦略を解説。求職者チャネル・訴求設計・面談着座までの運用と配慮点を実務目線でまとめました。",
+    "category": "セグメント別",
+    "keywords": [
+      "障害者雇用 人材紹介",
+      "法定雇用率",
+      "障害者 転職エージェント",
+      "人材紹介 集客",
+      "特化型エージェント"
+    ],
+    "primary_keyword": "障害者雇用 人材紹介",
+    "status": "published",
+    "published": "2026-09-01",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-disability-employment-acquisition/"
+  },
+  {
     "slug": "recruitment-career-diagnosis-content",
     "title": "キャリア診断コンテンツで求職者を集める｜人材紹介のリード獲得設計",
     "description": "キャリア診断・適性診断コンテンツを使った求職者リード獲得の設計方法を解説。設問設計・LP構造・診断後の面談導線までCV率を高める運用フレームをまとめました。",
@@ -2017,46 +2034,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-career-diagnosis-content",
-    "title": "キャリア診断コンテンツで求職者を集める｜人材紹介のリード獲得設計",
-    "description": "キャリア診断・適性診断コンテンツを使った求職者リード獲得の設計方法を解説。設問設計・LP構造・診断後の面談導線までCV率を高める運用フレームをまとめました。",
-    "category": "ハウツー",
-    "keywords": [
-      "キャリア診断",
-      "適性診断",
-      "人材紹介 集客",
-      "求職者 リード獲得",
-      "診断コンテンツ"
-    ],
-    "primary_keyword": "キャリア診断",
-    "status": "ready",
-    "scheduled": "2026-08-30",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-career-diagnosis-content/"
-  },
-  {
-    "slug": "recruitment-marketer-acquisition",
-    "title": "マーケター職の求職者集客戦略｜Webマーケ・広告運用人材の獲得設計",
-    "description": "デジタルマーケター・広告運用者・CRM人材など、マーケティング職の求職者を集めるためのチャネル選定と訴求設計を解説。競合エージェントとの差別化ポイントもまとめました。",
-    "category": "セグメント別",
-    "keywords": [
-      "マーケター 転職",
-      "Webマーケター 求人",
-      "人材紹介 マーケター",
-      "広告運用 転職",
-      "マーケティング職 集客"
-    ],
-    "primary_keyword": "マーケター 転職",
-    "key_points": [
-      "マーケター求職者の転職動機とキャリア志向",
-      "マーケター層に届くチャネル選定（SNS・オウンドメディア・スカウト）",
-      "スキル訴求と年収レンジで刺さるLP設計",
-      "歩留まりを高める事前カウンセリングの型"
-    ],
-    "status": "queued",
-    "queue_position": 1,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-marketer-acquisition/"
-  },
-  {
     "slug": "recruitment-disability-employment-acquisition",
     "title": "障害者雇用特化型人材紹介の集客戦略｜法定雇用率を追い風にする設計",
     "description": "法定雇用率引き上げで需要が拡大する障害者雇用特化人材紹介の集客戦略を解説。求職者チャネル・訴求設計・面談着座までの運用と配慮点を実務目線でまとめました。",
@@ -2069,14 +2046,8 @@
       "特化型エージェント"
     ],
     "primary_keyword": "障害者雇用 人材紹介",
-    "key_points": [
-      "障害者雇用市場の需給と法定雇用率引き上げの影響",
-      "当事者・家族に届く集客チャネルと媒体",
-      "配慮点を踏まえた訴求設計とLP要件",
-      "面談着座率を高める合理的配慮の運用"
-    ],
-    "status": "queued",
-    "queue_position": 2,
+    "status": "ready",
+    "scheduled": "2026-09-01",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-disability-employment-acquisition/"
   },
   {
@@ -2099,7 +2070,7 @@
       "登録から初回稼働までのKPIと歩留まり管理"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-side-job-agent/"
   },
   {
@@ -2122,7 +2093,7 @@
       "ブランド資産をKPIで可視化する運用"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agent-branding/"
   }
 ]

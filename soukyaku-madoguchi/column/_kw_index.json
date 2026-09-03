@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-side-job-agent",
+    "title": "副業・複業人材紹介の集客戦略｜週末ワーカー・パラレルキャリア層の獲得",
+    "description": "副業・複業マッチング型エージェントの求職者集客を解説。パラレルキャリア層の動機分析とチャネル設計、案件紹介型ビジネスの母集団形成KPIを整理しました。",
+    "category": "セグメント別",
+    "keywords": [
+      "副業 マッチング",
+      "複業 人材紹介",
+      "パラレルキャリア",
+      "副業エージェント 集客",
+      "週末副業"
+    ],
+    "primary_keyword": "副業 マッチング",
+    "status": "published",
+    "published": "2026-09-02",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-side-job-agent/"
+  },
+  {
     "slug": "recruitment-disability-employment-acquisition",
     "title": "障害者雇用特化型人材紹介の集客戦略｜法定雇用率を追い風にする設計",
     "description": "法定雇用率引き上げで需要が拡大する障害者雇用特化人材紹介の集客戦略を解説。求職者チャネル・訴求設計・面談着座までの運用と配慮点を実務目線でまとめました。",
@@ -2034,23 +2051,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-disability-employment-acquisition",
-    "title": "障害者雇用特化型人材紹介の集客戦略｜法定雇用率を追い風にする設計",
-    "description": "法定雇用率引き上げで需要が拡大する障害者雇用特化人材紹介の集客戦略を解説。求職者チャネル・訴求設計・面談着座までの運用と配慮点を実務目線でまとめました。",
-    "category": "セグメント別",
-    "keywords": [
-      "障害者雇用 人材紹介",
-      "法定雇用率",
-      "障害者 転職エージェント",
-      "人材紹介 集客",
-      "特化型エージェント"
-    ],
-    "primary_keyword": "障害者雇用 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-09-01",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-disability-employment-acquisition/"
-  },
-  {
     "slug": "recruitment-side-job-agent",
     "title": "副業・複業人材紹介の集客戦略｜週末ワーカー・パラレルキャリア層の獲得",
     "description": "副業・複業マッチング型エージェントの求職者集客を解説。パラレルキャリア層の動機分析とチャネル設計、案件紹介型ビジネスの母集団形成KPIを整理しました。",
@@ -2063,14 +2063,8 @@
       "週末副業"
     ],
     "primary_keyword": "副業 マッチング",
-    "key_points": [
-      "副業・複業市場の拡大と求職者の動機構造",
-      "副業志望者を集める主要チャネルと媒体特性",
-      "案件紹介型モデル特有の訴求設計",
-      "登録から初回稼働までのKPIと歩留まり管理"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-09-02",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-side-job-agent/"
   },
   {
@@ -2093,7 +2087,7 @@
       "ブランド資産をKPIで可視化する運用"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agent-branding/"
   }
 ]

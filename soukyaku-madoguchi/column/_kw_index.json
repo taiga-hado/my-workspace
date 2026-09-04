@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-agent-branding",
+    "title": "人材紹介エージェントのブランディング戦略｜指名検索と口コミを増やす",
+    "description": "CPA高騰時代に効くエージェントブランド構築の設計方法を解説。指名検索・口コミ・SNSフォロワーを資産化し、広告依存から脱却するための運用フレームをまとめました。",
+    "category": "課題解決",
+    "keywords": [
+      "人材紹介 ブランディング",
+      "転職エージェント ブランド",
+      "指名検索",
+      "オウンドブランド",
+      "エージェント 差別化"
+    ],
+    "primary_keyword": "人材紹介 ブランディング",
+    "status": "published",
+    "published": "2026-09-04",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agent-branding/"
+  },
+  {
     "slug": "recruitment-side-job-agent",
     "title": "副業・複業人材紹介の集客戦略｜週末ワーカー・パラレルキャリア層の獲得",
     "description": "副業・複業マッチング型エージェントの求職者集客を解説。パラレルキャリア層の動機分析とチャネル設計、案件紹介型ビジネスの母集団形成KPIを整理しました。",
@@ -2051,23 +2068,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-side-job-agent",
-    "title": "副業・複業人材紹介の集客戦略｜週末ワーカー・パラレルキャリア層の獲得",
-    "description": "副業・複業マッチング型エージェントの求職者集客を解説。パラレルキャリア層の動機分析とチャネル設計、案件紹介型ビジネスの母集団形成KPIを整理しました。",
-    "category": "セグメント別",
-    "keywords": [
-      "副業 マッチング",
-      "複業 人材紹介",
-      "パラレルキャリア",
-      "副業エージェント 集客",
-      "週末副業"
-    ],
-    "primary_keyword": "副業 マッチング",
-    "status": "ready",
-    "scheduled": "2026-09-02",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-side-job-agent/"
-  },
-  {
     "slug": "recruitment-agent-branding",
     "title": "人材紹介エージェントのブランディング戦略｜指名検索と口コミを増やす",
     "description": "CPA高騰時代に効くエージェントブランド構築の設計方法を解説。指名検索・口コミ・SNSフォロワーを資産化し、広告依存から脱却するための運用フレームをまとめました。",
@@ -2080,14 +2080,8 @@
       "エージェント 差別化"
     ],
     "primary_keyword": "人材紹介 ブランディング",
-    "key_points": [
-      "広告依存から脱却するブランド構築の意義",
-      "指名検索を伸ばすオウンド・PR施策",
-      "口コミとリファラルを増やす候補者体験設計",
-      "ブランド資産をKPIで可視化する運用"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-09-04",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agent-branding/"
   }
 ]

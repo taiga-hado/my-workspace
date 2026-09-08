@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-executive-search-acquisition",
-    "title": "エグゼクティブサーチの集客戦略｜経営幹部・CxO候補を集める人材紹介設計",
-    "description": "年収1200万円超のCxO・部長クラスを狙うエグゼクティブサーチの母集団形成術。リファラル、LinkedIn、招待制コミュニティなど非公開求職者にリーチする設計を解説します。",
-    "keywords": "エグゼクティブサーチ,CxO 転職,経営幹部 人材紹介,ハイクラス 集客,人材紹介 富裕層",
-    "category": "セグメント別",
-    "image_prompt": "A flat editorial illustration of a chess king piece on a pedestal with subtle network lines, deep navy blue (#1a3a8a) with gold (#f5b400) accent, premium SaaS aesthetic, soft white background, 3:2 aspect, no text or letters",
-    "key_points": [
-      "エグゼクティブ層の転職動機と情報収集行動",
-      "LinkedIn・招待制コミュニティ・リファラルの活用",
-      "秘匿性を担保したカウンセリングと面談フロー",
-      "フィー相場と成果報酬モデルの設計"
-    ]
-  },
-  {
     "slug": "recruitment-chatbot-lead-generation",
     "title": "人材紹介のチャットボット活用｜求職者接客を自動化しリード獲得を24時間化する",
     "description": "LP・LINE・サイトに設置するチャットボットで求職者との一次接点を自動化。シナリオ設計、面談予約への誘導、有人切替の判定基準、主要ツール選定まで実務ベースで解説します。",

@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-executive-search-acquisition",
+    "title": "エグゼクティブサーチの集客戦略｜経営幹部・CxO候補を集める人材紹介設計",
+    "description": "年収1200万円超のCxO・部長クラスを狙うエグゼクティブサーチの母集団形成術。リファラル、LinkedIn、招待制コミュニティなど非公開求職者にリーチする設計を解説します。",
+    "category": "セグメント別",
+    "keywords": [
+      "エグゼクティブサーチ",
+      "CxO 転職",
+      "経営幹部 人材紹介",
+      "ハイクラス 集客",
+      "人材紹介 富裕層"
+    ],
+    "primary_keyword": "エグゼクティブサーチ",
+    "status": "published",
+    "published": "2026-09-08",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-executive-search-acquisition/"
+  },
+  {
     "slug": "recruitment-lead-response-time",
     "title": "リードレスポンスタイムを短縮する｜応募後5分以内連絡で面談着座率を上げる運用",
     "description": "人材紹介の応募リードは初動速度が命。5分ルールの根拠、SLA設計、深夜・休日対応、SMS/LINE併用まで、面談着座率を最大化する一次応対フローを解説します。",
@@ -2085,23 +2102,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-lead-response-time",
-    "title": "リードレスポンスタイムを短縮する｜応募後5分以内連絡で面談着座率を上げる運用",
-    "description": "人材紹介の応募リードは初動速度が命。5分ルールの根拠、SLA設計、深夜・休日対応、SMS/LINE併用まで、面談着座率を最大化する一次応対フローを解説します。",
-    "category": "課題解決",
-    "keywords": [
-      "リードレスポンスタイム",
-      "5分ルール",
-      "人材紹介 応募対応",
-      "面談着座率",
-      "一次連絡"
-    ],
-    "primary_keyword": "リードレスポンスタイム",
-    "status": "ready",
-    "scheduled": "2026-09-07",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-lead-response-time/"
-  },
-  {
     "slug": "recruitment-executive-search-acquisition",
     "title": "エグゼクティブサーチの集客戦略｜経営幹部・CxO候補を集める人材紹介設計",
     "description": "年収1200万円超のCxO・部長クラスを狙うエグゼクティブサーチの母集団形成術。リファラル、LinkedIn、招待制コミュニティなど非公開求職者にリーチする設計を解説します。",
@@ -2114,14 +2114,8 @@
       "人材紹介 富裕層"
     ],
     "primary_keyword": "エグゼクティブサーチ",
-    "key_points": [
-      "エグゼクティブ層の転職動機と情報収集行動",
-      "LinkedIn・招待制コミュニティ・リファラルの活用",
-      "秘匿性を担保したカウンセリングと面談フロー",
-      "フィー相場と成果報酬モデルの設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-09-08",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-executive-search-acquisition/"
   },
   {
@@ -2144,7 +2138,7 @@
       "主要チャットボットツールの選定基準と費用感"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-chatbot-lead-generation/"
   },
   {
@@ -2167,7 +2161,7 @@
       "規模・予算別のおすすめ構成と切替の判断基準"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-online-interview-tools/"
   },
   {
@@ -2190,7 +2184,7 @@
       "QoHをKPIに組み込む際のダッシュボード設計"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-quality-of-hire/"
   }
 ]

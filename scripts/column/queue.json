@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-chatbot-lead-generation",
-    "title": "人材紹介のチャットボット活用｜求職者接客を自動化しリード獲得を24時間化する",
-    "description": "LP・LINE・サイトに設置するチャットボットで求職者との一次接点を自動化。シナリオ設計、面談予約への誘導、有人切替の判定基準、主要ツール選定まで実務ベースで解説します。",
-    "keywords": "求職者 チャットボット,人材紹介 チャットボット,リード獲得 自動化,LP チャット,面談予約 自動化",
-    "category": "ハウツー",
-    "image_prompt": "A flat editorial illustration of a friendly chat bubble icon connected to a calendar booking interface, deep navy blue (#1a3a8a) with gold (#f5b400) accents, premium SaaS aesthetic, soft white background, 3:2 aspect, no text or letters",
-    "key_points": [
-      "チャットボットが人材紹介の集客ファネルを変える理由",
-      "面談予約まで誘導するシナリオ設計の型",
-      "有人チャットへの切替判定と運用体制",
-      "主要チャットボットツールの選定基準と費用感"
-    ]
-  },
-  {
     "slug": "recruitment-online-interview-tools",
     "title": "オンライン面談ツール比較｜人材紹介向けZoom・Meet・専用サービスの選び方",
     "description": "求職者面談で使うオンライン会議ツールの比較。Zoom・Google Meet・面談録画/AI解析対応の専用ツールまで、着座率・キャンセル率・録画活用の観点で選定基準を整理します。",

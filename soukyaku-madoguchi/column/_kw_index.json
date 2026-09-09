@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-chatbot-lead-generation",
+    "title": "人材紹介のチャットボット活用｜求職者接客を自動化しリード獲得を24時間化する",
+    "description": "LP・LINE・サイトに設置するチャットボットで求職者との一次接点を自動化。シナリオ設計、面談予約への誘導、有人切替の判定基準、主要ツール選定まで実務ベースで解説します。",
+    "category": "ハウツー",
+    "keywords": [
+      "求職者 チャットボット",
+      "人材紹介 チャットボット",
+      "リード獲得 自動化",
+      "LP チャット",
+      "面談予約 自動化"
+    ],
+    "primary_keyword": "求職者 チャットボット",
+    "status": "published",
+    "published": "2026-09-09",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-chatbot-lead-generation/"
+  },
+  {
     "slug": "recruitment-executive-search-acquisition",
     "title": "エグゼクティブサーチの集客戦略｜経営幹部・CxO候補を集める人材紹介設計",
     "description": "年収1200万円超のCxO・部長クラスを狙うエグゼクティブサーチの母集団形成術。リファラル、LinkedIn、招待制コミュニティなど非公開求職者にリーチする設計を解説します。",
@@ -2102,23 +2119,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-executive-search-acquisition",
-    "title": "エグゼクティブサーチの集客戦略｜経営幹部・CxO候補を集める人材紹介設計",
-    "description": "年収1200万円超のCxO・部長クラスを狙うエグゼクティブサーチの母集団形成術。リファラル、LinkedIn、招待制コミュニティなど非公開求職者にリーチする設計を解説します。",
-    "category": "セグメント別",
-    "keywords": [
-      "エグゼクティブサーチ",
-      "CxO 転職",
-      "経営幹部 人材紹介",
-      "ハイクラス 集客",
-      "人材紹介 富裕層"
-    ],
-    "primary_keyword": "エグゼクティブサーチ",
-    "status": "ready",
-    "scheduled": "2026-09-08",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-executive-search-acquisition/"
-  },
-  {
     "slug": "recruitment-chatbot-lead-generation",
     "title": "人材紹介のチャットボット活用｜求職者接客を自動化しリード獲得を24時間化する",
     "description": "LP・LINE・サイトに設置するチャットボットで求職者との一次接点を自動化。シナリオ設計、面談予約への誘導、有人切替の判定基準、主要ツール選定まで実務ベースで解説します。",
@@ -2131,14 +2131,8 @@
       "面談予約 自動化"
     ],
     "primary_keyword": "求職者 チャットボット",
-    "key_points": [
-      "チャットボットが人材紹介の集客ファネルを変える理由",
-      "面談予約まで誘導するシナリオ設計の型",
-      "有人チャットへの切替判定と運用体制",
-      "主要チャットボットツールの選定基準と費用感"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-09-09",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-chatbot-lead-generation/"
   },
   {
@@ -2161,7 +2155,7 @@
       "規模・予算別のおすすめ構成と切替の判断基準"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-online-interview-tools/"
   },
   {
@@ -2184,7 +2178,7 @@
       "QoHをKPIに組み込む際のダッシュボード設計"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-quality-of-hire/"
   }
 ]

@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-online-interview-tools",
-    "title": "オンライン面談ツール比較｜人材紹介向けZoom・Meet・専用サービスの選び方",
-    "description": "求職者面談で使うオンライン会議ツールの比較。Zoom・Google Meet・面談録画/AI解析対応の専用ツールまで、着座率・キャンセル率・録画活用の観点で選定基準を整理します。",
-    "keywords": "オンライン面談 ツール,Web面談 比較,人材紹介 Zoom,面談録画,AI面談 解析",
-    "category": "比較検討",
-    "image_prompt": "A flat editorial illustration of three overlapping video call windows with a comparison chart motif, deep navy blue (#1a3a8a) with gold (#f5b400) accents, premium SaaS aesthetic, soft white background, 3:2 aspect, no text or letters",
-    "key_points": [
-      "人材紹介面談で重視すべきツール要件（着座率・録画・URL発行）",
-      "Zoom・Google Meet・Teamsの実務比較",
-      "面談録画とAI解析が可能な専用ツールの特徴",
-      "規模・予算別のおすすめ構成と切替の判断基準"
-    ]
-  },
-  {
     "slug": "recruitment-quality-of-hire",
     "title": "Quality of Hire（採用の質）とは｜人材紹介が追うべき決定後KPIの設計",
     "description": "決定件数だけでは測れない「採用の質」を数値化する指標Quality of Hire（QoH）。定着率・パフォーマンス・返金率との関係、算出式、集客チャネル評価への活用法を解説します。",

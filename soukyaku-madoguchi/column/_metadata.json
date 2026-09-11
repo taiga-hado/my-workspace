@@ -1006,5 +1006,13 @@
     "category": "比較検討",
     "published": "2026-09-10",
     "excerpt": "求職者面談で使うオンライン会議ツールの比較。Zoom・Google Meet・面談録画/AI解析対応の専用ツールまで、着座率・キャンセル率・録画活用の観点で選定基準を整理します。"
+  },
+  {
+    "slug": "recruitment-quality-of-hire",
+    "title": "Quality of Hire（採用の質）とは｜人材紹介が追うべき決定後KPIの設計",
+    "description": "決定件数だけでは測れない「採用の質」を数値化する指標Quality of Hire（QoH）。定着率・パフォーマンス・返金率との関係、算出式、集客チャネル評価への活用法を解説します。",
+    "category": "用語解説",
+    "published": "2026-09-11",
+    "excerpt": "決定件数だけでは測れない「採用の質」を数値化する指標Quality of Hire（QoH）。定着率・パフォーマンス・返金率との関係、算出式、集客チャネル評価への活用法を解説します。"
   }
 ]

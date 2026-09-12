@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-casual-interview-acquisition",
+    "title": "カジュアル面談で求職者を集める設計｜人材紹介の面談導入率を上げる運用",
+    "description": "転職意欲がまだ固まっていない求職者を惹きつける「カジュアル面談」の設計方法を解説。訴求文言・予約フロー・面談後のCVまで、面談着座率を最大化する運用ノウハウをまとめます。",
+    "category": "ハウツー",
+    "keywords": [
+      "カジュアル面談",
+      "人材紹介 カジュアル面談",
+      "求職者 集客",
+      "面談誘導",
+      "潜在層 集客"
+    ],
+    "primary_keyword": "カジュアル面談",
+    "status": "published",
+    "published": "2026-09-12",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-casual-interview-acquisition/"
+  },
+  {
     "slug": "recruitment-quality-of-hire",
     "title": "Quality of Hire（採用の質）とは｜人材紹介が追うべき決定後KPIの設計",
     "description": "決定件数だけでは測れない「採用の質」を数値化する指標Quality of Hire（QoH）。定着率・パフォーマンス・返金率との関係、算出式、集客チャネル評価への活用法を解説します。",
@@ -2153,20 +2170,112 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-quality-of-hire",
-    "title": "Quality of Hire（採用の質）とは｜人材紹介が追うべき決定後KPIの設計",
-    "description": "決定件数だけでは測れない「採用の質」を数値化する指標Quality of Hire（QoH）。定着率・パフォーマンス・返金率との関係、算出式、集客チャネル評価への活用法を解説します。",
+    "slug": "recruitment-casual-interview-acquisition",
+    "title": "カジュアル面談で求職者を集める設計｜人材紹介の面談導入率を上げる運用",
+    "description": "転職意欲がまだ固まっていない求職者を惹きつける「カジュアル面談」の設計方法を解説。訴求文言・予約フロー・面談後のCVまで、面談着座率を最大化する運用ノウハウをまとめます。",
+    "category": "ハウツー",
+    "keywords": [
+      "カジュアル面談",
+      "人材紹介 カジュアル面談",
+      "求職者 集客",
+      "面談誘導",
+      "潜在層 集客"
+    ],
+    "primary_keyword": "カジュアル面談",
+    "status": "ready",
+    "scheduled": "2026-09-12",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-casual-interview-acquisition/"
+  },
+  {
+    "slug": "recruitment-specialized-vs-generalist",
+    "title": "業界特化型と総合型の人材紹介はどちらが勝てるか｜集客・単価・組織を徹底比較",
+    "description": "業界特化型エージェントと総合型エージェントの違いを、集客効率・平均年収・CPA・組織設計の観点で比較。自社ポジショニングの判断基準と、特化型立ち上げ時の集客設計を解説します。",
+    "category": "比較検討",
+    "keywords": [
+      "業界特化 人材紹介",
+      "総合型 エージェント",
+      "特化型 メリット",
+      "人材紹介 差別化",
+      "エージェント ポジショニング"
+    ],
+    "primary_keyword": "業界特化 人材紹介",
+    "key_points": [
+      "特化型と総合型のビジネスモデル比較",
+      "集客CPA・面談単価・成約単価の違い",
+      "組織設計・CA育成コストの比較",
+      "中小エージェントの最適ポジショニング戦略"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-specialized-vs-generalist/"
+  },
+  {
+    "slug": "recruitment-reference-check",
+    "title": "リファレンスチェックとは｜人材紹介における実施フローと法的留意点",
+    "description": "リファレンスチェックの定義と、人材紹介事業者が仲介する際の実施フロー・依頼文例・料金相場を解説。個人情報保護法・職業安定法との関係や、決定率向上への活用法まで整理します。",
     "category": "用語解説",
     "keywords": [
-      "Quality of Hire",
-      "QoH",
-      "採用の質",
-      "人材紹介 定着率",
-      "返金規定"
+      "リファレンスチェック",
+      "リファレンスチェック 人材紹介",
+      "前職照会",
+      "リファレンス 依頼文",
+      "リファレンスチェック 費用"
     ],
-    "primary_keyword": "Quality of Hire",
-    "status": "ready",
-    "scheduled": "2026-09-11",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-quality-of-hire/"
+    "primary_keyword": "リファレンスチェック",
+    "key_points": [
+      "リファレンスチェックの定義と目的",
+      "人材紹介における実施タイミングと料金相場",
+      "法的留意点（同意取得・個人情報保護）",
+      "決定率・定着率向上への活用パターン"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-reference-check/"
+  },
+  {
+    "slug": "recruitment-alumni-recruitment",
+    "title": "アルムナイ採用の広がりが人材紹介に与える影響｜出戻り市場の攻め方",
+    "description": "退職者を再雇用するアルムナイ採用市場の拡大トレンドと、人材紹介エージェントが取り組むべき集客・仕組み化の打ち手を解説。カムバック志望者の獲得チャネルと訴求設計まで整理します。",
+    "category": "業界トレンド",
+    "keywords": [
+      "アルムナイ採用",
+      "出戻り採用",
+      "アルムナイ 人材紹介",
+      "カムバック採用",
+      "退職者 再雇用"
+    ],
+    "primary_keyword": "アルムナイ採用",
+    "key_points": [
+      "アルムナイ採用市場の拡大とデータ",
+      "エージェントが介在できる領域と収益機会",
+      "カムバック志望求職者の集客チャネル設計",
+      "企業アルムナイDB運営代行の可能性"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-alumni-recruitment/"
+  },
+  {
+    "slug": "recruitment-hotel-tourism-acquisition",
+    "title": "ホテル・観光業界特化型人材紹介の集客戦略｜インバウンド需要期の獲得設計",
+    "description": "インバウンド回復で採用需要が急拡大するホテル・観光業界の人材紹介における求職者集客戦略を解説。フロント・料飲・支配人層の獲得チャネルと訴求設計、面談導線までまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "ホテル 人材紹介",
+      "観光業界 転職",
+      "インバウンド 採用",
+      "ホテル業界 集客",
+      "支配人 転職"
+    ],
+    "primary_keyword": "ホテル 人材紹介",
+    "key_points": [
+      "ホテル・観光業界の採用市場と職種構成",
+      "フロント・料飲・支配人層の訴求ポイント",
+      "効果的な集客チャネル（Indeed・SNS・送客）",
+      "面談着座率を高める事前カウンセリング設計"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hotel-tourism-acquisition/"
   }
 ]

@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-reference-check",
+    "title": "リファレンスチェックとは｜人材紹介における実施フローと法的留意点",
+    "description": "リファレンスチェックの定義と、人材紹介事業者が仲介する際の実施フロー・依頼文例・料金相場を解説。個人情報保護法・職業安定法との関係や、決定率向上への活用法まで整理します。",
+    "category": "用語解説",
+    "keywords": [
+      "リファレンスチェック",
+      "リファレンスチェック 人材紹介",
+      "前職照会",
+      "リファレンス 依頼文",
+      "リファレンスチェック 費用"
+    ],
+    "primary_keyword": "リファレンスチェック",
+    "status": "published",
+    "published": "2026-09-14",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-reference-check/"
+  },
+  {
     "slug": "recruitment-specialized-vs-generalist",
     "title": "業界特化型と総合型の人材紹介はどちらが勝てるか｜集客・単価・組織を徹底比較",
     "description": "業界特化型エージェントと総合型エージェントの違いを、集客効率・平均年収・CPA・組織設計の観点で比較。自社ポジショニングの判断基準と、特化型立ち上げ時の集客設計を解説します。",
@@ -2187,23 +2204,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-specialized-vs-generalist",
-    "title": "業界特化型と総合型の人材紹介はどちらが勝てるか｜集客・単価・組織を徹底比較",
-    "description": "業界特化型エージェントと総合型エージェントの違いを、集客効率・平均年収・CPA・組織設計の観点で比較。自社ポジショニングの判断基準と、特化型立ち上げ時の集客設計を解説します。",
-    "category": "比較検討",
-    "keywords": [
-      "業界特化 人材紹介",
-      "総合型 エージェント",
-      "特化型 メリット",
-      "人材紹介 差別化",
-      "エージェント ポジショニング"
-    ],
-    "primary_keyword": "業界特化 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-09-13",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-specialized-vs-generalist/"
-  },
-  {
     "slug": "recruitment-reference-check",
     "title": "リファレンスチェックとは｜人材紹介における実施フローと法的留意点",
     "description": "リファレンスチェックの定義と、人材紹介事業者が仲介する際の実施フロー・依頼文例・料金相場を解説。個人情報保護法・職業安定法との関係や、決定率向上への活用法まで整理します。",
@@ -2216,14 +2216,8 @@
       "リファレンスチェック 費用"
     ],
     "primary_keyword": "リファレンスチェック",
-    "key_points": [
-      "リファレンスチェックの定義と目的",
-      "人材紹介における実施タイミングと料金相場",
-      "法的留意点（同意取得・個人情報保護）",
-      "決定率・定着率向上への活用パターン"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-09-14",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-reference-check/"
   },
   {
@@ -2246,7 +2240,7 @@
       "企業アルムナイDB運営代行の可能性"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-alumni-recruitment/"
   },
   {
@@ -2269,7 +2263,7 @@
       "面談着座率を高める事前カウンセリング設計"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hotel-tourism-acquisition/"
   }
 ]

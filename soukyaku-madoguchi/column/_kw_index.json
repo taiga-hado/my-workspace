@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-alumni-recruitment",
+    "title": "アルムナイ採用の広がりが人材紹介に与える影響｜出戻り市場の攻め方",
+    "description": "退職者を再雇用するアルムナイ採用市場の拡大トレンドと、人材紹介エージェントが取り組むべき集客・仕組み化の打ち手を解説。カムバック志望者の獲得チャネルと訴求設計まで整理します。",
+    "category": "業界トレンド",
+    "keywords": [
+      "アルムナイ採用",
+      "出戻り採用",
+      "アルムナイ 人材紹介",
+      "カムバック採用",
+      "退職者 再雇用"
+    ],
+    "primary_keyword": "アルムナイ採用",
+    "status": "published",
+    "published": "2026-09-15",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-alumni-recruitment/"
+  },
+  {
     "slug": "recruitment-reference-check",
     "title": "リファレンスチェックとは｜人材紹介における実施フローと法的留意点",
     "description": "リファレンスチェックの定義と、人材紹介事業者が仲介する際の実施フロー・依頼文例・料金相場を解説。個人情報保護法・職業安定法との関係や、決定率向上への活用法まで整理します。",
@@ -2204,23 +2221,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-reference-check",
-    "title": "リファレンスチェックとは｜人材紹介における実施フローと法的留意点",
-    "description": "リファレンスチェックの定義と、人材紹介事業者が仲介する際の実施フロー・依頼文例・料金相場を解説。個人情報保護法・職業安定法との関係や、決定率向上への活用法まで整理します。",
-    "category": "用語解説",
-    "keywords": [
-      "リファレンスチェック",
-      "リファレンスチェック 人材紹介",
-      "前職照会",
-      "リファレンス 依頼文",
-      "リファレンスチェック 費用"
-    ],
-    "primary_keyword": "リファレンスチェック",
-    "status": "ready",
-    "scheduled": "2026-09-14",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-reference-check/"
-  },
-  {
     "slug": "recruitment-alumni-recruitment",
     "title": "アルムナイ採用の広がりが人材紹介に与える影響｜出戻り市場の攻め方",
     "description": "退職者を再雇用するアルムナイ採用市場の拡大トレンドと、人材紹介エージェントが取り組むべき集客・仕組み化の打ち手を解説。カムバック志望者の獲得チャネルと訴求設計まで整理します。",
@@ -2233,14 +2233,8 @@
       "退職者 再雇用"
     ],
     "primary_keyword": "アルムナイ採用",
-    "key_points": [
-      "アルムナイ採用市場の拡大とデータ",
-      "エージェントが介在できる領域と収益機会",
-      "カムバック志望求職者の集客チャネル設計",
-      "企業アルムナイDB運営代行の可能性"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-09-15",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-alumni-recruitment/"
   },
   {
@@ -2263,7 +2257,7 @@
       "面談着座率を高める事前カウンセリング設計"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hotel-tourism-acquisition/"
   }
 ]

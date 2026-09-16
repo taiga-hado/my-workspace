@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-hotel-tourism-acquisition",
+    "title": "ホテル・観光業界特化型人材紹介の集客戦略｜インバウンド需要期の獲得設計",
+    "description": "インバウンド回復で採用需要が急拡大するホテル・観光業界の人材紹介における求職者集客戦略を解説。フロント・料飲・支配人層の獲得チャネルと訴求設計、面談導線までまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "ホテル 人材紹介",
+      "観光業界 転職",
+      "インバウンド 採用",
+      "ホテル業界 集客",
+      "支配人 転職"
+    ],
+    "primary_keyword": "ホテル 人材紹介",
+    "status": "published",
+    "published": "2026-09-16",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hotel-tourism-acquisition/"
+  },
+  {
     "slug": "recruitment-alumni-recruitment",
     "title": "アルムナイ採用の広がりが人材紹介に与える影響｜出戻り市場の攻め方",
     "description": "退職者を再雇用するアルムナイ採用市場の拡大トレンドと、人材紹介エージェントが取り組むべき集客・仕組み化の打ち手を解説。カムバック志望者の獲得チャネルと訴求設計まで整理します。",
@@ -2221,23 +2238,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-alumni-recruitment",
-    "title": "アルムナイ採用の広がりが人材紹介に与える影響｜出戻り市場の攻め方",
-    "description": "退職者を再雇用するアルムナイ採用市場の拡大トレンドと、人材紹介エージェントが取り組むべき集客・仕組み化の打ち手を解説。カムバック志望者の獲得チャネルと訴求設計まで整理します。",
-    "category": "業界トレンド",
-    "keywords": [
-      "アルムナイ採用",
-      "出戻り採用",
-      "アルムナイ 人材紹介",
-      "カムバック採用",
-      "退職者 再雇用"
-    ],
-    "primary_keyword": "アルムナイ採用",
-    "status": "ready",
-    "scheduled": "2026-09-15",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-alumni-recruitment/"
-  },
-  {
     "slug": "recruitment-hotel-tourism-acquisition",
     "title": "ホテル・観光業界特化型人材紹介の集客戦略｜インバウンド需要期の獲得設計",
     "description": "インバウンド回復で採用需要が急拡大するホテル・観光業界の人材紹介における求職者集客戦略を解説。フロント・料飲・支配人層の獲得チャネルと訴求設計、面談導線までまとめます。",
@@ -2250,14 +2250,8 @@
       "支配人 転職"
     ],
     "primary_keyword": "ホテル 人材紹介",
-    "key_points": [
-      "ホテル・観光業界の採用市場と職種構成",
-      "フロント・料飲・支配人層の訴求ポイント",
-      "効果的な集客チャネル（Indeed・SNS・送客）",
-      "面談着座率を高める事前カウンセリング設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-09-16",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hotel-tourism-acquisition/"
   }
 ]

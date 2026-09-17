@@ -1,0 +1,5 @@
+
+/* ── セクション3（退職コンシェルジュLP）は進捗バーを出さない ── */
+.form-bottom:has(#back-button):has(input[name="radio_100"]) .form-editor::before {
+  display: none !important;
+}

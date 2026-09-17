@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-form-optimization",
+    "title": "人材紹介の応募フォーム最適化(EFO)｜離脱を防ぎCVRを2倍にする設計",
+    "description": "人材紹介LPの応募フォームで発生する離脱を防ぐEFOの実務を解説。項目数・入力補助・エラー表示・ステップ設計まで、CVRを2倍に引き上げる具体的な設計手法を紹介します。",
+    "category": "ハウツー",
+    "keywords": [
+      "応募フォーム 最適化",
+      "EFO",
+      "人材紹介 CVR",
+      "フォーム 離脱",
+      "応募 CVR"
+    ],
+    "primary_keyword": "応募フォーム 最適化",
+    "status": "published",
+    "published": "2026-09-17",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-form-optimization/"
+  },
+  {
     "slug": "recruitment-hotel-tourism-acquisition",
     "title": "ホテル・観光業界特化型人材紹介の集客戦略｜インバウンド需要期の獲得設計",
     "description": "インバウンド回復で採用需要が急拡大するホテル・観光業界の人材紹介における求職者集客戦略を解説。フロント・料飲・支配人層の獲得チャネルと訴求設計、面談導線までまとめます。",
@@ -2238,20 +2255,109 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-hotel-tourism-acquisition",
-    "title": "ホテル・観光業界特化型人材紹介の集客戦略｜インバウンド需要期の獲得設計",
-    "description": "インバウンド回復で採用需要が急拡大するホテル・観光業界の人材紹介における求職者集客戦略を解説。フロント・料飲・支配人層の獲得チャネルと訴求設計、面談導線までまとめます。",
+    "slug": "recruitment-form-optimization",
+    "title": "人材紹介の応募フォーム最適化(EFO)｜離脱を防ぎCVRを2倍にする設計",
+    "description": "人材紹介LPの応募フォームで発生する離脱を防ぐEFOの実務を解説。項目数・入力補助・エラー表示・ステップ設計まで、CVRを2倍に引き上げる具体的な設計手法を紹介します。",
+    "category": "ハウツー",
+    "keywords": [
+      "応募フォーム 最適化",
+      "EFO",
+      "人材紹介 CVR",
+      "フォーム 離脱",
+      "応募 CVR"
+    ],
+    "primary_keyword": "応募フォーム 最適化",
+    "status": "ready",
+    "scheduled": "2026-09-17",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-form-optimization/"
+  },
+  {
+    "slug": "recruitment-crm-comparison",
+    "title": "人材紹介向けCRM/SFA比較｜Salesforce・HubSpot・専用ツールの選び方",
+    "description": "人材紹介事業でCRM/SFAを導入する際の比較ポイントを解説。Salesforce・HubSpot・業界特化ツールの機能差、求職者DBとの連携、費用対効果まで整理し選定基準を提示します。",
+    "category": "比較検討",
+    "keywords": [
+      "人材紹介 CRM",
+      "人材紹介 SFA",
+      "Salesforce 人材紹介",
+      "HubSpot 採用",
+      "求職者管理 ツール"
+    ],
+    "primary_keyword": "人材紹介 CRM",
+    "key_points": [
+      "人材紹介事業がCRM/SFAを導入するべき理由",
+      "Salesforce・HubSpotなど汎用CRMの強みと限界",
+      "業界特化CRM(ポラリスパナ・キャリアプラス等)の比較",
+      "導入前に決めるべき求職者DB連携とKPI設計"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-crm-comparison/"
+  },
+  {
+    "slug": "recruitment-success-story-content",
+    "title": "転職成功事例コンテンツで求職者を集める｜人材紹介の事例記事設計",
+    "description": "人材紹介エージェントが自社サイトで転職成功事例を発信し求職者を集めるためのコンテンツ設計を解説。取材フロー・許諾取得・SEO構成・CV導線までを実務的にまとめました。",
+    "category": "ハウツー",
+    "keywords": [
+      "転職成功事例 コンテンツ",
+      "人材紹介 事例記事",
+      "カスタマーストーリー 採用",
+      "インタビュー記事 集客"
+    ],
+    "primary_keyword": "転職成功事例 コンテンツ",
+    "key_points": [
+      "転職成功事例コンテンツが求職者集客に効く理由",
+      "取材対象の選び方と許諾・匿名化の実務",
+      "検索意図に沿った事例記事のSEO構成テンプレート",
+      "事例からCVへ繋げる導線設計とリライト運用"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-success-story-content/"
+  },
+  {
+    "slug": "recruitment-game-entertainment-acquisition",
+    "title": "ゲーム・エンタメ業界特化型人材紹介の集客戦略｜クリエイター獲得設計",
+    "description": "ゲーム・エンタメ業界に特化した人材紹介の求職者集客手法を解説。プランナー・エンジニア・デザイナーなど職種別の訴求、コミュニティ経由の獲得、CPA相場まで整理します。",
     "category": "セグメント別",
     "keywords": [
-      "ホテル 人材紹介",
-      "観光業界 転職",
-      "インバウンド 採用",
-      "ホテル業界 集客",
-      "支配人 転職"
+      "ゲーム業界 人材紹介",
+      "エンタメ 転職",
+      "ゲームクリエイター 集客",
+      "ゲームプランナー 転職"
     ],
-    "primary_keyword": "ホテル 人材紹介",
-    "status": "ready",
-    "scheduled": "2026-09-16",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-hotel-tourism-acquisition/"
+    "primary_keyword": "ゲーム業界 人材紹介",
+    "key_points": [
+      "ゲーム・エンタメ業界の人材市場と需給構造",
+      "職種別(プランナー/エンジニア/デザイナー)の訴求設計",
+      "コミュニティ・カンファレンス・SNS経由の集客手法",
+      "業界特化エージェントのCPA相場と歩留まり管理"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-game-entertainment-acquisition/"
+  },
+  {
+    "slug": "recruitment-sms-marketing",
+    "title": "人材紹介のSMS活用｜開封率98%を面談着座に変える運用設計",
+    "description": "人材紹介事業でSMSを活用し、応募後の連絡到達率と面談着座率を高める運用を解説。LINE・メールとの使い分け、配信タイミング、法令遵守のポイントまでまとめました。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 SMS",
+      "SMS 配信 採用",
+      "ショートメッセージ 面談",
+      "SMS 着座率"
+    ],
+    "primary_keyword": "人材紹介 SMS",
+    "key_points": [
+      "人材紹介でSMSが効く理由と開封率データ",
+      "LINE・メール・電話とのチャネル使い分け",
+      "応募後・面談前後で送るべきメッセージテンプレート",
+      "SMS配信ツール選定と特定電子メール法の遵守ポイント"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sms-marketing/"
   }
 ]

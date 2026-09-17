@@ -74,6 +74,9 @@
 }
 .checkboxes .checkbox label {
   line-height: 1.3 !important;
+  word-break: keep-all !important;
+  overflow-wrap: normal !important;
+  padding: 9px 10px !important;
 }
 
 /* ── ⑥-2 「選択して下さい」→「選択してください」（未選択時の表示のみ） ── */

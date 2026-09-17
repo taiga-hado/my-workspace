@@ -1,0 +1,57 @@
+
+/* ============================================
+   2026-09-17 追加：セクション2以降の改善
+   ============================================ */
+
+/* ── トップ画像はセクション1だけ（戻るボタンがある＝2ページ目以降） ── */
+.form-bottom:has(#back-button) {
+  background-image: none !important;
+  border-radius: var(--radius-lg) !important;
+}
+.form-bottom:has(#back-button) .form-editor {
+  margin-top: 0 !important;
+  padding-top: 24px !important;
+  border-radius: var(--radius-lg) !important;
+}
+
+/* ── CTAと戻るボタンを縦に分離（CTAが上・戻るは下に控えめに） ── */
+.form-editor > .row:has(#submit-button) {
+  display: flex !important;
+  flex-direction: column-reverse !important;
+  align-items: stretch !important;
+  gap: 18px !important;
+  margin: 8px 0 0 !important;
+}
+.form-editor > .row:has(#submit-button)::before,
+.form-editor > .row:has(#submit-button)::after {
+  display: none !important;
+}
+.form-editor > .row:has(#submit-button) > div {
+  float: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.form-editor > .row:has(#submit-button) br.visible-xs {
+  display: none !important;
+}
+#submit-button {
+  top: 0;
+}
+#back-button {
+  display: block !important;
+  width: auto !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  padding: 8px 20px !important;
+  background: transparent !important;
+  border: none !important;
+  color: var(--dark-light) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+#back-button::before {
+  content: "‹ ";
+}

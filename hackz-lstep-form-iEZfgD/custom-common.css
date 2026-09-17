@@ -634,9 +634,11 @@ select.form-control {
 .form-bottom {
   background-image: url(https://taiga-hado.github.io/my-workspace/hackz-lstep-form-iEZfgD/images/hero-short.jpg) !important;
 }
+.form-bottom {
+  padding: 0 !important;
+}
 .form-editor {
-  /* 画像高さ＝form-bottom全幅。margin%は左右padding(25px×2)を除いた幅基準なので+25px */
-  margin-top: calc(100% + 25px) !important;
+  margin-top: 100% !important;
 }
 
 /* ── 既存不具合：.rowの-15pxマージンで左右15pxずつ画面外にはみ出していた ── */

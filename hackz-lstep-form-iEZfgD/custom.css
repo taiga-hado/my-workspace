@@ -627,7 +627,7 @@ select.form-control {
 }
 
 /* ── セクション3（精神科通院「はい」→ 退職コンシェルジュ訴求）LP風 ── */
-.form-bottom:has(input[name="radio_100"]) .form-editor {
+.form-bottom:has(#back-button):has(input[name="radio_100"]) .form-editor {
   padding-top: 0 !important;
   overflow: hidden;
 }

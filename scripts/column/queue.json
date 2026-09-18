@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-crm-comparison",
-    "title": "人材紹介向けCRM/SFA比較｜Salesforce・HubSpot・専用ツールの選び方",
-    "description": "人材紹介事業でCRM/SFAを導入する際の比較ポイントを解説。Salesforce・HubSpot・業界特化ツールの機能差、求職者DBとの連携、費用対効果まで整理し選定基準を提示します。",
-    "keywords": "人材紹介 CRM,人材紹介 SFA,Salesforce 人材紹介,HubSpot 採用,求職者管理 ツール",
-    "category": "比較検討",
-    "image_prompt": "Deep navy blue #1a3a8a background with gold #f5b400 accents, flat editorial illustration of interconnected database nodes and dashboard panels, comparison layout with three abstract product cards, premium SaaS aesthetic, soft white base, no text or letters, 3:2 aspect ratio",
-    "key_points": [
-      "人材紹介事業がCRM/SFAを導入するべき理由",
-      "Salesforce・HubSpotなど汎用CRMの強みと限界",
-      "業界特化CRM(ポラリスパナ・キャリアプラス等)の比較",
-      "導入前に決めるべき求職者DB連携とKPI設計"
-    ]
-  },
-  {
     "slug": "recruitment-success-story-content",
     "title": "転職成功事例コンテンツで求職者を集める｜人材紹介の事例記事設計",
     "description": "人材紹介エージェントが自社サイトで転職成功事例を発信し求職者を集めるためのコンテンツ設計を解説。取材フロー・許諾取得・SEO構成・CV導線までを実務的にまとめました。",

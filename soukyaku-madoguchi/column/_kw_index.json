@@ -1,5 +1,22 @@
 [
   {
+    "slug": "recruitment-crm-comparison",
+    "title": "人材紹介向けCRM/SFA比較｜Salesforce・HubSpot・専用ツールの選び方",
+    "description": "人材紹介事業でCRM/SFAを導入する際の比較ポイントを解説。Salesforce・HubSpot・業界特化ツールの機能差、求職者DBとの連携、費用対効果まで整理し選定基準を提示します。",
+    "category": "比較検討",
+    "keywords": [
+      "人材紹介 CRM",
+      "人材紹介 SFA",
+      "Salesforce 人材紹介",
+      "HubSpot 採用",
+      "求職者管理 ツール"
+    ],
+    "primary_keyword": "人材紹介 CRM",
+    "status": "published",
+    "published": "2026-09-18",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-crm-comparison/"
+  },
+  {
     "slug": "recruitment-form-optimization",
     "title": "人材紹介の応募フォーム最適化(EFO)｜離脱を防ぎCVRを2倍にする設計",
     "description": "人材紹介LPの応募フォームで発生する離脱を防ぐEFOの実務を解説。項目数・入力補助・エラー表示・ステップ設計まで、CVRを2倍に引き上げる具体的な設計手法を紹介します。",
@@ -2255,23 +2272,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-form-optimization",
-    "title": "人材紹介の応募フォーム最適化(EFO)｜離脱を防ぎCVRを2倍にする設計",
-    "description": "人材紹介LPの応募フォームで発生する離脱を防ぐEFOの実務を解説。項目数・入力補助・エラー表示・ステップ設計まで、CVRを2倍に引き上げる具体的な設計手法を紹介します。",
-    "category": "ハウツー",
-    "keywords": [
-      "応募フォーム 最適化",
-      "EFO",
-      "人材紹介 CVR",
-      "フォーム 離脱",
-      "応募 CVR"
-    ],
-    "primary_keyword": "応募フォーム 最適化",
-    "status": "ready",
-    "scheduled": "2026-09-17",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-form-optimization/"
-  },
-  {
     "slug": "recruitment-crm-comparison",
     "title": "人材紹介向けCRM/SFA比較｜Salesforce・HubSpot・専用ツールの選び方",
     "description": "人材紹介事業でCRM/SFAを導入する際の比較ポイントを解説。Salesforce・HubSpot・業界特化ツールの機能差、求職者DBとの連携、費用対効果まで整理し選定基準を提示します。",
@@ -2284,14 +2284,8 @@
       "求職者管理 ツール"
     ],
     "primary_keyword": "人材紹介 CRM",
-    "key_points": [
-      "人材紹介事業がCRM/SFAを導入するべき理由",
-      "Salesforce・HubSpotなど汎用CRMの強みと限界",
-      "業界特化CRM(ポラリスパナ・キャリアプラス等)の比較",
-      "導入前に決めるべき求職者DB連携とKPI設計"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-09-18",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-crm-comparison/"
   },
   {
@@ -2313,7 +2307,7 @@
       "事例からCVへ繋げる導線設計とリライト運用"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-success-story-content/"
   },
   {
@@ -2335,7 +2329,7 @@
       "業界特化エージェントのCPA相場と歩留まり管理"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-game-entertainment-acquisition/"
   },
   {
@@ -2357,7 +2351,7 @@
       "SMS配信ツール選定と特定電子メール法の遵守ポイント"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sms-marketing/"
   }
 ]

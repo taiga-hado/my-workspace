@@ -1062,5 +1062,13 @@
     "category": "ハウツー",
     "published": "2026-09-17",
     "excerpt": "人材紹介LPの応募フォームで発生する離脱を防ぐEFOの実務を解説。項目数・入力補助・エラー表示・ステップ設計まで、CVRを2倍に引き上げる具体的な設計手法を紹介します。"
+  },
+  {
+    "slug": "recruitment-crm-comparison",
+    "title": "人材紹介向けCRM/SFA比較｜Salesforce・HubSpot・専用ツールの選び方",
+    "description": "人材紹介事業でCRM/SFAを導入する際の比較ポイントを解説。Salesforce・HubSpot・業界特化ツールの機能差、求職者DBとの連携、費用対効果まで整理し選定基準を提示します。",
+    "category": "比較検討",
+    "published": "2026-09-18",
+    "excerpt": "人材紹介事業でCRM/SFAを導入する際の比較ポイントを解説。Salesforce・HubSpot・業界特化ツールの機能差、求職者DBとの連携、費用対効果まで整理し選定基準を提示します。"
   }
 ]

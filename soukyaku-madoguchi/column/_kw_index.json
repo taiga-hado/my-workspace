@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-success-story-content",
+    "title": "転職成功事例コンテンツで求職者を集める｜人材紹介の事例記事設計",
+    "description": "人材紹介エージェントが自社サイトで転職成功事例を発信し求職者を集めるためのコンテンツ設計を解説。取材フロー・許諾取得・SEO構成・CV導線までを実務的にまとめました。",
+    "category": "ハウツー",
+    "keywords": [
+      "転職成功事例 コンテンツ",
+      "人材紹介 事例記事",
+      "カスタマーストーリー 採用",
+      "インタビュー記事 集客"
+    ],
+    "primary_keyword": "転職成功事例 コンテンツ",
+    "status": "published",
+    "published": "2026-09-19",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-success-story-content/"
+  },
+  {
     "slug": "recruitment-crm-comparison",
     "title": "人材紹介向けCRM/SFA比較｜Salesforce・HubSpot・専用ツールの選び方",
     "description": "人材紹介事業でCRM/SFAを導入する際の比較ポイントを解説。Salesforce・HubSpot・業界特化ツールの機能差、求職者DBとの連携、費用対効果まで整理し選定基準を提示します。",
@@ -2272,23 +2288,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-crm-comparison",
-    "title": "人材紹介向けCRM/SFA比較｜Salesforce・HubSpot・専用ツールの選び方",
-    "description": "人材紹介事業でCRM/SFAを導入する際の比較ポイントを解説。Salesforce・HubSpot・業界特化ツールの機能差、求職者DBとの連携、費用対効果まで整理し選定基準を提示します。",
-    "category": "比較検討",
-    "keywords": [
-      "人材紹介 CRM",
-      "人材紹介 SFA",
-      "Salesforce 人材紹介",
-      "HubSpot 採用",
-      "求職者管理 ツール"
-    ],
-    "primary_keyword": "人材紹介 CRM",
-    "status": "ready",
-    "scheduled": "2026-09-18",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-crm-comparison/"
-  },
-  {
     "slug": "recruitment-success-story-content",
     "title": "転職成功事例コンテンツで求職者を集める｜人材紹介の事例記事設計",
     "description": "人材紹介エージェントが自社サイトで転職成功事例を発信し求職者を集めるためのコンテンツ設計を解説。取材フロー・許諾取得・SEO構成・CV導線までを実務的にまとめました。",
@@ -2300,14 +2299,8 @@
       "インタビュー記事 集客"
     ],
     "primary_keyword": "転職成功事例 コンテンツ",
-    "key_points": [
-      "転職成功事例コンテンツが求職者集客に効く理由",
-      "取材対象の選び方と許諾・匿名化の実務",
-      "検索意図に沿った事例記事のSEO構成テンプレート",
-      "事例からCVへ繋げる導線設計とリライト運用"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-09-19",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-success-story-content/"
   },
   {
@@ -2329,7 +2322,7 @@
       "業界特化エージェントのCPA相場と歩留まり管理"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-game-entertainment-acquisition/"
   },
   {
@@ -2351,7 +2344,7 @@
       "SMS配信ツール選定と特定電子メール法の遵守ポイント"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sms-marketing/"
   }
 ]

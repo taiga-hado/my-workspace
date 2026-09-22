@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-agriculture-acquisition",
+    "title": "農業・第一次産業特化型人材紹介の集客戦略｜担い手不足を追い風にする設計",
+    "description": "農業・林業・水産業に特化した人材紹介の集客戦略を解説。担い手不足を背景とした求職者ニーズ、地方移住訴求、行政連携、有効な集客チャネルまで実務目線でまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "農業 人材紹介",
+      "第一次産業 転職",
+      "担い手不足 採用",
+      "地方移住 求職者"
+    ],
+    "primary_keyword": "農業 人材紹介",
+    "status": "published",
+    "published": "2026-09-22",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agriculture-acquisition/"
+  },
+  {
     "slug": "recruitment-sms-marketing",
     "title": "人材紹介のSMS活用｜開封率98%を面談着座に変える運用設計",
     "description": "人材紹介事業でSMSを活用し、応募後の連絡到達率と面談着座率を高める運用を解説。LINE・メールとの使い分け、配信タイミング、法令遵守のポイントまでまとめました。",
@@ -2320,19 +2336,107 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-sms-marketing",
-    "title": "人材紹介のSMS活用｜開封率98%を面談着座に変える運用設計",
-    "description": "人材紹介事業でSMSを活用し、応募後の連絡到達率と面談着座率を高める運用を解説。LINE・メールとの使い分け、配信タイミング、法令遵守のポイントまでまとめました。",
+    "slug": "recruitment-agriculture-acquisition",
+    "title": "農業・第一次産業特化型人材紹介の集客戦略｜担い手不足を追い風にする設計",
+    "description": "農業・林業・水産業に特化した人材紹介の集客戦略を解説。担い手不足を背景とした求職者ニーズ、地方移住訴求、行政連携、有効な集客チャネルまで実務目線でまとめます。",
+    "category": "セグメント別",
+    "keywords": [
+      "農業 人材紹介",
+      "第一次産業 転職",
+      "担い手不足 採用",
+      "地方移住 求職者"
+    ],
+    "primary_keyword": "農業 人材紹介",
+    "status": "ready",
+    "scheduled": "2026-09-22",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agriculture-acquisition/"
+  },
+  {
+    "slug": "recruitment-google-analytics-4-setup",
+    "title": "GA4で人材紹介の求職者集客を計測する｜設定・イベント設計・レポート活用",
+    "description": "人材紹介向けにGA4の初期設定からイベント設計、探索レポート、広告連携までを解説。応募・面談予約・着座までのファネルを正しく可視化する実務ガイドです。",
     "category": "ハウツー",
     "keywords": [
-      "人材紹介 SMS",
-      "SMS 配信 採用",
-      "ショートメッセージ 面談",
-      "SMS 着座率"
+      "GA4 人材紹介",
+      "GA4 設定",
+      "GA4 イベント設計",
+      "コンバージョン計測 GA4"
     ],
-    "primary_keyword": "人材紹介 SMS",
-    "status": "ready",
-    "scheduled": "2026-09-21",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-sms-marketing/"
+    "primary_keyword": "GA4 人材紹介",
+    "key_points": [
+      "人材紹介サイトのGA4初期設定と基本プロパティ構成",
+      "応募・面談予約・着座を計測するイベント設計",
+      "探索レポートで見るファネル・ドロップオフ分析",
+      "Google広告・Looker Studio連携でCPA最適化に活かす"
+    ],
+    "status": "queued",
+    "queue_position": 1,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-google-analytics-4-setup/"
+  },
+  {
+    "slug": "recruitment-agency-ma-trends",
+    "title": "人材紹介業界のM&A動向2026｜買収相場・事業承継・売却時の評価軸",
+    "description": "人材紹介業界のM&A・事業承継トレンドを解説。買収相場、評価される事業指標、売り手・買い手双方の視点、集客基盤の重要性まで経営者向けに整理します。",
+    "category": "業界トレンド",
+    "keywords": [
+      "人材紹介 M&A",
+      "人材紹介 事業承継",
+      "人材紹介 買収相場",
+      "人材紹介 売却"
+    ],
+    "primary_keyword": "人材紹介 M&A",
+    "key_points": [
+      "人材紹介業界におけるM&A件数と2026年の潮流",
+      "買収時に評価される指標（決定単価・DB規模・CA生産性）",
+      "事業承継・売却プロセスと相場感",
+      "集客基盤・求職者送客チャネルが企業価値に与える影響"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-agency-ma-trends/"
+  },
+  {
+    "slug": "recruitment-inbound-lead-qualification",
+    "title": "インバウンドリードのクオリフィケーション設計｜人材紹介の面談化率を高める運用",
+    "description": "人材紹介におけるインバウンドリードのクオリフィケーション手法を解説。BANT変形フレーム、スコアリング、優先順位付け、面談化率と着座率を高める運用設計をまとめます。",
+    "category": "用語解説",
+    "keywords": [
+      "リードクオリフィケーション",
+      "人材紹介 リード",
+      "面談化率",
+      "BANT 人材紹介"
+    ],
+    "primary_keyword": "リードクオリフィケーション",
+    "key_points": [
+      "リードクオリフィケーションの基本概念と人材紹介での意味",
+      "BANTを応用した求職者向けクオリフィケーション項目",
+      "スコアリングと優先対応者の振り分け設計",
+      "面談化率・着座率を最大化するための運用フロー"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-inbound-lead-qualification/"
+  },
+  {
+    "slug": "recruitment-owned-media-strategy",
+    "title": "人材紹介のオウンドメディア戦略｜求職者流入を資産化する編集設計",
+    "description": "人材紹介のオウンドメディア立ち上げから運用までを解説。テーマ選定、記事構成、SEO設計、リード獲得導線、外注体制まで求職者流入を資産化する実務をまとめます。",
+    "category": "完全ガイド",
+    "keywords": [
+      "人材紹介 オウンドメディア",
+      "転職メディア 運営",
+      "オウンドメディア SEO",
+      "求職者 流入"
+    ],
+    "primary_keyword": "人材紹介 オウンドメディア",
+    "key_points": [
+      "人材紹介におけるオウンドメディアの役割とKPI",
+      "テーマ選定・キーワード設計とペルソナ別記事マップ",
+      "記事制作フローと内製・外注のハイブリッド体制",
+      "リード獲得導線とLINE・面談予約への接続設計"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-owned-media-strategy/"
   }
 ]

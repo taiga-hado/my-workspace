@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-google-analytics-4-setup",
-    "title": "GA4で人材紹介の求職者集客を計測する｜設定・イベント設計・レポート活用",
-    "description": "人材紹介向けにGA4の初期設定からイベント設計、探索レポート、広告連携までを解説。応募・面談予約・着座までのファネルを正しく可視化する実務ガイドです。",
-    "keywords": "GA4 人材紹介,GA4 設定,GA4 イベント設計,コンバージョン計測 GA4",
-    "category": "ハウツー",
-    "image_prompt": "Flat editorial illustration of a stylized analytics dashboard with funnel bars and line charts, deep navy blue (#1a3a8a) panels with gold (#f5b400) accents, premium SaaS aesthetic, soft white background, 3:2 aspect, no text or letters",
-    "key_points": [
-      "人材紹介サイトのGA4初期設定と基本プロパティ構成",
-      "応募・面談予約・着座を計測するイベント設計",
-      "探索レポートで見るファネル・ドロップオフ分析",
-      "Google広告・Looker Studio連携でCPA最適化に活かす"
-    ]
-  },
-  {
     "slug": "recruitment-agency-ma-trends",
     "title": "人材紹介業界のM&A動向2026｜買収相場・事業承継・売却時の評価軸",
     "description": "人材紹介業界のM&A・事業承継トレンドを解説。買収相場、評価される事業指標、売り手・買い手双方の視点、集客基盤の重要性まで経営者向けに整理します。",

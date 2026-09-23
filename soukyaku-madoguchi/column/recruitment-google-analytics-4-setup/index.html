@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-T4VBNNNN');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GA4で人材紹介の求職者集客を計測する｜設定・イベント設計・レポート活用｜求職者送客の窓口</title>
+  <meta name="description" content="人材紹介向けにGA4の初期設定からイベント設計、探索レポート、広告連携までを解説。応募・面談予約・着座までのファネルを正しく可視化する実務ガイドです。">
+  <meta name="keywords" content="GA4 人材紹介,GA4 設定,GA4 イベント設計,コンバージョン計測 GA4">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-google-analytics-4-setup/">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="GA4で人材紹介の求職者集客を計測する｜設定・イベント設計・レポート活用">
+  <meta property="og:description" content="人材紹介向けにGA4の初期設定からイベント設計、探索レポート、広告連携までを解説。応募・面談予約・着座までのファネルを正しく可視化する実務ガイドです。">
+  <meta property="og:url" content="https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-google-analytics-4-setup/">
+  <meta property="og:image" content="https://kyusyokusyasokyaku-no-madoguchi.com/images/column/recruitment-google-analytics-4-setup-hero.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="../../images/favicon.png">
+  <link rel="shortcut icon" href="../../images/favicon.ico">
+  <link rel="apple-touch-icon" href="../../images/favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "GA4で人材紹介の求職者集客を計測する｜設定・イベント設計・レポート活用",
+    "description": "人材紹介向けにGA4の初期設定からイベント設計、探索レポート、広告連携までを解説。応募・面談予約・着座までのファネルを正しく可視化する実務ガイドです。",
+    "image": "https://kyusyokusyasokyaku-no-madoguchi.com/images/column/recruitment-google-analytics-4-setup-hero.png",
+    "author": {
+      "@type": "Organization",
+      "name": "株式会社HADO"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "求職者送客の窓口",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://kyusyokusyasokyaku-no-madoguchi.com/images/logo.png"
+      }
+    },
+    "datePublished": "2026-09-23",
+    "dateModified": "2026-09-23",
+    "mainEntityOfPage": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-google-analytics-4-setup/"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/site.css">
+  <link rel="stylesheet" href="../../assets/column.css">
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T4VBNNNN"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a href="../../index.html" class="site-logo">
+        <img src="../../images/logo.png" alt="求職者送客の窓口">
+      </a>
+      <nav class="site-nav">
+        <div class="site-nav-links">
+          <a href="../../index.html">トップ</a>
+          <a href="../../index.html#services">サービス</a>
+          <a href="../../index.html#cases">導入事例</a>
+          <a href="../" aria-current="page">コラム</a>
+        </div>
+        <a href="../../contact/" class="btn btn-dark btn-sm">お問い合わせ</a>
+      </nav>
+      <button class="burger" aria-label="menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <section class="art-hero">
+    <div class="art-hero-inner">
+      <div class="art-breadcrumb">
+        <a href="../../index.html">トップ</a><span class="sep"></span>
+        <a href="../">コラム</a><span class="sep"></span>
+        <span>GA4で人材紹介の求職者集客を計測する｜設定・イベント設計・レポート活用</span>
+      </div>
+      <span class="art-tag">ハウツー</span>
+      <h1 class="art-title">GA4で人材紹介の求職者集客を計測する｜設定・イベント設計・レポート活用</h1>
+      <div class="art-meta">
+        <div class="art-meta-item">公開日：<strong>2026.09.23</strong></div>
+        <div class="art-meta-item">読了時間：<strong>約10分</strong></div>
+        <div class="art-meta-item">カテゴリ：<strong>ハウツー</strong></div>
+      </div>
+      <div class="art-hero-img">
+        <img src="../../images/column/recruitment-google-analytics-4-setup-hero.png" alt="GA4で人材紹介の求職者集客を計測する｜設定・イベント設計・レポート活用">
+      </div>
+    </div>
+  </section>
+
+  <article class="art-body">
+
+    <div class="art-lead">
+      <p>人材紹介事業の集客において、GA4（Google Analytics 4）の設定・活用レベルは事業のPDCA速度を大きく左右します。ユニバーサルアナリティクス（UA）時代のセッション単位計測から、GA4はイベント単位・ユーザー単位のデータモデルに完全移行しており、応募〜面談予約〜着座までのファネルを一気通貫で追える設計が可能になりました。一方で、初期設定を誤ったまま運用しているサイトも多く、「応募数は取れているがCPA算出の根拠が曖昧」「Google広告の最適化が効いていない」といった課題が散見されます。</p>
+      <p>本記事では、人材紹介サイト向けにGA4の初期設定、イベント設計、探索レポートでのファネル分析、Google広告・Looker Studio連携までを実務レベルで整理します。求職者集客のCPAを正しく可視化し、媒体別・LP別の最適化を回すための土台作りのガイドです。</p>
+    </div>
+
+    <nav class="art-toc">
+      <h3>目次</h3>
+      <ol>
+        <li><a href="#setup">GA4初期設定と基本プロパティ構成</a></li>
+        <li><a href="#events">応募・面談予約・着座のイベント設計</a></li>
+        <li><a href="#explore">探索レポートでのファネル・ドロップオフ分析</a></li>
+        <li><a href="#integration">Google広告・Looker Studio連携でCPA最適化</a></li>
+      </ol>
+    </nav>
+
+    <h2 id="setup">GA4初期設定と基本プロパティ構成</h2>
+
+    <p>人材紹介サイトのGA4は、初期設定の段階で以下を必ず押さえる必要があります。UAから自動移行しただけの状態では、データ保持期間や内部トラフィック除外が最適化されていないケースが多くあります。</p>
+
+    <ul>
+      <li><strong>データ保持期間を14ヶ月に変更</strong>：デフォルトは2ヶ月。人材紹介の意思決定サイクル（応募〜着座〜決定で1〜3ヶ月）を追うには最長設定が必須</li>
+      <li><strong>内部トラフィック除外</strong>：自社IP、CAが検証で触るIP、外注ライターのIPを除外フィルタに登録</li>
+      <li><strong>クロスドメイン設定</strong>：LP・応募フォーム・面談予約システムが別ドメインの場合、ドメイン間のユーザー識別を維持する設定を必ず入れる</li>
+      <li><strong>Google シグナル有効化</strong>：ログイン済みGoogleユーザーのクロスデバイス計測が可能に。デモグラフィック情報も取得可能</li>
+      <li><strong>参照元除外リスト</strong>：LINE公式アカウント、決済ゲートウェイなどが自社サイトへの参照元として計測されないよう設定</li>
+    </ul>
+
+    <p>プロパティ構成は、<strong>本番用プロパティ1つ・検証用プロパティ1つ</strong>の2プロパティ構成が推奨。タグ変更やイベント追加時に本番データを汚染しない運用が可能になります。</p>
+
+    <div class="art-callout">
+      <p><strong>UAからの移行で見落としがちなポイント</strong>：GA4は「セッション」の定義がUAと異なり、参照元が途中で変わってもセッションが継続します。また、直帰率の代わりに「エンゲージメント率」が主要指標になっており、UA時代のダッシュボードをそのままGA4に置き換えても数字の意味が変わっている点に注意が必要です。</p>
+    </div>
+
+    <h2 id="events">応募・面談予約・着座のイベント設計</h2>
+
+    <p>GA4はすべてイベントベースの計測です。人材紹介サイトで最低限設計すべきイベントは以下の通り。</p>
+
+    <h3>1. マイクロコンバージョン（中間指標）</h3>
+
+    <ul>
+      <li><strong>form_start</strong>：応募フォームの入力開始（1項目目にフォーカス）</li>
+      <li><strong>form_progress</strong>：フォームの中間ステップ通過（複数ステップの場合）</li>
+      <li><strong>scroll_75</strong>：LPの75%スクロール</li>
+      <li><strong>cta_click</strong>：CTAボタンクリック（ボタンごとに識別）</li>
+    </ul>
+
+    <h3>2. マクロコンバージョン（主要成果）</h3>
+
+    <ul>
+      <li><strong>application_submit</strong>：応募フォーム送信完了。パラメータに媒体・職種・エリアを持たせる</li>
+      <li><strong>interview_booked</strong>：面談日程確定（オンライン予約システムのサンクスページで発火）</li>
+      <li><strong>interview_attended</strong>：面談着座。オフライン成果のためMeasurement Protocol経由でサーバーサイド送信</li>
+    </ul>
+
+    <p>「キーイベント（旧コンバージョン）」として登録すべきは、<strong>application_submit と interview_booked の2つ</strong>。interview_attendedはインポート値としてGoogle広告最適化に使います。</p>
+
+    <p>イベントパラメータ設計のポイント：</p>
+
+    <ul>
+      <li><strong>media_source</strong>：媒体名（google_ads / meta / organic / referral など）</li>
+      <li><strong>job_category</strong>：職種カテゴリ（営業・IT・製造など）</li>
+      <li><strong>lp_variant</strong>：LP種別（A/Bテスト識別用）</li>
+      <li><strong>user_segment</strong>：第二新卒・若手未経験・新卒などのセグメント</li>
+    </ul>
+
+    <p>これらをカスタムディメンションとして登録することで、レポート内で細分化した分析が可能になります。</p>
+
+    <h2 id="explore">探索レポートでのファネル・ドロップオフ分析</h2>
+
+    <p>GA4の「探索」機能は、標準レポートでは見られない詳細分析ができる強力なツール。人材紹介で必須なのは以下3種類のレポートです。</p>
+
+    <h3>1. ファネル探索レポート</h3>
+
+    <p>LP流入 → CTAクリック → form_start → form_progress → application_submit → interview_booked という6ステップのファネルを構築。各ステップの通過率を可視化します。</p>
+
+    <ul>
+      <li><strong>LP流入 → CTAクリック</strong>：健全値は15〜25%</li>
+      <li><strong>CTAクリック → form_start</strong>：健全値は40〜60%</li>
+      <li><strong>form_start → application_submit</strong>：健全値は30〜50%（フォームUIの品質次第）</li>
+      <li><strong>application_submit → interview_booked</strong>：健全値は50〜70%（自動返信・リマインドの精度次第）</li>
+    </ul>
+
+    <p>この各ステップで健全値を下回っているところが、改善余地の最大ポイントになります。</p>
+
+    <h3>2. 経路データ探索</h3>
+
+    <p>ユーザーがどのページを経由して応募に至ったかを可視化。「求人詳細ページを2ページ以上見た人の応募率」など、コンテンツ設計の意思決定に使います。</p>
+
+    <h3>3. セグメント重複</h3>
+
+    <p>「Google広告経由」「モバイル」「若手セグメント」の重複などを可視化。<strong>どのセグメントが応募率が高いかを媒体×デバイス×属性で切って把握</strong>できます。</p>
+
+    <div class="art-callout">
+      <p><strong>探索レポートは共有設定が重要</strong>：デフォルトでは作成者しか閲覧できません。「レポートテンプレートとして共有」に切り替えないと、CA・マーケ担当者が見られない状態になります。運用開始時に必ず共有設定をチェックしてください。</p>
+    </div>
+
+    <h2 id="integration">Google広告・Looker Studio連携でCPA最適化</h2>
+
+    <p>GA4単体で計測を完結させるのではなく、Google広告・Looker Studioと連携させることで運用のスピードと精度が大きく変わります。</p>
+
+    <h3>Google広告連携</h3>
+
+    <ul>
+      <li><strong>キーイベントを広告のコンバージョンとしてインポート</strong>：application_submit だけでなく、面談着座（interview_attended）もインポートし、<strong>入札を「面談着座CPA最適化」で回す</strong></li>
+      <li><strong>拡張コンバージョン設定</strong>：応募者のメールアドレスをハッシュ化してGoogleに送信。iOS環境などクッキー計測が制限される環境でも精度が向上</li>
+      <li><strong>オーディエンス連携</strong>：GA4で作成した「応募完了ユーザー」オーディエンスを類似拡張の元データとして活用</li>
+    </ul>
+
+    <h3>Looker Studio連携</h3>
+
+    <p>Looker Studioで<strong>媒体別CPA・CPI（面談着座単価）・応募→着座歩留まり</strong>のダッシュボードを作成。日次で自動更新される状態を作ります。</p>
+
+    <ul>
+      <li>媒体別CPA（応募CPA・面談着座CPA・決定CPA）</li>
+      <li>LP別コンバージョン率</li>
+      <li>職種別・エリア別の応募数推移</li>
+      <li>ファネル通過率の日次モニタリング</li>
+    </ul>
+
+    <p>週次のマーケミーティングでLooker Studioを開けば、<strong>「今週どの媒体のCPAが悪化しているか」「どのLPを改修すべきか」</strong>が即座に判断できる体制が整います。GA4の探索レポートを毎回開いて分析する運用より、圧倒的に意思決定速度が上がります。</p>
+
+
+    <div class="art-summary">
+      <h3>SUMMARY</h3>
+      <ul>
+        <li>GA4は初期設定でデータ保持期間14ヶ月・内部トラフィック除外・クロスドメイン設定を必ず実施。UA移行時のデフォルト設定では計測に支障が出る</li>
+        <li>応募・面談予約・面談着座をイベント設計し、媒体・職種・LP種別をパラメータで持たせることで細分化した分析が可能になる</li>
+        <li>探索レポートでLP流入から面談予約までの6ステップファネルを可視化。各ステップの健全値（15〜70%）と比較して改善点を特定</li>
+        <li>Google広告連携で面談着座CPAでの入札最適化、Looker Studioで媒体別CPA・歩留まりの日次ダッシュボード化が実務では必須</li>
+      </ul>
+    </div>
+
+    <!-- art-related-start -->
+    <div class="art-related">
+      <div class="art-related-eyebrow">RELATED ARTICLES</div>
+      <h3>合わせて読みたい記事</h3>
+      <div class="art-related-grid">
+        <a href="../recruitment-linkedin-marketing/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-linkedin-marketing-hero.png" alt="人材紹介のLinkedIn集客｜ハイクラス・外資人材を集める運用設計" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">ハウツー</span>
+            <h4>人材紹介のLinkedIn集客｜ハイクラス・外資人材を集める運用設計</h4>
+          </div>
+        </a>
+        <a href="../recruitment-offline-event-acquisition/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-offline-event-acquisition-hero.png" alt="転職イベント・合同説明会で求職者を集める｜人材紹介のオフライン集客設計" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">ハウツー</span>
+            <h4>転職イベント・合同説明会で求職者を集める｜人材紹介のオフライン集客設計</h4>
+          </div>
+        </a>
+        <a href="../recruitment-x-twitter-marketing/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-x-twitter-marketing-hero.png" alt="人材紹介のX(旧Twitter)集客｜運用設計とバズ設計で求職者を集める方法" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">ハウツー</span>
+            <h4>人材紹介のX(旧Twitter)集客｜運用設計とバズ設計で求職者を集める方法</h4>
+          </div>
+        </a>
+        <a href="../recruitment-webinar-acquisition/" class="art-related-card">
+          <div class="art-related-thumb">
+            <img src="../../images/column/recruitment-webinar-acquisition-hero.png" alt="ウェビナー・転職セミナーで求職者を集める｜人材紹介の集客設計" loading="lazy">
+          </div>
+          <div class="art-related-body">
+            <span class="art-related-tag">ハウツー</span>
+            <h4>ウェビナー・転職セミナーで求職者を集める｜人材紹介の集客設計</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+    <!-- art-related-end -->
+
+    <div class="art-bridge">
+      <h3>GA4で計測しても「そもそも母集団が足りない」場合</h3>
+      <p>GA4を精緻に設計してもファネルの母数、つまりLP流入数と応募数が一定規模ないと分析の統計的信頼性が担保できません。特に若手未経験・第二新卒の集客はGoogle広告単独ではCPAが上振れしやすく、SNS・オーガニックを含めた複数チャネルの併用が必須です。自社で全チャネルを構築・運用するには時間とリソースがかかるため、外部の送客チャネルを補完的に組み込むのが現実的な選択肢になります。</p>
+      <p>「求職者送客の窓口」は、SNSを軸とした独自集客で第二新卒・若手未経験・新卒の求職者を集め、事前カウンセリングを経てエージェント様に送客する着座成果報酬型サービスです。<strong>初期費用0円・月額費用0円・面談着座率80〜90%</strong>で、面談着座1件ごとの成果報酬のみ。GA4で自社集客のCPAを可視化しながら、外部送客でボリュームを補完する運用が可能です。</p>
+    </div>
+
+    <div class="art-cta">
+      <div class="art-cta-inner">
+        <h3>面談だけに集中できる、<br><span class="gold">新しい求職者獲得モデル</span>へ。</h3>
+        <p>御社の獲得したい求職者像・月間希望面談数に合わせた送客プランを、無料でご提案いたします。</p>
+        <a href="https://kyusyokusyasokyaku-no-madoguchi.com/?ref=column-recruitment-google-analytics-4-setup" class="btn btn-lg btn-arrow">サービス詳細を見る</a>
+      </div>
+    </div>
+
+  </article>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="../../images/logo.png" alt="求職者送客の窓口">
+          <p class="footer-tagline">人材紹介エージェント様のための、着座成果報酬型 求職者送客サービス。面談までの工数を一括代行し、事業成長を支援します。</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="../../daini-shinsotsu/">第二新卒・未経験層向け</a></li>
+            <li><a href="../../shinsotsu/">新卒向け</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="../../index.html">トップ</a></li>
+            <li><a href="../../index.html#cases">導入事例</a></li>
+            <li><a href="../">コラム</a></li>
+            <li><a href="../../contact/">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <dl class="footer-company-list">
+            <dt>会社名</dt><dd>株式会社HADO</dd>
+            <dt>所在地</dt><dd>東京都渋谷区桜丘町21-4<br>渋谷桜丘町ビル3F</dd>
+            <dt>設立</dt><dd>2020年11月6日</dd>
+            <dt>Web</dt><dd><a href="https://hado.co.jp/" target="_blank" rel="noopener">hado.co.jp</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="footer-bottom">© 株式会社HADO. All Rights Reserved.</div>
+    </div>
+  </footer>
+
+  <script src="../../assets/site.js"></script>
+</body>
+</html>

@@ -30,3 +30,25 @@ My-Vault/.obsidian/workspace-mobile.json
 
 # Claude Code local state
 .claude/
+ca-scoring/
+claude-code-manual/
+
+# 明細データ（public repo なので絶対に出さない）
+subsc-audit/data/
+subsc-audit/out/
+
+# パオLINEスタンプ: 参照写真に個人の写真が含まれるため公開repoには載せない
+pao-line-stamps/ref/
+pao-line-stamps/out/
+
+# まとめて入力：APIキーはローカル専用（公開リポジトリに載せない）
+matomete-input/local-key.js
+
+# LSTEP アクセストークン（GAS にだけ push する）
+hackz-exit-sheet/gas/Secrets.js
+
+# vercel-autofix のローカル秘密情報
+vercel-autofix/.env
+
+# セキュリティレビュー資料（未修正の弱点を書いてあるので public repo には絶対に出さない）
+rirekisho-app/docs/security-review/

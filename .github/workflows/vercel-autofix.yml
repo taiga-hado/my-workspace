@@ -1,0 +1,54 @@
+name: Vercel Autofix — 失敗したビルドを自動修復
+
+# push で走った Vercel のビルドが失敗したら、Claude Code に直させて PR を出す。
+# Git 連携していないプロジェクト（sokureki など）は Mac 常駐の vercel-autofix/run-poll.sh が担当。
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      sha:
+        description: '対象のコミットSHA（空なら現在のHEAD）'
+        required: false
+        type: string
+
+concurrency:
+  group: vercel-autofix
+  cancel-in-progress: false
+
+jobs:
+  autofix:
+    runs-on: ubuntu-latest
+    # デプロイの完了待ち（最大20分）＋ Claude の修復（最大25分）
+    timeout-minutes: 55
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Claude Code
+        run: npm install -g @anthropic-ai/claude-code
+
+      - name: Configure git
+        run: |
+          git config user.name 'vercel-autofix'
+          git config user.email 'noreply@anthropic.com'
+
+      - name: Wait for the deployment and fix it if it failed
+        env:
+          TZ: Asia/Tokyo
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_TEAM_ID: ${{ secrets.VERCEL_TEAM_ID }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 vercel-autofix/autofix.py sha --sha "${{ inputs.sha || github.sha }}"

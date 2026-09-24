@@ -1,17 +1,32 @@
 // =============================================================================
-// 【ミラー / バックアップ】求職者送客の窓口 - 問い合わせフォーム受信 GAS（v10）
+// 【ミラー / バックアップ】求職者送客の窓口 - 問い合わせフォーム受信 GAS（v15）
 // -----------------------------------------------------------------------------
 // 本番GASの参照用ミラー（ここで実行されるコードではありません）。
 // 正本: スプレッドシート「求職者送客の窓口DB」にバインドされたコンテナバウンドGAS『コード.gs』。
 // SLACK_WEBHOOK_URL は秘密情報のため伏字。復元時は GAS エディタ側の実値を使うこと。
 //
-// v10 (2026-07-29): ライトプランはリリース前のため「事前登録受付」の文面に変更。
-//   - buildBody_ のライト案内文を「事前登録として承りました→詳細は面談でご案内」に更新
+// v15 (2026-09-24): 署名の住所を中目黒の新オフィスに更新（2026年8月移転）。
+//   - 〒150-0031 渋谷区桜丘町21-4 渋谷桜丘ビル3F → 〒153-0051 目黒区上目黒1-1 第2育良ビル4F
+// v14 (2026-08-31): 海外出張対応（v11-v12）を終了し通常文面に復帰（予定の9/4より前倒し・ユーザー帰国のため）。
+//   - onTrip 日付判定と出張用文面（メール一本化・ライトの9月上旬案内）を削除
+//   - 末尾はメール返信＋オンライン面談（日程調整URL）の通常2択に戻す
+//   - v13の「領域未選択でも両領域の動画をフォールバック掲載」は維持
+// v13 (2026-08-21): 領域未選択（「相談して決めたい」等）でも説明動画を必ず案内。
+//   - service が第二新卒/新卒領域のどちらにも一致しない場合、両領域の動画をフォールバック掲載
+//     （出張期間中は面談誘導が無いため本文が動画ゼロ＝ほぼ空になっていた。フィラーシステムズ様の実例で発覚）
+//   - ライトプランのみ選択時は従来どおり（ライト案内文のみ・動画なし）
+// v12 (2026-08-05): 出張文面の適用開始を 2026-08-10 00:00 JST に変更（8/9までは通常の面談案内文面のまま）。
+//   - 案内リンクは出張期間中も説明動画のみ（資料は入れない。ユーザー指示）
+// v11 (2026-08-05): 海外出張（2026-08-11〜09-04）対応。期間中はメール一本化。
+//   - 面談誘導＋日程調整URLを止め「ご質問・ご不明点は本メールへ返信／1営業日以内に返信」に差し替え
+//   - ライト事前登録の詳細案内も期間中は「9月上旬以降に順次ご案内」に切り替え
+//   - onTrip 日付判定（new Date() < 2026-09-05 00:00 JST）で、9/5以降は自動で通常文面に復帰＝戻し作業不要
+// v10 (2026-07-29): ライトプランはリリース前のため「事前登録受付」の文面に変更（buildBody_のライト案内文）。
 // v9 (2026-07-29): 中途の説明動画URLを tldv から Google Drive（2026-07-29収録mp4・リンク公開）に差し替え。
 // v8 (2026-07-29): フォームに「ライトプラン（応募課金型）」チェックボックスを追加したことに対応。
 //   - buildBody_ に service「ライトプラン」選択時の案内文を追加
 //     （料金・提供条件は面談で案内する方針のため、動画ではなく面談誘導の一文のみ）
-//   - 手動リード追加ダイアログ・previewBody にもライトプランを追加
+//   - 手動リード追加ダイアログ（dashboard.gs側含む）・previewBody にもライトプランを追加
 //   - Slack通知・submissions書込は p.service に値が流れるだけなので変更なし
 // v7 (2026-07-28): 返信メールを「動画1本＋返信/面談の2択」に簡素化。
 //   - 動画視聴率が低かったため、リンクを説明動画のみに絞り「サービス説明はこの動画」と明示
@@ -73,6 +88,12 @@ function buildBody_(p) {
   var videos = [];
   if (showChuto) videos.push('▼サービス説明動画（第二新卒・未経験領域）\n' + VIDEO_CHUTO);
   if (showShinsotsu) videos.push('▼サービス説明動画（新卒領域）\n' + VIDEO_SHINSOTSU);
+  // 「相談して決めたい」等で領域が特定できない場合は両領域の動画を案内（v13）。
+  // ライトプランのみ選択時は除く（ライト案内文が入るため）
+  if (!videos.length && !showLite) {
+    videos.push('▼サービス説明動画（第二新卒・未経験領域）\n' + VIDEO_CHUTO);
+    videos.push('▼サービス説明動画（新卒領域）\n' + VIDEO_SHINSOTSU);
+  }
 
   var videoSection = '';
   if (videos.length) {
@@ -90,16 +111,19 @@ function buildBody_(p) {
       '料金・ご提供条件・提供開始時期を含む詳細は、オンライン面談にて直接ご案内しております。';
   }
 
+  var closing =
+    '\n\nご相談やご質問がございましたら、本メールへのご返信にてお気軽にお寄せください。\n\n' +
+    'また、オンライン面談にて直接ご説明・ご相談させていただくことも可能でございます。\n' +
+    'ご希望の場合は、下記の日程調整URLよりご都合のよろしい日時をご選択ください。\n\n' +
+    '▼オンライン面談の日程調整はこちら\n' + SCHEDULE_URL;
+
   return (p.company || '') + '\n' + (p.lastName || '') + ' ' + (p.firstName || '') + ' 様\n\n' +
     'お世話になっております。\n株式会社HADOの田中でございます。\n\n' +
     'この度は、弊社の求職者送客サービス「求職者送客の窓口」にご関心をお寄せいただき、誠にありがとうございます。' +
     videoSection +
     liteSection +
-    '\n\nご相談やご質問がございましたら、本メールへのご返信にてお気軽にお寄せください。\n\n' +
-    'また、オンライン面談にて直接ご説明・ご相談させていただくことも可能でございます。\n' +
-    'ご希望の場合は、下記の日程調整URLよりご都合のよろしい日時をご選択ください。\n\n' +
-    '▼オンライン面談の日程調整はこちら\n' + SCHEDULE_URL + '\n\n' +
-    'それでは、ご連絡をお待ちしております。\n引き続きどうぞよろしくお願いいたします。\n\n' +
+    closing +
+    '\n\nそれでは、ご連絡をお待ちしております。\n引き続きどうぞよろしくお願いいたします。\n\n' +
     '--\n' +
     '＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝\n' +
     '株式会社　HADO\n' +
@@ -115,6 +139,8 @@ function buildBody_(p) {
 // フォーム受信
 // ---------------------------------------------------------------------------
 function doPost(e) {
+  // tl;dv Webhook（?src=tldv&token=…）は tldv-sync.gs へ委譲（フォーム受信とは別経路）
+  if (e && e.parameter && e.parameter.src === 'tldv') return tldvHandleWebhook_(e);
   var p = (e && e.parameter) || {};
   var writeOk = false, writeErr = '', targetRow = 0;
 
@@ -246,7 +272,7 @@ function refreshLeadList() {
 
   var lr = lastDataRow_(sub);
   if (lr <= 1) {
-    dash.getRange('B20:L200').clearContent();
+    dash.getRange('B20:O200').clearContent();
     return;
   }
 
@@ -262,6 +288,9 @@ function refreshLeadList() {
   var moIdx = headers.indexOf('monthly');
   var memoIdx = headers.indexOf('メモ');
   var tldvIdx = headers.indexOf('tldvURL');
+  var sumIdx = headers.indexOf('先方要約');
+  var tempIdx = headers.indexOf('温度感');
+  var reasonIdx = headers.indexOf('温度感理由');
 
   var rows = [];
   for (var i = 0; i < data.length; i++) {
@@ -278,7 +307,10 @@ function refreshLeadList() {
       monthly: data[i][moIdx],
       status: status,
       tldvURL: tldvIdx >= 0 ? (data[i][tldvIdx] || '') : '',
-      memo: memoIdx >= 0 ? (data[i][memoIdx] || '') : ''
+      memo: memoIdx >= 0 ? (data[i][memoIdx] || '') : '',
+      summary: sumIdx >= 0 ? (data[i][sumIdx] || '') : '',
+      temperature: tempIdx >= 0 ? (data[i][tempIdx] || '') : '',
+      reason: reasonIdx >= 0 ? (data[i][reasonIdx] || '') : ''
     });
   }
 
@@ -288,17 +320,18 @@ function refreshLeadList() {
     return db - da;
   });
 
-  dash.getRange('B20:L200').clearContent();
-  dash.getRange('B20:L200').clearDataValidations();
+  dash.getRange('B20:O200').clearContent();
+  dash.getRange('B20:O200').clearDataValidations();
 
-  dash.getRange('B20:L20').setValues([['登録日', '会社名', '姓', '名', 'メール', 'サービス', '月間件数', 'ステータス', 'tl;dv URL', 'メモ', '_idx']]);
-  dash.getRange('B20:K20').setBackground('#4285f4').setFontColor('white').setFontWeight('bold');
+  dash.getRange('B20:O20').setValues([['登録日', '会社名', '姓', '名', 'メール', 'サービス', '月間件数', 'ステータス', 'tl;dv URL', 'メモ', '_idx', '先方要約', '温度感', '判定理由']]);
+  dash.getRange('B20:O20').setBackground('#4285f4').setFontColor('white').setFontWeight('bold');
 
   if (rows.length > 0) {
     var output = rows.map(function(r) {
-      return [r.submittedAt, r.company, r.lastName, r.firstName, r.email, r.service, r.monthly, r.status, r.tldvURL, r.memo, r.rowIdx];
+      return [r.submittedAt, r.company, r.lastName, r.firstName, r.email, r.service, r.monthly, r.status, r.tldvURL, r.memo, r.rowIdx, r.summary, r.temperature, r.reason];
     });
-    dash.getRange(21, 2, output.length, 11).setValues(output);
+    dash.getRange(21, 2, output.length, 14).setValues(output);
+    dash.getRange(21, 13, output.length, 3).setWrap(true).setVerticalAlignment('top');
     dash.getRange(21, 2, output.length, 1).setNumberFormat('yyyy/MM/dd HH:mm');
 
     var opts = ['新規', 'メール送信済', '返信あり', '商談設定', '商談済', '提案中', '契約', '失注', '対象外'];
@@ -309,6 +342,9 @@ function refreshLeadList() {
   dash.setColumnWidth(10, 220);
   dash.setColumnWidth(11, 280);
   dash.hideColumns(12);
+  dash.setColumnWidth(13, 480);
+  dash.setColumnWidth(14, 60);
+  dash.setColumnWidth(15, 300);
 
   SpreadsheetApp.flush();
   ss.toast('リード一覧を更新（' + rows.length + '件）', '完了', 3);

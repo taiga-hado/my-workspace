@@ -104,7 +104,7 @@ function buildBody_(p) {
     '＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝\n' +
     '株式会社　HADO\n' +
     '代表取締役　田中大雅  / Tanaka Taiga\n' +
-    '〒150-0031　 東京都渋谷区桜丘町２１−４　渋谷桜丘ビル3F\n' +
+    '〒153-0051　 東京都目黒区上目黒1-1　第2育良ビル4F\n' +
     'TEL: 09053233246\n' +
     'Mail：t.tanaka@hadoinc.com\n' +
     'Web： https://hado.co.jp/\n' +

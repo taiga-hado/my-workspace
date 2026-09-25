@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-inbound-lead-qualification",
-    "title": "インバウンドリードのクオリフィケーション設計｜人材紹介の面談化率を高める運用",
-    "description": "人材紹介におけるインバウンドリードのクオリフィケーション手法を解説。BANT変形フレーム、スコアリング、優先順位付け、面談化率と着座率を高める運用設計をまとめます。",
-    "keywords": "リードクオリフィケーション,人材紹介 リード,面談化率,BANT 人材紹介",
-    "category": "用語解説",
-    "image_prompt": "Flat editorial illustration of a funnel with sorted circular tokens flowing through filters, deep navy blue (#1a3a8a) funnel and gold (#f5b400) qualified tokens, premium SaaS aesthetic, soft white background, 3:2 aspect, no text or letters",
-    "key_points": [
-      "リードクオリフィケーションの基本概念と人材紹介での意味",
-      "BANTを応用した求職者向けクオリフィケーション項目",
-      "スコアリングと優先対応者の振り分け設計",
-      "面談化率・着座率を最大化するための運用フロー"
-    ]
-  },
-  {
     "slug": "recruitment-owned-media-strategy",
     "title": "人材紹介のオウンドメディア戦略｜求職者流入を資産化する編集設計",
     "description": "人材紹介のオウンドメディア立ち上げから運用までを解説。テーマ選定、記事構成、SEO設計、リード獲得導線、外注体制まで求職者流入を資産化する実務をまとめます。",

@@ -203,6 +203,7 @@
   .copy:hover{color:var(--accent);border-color:var(--accent)}
   .copy svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2}
   .copy.done{color:var(--ok);border-color:var(--ok)}
+  .copy.ng{color:var(--ng);border-color:var(--ng)}
 
   .callout{background:var(--warm-soft);border-left:3px solid var(--warm);border-radius:0 12px 12px 0;padding:15px 18px;font-size:15px;color:var(--ink)}
   .callout .lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--warm);margin-bottom:5px}
@@ -746,17 +747,27 @@
   scrim.addEventListener("click",closeSide);
   $$("#toc a").forEach(function(a){a.addEventListener("click",closeSide)});
 
-  /* --- スクロールスパイ --- */
+  /* --- スクロールスパイ（現在地を毎回計算する。ジャンプでもズレない） --- */
   var links=$$("#toc a");
-  var targets=links.map(function(a){return document.getElementById(a.getAttribute("href").slice(1))}).filter(Boolean);
-  var spy=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(!en.isIntersecting)return;
-      var id=en.target.id;
-      links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+id)});
-    });
-  },{rootMargin:"-96px 0px -70% 0px",threshold:0});
-  targets.forEach(function(t){spy.observe(t)});
+  var spyList=links.map(function(a){
+    var el=document.getElementById(a.getAttribute("href").slice(1));
+    return el?{a:a,el:el}:null;
+  }).filter(Boolean);
+  var spyTick=false;
+  function updSpy(){
+    spyTick=false;
+    var y=window.scrollY+130, cur=null, curTop=-Infinity;
+    for(var i=0;i<spyList.length;i++){
+      var top=spyList[i].el.getBoundingClientRect().top+window.scrollY;
+      if(top<=y&&top>=curTop){curTop=top;cur=spyList[i]}
+    }
+    links.forEach(function(a){a.classList.remove("on")});
+    if(cur)cur.a.classList.add("on");
+  }
+  function queueSpy(){if(!spyTick){spyTick=true;requestAnimationFrame(updSpy)}}
+  window.addEventListener("scroll",queueSpy,{passive:true});
+  window.addEventListener("resize",queueSpy);
+  updSpy();
 
   /* --- 検索 --- */
   var index=[];

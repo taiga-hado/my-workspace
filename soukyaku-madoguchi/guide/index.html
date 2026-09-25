@@ -64,6 +64,36 @@
     .dnote{padding-left:0}
   }
 
+
+  /* ---------- reading progress ---------- */
+  .prog{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:transparent}
+  .prog i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--warm));transition:width .12s linear}
+
+  /* ---------- chapter intro ---------- */
+  .chintro{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:22px;align-items:start;
+    background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 24px;margin:-6px 0 34px}
+  .chintro h4{font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase;margin-bottom:11px;font-weight:600}
+  .chintro ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+  .chintro li{font-size:14.5px;line-height:1.7;color:var(--ink);padding-left:17px;position:relative}
+  .chintro li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:50%;background:var(--warm)}
+  .chintro .rt{text-align:right;white-space:nowrap;border-left:1px solid var(--line-soft);padding-left:22px}
+  .chintro .rt b{display:block;font-family:var(--mono);font-size:26px;font-weight:600;color:var(--ink);letter-spacing:-.02em;line-height:1}
+  .chintro .rt span{display:block;font-family:var(--mono);font-size:9px;letter-spacing:.16em;color:var(--light);margin-top:6px}
+  @media (max-width:640px){
+    .chintro{grid-template-columns:1fr;gap:16px}
+    .chintro .rt{text-align:left;border-left:0;border-top:1px solid var(--line-soft);padding:14px 0 0;display:flex;align-items:baseline;gap:10px}
+    .chintro .rt span{margin-top:0}
+  }
+
+  /* ---------- step number ---------- */
+  .step-h{position:relative;padding-left:52px;min-height:40px}
+  .step-h .no{position:absolute;left:0;top:-4px;font-family:var(--mono);font-size:30px;font-weight:600;
+    color:transparent;-webkit-text-stroke:1.2px var(--line);line-height:1;letter-spacing:-.04em}
+  .sec:hover .step-h .no{-webkit-text-stroke-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
+
+  /* ---------- key sentence ---------- */
+  .key{font-size:17.5px;line-height:1.8;color:var(--ink);font-weight:700;border-left:3px solid var(--warm);padding-left:16px}
+
   /* ---------- password gate ---------- */
   .gate{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:24px;
     background:radial-gradient(1100px 620px at 22% 18%,#1E3A8A 0%,#0F1B33 56%,#080E1C 100%)}
@@ -289,6 +319,7 @@
     <button class="btn solid" id="runBtn">面談モード</button>
     <button class="btn" id="themeBtn" aria-label="表示テーマ">◐</button>
   </div>
+  <div class="prog"><i id="prog"></i></div>
 </div>
 
 <div class="scrim" id="scrim"></div>
@@ -437,6 +468,9 @@
       <!-- 0 -->
       <section class="ch" id="ch0">
         <div class="ch-head"><span class="ch-num">00</span><h2>はじめに</h2></div>
+        <div class="chintro"><div><h4>この章でわかること</h4><ul><li>運用開始前にやる準備は2点だけ</li><li>この資料の構成と、便利な機能の使い方</li></ul></div><div class="rt"><b>2</b><span>min</span></div></div>
+
+        
 
         <section class="sec" id="s0-1"><h3>最初にやること</h3>
           <div class="stack">
@@ -454,6 +488,7 @@
         <section class="sec" id="s0-2"><h3>この資料について</h3>
           <div class="stack">
             <p class="lead-p">本資料は、<b>求職者送客の窓口をご利用中のエージェント様のうち、成果を出されている各社の運用とノウハウ</b>をまとめたものです。当社のキャリアアドバイザーが実際の面談から書き起こした内容も含んでいます。</p>
+            <p>お繋ぎする求職者は、当社が運営する求職者集客サービス<b>「ハックツ就職」</b>（20代・未経験層向け、SNSで集客）にご登録いただき、当社のカウンセリングを受けた方です。</p>
             <div class="tw"><table>
               <tr><th>パート</th><th>いつ読むか</th><th>内容</th></tr>
               <tr><td class="k">A 運用編</td><td>導入直後に全員</td><td>役割分担・フロー・シートの入力ルール・着座の定義・請求・連絡先</td></tr>
@@ -469,13 +504,16 @@
       <!-- A 運用編 -->
       <section class="ch" id="chA">
         <div class="ch-head"><span class="ch-num">A</span><h2>運用編</h2><span class="t">導入直後に全員</span></div>
+        <div class="chintro"><div><h4>この章でわかること</h4><ul><li>当社とエージェント様の役割分担</li><li>結果報告の入力ルール（2営業日・みなし承認）</li><li>「着座」の定義と、請求対象になる／ならない条件</li><li>困ったときの連絡先</li></ul></div><div class="rt"><b>8</b><span>min</span></div></div>
+
+        
 
         <section class="sec" id="a1"><h3>サービス全体像と役割分担</h3>
           <div class="stack">
             <p class="lead-p">求職者の集客から面談設定までを当社が代行します。<b>エージェント様は「面談」に専念いただけます。</b></p>
             <div class="tw"><table>
               <tr><th>HADOが担当する範囲</th><th>エージェント様にお願いする範囲</th></tr>
-              <tr><td>SNS（TikTok / Instagram / YouTube / X）での求職者集客</td><td>面談日程の事前準備（日程調整ツールの管理）</td></tr>
+              <tr><td>SNS（TikTok / Instagram / YouTube / X）での求職者集客<br><span class="note">自社サービス「ハックツ就職」で集客しています</span></td><td>面談日程の事前準備（日程調整ツールの管理）</td></tr>
               <tr><td>求職者へのカウンセリング実施・要望ヒアリング</td><td>求職者との面談実施（オンライン）</td></tr>
               <tr><td>ご紹介エージェント様の選定・マッチング</td><td>求人のご提案・選考フローのサポート</td></tr>
               <tr><td>面談日程の登録・求職者へのリマインド</td><td>面談実施結果（着座・キャンセル）のご共有</td></tr>
@@ -626,10 +664,14 @@
       <!-- B 面談編 -->
       <section class="ch" id="chB">
         <div class="ch-head"><span class="ch-num">B</span><h2>初回面談</h2><span class="t">30〜40分</span></div>
+        <div class="chintro"><div><h4>この章でわかること</h4><ul><li>初回面談30〜40分の進め方（Step1〜7）</li><li>本音を引き出す深掘りの質問と、期待値調整の3手順</li><li>終了時に埋まっているべき8項目</li><li>2回目の約束の取り方</li></ul></div><div class="rt"><b>10</b><span>min</span></div></div>
+
+        
 
         <section class="sec" id="b0"><h3>対象とする求職者</h3>
           <div class="stack">
             <p>ここから先は、<b>着座した求職者との面談</b>の進め方です。中心は<b>ジュニア層</b>です。</p>
+            <div class="callout"><span class="lbl">求職者の流入経路</span>お繋ぎする求職者は、当社が運営する求職者集客サービス<b>「ハックツ就職」</b>（20代・未経験層向け）にSNS経由でご登録いただき、<b>当社キャリアアドバイザーのカウンセリングを受けた方</b>です。求人サイトからの応募者ではありません。</div>
             <div class="callout"><span class="lbl">ジュニア層の定義</span>20代で、社会人経験が浅く（目安3年以内程度）、特定の専門スキルやキャリアの軸がまだ確立していない求職者。</div>
             <p>未経験者が現代で入社できる企業は、ある程度限られます。無期雇用派遣系（IT、施工管理、事務、販売）、飲食業界、建設業界、toC営業（業界問わず）、飲食・美容店舗関連への法人営業、製造業 ── このあたりが現実的な着地先になります。</p>
           </div>
@@ -661,7 +703,7 @@
         </div>
 
         <section class="sec" id="b1-1">
-          <div class="step-h"><h3 style="margin:0">Step1　オープニング</h3><span class="tm">5分</span><span class="req must">必須</span></div>
+          <div class="step-h"><span class="no">01</span><h3 style="margin:0">Step1　オープニング</h3><span class="tm">5分</span><span class="req must">必須</span></div>
           <div class="stack">
             <p>自己紹介と、本日の面談の目的説明から入ります。</p>
             <div class="talk">今日は〇〇さんのことを深く知るお時間にしたいと思っています。</div>
@@ -672,7 +714,7 @@
         </section>
 
         <section class="sec" id="b1-2">
-          <div class="step-h"><h3 style="margin:0">Step2　現状のヒアリング</h3><span class="tm">5分</span><span class="req must">必須</span></div>
+          <div class="step-h"><span class="no">02</span><h3 style="margin:0">Step2　現状のヒアリング</h3><span class="tm">5分</span><span class="req must">必須</span></div>
           <ul class="dots">
             <li>現在のお仕事の内容</li>
             <li>勤続年数、現在の年収</li>
@@ -682,7 +724,7 @@
         </section>
 
         <section class="sec" id="b1-3">
-          <div class="step-h"><h3 style="margin:0">Step3　深掘りヒアリング</h3><span class="tm">10分</span><span class="req must">必須</span></div>
+          <div class="step-h"><span class="no">03</span><h3 style="margin:0">Step3　深掘りヒアリング</h3><span class="tm">10分</span><span class="req must">必須</span></div>
           <div class="stack">
             <p>表面的な発言が出たら、そこで終わらせず「なぜ？」を重ねて本音を引き出します。</p>
             <p><b>ジュニア層の「やりたい」は、実は「今の不満の裏返し」であることが多い。</b>その不満を単に解消する（土日休みにする等）だけではなく、<b>「どんな不満なら耐えられるか、それ以上に得たい価値は何か」</b>まで踏み込むのがプロのヒアリングです。</p>
@@ -697,7 +739,7 @@
         </section>
 
         <section class="sec" id="b1-4">
-          <div class="step-h"><h3 style="margin:0">Step4　理想・希望条件のヒアリングと期待値調整</h3><span class="tm">5分</span><span class="req must">必須</span></div>
+          <div class="step-h"><span class="no">04</span><h3 style="margin:0">Step4　理想・希望条件のヒアリングと期待値調整</h3><span class="tm">5分</span><span class="req must">必須</span></div>
           <div class="stack">
             <ul class="dots">
               <li><b>譲れない条件は何か</b>（年収、休日、勤務地、業務内容など）<br><span class="note">聞きすぎはNG。言葉にすることで再認識するため、譲れないことは1〜2つにとどめます。</span></li>
@@ -721,7 +763,7 @@
         </section>
 
         <section class="sec" id="b1-5">
-          <div class="step-h"><h3 style="margin:0">Step5　層の見極め</h3><span class="tm">5分</span><span class="req">削ってもOK</span></div>
+          <div class="step-h"><span class="no">05</span><h3 style="margin:0">Step5　層の見極め</h3><span class="tm">5分</span><span class="req">削ってもOK</span></div>
           <div class="stack">
             <p>年齢・社会人経験年数・専門スキルやキャリアの軸の有無を確認し、ジュニア層かどうかを判定します。</p>
             <h4>ジュニア層からやや外れる場合</h4>
@@ -738,7 +780,7 @@
         </section>
 
         <section class="sec" id="b1-6">
-          <div class="step-h"><h3 style="margin:0">Step6　職種適性の見極め</h3><span class="tm">5分</span><span class="req">削ってもOK</span></div>
+          <div class="step-h"><span class="no">06</span><h3 style="margin:0">Step6　職種適性の見極め</h3><span class="tm">5分</span><span class="req">削ってもOK</span></div>
           <div class="stack">
             <h4>営業・販売系の場合</h4>
             <p>面談内で<b>アピアランス</b>（表情の明るさなど）、<b>営業・販売経験の有無</b>（1年以上か）、<b>コミュ力</b>を見極めます。加えて<b>マインド</b>（マネーモチベ＝インセンティブ等で稼ぐことへの意欲の高さ）を確認します。</p>
@@ -751,9 +793,9 @@
         </section>
 
         <section class="sec" id="b1-7">
-          <div class="step-h"><h3 style="margin:0">Step7　クロージング</h3><span class="tm">5分</span><span class="req must">必須</span></div>
+          <div class="step-h"><span class="no">07</span><h3 style="margin:0">Step7　クロージング</h3><span class="tm">5分</span><span class="req must">必須</span></div>
           <div class="stack">
-            <p class="lead-p"><b>初回面談のゴールは、2回目の約束を取ることです。</b></p>
+            <p class="key">初回面談のゴールは、2回目の約束を取ることです。</p>
             <div class="talk">本日お伺いした内容をもとに、〇〇さんに合いそうな求人をいくつかご用意します。次回は具体的な求人をご紹介しながら、一緒に選考の進め方を考えていきましょう。</div>
             <ul class="dots">
               <li><b>次回面談の日程調整</b></li>
@@ -796,7 +838,7 @@
         <section class="sec" id="b2"><h3>特別扱いの宣言で推薦率を上げる</h3>
           <div class="stack">
             <p class="lead-p">初回面談で<b>「自分は大事に扱われている」という確信</b>を作れるかが推薦率を左右します。最短ルートが<b>特別感の宣言</b>です。</p>
-            <p><b>STEP1　流入経路を把握する。</b>当社経由の求職者はSNSマーケティング経由で集客しています。</p>
+            <p><b>STEP1　流入経路を把握する。</b>当社経由の求職者は、<b>「ハックツ就職」</b>というSNSマーケティングで集客した求職者集客サービスからの流入です。他の応募経路の方とは、ここが違います。</p>
             <p><b>STEP2　通常との「差分」を明示し、特別感を宣言する。</b></p>
             <div class="tw"><table>
               <tr><th>型</th><th>文面サンプル</th><th>ポイント</th></tr>
@@ -811,6 +853,9 @@
       <!-- C 求人選定 -->
       <section class="ch" id="chC">
         <div class="ch-head"><span class="ch-num">C</span><h2>求人選定</h2><span class="t">面談と面談のあいだ</span></div>
+        <div class="chintro"><div><h4>この章でわかること</h4><ul><li>営業・販売の適性判断（8パターンの早見表）</li><li>施工管理・飲食製造・事務の提案の切り口</li><li>企業に出す推薦文の型</li></ul></div><div class="rt"><b>7</b><span>min</span></div></div>
+
+        
 
         <section class="sec" id="c1"><h3>初回から2回目までの日数</h3>
           <div class="add"><p><b>この層は、間が空くと消えます。初回から2回目までは中2日以内を目安にしてください。</b>求人選定が間に合わない場合でも、日程だけは初回の場で確定させ、当日までに準備する形にしてください。</p>
@@ -907,10 +952,13 @@
       <!-- D 2回目面談 -->
       <section class="ch" id="chD">
         <div class="ch-head"><span class="ch-num">D</span><h2>2回目面談（求人提案）</h2><span class="t">60分</span></div>
+        <div class="chintro"><div><h4>この章でわかること</h4><ul><li>2回目面談60分の進め方（Step1〜6）</li><li>本人の言葉に絡めた求人提案のしかた</li><li>他社が入っているときの4つの切り返し</li><li>持ち帰らせないクロージング</li></ul></div><div class="rt"><b>7</b><span>min</span></div></div>
+
+        
         <p class="lead-p" style="margin-bottom:28px"><b>目的</b>　初回で見極めた適性・希望に基づき求人を提案し、懸念を解消したうえで応募意思を固め、面接対策の前段まで一気通貫で行う。</p>
 
         <section class="sec" id="d1">
-          <div class="step-h"><h3 style="margin:0">Step1　オープニング・前回の振り返り</h3><span class="tm">5分</span></div>
+          <div class="step-h"><span class="no">01</span><h3 style="margin:0">Step1　オープニング・前回の振り返り</h3><span class="tm">5分</span></div>
           <div class="stack">
             <div class="talk">前回お伺いした内容を踏まえて、〇〇さんに合いそうな求人をいくつかご用意しました。</div>
             <div class="callout"><span class="lbl">求人数の目安</span>基本、<b>各職種で2〜3件程度。</b>求職者の要望にもよりますが、<b>トータルで10は超えないほうが良い</b>です。<b>5件で多いと感じる人もいる</b>ため、初回で要確認。</div>
@@ -922,7 +970,7 @@
         </section>
 
         <section class="sec" id="d2">
-          <div class="step-h"><h3 style="margin:0">Step2　求人提案</h3><span class="tm">20分</span></div>
+          <div class="step-h"><span class="no">02</span><h3 style="margin:0">Step2　求人提案</h3><span class="tm">20分</span></div>
           <div class="stack">
             <p>求人を提示し、<b>「なぜこの求人が〇〇さんに合うのか」</b>を職種別の判断軸に沿って説明します。</p>
             <div class="callout"><span class="lbl">最重要</span>初回面談で回収した長所や、得意なこと、好きなことに<b>必ず絡めて</b>伝えます。<b>自分が言ったことにかなう内容であることが非常に重要。かすっているだけでも良いので必須。</b>これにより、妥協ではなく<b>自分で選んだ感</b>も得やすくなります。</div>
@@ -936,7 +984,7 @@
         </section>
 
         <section class="sec" id="d3">
-          <div class="step-h"><h3 style="margin:0">Step3　反応確認・懸念のヒアリング</h3><span class="tm">10分</span></div>
+          <div class="step-h"><span class="no">03</span><h3 style="margin:0">Step3　反応確認・懸念のヒアリング</h3><span class="tm">10分</span></div>
           <div class="stack">
             <div class="talk">この求人について、率直にどう感じられますか？</div>
             <div class="callout"><span class="lbl">ここで払拭する</span><b>懸念はここで必ず払拭します。しておかないと入社前辞退の可能性が高まります。</b></div>
@@ -948,7 +996,7 @@
         </section>
 
         <section class="sec" id="d4">
-          <div class="step-h"><h3 style="margin:0">Step4　競合対応</h3><span class="tm">5分</span></div>
+          <div class="step-h"><span class="no">04</span><h3 style="margin:0">Step4　競合対応</h3><span class="tm">5分</span></div>
           <div class="stack">
             <p>すでに他社エージェントが入っている、もしくは自身で受けている企業がある場合の切り返しです。まず<b>切り返すべき対象を見極めます。</b>提案したい求人はどこなのか、求職者はどの部分に好感を持っているのか、を整理してから話します。</p>
             <h4>① 業界軸</h4>
@@ -969,7 +1017,7 @@
         </section>
 
         <section class="sec" id="d5">
-          <div class="step-h"><h3 style="margin:0">Step5　面接対策の頭出し</h3><span class="tm">10分</span></div>
+          <div class="step-h"><span class="no">05</span><h3 style="margin:0">Step5　面接対策の頭出し</h3><span class="tm">10分</span></div>
           <div class="stack">
             <p><b>あくまで頭出し程度にとどめ、重い内容は別日に行います。</b>詳細は<a href="#chE">E. 面接対策</a>を参照してください。この場で触れるのは以下です。</p>
             <ul class="dots"><li>第一印象（オンライン含む）</li><li>結論ファーストで話す</li><li>志望動機は企業軸・業界軸で語る</li><li>退職理由は前向きに変換する</li><li>よくある質問の準備、逆質問の用意</li></ul>
@@ -977,7 +1025,7 @@
         </section>
 
         <section class="sec" id="d6">
-          <div class="step-h"><h3 style="margin:0">Step6　クロージング</h3><span class="tm">5分</span></div>
+          <div class="step-h"><span class="no">06</span><h3 style="margin:0">Step6　クロージング</h3><span class="tm">5分</span></div>
           <div class="stack">
             <p><b>応募する求人の最終確定。</b></p>
             <div class="callout"><span class="lbl">この層の特性</span><b>なるべく多めに取り、持ち帰らせないこと。検討に入った段階で、この層は基本拒絶を意味しているため、途端に連絡が途絶えることも多いです。</b></div>
@@ -990,6 +1038,9 @@
       <!-- E 面接対策 -->
       <section class="ch" id="chE">
         <div class="ch-head"><span class="ch-num">E</span><h2>面接対策</h2></div>
+        <div class="chintro"><div><h4>この章でわかること</h4><ul><li>面接で見られているポイント（職種共通／職種別）</li><li>応募から面接までの進行スケジュール</li><li>書類で落ちたとき・辞退したいと言われたときの返し方</li></ul></div><div class="rt"><b>6</b><span>min</span></div></div>
+
+        
         <p class="lead-p" style="margin-bottom:28px">面接は「正解を言う場」ではなく、<b>「この人と一緒に働きたいか」を判断される場</b>です。</p>
 
         <section class="sec" id="e1"><h3>職種を問わず共通するポイント</h3>
@@ -1052,6 +1103,9 @@
       <!-- F 内定・入社 -->
       <section class="ch" id="chF">
         <div class="ch-head"><span class="ch-num">F</span><h2>内定・入社フォロー</h2></div>
+        <div class="chintro"><div><h4>この章でわかること</h4><ul><li>承諾から入社までのフォロー設計</li><li>入社後の定着フォローと、退職リスクの拾い方</li></ul></div><div class="rt"><b>3</b><span>min</span></div></div>
+
+        
         <div class="stack">
           <h3 style="font-size:18.5px">内定フォロー</h3>
           <p>内定承諾後、入社までの間に候補者との接点を維持し、<b>入社前離脱のリスクを減らす</b>ことがこのフェーズの目的です。</p>
@@ -1088,6 +1142,9 @@
       <!-- 付録 -->
       <section class="ch" id="apS">
         <div class="ch-head"><span class="ch-num">付録</span><h2>面談の実例（フルスクリプト）</h2></div>
+        <div class="chintro"><div><h4>この章でわかること</h4><ul><li>初回面談Step1〜7の、最初から最後まで通した実例</li><li>2回目面談の提案・切り返し・クロージングの実例</li></ul></div><div class="rt"><b>8</b><span>min</span></div></div>
+
+        
         <div class="stack" style="margin-bottom:26px">
           <p class="lead-p">初回面談を、最初から最後まで通した例です。<b>この通りに話す必要はありません。</b>「どの順番で、どこまで踏み込むか」の目安としてお使いください。</p>
           <div class="tw"><table>
@@ -1304,6 +1361,17 @@
     var d=new Date(), el=document.getElementById("coDate");
     if(el)el.textContent=d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日";
   }catch(e){}
+
+  /* --- 読み進み --- */
+  var progEl=document.getElementById("prog");
+  function updProg(){
+    if(!progEl)return;
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    progEl.style.width=(h>0?Math.min(100,Math.max(0,window.scrollY/h*100)):0)+"%";
+  }
+  window.addEventListener("scroll",updProg,{passive:true});
+  window.addEventListener("resize",updProg);
+  updProg();
 
   /* --- テーマ --- */
   var tBtn=$("#themeBtn");

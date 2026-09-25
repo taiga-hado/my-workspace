@@ -704,11 +704,15 @@
   function unlock(){gate.hidden=true}
   if(store.get("mn-gate-s")==="1"){unlock()}
   else{setTimeout(function(){var i=document.getElementById("gatePass");if(i)i.focus()},80)}
-  document.getElementById("gateForm").addEventListener("submit",function(e){
-    e.preventDefault();
+  function submitGate(){
     var f=document.getElementById("gatePass"), err=document.getElementById("gateErr");
     if(f.value.trim().toLowerCase()===PASS){store.set("mn-gate-s","1");unlock()}
     else{err.textContent="パスワードが違います。窓口担当までお問い合わせください。";f.value="";f.focus()}
+  }
+  document.getElementById("gateForm").addEventListener("submit",function(e){e.preventDefault();submitGate()});
+  // Enterでの送信はブラウザ既定に頼らず明示的に拾う（IME変換中は無視）
+  document.getElementById("gatePass").addEventListener("keydown",function(e){
+    if((e.key==="Enter"||e.keyCode===13)&&!e.isComposing){e.preventDefault();submitGate()}
   });
 
   /* --- 発行日 --- */

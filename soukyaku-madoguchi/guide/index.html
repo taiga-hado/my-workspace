@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="求職者送客の窓口 パートナーガイド">
+<title>面談の設計図</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+  :root{
+    --paper:#FBFAF7; --surface:#FFFFFF; --surface-2:#F4F3EF;
+    --ink:#0F1B33; --body:#2A3244; --muted:#6C7488;
+    --accent:#2457F5; --accent-soft:#E9EEFF; --warm:#FF6B2C; --warm-soft:#FFF2EA;
+    --line:#E3E0D9; --line-soft:#EFEDE7;
+    --ok:#17845F; --ng:#C4362B;
+    --shadow:0 1px 2px rgba(15,27,51,.04), 0 10px 34px rgba(15,27,51,.05);
+    --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,"Noto Serif JP",serif;
+    --sans:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans JP",system-ui,sans-serif;
+    --mono:"IBM Plex Mono","SFMono-Regular",Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#0C1320; --surface:#131C2B; --surface-2:#1A2434;
+    --ink:#EAEFF7; --body:#C6CEDC; --muted:#8892A6;
+    --accent:#7A9BFF; --accent-soft:#1B2A4D; --warm:#FF9159; --warm-soft:#33210F;
+    --line:#26324A; --line-soft:#1E2838;
+    --ok:#3FBF93; --ng:#F0736A;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.28);
+  }}
+  :root[data-theme="dark"]{
+    --paper:#0C1320; --surface:#131C2B; --surface-2:#1A2434;
+    --ink:#EAEFF7; --body:#C6CEDC; --muted:#8892A6;
+    --accent:#7A9BFF; --accent-soft:#1B2A4D; --warm:#FF9159; --warm-soft:#33210F;
+    --line:#26324A; --line-soft:#1E2838;
+    --ok:#3FBF93; --ng:#F0736A;
+    --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.28);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);font-family:var(--sans);font-size:15.5px;line-height:1.85;-webkit-font-smoothing:antialiased}
+  a{color:var(--accent)}
+  h1,h2,h3,h4{color:var(--ink);text-wrap:balance;margin:0}
+  p{margin:0}
+  ::selection{background:var(--accent-soft);color:var(--ink)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:3px}
+
+
+
+  /* ---------- dialogue ---------- */
+  .dlg{display:flex;flex-direction:column;gap:11px}
+  .turn{display:grid;grid-template-columns:46px minmax(0,1fr);gap:12px;align-items:start}
+  .turn .who{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);text-align:right;padding-top:11px}
+  .turn .say{border-radius:12px;padding:11px 15px;font-size:15px;line-height:1.85}
+  .turn.ca .say{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);color:var(--ink)}
+  .turn.jb .say{background:var(--surface-2);border:1px solid var(--line-soft);color:var(--body)}
+  .turn.ca .who{color:var(--accent);font-weight:700}
+  .dmark{display:flex;align-items:center;gap:12px;margin:26px 0 6px}
+  .dmark .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--warm);white-space:nowrap}
+  .dmark .ln{flex:1;height:1px;background:var(--line)}
+  .dnote{font-size:13.5px;color:var(--muted);line-height:1.75;padding-left:58px;margin-top:2px}
+  .dnote b{color:var(--ink)}
+  @media (max-width:520px){
+    .turn{grid-template-columns:1fr;gap:3px}
+    .turn .who{text-align:left;padding-top:0}
+    .dnote{padding-left:0}
+  }
+
+  /* ---------- password gate ---------- */
+  .gate{position:fixed;inset:0;z-index:200;display:grid;place-items:center;padding:24px;
+    background:radial-gradient(1100px 620px at 22% 18%,#1E3A8A 0%,#0F1B33 56%,#080E1C 100%)}
+  .gate-card{width:min(420px,100%);text-align:center;color:#fff}
+  .gate-card .mk{margin:0 auto 26px;display:block}
+  .gate-card h2{font-family:var(--serif);font-size:30px;font-weight:600;color:#fff;letter-spacing:.03em;line-height:1.4}
+  .gate-card p{color:#A8BCE4;font-size:13.5px;margin-top:12px;line-height:1.8}
+  .gate-form{display:flex;gap:8px;margin-top:26px}
+  .gate-form input{flex:1;font:inherit;font-size:15px;color:#fff;background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.22);border-radius:10px;padding:12px 14px;text-align:center;letter-spacing:.08em}
+  .gate-form input::placeholder{color:#7D8FB5;letter-spacing:0}
+  .gate-form button{font:inherit;font-size:14px;font-weight:700;color:#0F1B33;background:#fff;border:0;border-radius:10px;padding:0 22px;cursor:pointer}
+  .gate-form button:hover{background:#FFB38A}
+  .gate-err{margin-top:14px;font-size:13px;color:#FF9C7A;min-height:19px}
+  .gate-foot{margin-top:32px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;color:#6E80A8}
+
+  /* ---------- cover art ---------- */
+  .cover{display:grid;grid-template-columns:minmax(0,1fr) 236px;gap:30px;align-items:center}
+  .cover-txt{min-width:0}
+  .cover-art{position:relative;z-index:1}
+  .cover-art svg{width:100%;height:auto;display:block;overflow:visible}
+  @media (max-width:860px){
+    .cover{grid-template-columns:1fr;gap:30px}
+    .cover-art{max-width:280px}
+  }
+
+  /* ---------- tips card（旧 .add） ---------- */
+  .add{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--ok);border-radius:0 14px 14px 0;padding:18px 20px}
+
+  /* ---------- top bar ---------- */
+  .bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--paper) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
+  .bar-in{display:flex;align-items:center;gap:14px;padding:10px 20px;max-width:1440px;margin:0 auto}
+  .brand{display:flex;align-items:baseline;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase;white-space:nowrap}
+  .brand b{font-family:var(--sans);font-size:13.5px;letter-spacing:.06em;color:var(--ink);text-transform:none;font-weight:700}
+  .bar-sp{flex:1}
+  .btn{font:inherit;font-size:12.5px;color:var(--body);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 14px;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;transition:border-color .15s,color .15s}
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn.solid{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+  .btn.solid:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+  .srch{position:relative;flex:0 1 250px}
+  .srch input{width:100%;font:inherit;font-size:13px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px 7px 32px}
+  .srch input::placeholder{color:var(--muted)}
+  .srch svg{position:absolute;left:11px;top:50%;transform:translateY(-50%);width:14px;height:14px;stroke:var(--muted);fill:none;stroke-width:2}
+  .res{position:absolute;top:calc(100% + 6px);left:0;right:0;max-height:min(58vh,420px);overflow:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:6px;z-index:60}
+  .res a{display:block;padding:8px 11px;border-radius:9px;text-decoration:none;color:var(--body);font-size:13px;line-height:1.5}
+  .res a:hover,.res a:focus{background:var(--surface-2)}
+  .res a em{display:block;font-style:normal;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--muted);margin-bottom:1px}
+  .res .none{padding:12px;color:var(--muted);font-size:13px}
+
+  /* ---------- shell ---------- */
+  .shell{max-width:1440px;margin:0 auto;display:grid;grid-template-columns:272px minmax(0,1fr);gap:0}
+  .side{position:sticky;top:calc(64px + env(safe-area-inset-top,0px));align-self:start;height:calc(100dvh - 80px);overflow:auto;padding:26px 14px 40px 20px;border-right:1px solid var(--line-soft)}
+  .side h4{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;color:var(--light);text-transform:uppercase;margin:0 0 12px 10px}
+  .toc{list-style:none;margin:0;padding:0}
+  .toc a{display:flex;gap:10px;align-items:baseline;text-decoration:none;color:var(--body);font-size:13.5px;line-height:1.5;padding:6px 10px;border-radius:8px}
+  .toc a:hover{background:var(--surface-2)}
+  .toc a.on{background:var(--accent-soft);color:var(--ink);font-weight:700}
+  .toc a .n{font-family:var(--mono);font-size:11px;color:var(--muted);min-width:18px}
+  .toc a.on .n{color:var(--accent)}
+  .toc .sub a{font-size:12.5px;color:var(--muted);padding:4px 10px 4px 38px}
+  .toc .sub a.on{background:transparent;color:var(--accent);font-weight:600}
+  .toc li+li.top{margin-top:4px}
+  main{padding:0 clamp(16px,4vw,64px) 120px;min-width:0}
+  .wrap{max-width:720px}
+
+  /* ---------- cover ---------- */
+  .cover{position:relative;overflow:hidden;border-radius:18px;margin:26px 0 58px;padding:clamp(30px,5vw,50px);background:linear-gradient(161deg,#121E38 0%,#0E1830 52%,#0A1226 100%);color:#fff;box-shadow:0 18px 50px rgba(10,16,32,.22)}
+  .cover::after{content:"";position:absolute;right:-140px;bottom:-190px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(36,87,245,.5),rgba(36,87,245,0) 70%)}
+  .cover::before{content:"";position:absolute;right:-90px;top:-120px;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(58,106,255,.26),rgba(58,106,255,0) 68%)}
+  .cover>*{position:relative;z-index:1}
+  .cover .for{font-size:12px;color:#8AA2D8;letter-spacing:.2em;font-family:var(--mono);text-transform:uppercase;margin-bottom:26px}
+  .cover .for b{display:block;font-family:var(--sans);font-size:15px;color:#DCE5F7;letter-spacing:.04em;text-transform:none;margin-top:6px;font-weight:600}
+  .cover h1{font-family:var(--serif);font-size:clamp(32px,5.2vw,45px);line-height:1.34;color:#fff;font-weight:600;letter-spacing:.06em}
+  .cover .rule{width:56px;height:2px;background:var(--warm);margin:24px 0 20px}
+  .cover .lead{color:#AEBDD8;font-size:14.5px;line-height:1.95;max-width:42ch}
+  .cover .meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:18px 30px;font-family:var(--mono);font-size:9.5px;letter-spacing:.18em;color:#7185B4;text-transform:uppercase}
+  .cover .meta b{display:block;font-family:var(--sans);font-size:13.5px;letter-spacing:.02em;color:#E7EDF9;text-transform:none;margin-top:5px;font-weight:600}
+
+  /* ---------- chapters ---------- */
+  .ch{scroll-margin-top:96px;margin:0 0 78px}
+  .ch-head{display:flex;align-items:baseline;gap:18px;padding-bottom:15px;margin-bottom:32px;border-bottom:1px solid var(--line)}
+  .ch-num{font-family:var(--mono);font-size:10.5px;letter-spacing:.22em;color:var(--warm);padding-top:8px}
+  .ch-head h2{font-family:var(--serif);font-size:clamp(24px,3.4vw,31px);font-weight:600;letter-spacing:.05em;line-height:1.4}
+  .ch-head .t{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--light);margin-left:auto;white-space:nowrap;padding-top:9px}
+  .sec{scroll-margin-top:96px;margin:0 0 38px}
+  .sec>h3{font-size:18px;font-weight:700;margin-bottom:13px;line-height:1.55;letter-spacing:.01em}
+  .sec h4{font-size:15px;font-weight:700;margin:22px 0 8px}
+  .stack{display:flex;flex-direction:column;gap:14px}
+  .lead-p{font-size:16.5px;color:var(--ink);line-height:1.8}
+  strong,b{color:var(--ink);font-weight:700}
+
+  /* step */
+  .step-h{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+  .step-h .tm{font-family:var(--mono);font-size:11.5px;color:var(--accent);background:var(--accent-soft);border-radius:6px;padding:3px 9px;letter-spacing:.04em;white-space:nowrap}
+  .step-h .req{font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:3px 8px;border-radius:6px;border:1px solid var(--line);color:var(--muted)}
+  .step-h .req.must{color:var(--warm);border-color:color-mix(in srgb,var(--warm) 45%,transparent);background:var(--warm-soft)}
+
+  ul.dots{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+  ul.dots li{position:relative;padding-left:18px}
+  ul.dots li::before{content:"";position:absolute;left:1px;top:11px;width:6px;height:6px;border-radius:50%;background:var(--accent)}
+  ul.dots li ul{margin-top:7px}
+  .note{color:var(--muted);font-size:14px;line-height:1.75}
+
+  .talk{position:relative;background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:0 12px 12px 0;padding:15px 52px 15px 18px;font-size:15.5px;color:var(--ink);line-height:1.85}
+  .talk.warn{border-left-color:var(--ng)}
+  .copy{position:absolute;top:10px;right:10px;width:30px;height:30px;display:grid;place-items:center;border:1px solid var(--line);background:var(--paper);border-radius:8px;cursor:pointer;color:var(--muted)}
+  .copy:hover{color:var(--accent);border-color:var(--accent)}
+  .copy svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2}
+  .copy.done{color:var(--ok);border-color:var(--ok)}
+
+  .callout{background:var(--warm-soft);border-left:3px solid var(--warm);border-radius:0 12px 12px 0;padding:15px 18px;font-size:15px;color:var(--ink)}
+  .callout .lbl{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--warm);margin-bottom:5px}
+
+
+  .tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+  table{border-collapse:collapse;width:100%;font-size:14px;min-width:460px}
+  th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line-soft);vertical-align:top;line-height:1.7}
+  th{font-size:11px;font-family:var(--mono);letter-spacing:.1em;color:var(--muted);text-transform:uppercase;background:var(--surface-2);white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+  td.c{text-align:center;font-family:var(--mono);font-weight:600}
+  td.c.y{color:var(--ok)} td.c.n{color:var(--ng)}
+  td.k{font-weight:700;color:var(--ink);white-space:nowrap}
+  .tw.matrix table{min-width:620px}
+
+  .ck{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+  .ck li{display:flex;gap:11px;align-items:flex-start;padding:7px 9px;border-radius:9px}
+  .ck li:hover{background:var(--surface-2)}
+  .ck input{appearance:none;flex:0 0 18px;width:18px;height:18px;margin-top:4px;border:1.5px solid var(--line);border-radius:5px;background:var(--surface);cursor:pointer;position:relative}
+  .ck input:checked{background:var(--accent);border-color:var(--accent)}
+  .ck input:checked::after{content:"";position:absolute;left:5.5px;top:2px;width:4px;height:9px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+  .ck label{cursor:pointer;font-size:14.5px;line-height:1.7}
+  .ck input:checked+label{color:var(--muted);text-decoration:line-through;text-decoration-color:var(--line)}
+  .ck-foot{display:flex;align-items:center;gap:12px;margin-top:12px;font-family:var(--mono);font-size:11px;color:var(--muted)}
+
+  /* run mode */
+  .run{position:fixed;right:16px;bottom:16px;z-index:70;width:min(330px,calc(100vw - 32px));background:var(--surface);border:1px solid var(--line);border-radius:16px;box-shadow:0 12px 40px rgba(15,27,51,.18);overflow:hidden}
+  .run-h{display:flex;align-items:center;gap:10px;padding:12px 14px;border-bottom:1px solid var(--line-soft)}
+  .run-h b{font-size:13.5px}
+  .run-h .x{margin-left:auto;background:none;border:0;color:var(--muted);cursor:pointer;font-size:19px;line-height:1;padding:0 2px}
+  .run-tabs{display:flex;gap:6px;padding:10px 14px 0}
+  .run-tabs button{flex:1;font:inherit;font-size:12px;padding:6px;border:1px solid var(--line);background:var(--surface);color:var(--muted);border-radius:8px;cursor:pointer}
+  .run-tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--paper);font-weight:700}
+  .run-clock{font-family:var(--mono);font-size:38px;font-weight:600;color:var(--ink);text-align:center;padding:14px 0 4px;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .run-now{text-align:center;font-size:13px;color:var(--accent);font-weight:700;padding-bottom:12px}
+  .run-steps{list-style:none;margin:0;padding:0 10px 10px;max-height:190px;overflow:auto}
+  .run-steps li{display:flex;gap:9px;align-items:center;font-size:12.5px;padding:5px 8px;border-radius:7px;color:var(--muted)}
+  .run-steps li .d{font-family:var(--mono);font-size:10.5px;margin-left:auto}
+  .run-steps li.on{background:var(--accent-soft);color:var(--ink);font-weight:700}
+  .run-steps li.past{opacity:.45;text-decoration:line-through}
+  .run-ctl{display:flex;gap:8px;padding:0 14px 14px}
+  .run-ctl button{flex:1}
+
+  /* print */
+  .printable{display:none}
+  @media print{
+    .bar,.side,.run,.no-print{display:none!important}
+    .shell{display:block}
+    main{padding:0}
+    body{background:#fff}
+    :root[data-print="matrix"] .ch,:root[data-print="matrix"] .cover{display:none}
+    :root[data-print="matrix"] .printable{display:block}
+    .printable h2{font-family:var(--serif);font-size:22px;margin-bottom:6px}
+    .printable .pnote{font-size:12px;color:#555;margin-bottom:14px}
+    .tw{border:0} table{min-width:0;font-size:11.5px} th,td{padding:7px 8px;border-bottom:1px solid #ddd}
+  }
+  @media (max-width:980px){
+    .shell{grid-template-columns:1fr}
+    .side{position:fixed;inset:0 auto 0 0;width:282px;height:100dvh;background:var(--paper);border-right:1px solid var(--line);z-index:50;transform:translateX(-100%);transition:transform .22s ease;padding-top:20px}
+    .side.open{transform:none}
+    .scrim{position:fixed;inset:0;background:rgba(10,16,28,.42);z-index:45;display:none}
+    .scrim.open{display:block}
+    main{padding-top:4px}
+  }
+  @media (min-width:981px){.menu-btn{display:none}}
+  @media (max-width:620px){
+    .srch{flex:1 1 100%;order:3}
+    .bar-in{flex-wrap:wrap;gap:9px}
+    .cover .meta{gap:18px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<style>
+  :root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  img{max-width:100%}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <svg class="mk" width="60" height="60" viewBox="0 0 60 60" fill="none" aria-hidden="true">
+      <rect x=".75" y=".75" width="58.5" height="58.5" rx="15" stroke="rgba(255,255,255,.2)"/>
+      <rect x="18" y="14" width="8" height="9" rx="1.5" fill="#8FAEFF" opacity=".85"/>
+      <rect x="18" y="25" width="8" height="14" rx="1.5" fill="#8FAEFF"/>
+      <rect x="18" y="41" width="8" height="5" rx="1.5" fill="#FF8A4C"/>
+      <rect x="34" y="14" width="8" height="5" rx="1.5" fill="#8FAEFF" opacity=".5"/>
+      <rect x="34" y="21" width="8" height="18" rx="1.5" fill="#8FAEFF"/>
+      <rect x="34" y="41" width="8" height="5" rx="1.5" fill="#FF8A4C"/>
+    </svg>
+    <h2>面談の設計図</h2>
+    <p>求職者送客の窓口をご利用中のエージェント様向けの資料です。<br>お渡ししているパスワードをご入力ください。</p>
+    <form class="gate-form" id="gateForm">
+      <input id="gatePass" type="password" placeholder="パスワード" autocomplete="current-password" aria-label="パスワード">
+      <button type="submit">開く</button>
+    </form>
+    <div class="gate-err" id="gateErr" role="status"></div>
+    <div class="gate-foot">株式会社HADO</div>
+  </div>
+</div>
+
+<div class="bar">
+  <div class="bar-in">
+    <button class="btn menu-btn" id="menuBtn" aria-label="目次">目次</button>
+    <div class="brand"><b>面談の設計図</b><span>v1.0</span></div>
+    <div class="bar-sp"></div>
+    <div class="srch">
+      <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="検索（例：着座）" autocomplete="off">
+      <div class="res" id="res" hidden></div>
+    </div>
+    <button class="btn solid" id="runBtn">面談モード</button>
+    <button class="btn" id="themeBtn" aria-label="表示テーマ">◐</button>
+  </div>
+</div>
+
+<div class="scrim" id="scrim"></div>
+<div class="shell">
+  <nav class="side" id="side">
+    <h4>目次</h4>
+    <ul class="toc" id="toc">
+      <li class="top"><a href="#cover"><span class="n">–</span>表紙</a></li>
+      <li class="top"><a href="#ch0"><span class="n">0</span>はじめに</a>
+        <ul class="toc sub">
+          <li><a href="#s0-1">最初にやること</a></li>
+          <li><a href="#s0-2">この資料について</a></li>
+        </ul></li>
+      <li class="top"><a href="#chA"><span class="n">A</span>運用編</a>
+        <ul class="toc sub">
+          <li><a href="#a1">役割分担</a></li>
+          <li><a href="#a2">オペレーションフロー</a></li>
+          <li><a href="#a3">初期設定</a></li>
+          <li><a href="#a4">スプレッドシートの使い方</a></li>
+          <li><a href="#a5">結果報告のルール</a></li>
+          <li><a href="#a6">カウンセリングメモの読み方</a></li>
+          <li><a href="#a7">着座の定義と請求対象</a></li>
+          <li><a href="#a8">よくあるご質問</a></li>
+          <li><a href="#a9">連絡先・エスカレーション</a></li>
+          <li><a href="#a10">個人情報の取扱い</a></li>
+        </ul></li>
+      <li class="top"><a href="#chB"><span class="n">B</span>面談編</a>
+        <ul class="toc sub">
+          <li><a href="#b0">対象とする求職者</a></li>
+          <li><a href="#b0b">まずこの3つだけ</a></li>
+          <li><a href="#b1-1">初回 Step1 オープニング</a></li>
+          <li><a href="#b1-2">初回 Step2 現状のヒアリング</a></li>
+          <li><a href="#b1-3">初回 Step3 深掘り</a></li>
+          <li><a href="#b1-4">初回 Step4 期待値調整</a></li>
+          <li><a href="#b1-5">初回 Step5 層の見極め</a></li>
+          <li><a href="#b1-6">初回 Step6 職種適性</a></li>
+          <li><a href="#b1-7">初回 Step7 クロージング</a></li>
+          <li><a href="#b1-8">終了時チェックリスト</a></li>
+          <li><a href="#b1-9">来なかったときの対応</a></li>
+          <li><a href="#b2">特別扱いの宣言</a></li>
+        </ul></li>
+      <li class="top"><a href="#chC"><span class="n">C</span>求人選定</a>
+        <ul class="toc sub">
+          <li><a href="#c1">2回目までの日数</a></li>
+          <li><a href="#c2">営業・販売の求人判断</a></li>
+          <li><a href="#c3">施工管理・エンジニア</a></li>
+          <li><a href="#c4">飲食業界・製造業</a></li>
+          <li><a href="#c5">事務職</a></li>
+          <li><a href="#c6">直接雇用の事務職</a></li>
+          <li><a href="#c7">推薦文の型</a></li>
+        </ul></li>
+      <li class="top"><a href="#chD"><span class="n">D</span>2回目面談</a>
+        <ul class="toc sub">
+          <li><a href="#d1">Step1 前回の振り返り</a></li>
+          <li><a href="#d2">Step2 求人提案</a></li>
+          <li><a href="#d3">Step3 懸念のヒアリング</a></li>
+          <li><a href="#d4">Step4 競合対応</a></li>
+          <li><a href="#d5">Step5 面接対策の頭出し</a></li>
+          <li><a href="#d6">Step6 クロージング</a></li>
+        </ul></li>
+      <li class="top"><a href="#chE"><span class="n">E</span>面接対策</a>
+        <ul class="toc sub">
+          <li><a href="#e1">共通ポイント</a></li>
+          <li><a href="#e2">営業系</a></li>
+          <li><a href="#e3">施工管理・エンジニア</a></li>
+          <li><a href="#e4">事務職</a></li>
+          <li><a href="#e5">飲食・製造業</a></li>
+          <li><a href="#e6">応募から面接までの進行</a></li>
+        </ul></li>
+      <li class="top"><a href="#chF"><span class="n">F</span>内定・入社フォロー</a></li>
+      <li class="top"><a href="#apS"><span class="n">付</span>面談の実例（フルスクリプト）</a></li>
+      <li class="top"><a href="#apA"><span class="n">付</span>行動経済学と面談</a></li>
+      <li class="top"><a href="#apB"><span class="n">付</span>やってはいけないこと</a></li>
+      <li class="top"><a href="#apC"><span class="n">付</span>用語集</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="wrap">
+
+      <header class="cover" id="cover">
+        <div class="cover-txt">
+          <div class="for">Partner Guide<b>求職者送客の窓口</b></div>
+          <h1>面談で、<br>決める。</h1>
+          <div class="rule"></div>
+          <p class="lead">導入初日からの運用手順と、本サービスをご利用中のエージェント様のうち成果を出されている各社の面談ノウハウを、1つにまとめました。</p>
+          <div class="meta">
+            <div>Version<b>1.0</b></div>
+            <div>発行<b id="coDate">2026年9月25日</b></div>
+            <div>発行元<b>株式会社HADO</b></div>
+          </div>
+        </div>
+        <div class="cover-art" aria-hidden="true">
+          <svg viewBox="0 0 300 392" role="img">
+            <defs>
+              <linearGradient id="gB" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#9DB9FF" stop-opacity=".92"/><stop offset="1" stop-color="#3E64D6" stop-opacity=".88"/>
+              </linearGradient>
+              <linearGradient id="gF" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#FFC09A"/><stop offset="1" stop-color="#FF7A3C"/>
+              </linearGradient>
+            </defs>
+
+            <text x="0" y="12" fill="#6E82B2" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="2.6">INTERVIEW DESIGN</text>
+
+            <g stroke="rgba(255,255,255,.075)" stroke-width="1">
+              <line x1="34" y1="70" x2="300" y2="70"/><line x1="34" y1="170" x2="300" y2="170"/>
+              <line x1="34" y1="270" x2="300" y2="270"/><line x1="34" y1="370" x2="300" y2="370"/>
+            </g>
+            <g fill="#7488B8" font-family="IBM Plex Mono, monospace" font-size="8.5" text-anchor="end">
+              <text x="26" y="73">0</text><text x="26" y="173">20</text>
+              <text x="26" y="273">40</text><text x="26" y="373">60</text>
+            </g>
+            <text x="26" y="388" fill="#4E5E88" font-family="IBM Plex Mono, monospace" font-size="7.5" text-anchor="end">min</text>
+
+            <text x="62" y="42" fill="#FFFFFF" font-family="Hiragino Sans, sans-serif" font-size="12.5" font-weight="700" letter-spacing=".5">初回面談</text>
+            <text x="62" y="58" fill="#7386B4" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1">30–40</text>
+            <g fill="url(#gB)">
+              <rect x="62" y="71.5" width="36" height="22" rx="2"/>
+              <rect x="62" y="96.5" width="36" height="22" rx="2"/>
+              <rect x="62" y="121.5" width="36" height="47" rx="2"/>
+              <rect x="62" y="171.5" width="36" height="22" rx="2"/>
+              <rect x="62" y="196.5" width="36" height="22" opacity=".42" rx="2"/>
+              <rect x="62" y="221.5" width="36" height="22" opacity=".42" rx="2"/>
+            </g>
+            <rect x="62" y="246.5" width="36" height="22" rx="2" fill="url(#gF)"/>
+
+            <text x="168" y="42" fill="#FFFFFF" font-family="Hiragino Sans, sans-serif" font-size="12.5" font-weight="700" letter-spacing=".5">2回目面談</text>
+            <text x="168" y="58" fill="#7386B4" font-family="IBM Plex Mono, monospace" font-size="8.5" letter-spacing="1">60</text>
+            <g fill="url(#gB)">
+              <rect x="168" y="71.5" width="36" height="22" opacity=".45" rx="2"/>
+              <rect x="168" y="96.5" width="36" height="97" rx="2"/>
+              <rect x="168" y="196.5" width="36" height="47" rx="2"/>
+              <rect x="168" y="246.5" width="36" height="22" opacity=".45" rx="2"/>
+              <rect x="168" y="271.5" width="36" height="47" opacity=".45" rx="2"/>
+            </g>
+            <rect x="168" y="321.5" width="36" height="22" rx="2" fill="url(#gF)"/>
+            <rect x="168" y="346.5" width="36" height="22" rx="2" fill="#2E3E68" opacity=".5"/>
+
+            <line x1="204" y1="332" x2="222" y2="332" stroke="#FF9159" stroke-width="1"/>
+            <text x="227" y="335" fill="#FFB38A" font-family="Hiragino Sans, sans-serif" font-size="10.5" letter-spacing=".5">決める</text>
+          </svg>
+        </div>
+      </header>
+
+      <!-- 0 -->
+      <section class="ch" id="ch0">
+        <div class="ch-head"><span class="ch-num">00</span><h2>はじめに</h2></div>
+
+        <section class="sec" id="s0-1"><h3>最初にやること</h3>
+          <div class="stack">
+            <p class="lead-p">運用開始前のご準備は<b>2点だけ</b>です。所要時間は合計15分程度です。</p>
+            <ul class="ck" data-ck>
+              <li><input type="checkbox" id="k1"><label for="k1"><b>日程調整ツールのURLを共有</b>　面談用カレンダーを作成し、URLを窓口担当（佐伯・松本）へ。timerex / Jicoo 推奨、他ツールでも可。<b>最低10営業日先まで</b>空き枠の開放を推奨します</label></li>
+              <li><input type="checkbox" id="k2"><label for="k2"><b>スプレッドシートの編集権限</b>　面談担当者・管理者のメールアドレスを窓口担当へ。権限付与後、結果報告の入力が可能になります</label></li>
+              <li><input type="checkbox" id="k3"><label for="k3">（任意）<b>通知連絡先の共有</b>　新規送客時・情報更新時のプッシュ通知をご希望の場合のみ</label></li>
+            </ul>
+            <div class="ck-foot"><span id="ckCount">0 / 3</span><button class="btn" id="ckReset">チェックをリセット</button></div>
+            <p class="note">受入条件・NG条件は契約締結前にすり合わせ済みです。日常のご連絡はSlack（推奨）またはChatworkにて行います。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="s0-2"><h3>この資料について</h3>
+          <div class="stack">
+            <p class="lead-p">本資料は、<b>求職者送客の窓口をご利用中のエージェント様のうち、成果を出されている各社の運用とノウハウ</b>をまとめたものです。当社のキャリアアドバイザーが実際の面談から書き起こした内容も含んでいます。</p>
+            <div class="tw"><table>
+              <tr><th>パート</th><th>いつ読むか</th><th>内容</th></tr>
+              <tr><td class="k">A 運用編</td><td>導入直後に全員</td><td>役割分担・フロー・シートの入力ルール・着座の定義・請求・連絡先</td></tr>
+              <tr><td class="k">B〜F 面談編</td><td>面談担当者</td><td>初回面談から入社フォローまでの進め方</td></tr>
+              <tr><td class="k">付録</td><td>必要に応じて</td><td>行動経済学／NG集／用語集</td></tr>
+            </table></div>
+            <div class="callout"><span class="lbl">便利な機能</span>右上の<b>検索</b>で全文から探せます。<b>面談モード</b>を開くと、初回・2回目の各ステップをタイマー付きで進められます。セリフの例文は<b>右上のボタンでコピー</b>できます。</div>
+            <p class="note">内容は随時更新します。うまくいった進め方が見つかりましたら、窓口担当までお知らせください。次の版に反映し、他社様にも共有させていただきます。</p>
+          </div>
+        </section>
+      </section>
+
+      <!-- A 運用編 -->
+      <section class="ch" id="chA">
+        <div class="ch-head"><span class="ch-num">A</span><h2>運用編</h2><span class="t">導入直後に全員</span></div>
+
+        <section class="sec" id="a1"><h3>サービス全体像と役割分担</h3>
+          <div class="stack">
+            <p class="lead-p">求職者の集客から面談設定までを当社が代行します。<b>エージェント様は「面談」に専念いただけます。</b></p>
+            <div class="tw"><table>
+              <tr><th>HADOが担当する範囲</th><th>エージェント様にお願いする範囲</th></tr>
+              <tr><td>SNS（TikTok / Instagram / YouTube / X）での求職者集客</td><td>面談日程の事前準備（日程調整ツールの管理）</td></tr>
+              <tr><td>求職者へのカウンセリング実施・要望ヒアリング</td><td>求職者との面談実施（オンライン）</td></tr>
+              <tr><td>ご紹介エージェント様の選定・マッチング</td><td>求人のご提案・選考フローのサポート</td></tr>
+              <tr><td>面談日程の登録・求職者へのリマインド</td><td>面談実施結果（着座・キャンセル）のご共有</td></tr>
+              <tr><td>面談後の所感ヒアリング</td><td></td></tr>
+            </table></div>
+          </div>
+        </section>
+
+        <section class="sec" id="a2"><h3>オペレーションフロー</h3>
+          <div class="stack">
+            <div class="tw"><table>
+              <tr><th></th><th>求職者</th><th>HADO</th><th>エージェント様</th></tr>
+              <tr><td class="k">1</td><td>カウンセリング予約</td><td>日程確定</td><td></td></tr>
+              <tr><td class="k">2</td><td>カウンセリング受講</td><td>カウンセリング実施／エージェント選定</td><td></td></tr>
+              <tr><td class="k">3</td><td></td><td>日程登録＆データ共有</td><td>日程確認</td></tr>
+              <tr><td class="k">4</td><td>面談日程確認</td><td>求職者リマインド</td><td></td></tr>
+              <tr><td class="k">5</td><td>面談実施</td><td></td><td>面談実施</td></tr>
+              <tr><td class="k">6</td><td></td><td>所感ヒアリング</td><td>着座結果共有</td></tr>
+            </table></div>
+            <div class="callout"><span class="lbl">Point</span>面談日程の登録時、エージェント様の日程調整ツール（timerex / Jicoo）から<b>空き枠を自動取得</b>します。事前にURLのご共有をお願いします。</div>
+          </div>
+        </section>
+
+        <section class="sec" id="a3"><h3>初期設定</h3>
+          <div class="stack">
+            <div class="tw"><table>
+              <tr><th></th><th>項目</th><th>内容</th></tr>
+              <tr><td class="k">必須1</td><td class="k">日程調整ツール</td><td>面談用カレンダーを作成し、URLを窓口担当（佐伯・松本）へ共有。timerex / Jicoo 推奨、他ツールでも問題ありません。<b>最低10営業日先まで空き枠の開放を推奨</b></td></tr>
+              <tr><td class="k">必須2</td><td class="k">シートの編集権限</td><td>面談担当者・管理者のメールアドレスを窓口担当へ。編集権限により結果報告の入力が可能になります</td></tr>
+              <tr><td class="k">任意</td><td class="k">通知連絡先</td><td>新規送客時・情報更新時のプッシュ通知をご希望の場合のみ。不要な場合はシートで随時ご確認いただく運用でも問題ありません</td></tr>
+            </table></div>
+          </div>
+        </section>
+
+        <section class="sec" id="a4"><h3>スプレッドシートの使い方</h3>
+          <div class="stack">
+            <p>求職者情報と結果報告を<b>1シートで完結</b>する設計です。シート切替の手間はありません。</p>
+            <div class="tw"><table>
+              <tr><th>区分</th><th>列</th><th>入力者</th></tr>
+              <tr><td class="k">求職者情報</td><td>回答ID／氏名／電話番号／メール／性別／年齢／居住エリア／希望条件／学歴／職歴／面談予定</td><td>HADOが自動転記（入力不要）</td></tr>
+              <tr><td class="k">結果報告</td><td>結果／備考</td><td><b>エージェント様にて入力</b></td></tr>
+            </table></div>
+          </div>
+        </section>
+
+        <section class="sec" id="a5"><h3>結果報告のルール</h3>
+          <div class="stack">
+            <p class="lead-p">面談実施後、「結果」列に次の4つのいずれかを<b>2営業日以内</b>にご入力ください。</p>
+            <div class="tw"><table>
+              <tr><th>入力値</th><th>意味</th></tr>
+              <tr><td class="k">着座</td><td>予定通り面談実施</td></tr>
+              <tr><td class="k">事前キャンセル</td><td>面談前に求職者から辞退連絡</td></tr>
+              <tr><td class="k">当日未入室</td><td>ノーショー（連絡なし不参加）</td></tr>
+              <tr><td class="k">請求対象外</td><td>対象外条件に該当・要事前連絡</td></tr>
+            </table></div>
+            <div class="callout"><span class="lbl">必ずご確認ください</span>
+              <ul class="dots" style="margin-top:8px">
+                <li>面談実施から<b>2営業日以内</b>に「結果」を入力</li>
+                <li><b>5営業日経過すると「みなし承認」として自動的に着座扱い</b>になります</li>
+                <li>面談実施日の記入は不要（予定日のみで管理）</li>
+                <li>請求対象外として申請する場合は、必ず<b>担当者へ事前連絡＋エビデンスをご提出</b>ください</li>
+                <li>ノーショー・無断キャンセルの場合は連絡不要（「当日未入室」と入力）</li>
+                <li><b>エージェント様都合での日程変更は原則受付不可</b>（実施した場合は結果に関わらず着座扱い）</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec" id="a6"><h3>カウンセリングメモの読み方</h3>
+          <div class="stack">
+            <p>当社カウンセラーがヒアリングした内容を、<b>AI議事録</b>としてシートとあわせてご提供します。</p>
+            <div class="tw"><table>
+              <tr><th></th><th>構成</th><th>内容</th></tr>
+              <tr><td class="k">1</td><td>基本情報</td><td>氏名・年齢・学歴・卒業年月</td></tr>
+              <tr><td class="k">2</td><td>職歴</td><td>各社の在籍期間・業務内容・退職理由</td></tr>
+              <tr><td class="k">3</td><td>現状の課題</td><td>転職を考えている背景・職場での不満</td></tr>
+              <tr><td class="k">4</td><td>転職希望詳細</td><td>希望職種・NG職種・希望条件</td></tr>
+              <tr><td class="k">5</td><td>希望条件</td><td>エリア・入社希望時期・希望年収</td></tr>
+            </table></div>
+            <div class="callout"><span class="lbl">面談前に必ずチェックする3項目</span>
+              <ul class="dots" style="margin-top:8px">
+                <li><b>退職理由</b>　現職・前職の退職理由を把握。地雷ワードを避けたヒアリングが可能になります</li>
+                <li><b>NG条件</b>　希望NG条件（飛び込み営業／土日勤務など）を事前確認</li>
+                <li><b>希望年収・入社時期</b>　求人提案のミスマッチを事前に防止</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec" id="a7"><h3>「着座」の定義と請求対象</h3>
+          <div class="stack">
+            <div class="callout"><span class="lbl">着座（請求対象）の定義</span><b>求職者が初回面談に出席したこと</b>（面談ツールへの入室・応答をもって成立）</div>
+            <h4>請求対象になる</h4>
+            <ul class="dots">
+              <li>面談ツール（Web会議・通話アプリ等）への入室・応答で成立（電話面談は架電への応答時点）</li>
+              <li>所要時間・完遂の有無・転職意欲は問わず成立（着座後の中断・退席・通信障害でも有効）</li>
+              <li>求職者の遅刻時も、<b>予定時刻から30分以内</b>の入室・応答で着座成立</li>
+              <li>エージェント様都合の日程変更・キャンセル・不参加・10分超の遅刻等は「<b>みなし着座</b>」</li>
+            </ul>
+            <h4>請求対象外となる</h4>
+            <ul class="dots">
+              <li>求職者都合の事前キャンセル・当日未入室（<b>10分待機＋連絡試行</b>が条件）</li>
+              <li>障害者手帳を所持していることが判明した場合（無効成果）</li>
+              <li>外国籍であることが判明した場合（無効成果）</li>
+              <li>在学中で卒業・中退予定日が面談予定日から3ヶ月以上先の場合（無効成果）</li>
+              <li>重複＝過去1ヶ月以内に自社へ登録済み（原則、面談開始前までの通知が必要）</li>
+            </ul>
+            <div class="callout"><span class="lbl">重要</span>求職者が現れない場合は<b>予定時刻から10分間待機</b>のうえ、電話等での連絡試行をお願いします。<b>この手順を経た場合のみ「当日未入室」として報告できます。</b></div>
+          </div>
+        </section>
+
+        <section class="sec" id="a8"><h3>よくあるご質問</h3>
+          <div class="stack">
+            <h4>送客ペースを増やしたい／一時的に止めたい場合は？</h4>
+            <p>原則として<b>10営業日前まで</b>に窓口担当（佐伯・松本）へご連絡ください。SNS集客側の調整サイクルがあるため、直前のご依頼ですと反映が間に合わない可能性があります。月の途中で受入キャパが埋まった場合のご相談も承ります。</p>
+            <h4>面談担当者を増やしたい／変更したい場合は？</h4>
+            <p>新担当者のお名前・メールアドレス・日程調整ツールURLを窓口担当へお知らせください。<b>最短翌営業日</b>からの反映が可能です。</p>
+            <h4>送客条件を変更したい場合は？</h4>
+            <p>窓口担当までご相談ください。送客条件（年齢・年収・エリア・職種など）の変更は契約内容に関わるため、Slack（推奨）またはChatworkにてご連絡ください。協議のうえ、変更可否・反映タイミングをご回答いたします。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="a9"><h3>連絡先・エスカレーション</h3>
+          <div class="stack">
+            <div class="tw"><table>
+              <tr><th>種別</th><th>該当ケース</th><th>連絡先</th><th>目安</th></tr>
+              <tr><td class="k">通常の<br>お問い合わせ</td><td>送客に関するお問い合わせ／受入条件の変更／面談URLの変更 など</td><td>窓口担当<br><b>佐伯・松本</b></td><td>営業時間内に返信</td></tr>
+              <tr><td class="k">求職者に<br>関する問題</td><td>求職者データに関する質問／送客された求職者についての確認／求職者対応上の相談 など</td><td>窓口担当<br><b>佐伯・松本</b></td><td>1営業日以内</td></tr>
+              <tr><td class="k">緊急トラブル<br>クレーム</td><td>個人情報漏洩の疑い／サービス品質に関わる重大事案／求職者からのハラスメント報告 など</td><td>代表 <b>田中</b><br>090-5323-3246<br>t.tanaka@hadoinc.com</td><td><b>即時対応</b></td></tr>
+            </table></div>
+            <p class="note">ご連絡はSlack（推奨）またはChatworkにて。対応時間は平日 9:00 - 19:00 です。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="a10"><h3>個人情報の取扱い</h3>
+          <div class="stack">
+            <p>求職者の個人情報は、職業安定法および個人情報保護法に準拠し厳重に管理しています。</p>
+            <div class="tw"><table>
+              <tr><td class="k">個人情報保護方針</td><td>厚生労働省「職業安定法第5条の5」に基づく個人情報保護指針を遵守。求職者本人の同意のもと、本サービスを通じた紹介目的のみに利用します</td></tr>
+              <tr><td class="k">アクセス権限管理</td><td>スプレッドシートは閲覧／編集権限を限定。ご共有いただいた担当者アカウントのみアクセス可能。<b>退職者発生時は速やかに権限解除</b>をお願いします</td></tr>
+              <tr><td class="k">データ保管期間</td><td>送客から1年間はスプレッドシート上で確認可能。1年経過後はアーカイブシートに移管し、契約終了時にはバックアップを含め完全削除します</td></tr>
+              <tr><td class="k">事故発生時</td><td>情報漏洩・不正利用が疑われる事態が発生した場合は、即時に代表 田中までご連絡ください</td></tr>
+            </table></div>
+          </div>
+        </section>
+      </section>
+
+      <!-- B 面談編 -->
+      <section class="ch" id="chB">
+        <div class="ch-head"><span class="ch-num">B</span><h2>初回面談</h2><span class="t">30〜40分</span></div>
+
+        <section class="sec" id="b0"><h3>対象とする求職者</h3>
+          <div class="stack">
+            <p>ここから先は、<b>着座した求職者との面談</b>の進め方です。中心は<b>ジュニア層</b>です。</p>
+            <div class="callout"><span class="lbl">ジュニア層の定義</span>20代で、社会人経験が浅く（目安3年以内程度）、特定の専門スキルやキャリアの軸がまだ確立していない求職者。</div>
+            <p>未経験者が現代で入社できる企業は、ある程度限られます。無期雇用派遣系（IT、施工管理、事務、販売）、飲食業界、建設業界、toC営業（業界問わず）、飲食・美容店舗関連への法人営業、製造業 ── このあたりが現実的な着地先になります。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="b0b"><h3>まずこの3つだけ</h3>
+          <div class="add"><p style="margin-bottom:12px">全部読む時間がない方へ。この3つを外さなければ、大きくは外しません。</p>
+            <ul class="dots">
+              <li><b>初回面談のゴールは「2回目の約束」です。</b>情報を聞き切ることではありません。</li>
+              <li><b>提案は、本人が初回で言った言葉に必ず絡めます。</b>かすっているだけでも構いません。</li>
+              <li><b>持ち帰らせません。</b>この層にとって「検討します」は、ほぼ拒絶です。</li>
+            </ul>
+          </div>
+        </section>
+
+        <div class="stack" style="margin:0 0 30px">
+          <p class="lead-p"><b>初回面談の目的</b>　信頼関係を構築し、表面的な希望条件の奥にある本音を引き出す。層を見極め、2回目の求人提案に必要な情報を過不足なく収集する。<b>初回で求人は出しません。</b></p>
+          <div class="tw"><table>
+            <tr><th>Step</th><th>内容</th><th>目安</th><th>区分</th></tr>
+            <tr><td class="c">1</td><td>オープニング</td><td class="c">5分</td><td>必須</td></tr>
+            <tr><td class="c">2</td><td>現状のヒアリング</td><td class="c">5分</td><td>必須</td></tr>
+            <tr><td class="c">3</td><td>深掘りヒアリング</td><td class="c">10分</td><td>必須</td></tr>
+            <tr><td class="c">4</td><td>理想・希望条件のヒアリングと期待値調整</td><td class="c">5分</td><td>必須</td></tr>
+            <tr><td class="c">5</td><td>層の見極め</td><td class="c">5分</td><td>削ってもOK</td></tr>
+            <tr><td class="c">6</td><td>職種適性の見極め</td><td class="c">5分</td><td>削ってもOK</td></tr>
+            <tr><td class="c">7</td><td>クロージング</td><td class="c">5分</td><td>必須</td></tr>
+          </table></div>
+          <p class="note">時間が足りないときは、Step5とStep6を削ります。必須の5つで25分です。</p>
+        </div>
+
+        <section class="sec" id="b1-1">
+          <div class="step-h"><h3 style="margin:0">Step1　オープニング</h3><span class="tm">5分</span><span class="req must">必須</span></div>
+          <div class="stack">
+            <p>自己紹介と、本日の面談の目的説明から入ります。</p>
+            <div class="talk">今日は〇〇さんのことを深く知るお時間にしたいと思っています。</div>
+            <div class="callout"><span class="lbl">ここが分かれ目</span><b>「知りたい」という気持ちが重要です。ここで機械的に面談をすると離脱します。</b></div>
+            <p>続けてアイスブレイク。<b>好きな物や好きなことを聞いておくと、後々のトークに活用できます。</b></p>
+            <p class="note">この冒頭で<a href="#b2">特別扱いの宣言</a>を入れると、推薦率が上がります。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="b1-2">
+          <div class="step-h"><h3 style="margin:0">Step2　現状のヒアリング</h3><span class="tm">5分</span><span class="req must">必須</span></div>
+          <ul class="dots">
+            <li>現在のお仕事の内容</li>
+            <li>勤続年数、現在の年収</li>
+            <li>転職を考え始めたきっかけ</li>
+            <li>学歴など人生の変遷と意思決定要因</li>
+          </ul>
+        </section>
+
+        <section class="sec" id="b1-3">
+          <div class="step-h"><h3 style="margin:0">Step3　深掘りヒアリング</h3><span class="tm">10分</span><span class="req must">必須</span></div>
+          <div class="stack">
+            <p>表面的な発言が出たら、そこで終わらせず「なぜ？」を重ねて本音を引き出します。</p>
+            <p><b>ジュニア層の「やりたい」は、実は「今の不満の裏返し」であることが多い。</b>その不満を単に解消する（土日休みにする等）だけではなく、<b>「どんな不満なら耐えられるか、それ以上に得たい価値は何か」</b>まで踏み込むのがプロのヒアリングです。</p>
+            <div class="tw"><table>
+              <tr><th>表面的な言葉</th><th>深層心理の可能性</th><th>深掘りの質問</th></tr>
+              <tr><td class="k">成長したい</td><td>実は「今の職場が暇で不安」なだけ。単調な作業に飽きている</td><td>成長した結果、どんな自分になりたいですか？　何のために成長がしたい？</td></tr>
+              <tr><td class="k">やりがいが欲しい</td><td>「自分の名前で仕事がしたい」という承認欲求</td><td>今までの人生でやりがいを感じたエピソード、楽しかった体験は何ですか？</td></tr>
+              <tr><td class="k">年収を上げたい</td><td>「同年代と比較して劣等感がある」という心理</td><td>年収が上がったら、何を変えたいですか？　何を叶えたいですか？</td></tr>
+            </table></div>
+            <p class="note">いずれも、出口（どうなりたいか）を聴くのが狙いです。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="b1-4">
+          <div class="step-h"><h3 style="margin:0">Step4　理想・希望条件のヒアリングと期待値調整</h3><span class="tm">5分</span><span class="req must">必須</span></div>
+          <div class="stack">
+            <ul class="dots">
+              <li><b>譲れない条件は何か</b>（年収、休日、勤務地、業務内容など）<br><span class="note">聞きすぎはNG。言葉にすることで再認識するため、譲れないことは1〜2つにとどめます。</span></li>
+              <li><b>将来的にどうなっていたいか</b>（5〜10年後の自分）<br><span class="note">私生活・仕事どちらでも問題ありません。</span></li>
+            </ul>
+            <h4>理想が高い条件が出たときの対応</h4>
+            <p>「現職より高収入」「身体的負担の少ないデスクワーク」「残業なし」といった、一見すると理想的な条件をエージェントなら提案してくれると期待されている方が一定数いらっしゃいます。</p>
+            <p>そうした条件のトレードオフをお伝えし、期待値を調整することは重要です。しかし、まだそれを実感として理解できていない段階で<b>「そんな求人は存在しない」「無理です」とストレートに否定してしまうと、信頼関係を損ねます。</b></p>
+            <div class="callout"><span class="lbl">原則</span>求職者の理想を否定せず、<b>最終的なゴールとして肯定的に受け止める</b>姿勢を徹底してください。</div>
+            <h4>手順は3つ</h4>
+            <div class="stack">
+              <div><p style="margin-bottom:6px"><b>1. 理想の肯定</b></p>
+                <div class="talk">その条件を目指したいお気持ち、よく分かります。ぜひ最終ゴールとして目指しましょう！</div></div>
+              <div><p style="margin-bottom:6px"><b>2. 構造の共有</b></p>
+                <p class="note">なぜ今すぐその条件が難しいのか（市場の競争率や求められるスキル）を、客観的な事実として伝える。</p></div>
+              <div><p style="margin-bottom:6px"><b>3. ステップアップの提案</b></p>
+                <div class="talk">まずは〇〇のスキル・実績が身につくA社で経験を積み、2〜3年後にその実績を武器にして、本命の理想的な環境へステップアップしましょう。</div></div>
+            </div>
+            <p><b>否定から入らないことが重要です。</b>信頼関係を損ねずに期待値を調整するとともに、褒めつつも、客観的な部分では難しい条件であることを理解させます。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="b1-5">
+          <div class="step-h"><h3 style="margin:0">Step5　層の見極め</h3><span class="tm">5分</span><span class="req">削ってもOK</span></div>
+          <div class="stack">
+            <p>年齢・社会人経験年数・専門スキルやキャリアの軸の有無を確認し、ジュニア層かどうかを判定します。</p>
+            <h4>ジュニア層からやや外れる場合</h4>
+            <p>ヒアリング→提案は、<b>ビジネスの理解／面接対策する際に聞いておいた方が良い情報／ビジョン</b>の3点が軸になります。求職者のビジネス構造を把握するために、以下を聞きます。</p>
+            <ul class="dots">
+              <li>事業規模は？　キャッシュフローは？</li>
+              <li>顧客はどういう属性で、どんな課題を持っているのか？</li>
+              <li>どんなKPI、KGIのもとで働いているのか？</li>
+              <li>あなたの評価軸は何か？</li>
+            </ul>
+            <p>そのうえで<b>成果部分</b>を聞いていきます。何が成果だったのか／成果創出にあたっての取り組み内容（再現性はありそうか）／どんな思考を持っているのか。</p>
+            <p>この層の求職者は将来ビジョンをしっかり持っている方が多く、<b>それについても理解かつ道筋を提示してあげることが重要</b>です。裏を返せば、ジュニア層はまだビジネス構造やビジョンが確立していない層、という位置づけになります。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="b1-6">
+          <div class="step-h"><h3 style="margin:0">Step6　職種適性の見極め</h3><span class="tm">5分</span><span class="req">削ってもOK</span></div>
+          <div class="stack">
+            <h4>営業・販売系の場合</h4>
+            <p>面談内で<b>アピアランス</b>（表情の明るさなど）、<b>営業・販売経験の有無</b>（1年以上か）、<b>コミュ力</b>を見極めます。加えて<b>マインド</b>（マネーモチベ＝インセンティブ等で稼ぐことへの意欲の高さ）を確認します。</p>
+            <div class="talk">頑張った分、収入に還元されやすい働き方に興味はありますか？</div>
+            <h4>施工管理・エンジニア系の場合</h4>
+            <p class="note">コツコツ取り組むタイプか／ものづくりへの関心があるか／チームワーク志向か</p>
+            <h4>飲食・製造業・事務職などの場合</h4>
+            <p class="note">シフト制や体力面での希望／その業界への関心のきっかけ／他者に貢献したい思い</p>
+          </div>
+        </section>
+
+        <section class="sec" id="b1-7">
+          <div class="step-h"><h3 style="margin:0">Step7　クロージング</h3><span class="tm">5分</span><span class="req must">必須</span></div>
+          <div class="stack">
+            <p class="lead-p"><b>初回面談のゴールは、2回目の約束を取ることです。</b></p>
+            <div class="talk">本日お伺いした内容をもとに、〇〇さんに合いそうな求人をいくつかご用意します。次回は具体的な求人をご紹介しながら、一緒に選考の進め方を考えていきましょう。</div>
+            <ul class="dots">
+              <li><b>次回面談の日程調整</b></li>
+              <li><b>次の面談が楽しみになるフックを作る</b>　例：「求人以外にも、〇〇さんのこういう部分のお話も聞かせてほしいです」</li>
+              <li><b>フックが難しい場合は、簡単な宿題を用意する</b>　例：「〜〜を考えておいてください」「簡単に自身の棚卸しをしましょう」</li>
+            </ul>
+            <div class="callout"><span class="lbl">宿題の注意</span>難しいものだと離脱します。<b>15分程度で終わるもの</b>にしてください。</div>
+          </div>
+        </section>
+
+        <section class="sec" id="b1-8"><h3>初回終了時のチェックリスト</h3>
+          <div class="add"><p style="margin-bottom:10px">2回目で求人を提案するために、初回終了時点で以下が埋まっている必要があります。埋まっていない項目があれば、<b>2回目の冒頭で補ってから提案に入ってください。</b></p>
+            <ul class="ck" data-ck2>
+              <li><input type="checkbox" id="c1"><label for="c1">現職／離職、勤続年数、現年収、通勤可能範囲がわかった</label></li>
+              <li><input type="checkbox" id="c2"><label for="c2">転職を考え始めたきっかけが、本人の言葉で聞けた</label></li>
+              <li><input type="checkbox" id="c3"><label for="c3">「成長したい」等の抽象的な言葉の<b>出口</b>まで聞けた</label></li>
+              <li><input type="checkbox" id="c4"><label for="c4"><b>譲れない条件が1〜2つに絞れている</b></label></li>
+              <li><input type="checkbox" id="c5"><label for="c5">本人の口から「まずは〇〇で経験を積む」という趣旨の言葉が出た</label></li>
+              <li><input type="checkbox" id="c6"><label for="c6">職種の方向（営業・販売／施工・エンジニア／飲食・製造／事務）の当たりがついた</label></li>
+              <li><input type="checkbox" id="c7"><label for="c7"><b>2回目の面談日時が確定している</b></label></li>
+              <li><input type="checkbox" id="c8"><label for="c8">2回目を楽しみにするフック、または宿題を渡した</label></li>
+            </ul>
+            <div class="ck-foot"><span id="ckCount2">0 / 8</span><button class="btn" id="ckReset2">次の面談用にリセット</button></div>
+          </div>
+        </section>
+
+        <section class="sec" id="b1-9"><h3>求職者が現れない／2回目に来ないとき</h3>
+          <div class="stack">
+            <div class="callout"><span class="lbl">請求に関わるので必ず守ってください</span>求職者が現れない場合は<b>予定時刻から10分間待機</b>のうえ、電話等での連絡試行をお願いします。<b>この手順を経た場合のみ「当日未入室」として報告できます</b>（<a href="#a7">A-7</a>）。</div>
+            <div class="add"><p style="margin-bottom:12px">2回目の面談は、初回で30分話した相手でも飛びます。</p>
+              <div class="tw"><table>
+                <tr><th>状況</th><th>対応</th></tr>
+                <tr><td class="k">当日リスケの連絡</td><td><b>その場で次の日時を決める。</b>「また改めて」で終えない</td></tr>
+                <tr><td class="k">連絡が取れない</td><td>当日中と翌日に1回ずつ連絡。3日連絡がつかない場合は窓口担当へご共有ください</td></tr>
+              </table></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="sec" id="b2"><h3>特別扱いの宣言で推薦率を上げる</h3>
+          <div class="stack">
+            <p class="lead-p">初回面談で<b>「自分は大事に扱われている」という確信</b>を作れるかが推薦率を左右します。最短ルートが<b>特別感の宣言</b>です。</p>
+            <p><b>STEP1　流入経路を把握する。</b>当社経由の求職者はSNSマーケティング経由で集客しています。</p>
+            <p><b>STEP2　通常との「差分」を明示し、特別感を宣言する。</b></p>
+            <div class="tw"><table>
+              <tr><th>型</th><th>文面サンプル</th><th>ポイント</th></tr>
+              <tr><td class="k">A 担当者レベル<br><span class="note">誰が担当するかを特別化</span></td><td>普段は若手のコンサルタントが担当ですが、〇〇さん経由の方は私（マネージャー）が直接見ています</td><td>「普段は◯◯／あなたは△△」の<b>対比構造</b>を必ず入れる</td></tr>
+              <tr><td class="k">B サポート量<br><span class="note">数字で差を可視化</span></td><td>通常は面接対策1〜2回ですが、〇〇さん経由の方は回数無制限。多い方だと10回以上練習しました</td><td>「無制限」「何度でも」など<b>定量で差を示す</b>と説得力が増す</td></tr>
+              <tr><td class="k">C スピード・応対<br><span class="note">即応性で差別化</span></td><td>普段はお返事翌営業日ですが、〇〇さん経由の方は当日中に必ず返すルールにしています</td><td>返信スピード・対応時間帯を<b>「ルール」として宣言する</b></td></tr>
+            </table></div>
+          </div>
+        </section>
+      </section>
+
+      <!-- C 求人選定 -->
+      <section class="ch" id="chC">
+        <div class="ch-head"><span class="ch-num">C</span><h2>求人選定</h2><span class="t">面談と面談のあいだ</span></div>
+
+        <section class="sec" id="c1"><h3>初回から2回目までの日数</h3>
+          <div class="add"><p><b>この層は、間が空くと消えます。初回から2回目までは中2日以内を目安にしてください。</b>求人選定が間に合わない場合でも、日程だけは初回の場で確定させ、当日までに準備する形にしてください。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="c2"><h3>営業職・販売職の求人判断</h3>
+          <div class="stack">
+            <p>客観的な部分で見るべきポイントは<b>アピアランス・営業（販売）経験・コミュ力</b>の3つです。</p>
+            <div class="tw matrix"><table>
+              <tr><th>アピアランス</th><th>営業・販売経験<br>（1年以上）</th><th>コミュ力</th><th>提案（具体例）</th></tr>
+              <tr><td class="c y">〇</td><td class="c y">〇</td><td class="c y">〇</td><td>法人・個人営業・カウンターセールス（学歴あればほぼ全業界出してOK、なしの場合相談）</td></tr>
+              <tr><td class="c y">〇</td><td class="c y">〇</td><td class="c n">×</td><td>法人・個人営業・カウンターセールス（ちょっと苦戦する可能性高め）</td></tr>
+              <tr><td class="c y">〇</td><td class="c n">×</td><td class="c y">〇</td><td>個人営業（ウォーターサーバー、太陽光、土地活用、CA、派遣コーディ、車、買取など）／法人営業一部（通信系）</td></tr>
+              <tr><td class="c y">〇</td><td class="c n">×</td><td class="c n">×</td><td>販売優先、チャレンジで個人営業（ウォーターサーバー、太陽光、土地活用、CA、派遣コーディ、車、買取など）</td></tr>
+              <tr><td class="c n">×</td><td class="c y">〇</td><td class="c y">〇</td><td>法人営業・個人営業・カウンターセールス（学歴あればほぼ全業界出してOK、なしの場合相談）</td></tr>
+              <tr><td class="c n">×</td><td class="c y">〇</td><td class="c n">×</td><td>販売職（携帯）、個人営業（ウォーターサーバー、太陽光などの営業代行系、買取）</td></tr>
+              <tr><td class="c n">×</td><td class="c n">×</td><td class="c y">〇</td><td>販売職（携帯）</td></tr>
+              <tr><td class="c n">×</td><td class="c n">×</td><td class="c n">×</td><td>販売職（携帯）</td></tr>
+            </table></div>
+            <button class="btn no-print" id="printMatrix">この表をA4で印刷</button>
+            <h4>この表の使い方</h4>
+            <ul class="dots">
+              <li>上記以外に<b>マインド（マネーモチベ）</b>が重要です。マインドが高く、面接でしっかり話せる人材で<b>経験2社以内</b>の場合は、上記条件にかかわらず、<b>面接対策をきっちりやれば個人営業であれば受かります。</b></li>
+              <li>営業職を優先したいという求職者で、<b>〇が2つ以上つかない場合、その他の条件のヒアリングは極力避けましょう。</b>例えば個人営業しか受からない方の場合に、土日休みの希望やエリアの希望を聞いても叶わない可能性が高く、基本的に実現不可だと考えてください。</li>
+              <li><b>すべてに〇がつかない場合は、潔く営業を選択肢から消しましょう。</b>時間を取られるうえに内定確率が低く、結果的に求職者の満足度も下がります。</li>
+              <li>販売・営業職は<b>面接対策でかなり合否が分かれます。</b></li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="sec" id="c3"><h3>エンジニア・施工管理の応諾</h3>
+          <div class="stack">
+            <p>「施工管理で応諾が取れない」「応諾をとってもすぐに離脱される」「施工単願で獲得したが施工で進行できなくなった」などのケースが多いため、型として使用していた方法です。</p>
+            <h4>① ニーズを引き出す際に、なるべくスキル寄りの条件を回収する</h4>
+            <p class="note">生活を豊かにしたい → 年収800万以上あれば自身の理想とする生活が実現できそう → 現状の〇〇さんの市場価値やチャレンジできる選択として良さそうなのは、営業・もしくは手に職をつけられる専門職（施工・エンジニア）</p>
+            <h4>② そのうえで強みや嗜好を引き出す</h4>
+            <p>ジュニア層でゴリゴリ営業して年収を上げたい層は少ないため、基本的にはスキルを上げたいという択になります。</p>
+            <ul class="dots"><li>コツコツ取り組むのが好き</li><li>ものつくりが得意</li><li>チームワークに自信あり</li><li>人の話を聞くのが得意</li><li>クリエイティブに取り組みたい</li></ul>
+            <h4>③ ニーズと強み・嗜好すべてを加味して提案する</h4>
+            <p>建築業界の将来性や、<b>施工管理技士という資格を取得した後のキャリアパス</b>（独立や年収推移など）を伝えながら提案します。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="c4"><h3>飲食業界・製造業への提案</h3>
+          <div class="stack">
+            <p>未経験者を積極的に受け入れやすい業界です。人手不足の企業が多く、ポテンシャル重視で採用されるケースが多くあります。</p>
+            <h4>飲食業界</h4>
+            <p>シフト制や体力面が本人の希望する働き方と合うかを確認します。離職率が高めの業界でもあるため、面接官は「本当に長く続けてくれるか」を見ています。<b>将来的に店舗運営や独立に関わりたいという展望</b>があると好印象になりやすいです。</p>
+            <h4>製造業</h4>
+            <p>コツコツと同じ作業に取り組むのが得意な人、ものづくりに関心がある人に向いています。「多くの人に製品を届けたい」「品質にこだわって働きたい」など、<b>仕事の社会的意義に触れた動機づけ</b>が効果的です。資格取得支援やキャリアパスが用意されている企業も多いため、成長意欲を伝えられるとよいでしょう。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="c5"><h3>事務職（無期雇用派遣など）への提案</h3>
+          <div class="stack">
+            <p>直接雇用の事務職よりも間口が広いです。志望動機は次の3点を軸にします。</p>
+            <ul class="dots"><li>事務職を志望した理由</li><li>その企業・業界を選んだ理由</li><li>前職の経験を活かした貢献イメージ</li></ul>
+            <p class="note">アルバイト等での事務作業経験があれば、積極的に拾って伝えます。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="c6"><h3>直接雇用の事務職を狙えるケース</h3>
+          <div class="stack">
+            <p>ジュニア層（未経験者）は、直接雇用の事務職に着地するのが難しいケースが多いため、<b>面談では基本的に事務職への着地を主目的にせず、他の選択肢を軸に据えるのが無難</b>です。ただし、以下のいずれかに当てはまる場合は見込みが上がります。</p>
+            <ul class="dots">
+              <li><b>CS（カスタマーサクセス）経験1年以上</b>で学歴が日東駒専以上</li>
+              <li><b>転職活動上有利な資格保有かつ20代後半まで</b>（宅建、簿記2級以上、MOS Expert/Master、行政書士、司法書士、TOEIC800以上など。ここ以外にも有用なものはあるので、悩んだ場合は都度ご相談ください）</li>
+              <li><b>事務まで自身で完結させてきた営業経験者</b>で、アピアランスが良い（もしくはコミュニケーション能力が非常に高い）</li>
+              <li><b>自社事務経験者かつ職歴2社以内で経験年数3年以上</b>あり（データ入力等の単純作業だけの経験はNG）</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="sec" id="c7"><h3>推薦文の型</h3>
+          <div class="add"><p style="margin-bottom:12px">書類通過率に直結しますが、書き方が属人化しやすい部分です。<b>3〜5行で、企業が知りたい順に書きます。</b></p>
+            <div class="tw"><table>
+              <tr><td class="k">1行目</td><td>どんな人か（一言で）</td></tr>
+              <tr><td class="k">2行目</td><td>これまで何をしてきたか（事実）</td></tr>
+              <tr><td class="k">3行目</td><td>なぜ御社なのか（面談で本人が言った言葉を引用）</td></tr>
+              <tr><td class="k">4行目</td><td>懸念点と、それをどう補えるか</td></tr>
+              <tr><td class="k">5行目</td><td>面談担当としての推薦理由</td></tr>
+            </table></div>
+            <h4>営業職向け</h4>
+            <div class="talk">前職◯◯にて法人営業を2年、新規開拓中心に従事。◯◯という工夫で目標比◯%を達成しています。面談では「自分の名前で仕事がしたい」という言葉があり、裁量の大きい御社の環境を強く希望しています。業界知識はこれからですが、吸収の速さと素直さは面談を通じて確認できました。</div>
+            <h4>施工管理・エンジニア向け</h4>
+            <div class="talk">未経験ですが、入社2年以内の施工管理技士取得を目標として明言しています。前職の◯◯では、コツコツ積み上げる業務で◯年継続しており、継続力に懸念はありません。体力面・勤務地の条件についても面談で確認済みで、認識の相違はありません。</div>
+            <h4>事務職向け</h4>
+            <div class="talk">前職◯◯にて、営業事務まで自身で完結させてきた経験があります（◯年）。◯◯の資格を保有しており、正確性を求められる業務への適性があります。「立ち仕事がつらいから」ではなく、◯◯という仕事の進め方に魅力を感じて事務職を志望しています。</div>
+          </div>
+        </section>
+      </section>
+
+      <!-- D 2回目面談 -->
+      <section class="ch" id="chD">
+        <div class="ch-head"><span class="ch-num">D</span><h2>2回目面談（求人提案）</h2><span class="t">60分</span></div>
+        <p class="lead-p" style="margin-bottom:28px"><b>目的</b>　初回で見極めた適性・希望に基づき求人を提案し、懸念を解消したうえで応募意思を固め、面接対策の前段まで一気通貫で行う。</p>
+
+        <section class="sec" id="d1">
+          <div class="step-h"><h3 style="margin:0">Step1　オープニング・前回の振り返り</h3><span class="tm">5分</span></div>
+          <div class="stack">
+            <div class="talk">前回お伺いした内容を踏まえて、〇〇さんに合いそうな求人をいくつかご用意しました。</div>
+            <div class="callout"><span class="lbl">求人数の目安</span>基本、<b>各職種で2〜3件程度。</b>求職者の要望にもよりますが、<b>トータルで10は超えないほうが良い</b>です。<b>5件で多いと感じる人もいる</b>ため、初回で要確認。</div>
+            <ul class="dots">
+              <li>前回ヒアリング内容の要点を簡潔に復唱し、認識のズレがないか確認する</li>
+              <li>もし宿題やお話の約束をしていたら、その内容を消化する</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="sec" id="d2">
+          <div class="step-h"><h3 style="margin:0">Step2　求人提案</h3><span class="tm">20分</span></div>
+          <div class="stack">
+            <p>求人を提示し、<b>「なぜこの求人が〇〇さんに合うのか」</b>を職種別の判断軸に沿って説明します。</p>
+            <div class="callout"><span class="lbl">最重要</span>初回面談で回収した長所や、得意なこと、好きなことに<b>必ず絡めて</b>伝えます。<b>自分が言ったことにかなう内容であることが非常に重要。かすっているだけでも良いので必須。</b>これにより、妥協ではなく<b>自分で選んだ感</b>も得やすくなります。</div>
+            <ul class="dots">
+              <li><b>営業・販売</b>：アピアランス・経験・コミュ力のどれが強みかに応じて、法人営業／個人営業／販売職などの求人カテゴリを提示（<a href="#c2">C-2の表</a>）</li>
+              <li><b>施工管理・エンジニア</b>：資格取得後のキャリアパスや将来性を絡めて提案（<a href="#c3">C-3</a>）</li>
+              <li><b>飲食・製造・事務職</b>：業界の受け入れやすさ、成長機会、社会的意義に触れる（<a href="#c4">C-4</a>／<a href="#c5">C-5</a>）</li>
+            </ul>
+            <p>あわせて、これが<b>「現実的な着地点」</b>であり、<a href="#b1-4">初回面談Step4</a>で共有したステップアップ・ロードマップの一歩目であることを再確認します。<b>階段を登っていく感覚を実感させてください。</b></p>
+          </div>
+        </section>
+
+        <section class="sec" id="d3">
+          <div class="step-h"><h3 style="margin:0">Step3　反応確認・懸念のヒアリング</h3><span class="tm">10分</span></div>
+          <div class="stack">
+            <div class="talk">この求人について、率直にどう感じられますか？</div>
+            <div class="callout"><span class="lbl">ここで払拭する</span><b>懸念はここで必ず払拭します。しておかないと入社前辞退の可能性が高まります。</b></div>
+            <ul class="dots">
+              <li>気になる点や不安な点はありますか？</li>
+              <li>現在他に選考中の企業や、他のエージェントからのご紹介はありますか？</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="sec" id="d4">
+          <div class="step-h"><h3 style="margin:0">Step4　競合対応</h3><span class="tm">5分</span></div>
+          <div class="stack">
+            <p>すでに他社エージェントが入っている、もしくは自身で受けている企業がある場合の切り返しです。まず<b>切り返すべき対象を見極めます。</b>提案したい求人はどこなのか、求職者はどの部分に好感を持っているのか、を整理してから話します。</p>
+            <h4>① 業界軸</h4>
+            <p class="note">例：建設業界をすでに紹介されて受けているが、乗り気とはいかない状況（施工管理）</p>
+            <div class="talk">建設業界の実情とかはご存じですか？　働き方は改善されつつありますが、まだまだ激務です。今日の〇〇さんが実現したい働き方や将来には、ミスマッチだと思います。</div>
+            <h4>② 職種軸</h4>
+            <p class="note">例：建設業界をすでに紹介されていて、ある程度乗り気</p>
+            <div class="talk">建設業界を選択されたのは非常に良いと思います！　ただ施工管理という働き方はお勧めしません。なぜなら〜だからです。</div>
+            <p class="note">業界自体を魅力に思っている方に使えます。他社ですでに業界の魅力付けをされている場合、すべてを覆すのは難しいので、職種の提案で差別化します（この場合はCAD事務を提案）。</p>
+            <h4>③ 企業軸</h4>
+            <p class="note">例：建設業界に魅力を持っており、特定の企業を紹介されている場合</p>
+            <div class="talk">同じ施工管理でも、企業によって定着率や条件はかなり差があります。せっかくの転職の機会なので、いくつか比較したうえで選んだほうが、〇〇さんにとって納得感のある選択になると思いますよ！</div>
+            <div class="callout"><span class="lbl">ポイント</span>特定の企業や他社エージェントを<b>名指しで批判しない。</b>あくまで「比較検討の材料を増やす」という提案に留めます。</div>
+            <h4>④ エージェント軸</h4>
+            <p class="note">例：すでに複数のエージェントがついている場合</p>
+            <div class="talk">エージェントによって保有している求人や強みはさまざまなので、比較する軸を持っておくと良いですよ。私たちからは〇〇さんに合いそうな求人を中心にご紹介しますね。</div>
+          </div>
+        </section>
+
+        <section class="sec" id="d5">
+          <div class="step-h"><h3 style="margin:0">Step5　面接対策の頭出し</h3><span class="tm">10分</span></div>
+          <div class="stack">
+            <p><b>あくまで頭出し程度にとどめ、重い内容は別日に行います。</b>詳細は<a href="#chE">E. 面接対策</a>を参照してください。この場で触れるのは以下です。</p>
+            <ul class="dots"><li>第一印象（オンライン含む）</li><li>結論ファーストで話す</li><li>志望動機は企業軸・業界軸で語る</li><li>退職理由は前向きに変換する</li><li>よくある質問の準備、逆質問の用意</li></ul>
+          </div>
+        </section>
+
+        <section class="sec" id="d6">
+          <div class="step-h"><h3 style="margin:0">Step6　クロージング</h3><span class="tm">5分</span></div>
+          <div class="stack">
+            <p><b>応募する求人の最終確定。</b></p>
+            <div class="callout"><span class="lbl">この層の特性</span><b>なるべく多めに取り、持ち帰らせないこと。検討に入った段階で、この層は基本拒絶を意味しているため、途端に連絡が途絶えることも多いです。</b></div>
+            <ul class="dots"><li><b>次のアクションの合意</b>（応募書類の準備、面接対策の日程調整、面接日程の調整）</li></ul>
+            <div class="talk">内定が出たら、入社まで伴走しますのでご安心ください。</div>
+          </div>
+        </section>
+      </section>
+
+      <!-- E 面接対策 -->
+      <section class="ch" id="chE">
+        <div class="ch-head"><span class="ch-num">E</span><h2>面接対策</h2></div>
+        <p class="lead-p" style="margin-bottom:28px">面接は「正解を言う場」ではなく、<b>「この人と一緒に働きたいか」を判断される場</b>です。</p>
+
+        <section class="sec" id="e1"><h3>職種を問わず共通するポイント</h3>
+          <ul class="dots">
+            <li><b>第一印象で大部分が決まる</b>　オンライン含め、入室から着席までの立ち居振る舞い、声のトーン、目を見て話す姿勢。見られているのは<b>清潔感・明るさ・素直さ・誠実さ</b>で、内容より先に「感じの良さ」が評価されます。</li>
+            <li><b>結論ファーストで話す</b>　①結論 → ②理由 → ③具体例 → ④今後どう活かすか、の順で簡潔に。話が長くなるほど評価は下がりやすいです。</li>
+            <li><b>志望動機は「企業軸」「業界軸」で語る</b>　「成長したいから」だけでなく、「〇〇という制度に魅力を感じた」「〇〇の事業内容に共感した」など、その企業ならではの理由を伝えます。</li>
+            <li><b>退職理由は前向きに変換する</b>　「上司が合わなかった」ではなく「より〇〇に挑戦できる環境を求めた」など、不満ではなく未来を語ります。</li>
+            <li><b>よく聞かれる質問は事前に準備する</b>　強み／弱み（改善策まで）／退職理由／志望動機／将来像／逆質問</li>
+            <li><b>最後の逆質問で差がつく</b>　「御社で活躍されている方の共通点は？」「入社までに準備すべきことは？」など。</li>
+          </ul>
+          <div class="callout" style="margin-top:16px"><span class="lbl">結論</span>面接官が見ているのは、能力そのものよりも<b>伸びしろと人柄</b>です。</div>
+        </section>
+
+        <section class="sec" id="e2"><h3>営業系（特に力を入れたい）</h3>
+          <div class="stack">
+            <p><b>成果の見せ方が特に合否を分けやすい</b>です。<b>「結果 → そのために取った工夫 → 再現性」</b>の順で語れるように準備します。</p>
+            <p>志望動機は「なぜこの業界か」「なぜ当社か」を業界軸・企業軸で明確にし、<b>選考中の他社はなるべく同業界で揃える</b>と一貫性が伝わりやすくなります。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="e3"><h3>施工管理・エンジニアなど専門職</h3>
+          <div class="stack">
+            <p>志望動機には<b>「体力」「統率力」「将来のビジョン」「入社意欲」の4要素</b>を盛り込むと効果的です。給与や休日日数など条件面だけを理由にすると、仕事内容への関心が薄いと見なされやすいので注意。未経験の場合は、<b>「〇年以内に資格取得を目指す」</b>など具体的な目標を示せると、将来像に現実味が出て好印象になりやすいです。</p>
+            <p class="note"><b>見られているポイント：</b>人柄（第一印象・明るさ・コミュニケーション力）、継続力（何かを続けてきた経験があるか）、主体性（自ら学ぶ姿勢があるか）、業界・職種への関心（ニュースを見ているか、知識欲）、成長意欲、計画性、素直さ。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="e4"><h3>事務職</h3>
+          <div class="stack">
+            <p>志望動機は次の3要素で構成すると効果的です。</p>
+            <ul class="dots"><li>事務職を志望した理由</li><li>その企業を選んだ理由</li><li>前職の経験を活かした貢献イメージ</li></ul>
+            <p><b>「立ち仕事がつらいからデスクワークがいい」など条件面だけの理由に聞こえないよう、仕事への関心につなげて話します。</b>アルバイトなど前職以外の経験からも、事務職に向いている要素（正確さ、継続力など）を拾ってアピールします。</p>
+          </div>
+        </section>
+
+        <section class="sec" id="e5"><h3>飲食・製造業など未経験可の業界</h3>
+          <p>その業界・企業に関心を持ったきっかけや、仕事を通じて貢献したい思いを、エピソードとともに語れるとよいです。<b>離職率が高い業界ほど、面接官は「本当に長く続けてくれるか」を志望動機から見ようとしている</b>点を意識します。</p>
+        </section>
+
+        <section class="sec" id="e6"><h3>応募から面接までの進行管理</h3>
+          <div class="add"><div class="tw"><table>
+              <tr><th>タイミング</th><th>やること</th></tr>
+              <tr><td class="k">2回目面談の当日〜翌営業日</td><td>応募を決めた求人の<b>推薦を出す</b></td></tr>
+              <tr><td class="k">推薦から2〜3営業日</td><td>書類の結果を確認し、<b>結果が出たその日に本人へ連絡する</b></td></tr>
+              <tr><td class="k">書類通過</td><td>面接日程を調整。<b>候補日は3つ以上</b>もらう</td></tr>
+              <tr><td class="k">面接前日</td><td>対策の最終確認</td></tr>
+              <tr><td class="k">面接直後</td><td><b>30分以内</b>に本人へ連絡し、手応えを聞く</td></tr>
+              <tr><td class="k">結果連絡</td><td>合否にかかわらず、当日中に伝える</td></tr>
+            </table></div>
+            <p style="margin-top:14px"><b>複数社を並行させるときは、第一志望を最後に受けてもらいます。</b>他社の面接で場慣れしてから本命に臨むほうが通ります。</p>
+            <h4>書類で落ちたときの伝え方</h4>
+            <div class="talk">今回は書類で難しいという結果でした。理由は◯◯とのことです。ただ、同じ条件で◯◯社のほうが可能性が高いと思いますので、そちらを次に出しませんか。</div>
+            <h4>「やっぱり辞退したい」と言われたら</h4>
+            <div class="talk">承知しました。無理にお受けいただく必要はありません。ただ、何が引っかかったかだけ教えていただけますか。次にご紹介する求人の精度が上がりますので。</div>
+          </div>
+        </section>
+      </section>
+
+      <!-- F 内定・入社 -->
+      <section class="ch" id="chF">
+        <div class="ch-head"><span class="ch-num">F</span><h2>内定・入社フォロー</h2></div>
+        <div class="stack">
+          <h3 style="font-size:18.5px">内定フォロー</h3>
+          <p>内定承諾後、入社までの間に候補者との接点を維持し、<b>入社前離脱のリスクを減らす</b>ことがこのフェーズの目的です。</p>
+          <div class="callout"><span class="lbl">原則</span><b>承諾してから入社まで、一度も連絡がない期間を作らない。</b>テンプレートはあくまで「会話のきっかけ」であり、すでに個別にやり取りが続いている場合は無理に送る必要はありません。</div>
+          <div class="tw"><table>
+            <tr><th>タイミング</th><th>内容</th><th>ポイント</th></tr>
+            <tr><td class="k">承諾後1週目</td><td>準備確認メッセージ</td><td>書類準備の進捗を確認。最初の接点</td></tr>
+            <tr><td class="k">承諾後2週目</td><td>困りごと確認メッセージ</td><td>退職手続き・引き止めへの寄り添い</td></tr>
+            <tr><td class="k">承諾後3週目</td><td>ニュース／記事共有</td><td>内定先の情報で入社モチベーションUP</td></tr>
+            <tr><td class="k">入社直前週</td><td>入社前確認メッセージ</td><td>持ち物・出社時間の最終確認</td></tr>
+          </table></div>
+          <p>ジュニア層を中心とした求職者の場合、<b>承諾〜入社の期間はおおよそ1か月</b>であることが多いです。期間が長いほど「連絡が途切れる期間」が生まれやすく、その間に不安が膨らんだり、他社に気持ちが傾くリスクが高まります。逆に期間が短い人は、書類準備や退職手続きのやり取りで自然と接点があるため、テンプレによる「きっかけ作り」の必要性が低くなります。この考え方をもとに、送信回数は自動的に調整されます。</p>
+          <div class="tw"><table>
+            <tr><th>承諾〜入社の期間</th><th>送信回数</th></tr>
+            <tr><td class="k">28日以上</td><td class="c">4回</td></tr>
+            <tr><td class="k">21〜27日</td><td class="c">3回</td></tr>
+            <tr><td class="k">14〜20日</td><td class="c">2回</td></tr>
+            <tr><td class="k">5〜13日</td><td class="c">1回</td></tr>
+          </table></div>
+          <p><b>候補者の反応に懸念・離脱リスクが見えたら、即日の対策MTGを設定します。</b></p>
+
+          <h3 style="font-size:18.5px;margin-top:22px">入社フォロー</h3>
+          <p>入社後の定着を支えるフォローです。<b>退職リスクの早期発見と対応</b>が目的。</p>
+          <div class="tw"><table>
+            <tr><th>タイミング</th><th>内容</th><th>ポイント</th></tr>
+            <tr><td class="k">入社日当日</td><td>入社日メッセージ</td><td>「行ってらっしゃい！」で安心感を</td></tr>
+            <tr><td class="k">入社1週間後</td><td>1週間フォロー</td><td>小さなモヤモヤを早期キャッチ</td></tr>
+            <tr><td class="k">入社1ヶ月後</td><td>1ヶ月フォロー</td><td>定着確認。退職リスクの判定</td></tr>
+          </table></div>
+          <p>いずれのタイミングでも、候補者の反応から<b>「懸念あり」「退職リスク」のシグナル</b>を見逃さず、早期にキャッチすることが重要です。入社後は特に「これ、イメージと違うかも？」「人間関係どうかな？」といった小さなモヤモヤが出やすく、<b>それを拾える一言が定着を左右します。気になったら迷わず拾ってください。</b></p>
+        </div>
+      </section>
+
+      <!-- 付録 -->
+      <section class="ch" id="apS">
+        <div class="ch-head"><span class="ch-num">付録</span><h2>面談の実例（フルスクリプト）</h2></div>
+        <div class="stack" style="margin-bottom:26px">
+          <p class="lead-p">初回面談を、最初から最後まで通した例です。<b>この通りに話す必要はありません。</b>「どの順番で、どこまで踏み込むか」の目安としてお使いください。</p>
+          <div class="tw"><table>
+            <tr><th>今回の求職者</th><th></th></tr>
+            <tr><td class="k">属性</td><td>26歳・男性・高卒／飲食店ホール3年（在職中）</td></tr>
+            <tr><td class="k">事前情報</td><td>希望職種「営業」／年収280万／東京都在住／NG条件なし</td></tr>
+            <tr><td class="k">見立て</td><td>アピアランス〇・営業販売経験×・コミュ力〇 → <a href="#c2">個人営業</a>が現実的</td></tr>
+          </table></div>
+        </div>
+
+        <div class="dmark"><span class="lbl">STEP 1　オープニング（5分）</span><span class="ln"></span></div>
+        <div class="dlg">
+          <div class="turn ca"><span class="who">CA</span><div class="say">本日はお時間ありがとうございます。株式会社◯◯の△△と申します。20代の方の転職を中心に、これまで300名ほどご支援してきました。今日は〇〇さんのことを深く知るお時間にしたいと思っています。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">それと、実は普段は若手のコンサルタントが担当することが多いのですが、この経路でお越しいただいた方は私が直接見るルールにしています。面接対策も回数無制限なので、遠慮なく使い倒してください。</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">ありがとうございます、よろしくお願いします。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">堅い話の前に一つだけ。休みの日って何をされていることが多いですか？</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">だいたい家で筋トレしてます。あとサウナですね。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">いいですね、続けられているんですか？</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">3年くらいは続いてます。</div></div>
+        </div>
+        <p class="dnote"><b>この「3年続いている」は後で効きます。</b>継続力の根拠として推薦文にも面接対策にも使えるので、必ず拾っておきます。</p>
+
+        <div class="dmark"><span class="lbl">STEP 2　現状のヒアリング（5分）</span><span class="ln"></span></div>
+        <div class="dlg">
+          <div class="turn ca"><span class="who">CA</span><div class="say">ではまず、事実の部分だけ先に埋めさせてください。今のお仕事は続けながらお探しですか？</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">はい、まだ働いてます。飲食店のホールで3年目です。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">店舗の規模感と、いま任されていることを教えてください。</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">40席くらいの居酒屋で、社員は3人です。シフト作成とアルバイトの教育はやってます。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">ありがとうございます。現在の年収と、転職を考え始めたきっかけも伺えますか。</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">280万くらいです。きっかけは……このままだと成長できないなと思って。</div></div>
+        </div>
+        <p class="dnote">ここで「成長」というキーワードが出ました。<b>掘るのは次のStepです。</b>この段階ではまだ事実を埋め切ります。</p>
+
+        <div class="dmark"><span class="lbl">STEP 3　深掘りヒアリング（10分）</span><span class="ln"></span></div>
+        <div class="dlg">
+          <div class="turn ca"><span class="who">CA</span><div class="say">「成長できない」というお話がありましたが、成長した結果、どんな自分になっていたいですか？</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">うーん……もっと稼げるようになりたいのと、手に職というか、どこでも通用するようになりたいです。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">「どこでも通用する」というのは、具体的にどういう状態でしょう。</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">今の店がなくなったら、たぶん自分は何も残らないなと思っていて。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">なるほど。逆に、いまのお仕事で「これは面白い」と感じる瞬間ってありますか？</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">常連さんに名前を覚えてもらって、自分目当てで来てもらえたときですかね。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">それは大きいですね。「自分の名前で来てもらえる」というのが、〇〇さんにとってのやりがいなんだと思います。年収のお話も出ましたが、年収が上がったら何を変えたいですか？</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">同い年の友達が400万くらいもらってて、正直焦ってます。あと実家に少し入れたいです。</div></div>
+        </div>
+        <p class="dnote"><b>3つ取れました。</b>①自分の名前で仕事がしたい（承認欲求）②スキルを持ちたい（不安）③同年代との比較（焦り）。この3つが、2回目の求人提案でそのまま使う言葉になります。</p>
+
+        <div class="dmark"><span class="lbl">STEP 4　理想・希望条件と期待値調整（5分）</span><span class="ln"></span></div>
+        <div class="dlg">
+          <div class="turn ca"><span class="who">CA</span><div class="say">条件面も伺わせてください。いま挙げるとしたら、どんな条件がありますか。</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">年収は400万以上、土日休み、あと残業は少なめがいいです。できればデスクワークで。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">その条件を目指したいお気持ち、よく分かります。ぜひ最終ゴールとして目指しましょう。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">そのうえで、いま正直にお伝えすると、未経験から「年収400万・土日休み・残業少なめ・デスクワーク」を全部満たす求人は応募が集中するので、書類の段階でかなり厳しくなります。</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">やっぱりそうですよね……。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">ただ、順番の問題だと思っています。まず個人営業のように成果が数字で出る仕事で1〜2年実績を作ると、そこから「営業経験者」として選べる求人が一気に広がります。2〜3年後に、さっきの条件を狙いにいきましょう。</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">なるほど。まずは営業で経験を積む感じですね。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">そのうえで、いま挙げていただいた条件を「絶対に外せない」「できれば欲しい」「今回は譲れる」の3つに分けるとしたら、どうなりますか。</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">絶対は年収ですね。350万は欲しいです。土日は……できればくらいで。デスクワークは譲れます。</div></div>
+        </div>
+        <p class="dnote"><b>ここが初回面談の山場です。</b>否定から入らず、<b>本人の口から「まずは営業で経験を積む」</b>と言わせています。条件も4つから1つに絞れました。</p>
+
+        <div class="dmark"><span class="lbl">STEP 5・6　層と職種適性の見極め（10分・時間がなければ省略）</span><span class="ln"></span></div>
+        <div class="dlg">
+          <div class="turn ca"><span class="who">CA</span><div class="say">〇〇さんは、頑張った分が収入に還元されやすい働き方には興味ありますか？</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">あります。今は何時間働いても同じなので。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">承知しました。接客で名前を覚えてもらえる方なので、人と話す仕事は向いていると思います。</div></div>
+        </div>
+        <p class="dnote">マネーモチベが確認できました。アピアランス〇・営業経験×・コミュ力〇なので、<a href="#c2">マトリクス</a>上は<b>個人営業</b>が本命。学歴条件のある法人営業は外します。</p>
+
+        <div class="dmark"><span class="lbl">STEP 7　クロージング（5分）</span><span class="ln"></span></div>
+        <div class="dlg">
+          <div class="turn ca"><span class="who">CA</span><div class="say">本日お伺いした内容をもとに、〇〇さんに合いそうな求人をいくつかご用意します。次回は具体的な求人をご紹介しながら、一緒に選考の進め方を考えていきましょう。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">あと、求人以外にも一つ伺いたいことがあって。さっきの「常連さんに名前を覚えてもらった」話、次回もう少し詳しく聞かせてください。面接で確実に使えるエピソードになるので、そこを一緒に磨きたいです。</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">分かりました。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">日程ですが、明後日の19時か、土曜の11時でしたらどちらがご都合よいですか。</div></div>
+          <div class="turn jb"><span class="who">求職者</span><div class="say">じゃあ明後日の19時で。</div></div>
+          <div class="turn ca"><span class="who">CA</span><div class="say">承知しました。それまでに一つだけ宿題をお願いします。<b>この3年で「自分なりに工夫したこと」を3つ</b>、メモしてきてください。15分もかからないと思います。次回それを一緒に整理します。</div></div>
+        </div>
+        <p class="dnote"><b>フックと宿題を両方置いています。</b>「次回もう少し聞かせてほしい」が来訪動機、宿題が2回目までの接点になります。日程は二択で、中1日に収めました。</p>
+
+        <div class="dmark"><span class="lbl">2回目面談の要所</span><span class="ln"></span></div>
+        <div class="stack">
+          <h4>提案の入り方（本人の言葉に絡める）</h4>
+          <div class="turn ca" style="margin-bottom:6px"><span class="who">CA</span><div class="say">1社目は個人向けの◯◯を扱っている会社です。〇〇さんが「常連さんに自分目当てで来てもらえたときが面白い」とおっしゃっていましたよね。この会社は担当がお客様に最後まで付く体制なので、まさにその状態を作りやすいです。インセンティブも明確で、1年目で年収400万に届く方が半分以上います。</div></div>
+          <p class="dnote">初回で取った<b>「自分の名前で」</b>と<b>「同年代と比べて400万」</b>の2つを、そのまま1社目の説明に埋め込んでいます。</p>
+
+          <h4 style="margin-top:22px">「持ち帰ります」と言われたら</h4>
+          <div class="turn jb" style="margin-bottom:6px"><span class="who">求職者</span><div class="say">ちょっと持ち帰って考えたいです。</div></div>
+          <div class="turn ca" style="margin-bottom:6px"><span class="who">CA</span><div class="say">もちろんです。ただ、求人は動きますので、気になる1社だけでも先に応募だけしておきませんか。応募したからといって必ず受けなければいけないわけではありませんし、辞退はいつでもできます。</div></div>
+          <p class="dnote">この層にとって「検討します」は、ほぼ拒絶です。<b>辞退はいつでもできる</b>とセットで伝えて、意思決定の重さを下げます。</p>
+
+          <h4 style="margin-top:22px">他社が入っていたら</h4>
+          <div class="turn jb" style="margin-bottom:6px"><span class="who">求職者</span><div class="say">実は別のエージェントさんからも施工管理を紹介されていて。</div></div>
+          <div class="turn ca" style="margin-bottom:6px"><span class="who">CA</span><div class="say">建設業界を選択肢に入れられたのは良いと思います。ただ施工管理という働き方は、正直おすすめしません。〇〇さんが挙げた「土日はできれば休みたい」という条件と、現場のスケジュールは相性が良くないんです。同じ業界なら、内勤でCADを扱う職種のほうが近いと思います。</div></div>
+          <p class="dnote">業界の魅力づけは覆さず、<b>職種で差別化</b>しています。他社を名指しで批判していない点にご注目ください。</p>
+        </div>
+      </section>
+
+      <section class="ch" id="apA">
+        <div class="ch-head"><span class="ch-num">付録</span><h2>行動経済学と面談</h2></div>
+        <div class="stack">
+          <p>求職者は常に「合理的」に動くわけではありません。むしろ、将来への不安や現状への不満から、<b>バイアス（偏り）に支配されがち</b>です。エージェントは、相手の「意思決定のバグ」を修正し、納得感のある選択へ導くコンサルタントである必要があります。</p>
+          <h4>1. プロスペクト理論による意思決定のサポート</h4>
+          <p>人は「得をすること」よりも<b>「損をすること」を2倍近く強く忌避します</b>（損失回避性）。</p>
+          <p class="note"><b>カウンセリングでの現象：</b>「今の会社は不満だが、転職して失敗するのが怖い」という現状維持バイアスが強く働きます。</p>
+          <p><b>テクニック：</b>単に新しい環境のメリット（利得）を説くのではなく、<b>「今の環境に留まることで失われる機会損失」を可視化します。</b>「3年後、今のスキルセットのまま市場に出た場合のリスク」を具体的に提示することで、現状維持が実は「損」であるという認識へシフトさせます。</p>
+          <h4>2. アンカリング効果とフレーミング</h4>
+          <p>最初に提示された数字や情報が、その後の判断の基準（アンカー）になってしまう現象です。</p>
+          <p class="note"><b>カウンセリングでの現象：</b>「前職の年収が500万円だったから、次は絶対550万円以上」と、根拠なく前職の数字に縛られるケース。</p>
+          <p><b>テクニック：</b>市場相場（データ）を先に提示することで、適切なアンカーを打ち直します。</p>
+          <div class="talk">年収は維持ですが、土日祭休みで勤務時間が月20時間減ります。これは時給換算すると実質〇〇円のアップと同等ですよ。</div>
+          <p class="note">情報の切り取り方（フレーム）を変えて価値を再定義する、ポジティブ・フレーミングの例です。</p>
+        </div>
+      </section>
+
+      <section class="ch" id="apB">
+        <div class="ch-head"><span class="ch-num">付録</span><h2>やってはいけないこと</h2></div>
+        <div class="tw"><table>
+          <tr><th>NG</th><th>なぜ</th></tr>
+          <tr><td class="k">結果報告を2営業日以内に入力しない</td><td>5営業日で「みなし承認」となり、自動的に着座扱いになります（<a href="#a5">A-5</a>）</td></tr>
+          <tr><td class="k">10分待機・連絡試行をせずに「当日未入室」と報告する</td><td>この手順を経た場合のみ報告できます（<a href="#a7">A-7</a>）</td></tr>
+          <tr><td class="k">エージェント様都合で日程を変更する</td><td>原則受付不可。実施した場合は結果に関わらず着座扱いです（<a href="#a5">A-5</a>）</td></tr>
+          <tr><td class="k">機械的に面談を進める</td><td>離脱します（<a href="#b1-1">B Step1</a>）</td></tr>
+          <tr><td class="k">譲れない条件を聞きすぎる</td><td>言葉にすることで再認識し、条件が増えます（<a href="#b1-4">B Step4</a>）</td></tr>
+          <tr><td class="k">理想を「無理です」と否定する</td><td>信頼関係を損ねます（<a href="#b1-4">B Step4</a>）</td></tr>
+          <tr><td class="k">初回で求人を出す</td><td>情報が足りないまま提案すると精度が落ちます</td></tr>
+          <tr><td class="k">〇が2つ未満なのに営業を提案する</td><td>時間を取られて落ち、満足度も下がります（<a href="#c2">C-2</a>）</td></tr>
+          <tr><td class="k">求人を10件以上出す</td><td>選べなくなります（<a href="#d1">D Step1</a>）</td></tr>
+          <tr><td class="k">「検討しておいてください」で終える</td><td>この層にとって検討は、ほぼ拒絶です（<a href="#d6">D Step6</a>）</td></tr>
+          <tr><td class="k">他社や企業を名指しで批判する</td><td>比較材料を増やす提案に留めてください（<a href="#d4">D Step4</a>）</td></tr>
+          <tr><td class="k">退職者のシート権限を解除しない</td><td>個人情報の管理上、速やかな解除をお願いします（<a href="#a10">A-10</a>）</td></tr>
+          <tr><td class="k">求職者から手数料を徴収する</td><td>職業安定法で禁止されています</td></tr>
+        </table></div>
+      </section>
+
+      <section class="ch" id="apC">
+        <div class="ch-head"><span class="ch-num">付録</span><h2>用語集</h2></div>
+        <div class="tw"><table>
+          <tr><th>用語</th><th>意味</th></tr>
+          <tr><td class="k">着座</td><td>求職者が初回面談に出席したこと。面談ツールへの入室・応答をもって成立（請求対象）</td></tr>
+          <tr><td class="k">みなし着座</td><td>エージェント様都合の日程変更・キャンセル・不参加・10分超の遅刻等。請求対象</td></tr>
+          <tr><td class="k">みなし承認</td><td>結果報告が5営業日を経過し、自動的に着座扱いとなること</td></tr>
+          <tr><td class="k">ジュニア層</td><td>20代・社会人経験3年以内程度・キャリアの軸が未確立の求職者</td></tr>
+          <tr><td class="k">アピアランス</td><td>表情の明るさなど、見た目から受ける印象</td></tr>
+          <tr><td class="k">マネーモチベ</td><td>インセンティブ等で稼ぐことへの意欲の高さ</td></tr>
+          <tr><td class="k">応諾</td><td>求職者が求人への応募・選考進行に同意すること</td></tr>
+          <tr><td class="k">カウンターセールス</td><td>来店した顧客に対して行う接客型の営業</td></tr>
+          <tr><td class="k">無期雇用派遣</td><td>派遣会社と無期雇用契約を結び、派遣先で就業する働き方</td></tr>
+        </table></div>
+      </section>
+
+      <div class="printable">
+        <h2>営業職・販売職の求人判断</h2>
+        <p class="pnote">求職者送客の窓口 運用・面談ガイド C-2 ／ 株式会社HADO</p>
+        <div class="tw matrix"><table>
+          <tr><th>アピアランス</th><th>営業・販売経験（1年以上）</th><th>コミュ力</th><th>提案（具体例）</th></tr>
+          <tr><td class="c">〇</td><td class="c">〇</td><td class="c">〇</td><td>法人・個人営業・カウンターセールス（学歴あればほぼ全業界出してOK、なしの場合相談）</td></tr>
+          <tr><td class="c">〇</td><td class="c">〇</td><td class="c">×</td><td>法人・個人営業・カウンターセールス（ちょっと苦戦する可能性高め）</td></tr>
+          <tr><td class="c">〇</td><td class="c">×</td><td class="c">〇</td><td>個人営業（ウォーターサーバー、太陽光、土地活用、CA、派遣コーディ、車、買取など）／法人営業一部（通信系）</td></tr>
+          <tr><td class="c">〇</td><td class="c">×</td><td class="c">×</td><td>販売優先、チャレンジで個人営業（ウォーターサーバー、太陽光、土地活用、CA、派遣コーディ、車、買取など）</td></tr>
+          <tr><td class="c">×</td><td class="c">〇</td><td class="c">〇</td><td>法人営業・個人営業・カウンターセールス（学歴あればほぼ全業界出してOK、なしの場合相談）</td></tr>
+          <tr><td class="c">×</td><td class="c">〇</td><td class="c">×</td><td>販売職（携帯）、個人営業（ウォーターサーバー、太陽光などの営業代行系、買取）</td></tr>
+          <tr><td class="c">×</td><td class="c">×</td><td class="c">〇</td><td>販売職（携帯）</td></tr>
+          <tr><td class="c">×</td><td class="c">×</td><td class="c">×</td><td>販売職（携帯）</td></tr>
+        </table></div>
+        <p class="pnote" style="margin-top:12px">〇が2つ以上つかない場合、その他条件のヒアリングは極力避ける。すべてに〇がつかない場合は潔く営業を選択肢から消す。マインド（マネーモチベ）が高く経験2社以内なら、面接対策次第で個人営業は受かる。</p>
+      </div>
+
+    </div>
+  </main>
+</div>
+
+<aside class="run" id="run" hidden>
+  <div class="run-h"><b>面談モード</b><button class="x" id="runClose" aria-label="閉じる">×</button></div>
+  <div class="run-tabs" role="tablist">
+    <button role="tab" id="tabA" aria-selected="true">初回面談</button>
+    <button role="tab" id="tabB" aria-selected="false">2回目面談</button>
+  </div>
+  <div class="run-clock" id="clock">05:00</div>
+  <div class="run-now" id="nowStep">Step1　オープニング</div>
+  <ul class="run-steps" id="runSteps"></ul>
+  <div class="run-ctl">
+    <button class="btn solid" id="playBtn">開始</button>
+    <button class="btn" id="nextBtn">次へ</button>
+    <button class="btn" id="resetBtn">戻す</button>
+  </div>
+</aside>
+
+<script>
+(function(){
+  "use strict";
+  var $=function(s,r){return (r||document).querySelector(s)};
+  var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var store={
+    get:function(k){try{return localStorage.getItem(k)}catch(e){return null}},
+    set:function(k,v){try{localStorage.setItem(k,v)}catch(e){}},
+    del:function(k){try{localStorage.removeItem(k)}catch(e){}}
+  };
+
+  /* --- パスワードゲート（変更する場合はこの1行だけ） --- */
+  var PASS="hado-madoguchi";
+  var gate=document.getElementById("gate");
+  function unlock(){gate.hidden=true}
+  if(store.get("mn-gate")==="1"){unlock()}
+  else{setTimeout(function(){var i=document.getElementById("gatePass");if(i)i.focus()},80)}
+  document.getElementById("gateForm").addEventListener("submit",function(e){
+    e.preventDefault();
+    var f=document.getElementById("gatePass"), err=document.getElementById("gateErr");
+    if(f.value.trim().toLowerCase()===PASS){store.set("mn-gate","1");unlock()}
+    else{err.textContent="パスワードが違います。窓口担当までお問い合わせください。";f.value="";f.focus()}
+  });
+
+  /* --- 発行日 --- */
+  try{
+    var d=new Date(), el=document.getElementById("coDate");
+    if(el)el.textContent=d.getFullYear()+"年"+(d.getMonth()+1)+"月"+d.getDate()+"日";
+  }catch(e){}
+
+  /* --- テーマ --- */
+  var tBtn=$("#themeBtn");
+  var saved=store.get("mn-theme");
+  if(saved){document.documentElement.setAttribute("data-theme",saved);}
+  tBtn.addEventListener("click",function(){
+    var cur=document.documentElement.getAttribute("data-theme");
+    var next;
+    if(cur==="dark"){next="light"}else if(cur==="light"){next="dark"}
+    else{next=window.matchMedia("(prefers-color-scheme: dark)").matches?"light":"dark"}
+    document.documentElement.setAttribute("data-theme",next);
+    store.set("mn-theme",next);
+  });
+
+  /* --- モバイル目次 --- */
+  var side=$("#side"), scrim=$("#scrim");
+  function closeSide(){side.classList.remove("open");scrim.classList.remove("open")}
+  $("#menuBtn").addEventListener("click",function(){side.classList.toggle("open");scrim.classList.toggle("open")});
+  scrim.addEventListener("click",closeSide);
+  $$("#toc a").forEach(function(a){a.addEventListener("click",closeSide)});
+
+  /* --- スクロールスパイ --- */
+  var links=$$("#toc a");
+  var targets=links.map(function(a){return document.getElementById(a.getAttribute("href").slice(1))}).filter(Boolean);
+  var spy=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(!en.isIntersecting)return;
+      var id=en.target.id;
+      links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+id)});
+    });
+  },{rootMargin:"-96px 0px -70% 0px",threshold:0});
+  targets.forEach(function(t){spy.observe(t)});
+
+  /* --- 検索 --- */
+  var index=[];
+  $$(".ch").forEach(function(ch){
+    var chName=$(".ch-head h2",ch);
+    chName=chName?chName.textContent:"";
+    index.push({id:ch.id,label:chName,ctx:"章",text:ch.textContent});
+    $$(".sec",ch).forEach(function(sec){
+      var h=$("h3",sec);
+      index.push({id:sec.id,label:h?h.textContent.trim():chName,ctx:chName,text:sec.textContent});
+    });
+  });
+  var q=$("#q"), res=$("#res");
+  function runSearch(){
+    var v=q.value.trim();
+    if(!v){res.hidden=true;res.innerHTML="";return}
+    var hits=index.filter(function(it){return it.text.indexOf(v)>-1||it.label.indexOf(v)>-1}).slice(0,14);
+    if(!hits.length){res.innerHTML='<div class="none">該当なし</div>'}
+    else{
+      res.innerHTML=hits.map(function(h){
+        var i=h.text.indexOf(v), snip="";
+        if(i>-1){snip=h.text.slice(Math.max(0,i-16),i+40).replace(/\s+/g," ").trim();}
+        return '<a href="#'+h.id+'"><em>'+h.ctx+'</em>'+h.label+(snip?'<span style="color:var(--muted)"> — …'+snip+'…</span>':'')+'</a>';
+      }).join("");
+    }
+    res.hidden=false;
+  }
+  q.addEventListener("input",runSearch);
+  q.addEventListener("focus",runSearch);
+  document.addEventListener("click",function(e){if(!e.target.closest(".srch"))res.hidden=true});
+  res.addEventListener("click",function(e){if(e.target.closest("a")){res.hidden=true;q.value=""}});
+
+  /* --- コピーボタン --- */
+  var icon='<svg viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
+  var ok='<svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg>';
+  $$(".talk").forEach(function(el){
+    var b=document.createElement("button");
+    b.className="copy no-print";b.type="button";b.innerHTML=icon;
+    b.setAttribute("aria-label","この文をコピー");
+    b.addEventListener("click",function(){
+      var t=el.childNodes;var s="";
+      for(var i=0;i<t.length;i++){if(t[i].nodeType===3||(t[i].nodeType===1&&!t[i].classList.contains("copy")))s+=t[i].textContent}
+      var done=function(){b.classList.add("done");b.innerHTML=ok;setTimeout(function(){b.classList.remove("done");b.innerHTML=icon},1400)};
+      if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(s.trim()).then(done,function(){})}
+      else{var ta=document.createElement("textarea");ta.value=s.trim();document.body.appendChild(ta);ta.select();try{document.execCommand("copy");done()}catch(e){}document.body.removeChild(ta)}
+    });
+    el.appendChild(b);
+  });
+
+  /* --- チェックリスト（2系統） --- */
+  function bindCk(sel,countId,resetId){
+    var boxes=$$(sel+' input[type="checkbox"]');
+    if(!boxes.length)return;
+    var cnt=document.getElementById(countId);
+    function paint(){if(cnt)cnt.textContent=boxes.filter(function(b){return b.checked}).length+" / "+boxes.length}
+    boxes.forEach(function(b){
+      if(store.get("mn-ck-"+b.id)==="1")b.checked=true;
+      b.addEventListener("change",function(){b.checked?store.set("mn-ck-"+b.id,"1"):store.del("mn-ck-"+b.id);paint()});
+    });
+    paint();
+    var r=document.getElementById(resetId);
+    if(r)r.addEventListener("click",function(){boxes.forEach(function(b){b.checked=false;store.del("mn-ck-"+b.id)});paint()});
+  }
+  bindCk('[data-ck]','ckCount','ckReset');
+  bindCk('[data-ck2]','ckCount2','ckReset2');
+
+  /* --- 印刷（マトリクスのみ） --- */
+  var pm=$("#printMatrix");
+  if(pm)pm.addEventListener("click",function(){
+    document.documentElement.setAttribute("data-print","matrix");
+    window.print();
+    setTimeout(function(){document.documentElement.removeAttribute("data-print")},600);
+  });
+  window.addEventListener("afterprint",function(){document.documentElement.removeAttribute("data-print")});
+
+  /* --- 面談モード --- */
+  var FLOWS={
+    a:{name:"初回面談",steps:[
+      {t:"Step1　オープニング",m:5,id:"b1-1"},{t:"Step2　現状のヒアリング",m:5,id:"b1-2"},
+      {t:"Step3　深掘りヒアリング",m:10,id:"b1-3"},{t:"Step4　期待値調整",m:5,id:"b1-4"},
+      {t:"Step5　層の見極め",m:5,id:"b1-5"},{t:"Step6　職種適性",m:5,id:"b1-6"},
+      {t:"Step7　クロージング",m:5,id:"b1-7"}]},
+    b:{name:"2回目面談",steps:[
+      {t:"Step1　前回の振り返り",m:5,id:"d1"},{t:"Step2　求人提案",m:20,id:"d2"},
+      {t:"Step3　懸念のヒアリング",m:10,id:"d3"},{t:"Step4　競合対応",m:5,id:"d4"},
+      {t:"Step5　面接対策の頭出し",m:10,id:"d5"},{t:"Step6　クロージング",m:5,id:"d6"}]}
+  };
+  var flow="a", idx=0, left=0, timer=null, running=false;
+  var runEl=$("#run"), clock=$("#clock"), nowEl=$("#nowStep"), listEl=$("#runSteps");
+  var playBtn=$("#playBtn");
+
+  function fmt(s){var m=Math.floor(Math.abs(s)/60),x=Math.abs(s)%60;return (s<0?"-":"")+String(m).padStart(2,"0")+":"+String(x).padStart(2,"0")}
+  function render(){
+    var st=FLOWS[flow].steps;
+    listEl.innerHTML=st.map(function(s,i){
+      return '<li class="'+(i===idx?"on":(i<idx?"past":""))+'" data-i="'+i+'"><span>'+s.t+'</span><span class="d">'+s.m+'分</span></li>';
+    }).join("");
+    nowEl.textContent=st[idx].t;
+    clock.textContent=fmt(left);
+    clock.style.color = left<0 ? "var(--warm)" : "var(--ink)";
+  }
+  function load(i){idx=i;left=FLOWS[flow].steps[i].m*60;render()}
+  function tick(){left--;clock.textContent=fmt(left);clock.style.color=left<0?"var(--warm)":"var(--ink)"}
+  function play(){
+    running=!running;
+    playBtn.textContent=running?"一時停止":"開始";
+    if(running){timer=setInterval(tick,1000)}else{clearInterval(timer)}
+  }
+  playBtn.addEventListener("click",play);
+  $("#nextBtn").addEventListener("click",function(){
+    var st=FLOWS[flow].steps;
+    if(idx<st.length-1){load(idx+1);var t=document.getElementById(st[idx].id);if(t)t.scrollIntoView({behavior:"smooth",block:"start"})}
+  });
+  $("#resetBtn").addEventListener("click",function(){clearInterval(timer);running=false;playBtn.textContent="開始";load(0)});
+  listEl.addEventListener("click",function(e){
+    var li=e.target.closest("li");if(!li)return;
+    load(+li.dataset.i);
+    var t=document.getElementById(FLOWS[flow].steps[idx].id);if(t)t.scrollIntoView({behavior:"smooth",block:"start"});
+  });
+  function setFlow(f){
+    flow=f;clearInterval(timer);running=false;playBtn.textContent="開始";
+    $("#tabA").setAttribute("aria-selected",f==="a");
+    $("#tabB").setAttribute("aria-selected",f==="b");
+    load(0);
+  }
+  $("#tabA").addEventListener("click",function(){setFlow("a")});
+  $("#tabB").addEventListener("click",function(){setFlow("b")});
+  $("#runBtn").addEventListener("click",function(){runEl.hidden=!runEl.hidden;if(!runEl.hidden&&!listEl.children.length)load(0)});
+  $("#runClose").addEventListener("click",function(){runEl.hidden=true;clearInterval(timer);running=false;playBtn.textContent="開始"});
+  load(0);
+})();
+</script>
+
+</body>
+</html>

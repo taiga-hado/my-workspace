@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>求職者送客の窓口 新卒｜CA向けオンボーディング</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; background: #fff; }
+  :root {
+    --navy: #0F1B33; --ink: #1E293B; --blue: #2457F5; --blue-soft: #E8EEFF; --accent: #FF6B2C;
+    --bg: #F7F8FB; --gray: #5B6578; --light: #9AA3B5; --line: #E3E7EF; --green: #1FA97A; --red: #E0453A;
+  }
+  .slide { width: 1280px; height: 720px; background: var(--bg); position: relative; overflow: hidden; page-break-after: always; }
+  .slide:last-child { page-break-after: auto; }
+  .topbar { position: absolute; left: 0; top: 0; width: 1280px; height: 6px; background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 60%, var(--accent) 100%); }
+  .logo { position: absolute; top: 30px; right: 48px; height: 18px; }
+  .footer { position: absolute; bottom: 20px; left: 64px; right: 48px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--light); }
+  .pageno { font-size: 13px; font-weight: 700; color: var(--gray); }
+  .content { position: absolute; left: 64px; right: 64px; top: 58px; bottom: 56px; display: flex; flex-direction: column; }
+  .kicker { font-size: 13px; font-weight: 700; color: var(--blue); letter-spacing: 2px; margin-bottom: 8px; }
+  .kicker .ag { display: inline-block; background: var(--blue); color: #fff; border-radius: 4px; padding: 2px 8px; margin-right: 8px; letter-spacing: 1px; }
+  h2 { font-size: 34px; font-weight: 800; color: var(--navy); line-height: 1.25; letter-spacing: -0.5px; }
+  h2 em { font-style: normal; color: var(--blue); }
+  .card { background: #fff; border-radius: 16px; box-shadow: 0 2px 14px rgba(15,27,51,0.06); border: 1px solid #EEF1F6; }
+  .placeholder { border: 2px dashed #B8C2D6; border-radius: 14px; background: repeating-linear-gradient(135deg, #F2F4F9 0 12px, #EDF0F6 12px 24px); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #6E7A92; font-size: 14px; font-weight: 700; line-height: 1.7; padding: 12px; }
+  .placeholder small { display: block; font-weight: 500; font-size: 12px; color: #8C97AC; }
+  .quote { background: #FFF7F2; border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; padding: 14px 18px; font-size: 16px; color: var(--ink); line-height: 1.6; }
+  .quote b { color: var(--accent); }
+  .tips { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+  .tips .t { font-size: 11px; letter-spacing: 2px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+  .tips p { font-size: 14px; color: var(--ink); line-height: 1.65; }
+  .num { font-size: 60px; font-weight: 900; color: var(--navy); letter-spacing: -2px; line-height: 1; }
+  .num small { font-size: 20px; font-weight: 700; color: var(--gray); letter-spacing: 0; margin-left: 4px; }
+  .cap { font-size: 13px; color: var(--gray); margin-top: 10px; line-height: 1.5; }
+  .arrow { color: #B8C2D6; font-size: 26px; font-weight: 300; }
+  .draft { display: inline-block; font-size: 11px; font-weight: 700; color: #fff; background: #8C97AC; border-radius: 4px; padding: 2px 8px; margin-left: 8px; vertical-align: middle; letter-spacing: 1px; }
+  .pts { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .pts li { font-size: 16.5px; color: var(--ink); line-height: 1.65; padding-left: 22px; position: relative; }
+  .pts li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--blue); font-weight: 900; }
+  .pts li b { color: var(--navy); }
+  .two { display: grid; grid-template-columns: 1fr 380px; gap: 22px; margin-top: 22px; flex: 1; }
+  .two .main { padding: 26px 28px; display: flex; flex-direction: column; }
+  .two .side { display: flex; flex-direction: column; gap: 16px; }
+  .two .side .placeholder { flex: 1; }
+  .main .quote { margin-top: auto; }
+  .flow-h { display: flex; align-items: center; gap: 8px; margin: 6px 0 22px; }
+  .flow-h .st { flex: 1; background: var(--blue-soft); border-radius: 12px; padding: 16px 6px; text-align: center; font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4; word-break: keep-all; }
+  .flow-h .st small { display: block; font-size: 11px; font-weight: 500; color: var(--gray); margin-top: 4px; }
+  .flow-h .st.hot { background: var(--navy); color: #fff; } .flow-h .st.hot small { color: #C7D2EA; }
+  .flow-h .st.acc { background: var(--accent); color: #fff; } .flow-h .st.acc small { color: #FFE4D6; }
+  .flow-h .arrow { font-size: 22px; }
+  .mono { font-family: "SF Mono", Menlo, "Hiragino Sans", monospace; font-size: 12.5px; line-height: 1.7; color: #E6EDF7; background: #111A2E; border-radius: 12px; padding: 16px 18px; white-space: pre-wrap; }
+  .mono .c { color: #7FA3FF; } .mono .o { color: #FFB38A; }
+
+  /* cover / closing */
+  .cover { background: radial-gradient(1200px 600px at 20% 20%, #1E3A8A 0%, #0F1B33 55%, #0B1226 100%); }
+  .cover .glow { position: absolute; right: -180px; bottom: -220px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(36,87,245,0.55) 0%, rgba(36,87,245,0) 70%); }
+  .cover .glow2 { position: absolute; left: 640px; top: -260px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,44,0.35) 0%, rgba(255,107,44,0) 70%); }
+  .cover .tag { position: absolute; left: 80px; top: 92px; color: #9DB4FF; font-size: 15px; font-weight: 700; letter-spacing: 3px; }
+  .cover h1 { position: absolute; left: 80px; top: 190px; width: 1100px; color: #fff; font-size: 96px; font-weight: 900; line-height: 1.25; letter-spacing: -1px; }
+  .cover h1 span { color: #FFB38A; }
+  .cover .sub { position: absolute; left: 80px; top: 392px; color: #C7D2EA; font-size: 23px; font-weight: 600; line-height: 1.6; }
+  .cover .who { position: absolute; left: 80px; bottom: 74px; color: #fff; font-size: 18px; line-height: 1.7; }
+  .cover .who b { font-size: 22px; }
+  .cover .logo-big { position: absolute; right: 80px; bottom: 80px; height: 30px; }
+  .cover .line { position: absolute; left: 80px; top: 356px; width: 120px; height: 4px; background: var(--accent); }
+  .divider { background: linear-gradient(120deg, #0F1B33 0%, #1E3A8A 100%); }
+
+  /* brands / logo wall / scoring */
+  .brands { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+  .brand { padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; }
+  .brand .lg { height: 46px; display: flex; align-items: center; }
+  .brand .lg img { max-height: 40px; max-width: 100%; }
+  .brand .lg.ph { border: 2px dashed #B8C2D6; border-radius: 8px; justify-content: center; color: #8C97AC; font-size: 12px; font-weight: 700; }
+  .brand h4 { font-size: 16px; color: var(--navy); } .brand p { font-size: 12.5px; color: var(--gray); line-height: 1.6; }
+  .brand .co { font-size: 11px; color: var(--light); }
+  .wall { display: grid; grid-template-columns: repeat(6, 1fr); gap: 10px; }
+  .wall .t { background: #fff; border: 1px solid var(--line); border-radius: 10px; height: 54px; display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; color: var(--navy); letter-spacing: 0.3px; text-align: center; padding: 0 6px; }
+  .wall .t img { max-height: 30px; max-width: 150px; }
+  .wall .t.orange { background: #E66700; }
+  .shot { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 4px 18px rgba(15,27,51,0.10); background: #fff; }
+  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+  .shot .cap { font-size: 11px; color: var(--gray); padding: 6px 10px; background: #fff; border-top: 1px solid var(--line); margin: 0; }
+  .wall .t small { font-size: 10px; font-weight: 600; color: var(--light); display: block; }
+  .score { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .score th, .score td { padding: 8px 8px; border-bottom: 1px solid var(--line); text-align: center; }
+  .score th { font-size: 11px; color: var(--gray); letter-spacing: 1px; }
+  .score td.l { text-align: left; font-weight: 700; color: var(--navy); white-space: nowrap; }
+  .score td.tot { font-weight: 900; color: var(--blue); font-size: 16px; }
+  .score td.lo { color: var(--red); font-weight: 800; }
+  .score td.hi { color: var(--green); font-weight: 800; }
+  .fb { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .fb li { font-size: 13px; color: var(--ink); line-height: 1.55; padding-left: 20px; position: relative; }
+  .fb li::before { position: absolute; left: 0; top: 0; font-weight: 900; }
+  .fb li.g::before { content: "◎"; color: var(--green); } .fb li.w::before { content: "△"; color: var(--accent); } .fb li.x::before { content: "⚠"; color: var(--red); }
+  .tlp { background: linear-gradient(135deg, #FBE9F6 0%, #F1ECFB 50%, #FCEEF3 100%); border-radius: 14px; padding: 14px; height: 100%; display: flex; flex-direction: column; gap: 10px; }
+  .tlp .tabs { display: flex; gap: 8px; } .tlp .tab { font-size: 11.5px; padding: 5px 12px; border-radius: 8px; color: #4B5563; } .tlp .tab.on { border: 1.5px solid #3B5BDB; color: #1E3A8A; font-weight: 700; background: #fff; }
+  .tlp .pc { background: #fff; border-radius: 12px; padding: 12px 14px 12px 40px; position: relative; box-shadow: 0 1px 6px rgba(15,27,51,0.06); }
+  .tlp .pc::before { content: ""; position: absolute; left: 14px; top: 14px; width: 12px; height: 16px; border: 2px solid #3B5BDB; border-bottom: 0; border-radius: 2px 2px 0 0; }
+  .tlp .pc h4 { font-size: 13.5px; color: #111827; margin-bottom: 4px; } .tlp .pc p { font-size: 12px; color: #4B5563; line-height: 1.65; white-space: pre-wrap; }
+  .tlp .ask { margin-top: auto; background: #fff; border-radius: 10px; padding: 10px 12px; display: flex; align-items: center; justify-content: space-between; font-size: 12px; color: #9AA3B5; } .tlp .ask b { background: #2457F5; color: #fff; border-radius: 8px; padding: 6px 12px; font-size: 11px; }
+  /* s2 */
+  .s2 .grid { display: grid; grid-template-columns: 260px 1fr; gap: 26px; margin-top: 20px; }
+  .s2 .photo { align-self: start; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 2px 14px rgba(15,27,51,0.08); }
+  .s2 .photo img { width: 260px; height: 260px; object-fit: cover; display: block; }
+  .s2 .photo .name { padding: 12px 16px; } .s2 .photo .name b { font-size: 19px; color: var(--navy); } .s2 .photo .name span { display: block; font-size: 12px; color: var(--gray); margin-top: 2px; }
+  .s2 ul { list-style: none; } .s2 li { font-size: 15.5px; color: var(--ink); line-height: 1.7; padding-left: 18px; position: relative; }
+  .s2 li::before { content: ""; position: absolute; left: 0; top: 11px; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
+  .s2 .biz { margin-top: 16px; padding: 16px 22px; }
+  .s2 .biz .t { font-size: 12px; letter-spacing: 2px; color: var(--blue); font-weight: 700; margin-bottom: 10px; }
+  .s2 .flow { display: flex; align-items: center; gap: 12px; }
+  .s2 .node { flex: 1; background: var(--blue-soft); border-radius: 12px; padding: 12px 10px; text-align: center; font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+  .s2 .node.main { background: var(--navy); color: #fff; } .s2 .node small { display: block; font-size: 11px; font-weight: 500; opacity: 0.8; margin-top: 3px; }
+  .s2 .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 18px; }
+  .s2 .kpi { padding: 20px 14px 18px; text-align: center; }
+  .s2 .kpi .k { font-size: 11px; letter-spacing: 2px; color: var(--blue); font-weight: 700; margin-bottom: 10px; }
+  .s2 .kpi .num { font-size: 44px; } .s2 .kpi .num small { font-size: 16px; }
+
+  /* s3 issues */
+  .s3 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+  .s3 .issue { padding: 20px 24px; position: relative; }
+  .s3 .issue .n { position: absolute; top: 16px; right: 20px; font-size: 36px; font-weight: 900; color: #E6EAF3; }
+  .s3 .issue h3 { font-size: 19px; color: var(--navy); margin-bottom: 6px; }
+  .s3 .issue p { font-size: 14px; color: var(--gray); line-height: 1.7; }
+  .s3 .issue.hot { background: var(--navy); border-color: var(--navy); } .s3 .issue.hot h3, .s3 .issue.hot p { color: #fff; } .s3 .issue.hot .n { color: rgba(255,255,255,0.12); }
+  .s3 .issue.hot .big { font-size: 28px; font-weight: 900; color: #FFB38A; margin-top: 6px; } .s3 .issue.hot .big small { font-size: 13px; font-weight: 600; color: #C7D2EA; margin-left: 6px; }
+  .s3 .goal { margin-top: 16px; background: var(--blue-soft); border-radius: 14px; padding: 16px 26px; display: flex; align-items: center; gap: 18px; }
+  .s3 .goal .l { font-size: 12px; letter-spacing: 2px; color: var(--blue); font-weight: 700; white-space: nowrap; }
+  .s3 .goal p { font-size: 19px; font-weight: 800; color: var(--navy); } .s3 .goal p b { color: var(--blue); }
+
+  /* s4 raw story */
+  .s4 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 20px; flex: 1; }
+  .s4 .col { padding: 22px 24px; display: flex; flex-direction: column; }
+  .s4 .col h3 { font-size: 20px; color: var(--navy); margin-bottom: 12px; display: flex; align-items: center; }
+  .s4 table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .s4 th, .s4 td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--line); vertical-align: top; line-height: 1.5; }
+  .s4 th { color: var(--gray); font-weight: 700; font-size: 12px; }
+  .s4 td.h { font-weight: 700; color: var(--navy); white-space: nowrap; }
+  .s4 td.ok { color: var(--green); font-weight: 700; } .s4 td.ng { color: var(--red); font-weight: 700; }
+  .s4 .story { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .s4 .story li { font-size: 14.5px; color: var(--ink); line-height: 1.65; padding-left: 20px; position: relative; }
+  .s4 .story li::before { content: "▶"; position: absolute; left: 0; top: 2px; color: var(--accent); font-size: 11px; }
+  .s4 .col .placeholder { margin-top: auto; min-height: 84px; font-size: 13px; }
+
+  /* s5 meeting types */
+  .s5 .types { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+  .s5 .ty { padding: 20px 22px; }
+  .s5 .ty .l { font-size: 11px; letter-spacing: 2px; color: var(--blue); font-weight: 700; }
+  .s5 .ty h3 { font-size: 21px; color: var(--navy); margin: 6px 0 8px; }
+  .s5 .ty .share { font-size: 13px; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
+  .s5 .ty p { font-size: 13.5px; color: var(--gray); line-height: 1.65; }
+  .s5 .layers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+  .s5 .ly { padding: 16px 20px; display: flex; gap: 12px; align-items: flex-start; }
+  .s5 .ly .n { width: 32px; height: 32px; border-radius: 8px; background: var(--navy); color: #fff; font-weight: 900; display: flex; align-items: center; justify-content: center; flex: none; font-size: 14px; }
+  .s5 .ly h4 { font-size: 16px; color: var(--navy); margin-bottom: 4px; } .s5 .ly p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+
+  /* s6 template */
+  .s6 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; flex: 1; }
+  .s6 .col { padding: 22px 24px; display: flex; flex-direction: column; }
+  .s6 .col h3 { font-size: 18px; color: var(--navy); margin-bottom: 10px; }
+  .s6 .rules { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+  .s6 .rules li { font-size: 14px; color: var(--ink); line-height: 1.6; padding-left: 26px; position: relative; }
+  .s6 .rules li span { position: absolute; left: 0; top: 1px; width: 18px; height: 18px; border-radius: 50%; background: var(--blue-soft); color: var(--blue); font-size: 11px; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+
+  /* s8 results */
+  .s8 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 24px; align-items: start; }
+  .s8 .ba { padding: 30px 30px; }
+  .s8 .ba { padding: 24px 26px; }
+  .s8 .ba .t { font-size: 13px; color: var(--gray); font-weight: 700; margin-bottom: 12px; }
+  .s8 .bar { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+  .s8 .bar .lab { width: 62px; font-size: 13px; font-weight: 700; color: var(--gray); }
+  .s8 .bar .track { flex: 1; height: 42px; background: #EEF1F6; border-radius: 10px; overflow: hidden; }
+  .s8 .bar .fill { height: 100%; display: flex; align-items: center; padding-left: 14px; font-size: 18px; font-weight: 900; color: #fff; border-radius: 10px; white-space: nowrap; }
+  .s8 .bar .fill.before { background: var(--navy); width: 100%; } .s8 .bar .fill.after { background: var(--accent); width: 9%; min-width: 74px; }
+  .s8 .delta { margin-top: 14px; background: #FFF7F2; border-radius: 12px; padding: 12px 18px; display: flex; align-items: baseline; gap: 14px; }
+  .s8 .delta b { font-size: 36px; font-weight: 900; color: var(--accent); letter-spacing: -1px; }
+  .s8 .delta span { font-size: 14px; color: var(--ink); line-height: 1.5; }
+  .s8 .kcards { display: flex; flex-direction: column; gap: 12px; }
+  .s8 .kc { padding: 16px 20px; display: flex; align-items: center; gap: 16px; }
+  .s8 .kc .v { font-size: 26px; font-weight: 900; color: var(--blue); min-width: 140px; letter-spacing: -1px; } .s8 .kc .v small { font-size: 12px; color: var(--gray); font-weight: 700; margin-left: 4px; letter-spacing: 0; }
+  .s8 .kc p { font-size: 13.5px; color: var(--ink); line-height: 1.6; }
+  .s8 .voice { margin-top: 16px; flex: 1; min-height: 80px; }
+
+  /* s9 good/bad */
+  .s9 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 20px; flex: 1; }
+  .s9 .col { padding: 22px 24px; display: flex; flex-direction: column; }
+  .s9 .col h3 { font-size: 20px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+  .s9 .col h3 .b { display: inline-block; font-size: 11px; letter-spacing: 2px; color: #fff; border-radius: 4px; padding: 3px 8px; }
+  .s9 .good h3 { color: var(--green); } .s9 .good h3 .b { background: var(--green); }
+  .s9 .bad h3 { color: var(--red); } .s9 .bad h3 .b { background: var(--red); }
+  .s9 .it { border-top: 1px solid var(--line); padding: 10px 0; }
+  .s9 .it h4 { font-size: 15.5px; color: var(--navy); margin-bottom: 3px; } .s9 .it p { font-size: 13.5px; color: var(--gray); line-height: 1.6; }
+  .s9 .col .placeholder { margin-top: auto; min-height: 70px; font-size: 12.5px; }
+
+  /* s10 future */
+  .s10 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 20px; flex: 1; }
+  .s10 .col { padding: 22px 24px; }
+  .s10 .col h3 { font-size: 19px; color: var(--navy); margin-bottom: 12px; }
+  .s10 .col h3 .l { font-size: 11px; letter-spacing: 2px; color: var(--blue); display: block; margin-bottom: 4px; }
+  .s10 .it { display: flex; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); }
+  .s10 .it .n { width: 26px; height: 26px; border-radius: 7px; background: var(--blue-soft); color: var(--blue); font-weight: 900; font-size: 12px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .s10 .it h4 { font-size: 15px; color: var(--navy); margin-bottom: 2px; } .s10 .it p { font-size: 13px; color: var(--gray); line-height: 1.55; }
+  .s10 .fb .n { background: #FFF1EA; color: var(--accent); }
+
+  /* s11 message */
+  .s11 .list { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+  .s11 .it { display: grid; grid-template-columns: 100px 1fr; align-items: center; overflow: hidden; }
+  .s11 .it .n { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 900; color: #fff; }
+  .s11 .it:nth-child(1) .n { background: #5B8DEF; } .s11 .it:nth-child(2) .n { background: var(--blue); } .s11 .it:nth-child(3) .n { background: var(--accent); }
+  .s11 .it .b { padding: 18px 26px; } .s11 .it h3 { font-size: 22px; color: var(--navy); margin-bottom: 5px; } .s11 .it p { font-size: 14.5px; color: var(--gray); line-height: 1.6; }
+  .s11 .close { margin-top: 18px; background: var(--navy); border-radius: 16px; padding: 22px 28px; color: #fff; font-size: 24px; font-weight: 800; }
+  .s11 .close span { color: #FFB38A; }
+  .s14 h1 { position: absolute; left: 80px; top: 200px; color: #fff; font-size: 54px; font-weight: 900; line-height: 1.3; }
+  .s14 h1 span { color: #FFB38A; }
+  .s14 .thanks { position: absolute; left: 80px; bottom: 80px; color: #fff; font-size: 30px; font-weight: 700; }
+  .s14 .contact { position: absolute; right: 80px; bottom: 80px; text-align: right; color: #C7D2EA; font-size: 14px; line-height: 1.8; }
+  .s14 .contact img { height: 26px; display: block; margin-left: auto; margin-bottom: 12px; }
+
+  /* --- CA向けオンボ資料の追加パーツ --- */
+  .ag-list { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+  .ag-row { display: grid; grid-template-columns: 62px 1fr 92px; align-items: center; gap: 18px;
+            background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 11px 20px; }
+  .ag-row .n { font-size: 13px; font-weight: 800; color: #fff; background: var(--blue);
+               border-radius: 6px; padding: 4px 0; text-align: center; letter-spacing: 1px; }
+  .ag-row .ttl { font-size: 17px; font-weight: 700; color: var(--navy); }
+  .ag-row .ttl small { display: block; font-size: 12.5px; font-weight: 500; color: var(--gray); margin-top: 3px; }
+  .ag-row .tm { font-size: 14px; font-weight: 700; color: var(--gray); text-align: right; }
+  .ag-row.acc .n { background: var(--accent); }
+
+  .okng { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 20px; align-items: start; }
+  .okng .col { padding: 20px 24px; display: flex; flex-direction: column; }
+  .okng h3 { font-size: 16px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .okng h3 .b { font-size: 11px; font-weight: 800; color: #fff; border-radius: 5px; padding: 3px 9px; letter-spacing: 1px; }
+  .okng .ok .b { background: var(--green); } .okng .ng .b { background: var(--gray); }
+  .okng ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .okng li { font-size: 13.5px; color: var(--ink); line-height: 1.6; padding-left: 17px; position: relative; }
+  .okng li::before { position: absolute; left: 0; top: 0; font-weight: 900; font-size: 13px; }
+  .okng .ok li::before { content: "○"; color: var(--green); }
+  .okng .ng li::before { content: "×"; color: var(--gray); }
+  .okng li b { color: var(--navy); }
+
+  .tbl { width: 100%; border-collapse: collapse; font-size: 14px; background: #fff; }
+  .tbl th { font-size: 11.5px; letter-spacing: 1.5px; color: var(--gray); font-weight: 700;
+            text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--line); }
+  .tbl td { padding: 12px 14px; border-bottom: 1px solid var(--line); color: var(--ink); line-height: 1.6; }
+  .tbl td.k { font-weight: 800; color: var(--navy); white-space: nowrap; }
+  .tbl td b { color: var(--navy); }
+  .tbl tr:last-child td { border-bottom: 0; }
+  .tblwrap { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-top: 18px; }
+
+  .warn { background: #FFF4F2; border: 1px solid #F6CFC8; border-left: 4px solid var(--red);
+          border-radius: 0 12px 12px 0; padding: 16px 20px; }
+  .warn .t { font-size: 12px; font-weight: 800; color: var(--red); letter-spacing: 1.5px; margin-bottom: 6px; }
+  .warn p { font-size: 14.5px; color: var(--ink); line-height: 1.7; }
+  .warn p b { color: var(--red); }
+
+  .stepbox { display: flex; gap: 12px; margin-top: 18px; }
+  .stepbox .sb { flex: 1; background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; position: relative; }
+  .stepbox .sb .n { font-size: 11px; font-weight: 800; color: var(--blue); letter-spacing: 1.5px; margin-bottom: 7px; }
+  .stepbox .sb h4 { font-size: 15.5px; color: var(--navy); line-height: 1.45; margin-bottom: 6px; }
+  .stepbox .sb p { font-size: 12.5px; color: var(--gray); line-height: 1.65; }
+  .stepbox .sb.acc { border-color: #FFD2BC; background: #FFF7F2; }
+  .stepbox .sb.acc .n { color: var(--accent); }
+
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; align-items: stretch; }
+  .three .c { padding: 20px 22px; display: flex; flex-direction: column; }
+  .three .c .lb { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: var(--blue); margin-bottom: 8px; }
+  .three .c h4 { font-size: 17px; color: var(--navy); line-height: 1.4; margin-bottom: 10px; }
+  .three .c p { font-size: 13px; color: var(--gray); line-height: 1.7; }
+  .three .c .say { margin-top: 14px; padding-top: 12px; font-size: 12.5px; color: var(--ink);
+                   line-height: 1.7; border-top: 1px dashed var(--line); }
+  .three .c .say b { color: var(--accent); }
+
+  .keybox { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+  .keybox .k { padding: 20px 24px; }
+  .keybox .k .lb { font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: var(--accent); margin-bottom: 8px; }
+  .keybox .k h4 { font-size: 17.5px; color: var(--navy); line-height: 1.45; margin-bottom: 8px; }
+  .keybox .k p { font-size: 13.5px; color: var(--gray); line-height: 1.7; }
+
+  .final { display: grid; grid-template-columns: 1fr 440px; gap: 24px; margin-top: 22px; flex: 1; }
+  .urlcard { background: var(--navy); border-radius: 16px; padding: 26px 28px; color: #fff; display: flex; flex-direction: column; justify-content: center; }
+  .urlcard .lb { font-size: 11px; letter-spacing: 2px; color: #9DB4FF; font-weight: 700; margin-bottom: 10px; }
+  .urlcard h4 { font-size: 22px; margin-bottom: 14px; line-height: 1.4; }
+  .urlcard .u { font-family: "SF Mono", Menlo, monospace; font-size: 13.5px; color: #C7D2EA;
+                background: rgba(255,255,255,.07); border-radius: 8px; padding: 10px 12px; word-break: break-all; }
+  .urlcard .pw { margin-top: 10px; font-size: 13.5px; color: #fff; }
+  .urlcard .pw b { color: #FFB38A; font-family: "SF Mono", Menlo, monospace; }
+  .contact { position: absolute; left: 80px; bottom: 90px; color: #C7D2EA; font-size: 17px; line-height: 1.9; }
+  .contact img { height: 26px; display: block; margin-bottom: 18px; }
+  .contact b { color: #fff; }
+  .closer { margin-top: auto; background: var(--navy); border-radius: 14px; padding: 18px 26px;
+            color: #fff; font-size: 16px; line-height: 1.75; }
+  .closer b { color: #FFB38A; }
+  .closer .t { font-size: 11px; letter-spacing: 2px; color: #9DB4FF; font-weight: 800; margin-bottom: 6px; }
+  /* 表紙のコピーは1行に収める（96pxだと12文字で折り返して重なる） */
+  .cover h1 { font-size: 84px; top: 196px; }
+</style>
+</head>
+<body>
+<section class="slide cover">
+  <div class="glow"></div><div class="glow2"></div>
+  <div class="tag">求職者送客の窓口　新卒（27卒〜28卒）</div>
+  <h1>はじめまして、<span>じゃない。</span></h1>
+  <div class="line"></div>
+  <div class="sub">キャリアアドバイザー様向け　初回オンボーディング<br>ご契約ありがとうございます。運用開始前に30〜45分だけお時間をください。</div>
+  <div class="who">株式会社HADO<br><b>求職者送客の窓口　窓口担当</b></div>
+  <img class="logo-big" src="assets/logo_white.png" alt="HADO">
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker">AGENDA</div><h2>本日の30〜45分</h2>
+<p style="font-size:15px;color:var(--gray);line-height:1.7;margin-top:8px">本日は「他社サービスと同じだと思って運用すると事故る点」に絞ってお話しします。</p><div class="ag-list"><div class="ag-row"><div class="n">01</div><div class="ttl">この面談に来るのは、どういう就活生か<small>ナビ媒体・スカウトとの決定的な違い</small></div><div class="tm">5分</div></div><div class="ag-row"><div class="n">02</div><div class="ttl">面談前の5分で読むもの<small>カウンセリングメモの使いどころ</small></div><div class="tm">8分</div></div><div class="ag-row acc"><div class="n">03</div><div class="ttl">やってはいけないこと<small>本サービス固有のルール。ここだけは外さない</small></div><div class="tm">5分</div></div><div class="ag-row acc"><div class="n">04</div><div class="ttl">着座の定義と結果報告<small>請求に直結します</small></div><div class="tm">12分</div></div><div class="ag-row"><div class="n">05</div><div class="ttl">初回面談の設計<small>成果を出されている各社のやり方</small></div><div class="tm">10分</div></div><div class="ag-row"><div class="n">--</div><div class="ttl">ご質問<small>運用の細かい点はこの場で解消してください</small></div><div class="tm">5分</div></div></div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">01</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">01</span>この面談に来るのは、どういう就活生か</div><h2>応募者ではなく、<em>一度話し終えた就活生</em>が来ます</h2>
+<div class="flow-h" style="margin-top:22px"><div class="st">SNSで認知<small>TikTok / Instagram / YouTube / X</small></div><div class="arrow">→</div><div class="st">ハックツ新卒に登録<small>当社の就活生集客サービス</small></div><div class="arrow">→</div><div class="st hot">当社CAがカウンセリング<small>就活の軸・希望条件を整理</small></div><div class="arrow">→</div><div class="st">日程確定・情報共有<small>リマインドも当社</small></div><div class="arrow">→</div><div class="st acc">貴社の初回面談<small>ここから</small></div></div><ul class="pts" style="margin-top:8px"><li><b>就活サイトからの応募者ではありません。</b>SNS経由で当社サービスに登録し、当社のカウンセリングを受けた方だけをお繋ぎしています。</li><li><b>対象は27卒〜28卒です。</b>学校種別・希望職種は、ご契約時にすり合わせた受入条件に沿って送客します。</li><li><b>希望職種が「相談したい」で届く方も一定数います。</b>軸が固まりきっていない段階なので、面談で一緒に言語化する前提でご対応ください。</li></ul><div class="closer"><div class="t">つまり</div>目の前の就活生は、<b>すでに一度、就活の話をし終えた状態</b>で座っています。自己紹介からやり直すと、同じ話を2回させることになります。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">02</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">02</span>面談前の5分で読むもの</div><h2>記入いただいた内容は、<em>全項目そのまま</em>お渡しします</h2>
+<p style="font-size:15.5px;color:var(--gray);line-height:1.8;margin-top:10px">ご本人にご記入・お話しいただいた内容は、<b style="color:var(--navy)">すべてそのままお渡しします</b>。当社側で要約して削ることはしていません。</p><div class="tblwrap"><table class="tbl"><tr><th style="width:200px">カウンセリングメモ</th><th>載っている内容</th></tr><tr><td class="k">1　基本プロフィール</td><td>氏名・学校種別・卒業年度・健康状態</td></tr><tr><td class="k">2　現在の活動状況</td><td><b>選考フェーズ</b>・内定状況・利用チャネル</td></tr><tr><td class="k">3　就活の軸・希望条件</td><td><b>Must / Want / No 条件</b></td></tr><tr><td class="k">4　自己分析・キャリア観</td><td>性格傾向・キャリア形成の方向性</td></tr><tr><td class="k">5　担当者へのアドバイス</td><td><b>心理的障壁</b>・リスク管理ポイント</td></tr></table></div><div class="quote" style="margin-top:18px"><b>Point</b>　スプレッドシートは<b>就活生情報と結果報告が1シートで完結</b>する設計です。シートの切り替えは不要です。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">03</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">02</span>面談前の5分で読むもの</div><h2>全部は読まなくていい。<em>この3つ</em>だけ</h2>
+<p style="font-size:15.5px;color:var(--gray);line-height:1.8;margin-top:10px">当社カウンセラーがヒアリングした内容を<b style="color:var(--navy)">AI議事録</b>として、シートとあわせてお渡ししています。全部は読まなくて構いません。この3つだけ見てください。</p><div class="three"><div class="card c"><div class="lb">CHECK 1</div><h4>就活の軸・志望背景</h4><p>Must / Want を頭に入れておくと、初回で「軸が明確になった」という実感を作れます。</p></div><div class="card c"><div class="lb">CHECK 2</div><h4>心理的障壁・性格傾向</h4><p>条件面を自分から言い出せないタイプかどうかで、聞き方を変えます。</p></div><div class="card c"><div class="lb">CHECK 3</div><h4>選考フェーズ・併願状況</h4><p>内定が出ている相手なら提案ペースを上げ、出ていないなら軸づくりから入ります。</p></div></div><div class="quote" style="margin-top:18px"><b>Point</b>　冒頭で<b>ご本人が書いた言葉をそのまま引用する</b>だけで、「ちゃんと見てくれている」と伝わります。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">04</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">03</span>やってはいけないこと</div><h2>面談の前に、<em>就活生へ直接ご連絡しない</em>でください</h2>
+<div class="warn" style="margin-top:16px"><div class="t">禁止事項</div><p>面談が成立する前に、就活生へ<b>辞退を誘発する連絡・「紹介が難しい」旨の連絡</b>をすることはご契約で禁止されています（日程調整などの事務連絡は除きます）。</p></div><div class="stepbox"><div class="sb"><div class="n">CASE 1</div><h4>日程のリマインド</h4><p>当社が実施します。貴社からのリマインド連絡は不要です。</p></div><div class="sb"><div class="n">CASE 2</div><h4>紹介が難しいと感じた</h4><p>ご本人には伝えず、<b>まず当社へご共有ください</b>。そのうえで対応を協議します。</p></div><div class="sb acc"><div class="n">違反した場合</div><h4>違約金が発生します</h4><p>事前接触が原因で面談が実施されなかった場合、利用料金の10倍または30万円のいずれか高い額（税別）。</p></div></div><div class="quote" style="margin-top:18px"><b>Point</b>　良かれと思った一本の連絡が辞退につながった事例があり、条項として明文化されています。判断に迷ったら、ご本人ではなく窓口担当へ。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">05</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">04</span>着座の定義と結果報告</div><h2>「着座」は<em>入室・応答</em>で成立します</h2>
+<div class="quote" style="margin-top:16px"><b>定義</b>　就活生が初回面談に出席したこと。<b>面談ツールへの入室・応答をもって成立</b>します（電話面談は架電への応答時点）。</div><div class="okng"><div class="card col ok"><h3><span class="b">請求対象</span>着座になる</h3><ul><li>面談ツール（Web会議・通話アプリ等）への<b>入室・応答</b>で成立</li><li><b>所要時間・完遂の有無・就職意欲は問いません</b>（着座後の中断・退席・通信障害でも有効）</li><li>就活生の遅刻も、<b>予定時刻から30分以内</b>の入室・応答で成立</li><li>貴社都合の日程変更・キャンセル・不参加・10分超の遅刻は「<b>みなし着座</b>」</li></ul></div><div class="card col ng"><h3><span class="b">対象外</span>着座にならない</h3><ul><li>就活生都合の事前キャンセル・当日未入室（<b>10分待機＋連絡試行</b>が条件）</li><li>障害者手帳を所持していることが判明した場合（無効成果）</li><li>外国籍であることが判明した場合（無効成果）</li><li>重複＝過去1ヶ月以内に貴社へ登録済み（原則、面談開始前までのご通知が必要）</li></ul></div></div><div class="closer"><div class="t">判断に迷ったら</div>自己判断で「対象外」と入力せず、<b>先に窓口担当へご相談ください</b>。対象外の申請には事前連絡とエビデンスが必要です。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">06</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">04</span>着座の定義と結果報告</div><h2>現れないときは、<em>10分待って、連絡を試みる</em></h2>
+<div class="stepbox" style="margin-top:20px"><div class="sb"><div class="n">STEP 1</div><h4>予定時刻から10分待機</h4><p>入室がなくても、まず10分お待ちください。</p></div><div class="sb"><div class="n">STEP 2</div><h4>電話等で連絡を試みる</h4><p>お電話などでの連絡試行までをお願いします。</p></div><div class="sb acc"><div class="n">STEP 3</div><h4>「当日未入室」で報告</h4><p>この手順を経た場合のみ、当日未入室として報告できます。</p></div></div><div class="keybox"><div class="card k"><div class="lb">遅刻</div><h4>予定時刻から30分以内の入室なら着座</h4><p>就活生の遅刻は、30分以内に入室・応答があれば着座として成立します。</p></div><div class="card k"><div class="lb">貴社都合</div><h4>日程変更・10分超の遅刻は「みなし着座」</h4><p>貴社都合の日程変更・キャンセル・不参加・10分を超える遅刻は、結果にかかわらず着座扱いです。日程変更は原則お受けできません。</p></div></div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">07</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">04</span>着座の定義と結果報告</div><h2>結果は<em>2営業日以内</em>に、4つのどれかで</h2>
+<p style="font-size:15.5px;color:var(--gray);line-height:1.8;margin-top:10px">面談実施後、「結果」列に次の4つのいずれかを<b style="color:var(--navy)">2営業日以内</b>にご入力ください。</p><div class="tblwrap"><table class="tbl"><tr><th style="width:150px">入力値</th><th>意味</th></tr><tr><td class="k">着座</td><td>予定どおり面談を実施した</td></tr><tr><td class="k">事前キャンセル</td><td>面談前に就活生から辞退の連絡があった</td></tr><tr><td class="k">当日未入室</td><td>ノーショー（連絡なし不参加）</td></tr><tr><td class="k">請求対象外</td><td>対象外条件に該当。<b>要事前連絡</b></td></tr></table></div><div class="warn" style="margin-top:18px"><div class="t">ここだけは外さない</div><p>入力がないまま<b>5営業日が経過すると「みなし承認」として自動的に着座扱い</b>になります。請求対象外として申請する場合は、<b>必ず担当者へ事前連絡＋エビデンスのご提出</b>をお願いします。</p></div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">08</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">05</span>初回面談の設計</div><h2>初回のゴールは、<em>「軸が明確になった」</em></h2>
+<p style="font-size:15.5px;color:var(--gray);line-height:1.8;margin-top:10px">中途の面談と違い、就活生は<b style="color:var(--navy)">まだ比較の基準を持っていません</b>。求人を並べる前に、基準そのものを一緒に作る面談になります。</p><div class="stepbox" style="margin-top:20px"><div class="sb"><div class="n">GOAL</div><h4>初回のゴールは<br>「軸が明確になった」実感</h4><p>情報を聞き切ることでも、その場で求人を出すことでもありません。面談後に「自分の就活の軸が言葉になった」と感じてもらえるかが基準です。</p></div><div class="sb"><div class="n">HOW</div><h4>本人が書いた言葉から<br>始める</h4><p>カウンセリングメモのMust / Wantを引用し、「ここは合っていますか」と確認するところから入ると、一緒に整理している形を作れます。</p></div><div class="sb acc"><div class="n">CARE</div><h4>「相談したい」で<br>届く方がいます</h4><p>希望職種が固まっていない状態は、失注ではなく前提です。その場で決めさせようとせず、次回までの宿題と日程を決めて終わります。</p></div></div><div class="quote" style="margin-top:20px"><b>Point</b>　学業と並行しているため、<b>連絡が取れる時間帯が社会人と違います</b>。次回日程はその場で押さえておくと、後追いの手間が大きく減ります。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">09</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">05</span>初回面談の設計</div><h2>推薦率を上げる<em>「特別扱いの宣言」</em></h2>
+<p style="font-size:15.5px;color:var(--gray);line-height:1.8;margin-top:10px">初回面談で<b style="color:var(--navy)">「自分は大事に扱われている」という確信</b>を作れるかが推薦率を左右します。最短ルートが、通常との差分を言葉にして宣言することです。</p><div class="three"><div class="card c"><div class="lb">型 A　担当者レベル</div><h4>誰が担当するかを<br>特別化する</h4><p>「普段は◯◯／あなたは△△」の対比構造を必ず入れます。</p><div class="say">「普段は新卒担当の若手スタッフが対応しますが、<b>ハックツさん経由の方は内定獲得まで私（マネージャー）が直接サポート</b>しています」</div></div><div class="card c"><div class="lb">型 B　サポート量</div><h4>ES添削・面接対策で<br>差を可視化する</h4><p>悩みの上位である「面接対策が不安」「ESが書けない」に直接刺さります。</p><div class="say">「通常はES添削1往復・面接対策1〜2回ですが、<b>ハックツさん経由の方は回数無制限</b>。納得いくまで何度でも一緒に作り込みます」</div></div><div class="card c"><div class="lb">型 C　スピード・応対</div><h4>学業との両立へ<br>配慮を示す</h4><p>学生のスケジュールへの理解を、特別待遇として宣言します。</p><div class="say">「普段は土日休みですが、<b>ハックツさん経由の方は授業や課題で平日が難しい時のために、土日もLINEで相談に応じています</b>」</div></div></div><div class="closer"><div class="t">共通するコツ</div><b>「普段は◯◯、あなたは△△」</b>という対比の形にすること。差を数字で言えるとさらに効きます。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">10</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">06</span>困ったときは</div><h2>迷ったら、<em>ご本人ではなく窓口へ</em></h2>
+<div class="tblwrap"><table class="tbl"><tr><th style="width:230px">内容</th><th>連絡先</th></tr><tr><td class="k">通常のお問い合わせ</td><td>窓口担当（<b>佐伯・松本</b>）　Slack（推奨）または Chatwork</td></tr><tr><td class="k">求職者に関するご相談</td><td>同上。紹介が難しいと感じた場合も、ご本人ではなく<b>まずこちらへ</b></td></tr><tr><td class="k">緊急トラブル・クレーム</td><td>代表 田中　※緊急時のみ</td></tr><tr><td class="k">情報漏洩・不正利用の疑い</td><td>即時に代表 田中まで</td></tr></table></div><div class="keybox"><div class="card k"><div class="lb">アクセス権限</div><h4>退職者が出たら権限解除のご連絡を</h4><p>スプレッドシートはご共有いただいた担当者アカウントのみアクセスできます。担当者の入れ替わりがあれば速やかにお知らせください。</p></div><div class="card k"><div class="lb">送客ペース・条件の変更</div><h4>10営業日前までにご相談ください</h4><p>増減・一時停止はSNS集客側の調整サイクルがあるため、直前のご依頼は反映が間に合いません。担当者の追加は最短翌営業日から反映できます。</p></div></div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">11</span></div>
+</section>
+
+<section class="slide ">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker">TAKEAWAY</div><h2>今日から、この5つだけ</h2>
+<div class="final"><div class="card" style="padding:26px 30px;display:flex;flex-direction:column"><ul class="pts"><li><b>面談前に、カウンセリングメモの3項目を読む</b>（就活の軸・心理的障壁・選考フェーズ）</li><li><b>面談前に、ご本人へ直接連絡しない</b>。紹介が難しいと感じたら、まず窓口へ</li><li><b>面談後2営業日以内に、結果を4つのどれかで入力する</b></li><li><b>現れないときは10分待機＋連絡試行</b>。この手順を経た場合のみ当日未入室</li><li><b>初回のゴールは「軸が明確になった」実感</b>。次回日程はその場で押さえる</li></ul></div><div class="urlcard"><div class="lb">FULL MANUAL</div><h4>新卒送客の手引き</h4><div class="u">kyusyokusyasokyaku-no-madoguchi.com/guide/shinsotsu</div><div class="pw">パスワード：<b>hado-shinsotsu</b></div><p style="font-size:12.5px;color:#9DB4FF;line-height:1.7;margin-top:14px">本日お話しした内容はすべてここに載っています。面談前にスマートフォンからも開けます。</p></div></div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">12</span></div>
+</section>
+
+<section class="slide divider">
+  <h1 style="position:absolute;left:80px;top:170px;color:#fff;font-size:72px;font-weight:900;line-height:1.3">
+    本日は<span style="color:#FFB38A">ありがとうございました。</span></h1>
+  <div class="contact"><img src="assets/logo_white.png" alt="HADO">株式会社HADO　求職者送客の窓口<br><b>窓口担当　佐伯・松本</b>　Slack（推奨）／ Chatwork<br><span style="font-size:14px">※緊急のトラブル・情報事故のみ　代表 田中</span></div>
+</section>
+</body>
+</html>

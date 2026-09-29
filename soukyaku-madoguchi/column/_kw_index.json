@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-job-order-development",
+    "title": "人材紹介の求人開拓戦略｜法人営業で求人数を増やす設計と歩留まり管理",
+    "description": "人材紹介事業の売上を左右する求人開拓の実務を解説。法人営業のリスト作成、アプローチ設計、求人票ヒアリング、稼働率管理まで、求人サイドのKPIを体系的に整理します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 求人開拓",
+      "法人営業 人材紹介",
+      "求人数 増やす",
+      "人材紹介 稼働求人"
+    ],
+    "primary_keyword": "人材紹介 求人開拓",
+    "status": "published",
+    "published": "2026-09-29",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-order-development/"
+  },
+  {
     "slug": "recruitment-inbound-lead-qualification",
     "title": "インバウンドリードのクオリフィケーション設計｜人材紹介の面談化率を高める運用",
     "description": "人材紹介におけるインバウンドリードのクオリフィケーション手法を解説。BANT変形フレーム、スコアリング、優先順位付け、面談化率と着座率を高める運用設計をまとめます。",
@@ -2384,41 +2400,107 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-inbound-lead-qualification",
-    "title": "インバウンドリードのクオリフィケーション設計｜人材紹介の面談化率を高める運用",
-    "description": "人材紹介におけるインバウンドリードのクオリフィケーション手法を解説。BANT変形フレーム、スコアリング、優先順位付け、面談化率と着座率を高める運用設計をまとめます。",
-    "category": "用語解説",
+    "slug": "recruitment-job-order-development",
+    "title": "人材紹介の求人開拓戦略｜法人営業で求人数を増やす設計と歩留まり管理",
+    "description": "人材紹介事業の売上を左右する求人開拓の実務を解説。法人営業のリスト作成、アプローチ設計、求人票ヒアリング、稼働率管理まで、求人サイドのKPIを体系的に整理します。",
+    "category": "ハウツー",
     "keywords": [
-      "リードクオリフィケーション",
-      "人材紹介 リード",
-      "面談化率",
-      "BANT 人材紹介"
+      "人材紹介 求人開拓",
+      "法人営業 人材紹介",
+      "求人数 増やす",
+      "人材紹介 稼働求人"
     ],
-    "primary_keyword": "リードクオリフィケーション",
+    "primary_keyword": "人材紹介 求人開拓",
     "status": "ready",
-    "scheduled": "2026-09-25",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-inbound-lead-qualification/"
+    "scheduled": "2026-09-29",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-order-development/"
   },
   {
-    "slug": "recruitment-owned-media-strategy",
-    "title": "人材紹介のオウンドメディア戦略｜求職者流入を資産化する編集設計",
-    "description": "人材紹介のオウンドメディア立ち上げから運用までを解説。テーマ選定、記事構成、SEO設計、リード獲得導線、外注体制まで求職者流入を資産化する実務をまとめます。",
-    "category": "完全ガイド",
+    "slug": "recruitment-lp-ab-testing",
+    "title": "人材紹介LPのA/Bテスト設計｜CVR改善を仮説起点で回す実務",
+    "description": "人材紹介LPで成果を出すA/Bテストの設計手順を解説。優先度の付け方、サンプルサイズ計算、ファーストビュー・CTA・フォームの検証パターンを、CV相関の高い順に紹介します。",
+    "category": "ハウツー",
     "keywords": [
-      "人材紹介 オウンドメディア",
-      "転職メディア 運営",
-      "オウンドメディア SEO",
-      "求職者 流入"
+      "人材紹介 LP ABテスト",
+      "LP CVR改善",
+      "ABテスト 設計",
+      "LPO 人材紹介"
     ],
-    "primary_keyword": "人材紹介 オウンドメディア",
+    "primary_keyword": "人材紹介 LP ABテスト",
     "key_points": [
-      "人材紹介におけるオウンドメディアの役割とKPI",
-      "テーマ選定・キーワード設計とペルソナ別記事マップ",
-      "記事制作フローと内製・外注のハイブリッド体制",
-      "リード獲得導線とLINE・面談予約への接続設計"
+      "A/Bテストで検証すべき優先度の付け方",
+      "必要サンプルサイズと有意差判定の考え方",
+      "ファーストビュー・CTA・フォームの検証パターン",
+      "勝ちパターンの横展開とテスト運用のガバナンス"
     ],
     "status": "queued",
     "queue_position": 1,
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-owned-media-strategy/"
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-lp-ab-testing/"
+  },
+  {
+    "slug": "recruitment-seat-vs-implementation-rate",
+    "title": "面談着座率と面談実施率の違い｜人材紹介のKPI定義を統一する",
+    "description": "人材紹介で混同されがちな「面談着座率」と「面談実施率」の違いを整理。集計母数の取り方、業界平均、可視化ダッシュボードでの見せ方まで、成果定義の統一を進める実務を解説します。",
+    "category": "用語解説",
+    "keywords": [
+      "面談着座率",
+      "面談実施率",
+      "人材紹介 KPI 定義",
+      "着座率 計算"
+    ],
+    "primary_keyword": "面談着座率",
+    "key_points": [
+      "面談着座率と面談実施率の定義と違い",
+      "集計母数の取り方と業界平均レンジ",
+      "現場で起きやすい混同とその弊害",
+      "ダッシュボード上での見せ方と社内合意形成"
+    ],
+    "status": "queued",
+    "queue_position": 2,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-seat-vs-implementation-rate/"
+  },
+  {
+    "slug": "recruitment-newsletter-marketing",
+    "title": "人材紹介のメルマガ運用｜求職者ナーチャリングで再面談を生む設計",
+    "description": "人材紹介のメルマガ・ニュースレター運用を解説。配信セグメント設計、開封率とクリック率の改善、再面談CVへの導線設計まで、休眠求職者を掘り起こす実務ノウハウをまとめます。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 メルマガ",
+      "ニュースレター 転職",
+      "求職者 ナーチャリング",
+      "メール マーケティング 人材"
+    ],
+    "primary_keyword": "人材紹介 メルマガ",
+    "key_points": [
+      "メルマガが人材紹介のCV創出に効く理由",
+      "配信セグメントとシナリオ設計の型",
+      "開封率・クリック率・面談化率の改善打ち手",
+      "休眠掘り起こしと解除率のバランス管理"
+    ],
+    "status": "queued",
+    "queue_position": 3,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-newsletter-marketing/"
+  },
+  {
+    "slug": "recruitment-ugc-marketing",
+    "title": "人材紹介のUGC活用｜求職者の声・体験談で信頼を積み上げる集客設計",
+    "description": "人材紹介でUGC（口コミ・体験談・SNS投稿）を集客に活かす方法を解説。取得フロー、掲載時の法務論点、SNS・LP・広告クリエイティブへの二次活用まで、信頼形成のCV導線を設計します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 UGC",
+      "口コミ 活用",
+      "体験談 マーケティング",
+      "転職 成功事例 SNS"
+    ],
+    "primary_keyword": "人材紹介 UGC",
+    "key_points": [
+      "UGCが人材紹介の意思決定に与える影響",
+      "求職者から声を集めるフローと同意設計",
+      "SNS・LP・広告への二次活用パターン",
+      "景表法・個人情報保護の実務チェックリスト"
+    ],
+    "status": "queued",
+    "queue_position": 4,
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ugc-marketing/"
   }
 ]

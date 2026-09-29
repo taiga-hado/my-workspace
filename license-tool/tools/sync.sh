@@ -6,7 +6,7 @@ SRC="$(cd "$(dirname "$0")/.." && pwd)"
 DST="$SRC/../soukyaku-madoguchi/license"
 mkdir -p "$DST/css" "$DST/js/vendor" "$DST/templates"
 cp "$SRC"/index.html "$SRC"/check.html "$SRC"/form.html "$SRC"/done.html "$DST"/
-cp "$SRC"/css/style.css "$DST"/css/
+cp "$SRC"/css/style.css "$SRC"/css/lp.css "$DST"/css/
 cp "$SRC"/js/*.js "$DST"/js/
 cp "$SRC"/js/vendor/jszip.min.js "$DST"/js/vendor/
 cp "$SRC"/templates/*.docx "$DST"/templates/

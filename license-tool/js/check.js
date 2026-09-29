@@ -72,7 +72,7 @@
     html += '<div class="note" style="margin-top:14px">2025年1月1日施行の許可条件の追加（東京労働局の案内）があります。申請前に管轄労働局の最新案内を確認してください。</div>';
     html += '<div class="wizard-nav">';
     if (pass) html += '<span></span><a class="btn btn-primary" href="form.html">このまま書類を作成する</a>';
-    else html += '<a class="btn btn-secondary" href="form.html">要件を整えてから使う（書類作成へ）</a><a class="btn btn-primary" href="https://soukyaku-cloud.com/#contact" target="_blank" rel="noopener">社労士の紹介を相談する</a>';
+    else html += '<span></span><a class="btn btn-primary" href="form.html">要件を整えながら書類を作成する</a>';
     html += '</div>';
     result.innerHTML = html; result.classList.remove('hidden');
     result.scrollIntoView({ behavior: 'smooth', block: 'start' });

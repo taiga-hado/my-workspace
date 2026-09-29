@@ -5,11 +5,16 @@
 
   const config = {
     // Google Apps Script Web App URL (apps-script/lead-handler.gs をデプロイして設定する)
-    GAS_URL: '',
+    GAS_URL: (typeof window !== 'undefined' && window.__LT_GAS) || '',
     CLOUD_URL: 'https://soukyaku-cloud.com/',
     MADOGUCHI_URL: 'https://kyusyokusyasokyaku-no-madoguchi.com/',
     TEMPLATE_DIR: 'templates/',
   };
+  // 回収する項目（会社の数値のみ）。個人の氏名・住所・ふりがなは含めない。
+  const CAPTURE_FIELDS = ['entityType', 'companyName', 'officeName', 'officeTel', 'officeAddress', 'officePostal', 'tel', 'sideBusinesses', 'scopeDefined', 'scopeJobs', 'scopeArea',
+    'expectedJobseekers', 'staffCount', 'assetCash', 'assetLand', 'assetOther', 'liabilities', 'feeAdmin', 'feeRate', 'feeRateFixed', 'feeAddRate',
+    'refundEnabled', 'refundRate1', 'refundRate3', 'refundRate6', 'submissionDate', 'todo', 'licensedAt'];
+  const CHECK_FIELDS = ['entityType', 'purpose', 'netAssets', 'cash', 'officeCount', 'officeType', 'privacyOk', 'course', 'segment', 'startWish', 'startMonth', 'channel'];
 
   function load() {
     try { return JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { return {}; }
@@ -38,6 +43,22 @@
       const a = document.createElement('a');
       a.href = url; a.download = filename; document.body.appendChild(a); a.click();
       setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 1000);
+    },
+    /** 回収データ（JSON文字列）。会社の数値と事業計画のみ。個人事業主の住所は都道府県までに丸める。 */
+    capture(d) {
+      d = d || state;
+      const out = {};
+      CAPTURE_FIELDS.forEach((k) => { if (d[k] !== undefined) out[k] = d[k]; });
+      if (d.entityType === 'individual') { delete out.officeAddress; delete out.officePostal; delete out.tel; delete out.officeTel; out.pref = String(d.address || '').slice(0, 4); }
+      else out.address = d.address; 
+      if (d.check) { out.check = {}; CHECK_FIELDS.forEach((k) => { if (d.check[k] !== undefined) out.check[k] = d.check[k]; }); }
+      return JSON.stringify(out);
+    },
+    /** 登録済みなら入力の進捗（回収データ込み）を送る */
+    postProgress(step) {
+      const l = state.lead;
+      if (!l || !l.email) return;
+      LT.postLead({ event: 'progress', id: l.id, email: l.email, company: l.company || '', step: step || '', payload: LT.capture() });
     },
     /** リード送信（GAS）。no-cors のため結果は読めない。URL未設定なら何もしない。 */
     postLead(obj) {
@@ -83,10 +104,11 @@
           <form id="ltModalForm" novalidate>
             <div class="field"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" required placeholder="you@example.com" autocomplete="email"></div>
             <div class="field"><label>会社名・屋号<span class="req">必須</span></label><input type="text" name="company" required placeholder="株式会社○○（設立前なら予定の名称）" autocomplete="organization"></div>
+            <div class="field"><label class="check" style="font-weight:500;font-size:.9rem"><input type="checkbox" name="agree" required> <span><a href="terms.html" target="_blank" rel="noopener">利用規約・プライバシーポリシー</a>に同意する</span></label></div>
             <button type="submit" class="btn btn-save btn-block">登録して一時保存をオンにする</button>
           </form>
           ${opts.allowSkip === false ? '' : '<button type="button" class="btn-skip" id="ltModalSkip">登録せずに進める</button>'}
-          <p class="modal-note">書類の内容（住所・住民票の情報・決算内容など）は送信されません。送信されるのはメールアドレスと会社名だけです。</p>
+
         </div>`;
       document.body.appendChild(el);
       document.body.classList.add('modal-open');
@@ -96,12 +118,12 @@
       const close = (registered) => { el.remove(); document.body.classList.remove('modal-open'); if (opts.onDone) opts.onDone(registered); };
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        if (!LT.validate(form)) { LT.toast('メールアドレスと会社名を入力してください'); return; }
+        if (!LT.validate(form)) { LT.toast(form.agree.checked ? 'メールアドレスと会社名を入力してください' : '利用規約への同意が必要です'); return; }
         const v = LT.collect(form);
         const lead = Object.assign({}, st.lead || {}, { id: (st.lead && st.lead.id) || LT.uid(), email: v.email, company: v.company, at: new Date().toISOString(), roadmap: true });
         LT.set({ lead, skipRegister: false });
         const c = state.check || {};
-        LT.postLead({ event: 'register', id: lead.id, email: lead.email, company: lead.company, roadmap: '1', entityType: state.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '', step: opts.step || '', userAgent: navigator.userAgent, referer: document.referrer || '' });
+        LT.postLead({ event: 'register', id: lead.id, email: lead.email, company: lead.company, roadmap: '1', entityType: state.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '', step: opts.step || '', payload: LT.capture(), userAgent: navigator.userAgent, referer: document.referrer || '' });
         LT.toast('登録しました。入力内容は保存され、いつでも再開できます');
         close(true);
       });

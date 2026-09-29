@@ -1,0 +1,13 @@
+{
+  "entityType": "individual", "submissionDate": "2026-11-04",
+  "repName": "山田 花子", "repKana": "やまだ はなこ", "repTitle": "",
+  "postal": "150-0001", "address": "東京都渋谷区神宮前１－１－１", "addressKana": "とうきょうとしぶやくじんぐうまえ", "tel": "090-1234-5678",
+  "repAddress": "東京都渋谷区神宮前１－１－１", "repAddressKana": "とうきょうとしぶやくじんぐうまえ",
+  "officers": [], "sideBusinesses": [],
+  "officeName": "山田キャリア", "officePostal": "150-0001", "officeAddress": "東京都渋谷区神宮前１－１－１", "officeTel": "090-1234-5678",
+  "contactTitle": "", "contactName": "山田 花子", "managerName": "山田 花子", "managerAddress": "東京都渋谷区神宮前１－１－１",
+  "scopeDefined": true, "scopeJobs": "医療・介護の職業", "scopeArea": "東京都",
+  "expectedJobseekers": "40", "staffCount": "1",
+  "assetCash": "2500000", "assetLand": "0", "assetOther": "300000", "liabilities": "100000",
+  "feeAdmin": "0", "feeRate": "30", "feeRateFixed": "30", "feeAddRate": "", "refundEnabled": false
+}

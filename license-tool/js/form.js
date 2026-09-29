@@ -116,6 +116,7 @@
     const sec = steps[current - 1];
     if (!LT.validate(sec)) { LT.toast('未入力または形式が正しくない項目があります'); return; }
     persist();
+    LT.postProgress(current);
     if (current === TOTAL) { location.href = 'done.html'; return; }
     show(current + 1);
   });

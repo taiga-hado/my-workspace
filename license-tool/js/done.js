@@ -7,37 +7,6 @@
 
   if (!data.repName) { location.replace('form.html'); return; }
 
-  /* ---------- メール登録 ---------- */
-  function showDownloads() {
-    gate.classList.add('hidden'); downloads.classList.remove('hidden');
-    renderDocs(); renderChecklist(); renderTodo();
-  }
-  if (data.lead && data.lead.email) { if (!data.lead.completedAt) { LT.set({ lead: Object.assign({}, data.lead, { completedAt: new Date().toISOString() }) }); const sc = LT.score(data); const c = data.check || {}; LT.postLead({ event: 'lead', id: data.lead.id, email: data.lead.email, company: data.lead.company || LT.entityName(data), roadmap: '1', entityType: data.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '', expectedJobseekers: data.expectedJobseekers || '', staffCount: data.staffCount || '', feeRate: data.feeRate || '', scope: data.scopeDefined ? `${data.scopeJobs || ''}/${data.scopeArea || ''}` : '全職種・国内', pref: (data.address || '').slice(0, 4), score: sc.score, rank: sc.rank, reasons: sc.reasons.join('、'), userAgent: navigator.userAgent, referer: document.referrer || '' }); } showDownloads(); }
-  else {
-    gate.classList.remove('hidden');
-    const gf = document.getElementById('gateForm');
-    gf.company.value = LT.entityName(data);
-    gf.addEventListener('submit', (e) => {
-      e.preventDefault();
-      if (!LT.validate(gf)) { LT.toast('メールアドレスと会社名を入力してください'); return; }
-      const v = LT.collect(gf);
-      const sc = LT.score(data);
-      const lead = { id: LT.uid(), email: v.email, company: v.company, roadmap: !!v.roadmap, at: new Date().toISOString(), rank: sc.rank };
-      LT.set({ lead });
-      const c = data.check || {};
-      LT.postLead({
-        event: 'lead', id: lead.id, email: lead.email, company: lead.company, roadmap: lead.roadmap ? '1' : '0',
-        entityType: data.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '',
-        expectedJobseekers: data.expectedJobseekers || '', staffCount: data.staffCount || '', feeRate: data.feeRate || '',
-        scope: data.scopeDefined ? `${data.scopeJobs || ''}/${data.scopeArea || ''}` : '全職種・国内',
-        pref: (data.address || '').slice(0, 4), score: sc.score, rank: sc.rank, reasons: sc.reasons.join('、'),
-        userAgent: navigator.userAgent, referer: document.referrer || '',
-      });
-      showDownloads();
-      LT.toast('登録しました。書類をダウンロードできます');
-    });
-  }
-
   /* ---------- 書類 ---------- */
   const DESC = {
     form1: '職業紹介事業許可申請書（第1面・第2面）', form2: '有料職業紹介事業計画書', form3: '届出制手数料届出書',
@@ -154,4 +123,35 @@
       });
     }
   }
+  /* ---------- メール登録 ---------- */
+  function showDownloads() {
+    gate.classList.add('hidden'); downloads.classList.remove('hidden');
+    renderDocs(); renderChecklist(); renderTodo();
+  }
+  if (data.lead && data.lead.email) { if (!data.lead.completedAt) { LT.set({ lead: Object.assign({}, data.lead, { completedAt: new Date().toISOString() }) }); const sc = LT.score(data); const c = data.check || {}; LT.postLead({ event: 'lead', id: data.lead.id, email: data.lead.email, company: data.lead.company || LT.entityName(data), roadmap: '1', entityType: data.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '', expectedJobseekers: data.expectedJobseekers || '', staffCount: data.staffCount || '', feeRate: data.feeRate || '', scope: data.scopeDefined ? `${data.scopeJobs || ''}/${data.scopeArea || ''}` : '全職種・国内', pref: (data.address || '').slice(0, 4), score: sc.score, rank: sc.rank, reasons: sc.reasons.join('、'), payload: LT.capture(), userAgent: navigator.userAgent, referer: document.referrer || '' }); } showDownloads(); }
+  else {
+    gate.classList.remove('hidden');
+    const gf = document.getElementById('gateForm');
+    gf.company.value = LT.entityName(data);
+    gf.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!LT.validate(gf)) { LT.toast(gf.agree.checked ? 'メールアドレスと会社名を入力してください' : '利用規約への同意が必要です'); return; }
+      const v = LT.collect(gf);
+      const sc = LT.score(data);
+      const lead = { id: LT.uid(), email: v.email, company: v.company, roadmap: !!v.roadmap, at: new Date().toISOString(), rank: sc.rank };
+      LT.set({ lead });
+      const c = data.check || {};
+      LT.postLead({
+        event: 'lead', id: lead.id, email: lead.email, company: lead.company, roadmap: lead.roadmap ? '1' : '0',
+        entityType: data.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '',
+        expectedJobseekers: data.expectedJobseekers || '', staffCount: data.staffCount || '', feeRate: data.feeRate || '',
+        scope: data.scopeDefined ? `${data.scopeJobs || ''}/${data.scopeArea || ''}` : '全職種・国内',
+        pref: (data.address || '').slice(0, 4), score: sc.score, rank: sc.rank, reasons: sc.reasons.join('、'), payload: LT.capture(),
+        userAgent: navigator.userAgent, referer: document.referrer || '',
+      });
+      showDownloads();
+      LT.toast('登録しました。書類をダウンロードできます');
+    });
+  }
+
 })();

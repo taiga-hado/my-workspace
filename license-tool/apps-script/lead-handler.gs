@@ -23,7 +23,7 @@ const SCHEDULE_URL = ''; // 無料相談の日程調整URL（任意）
 
 const HEADER = ['受信日時', 'id', 'event', 'email', 'company', 'roadmap', 'entityType', 'segment', 'channel', 'startMonth',
   'expectedJobseekers', 'staffCount', 'feeRate', 'scope', 'pref', 'score', 'rank', 'reasons', 'userAgent', 'referer',
-  'day1', 'day7', 'day14', 'licenseCheck', 'licensedAt', 'memo'];
+  'day1', 'day7', 'day14', 'licenseCheck', 'licensedAt', 'memo', 'payload', 'step'];
 const COL = {}; HEADER.forEach((h, i) => { COL[h] = i + 1; });
 
 function sheet_() {
@@ -39,11 +39,17 @@ function doPost(e) {
   const sh = sheet_();
   try {
     if (p.event === 'licensed') return licensed_(sh, p);
+    if (p.event === 'progress') {
+      const r = findRow_(sh, p.id, p.email);
+      if (r) { sh.getRange(r, COL.payload).setValue(p.payload || ''); sh.getRange(r, COL.step).setValue(p.step || ''); }
+      return ContentService.createTextOutput(JSON.stringify({ ok: true })).setMimeType(ContentService.MimeType.JSON);
+    }
     // 'register'（入力途中の一時保存登録）→ 行を追加し再開案内。'lead'（書類完成）→ 同じidの行があれば更新、なければ追加
     const existing = findRow_(sh, p.id, '');
     if (p.event === 'lead' && existing) {
       ['entityType', 'segment', 'channel', 'startMonth', 'expectedJobseekers', 'staffCount', 'feeRate', 'scope', 'pref', 'score', 'rank', 'reasons'].forEach((h) => { if (p[h]) sh.getRange(existing, COL[h]).setValue(String(p[h])); });
       sh.getRange(existing, COL.event).setValue('lead');
+      if (p.payload) sh.getRange(existing, COL.payload).setValue(p.payload);
       sh.getRange(existing, COL.memo).setValue('書類完成 ' + new Date().toISOString().slice(0, 10));
       if (p.email) sendDay0_(p);
     } else {

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>要件診断｜人材紹介 免許申請書類 無料作成ツール</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a class="brand" href="index.html"><img src="img/logo.svg" alt="免許申請書類 無料作成ツール" width="250" height="40" style="display:block"></a>
+  <a class="header-link" href="index.html">トップへ戻る</a>
+</div></header>
+
+<main class="container" style="padding:28px 16px 48px">
+  <div class="step-title"><h1>要件診断</h1><small>所要時間 約5分</small></div>
+  <p class="muted">有料職業紹介事業の許可基準のうち、不許可や補正の原因になりやすい項目を確認します。数字は概算で構いません。</p>
+
+  <form id="checkForm" novalidate>
+    <div class="card">
+      <div class="card-title"><span class="step-no">1</span><h2 style="margin:0">申請者</h2></div>
+      <div class="field"><label>申請者の区分<span class="req">必須</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="entityType" value="corp" required> 法人（株式会社・合同会社など）</label>
+          <label><input type="radio" name="entityType" value="individual"> 個人事業主</label>
+        </div>
+      </div>
+      <div class="field" data-only="corp"><label>定款の事業目的に「職業紹介事業」の記載がありますか<span class="req">必須</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="purpose" value="yes"> ある</label>
+          <label><input type="radio" name="purpose" value="no"> ない・わからない</label>
+        </div>
+        <span class="hint">「有料職業紹介事業」など、職業紹介を行う旨の記載が登記事項証明書と定款の両方に必要です。ない場合は先に目的変更登記を行います。</span>
+      </div>
+      <div class="field"><label>役員（個人の場合はご本人）に欠格事由はありませんか<span class="req">必須</span></label>
+        <label class="check"><input type="checkbox" name="noDisqualification" required> 禁錮以上の刑・労働関係法令違反の罰金刑から5年以内の者、暴力団員、破産手続中で復権を得ない者などに該当する役員はいない</label>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="step-no">2</span><h2 style="margin:0">財産的要件</h2></div>
+      <div class="inline">
+        <div class="field"><label>直近決算の資産総額から負債総額を引いた額（万円）<span class="req">必須</span></label>
+          <input type="number" name="netAssets" min="0" required placeholder="例：800">
+          <span class="hint">繰延資産と営業権は資産から除きます。設立直後で決算がない場合は、資本金や増資後の貸借対照表の数字を入れてください。</span>
+        </div>
+        <div class="field"><label>自己名義の現金・預金の額（万円）<span class="req">必須</span></label>
+          <input type="number" name="cash" min="0" required placeholder="例：300">
+        </div>
+      </div>
+      <div class="field"><label>職業紹介を行う事業所の数</label>
+        <select name="officeCount"><option value="1">1か所</option><option value="2">2か所</option><option value="3">3か所以上</option></select>
+        <span class="hint">基準資産額は500万円×事業所数、現預金は150万円＋60万円×（事業所数−1）が必要です。</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="step-no">3</span><h2 style="margin:0">事業所</h2></div>
+      <div class="field"><label>事業所の形態<span class="req">必須</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="officeType" value="own" required> 自社で借りている・所有しているオフィス</label>
+          <label><input type="radio" name="officeType" value="rental"> レンタルオフィス・シェアオフィス（個室）</label>
+          <label><input type="radio" name="officeType" value="home"> 自宅</label>
+          <label><input type="radio" name="officeType" value="none"> まだ決まっていない</label>
+        </div>
+      </div>
+      <div class="field"><label>面談スペースと個人情報の保管について</label>
+        <label class="check"><input type="checkbox" name="privacyOk"> 求職者のプライバシーを確保して面談できるスペース（個室またはパーテーション等）と、鍵のかかる書類保管場所を用意できる</label>
+        <span class="hint">おおむね20㎡以上の専用スペースが目安ですが、それ未満でもプライバシー確保の措置があれば認められます。自宅の場合は生活空間と明確に区分されていることが必要です。</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="step-no">4</span><h2 style="margin:0">職業紹介責任者</h2></div>
+      <div class="field"><label>職業紹介責任者講習の受講状況<span class="req">必須</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="course" value="done" required> 受講済み（5年以内）</label>
+          <label><input type="radio" name="course" value="booked"> 予約済み・受講予定</label>
+          <label><input type="radio" name="course" value="none"> 未受講・未予約</label>
+        </div>
+        <span class="hint">申請には受講証明書の写しが必要です（申請受理日前5年以内の受講）。責任者は成年で、3年以上の職業経験があることが求められます。</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><span class="step-no">5</span><h2 style="margin:0">事業の予定</h2></div>
+      <div class="field"><label>主に扱う予定の求職者層<span class="req">必須</span></label>
+        <select name="segment" required>
+          <option value="">選択してください</option>
+          <option>20代・未経験・第二新卒</option>
+          <option>新卒・高卒</option>
+          <option>30代以上の中途（一般職種）</option>
+          <option>ハイクラス・管理職</option>
+          <option>専門職（医療・介護・IT・士業など）</option>
+          <option>外国人材</option>
+          <option>その他・未定</option>
+        </select>
+      </div>
+      <div class="field"><label>いつ頃から人材紹介を始めたいですか<span class="req">必須</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="startWish" value="asap" required> できるだけ早く</label>
+          <label><input type="radio" name="startWish" value="3m"> 3ヶ月以内</label>
+          <label><input type="radio" name="startWish" value="6m"> 半年以内</label>
+          <label><input type="radio" name="startWish" value="later"> 1年以内・まだ決めていない</label>
+        </div>
+        <span class="hint">許可が下りる時期は労働局の審査次第なので、正確な月は分からなくて大丈夫です。申請から許可までは通常2〜3ヶ月かかります。希望から逆算した目安のスケジュールを診断結果で表示します。</span>
+      </div>
+      <div class="field"><label>求職者の集客経路の予定</label>
+        <select name="channel">
+          <option>未定</option>
+          <option>自社のSNS・Web集客</option>
+          <option>求人媒体への掲載</option>
+          <option>送客サービスの利用</option>
+          <option>知人・取引先からの紹介</option>
+        </select>
+        <span class="hint">決まっていなければ「未定」で構いません。許可待ちの期間に決めれば間に合います。</span>
+      </div>
+    </div>
+
+    <div id="result" class="hidden"></div>
+    <div class="wizard-nav">
+      <a class="btn btn-ghost" href="index.html">戻る</a>
+      <button type="submit" class="btn btn-primary">診断結果を見る</button>
+    </div>
+  </form>
+</main>
+<footer class="site-footer"><div class="container">運営：株式会社HADO</div></footer>
+<script src="js/app.js"></script>
+<script src="js/check.js"></script>
+</body>
+</html>

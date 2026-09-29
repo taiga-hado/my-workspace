@@ -49,7 +49,11 @@
       d = d || state;
       const out = {};
       CAPTURE_FIELDS.forEach((k) => { if (d[k] !== undefined) out[k] = d[k]; });
-      if (d.entityType === 'individual') { delete out.officeAddress; delete out.officePostal; delete out.tel; delete out.officeTel; out.pref = String(d.address || '').slice(0, 4); }
+      if (d.entityType === 'individual') {
+        delete out.officeAddress; delete out.officePostal; delete out.tel; delete out.officeTel;
+        if (!out.officeName || out.officeName === d.repName || (d.repName && out.officeName.indexOf(d.repName) >= 0)) delete out.officeName;
+        out.pref = String(d.address || '').slice(0, 4);
+      }
       else out.address = d.address; 
       if (d.check) { out.check = {}; CHECK_FIELDS.forEach((k) => { if (d.check[k] !== undefined) out.check[k] = d.check[k]; }); }
       return JSON.stringify(out);

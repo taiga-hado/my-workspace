@@ -1,0 +1,13 @@
+# 株式会社HADO CAPITAL（hado-capital-corporate.vercel.app）
+
+> 人材・教育領域で事業を展開するHADOグループの経営管理と、次世代事業への投資・インキュベーションを行う会社。
+
+## 主要ページ
+
+- [トップ](https://hado-capital-corporate.vercel.app/)
+
+## 事実関係
+
+- 事業: グループの経営管理、次世代事業への投資とインキュベーション
+- 領域: 人材、教育
+- 関連会社: 株式会社HADO（https://hado.co.jp/）

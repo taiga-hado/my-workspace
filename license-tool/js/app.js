@@ -82,7 +82,7 @@
           <p class="muted">メールアドレスを登録すると、入力の途中で閉じても続きから再開できます。再開用のリンクと、許可までのTODOをメールでお送りします。</p>
           <form id="ltModalForm" novalidate>
             <div class="field"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" required placeholder="you@example.com" autocomplete="email"></div>
-            <div class="field"><label>会社名・屋号<span class="muted" style="font-weight:400;font-size:.8rem;margin-left:6px">任意</span></label><input type="text" name="company" placeholder="株式会社○○" autocomplete="organization"></div>
+            <div class="field"><label>会社名・屋号<span class="req">必須</span></label><input type="text" name="company" required placeholder="株式会社○○（設立前なら予定の名称）" autocomplete="organization"></div>
             <button type="submit" class="btn btn-save btn-block">登録して一時保存をオンにする</button>
           </form>
           ${opts.allowSkip === false ? '' : '<button type="button" class="btn-skip" id="ltModalSkip">登録せずに進める</button>'}
@@ -96,7 +96,7 @@
       const close = (registered) => { el.remove(); document.body.classList.remove('modal-open'); if (opts.onDone) opts.onDone(registered); };
       form.addEventListener('submit', (e) => {
         e.preventDefault();
-        if (!LT.validate(form)) { LT.toast('メールアドレスを確認してください'); return; }
+        if (!LT.validate(form)) { LT.toast('メールアドレスと会社名を入力してください'); return; }
         const v = LT.collect(form);
         const lead = Object.assign({}, st.lead || {}, { id: (st.lead && st.lead.id) || LT.uid(), email: v.email, company: v.company, at: new Date().toISOString(), roadmap: true });
         LT.set({ lead, skipRegister: false });

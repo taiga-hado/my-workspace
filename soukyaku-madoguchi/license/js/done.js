@@ -19,7 +19,7 @@
     gf.company.value = LT.entityName(data);
     gf.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (!LT.validate(gf)) { LT.toast('メールアドレスを確認してください'); return; }
+      if (!LT.validate(gf)) { LT.toast('メールアドレスと会社名を入力してください'); return; }
       const v = LT.collect(gf);
       const sc = LT.score(data);
       const lead = { id: LT.uid(), email: v.email, company: v.company, roadmap: !!v.roadmap, at: new Date().toISOString(), rank: sc.rank };

@@ -60,6 +60,9 @@
   }
   function renderDocs() {
     const ul = document.getElementById('docList');
+    if (/claude\.ai$/.test(location.hostname)) {
+      ul.insertAdjacentHTML('beforebegin', '<div class="note" style="margin-bottom:12px">プレビュー環境（claude.ai）ではファイルのダウンロードが動きません。本番サイトでは各ボタンからWordファイルが保存されます。</div>');
+    }
     ul.innerHTML = Object.keys(DocGen.DOCS).map((k) => `<li><div><div class="name">${DocGen.DOCS[k].name.replace('.docx', '')}</div><div class="desc">${DESC[k] || ''}</div></div><button type="button" class="btn btn-secondary btn-sm" data-gen="${k}">ダウンロード</button></li>`).join('');
     ul.addEventListener('click', (e) => { const b = e.target.closest('[data-gen]'); if (b) gen(b.dataset.gen); });
     document.getElementById('allBtn').addEventListener('click', async () => {

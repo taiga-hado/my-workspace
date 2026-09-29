@@ -14,12 +14,13 @@
 // =============================================================================
 
 const SHEET_NAME = 'leads';
-const SLACK_WEBHOOK_URL = '__SET_IN_GAS_EDITOR__';
+const SLACK_WEBHOOK_URL = ''; // Slack Incoming Webhook の URL（空ならメール通知のみ）
+const NOTIFY_EMAIL = 't.tanaka@hadoinc.com'; // 新規リード・許可到達の通知先メール（Slack未設定でも届く）
 const FROM_NAME = '求職者送客クラウド（免許申請ツール）';
 const REPLY_TO = 'info@hado.co.jp';
 const TOOL_URL = 'https://soukyaku-cloud.com/license/';
 const CLOUD_URL = 'https://soukyaku-cloud.com/';
-const SCHEDULE_URL = ''; // 無料相談の日程調整URL（任意）
+const SCHEDULE_URL = 'https://calendar.app.google/9TdLRYotegY6JZCy5'; // 無料相談の日程調整URL
 
 const HEADER = ['受信日時', 'id', 'event', 'email', 'company', 'roadmap', 'entityType', 'segment', 'channel', 'startMonth',
   'expectedJobseekers', 'staffCount', 'feeRate', 'scope', 'pref', 'score', 'rank', 'reasons', 'userAgent', 'referer',
@@ -202,6 +203,9 @@ function sendNurture() {
 }
 
 function notifySlack_(text) {
+  if (NOTIFY_EMAIL) {
+    try { GmailApp.sendEmail(NOTIFY_EMAIL, '[免許ツール] ' + text.split('\n')[0], text + '\n\nシート: ' + SpreadsheetApp.getActiveSpreadsheet().getUrl(), { name: FROM_NAME }); } catch (err) { console.error('notify mail error', err); }
+  }
   if (!SLACK_WEBHOOK_URL || SLACK_WEBHOOK_URL.indexOf('http') !== 0) return;
   try {
     UrlFetchApp.fetch(SLACK_WEBHOOK_URL, { method: 'post', contentType: 'application/json', payload: JSON.stringify({ text }) });

@@ -168,3 +168,16 @@ body.lp { background: var(--mf-white); color: var(--mf-navy); font-family: "Noto
 .lp-final p { color: #dbe4ff; margin: 0 0 26px; }
 .lp-footer { padding: 28px 0; color: var(--mf-gray); font-size: .8rem; text-align: center; }
 .lp-footer a { color: var(--mf-gray); }
+
+/* illustrations */
+.lp-header .logo img { display: block; height: 44px; width: auto; }
+.hero-art { position: relative; }
+.hero-art img { width: 100%; height: auto; max-width: 560px; display: block; margin: 0 auto; filter: drop-shadow(0 18px 30px rgba(31,79,216,.12)); }
+.target-art { display: block; width: 180px; height: 180px; margin: 0 auto 10px; }
+.lp-doc { padding: 0 0 16px; overflow: hidden; }
+.lp-doc::before { display: none; }
+.lp-doc .thumb { background: var(--mf-tint-2); border-bottom: 1px solid var(--mf-line); padding: 14px 14px 0; height: 168px; overflow: hidden; margin-bottom: 12px; }
+.lp-doc .thumb img { width: 100%; height: auto; display: block; border: 1px solid var(--mf-line); border-bottom: 0; box-shadow: 0 -2px 10px rgba(31,39,64,.06); background: #fff; }
+.lp-doc .thumb.list ul { background: #fff; border: 1px solid var(--mf-line); border-bottom: 0; margin: 0; padding: 14px 14px 0; list-style: none; font-size: .78rem; line-height: 1.9; color: var(--mf-navy); height: 100%; }
+.lp-doc .k, .lp-doc h3 { margin-left: 14px; margin-right: 14px; }
+@media (max-width: 720px) { .target-art { width: 150px; height: 150px; } }

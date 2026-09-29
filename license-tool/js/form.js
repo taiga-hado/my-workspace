@@ -50,7 +50,7 @@
   function syncVisibility() {
     const et = entity();
     form.querySelectorAll('[data-only]').forEach((el) => el.classList.toggle('hidden', el.dataset.only !== et));
-    form.querySelectorAll('[data-label-corp]').forEach((el) => el.classList.toggle('hidden', et !== 'corp'));
+    form.querySelectorAll('[data-label-corp]').forEach((el) => el.classList.toggle('hidden', et === 'individual'));
     form.querySelectorAll('[data-label-individual]').forEach((el) => el.classList.toggle('hidden', et !== 'individual'));
     form.querySelectorAll('[data-req]').forEach((el) => { el.required = el.dataset.req === et; });
     document.getElementById('officeBlock').classList.toggle('hidden', form.officeSame.checked);
@@ -155,7 +155,26 @@
     form.expectedJobseekers.value = m * n; persist(); LT.toast(`${m * n}人を入力しました`);
   });
 
+  /* 一時保存（登録） */
+  const saveState = document.getElementById('saveState');
+  function refreshSaveState() {
+    const l = LT.get().lead;
+    saveState.textContent = l && l.email ? '一時保存オン（' + l.email + '）' : '自動保存中';
+    saveState.classList.toggle('on', !!(l && l.email));
+  }
+  document.getElementById('saveBtn').addEventListener('click', () => {
+    persist();
+    const l = LT.get().lead;
+    if (l && l.email) { LT.toast('保存済みです。このブラウザで form.html を開けば続きから再開できます'); return; }
+    LT.saveModal({ step: current, onDone: () => { refreshSaveState(); } });
+  });
+  refreshSaveState();
+
   syncVisibility();
   const m = location.hash.match(/step(\d)/);
   show(m ? Number(m[1]) : 1);
+  const st0 = LT.get();
+  if (!(st0.lead && st0.lead.email) && !st0.skipRegister) {
+    LT.saveModal({ step: 1, onDone: () => refreshSaveState() });
+  }
 })();

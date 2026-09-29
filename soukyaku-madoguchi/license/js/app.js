@@ -67,6 +67,48 @@
       const rank = score >= 5 ? 'A' : score >= 3 ? 'B' : 'C';
       return { score, rank, reasons };
     },
+    /** 一時保存のための登録モーダル。opts: { onDone(registered), allowSkip } */
+    saveModal(opts) {
+      opts = opts || {};
+      const st = state;
+      let el = document.getElementById('ltModal');
+      if (el) el.remove();
+      el = document.createElement('div');
+      el.id = 'ltModal'; el.className = 'modal-backdrop';
+      el.innerHTML = `
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="ltModalTitle">
+          <div class="modal-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg></div>
+          <h2 id="ltModalTitle">入力内容を一時保存して、<br>あとから再開できるようにしますか？</h2>
+          <p class="muted">メールアドレスを登録すると、入力の途中で閉じても続きから再開できます。再開用のリンクと、許可までのTODOをメールでお送りします。</p>
+          <form id="ltModalForm" novalidate>
+            <div class="field"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" required placeholder="you@example.com" autocomplete="email"></div>
+            <div class="field"><label>会社名・屋号<span class="muted" style="font-weight:400;font-size:.8rem;margin-left:6px">任意</span></label><input type="text" name="company" placeholder="株式会社○○" autocomplete="organization"></div>
+            <button type="submit" class="btn btn-save btn-block">登録して一時保存をオンにする</button>
+          </form>
+          ${opts.allowSkip === false ? '' : '<button type="button" class="btn-skip" id="ltModalSkip">登録せずに進める</button>'}
+          <p class="modal-note">書類の内容（住所・住民票の情報・決算内容など）は送信されません。送信されるのはメールアドレスと会社名だけです。</p>
+        </div>`;
+      document.body.appendChild(el);
+      document.body.classList.add('modal-open');
+      const form = el.querySelector('#ltModalForm');
+      form.company.value = (st.lead && st.lead.company) || LT.entityName(st) || '';
+      if (st.lead && st.lead.email) form.email.value = st.lead.email;
+      const close = (registered) => { el.remove(); document.body.classList.remove('modal-open'); if (opts.onDone) opts.onDone(registered); };
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (!LT.validate(form)) { LT.toast('メールアドレスを確認してください'); return; }
+        const v = LT.collect(form);
+        const lead = Object.assign({}, st.lead || {}, { id: (st.lead && st.lead.id) || LT.uid(), email: v.email, company: v.company, at: new Date().toISOString(), roadmap: true });
+        LT.set({ lead, skipRegister: false });
+        const c = state.check || {};
+        LT.postLead({ event: 'register', id: lead.id, email: lead.email, company: lead.company, roadmap: '1', entityType: state.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '', step: opts.step || '', userAgent: navigator.userAgent, referer: document.referrer || '' });
+        LT.toast('登録しました。入力内容は保存され、いつでも再開できます');
+        close(true);
+      });
+      const skip = el.querySelector('#ltModalSkip');
+      if (skip) skip.addEventListener('click', () => { LT.set({ skipRegister: true }); close(false); });
+      setTimeout(() => form.email.focus(), 50);
+    },
     /** 会社名 or 氏名 */
     entityName(d) { return d.entityType === 'corp' ? (d.companyName || '') : (d.repName || ''); },
     /** フォーム要素 → state。name 属性をキーにする。checkbox は true/false。 */

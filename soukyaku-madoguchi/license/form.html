@@ -9,8 +9,12 @@
 </head>
 <body>
 <header class="site-header"><div class="container">
-  <a class="brand" href="index.html">免許申請書類 <span>無料作成ツール</span></a>
-  <button type="button" class="btn btn-ghost btn-sm" id="resetBtn">入力をリセット</button>
+  <a class="brand" href="index.html"><img src="img/logo.svg" alt="免許申請書類 無料作成ツール" width="250" height="40" style="display:block"></a>
+  <div style="display:flex;align-items:center;gap:10px">
+    <span class="save-state" id="saveState">自動保存中</span>
+    <button type="button" class="save-btn" id="saveBtn"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>一時保存</button>
+    <button type="button" class="btn btn-ghost btn-sm" id="resetBtn">リセット</button>
+  </div>
 </div></header>
 
 <main class="container" style="padding:28px 16px 48px">

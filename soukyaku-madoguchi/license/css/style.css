@@ -241,3 +241,21 @@ details.help[open] summary { margin-bottom: 8px; }
 /* limits */
 .limits { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
 .limits li { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; font-size: .95rem; }
+
+/* registration modal */
+.modal-open { overflow: hidden; }
+.modal-backdrop { position: fixed; inset: 0; z-index: 50; background: rgba(31, 39, 64, .38); backdrop-filter: blur(7px); -webkit-backdrop-filter: blur(7px); display: flex; align-items: center; justify-content: center; padding: 16px; }
+.modal { background: #fff; border-radius: 18px; width: 100%; max-width: 520px; padding: 30px 28px 22px; box-shadow: 0 30px 60px rgba(16,26,46,.25); text-align: center; }
+.modal-icon { width: 56px; height: 56px; border-radius: 16px; background: var(--blue-soft); color: var(--blue); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+.modal h2 { font-size: 1.25rem; line-height: 1.5; margin-bottom: 8px; }
+.modal .muted { font-size: .92rem; }
+.modal form { text-align: left; margin-top: 16px; }
+.btn-save { background: #ffcf3d; color: var(--ink); box-shadow: 0 4px 0 #e0a800; border-radius: 999px; padding: 15px 20px; font-size: 1.02rem; }
+.btn-save:hover { background: #ffd95c; }
+.btn-skip { display: block; margin: 14px auto 0; background: transparent; border: 0; color: #8a93a5; font: inherit; font-size: .9rem; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.btn-skip:hover { color: var(--muted); }
+.modal-note { font-size: .78rem; color: var(--muted); margin: 14px 0 0; }
+.save-btn { display: inline-flex; align-items: center; gap: 6px; background: var(--white); border: 1px solid var(--line); color: var(--ink); font: inherit; font-weight: 700; font-size: .85rem; padding: 8px 12px; border-radius: 8px; cursor: pointer; }
+.save-btn:hover { background: var(--blue-soft); border-color: var(--blue); }
+.save-state { font-size: .78rem; color: var(--muted); }
+.save-state.on { color: var(--green); font-weight: 700; }

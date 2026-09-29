@@ -12,7 +12,7 @@
     gate.classList.add('hidden'); downloads.classList.remove('hidden');
     renderDocs(); renderChecklist(); renderTodo();
   }
-  if (data.lead && data.lead.email) showDownloads();
+  if (data.lead && data.lead.email) { if (!data.lead.completedAt) { LT.set({ lead: Object.assign({}, data.lead, { completedAt: new Date().toISOString() }) }); const sc = LT.score(data); const c = data.check || {}; LT.postLead({ event: 'lead', id: data.lead.id, email: data.lead.email, company: data.lead.company || LT.entityName(data), roadmap: '1', entityType: data.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '', expectedJobseekers: data.expectedJobseekers || '', staffCount: data.staffCount || '', feeRate: data.feeRate || '', scope: data.scopeDefined ? `${data.scopeJobs || ''}/${data.scopeArea || ''}` : '全職種・国内', pref: (data.address || '').slice(0, 4), score: sc.score, rank: sc.rank, reasons: sc.reasons.join('、'), userAgent: navigator.userAgent, referer: document.referrer || '' }); } showDownloads(); }
   else {
     gate.classList.remove('hidden');
     const gf = document.getElementById('gateForm');

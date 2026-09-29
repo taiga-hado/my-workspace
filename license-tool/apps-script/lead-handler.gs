@@ -39,9 +39,18 @@ function doPost(e) {
   const sh = sheet_();
   try {
     if (p.event === 'licensed') return licensed_(sh, p);
-    const row = HEADER.map((h) => (h === '受信日時' ? new Date() : (p[h] == null ? '' : String(p[h]))));
-    sh.appendRow(row);
-    if (p.email) sendDay0_(p);
+    // 'register'（入力途中の一時保存登録）→ 行を追加し再開案内。'lead'（書類完成）→ 同じidの行があれば更新、なければ追加
+    const existing = findRow_(sh, p.id, '');
+    if (p.event === 'lead' && existing) {
+      ['entityType', 'segment', 'channel', 'startMonth', 'expectedJobseekers', 'staffCount', 'feeRate', 'scope', 'pref', 'score', 'rank', 'reasons'].forEach((h) => { if (p[h]) sh.getRange(existing, COL[h]).setValue(String(p[h])); });
+      sh.getRange(existing, COL.event).setValue('lead');
+      sh.getRange(existing, COL.memo).setValue('書類完成 ' + new Date().toISOString().slice(0, 10));
+      if (p.email) sendDay0_(p);
+    } else {
+      const row = HEADER.map((h) => (h === '受信日時' ? new Date() : (p[h] == null ? '' : String(p[h]))));
+      sh.appendRow(row);
+      if (p.email) { if (p.event === 'register') sendResume_(p); else sendDay0_(p); }
+    }
     notifySlack_('免許ツール 新規リード [' + (p.rank || '-') + ']\n会社: ' + (p.company || '') + '\nメール: ' + p.email +
       '\n領域: ' + (p.segment || '') + ' / 集客: ' + (p.channel || '') + ' / 開業: ' + (p.startMonth || '') +
       '\n見込求職者: ' + (p.expectedJobseekers || '') + '人 / 料率: ' + (p.feeRate || '') + '% / ロードマップ希望: ' + (p.roadmap === '1' ? 'あり' : 'なし'));
@@ -148,6 +157,13 @@ function licensedBody_(p) {
     '許可後の事務手続き（明示書面の備え付け、毎年4月の事業報告、5年ごとの更新）もツールのTODOに載せています。' + sig_();
 }
 
+function sendResume_(p) {
+  GmailApp.sendEmail(p.email, '【一時保存】免許申請書類の入力を再開するには', greet_(p) +
+    '入力内容の一時保存を有効にしました。入力内容は登録時にお使いのブラウザに保存されています。\n' +
+    '続きは、同じブラウザで次のページを開くと再開できます。\n' + TOOL_URL + 'form.html\n\n' +
+    '書類が完成すると、許可までのTODOと必要書類の一覧を改めてお送りします。' + sig_(), { name: FROM_NAME, replyTo: REPLY_TO });
+}
+
 function sendDay0_(p) {
   GmailApp.sendEmail(p.email, '【書類作成完了】免許申請までのTODOリスト', day0Body_(p), { name: FROM_NAME, replyTo: REPLY_TO });
 }
@@ -162,7 +178,7 @@ function sendNurture() {
   for (let i = 1; i < values.length; i++) {
     const row = values[i];
     const email = row[COL.email - 1];
-    if (!email || row[COL.event - 1] !== 'lead') continue;
+    if (!email || (row[COL.event - 1] !== 'lead' && row[COL.event - 1] !== 'register')) continue;
     const p = {}; HEADER.forEach((h, k) => { p[h] = row[k]; });
     const days = (now - new Date(row[0])) / 86400000;
     const licensed = !!row[COL.licensedAt - 1];

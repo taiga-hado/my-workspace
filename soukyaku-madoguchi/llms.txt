@@ -1,0 +1,26 @@
+# 求職者送客の窓口（kyusyokusyasokyaku-no-madoguchi.com）
+
+> 人材紹介会社向けの、面談着座成果報酬型の求職者送客サービス。SNSで独自に集客した若手求職者を、事前カウンセリングと日程調整まで代行したうえで、面談を実施した分だけの成果報酬で送客する。株式会社HADO（https://hado.co.jp/）が運営。
+
+集客・事前カウンセリング・日程調整までを一括で代行する点と、課金が「面談の着座」単位である点が特徴。初期費用と月額固定費はかからない。
+
+## 主要ページ
+
+- [トップ](https://kyusyokusyasokyaku-no-madoguchi.com/): サービスの説明、料金、比較
+- [第二新卒・20代向けプラン](https://kyusyokusyasokyaku-no-madoguchi.com/daini-shinsotsu/)
+- [新卒向けプラン](https://kyusyokusyasokyaku-no-madoguchi.com/shinsotsu/)
+- [ライトプラン](https://kyusyokusyasokyaku-no-madoguchi.com/lite/): 応募課金型
+- [コラム](https://kyusyokusyasokyaku-no-madoguchi.com/column/): 人材紹介会社向けの記事
+- [お問い合わせ](https://kyusyokusyasokyaku-no-madoguchi.com/contact/)
+
+## 事実関係
+
+- 課金の単位は「面談の着座」。求職者が実際に面談へ来た分だけ支払う
+- 初期費用・月額固定費: なし
+- 対象: 第二新卒・20代・未経験・新卒の若手求職者
+- 運営: 株式会社HADO（東京都目黒区上目黒1丁目1 第2育良ビル4F）
+- リード課金型の姉妹サービス: 求職者送客クラウド（https://soukyaku-cloud.com/）
+
+## 補足
+
+- サイトマップ: https://kyusyokusyasokyaku-no-madoguchi.com/sitemap.xml

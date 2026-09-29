@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>書類入力｜人材紹介 免許申請書類 無料作成ツール</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a class="brand" href="./">免許申請書類 <span>無料作成ツール</span></a>
+  <button type="button" class="btn btn-ghost btn-sm" id="resetBtn">入力をリセット</button>
+</div></header>
+
+<main class="container" style="padding:28px 16px 48px">
+  <div class="step-title"><h1>書類入力</h1><small>入力は自動保存されます</small></div>
+  <div class="progress" id="progress"></div>
+
+  <form id="wizard" novalidate>
+
+    <!-- STEP 1 -->
+    <section class="card" data-step="1">
+      <div class="card-title"><span class="step-no">1</span><h2 style="margin:0">申請者情報</h2></div>
+      <p class="muted">様式第1号④〜⑥、様式第3号④⑤に使います。登記事項証明書のとおりに入力してください。</p>
+      <div class="field"><label>申請者の区分<span class="req">必須</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="entityType" value="corp" required> 法人</label>
+          <label><input type="radio" name="entityType" value="individual"> 個人事業主</label>
+        </div>
+      </div>
+      <div data-only="corp">
+        <div class="inline">
+          <div class="field"><label>法人名<span class="req">必須</span></label><input type="text" name="companyName" placeholder="株式会社○○" data-req="corp"></div>
+          <div class="field"><label>法人名のふりがな<span class="req">必須</span></label><input type="text" name="companyKana" placeholder="かぶしきがいしゃ○○" data-req="corp"></div>
+        </div>
+      </div>
+      <div class="inline">
+        <div class="field" data-only="corp"><label>代表者の役職<span class="req">必須</span></label><input type="text" name="repTitle" value="代表取締役" data-req="corp"></div>
+        <div class="field"><label><span data-label-corp>代表者氏名</span><span data-label-individual>氏名</span><span class="req">必須</span></label><input type="text" name="repName" required placeholder="田中 太郎"><span class="hint">姓と名の間に空白を入れてください。旧姓使用の場合は旧姓のみ。</span></div>
+        <div class="field"><label>ふりがな<span class="req">必須</span></label><input type="text" name="repKana" required placeholder="たなか たろう"></div>
+      </div>
+      <h3 style="margin-top:8px"><span data-label-corp>主たる事務所の所在地（本店）</span><span data-label-individual>事業主の住所</span></h3>
+      <div class="inline">
+        <div class="field"><label>郵便番号<span class="req">必須</span></label><input type="text" name="postal" required pattern="[0-9０-９]{3}-?[0-9０-９]{4}" placeholder="153-0051"></div>
+        <div class="field"><label>電話番号<span class="req">必須</span></label><input type="tel" name="tel" required placeholder="03-1234-5678"></div>
+      </div>
+      <div class="field"><label>所在地<span class="req">必須</span></label><input type="text" name="address" required placeholder="東京都目黒区上目黒１－１　○○ビル４Ｆ"><span class="hint">建物名・階数・部屋番号まで記載します。</span></div>
+      <div class="field"><label>所在地のふりがな<span class="req">必須</span></label><input type="text" name="addressKana" required placeholder="とうきょうとめぐろくかみめぐろ"><span class="hint">市区町村・町名までで構いません。</span></div>
+      <div data-only="corp">
+        <h3 style="margin-top:8px">代表者の住所（住民票のとおり）</h3>
+        <div class="field"><label>住所<span class="req">必須</span></label><input type="text" name="repAddress" data-req="corp" placeholder="東京都文京区後楽１－９－２０"></div>
+        <div class="field"><label>ふりがな<span class="req">必須</span></label><input type="text" name="repAddressKana" data-req="corp" placeholder="とうきょうとぶんきょうくこうらく"></div>
+      </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="card" data-step="2">
+      <div class="card-title"><span class="step-no">2</span><h2 style="margin:0">役員（代表者以外）</h2></div>
+      <div data-only="corp">
+        <p class="muted">様式第1号⑦に使います。登記事項証明書に記載されている役員全員（社外取締役・監査役を含む）を、代表者を除いて入力します。4名以上は別紙に記載します。いなければ空欄で進んでください。</p>
+        <div id="officers"></div>
+      </div>
+      <div data-only="individual"><p class="note">個人事業主の場合、役員欄の記載は不要です。次へ進んでください。</p></div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="card" data-step="3">
+      <div class="card-title"><span class="step-no">3</span><h2 style="margin:0">事業所・職業紹介責任者</h2></div>
+      <p class="muted">様式第1号⑧〜⑪、様式第2号、様式第3号⑧に使います。</p>
+      <div class="field"><label class="check"><input type="checkbox" name="officeSame" checked> 職業紹介を行う事業所は上記の所在地と同じ</label></div>
+      <div id="officeBlock">
+        <div class="field"><label>事業所の名称<span class="req">必須</span></label><input type="text" name="officeName" placeholder="株式会社○○ 本社"><span class="hint">法人名のみでも構いません。許可証にこの名称が記載されます。</span></div>
+        <div class="inline">
+          <div class="field"><label>郵便番号</label><input type="text" name="officePostal" placeholder="153-0051"></div>
+          <div class="field"><label>電話番号</label><input type="tel" name="officeTel" placeholder="03-1234-5678"><span class="hint">この番号が人材サービス総合サイトに掲載されます。</span></div>
+        </div>
+        <div class="field"><label>所在地</label><input type="text" name="officeAddress" placeholder="東京都目黒区上目黒１－１　○○ビル４Ｆ"></div>
+      </div>
+      <h3 style="margin-top:8px">職業紹介責任者</h3>
+      <div class="inline">
+        <div class="field"><label>氏名<span class="req">必須</span></label><input type="text" name="managerName" required placeholder="佐藤 花子"><span class="hint">責任者講習を受講した方。代表者が兼ねる場合は代表者の氏名。</span></div>
+        <div class="field"><label>住所（住民票のとおり）<span class="req">必須</span></label><input type="text" name="managerAddress" required placeholder="東京都台東区東上野４－１－２"></div>
+      </div>
+      <h3 style="margin-top:8px">担当者（労働局からの連絡窓口）</h3>
+      <div class="field"><label class="check"><input type="checkbox" name="managerSame" checked> 職業紹介責任者と同じ</label></div>
+      <div id="contactBlock" class="inline">
+        <div class="field"><label>担当者の役職</label><input type="text" name="contactTitle" placeholder="取締役／総務課長など"></div>
+        <div class="field"><label>担当者氏名</label><input type="text" name="contactName" placeholder="佐藤 花子"></div>
+      </div>
+      <div class="field" id="contactTitleOnly"><label>職業紹介責任者の役職（担当者欄に記載）</label><input type="text" name="contactTitle2" placeholder="代表取締役／取締役など"></div>
+      <h3 style="margin-top:8px">兼業（他に行っている事業）</h3>
+      <div class="grid-3">
+        <div class="field"><input type="text" name="sb1" placeholder="例：Webマーケティング支援"></div>
+        <div class="field"><input type="text" name="sb2" placeholder="例：労働者派遣事業"></div>
+        <div class="field"><input type="text" name="sb3" placeholder=""></div>
+      </div>
+      <span class="hint">現在行っている事業のみ。派遣許可を持つ場合は必ず「労働者派遣事業」と記載します。専業なら空欄。</span>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="card" data-step="4">
+      <div class="card-title"><span class="step-no">4</span><h2 style="margin:0">事業計画</h2></div>
+      <p class="muted">様式第2号、業務運営規程、明示書面に使います。</p>
+      <div class="field"><label>取扱職種の範囲等を限定しますか<span class="req">必須</span></label>
+        <div class="radio-group">
+          <label><input type="radio" name="scopeDefinedRadio" value="no" checked> 限定しない（全職種・国内）</label>
+          <label><input type="radio" name="scopeDefinedRadio" value="yes"> 限定する</label>
+        </div>
+        <span class="hint">限定する場合は様式第6号（取扱職種範囲等届出書）の提出も必要です。迷う場合は「限定しない」で問題ありません。</span>
+      </div>
+      <div id="scopeBlock" class="inline hidden">
+        <div class="field"><label>職種の範囲</label><input type="text" name="scopeJobs" placeholder="例：事務的職業、営業の職業"></div>
+        <div class="field"><label>地域の範囲</label><input type="text" name="scopeArea" placeholder="例：東京都、関東地方"></div>
+      </div>
+      <div class="inline">
+        <div class="field"><label>年度末（3月末）時点の有効求職者見込数（人）<span class="req">必須</span></label><input type="number" name="expectedJobseekers" min="0" required placeholder="例：120"><span class="hint">登録して紹介可能な状態の求職者の見込み。初年度は月10〜30人×開業月数が目安です。</span></div>
+        <div class="field"><label>職業紹介の業務に従事する者の数（人）<span class="req">必須</span></label><input type="number" name="staffCount" min="1" required value="1"><span class="hint">責任者を含みます。</span></div>
+      </div>
+      <div data-only="individual">
+        <h3 style="margin-top:8px">資産等の状況（個人事業主のみ・直前の納税期末日時点）</h3>
+        <div class="grid-3">
+          <div class="field"><label>現金・預金（円）</label><input type="number" name="assetCash" min="0"></div>
+          <div class="field"><label>土地・建物（円）</label><input type="number" name="assetLand" min="0"></div>
+          <div class="field"><label>その他の資産（円）</label><input type="number" name="assetOther" min="0"></div>
+        </div>
+        <div class="field"><label>負債の合計（円）</label><input type="number" name="liabilities" min="0"></div>
+      </div>
+    </section>
+
+    <!-- STEP 5 -->
+    <section class="card" data-step="5">
+      <div class="card-title"><span class="step-no">5</span><h2 style="margin:0">手数料・返戻金・個人情報</h2></div>
+      <p class="muted">届出制手数料の手数料表（一般登録型）、明示書面、個人情報適正管理規程に使います。</p>
+      <div class="grid-3">
+        <div class="field"><label>成功報酬の料率（％）<span class="req">必須</span></label><input type="number" name="feeRate" min="1" max="50" required value="30"><span class="hint">就職後1年間の賃金に対する割合。上限は50％。</span></div>
+        <div class="field"><label>有期雇用の場合の料率（％）</label><input type="number" name="feeRateFixed" min="1" max="50" placeholder="無期と同じなら空欄"></div>
+        <div class="field"><label>求人受理時の事務費用（円）</label><input type="number" name="feeAdmin" min="0" value="0"><span class="hint">徴収しない場合は0。</span></div>
+      </div>
+      <div class="field"><label>付加サービス（専門的な相談・助言）の料率（％）</label><input type="number" name="feeAddRate" min="0" max="50" placeholder="行わない場合は空欄"></div>
+      <div class="field"><label class="check"><input type="checkbox" name="refundEnabled" checked> 返戻金制度を設ける（早期退職時に手数料の一部を返金）</label><span class="hint">設けることが望ましいとされています。設けない場合は明示書面にその旨を記載します。</span></div>
+      <div id="refundBlock" class="grid-3">
+        <div class="field"><label>1か月未満で退職：返金率（％）</label><input type="number" name="refundRate1" min="0" max="100" value="80"></div>
+        <div class="field"><label>3か月未満：返金率（％）</label><input type="number" name="refundRate3" min="0" max="100" value="50"></div>
+        <div class="field"><label>6か月未満：返金率（％）</label><input type="number" name="refundRate6" min="0" max="100" value="20"></div>
+      </div>
+      <div class="field"><label>個人情報を取り扱う職員の範囲</label><input type="text" name="staffScope" value="職業紹介業務に従事する全職員"><span class="hint">「○○課の職員」のように部署で限定することもできます。</span></div>
+    </section>
+
+    <!-- STEP 6 -->
+    <section class="card" data-step="6">
+      <div class="card-title"><span class="step-no">6</span><h2 style="margin:0">提出日・最終確認</h2></div>
+      <div class="field"><label>労働局への提出予定日<span class="req">必須</span></label><input type="date" name="submissionDate" required><span class="hint">申請書の①欄に和暦で印字します。提出日が変わる場合は再生成してください。</span></div>
+      <div id="summary"></div>
+      <div class="note">提出前に、登記事項証明書・住民票と一字一句合っているかを確認してください。申請書②欄と③欄は記名押印または署名で対応します（収入印紙は貼らずに持参）。</div>
+    </section>
+
+    <div class="wizard-nav">
+      <button type="button" class="btn btn-secondary" id="prevBtn">戻る</button>
+      <button type="button" class="btn btn-primary" id="nextBtn">次へ</button>
+    </div>
+  </form>
+</main>
+<footer class="site-footer"><div class="container">運営：株式会社HADO</div></footer>
+<script src="js/app.js"></script>
+<script src="js/form.js"></script>
+</body>
+</html>

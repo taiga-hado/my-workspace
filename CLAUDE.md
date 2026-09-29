@@ -6,6 +6,7 @@
 - `sellpath-lp/` - SellPath landing page (HTML + images)
 - `lineworks-monitoring/` - LINE WORKS monitoring script (Python)
 - `looker-to-sheets/` - Looker Studio to Google Sheets automation (Python + Selenium + Docker)
+- `license-tool/` - 人材紹介 免許申請書類 無料作成ツール (static HTML + client-side docx generation, spec in `docs/license-tool-spec.md`)
 - `My-Vault/` - Obsidian notes vault
 - `docs/` - Reference documents and articles
 

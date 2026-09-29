@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>書類のダウンロード｜人材紹介 免許申請書類 無料作成ツール</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header"><div class="container">
+  <a class="brand" href="./">免許申請書類 <span>無料作成ツール</span></a>
+  <a class="header-link" href="form.html#step6">入力内容を修正する</a>
+</div></header>
+
+<main class="container" style="padding:28px 16px 48px">
+  <!-- メール登録 -->
+  <section id="gate" class="card hidden">
+    <h1>書類の準備ができました</h1>
+    <p>ダウンロードの前に、連絡先を登録してください。免許取得までのTODOリストと「免許取得から月商300万円までのロードマップ」をメールでお送りします。</p>
+    <form id="gateForm" novalidate>
+      <div class="inline">
+        <div class="field"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" required placeholder="you@example.com"></div>
+        <div class="field"><label>会社名・屋号</label><input type="text" name="company" placeholder="株式会社○○"></div>
+      </div>
+      <div class="field"><label class="check"><input type="checkbox" name="roadmap" checked> ロードマップと、許可取得までの進め方について無料相談の案内を受け取る</label></div>
+      <p class="muted" style="font-size:.85rem">書類の内容（住所・住民票情報・決算内容など）は送信されません。送信されるのはメールアドレス、会社名、事業の予定（領域・開業予定月・集客経路）のみです。</p>
+      <button type="submit" class="btn btn-primary btn-block">登録して書類をダウンロードする</button>
+    </form>
+  </section>
+
+  <!-- ダウンロード -->
+  <section id="downloads" class="hidden">
+    <div class="card">
+      <h1>書類をダウンロード</h1>
+      <p class="muted">Word形式です。開いて内容を確認し、印刷してください。提出書類は原本1部＋コピー2部の計3部が基本です（労働局により異なります）。</p>
+      <ul class="doc-list" id="docList"></ul>
+      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+        <button type="button" class="btn btn-primary" id="allBtn">すべてダウンロード</button>
+        <a class="btn btn-secondary" href="form.html#step6">入力内容を修正する</a>
+      </div>
+      <div class="warn" style="margin-top:16px"><strong>ご確認ください</strong><br>様式第1号の「有料・無料」「更新申請」など該当しない文言には取消線を入れています。労働局によっては二重線での抹消を求められる場合があるため、窓口の指示に従ってください。</div>
+    </div>
+
+    <div class="card">
+      <h2>添付書類チェックリスト</h2>
+      <p class="muted">本ツールで作成した書類のほかに、以下の書類を添付します。</p>
+      <div id="checklist"></div>
+    </div>
+
+    <div class="card">
+      <h2>許可までのTODO</h2>
+      <p class="muted">進捗はこのブラウザに保存されます。</p>
+      <ul class="todo" id="todo"></ul>
+      <div id="licensedBox" style="margin-top:16px"></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container">運営：株式会社HADO（<a href="https://soukyaku-cloud.com/" target="_blank" rel="noopener">求職者送客クラウド</a>）</div></footer>
+<script src="js/vendor/jszip.min.js"></script>
+<script src="js/docgen.js"></script>
+<script src="js/app.js"></script>
+<script src="js/done.js"></script>
+</body>
+</html>

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>求職者送客事業のこれから 2026-10</title>
+<style>
+  @page { size: 1280px 720px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif; background: #fff; }
+  :root {
+    --navy: #0F1B33; --ink: #1E293B; --blue: #2457F5; --blue-soft: #E8EEFF; --accent: #FF6B2C;
+    --bg: #F7F8FB; --gray: #5B6578; --light: #9AA3B5; --line: #E3E7EF;
+  }
+  .slide { width: 1280px; height: 720px; background: var(--bg); position: relative; overflow: hidden; page-break-after: always; }
+  .slide:last-child { page-break-after: auto; }
+  .topbar { position: absolute; left: 0; top: 0; width: 1280px; height: 6px; background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 60%, var(--accent) 100%); }
+  .logo { position: absolute; top: 30px; right: 48px; height: 18px; }
+  .footer { position: absolute; bottom: 20px; left: 64px; right: 48px; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: var(--light); }
+  .pageno { font-size: 13px; font-weight: 700; color: var(--gray); }
+  .content { position: absolute; left: 64px; right: 64px; top: 58px; bottom: 56px; display: flex; flex-direction: column; }
+  .kicker { font-size: 13px; font-weight: 700; color: var(--blue); letter-spacing: 2px; margin-bottom: 8px; }
+  .kicker .ag { display: inline-block; background: var(--blue); color: #fff; border-radius: 4px; padding: 2px 8px; margin-right: 8px; letter-spacing: 1px; }
+  h2 { font-size: 34px; font-weight: 800; color: var(--navy); line-height: 1.25; letter-spacing: -0.5px; }
+  h2 em { font-style: normal; color: var(--blue); }
+  .card { background: #fff; border-radius: 16px; box-shadow: 0 2px 14px rgba(15,27,51,0.06); border: 1px solid #EEF1F6; }
+  .quote { background: #FFF7F2; border-left: 4px solid var(--accent); border-radius: 0 12px 12px 0; padding: 14px 18px; font-size: 16px; color: var(--ink); line-height: 1.6; }
+  .quote b { color: var(--accent); }
+  .num { font-size: 60px; font-weight: 900; color: var(--navy); letter-spacing: -2px; line-height: 1; }
+  .num small { font-size: 20px; font-weight: 700; color: var(--gray); letter-spacing: 0; margin-left: 4px; }
+  .cap { font-size: 13px; color: var(--gray); margin-top: 10px; line-height: 1.5; }
+  .arrow { color: #B8C2D6; font-size: 26px; font-weight: 300; }
+  .pts { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+  .pts li { font-size: 16.5px; color: var(--ink); line-height: 1.65; padding-left: 22px; position: relative; }
+  .pts li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--blue); font-weight: 900; }
+  .pts li b { color: var(--navy); }
+  .two { display: grid; grid-template-columns: 1fr 380px; gap: 22px; margin-top: 22px; flex: 1; min-height: 0; }
+  .two .main { padding: 26px 28px; display: flex; flex-direction: column; }
+  .two .side { display: flex; flex-direction: column; gap: 16px; }
+  .main .quote { margin-top: auto; }
+  .flow-h { display: flex; align-items: center; gap: 8px; margin: 6px 0 22px; }
+  .flow-h .st { flex: 1; background: var(--blue-soft); border-radius: 12px; padding: 16px 6px; text-align: center; font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4; word-break: keep-all; }
+  .flow-h .st small { display: block; font-size: 11px; font-weight: 500; color: var(--gray); margin-top: 4px; }
+  .flow-h .st.hot { background: var(--navy); color: #fff; } .flow-h .st.hot small { color: #C7D2EA; }
+  .flow-h .st.acc { background: var(--accent); color: #fff; } .flow-h .st.acc small { color: #FFE4D6; }
+  .flow-h .arrow { font-size: 22px; }
+  .tips { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 16px 18px; }
+  .tips .t { font-size: 11px; letter-spacing: 2px; color: var(--accent); font-weight: 700; margin-bottom: 6px; }
+  .tips p { font-size: 14px; color: var(--ink); line-height: 1.65; }
+  .shot { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 4px 18px rgba(15,27,51,0.10); background: #fff; }
+  .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+  .band { background: var(--navy); border-radius: 16px; padding: 20px 28px; color: #fff; font-size: 22px; font-weight: 800; line-height: 1.45; }
+  .band span { color: #FFB38A; }
+  .band .l { font-size: 11px; letter-spacing: 2px; color: #9DB4FF; font-weight: 700; margin-bottom: 6px; }
+
+  /* cover / closing */
+  .cover { background: radial-gradient(1200px 600px at 20% 20%, #1E3A8A 0%, #0F1B33 55%, #0B1226 100%); }
+  .cover .glow { position: absolute; right: -180px; bottom: -220px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(36,87,245,0.55) 0%, rgba(36,87,245,0) 70%); }
+  .cover .glow2 { position: absolute; left: 640px; top: -260px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,44,0.35) 0%, rgba(255,107,44,0) 70%); }
+  .cover .tag { position: absolute; left: 80px; top: 92px; color: #9DB4FF; font-size: 15px; font-weight: 700; letter-spacing: 3px; }
+  .cover h1 { position: absolute; left: 80px; top: 190px; width: 1120px; color: #fff; font-size: 84px; font-weight: 900; line-height: 1.25; letter-spacing: -1px; }
+  .cover h1 span { color: #FFB38A; }
+  .cover .sub { position: absolute; left: 80px; top: 392px; color: #C7D2EA; font-size: 23px; font-weight: 600; line-height: 1.6; }
+  .cover .who { position: absolute; left: 80px; bottom: 74px; color: #fff; font-size: 18px; line-height: 1.7; }
+  .cover .who b { font-size: 22px; }
+  .cover .logo-big { position: absolute; right: 80px; bottom: 80px; height: 30px; }
+  .cover .line { position: absolute; left: 80px; top: 356px; width: 120px; height: 4px; background: var(--accent); }
+
+  /* office */
+  .office { display: grid; grid-template-columns: 1fr 440px; gap: 22px; margin-top: 22px; flex: 1; min-height: 0; }
+  .office .info { min-height: 0; }
+  .office .map { overflow: hidden; position: relative; }
+  .office .map img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .office .map .pin { position: absolute; left: 20px; top: 20px; background: var(--navy); color: #fff; font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 8px; }
+  .office .info { display: flex; flex-direction: column; gap: 14px; }
+  .addr { padding: 22px 24px; }
+  .addr .l { font-size: 11px; letter-spacing: 2px; color: var(--blue); font-weight: 700; margin-bottom: 8px; }
+  .addr .z { font-size: 14px; color: var(--gray); }
+  .addr .a { font-size: 22px; font-weight: 800; color: var(--navy); line-height: 1.4; margin-top: 2px; }
+  .addr .st { font-size: 14px; color: var(--ink); margin-top: 8px; line-height: 1.6; }
+  .addr .st b { color: var(--blue); }
+  .rules { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+  .rules li { font-size: 14px; color: var(--ink); line-height: 1.6; padding-left: 22px; position: relative; }
+  .rules li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--blue); font-weight: 900; }
+
+  /* office photos */
+  .hero { display: grid; grid-template-columns: 1fr 400px; gap: 22px; margin-top: 22px; flex: 1; min-height: 0; }
+  .hero .ph { overflow: hidden; position: relative; }
+  .hero .ph img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; }
+  .hero .ph .tag { position: absolute; left: 20px; bottom: 20px; background: rgba(15,27,51,.85); color: #fff; font-size: 13px; font-weight: 700; padding: 7px 14px; border-radius: 8px; }
+  .hero .info { display: flex; flex-direction: column; gap: 14px; min-height: 0; }
+  .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 1fr 1fr; gap: 14px; margin-top: 20px; flex: 1; min-height: 0; }
+  .pgrid .ph { overflow: hidden; position: relative; border-radius: 14px; background: #fff; border: 1px solid #EEF1F6; box-shadow: 0 2px 14px rgba(15,27,51,.06); }
+  .pgrid .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .pgrid .ph .tag { position: absolute; left: 12px; bottom: 12px; background: rgba(15,27,51,.85); color: #fff; font-size: 12px; font-weight: 700; padding: 5px 11px; border-radius: 6px; }
+
+  /* section divider */
+  .sec { background: radial-gradient(1200px 600px at 20% 20%, #1E3A8A 0%, #0F1B33 55%, #0B1226 100%); }
+  .sec .glow { position: absolute; right: -180px; bottom: -220px; width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(36,87,245,0.55) 0%, rgba(36,87,245,0) 70%); }
+  .sec .glow2 { position: absolute; left: 640px; top: -260px; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(255,107,44,0.35) 0%, rgba(255,107,44,0) 70%); }
+  .sec .n { position: absolute; left: 80px; top: 120px; font-size: 180px; font-weight: 900; color: rgba(255,255,255,0.10); letter-spacing: -6px; line-height: 1; }
+  .sec .tag { position: absolute; left: 80px; top: 250px; color: #9DB4FF; font-size: 15px; font-weight: 700; letter-spacing: 3px; }
+  .sec h1 { position: absolute; left: 80px; top: 290px; width: 1120px; color: #fff; font-size: 64px; font-weight: 900; line-height: 1.3; letter-spacing: -1px; }
+  .sec h1 span { color: #FFB38A; }
+  .sec .line { position: absolute; left: 80px; top: 470px; width: 120px; height: 4px; background: var(--accent); }
+  .sec .sub { position: absolute; left: 80px; top: 500px; color: #C7D2EA; font-size: 21px; font-weight: 600; line-height: 1.7; }
+  .sec .steps { position: absolute; left: 80px; bottom: 70px; display: flex; gap: 12px; }
+  .sec .steps div { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); color: #fff; border-radius: 10px; padding: 12px 20px; font-size: 16px; font-weight: 700; }
+  .sec .logo-big { position: absolute; right: 80px; bottom: 80px; height: 30px; }
+
+  /* agenda list */
+  .list { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
+  .list .it { display: grid; grid-template-columns: 100px 1fr; align-items: center; overflow: hidden; }
+  .list .it .n { height: 100%; display: flex; align-items: center; justify-content: center; font-size: 36px; font-weight: 900; color: #fff; }
+  .list .it:nth-child(1) .n { background: #5B8DEF; } .list .it:nth-child(2) .n { background: var(--blue); } .list .it:nth-child(3) .n { background: var(--accent); }
+  .list .it .b { padding: 18px 26px; } .list .it h3 { font-size: 22px; color: var(--navy); margin-bottom: 5px; } .list .it p { font-size: 14.5px; color: var(--gray); line-height: 1.6; }
+
+  /* kpis */
+  .kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 18px; }
+  .kpi { padding: 28px 14px 26px; text-align: center; }
+  .kpi .k { font-size: 11px; letter-spacing: 2px; color: var(--blue); font-weight: 700; margin-bottom: 10px; }
+  .kpi .num { font-size: 44px; } .kpi .num small { font-size: 16px; }
+
+  /* issues (3 things) */
+  .three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 22px; }
+  .three .it { padding: 26px 22px; position: relative; }
+  .three .it .n { font-size: 11px; letter-spacing: 2px; color: var(--blue); font-weight: 700; }
+  .three .it h3 { font-size: 20px; color: var(--navy); margin: 6px 0 8px; }
+  .three .it p { font-size: 13.5px; color: var(--gray); line-height: 1.65; }
+
+  /* loop */
+  .loop { display: flex; align-items: center; gap: 10px; margin: 6px 0 18px; }
+  .loop .st { flex: 1; background: var(--blue-soft); border-radius: 12px; padding: 14px 6px; text-align: center; font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.4; word-break: keep-all; }
+  .loop .st.hot { background: var(--navy); color: #fff; }
+  .loop .st.acc { background: var(--accent); color: #fff; }
+  .loop .st small { display: block; font-size: 11px; font-weight: 500; opacity: .8; margin-top: 3px; }
+
+  /* brands */
+  .brands { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+  .brand { padding: 22px 26px; display: flex; flex-direction: column; gap: 10px; }
+  .brand .lg { height: 56px; display: flex; align-items: center; }
+  .brand .lg img { max-height: 48px; max-width: 320px; }
+  .brand .co { font-size: 11px; color: var(--light); }
+  .brand h4 { font-size: 17px; color: var(--navy); }
+  .brand p { font-size: 13.5px; color: var(--gray); line-height: 1.65; }
+  .brand .who { background: var(--blue-soft); border-radius: 10px; padding: 10px 14px; font-size: 13.5px; color: var(--navy); font-weight: 700; line-height: 1.5; }
+  .brand .who small { display: block; font-weight: 500; color: var(--gray); font-size: 12px; }
+
+  /* phones */
+  .phone { width: 190px; height: 380px; border-radius: 26px; border: 6px solid var(--navy); overflow: hidden; background: #fff; box-shadow: 0 10px 30px rgba(15,27,51,.18); flex: none; }
+  .phone img { width: 100%; display: block; }
+  .phones { display: flex; gap: 18px; align-items: flex-start; }
+  .phones .ph { display: flex; flex-direction: column; align-items: center; gap: 8px; width: 200px; }
+  .phones .ph b { font-size: 13.5px; color: var(--navy); text-align: center; line-height: 1.4; }
+  .phones .ph .stp { font-size: 11px; letter-spacing: 2px; font-weight: 700; color: #fff; background: var(--blue); border-radius: 4px; padding: 2px 8px; }
+  .phones .ph.hot .stp { background: var(--accent); }
+  .phones .ph.hot .phone { border-color: var(--accent); }
+  .svc { display: grid; grid-template-columns: 430px 1fr; gap: 26px; margin-top: 18px; flex: 1; }
+  .svc .desc { padding: 24px 28px; display: flex; flex-direction: column; gap: 14px; }
+  .svc .desc .lg { height: 40px; } .svc .desc .lg img { height: 34px; }
+  .svc .desc .big { font-size: 20px; font-weight: 800; color: var(--navy); line-height: 1.5; }
+  .svc .desc .big em { font-style: normal; color: var(--blue); }
+
+  /* compare */
+  table.cmp { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 18px; background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 14px rgba(15,27,51,.06); border: 1px solid #EEF1F6; }
+  table.cmp th, table.cmp td { padding: 11px 16px; font-size: 14px; text-align: left; border-bottom: 1px solid var(--line); line-height: 1.5; color: var(--ink); }
+  table.cmp tr:last-child td { border-bottom: 0; }
+  table.cmp thead th { background: var(--navy); color: #fff; font-size: 15px; }
+  table.cmp thead th small { display: block; font-weight: 500; font-size: 11px; color: #C7D2EA; }
+  table.cmp thead th.us { background: var(--blue); }
+  table.cmp td.us { background: var(--blue-soft); font-weight: 700; color: var(--navy); }
+  table.cmp td:first-child { color: var(--gray); font-weight: 700; width: 150px; font-size: 12.5px; background: #FAFBFD; }
+
+  /* browser frame */
+  .browser { border-radius: 12px; overflow: hidden; border: 1px solid var(--line); box-shadow: 0 6px 22px rgba(15,27,51,.12); background: #fff; }
+  .browser .bar { height: 26px; background: #EEF1F6; display: flex; align-items: center; gap: 6px; padding: 0 12px; font-size: 11px; color: var(--gray); }
+  .browser .bar i { width: 8px; height: 8px; border-radius: 50%; background: #C9D1E0; display: inline-block; }
+  .browser .bar span { margin-left: 10px; }
+  .browser .crop { height: 250px; overflow: hidden; }
+  .browser img { width: 100%; display: block; }
+
+  /* timeline */
+  .tl { display: flex; align-items: stretch; gap: 10px; margin-top: 16px; }
+  .tl .ph { flex: 1; border-radius: 14px; padding: 16px 18px; background: #fff; border: 1px solid #EEF1F6; box-shadow: 0 2px 14px rgba(15,27,51,.06); }
+  .tl .ph .l { font-size: 11px; letter-spacing: 2px; font-weight: 700; color: var(--blue); }
+  .tl .ph h4 { font-size: 17px; color: var(--navy); margin: 4px 0 6px; }
+  .tl .ph p { font-size: 13px; color: var(--gray); line-height: 1.6; }
+  .tl .ph.now { background: var(--navy); border-color: var(--navy); } .tl .ph.now .l { color: #9DB4FF; } .tl .ph.now h4, .tl .ph.now p { color: #fff; } .tl .ph.now p { color: #C7D2EA; }
+  .tl .ph.acc { background: var(--accent); border-color: var(--accent); } .tl .ph.acc .l { color: #FFE4D6; } .tl .ph.acc h4 { color: #fff; } .tl .ph.acc p { color: #FFE4D6; }
+  .tl .ar { display: flex; align-items: center; color: #B8C2D6; font-size: 22px; }
+
+  /* future map */
+  .fut { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; flex: 1; }
+  .fut .col { padding: 22px 24px; display: flex; flex-direction: column; }
+  .fut .col .ask { margin-top: auto; background: var(--blue-soft); border-radius: 12px; padding: 14px 18px; font-size: 14px; color: var(--navy); line-height: 1.6; }
+  .fut .col .ask b { display: block; font-size: 11px; letter-spacing: 2px; color: var(--blue); margin-bottom: 4px; }
+  .fut .col.acc .ask { background: #FFF1EA; } .fut .col.acc .ask b { color: var(--accent); }
+  .fut .col .l { font-size: 11px; letter-spacing: 2px; color: var(--blue); font-weight: 700; }
+  .fut .col h3 { font-size: 20px; color: var(--navy); margin: 4px 0 12px; }
+  .fut .it { display: flex; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+  .fut .it .n { width: 26px; height: 26px; border-radius: 7px; background: var(--blue-soft); color: var(--blue); font-weight: 900; font-size: 12px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .fut .col.acc .it .n { background: #FFF1EA; color: var(--accent); }
+  .fut .it h4 { font-size: 15px; color: var(--navy); margin-bottom: 2px; } .fut .it p { font-size: 13px; color: var(--gray); line-height: 1.55; }
+
+  /* closing with illustration */
+  .fin { background: #0B1226; }
+  .fin .art { position: absolute; inset: 0; width: 1280px; height: 720px; object-fit: cover; object-position: center; }
+  .fin .shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11,18,38,0.05) 0%, rgba(11,18,38,0.05) 45%, rgba(11,18,38,0.72) 70%, rgba(11,18,38,0.88) 100%); }
+  .fin .shade2 { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,18,38,0) 55%, rgba(11,18,38,0.75) 100%); }
+  .fin .copy { position: absolute; right: 72px; top: 150px; width: 520px; text-align: right; color: #fff; }
+  .fin .copy .t { font-size: 15px; font-weight: 700; letter-spacing: 3px; color: #FFB38A; margin-bottom: 18px; }
+  .fin .copy h1 { font-size: 66px; font-weight: 900; line-height: 1.3; letter-spacing: -1px; text-shadow: 0 6px 30px rgba(0,0,0,.6); }
+  .fin .copy h1 span { color: #FFB38A; }
+  .fin .copy .s { margin-top: 22px; font-size: 20px; font-weight: 700; color: #E6EDF7; line-height: 1.7; text-shadow: 0 4px 20px rgba(0,0,0,.7); }
+  .fin .who { position: absolute; left: 80px; bottom: 44px; color: #fff; font-size: 16px; line-height: 1.7; text-shadow: 0 2px 12px rgba(0,0,0,.8); }
+  .fin .logo-big { position: absolute; right: 80px; bottom: 56px; height: 28px; }
+</style>
+</head>
+<body>
+
+<!-- 01 表紙 -->
+<section class="slide cover">
+  <div class="glow"></div><div class="glow2"></div>
+  <div class="tag">求職者送客事業部 締め会　｜　2026.10.02</div>
+  <h1>求職者送客事業の<span>これから</span></h1>
+  <div class="line"></div>
+  <div class="sub">次の海へ、出航。<br>窓口を強くする3つのこと／新サービス「求職者送客クラウド」／これからの事業部</div>
+  <div class="who">株式会社HADO<br><b>代表取締役　田中 大雅</b></div>
+  <img class="logo-big" src="assets/logo_white.png" alt="HADO">
+</section>
+
+<!-- 02 オフィス移転 -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">00</span>お知らせ</div>
+    <h2>東京オフィスが、<em>中目黒</em>に移転しました。</h2>
+    <div class="hero">
+      <div class="card ph"><img src="assets/o_entrance.jpg" alt=""><div class="tag">エントランス</div></div>
+      <div class="info">
+        <div class="card addr">
+          <div class="l">NEW OFFICE</div>
+          <div class="z">〒153-0051</div>
+          <div class="a">東京都目黒区上目黒1丁目1-5<br>第2育良ビル 4F</div>
+          <div class="st">東急東横線・日比谷線 <b>中目黒駅</b> すぐ</div>
+        </div>
+        <div class="card addr">
+          <div class="l">使い方</div>
+          <ul class="rules">
+            <li>来る日が決まったら代表に一言</li>
+            <li>入館・鍵の使い方は「中目黒オフィス利用マニュアル」に</li>
+          </ul>
+        </div>
+        <div class="band" style="flex:1;display:flex;flex-direction:column;justify-content:center;font-size:24px"><div class="l">東京に来たときは</div><div>ここで<span>勤務OK</span>です。</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">02</span></div>
+</section>
+
+<!-- 03 オフィスの様子 -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">00</span>お知らせ ─ オフィスの様子</div>
+    <h2>執務室・会議室・自販機。<em>席は空いています</em>。</h2>
+    <div class="pgrid">
+      <div class="ph"><img src="assets/o_floor.jpg" alt=""><div class="tag">執務室（フリーアドレス）</div></div>
+      <div class="ph"><img src="assets/o_window.jpg" alt="" style="object-position:center 60%"><div class="tag">窓側の席</div></div>
+      <div class="ph"><img src="assets/o_lobby.jpg" alt=""><div class="tag">入口横のロッカー</div></div>
+      <div class="ph"><img src="assets/o_meet2.jpg" alt=""><div class="tag">会議室（プロジェクター）</div></div>
+      <div class="ph"><img src="assets/o_meet1.jpg" alt=""><div class="tag">会議室（モニター）</div></div>
+      <div class="ph"><img src="assets/o_vend.jpg" alt=""><div class="tag">HADO自販機</div></div>
+    </div>
+    <div class="band" style="margin-top:14px;font-size:20px;padding:16px 28px"><div class="l">MAP</div>中目黒駅から徒歩すぐ。<span>地図と入館方法はマニュアルに掲載</span>しています。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">03</span></div>
+</section>
+
+<!-- 04 今日話すこと -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">AGENDA</span>今日話すこと</div>
+    <h2>今日は、この<em>3つ</em>を話します。</h2>
+    <div class="list">
+      <div class="card it"><div class="n">01</div><div class="b"><h3>求職者送客の窓口 ─ これから強くする3つのこと</h3><p>①枠の確保　②満足度の向上　③アライアンス</p></div></div>
+      <div class="card it"><div class="n">02</div><div class="b"><h3>新サービス「求職者送客クラウド」</h3><p>どんなサービスか／窓口との棲み分け／ベータ版から本リリースへ</p></div></div>
+      <div class="card it"><div class="n">03</div><div class="b"><h3>これからの事業部</h3><p>求職者のあらゆるニーズに、出口を用意する</p></div></div>
+    </div>
+    <div class="band" style="margin-top:18px"><div class="l">今日のゴール</div>「これからやること」と「みんなに力を借りたいこと」を、全員で揃える。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">04</span></div>
+</section>
+
+<!-- 扉 01 -->
+<section class="slide sec">
+  <div class="glow"></div><div class="glow2"></div>
+  <div class="n">01</div>
+  <div class="tag">SECTION 01</div>
+  <h1>求職者送客の窓口<br><span>これから強くする3つのこと</span></h1>
+  <div class="line"></div>
+  <div class="sub">送客先の「枠」が、いまの上限を決めている。<br>3つの打ち手で、面談した全員に価値を返す。</div>
+  <div class="steps"><div>① 枠の確保</div><div>② 満足度の向上</div><div>③ アライアンス</div></div>
+  <img class="logo-big" src="assets/logo_white.png" alt="HADO">
+</section>
+
+<!-- 04 窓口の現在地 -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">01</span>求職者送客の窓口</div>
+    <h2>集めて、面談して、送る。<em>送客先の「枠」</em>が、いまの上限を決めている。</h2>
+    <div class="card" style="padding:22px 28px 10px;margin-top:20px">
+      <div class="flow-h" style="margin-bottom:12px">
+        <div class="st">集客<small>ハックツ就職／ハックツ新卒<br>SNS・広告・LINE</small></div><div class="arrow">→</div>
+        <div class="st hot">カウンセリング<small>CAが面談し、希望と状況を把握</small></div><div class="arrow">→</div>
+        <div class="st hot">エージェントへ送客<small>条件に合う送客先へ紹介</small></div><div class="arrow">→</div>
+        <div class="st acc">着座で売上<small>エージェント面談に参加して課金</small></div>
+      </div>
+    </div>
+    <div class="kpis">
+      <div class="card kpi"><div class="k">月間登録</div><div class="num">約4,000<small>名</small></div><div class="cap">ハックツ就職の登録者数（月）</div></div>
+      <div class="card kpi"><div class="k">面談本数</div><div class="num">約1,400<small>本/月</small></div><div class="cap">1日およそ60本のカウンセリング</div></div>
+      <div class="card kpi" style="border-color:var(--accent)"><div class="k" style="color:var(--accent)">ボトルネック</div><div class="num" style="font-size:36px;line-height:44px">送客先の枠</div><div class="cap">枠が埋まると、面談した求職者を活かしきれない</div></div>
+    </div>
+    <div class="three">
+      <div class="card it"><div class="n">これから強くする ①</div><h3>枠の確保</h3><p>取引社数を増やす。みんなの力を貸してください</p></div>
+      <div class="card it"><div class="n">これから強くする ②</div><h3>満足度の向上</h3><p>満足度が上がると、エージェントの予算が増える</p></div>
+      <div class="card it"><div class="n">これから強くする ③</div><h3>アライアンス</h3><p>エージェント以外の出口をつくる</p></div>
+    </div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">06</span></div>
+</section>
+
+<!-- 05 ①枠の確保 -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">01</span>求職者送客の窓口 ─ ①枠の確保</div>
+    <h2>取引社数を増やす。<em>架電とアポ獲得</em>、みんなの力を貸してください。</h2>
+    <div class="two" style="grid-template-columns:1fr 400px">
+      <div class="card main">
+        <div class="flow-h" style="margin-bottom:18px">
+          <div class="st">エージェントリスト<small>人材紹介会社を洗い出す</small></div><div class="arrow">→</div>
+          <div class="st hot">架電<small>みんな</small></div><div class="arrow">→</div>
+          <div class="st hot">アポ獲得<small>みんな</small></div><div class="arrow">→</div>
+          <div class="st acc">商談・契約<small>田中</small></div>
+        </div>
+        <ul class="pts">
+          <li><b>送客先が多いほど、面談した求職者を無駄にしない。</b>枠が増えれば、そのぶん着座が増える。</li>
+          <li><b>やってほしいのは「架電してアポを取る」まで。</b>アポが取れたら、商談は代表が行きます。</li>
+          <li><b>求職者に合う送客先は、面談しているみんなが一番わかっている。</b>「こういう会社が欲しい」も一緒に集めます。</li>
+        </ul>
+        <div class="quote"><b>Point</b>　架電のひとこと：「面談済みの20代求職者を、着座課金でご紹介しています。一度お話しさせてください」</div>
+      </div>
+      <div class="side">
+        <div class="card" style="padding:22px 24px;flex:1;display:flex;flex-direction:column;justify-content:center;gap:14px">
+          <div class="kicker" style="margin:0">みんなにお願いしたいこと</div>
+          <div style="display:flex;align-items:baseline;gap:10px"><div class="num" style="font-size:52px">架電</div><div style="font-size:15px;color:var(--gray);font-weight:700">リストのエージェントへ</div></div>
+          <div style="display:flex;align-items:baseline;gap:10px"><div class="num" style="font-size:52px;color:var(--blue)">アポ</div><div style="font-size:15px;color:var(--gray);font-weight:700">日程が取れたら田中へ共有</div></div>
+          <div style="display:flex;align-items:baseline;gap:10px"><div class="num" style="font-size:52px;color:var(--accent)">商談</div><div style="font-size:15px;color:var(--gray);font-weight:700">田中がクロージング</div></div>
+        </div>
+        <div class="tips"><div class="t">運用</div><p>リスト・トークスクリプト・アポの共有先は締め会後にSlackで案内します。</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">07</span></div>
+</section>
+
+<!-- 06 ②満足度の向上 -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">01</span>求職者送客の窓口 ─ ②満足度の向上</div>
+    <h2>満足度が上がると、<em>エージェントの予算が増える</em>。だから質を上げる。</h2>
+    <div class="card" style="padding:22px 28px 8px;margin-top:20px">
+      <div class="kicker" style="margin-bottom:10px">満足度の循環</div>
+      <div class="loop">
+        <div class="st hot">質の高い求職者<small>集客の改善</small></div><div class="arrow">→</div>
+        <div class="st">エージェントの満足度が上がる<small>着座・決定が増える</small></div><div class="arrow">→</div>
+        <div class="st">予算が増える<small>枠と単価が上がる</small></div><div class="arrow">→</div>
+        <div class="st acc">さらに集客できる<small>売上が伸びる</small></div>
+      </div>
+    </div>
+    <div class="two" style="grid-template-columns:1fr 1fr;margin-top:18px">
+      <div class="card" style="padding:22px 26px">
+        <div class="kicker">集客側でやっていること</div>
+        <ul class="pts" style="gap:10px">
+          <li><b>集客チームが、集客の改善に取り組んでいます。</b>広告・コンテンツ・LINEの導線を見直し、転職意欲の高い求職者を集める。</li>
+          <li><b>「量」より「エージェントが欲しい人」。</b>年齢・エリア・希望職種が送客先の条件に合う層へ寄せていく。</li>
+        </ul>
+      </div>
+      <div class="card" style="padding:22px 26px">
+        <div class="kicker">CAのみんなにお願いしたいこと</div>
+        <ul class="pts" style="gap:10px">
+          <li><b>エージェントの声を拾って共有する。</b>「こういう人が欲しい」「この属性は決まりやすい」を集客側へ渡す。</li>
+          <li><b>面談で温度感を見極める。</b>意欲の高い求職者を、条件の合う送客先へ確実に届ける。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="quote" style="margin-top:16px"><b>Point</b>　エージェントは「決まる求職者」に予算を出す。質が上がるほど、1社あたりの予算が増える。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">08</span></div>
+</section>
+
+<!-- 07 ③アライアンス -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">01</span>求職者送客の窓口 ─ ③アライアンス</div>
+    <h2><em>退職コンシェルジュ・GMA</em>と提携。エージェント以外の出口をつくる。</h2>
+    <div class="brands">
+      <div class="card brand">
+        <div class="lg"><img src="assets/taishoku_logo.png" alt="退職コンシェルジュ"></div>
+        <h4>退職・給付金サポート</h4>
+        <p>退職を優先したい方や、体調を整えてから次を考えたい方を、退職手続きや給付金申請のサポートへつなぐ。</p>
+        <div class="who">こんな求職者に<small>メンタル不調・まずは退職したい・すぐの転職活動が難しい</small></div>
+      </div>
+      <div class="card brand">
+        <div class="lg"><img src="assets/gma_logo.png" alt="Global Marketing Academy"></div>
+        <h4>AI実践コース（スクール）</h4>
+        <p>未経験からマーケ・AIスキルを身につけて転職したい方を、GMA（Global Marketing Academy）の説明会へ案内する。</p>
+        <div class="who">こんな求職者に<small>希望職種の未経験求人が少ない・スキルを付けてから動きたい</small></div>
+      </div>
+    </div>
+    <div class="card" style="padding:20px 28px 8px;margin-top:16px">
+      <div class="flow-h" style="margin-bottom:12px">
+        <div class="st">カウンセリング<small>エージェント展開が難しい</small></div><div class="arrow">→</div>
+        <div class="st hot">提携先を案内<small>面談内で3〜5分</small></div><div class="arrow">→</div>
+        <div class="st hot">予約<small>説明会・面談の日程</small></div><div class="arrow">→</div>
+        <div class="st acc">成果報酬<small>予約・着座で売上</small></div>
+      </div>
+    </div>
+    <div class="band" style="margin-top:14px"><div class="l">狙い</div>エージェントに送れなかった求職者にも、<span>ニーズに合う出口</span>を用意する。面談した全員に価値を返す。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">09</span></div>
+</section>
+
+<!-- 扉 02 -->
+<section class="slide sec">
+  <div class="glow"></div><div class="glow2"></div>
+  <div class="n">02</div>
+  <div class="tag">SECTION 02</div>
+  <h1>新サービス<br><span>「求職者送客クラウド」</span></h1>
+  <div class="line"></div>
+  <div class="sub">ソクレキで集めて、リードで送る。<br>作成から8日で初契約を獲得した、事業部の第2の柱。</div>
+  <div class="steps"><div>サービス概要</div><div>窓口との棲み分け</div><div>ベータ版 → 本リリース</div></div>
+  <img class="logo-big" src="assets/logo_white.png" alt="HADO">
+</section>
+
+<!-- 08 送客クラウド：サービス概要 -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">02</span>新サービス「求職者送客クラウド」</div>
+    <h2>無料の履歴書ツール<em>「ソクレキ」</em>で集めて、エージェントへ<em>リード</em>で送る。</h2>
+    <div class="svc">
+      <div class="phones">
+        <div class="ph"><span class="stp">STEP 1</span><div class="phone"><img src="assets/m_top.png" alt=""></div><b>AIと会話するだけで<br>履歴書ができる（無料）</b></div>
+        <div class="ph hot"><span class="stp">STEP 2</span><div class="phone"><img src="assets/m_offer.png" alt=""></div><b>完成直後にエージェントを<br>紹介 → 本人が同意</b></div>
+      </div>
+      <div class="card desc">
+        <div class="lg"><img src="assets/cloud_logo.png" alt="求職者送客クラウド"></div>
+        <div class="big">求職者は<em>面談なし</em>で、書類を作った流れのままエージェントと出会う。<br>エージェントには<em>氏名・電話・メール＋履歴書</em>がそのまま届く。</div>
+        <ul class="pts" style="gap:10px">
+          <li><b>toC＝ソクレキ</b>（sokureki.com）。18〜34歳の求職者が検索・広告から来て、無料で履歴書・職務経歴書を作る。</li>
+          <li><b>toB＝求職者送客クラウド</b>（soukyaku-cloud.com）。同意した求職者の情報を、エージェントの管理画面へリアルタイムに送る。</li>
+          <li><b>課金はリード1件ごと。</b>固定費なし。エージェントは受信条件と上限件数を自分で設定できる。</li>
+        </ul>
+        <div class="quote" style="margin-top:auto"><b>Point</b>　「書類を書き終えた瞬間」がいちばん熱量が高い。その瞬間に送客する。</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">11</span></div>
+</section>
+
+<!-- 09 棲み分け -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">02</span>新サービス「求職者送客クラウド」 ─ 窓口との棲み分け</div>
+    <h2>窓口は<em>「深く」</em>、クラウドは<em>「広く」</em>。同じ求職者を取り合わない。</h2>
+    <table class="cmp">
+      <thead><tr><th></th><th>求職者送客の窓口<small>いまの本体事業</small></th><th class="us">求職者送客クラウド<small>新サービス</small></th></tr></thead>
+      <tbody>
+        <tr><td>集客の入口</td><td>ハックツ就職／新卒（SNS・LINE）</td><td class="us">ソクレキ（検索・広告から履歴書を作りに来る）</td></tr>
+        <tr><td>求職者との接点</td><td>CAが面談し、希望と状況を把握する</td><td class="us">ツールで完結。面談なし</td></tr>
+        <tr><td>送るもの</td><td>カウンセリング済みの求職者（面談予約）</td><td class="us">同意済みリード（連絡先＋履歴書）</td></tr>
+        <tr><td>課金</td><td>着座課金（面談参加で1件）</td><td class="us">リード課金（送客1件 1,500円〜）</td></tr>
+        <tr><td>量と単価</td><td>少数・高単価</td><td class="us">大量・低単価</td></tr>
+        <tr><td>エージェントの使い方</td><td>そのまま面談できる、確度の高い求職者</td><td class="us">架電で掘り起こす母集団</td></tr>
+        <tr><td>事業部での位置づけ</td><td>本体。CAの面談が価値の源泉</td><td class="us">第2の柱。CAの工数を使わずに売上を積む</td></tr>
+      </tbody>
+    </table>
+    <div class="band" style="margin-top:14px"><div class="l">ポジショニング</div>求職者の「段階」が違う。<span>面談したい人は窓口、書類を作っている人はクラウド。</span></div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">12</span></div>
+</section>
+
+<!-- 10 ベータ→本リリース -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">02</span>新サービス「求職者送客クラウド」 ─ いまとこれから</div>
+    <h2><em>8日で初契約</em>。ベータ版のいま、本リリース後は<em>みんなで拡販</em>。</h2>
+    <div class="two" style="grid-template-columns:1fr 520px;margin-top:18px">
+      <div class="card main" style="padding:22px 26px">
+        <div class="kicker">現在地 ─ 着手から初契約まで</div>
+        <div class="flow-h" style="margin:4px 0 14px">
+          <div class="st hot">9/22<small>ソクレキ＋クラウドを作成</small></div><div class="arrow">→</div>
+          <div class="st hot">9/23<small>toBサイト公開・広告開始</small></div><div class="arrow">→</div>
+          <div class="st acc">9/30<small>初契約を獲得</small></div>
+        </div>
+        <div style="display:flex;align-items:baseline;gap:12px;margin-bottom:12px"><div class="num" style="color:var(--accent)">8<small>日</small></div><div style="font-size:15px;color:var(--ink);font-weight:700;line-height:1.5">作って、公開して、契約まで。<br>このスピードで事業の検証を回していく。</div></div>
+        <ul class="pts" style="gap:6px">
+          <li><b>先着10社は導入価格 1,500円/件。</b>少数社でリードの質と歩留まりを検証。</li>
+          <li><b>固める数字＝</b>同意率・通電率・面談化率。揃ったら本リリース。</li>
+        </ul>
+      </div>
+      <div class="browser" style="align-self:start"><div class="bar"><i></i><i></i><i></i><span>soukyaku-cloud.com/dashboard</span></div><div class="crop"><img src="assets/d_dash.png" alt=""></div></div>
+    </div>
+    <div class="tl">
+      <div class="ph now"><div class="l">NOW ─ ベータ版</div><h4>少数のエージェントで検証</h4><p>初契約から運用開始。質・歩留まりを見る</p></div>
+      <div class="ar">→</div>
+      <div class="ph"><div class="l">NEXT ─ 本リリース</div><h4>導入価格から定価へ</h4><p>実績データをもとに営業資料と価格を確定</p></div>
+      <div class="ar">→</div>
+      <div class="ph acc"><div class="l">THEN ─ 事業部で拡販</div><h4>みんなでエージェント獲得</h4><p>窓口の架電先に、クラウドも一緒に提案する</p></div>
+    </div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">13</span></div>
+</section>
+
+<!-- 扉 03 -->
+<section class="slide sec">
+  <div class="glow"></div><div class="glow2"></div>
+  <div class="n">03</div>
+  <div class="tag">SECTION 03</div>
+  <h1><span>これからの事業部</span></h1>
+  <div class="line" style="top:390px"></div>
+  <div class="sub" style="top:420px">求職者のあらゆるニーズに、出口を用意する事業部へ。</div>
+  <div class="steps"><div>出口を増やす（窓口）</div><div>入口を増やす（クラウド）</div></div>
+  <img class="logo-big" src="assets/logo_white.png" alt="HADO">
+</section>
+
+<!-- 11 これからの事業部 -->
+<section class="slide">
+  <div class="topbar"></div><img class="logo" src="assets/logo_black.png" alt="HADO">
+  <div class="content">
+    <div class="kicker"><span class="ag">03</span>これからの事業部</div>
+    <h2>求職者の<em>あらゆるニーズ</em>に、出口を用意する事業部へ。</h2>
+    <div class="fut">
+      <div class="card col">
+        <div class="l">出口を増やす ─ 求職者送客の窓口</div>
+        <h3>面談した全員に、価値を返す</h3>
+        <div class="it"><div class="n">1</div><div><h4>枠の確保</h4><p>架電・アポ獲得で取引社数を増やす。商談は田中</p></div></div>
+        <div class="it"><div class="n">2</div><div><h4>満足度の向上</h4><p>質の高い求職者を集め、エージェントの予算を増やす</p></div></div>
+        <div class="it"><div class="n">3</div><div><h4>アライアンス</h4><p>退職コンシェルジュ・GMAで、エージェント以外の出口を</p></div></div>
+        <div class="ask"><b>みんなにお願いしたいこと</b>エージェントへの架電・アポ獲得／面談で聞いたエージェントの声の共有／提携先の案内</div>
+      </div>
+      <div class="card col acc">
+        <div class="l" style="color:var(--accent)">入口を増やす ─ 求職者送客クラウド</div>
+        <h3>CAの工数を使わず、売上を積む</h3>
+        <div class="it"><div class="n">1</div><div><h4>ソクレキで集める</h4><p>無料の履歴書ツールで、検索・広告から新しい求職者を</p></div></div>
+        <div class="it"><div class="n">2</div><div><h4>リードで送る</h4><p>面談なし・固定費なし。エージェントの母集団づくりを支える</p></div></div>
+        <div class="it"><div class="n">3</div><div><h4>本リリース後に拡販</h4><p>窓口のエージェント営業と一緒に提案する</p></div></div>
+        <div class="ask"><b>みんなにお願いしたいこと</b>本リリース後、架電先のエージェントにクラウドも一緒に提案する（いまはベータ版で検証中）</div>
+      </div>
+    </div>
+    <div class="band" style="margin-top:16px"><div class="l">ひとことで</div>「送客先が足りない」を終わらせ、<span>どんな求職者にも渡せる出口</span>を持つ事業部になる。</div>
+  </div>
+  <div class="footer"><span>© 2026 HADO, Inc.</span><span class="pageno">15</span></div>
+</section>
+
+<!-- 12 締め -->
+<section class="slide fin">
+  <img class="art" src="assets/closing.png" alt="">
+  <div class="shade"></div><div class="shade2"></div>
+  <div class="copy">
+    <div class="t">求職者送客事業部 ─ 次の海へ</div>
+    <h1>ぶち上げて、<br><span>みんなで宴だ。</span></h1>
+    <div class="s">枠を取りに行く。出口を増やす。<br>新しい海に、全員で出る。</div>
+  </div>
+  <div class="who">株式会社HADO　代表取締役　田中 大雅</div>
+  <img class="logo-big" src="assets/logo_white.png" alt="HADO">
+</section>
+
+</body>
+</html>

@@ -1,5 +1,21 @@
 [
   {
+    "slug": "recruitment-lp-ab-testing",
+    "title": "人材紹介LPのA/Bテスト設計｜CVR改善を仮説起点で回す実務",
+    "description": "人材紹介LPで成果を出すA/Bテストの設計手順を解説。優先度の付け方、サンプルサイズ計算、ファーストビュー・CTA・フォームの検証パターンを、CV相関の高い順に紹介します。",
+    "category": "ハウツー",
+    "keywords": [
+      "人材紹介 LP ABテスト",
+      "LP CVR改善",
+      "ABテスト 設計",
+      "LPO 人材紹介"
+    ],
+    "primary_keyword": "人材紹介 LP ABテスト",
+    "status": "published",
+    "published": "2026-09-30",
+    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-lp-ab-testing/"
+  },
+  {
     "slug": "recruitment-job-order-development",
     "title": "人材紹介の求人開拓戦略｜法人営業で求人数を増やす設計と歩留まり管理",
     "description": "人材紹介事業の売上を左右する求人開拓の実務を解説。法人営業のリスト作成、アプローチ設計、求人票ヒアリング、稼働率管理まで、求人サイドのKPIを体系的に整理します。",
@@ -2400,22 +2416,6 @@
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/inexperienced-talent-acquisition/"
   },
   {
-    "slug": "recruitment-job-order-development",
-    "title": "人材紹介の求人開拓戦略｜法人営業で求人数を増やす設計と歩留まり管理",
-    "description": "人材紹介事業の売上を左右する求人開拓の実務を解説。法人営業のリスト作成、アプローチ設計、求人票ヒアリング、稼働率管理まで、求人サイドのKPIを体系的に整理します。",
-    "category": "ハウツー",
-    "keywords": [
-      "人材紹介 求人開拓",
-      "法人営業 人材紹介",
-      "求人数 増やす",
-      "人材紹介 稼働求人"
-    ],
-    "primary_keyword": "人材紹介 求人開拓",
-    "status": "ready",
-    "scheduled": "2026-09-29",
-    "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-job-order-development/"
-  },
-  {
     "slug": "recruitment-lp-ab-testing",
     "title": "人材紹介LPのA/Bテスト設計｜CVR改善を仮説起点で回す実務",
     "description": "人材紹介LPで成果を出すA/Bテストの設計手順を解説。優先度の付け方、サンプルサイズ計算、ファーストビュー・CTA・フォームの検証パターンを、CV相関の高い順に紹介します。",
@@ -2427,14 +2427,8 @@
       "LPO 人材紹介"
     ],
     "primary_keyword": "人材紹介 LP ABテスト",
-    "key_points": [
-      "A/Bテストで検証すべき優先度の付け方",
-      "必要サンプルサイズと有意差判定の考え方",
-      "ファーストビュー・CTA・フォームの検証パターン",
-      "勝ちパターンの横展開とテスト運用のガバナンス"
-    ],
-    "status": "queued",
-    "queue_position": 1,
+    "status": "ready",
+    "scheduled": "2026-09-30",
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-lp-ab-testing/"
   },
   {
@@ -2456,7 +2450,7 @@
       "ダッシュボード上での見せ方と社内合意形成"
     ],
     "status": "queued",
-    "queue_position": 2,
+    "queue_position": 1,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-seat-vs-implementation-rate/"
   },
   {
@@ -2478,7 +2472,7 @@
       "休眠掘り起こしと解除率のバランス管理"
     ],
     "status": "queued",
-    "queue_position": 3,
+    "queue_position": 2,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-newsletter-marketing/"
   },
   {
@@ -2500,7 +2494,7 @@
       "景表法・個人情報保護の実務チェックリスト"
     ],
     "status": "queued",
-    "queue_position": 4,
+    "queue_position": 3,
     "url": "https://kyusyokusyasokyaku-no-madoguchi.com/column/recruitment-ugc-marketing/"
   }
 ]

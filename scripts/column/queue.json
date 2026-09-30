@@ -1,19 +1,5 @@
 [
   {
-    "slug": "recruitment-lp-ab-testing",
-    "title": "人材紹介LPのA/Bテスト設計｜CVR改善を仮説起点で回す実務",
-    "description": "人材紹介LPで成果を出すA/Bテストの設計手順を解説。優先度の付け方、サンプルサイズ計算、ファーストビュー・CTA・フォームの検証パターンを、CV相関の高い順に紹介します。",
-    "keywords": "人材紹介 LP ABテスト,LP CVR改善,ABテスト 設計,LPO 人材紹介",
-    "category": "ハウツー",
-    "image_prompt": "Deep navy blue (#1a3a8a) flat editorial illustration of two side-by-side landing page mockups being compared, gold (#f5b400) upward arrow indicating the winning variant, minimalist wireframe elements, soft white background, premium SaaS aesthetic, 3:2 aspect, no text or letters",
-    "key_points": [
-      "A/Bテストで検証すべき優先度の付け方",
-      "必要サンプルサイズと有意差判定の考え方",
-      "ファーストビュー・CTA・フォームの検証パターン",
-      "勝ちパターンの横展開とテスト運用のガバナンス"
-    ]
-  },
-  {
     "slug": "recruitment-seat-vs-implementation-rate",
     "title": "面談着座率と面談実施率の違い｜人材紹介のKPI定義を統一する",
     "description": "人材紹介で混同されがちな「面談着座率」と「面談実施率」の違いを整理。集計母数の取り方、業界平均、可視化ダッシュボードでの見せ方まで、成果定義の統一を進める実務を解説します。",

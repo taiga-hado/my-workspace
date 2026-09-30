@@ -1,4 +1,4 @@
-/* done.js - メール登録 → 書類ダウンロード → チェックリスト・TODO */
+/* done.js - メール登録 → 書類プレビュー・ダウンロード → 免許取得までの工程図 → 添付書類 */
 (function () {
   'use strict';
   const gate = document.getElementById('gate');
@@ -8,15 +8,20 @@
   if (!data.repName) { location.replace('form.html'); return; }
 
   /* ---------- 書類 ---------- */
-  const DESC = {
-    form1: '職業紹介事業許可申請書（第1面・第2面）', form2: '有料職業紹介事業計画書', form3: '届出制手数料届出書',
-    fee: '手数料表（様式例第3号-1 一般登録型）', rules: '業務の運営に関する規程', privacy: '個人情報適正管理規程', notice: '求人者・求職者への明示書面（事業所に備え付け・Web掲載用）',
-  };
+  const DOCS = [
+    { k: 'form1', tag: '様式第1号', name: '職業紹介事業許可申請書', desc: '第1面・第2面。申請者・役員・事業所・責任者を記載。' },
+    { k: 'form2', tag: '様式第2号', name: '有料職業紹介事業計画書', desc: '取扱職種の範囲、有効求職者見込数、従事者数。' },
+    { k: 'form3', tag: '様式第3号', name: '届出制手数料届出書', desc: '手数料表を別紙として届け出る書類。' },
+    { k: 'fee', tag: '様式例第3号', name: '手数料表（一般登録型）', desc: '成功報酬の料率と負担者。' },
+    { k: 'rules', tag: '様式例第1号', name: '業務の運営に関する規程', desc: '求人・求職・紹介の運営ルール。事業所に備え付け。' },
+    { k: 'privacy', tag: '規程', name: '個人情報適正管理規程', desc: '個人情報の取扱責任者と管理方法。' },
+    { k: 'notice', tag: '明示書面', name: '求人者・求職者の皆様へ', desc: '取扱職種・手数料・返戻金・苦情窓口の明示用。Web掲載にも。' },
+  ];
   const busy = {};
   async function gen(key) {
     if (busy[key]) return; busy[key] = true;
-    const btn = document.querySelector(`[data-gen="${key}"]`);
-    if (btn) { btn.disabled = true; btn.textContent = '生成中…'; }
+    const btns = document.querySelectorAll(`[data-gen="${key}"]`);
+    btns.forEach((b) => { b.disabled = true; b.dataset.label = b.textContent; b.textContent = '生成中…'; });
     try {
       const blob = await DocGen.generate(key, LT.get(), LT.config.TEMPLATE_DIR);
       LT.download(blob, DocGen.DOCS[key].name);
@@ -24,20 +29,44 @@
       console.error(e); LT.toast('生成に失敗しました。ページを再読み込みしてください');
     } finally {
       busy[key] = false;
-      if (btn) { btn.disabled = false; btn.textContent = 'ダウンロード'; }
+      btns.forEach((b) => { b.disabled = false; b.textContent = b.dataset.label || 'ダウンロード'; });
     }
   }
+  function previewHtml(k) { try { return DocPreview[k](LT.get()); } catch (e) { console.error(e); return '<div class="pv">プレビューを表示できません</div>'; } }
   function renderDocs() {
-    const ul = document.getElementById('docList');
-    if (/claude\.ai$/.test(location.hostname)) {
-      ul.insertAdjacentHTML('beforebegin', '<div class="note" style="margin-bottom:12px">プレビュー環境（claude.ai）ではファイルのダウンロードが動きません。本番サイトでは各ボタンからWordファイルが保存されます。</div>');
-    }
-    ul.innerHTML = Object.keys(DocGen.DOCS).map((k) => `<li><div><div class="name">${DocGen.DOCS[k].name.replace('.docx', '')}</div><div class="desc">${DESC[k] || ''}</div></div><button type="button" class="btn btn-secondary btn-sm" data-gen="${k}">ダウンロード</button></li>`).join('');
-    ul.addEventListener('click', (e) => { const b = e.target.closest('[data-gen]'); if (b) gen(b.dataset.gen); });
-    document.getElementById('allBtn').addEventListener('click', async () => {
-      for (const k of Object.keys(DocGen.DOCS)) { await gen(k); await new Promise((r) => setTimeout(r, 400)); }
+    const grid = document.getElementById('docGrid');
+    grid.innerHTML = DOCS.map((d) => `
+      <div class="doc-card">
+        <div class="doc-thumb" data-pv="${d.k}" title="クリックで拡大"><div class="pv-scale">${previewHtml(d.k)}</div><span class="zoom">拡大</span></div>
+        <div class="doc-body"><span class="k">${d.tag}</span><h3>${d.name}</h3><div class="desc">${d.desc}</div>
+          <div class="row"><button type="button" class="btn btn-secondary" data-pv="${d.k}">プレビュー</button><button type="button" class="btn btn-primary" data-gen="${d.k}">ダウンロード</button></div></div>
+      </div>`).join('');
+    grid.addEventListener('click', (e) => {
+      const g = e.target.closest('[data-gen]'); if (g) { gen(g.dataset.gen); return; }
+      const p = e.target.closest('[data-pv]'); if (p) openPreview(p.dataset.pv);
     });
+    document.getElementById('allBtn').addEventListener('click', async () => {
+      for (const d of DOCS) { await gen(d.k); await new Promise((r) => setTimeout(r, 400)); }
+    });
+    if (/claude\.ai$/.test(location.hostname)) {
+      grid.insertAdjacentHTML('beforebegin', '<div class="note" style="margin:0 0 12px">プレビュー環境（claude.ai）ではファイルのダウンロードが動きません。本番サイトでは各ボタンからWordファイルが保存されます。</div>');
+    }
   }
+  /* プレビュー拡大 */
+  const modal = document.getElementById('pvModal');
+  let pvKey = null;
+  function openPreview(k) {
+    pvKey = k;
+    const d = DOCS.find((x) => x.k === k);
+    document.getElementById('pvTitle').textContent = `${d.tag}　${d.name}`;
+    document.getElementById('pvBody').innerHTML = previewHtml(k);
+    modal.classList.remove('hidden'); document.body.classList.add('modal-open');
+  }
+  function closePreview() { modal.classList.add('hidden'); document.body.classList.remove('modal-open'); }
+  document.getElementById('pvClose').addEventListener('click', closePreview);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closePreview(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !modal.classList.contains('hidden')) closePreview(); });
+  document.getElementById('pvDl').addEventListener('click', () => { if (pvKey) gen(pvKey); });
 
   /* ---------- 添付書類チェックリスト ---------- */
   function renderChecklist() {
@@ -72,32 +101,34 @@
       '職業紹介責任者の住民票の写しと履歴書（役員が兼務する場合は不要）',
     ];
     const cost = ['登録免許税 9万円（税務署または金融機関で納付し、領収証書の原本を提出）', '収入印紙 5万円（申請書に貼らずに持参）', '提出先：本店（事業主の住所）を管轄する都道府県労働局 需給調整事業部（課・室）', '申請から許可まで通常2〜3ヶ月。事業開始予定の3ヶ月前までの申請が目安'];
-    const block = (title, items) => `<h3>${title}</h3><ul class="todo">${items.map((s, i) => `<li><input type="checkbox" data-ck="${title}${i}"><span>${s}</span></li>`).join('')}</ul>`;
+    const block = (title, items) => `<h3>${title}</h3>${items.map((s, i) => `<label class="check"><input type="checkbox" data-ck="${title}${i}"><span>${s}</span></label>`).join('')}`;
     const el = document.getElementById('checklist');
     el.innerHTML = block('提出書類（本ツールで作成）', submit) + block(corp ? '添付書類（法人）' : '添付書類（個人）', attach) + block('事業所・責任者の書類', office) + block('費用・提出先', cost);
     const ck = LT.get().checklist || {};
     el.querySelectorAll('[data-ck]').forEach((c) => { c.checked = !!ck[c.dataset.ck]; c.addEventListener('change', () => { const s = LT.get().checklist || {}; s[c.dataset.ck] = c.checked; LT.set({ checklist: s }); }); });
   }
 
-  /* ---------- TODO ---------- */
+  /* ---------- 免許取得までの工程図 ---------- */
   const TODOS = [
-    { k: 'course', t: '職業紹介責任者講習を予約・受講する', d: '受講証明書の写しが必要。各実施機関のサイトで日程を確認（受講料1万円前後）。' },
-    { k: 'submit', t: '労働局に申請書を提出する', d: '3部そろえ、登録免許税9万円の領収証書と収入印紙5万円を持参。提出時に窓口で内容確認があります。' },
-    { k: 'fix', t: '補正連絡に対応する', d: '労働局から書類の修正や追加資料の依頼が来たら、期限内に対応。ここが遅れると許可も遅れます。' },
-    { k: 'jobdb', t: '求人DBを契約する', d: '許可前に比較して決めておく。agent bank（ROXX）、circusAGENT、転職AGENT Naviなど。許可証が出てから契約が本稼働。' },
-    { k: 'channel', t: '求職者の集客経路を決める', d: '自社集客（SNS・Web）、送客サービス、求人媒体のどれで最初の面談を作るか。開業初月から面談が入るよう、許可前に準備。' },
-    { k: 'disclose', t: '手数料表・規程を事業所に備え付け、Webにも掲載する', d: '本ツールの「明示書面」を求職者・求人者に明示できる状態にする。自社サイトがあればページとして掲載。' },
-    { k: 'licensed', t: '許可通知を受け取る', d: '許可証を受け取ったら下のボタンを押してください。開業初月の準備に進みます。' },
-    { k: 'start', t: '開業初月の求人開拓と面談を始める', d: '求人3〜5社と求職者面談10件を最初の30日で。ロードマップの「許可後30日」の章を参照。' },
+    { k: 'course', t: '職業紹介責任者講習を受講する', d: '受講証明書の写しが必要。実施機関のサイトで日程を確認（受講料1万円前後）。', img: '01' },
+    { k: 'submit', t: '労働局に申請書を提出する', d: '3部そろえ、登録免許税9万円の領収証書と収入印紙5万円を持参。窓口で内容確認があります。', img: '02' },
+    { k: 'fix', t: '補正連絡に対応する', d: '書類の修正や追加資料の依頼が来たら期限内に対応。ここが遅れると許可も遅れます。', img: '03' },
+    { k: 'jobdb', t: '求人DBを契約する', d: '許可前に比較して決めておく。agent bank、circusAGENT、転職AGENT Naviなど。', img: '04' },
+    { k: 'channel', t: '求職者の集客経路を決める', d: '自社集客、送客サービス、求人媒体のどれで最初の面談を作るか。許可前に準備。', img: '05' },
+    { k: 'disclose', t: '手数料表・規程を備え付け、Webにも掲載', d: '「明示書面」を求職者・求人者に示せる状態にする。自社サイトがあれば掲載。', img: '06' },
+    { k: 'licensed', t: '許可証を受け取る', d: '許可証が届いたら「許可が出た」を押してください。開業初月の準備に進みます。', img: '07', milestone: true },
+    { k: 'start', t: '開業初月の求人開拓と面談を始める', d: '求人3〜5社と求職者面談10件を最初の30日で。ロードマップの「許可後30日」の章を参照。', img: '08' },
   ];
   function renderTodo() {
-    const ul = document.getElementById('todo');
+    const wrap = document.getElementById('todo');
     const done = LT.get().todo || {};
-    ul.innerHTML = TODOS.map((t) => `<li class="${done[t.k] ? 'done' : ''}"><input type="checkbox" data-todo="${t.k}" ${done[t.k] ? 'checked' : ''}><div><div class="t">${t.t}</div><div class="d">${t.d}</div></div></li>`).join('');
-    ul.querySelectorAll('[data-todo]').forEach((c) => c.addEventListener('change', () => {
+    const n = TODOS.filter((t) => done[t.k]).length;
+    wrap.innerHTML = `<div class="rm-progress" style="grid-column:1/-1"><span>進捗 ${n}／${TODOS.length}</span><div class="bar"><i style="width:${Math.round(n / TODOS.length * 100)}%"></i></div></div>` +
+      TODOS.map((t, i) => `<div class="rm-step ${done[t.k] ? 'done' : ''} ${t.milestone ? 'milestone' : ''}" data-step="${t.k}"><span class="no">${i + 1}</span><img src="img/todo/${t.img}.webp" alt="" width="480" height="480" loading="lazy"><div class="t">${t.t}</div><div class="d">${t.d}</div><label><input type="checkbox" data-todo="${t.k}" ${done[t.k] ? 'checked' : ''}> ${done[t.k] ? '完了' : '完了にする'}</label></div>`).join('');
+    wrap.querySelectorAll('[data-todo]').forEach((c) => c.addEventListener('change', () => {
       const s = LT.get().todo || {}; s[c.dataset.todo] = c.checked; LT.set({ todo: s });
-      c.closest('li').classList.toggle('done', c.checked);
       if (c.dataset.todo === 'licensed' && c.checked) markLicensed();
+      renderTodo();
     }));
     renderLicensed();
   }
@@ -117,19 +148,30 @@
     } else {
       box.innerHTML = `<button type="button" class="btn btn-secondary" id="licensedBtn">許可が出た</button>`;
       document.getElementById('licensedBtn').addEventListener('click', () => {
-        const c = document.querySelector('[data-todo=licensed]'); if (c) { c.checked = true; c.closest('li').classList.add('done'); }
         const t = LT.get().todo || {}; t.licensed = true; LT.set({ todo: t });
-        markLicensed();
+        markLicensed(); renderTodo();
       });
     }
   }
+
   /* ---------- メール登録 ---------- */
   function showDownloads() {
     gate.classList.add('hidden'); downloads.classList.remove('hidden');
     renderDocs(); renderChecklist(); renderTodo();
   }
-  if (data.lead && data.lead.email) { if (!data.lead.completedAt) { LT.set({ lead: Object.assign({}, data.lead, { completedAt: new Date().toISOString() }) }); const sc = LT.score(data); const c = data.check || {}; LT.postLead({ event: 'lead', id: data.lead.id, email: data.lead.email, company: data.lead.company || LT.entityName(data), roadmap: '1', entityType: data.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '', expectedJobseekers: data.expectedJobseekers || '', staffCount: data.staffCount || '', feeRate: data.feeRate || '', scope: data.scopeDefined ? `${data.scopeJobs || ''}/${data.scopeArea || ''}` : '全職種・国内', pref: (data.address || '').slice(0, 4), score: sc.score, rank: sc.rank, reasons: sc.reasons.join('、'), payload: LT.capture(), userAgent: navigator.userAgent, referer: document.referrer || '' }); } showDownloads(); }
-  else {
+  function completionPost(lead) {
+    const sc = LT.score(data); const c = data.check || {};
+    LT.postLead({ event: 'lead', id: lead.id, email: lead.email, company: lead.company || LT.entityName(data), roadmap: lead.roadmap === false ? '0' : '1',
+      entityType: data.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '',
+      expectedJobseekers: data.expectedJobseekers || '', staffCount: data.staffCount || '', feeRate: data.feeRate || '',
+      scope: data.scopeDefined ? `${data.scopeJobs || ''}/${data.scopeArea || ''}` : '全職種・国内',
+      pref: (data.address || '').slice(0, 4), score: sc.score, rank: sc.rank, reasons: sc.reasons.join('、'), payload: LT.capture(),
+      userAgent: navigator.userAgent, referer: document.referrer || '' });
+  }
+  if (data.lead && data.lead.email) {
+    if (!data.lead.completedAt) { LT.set({ lead: Object.assign({}, data.lead, { completedAt: new Date().toISOString() }) }); completionPost(data.lead); }
+    showDownloads();
+  } else {
     gate.classList.remove('hidden');
     const gf = document.getElementById('gateForm');
     gf.company.value = LT.entityName(data);
@@ -138,20 +180,11 @@
       if (!LT.validate(gf)) { LT.toast(gf.agree.checked ? 'メールアドレスと会社名を入力してください' : '利用規約への同意が必要です'); return; }
       const v = LT.collect(gf);
       const sc = LT.score(data);
-      const lead = { id: LT.uid(), email: v.email, company: v.company, roadmap: !!v.roadmap, at: new Date().toISOString(), rank: sc.rank };
+      const lead = { id: LT.uid(), email: v.email, company: v.company, roadmap: !!v.roadmap, at: new Date().toISOString(), rank: sc.rank, completedAt: new Date().toISOString() };
       LT.set({ lead });
-      const c = data.check || {};
-      LT.postLead({
-        event: 'lead', id: lead.id, email: lead.email, company: lead.company, roadmap: lead.roadmap ? '1' : '0',
-        entityType: data.entityType || '', segment: c.segment || '', channel: c.channel || '', startMonth: c.startMonth || '',
-        expectedJobseekers: data.expectedJobseekers || '', staffCount: data.staffCount || '', feeRate: data.feeRate || '',
-        scope: data.scopeDefined ? `${data.scopeJobs || ''}/${data.scopeArea || ''}` : '全職種・国内',
-        pref: (data.address || '').slice(0, 4), score: sc.score, rank: sc.rank, reasons: sc.reasons.join('、'), payload: LT.capture(),
-        userAgent: navigator.userAgent, referer: document.referrer || '',
-      });
+      completionPost(lead);
       showDownloads();
       LT.toast('登録しました。書類をダウンロードできます');
     });
   }
-
 })();

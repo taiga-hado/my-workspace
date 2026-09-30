@@ -4,29 +4,31 @@
 <meta charset="UTF-8">
 <title>免許取得までのTODO表</title>
 <style>
-  @page { size: A4; margin: 0; }
-  :root { --blue: #1f4fd8; --deep: #16389c; --tint: #eef3ff; --navy: #1f2740; --gray: #5f6a82; --line: #d9dfec; --yellow: #ffcf3d; }
-  * { box-sizing: border-box; }
-  body { margin: 0; font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif; color: var(--navy); font-size: 10pt; line-height: 1.5; }
-  .page { width: 210mm; height: 297mm; padding: 14mm 14mm 12mm; position: relative; overflow: hidden; }
-  .head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 3px solid var(--blue); padding-bottom: 8px; margin-bottom: 12px; }
-  h1 { font-size: 20pt; margin: 0; line-height: 1.3; }
-  .kicker { color: var(--blue); font-weight: 700; letter-spacing: .12em; font-size: 9pt; }
-  .meta { font-size: 9pt; color: var(--gray); text-align: right; }
-  .phase { margin: 7px 0 3px; font-weight: 800; color: #fff; background: var(--blue); display: inline-block; padding: 2px 12px; border-radius: 999px; font-size: 9.5pt; }
-  .phase.y { background: var(--yellow); color: var(--navy); }
-  table { width: 100%; border-collapse: collapse; font-size: 9pt; }
-  th, td { border: 1px solid var(--line); padding: 3.5px 8px; vertical-align: top; text-align: left; }
-  th { background: var(--tint); }
-  td.c { width: 8mm; text-align: center; font-size: 13pt; }
-  td.w { width: 26mm; color: var(--gray); }
-  .foot { position: absolute; left: 14mm; right: 14mm; bottom: 7mm; font-size: 8pt; color: var(--gray); display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 4px; }
-  .note { background: #fff8dc; border: 1px solid #f1d878; border-radius: 6px; padding: 6px 10px; font-size: 9pt; margin-top: 8px; }
+@page { size: A4; margin: 0; }
+:root { --navy: #0F1B33; --blue: #2457F5; --deep: #1a3fb8; --soft: #E8EEFF; --tint: #F5F8FF; --accent: #FF6B2C; --gray: #5f6a82; --line: #d9dfec; }
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif; color: var(--navy); font-size: 9.5pt; line-height: 1.5; font-feature-settings: "palt"; }
+.page { width: 210mm; height: 297mm; padding: 15mm 14mm 12mm; position: relative; overflow: hidden; background: #fff; }
+.page::before { content: ""; position: absolute; left: 0; top: 0; right: 0; height: 3.5mm; background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 55%, var(--accent) 100%); }
+.head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 2px solid var(--navy); padding-bottom: 8px; margin-bottom: 10px; }
+h1 { font-size: 20pt; margin: 0; line-height: 1.3; letter-spacing: -.005em; }
+.kicker { color: var(--blue); font-weight: 900; letter-spacing: .12em; font-size: 8.5pt; }
+.meta { font-size: 8.5pt; color: var(--gray); text-align: right; line-height: 1.5; }
+.phase { margin: 7px 0 2px; font-weight: 800; color: #fff; background: var(--blue); display: inline-block; padding: 1px 12px; border-radius: 999px; font-size: 8.8pt; }
+.phase.y { background: var(--accent); }
+table { width: 100%; border-collapse: collapse; font-size: 8.6pt; }
+th, td { border: 1px solid var(--line); padding: 3px 7px; vertical-align: top; text-align: left; }
+th { background: var(--soft); font-weight: 700; }
+td.c { width: 7mm; text-align: center; font-size: 11pt; padding: 1px; }
+td.w { width: 25mm; color: var(--gray); }
+.foot { position: absolute; left: 14mm; right: 14mm; bottom: 7mm; font-size: 7.5pt; color: var(--gray); display: flex; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 4px; }
+.note { background: #fff4ec; border-left: 4px solid var(--accent); border-radius: 6px; padding: 6px 10px; font-size: 8.6pt; margin-top: 8px; }
+.note b { color: #c94f14; }
 </style>
 </head>
 <body>
 <section class="page">
-  <div class="head"><div><div class="kicker">CHECKLIST</div><h1>免許取得までのTODO表</h1></div><div class="meta">有料職業紹介事業 新規許可申請<br>作成日：　　　　年　　月　　日</div></div>
+  <div class="head"><div><div class="kicker">CHECKLIST</div><h1>免許取得までのTODO表</h1></div><div class="meta">有料職業紹介事業 新規許可申請｜株式会社HADO<br>作成日：　　　　年　　月　　日</div></div>
   <span class="phase">申請前（準備）</span>
   <table>
     <tr><th></th><th>やること</th><th>ポイント</th><th>目安</th></tr>
@@ -41,16 +43,16 @@
   <table>
     <tr><td class="c">☐</td><td>労働局に提出</td><td>本店所在地を管轄する労働局 需給調整事業部。窓口で内容確認</td><td class="w">提出日</td></tr>
     <tr><td class="c">☐</td><td>補正連絡に対応</td><td>平日日中に電話に出られる体制。控えを手元に</td><td class="w">提出後1〜4週</td></tr>
-    <tr><td class="c">☐</td><td>求人DBの比較・資料請求</td><td>agent bank／circusAGENT／転職AGENT Naviなど。契約には許可証が必要</td><td class="w">提出後2〜4週</td></tr>
-    <tr><td class="c">☐</td><td>求職者の集客経路を決める</td><td>初月の面談20件をどう作るか（送客・媒体・自社集客）</td><td class="w">提出後2〜4週</td></tr>
-    <tr><td class="c">☐</td><td>面談シート・求人票・契約書のひな形</td><td>面談60分の型、労働条件明示、返戻金条件</td><td class="w">提出後4〜8週</td></tr>
+    <tr><td class="c">☐</td><td>求人DBの比較・資料請求</td><td>agent bank／circusAGENT／転職AGENT Naviなど。契約には許可証が必要（ロードマップ04章）</td><td class="w">提出後2〜4週</td></tr>
+    <tr><td class="c">☐</td><td>求職者の集客経路を決める</td><td>初月の面談20件をどう作るか。面談実施率で選ぶ（ロードマップ05章）</td><td class="w">提出後2〜4週</td></tr>
+    <tr><td class="c">☐</td><td>カウンセリングシート・求人票・推薦文・契約書・進捗表</td><td>初回30〜40分の7ステップ、2回目60分の6ステップ（ロードマップ03・06・07章）</td><td class="w">提出後4〜8週</td></tr>
     <tr><td class="c">☐</td><td>明示書面の準備</td><td>手数料表・運営規程・個人情報規程・許可番号を事業所に備え付け、Webにも掲載</td><td class="w">許可直前</td></tr>
   </table>
   <span class="phase y">許可後30日</span>
   <table>
     <tr><td class="c">☐</td><td>許可証の受領</td><td>許可番号を明示書面に記入。求人DBの契約を本稼働</td><td class="w">許可日</td></tr>
-    <tr><td class="c">☐</td><td>求人3〜5社の確保</td><td>取引先・知人経由、採用に困っている業界を絞る</td><td class="w">1〜2週目</td></tr>
-    <tr><td class="c">☐</td><td>求職者面談10件</td><td>面談翌日までに求人3〜5件を提案</td><td class="w">2〜4週目</td></tr>
+    <tr><td class="c">☐</td><td>求人10件（直接契約3〜5社＋DB）</td><td>ジュニア層の現実的な着地先の範囲で用意</td><td class="w">1〜2週目</td></tr>
+    <tr><td class="c">☐</td><td>求職者面談10件</td><td>初回は求人を出さない。中2日以内に2回目を設定し各職種2〜3件を提案</td><td class="w">2〜4週目</td></tr>
     <tr><td class="c">☐</td><td>初決定1件</td><td>労働条件通知書の確認、入社日と請求の確定</td><td class="w">4週目</td></tr>
   </table>
   <span class="phase">許可後の定期手続き</span>
@@ -59,8 +61,8 @@
     <tr><td class="c">☐</td><td>職業紹介事業報告書（様式第8号）</td><td>前年度分を労働局に提出</td><td class="w">毎年4月末</td></tr>
     <tr><td class="c">☐</td><td>許可の更新</td><td>初回3年、以降5年。満了の3ヶ月前までに申請</td><td class="w">3年後</td></tr>
   </table>
-  <div class="note">補正でよく指摘される点：住所表記のズレ／履歴書の空白期間／定款の事業目的／レイアウト図の記載不足／繰延資産・営業権の控除漏れ／講習の受講日が申請日より後</div>
-  <div class="foot"><span>株式会社HADO　免許申請書類 無料作成ツール</span><span>kyusyokusyasokyaku-no-madoguchi.com/license/</span></div>
+  <div class="note"><b>補正でよく指摘される点</b>　住所表記のズレ／履歴書の空白期間／定款の事業目的／レイアウト図の記載不足／繰延資産・営業権の控除漏れ／講習の受講日が申請日より後</div>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許申請書類 無料作成ツール　kyusyokusyasokyaku-no-madoguchi.com/license/</span></div>
 </section>
 </body>
 </html>

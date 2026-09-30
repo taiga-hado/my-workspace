@@ -14,7 +14,7 @@
 // =============================================================================
 
 const SHEET_NAME = 'leads';
-const SLACK_WEBHOOK_URL = ''; // Slack Incoming Webhook の URL（空ならメール通知のみ）
+const SLACK_WEBHOOK_URL = '__SET_IN_GAS_EDITOR__'; // Slack Incoming Webhook の URL。秘密情報のためリポジトリでは伏字（実値はGASエディタ側のみ）
 const NOTIFY_EMAIL = 't.tanaka@hadoinc.com'; // 新規リード・許可到達の通知先メール（Slack未設定でも届く）
 const FROM_NAME = '求職者送客クラウド（免許申請ツール）';
 const REPLY_TO = 'info@hado.co.jp';

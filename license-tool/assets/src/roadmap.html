@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>免許取得から月商300万円までの完全ロードマップ</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root { --navy: #0F1B33; --blue: #2457F5; --deep: #1a3fb8; --soft: #E8EEFF; --tint: #F5F8FF; --accent: #FF6B2C; --bg: #F7F8FB; --green: #1FA97A; --red: #E0453A; --gray: #5f6a82; --line: #d9dfec; --paper: #FBFAF7; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body { font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif; color: var(--navy); font-size: 10pt; line-height: 1.7; font-feature-settings: "palt"; }
+  .page { width: 210mm; height: 297mm; padding: 16mm 15mm 15mm; page-break-after: always; position: relative; overflow: hidden; background: #fff; }
+  .page:last-child { page-break-after: auto; }
+  .page::before { content: ""; position: absolute; left: 0; top: 0; right: 0; height: 3.5mm; background: linear-gradient(90deg, var(--blue) 0%, var(--blue) 55%, var(--accent) 100%); }
+  .foot { position: absolute; left: 15mm; right: 15mm; bottom: 8mm; display: flex; justify-content: space-between; align-items: center; font-size: 7.5pt; color: var(--gray); border-top: 1px solid var(--line); padding-top: 5px; }
+  .foot b { color: var(--navy); font-weight: 700; }
+  .foot .pn { font-weight: 800; color: var(--blue); font-size: 9pt; }
+  .serif { font-family: "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif; }
+
+  /* section head */
+  .sec { display: flex; align-items: baseline; gap: 10px; margin: 0 0 4px; }
+  .sec .no { font-size: 22pt; font-weight: 900; color: var(--blue); letter-spacing: .02em; line-height: 1; }
+  .sec .name { font-size: 9.5pt; font-weight: 700; color: var(--gray); letter-spacing: .12em; }
+  h2 { font-size: 18.5pt; line-height: 1.4; margin: 0 0 6px; letter-spacing: -.005em; }
+  .lead { font-size: 10pt; color: #2a3350; margin: 0 0 12px; }
+  h3 { font-size: 11.5pt; margin: 14px 0 6px; color: var(--navy); display: flex; align-items: center; gap: 8px; }
+  h3::before { content: ""; width: 5px; height: 15px; background: var(--blue); border-radius: 2px; }
+  h4 { font-size: 10pt; margin: 0 0 4px; color: var(--deep); }
+  p { margin: 0 0 6px; }
+  ul { margin: 2px 0 6px; padding-left: 18px; } li { margin: 1px 0; }
+  .small { font-size: 8pt; color: var(--gray); line-height: 1.5; }
+  .src { font-size: 7.5pt; color: var(--gray); margin-top: 4px; line-height: 1.5; }
+  .src::before { content: "出典　"; font-weight: 700; }
+
+  /* stats band (窓口 事例ページの .iv-stat-band と同じ見せ方) */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 8px 0 10px; }
+  .stats.four { grid-template-columns: repeat(4, 1fr); }
+  .stat { background: var(--tint); border-radius: 10px; padding: 10px 8px 8px; text-align: center; }
+  .stat b { display: block; font-size: 20pt; font-weight: 900; color: var(--navy); line-height: 1.15; letter-spacing: -.01em; }
+  .stat b small { font-size: .55em; color: var(--blue); font-weight: 800; margin-left: 1px; }
+  .stat span { display: block; font-size: 8pt; color: var(--gray); margin-top: 3px; line-height: 1.4; }
+  .stat.accent b { color: var(--blue); }
+
+  /* Point / callouts (CA向け資料の Point 表記) */
+  .point { display: grid; grid-template-columns: 44px 1fr; gap: 10px; align-items: start; background: var(--soft); border-radius: 8px; padding: 9px 12px; margin: 8px 0 10px; font-size: 9.5pt; }
+  .point::before { content: "Point"; font-weight: 900; color: var(--blue); font-size: 9.5pt; letter-spacing: .02em; padding-top: 1px; }
+  .warn { background: #fff4ec; border-left: 4px solid var(--accent); border-radius: 6px; padding: 8px 12px; margin: 8px 0; font-size: 9.2pt; }
+  .warn b { color: #c94f14; }
+  .quote { border-left: 4px solid var(--blue); background: var(--tint); padding: 8px 12px; margin: 8px 0; font-size: 9.5pt; font-weight: 700; line-height: 1.6; border-radius: 0 6px 6px 0; }
+  .quote .who { display: block; font-weight: 400; font-size: 8pt; color: var(--gray); margin-top: 4px; }
+
+  /* RULE / CHECK cards */
+  .rules { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 8px 0 10px; }
+  .rule { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: #fff; }
+  .rule .tag { display: inline-block; font-size: 8pt; font-weight: 900; letter-spacing: .1em; color: var(--blue); margin-bottom: 4px; }
+  .rule .tag.orange { color: var(--accent); }
+  .rule h4 { font-size: 10.5pt; margin: 0 0 4px; color: var(--navy); line-height: 1.45; }
+  .rule p { font-size: 8.8pt; color: #2a3350; margin: 0; line-height: 1.55; }
+
+  /* tables */
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 8px; font-size: 8.8pt; line-height: 1.5; }
+  th, td { border: 1px solid var(--line); padding: 5px 7px; text-align: left; vertical-align: top; }
+  th { background: var(--soft); font-weight: 700; color: var(--navy); }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; } th.num { text-align: right; }
+  td.c, th.c { text-align: center; }
+  td.hl { background: #fff8dc; font-weight: 700; }
+  tr.total td { background: var(--tint); font-weight: 700; }
+  table.compact td, table.compact th { padding: 3.5px 6px; font-size: 8.4pt; }
+  .ok { color: var(--green); font-weight: 900; } .ng { color: var(--red); font-weight: 900; }
+
+  /* layout helpers */
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .box { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: #fff; }
+  .box.tint { background: var(--tint); border-color: transparent; }
+  .box h4 { margin-bottom: 4px; }
+  .box ul { margin-bottom: 0; font-size: 9pt; }
+  .timeline { list-style: none; padding: 0; margin: 4px 0 8px; }
+  .timeline li { display: grid; grid-template-columns: 30mm 1fr; gap: 10px; padding: 6px 0; border-bottom: 1px dashed var(--line); font-size: 9.2pt; }
+  .timeline li b { color: var(--deep); }
+  .check { list-style: none; padding: 0; }
+  .check li { padding-left: 20px; position: relative; font-size: 9.2pt; }
+  .check li::before { content: ""; position: absolute; left: 0; top: 5px; width: 11px; height: 11px; border: 2px solid var(--blue); border-radius: 3px; }
+  .flow { display: flex; align-items: stretch; gap: 0; margin: 8px 0 10px; }
+  .flow div { flex: 1; background: var(--tint); padding: 8px 6px; text-align: center; position: relative; font-size: 8.6pt; line-height: 1.4; }
+  .flow div b { display: block; font-size: 15pt; font-weight: 900; color: var(--navy); line-height: 1.2; }
+  .flow div small { display: block; color: var(--blue); font-weight: 700; font-size: 8pt; }
+  .flow div + div { margin-left: 8px; }
+  .flow div + div::before { content: "→"; position: absolute; left: -9px; top: 50%; transform: translate(-0%, -50%); color: var(--gray); font-size: 9pt; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0 8px; }
+  .tags span { background: #fff; border: 1.5px solid var(--blue); color: var(--deep); font-weight: 700; border-radius: 999px; padding: 2px 10px; font-size: 8.8pt; }
+  .steps { counter-reset: s; list-style: none; padding: 0; margin: 4px 0 8px; }
+  .steps li { counter-increment: s; position: relative; padding-left: 28px; margin: 4px 0; font-size: 9.2pt; }
+  .steps li::before { content: counter(s); position: absolute; left: 0; top: 2px; width: 20px; height: 20px; border-radius: 50%; background: var(--blue); color: #fff; font-weight: 800; font-size: 8.5pt; display: flex; align-items: center; justify-content: center; }
+
+  /* cover */
+  .cover { background: linear-gradient(170deg, #ffffff 0%, var(--tint) 60%, var(--soft) 100%); display: flex; flex-direction: column; }
+  .cover .badge { display: inline-block; align-self: flex-start; background: var(--navy); color: #fff; font-weight: 700; padding: 5px 14px; border-radius: 999px; font-size: 9pt; letter-spacing: .06em; margin-top: 18mm; }
+  .cover h1 { font-size: 31pt; line-height: 1.32; margin: 12mm 0 6mm; letter-spacing: -.01em; }
+  .cover h1 em { font-style: normal; color: var(--blue); }
+  .cover .tagline { font-size: 13.5pt; font-weight: 700; color: var(--navy); margin: 0 0 4mm; }
+  .cover .sub { font-size: 10.2pt; color: #2a3350; margin: 0 0 8mm; max-width: 150mm; }
+  .cover .stats { margin-top: auto; }
+  .cover .pub { margin-top: 8mm; font-size: 8.5pt; color: var(--gray); line-height: 1.6; }
+  .cover .pub b { color: var(--navy); }
+
+  /* toc */
+  .toc { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; margin: 6px 0 10px; }
+  .toc div { display: grid; grid-template-columns: 24px 1fr auto; gap: 8px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 9.6pt; }
+  .toc div b { color: var(--blue); font-weight: 900; }
+  .toc div span { color: var(--gray); font-size: 8pt; }
+  .srcs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .srcs .box { padding: 8px 10px; font-size: 8.6pt; }
+  .srcs .box h4 { font-size: 9.2pt; }
+
+  /* pattern cards (特別扱いの宣言) */
+  .pat { border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px; background: #fff; }
+  .pat .k { font-size: 8pt; font-weight: 900; color: var(--accent); letter-spacing: .1em; }
+  .pat h4 { font-size: 10pt; margin: 2px 0 4px; }
+  .pat p { font-size: 8.6pt; margin: 0; color: #2a3350; }
+  .pat p.say { background: var(--tint); border-radius: 6px; padding: 6px 8px; margin-top: 5px; font-size: 8.4pt; }
+
+  /* land cards */
+  .lands { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 6px 0 8px; }
+  .lands div { background: var(--tint); border-radius: 8px; padding: 7px 9px; font-size: 8.8pt; }
+  .lands div b { display: block; color: var(--deep); font-size: 9.5pt; }
+
+  /* todo */
+  .phase { margin: 8px 0 2px; font-weight: 800; color: #fff; background: var(--blue); display: inline-block; padding: 1px 12px; border-radius: 999px; font-size: 8.8pt; }
+  .phase.y { background: var(--accent); }
+  table.todo td, table.todo th { padding: 3px 6px; }
+  table.todo td.c { width: 7mm; font-size: 11pt; padding: 1px; }
+  table.todo td.w { width: 25mm; color: var(--gray); }
+</style>
+</head>
+<body>
+
+<!-- 表紙 -->
+<section class="page cover">
+  <span class="badge">人材紹介 開業ガイド　2026年9月版</span>
+  <h1>免許取得から<br><em>月商300万円</em>までの<br>完全ロードマップ</h1>
+  <p class="tagline serif">許可が下りた日から、月3〜5決定が回るまで。</p>
+  <p class="sub">月間約1,400件の求職者面談を設定している当社の現場データと、成果を出している人材紹介会社5社への取材、当社キャリアアドバイザーが実務から書き起こした面談マニュアルをもとに、免許取得後の立ち上げに必要なことだけをまとめました。</p>
+  <div class="stats">
+    <div class="stat"><b>約1,400<small>件/月</small></b><span>当社が設定している求職者面談数（2026年9月）</span></div>
+    <div class="stat"><b>5<small>社</small></b><span>取材した導入エージェント（成約率30〜35%の会社を含む）</span></div>
+    <div class="stat"><b>30,561<small>事業所</small></b><span>有料職業紹介事業所数（厚生労働省 令和6年度）</span></div>
+  </div>
+  <p class="pub"><b>発行：株式会社HADO</b>（有料職業紹介事業 許可番号 13-ユ-316820）｜求職者送客の窓口・求職者送客クラウド 運営<br>本資料は一般的な情報提供であり、成果を保証するものではありません。法令・手続きの個別の事情については労働局・専門家にご確認ください。</p>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許申請書類 無料作成ツール　特典資料</span><span class="pn">00</span></div>
+</section>
+
+<!-- 目次・数字の出どころ -->
+<section class="page">
+  <div class="sec"><span class="no">目次</span><span class="name">CONTENTS</span></div>
+  <h2>全部は読まなくていい。<br>いま必要な章だけ開いてください。</h2>
+  <div class="toc">
+    <div><b>01</b>市場：参入は増えている。それでも若手の7割はエージェント未利用<span>P.02</span></div>
+    <div><b>07</b>2回目面談（60分）：求人提案とクロージング<span>P.09</span></div>
+    <div><b>02</b>月商300万円を面談数から逆算する<span>P.03</span></div>
+    <div><b>08</b>応募から入社まで：推薦文・面接対策・内定フォロー<span>P.10</span></div>
+    <div><b>03</b>免許待ちの2〜3ヶ月でやること<span>P.04</span></div>
+    <div><b>09</b>許可後30日・90日の動き方と週次KPI<span>P.11</span></div>
+    <div><b>04</b>求人側の準備：着地先・求人DB・求人判断表<span>P.05〜06</span></div>
+    <div><b>10</b>許可後に必要な事務手続き<span>P.12</span></div>
+    <div><b>05</b>求職者側の準備：集客経路の選び方<span>P.07</span></div>
+    <div><b>11</b>免許取得までのTODO表<span>P.13</span></div>
+    <div><b>06</b>初回面談（30〜40分）：7ステップと深掘り<span>P.08</span></div>
+    <div><b>—</b>出典・運営会社・無料相談<span>P.14</span></div>
+  </div>
+
+  <h3>この資料の数字は、どこから来ているか</h3>
+  <div class="srcs">
+    <div class="box"><h4>① 当社の送客実績（一次データ）</h4>求職者送客の窓口で毎月設定している約1,400件の面談から出た着座率・成約率と、送客した求職者の属性分布（年代・学歴・就業状況・希望職種・エージェント利用状況）。</div>
+    <div class="box"><h4>② 導入エージェント5社への取材</h4>ReWave・SmartForce・Nexil・Manly&amp;Cool・HRXの各社に、面談回数・成約率・求人提案のスピードなど運用の実数を伺ったインタビュー（窓口サイト「導入事例」に全文公開）。</div>
+    <div class="box"><h4>③ 当社の求職者面談マニュアル v1.0</h4>当社キャリアアドバイザーが実務の経験から書き起こした、初回30〜40分・2回目60分の面談設計、営業職の求人判断表、推薦文の型、内定・入社フォローの回数表。</div>
+    <div class="box"><h4>④ 公的統計・調査</h4>厚生労働省「令和6年度 職業紹介事業報告書の集計結果（速報）」、矢野経済研究所「人材ビジネス市場に関する調査」。市場規模と事業所数のみに使用。</div>
+  </div>
+
+  <h3>まず、この3つだけ</h3>
+  <div class="rules">
+    <div class="rule"><span class="tag">RULE 1</span><h4>月商は「がんばる目標」ではなく、面談数から逆算する</h4><p>決定単価×成約率×着座率を置けば、毎月必要な面談設定数が決まります（02章）。</p></div>
+    <div class="rule"><span class="tag">RULE 2</span><h4>免許待ちの2〜3ヶ月で「求人・集客・面談の型」を揃える</h4><p>許可日に営業を始められる会社ほど、初決定が早い。営業できない期間の使い方が勝負です（03章）。</p></div>
+    <div class="rule"><span class="tag">RULE 3</span><h4>初回面談のゴールは「2回目の約束」</h4><p>情報を聞き切ることではありません。初回で求人は出さず、2回目で提案する設計が最も安定します（06章）。</p></div>
+  </div>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">01</span></div>
+</section>
+
+<!-- 01 市場 -->
+<section class="page">
+  <div class="sec"><span class="no">01</span><span class="name">市場と求職者</span></div>
+  <h2>参入は増えている。それでも、<br>若手求職者の7割はまだエージェントに会っていない。</h2>
+  <p class="lead">同じ求職者を取り合う構図は続いています。一方で、当社が送客している若手層の大半は「エージェントを使ったことがない」状態で面談に来ます。競合に勝つ場所は、求人の数ではなく「集客の入口」と「面談の型」です。</p>
+  <div class="stats">
+    <div class="stat"><b>30,561<small>事業所</small></b><span>有料職業紹介事業所数。毎月100〜150件の新規許可が出ています</span></div>
+    <div class="stat"><b>4,490<small>億円</small></b><span>人材紹介市場規模。前年度比 +12.0%</span></div>
+    <div class="stat accent"><b>68.3<small>%</small></b><span>当社が送客する第二新卒層のうち、エージェント未利用の割合</span></div>
+  </div>
+  <p class="src">厚生労働省「令和6年度 職業紹介事業報告書の集計結果（速報）」／矢野経済研究所「人材ビジネス市場に関する調査」／当社 求職者送客の窓口 送客実績</p>
+
+  <div class="cols">
+    <div>
+      <h3>第二新卒・未経験層（18〜34歳）の実像</h3>
+      <table class="compact">
+        <tr><th>項目</th><th>分布（当社送客実績）</th></tr>
+        <tr><td>年代</td><td>20〜29歳 <b>86.1%</b>／18〜19歳 12.2%／30〜34歳 1.7%</td></tr>
+        <tr><td>最終学歴</td><td>高卒 <b>45.7%</b>／大卒 25.8%／専門・短大卒 25.6%</td></tr>
+        <tr><td>就業状況</td><td>正社員・契約 49.9%／アルバイト・フリーター 22.3%／無職 16.5%／派遣・業務委託 7.3%</td></tr>
+        <tr><td>居住地</td><td>一都三県 47.6%／関西 17.7%／福岡 7.8%／愛知 6.9%</td></tr>
+        <tr><td>エージェント利用</td><td>未利用 <b>68.3%</b>／平均転職回数 1.01回</td></tr>
+        <tr><td>就業希望時期</td><td>4ヶ月以内</td></tr>
+      </table>
+      <p class="small">高卒が半数近く、社会人経験3年以内が中心です。当社ではこの層を「ジュニア層」と呼び、面談の型（06〜08章）はこの層を前提に組んでいます。</p>
+    </div>
+    <div>
+      <h3>新卒（27卒〜28卒）の実像</h3>
+      <table class="compact">
+        <tr><th>項目</th><th>分布（当社送客実績）</th></tr>
+        <tr><td>学校種別</td><td>4年制大学 <b>79%</b>／専門学校 14.8%／短大 6.2%</td></tr>
+        <tr><td>大学内訳</td><td>一般私立 53.1%／日東駒専クラス 17.2%／女子大 15.6%／GMARCHクラス 11%</td></tr>
+        <tr><td>希望職種</td><td>1位 事務・コーポレート <b>34.0%</b>／2位 相談して決めたい 15.1%／3位 接客・サービス 13.8%</td></tr>
+        <tr><td>エージェント利用社数</td><td>0社 <b>66.2%</b>／1社 16.2%／2社 13.2%／3社以上 4.4%（平均0.59社）</td></tr>
+        <tr><td>就活の悩み</td><td>1位 面接対策への不安／2位 就活の軸が定まらない／3位 ES作成／4位 企業の探し方</td></tr>
+      </table>
+      <p class="small">「ガクチカがアルバイトしかない」「3〜5年後の理想像は特にない」と答える学生が大半です。求人より先に、軸を一緒に作る面談が求められています。</p>
+    </div>
+  </div>
+
+  <div class="point">未利用が7割でも、比較検討はされます。当社の新卒送客では1人が平均2.3社と面談しています。「はじめまして、まずご経歴から」で入ると同じ話を2回させることになり、初回から差をつけにいく必要があります（07章「特別扱いの宣言」）。</div>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">02</span></div>
+</section>
+
+<!-- 02 逆算 -->
+<section class="page">
+  <div class="sec"><span class="no">02</span><span class="name">数字の逆算</span></div>
+  <h2>月商300万円は、月5決定。<br>成約率で必要な面談数が2倍変わる。</h2>
+  <p class="lead">ジュニア層の紹介手数料は1名あたり60万円前後が目安です（当社の採算試算で使っている前提値）。月商300万円なら月5決定。そこから成約率と着座率で割り戻すと、毎月確保すべき面談設定数が決まります。</p>
+  <div class="flow">
+    <div><b>300<small>万円</small></b>月商目標</div>
+    <div><b>5<small>決定</small></b>÷ 手数料60万円</div>
+    <div><b>34<small>面談</small></b>÷ 成約率15%</div>
+    <div><b>40<small>件</small></b>÷ 着座率85%＝面談設定数</div>
+  </div>
+  <table>
+    <tr><th style="width:40mm">シナリオ</th><th class="num">面談→決定の<br>成約率</th><th class="num">必要な<br>面談数／月</th><th class="num">面談設定数／月<br>（着座率85%）</th><th class="num">集客費の目安<br>（2.5万円×面談数）</th><th class="num">決定1件あたり<br>の集客費</th></tr>
+    <tr><td>立ち上げ期</td><td class="num">10%</td><td class="num">50件</td><td class="num">59件</td><td class="num">125万円</td><td class="num">25.0万円</td></tr>
+    <tr><td class="hl">当社標準（窓口の平均）</td><td class="num hl">15%</td><td class="num hl">34件</td><td class="num hl">40件</td><td class="num hl">85万円</td><td class="num hl">16.7万円</td></tr>
+    <tr><td>上位エージェント<br>（ReWave・SmartForce社）</td><td class="num">30%</td><td class="num">17件</td><td class="num">20件</td><td class="num">43万円</td><td class="num">8.3万円</td></tr>
+  </table>
+  <p class="src">成約率15%・着座率80〜90%・面談単価2.5万円〜・決定単価16.7万円〜は求職者送客の窓口の公表値（2026年6月改定後）。30%はReWave社（導入前約20%→導入後30%以上、直近35%近く）およびSmartForce社（成約率30%・ROAS 400%）の取材値。手数料60万円は試算上の前提であり、求人の年収帯・手数料率で変わります。</p>
+
+  <div class="cols">
+    <div>
+      <h3>リード課金型で集める場合の歩留まり</h3>
+      <div class="flow" style="margin-top:4px">
+        <div><b>100<small>件</small></b>送客</div>
+        <div><b>35<small>件</small></b>通電 35%</div>
+        <div><b>14<small>件</small></b>面談 40%</div>
+        <div><b>0.98<small>名</small></b>決定 7%</div>
+      </div>
+      <p class="small">登録・応募型のリードは「通電しない」「面談に来ない」が最大の減衰点です。1件2,500円のリードなら、面談実施単価は約1.8万円、決定単価は約25.5万円。当社の応募課金型プランの試算でも、応募50名→通電18名（36%）→面談13名（26%）→内定3名→決定2名が目安です。</p>
+      <p class="src">求職者送客クラウド サービス説明資料（前職でリード課金型送客を扱っていた当社CAへのヒアリングに基づく目安値）／求職者送客の窓口ライト 試算</p>
+    </div>
+    <div>
+      <h3>売上が立つまでの時間差を、資金繰りに織り込む</h3>
+      <ul class="timeline">
+        <li><b>初回面談→内定承諾</b><span>新卒は平均3ヶ月（Manly&amp;Cool社）。中途ジュニア層は2回目面談から応募・面接を経て2〜6週間が目安。</span></li>
+        <li><b>承諾→入社</b><span>ジュニア層はおおよそ1ヶ月。この間に連絡が途切れると辞退が出ます（08章）。</span></li>
+        <li><b>入社→請求・入金</b><span>紹介手数料は入社後の請求が一般的で、入金は翌月末〜翌々月。返戻金の期間（3〜6ヶ月）も契約に明記します。</span></li>
+      </ul>
+      <div class="warn"><b>つまり、許可後の最初の2〜3ヶ月は売上がほぼ立ちません。</b>面談数を切らさずに「型」を作る期間と割り切り、その分の運転資金と集客費を先に確保してください。</div>
+    </div>
+  </div>
+  <div class="point">開業直後は成約率を追わないでください。成約率は求人の質と面談の型が整うにつれて上がります。最初の90日で追う数字は「面談設定数」と「着座率」の2つだけです（09章）。</div>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">03</span></div>
+</section>
+
+<!-- 03 免許待ち -->
+<section class="page">
+  <div class="sec"><span class="no">03</span><span class="name">免許待ちの2〜3ヶ月</span></div>
+  <h2>営業はできない。<br>だから、許可日に営業を始められる状態を作る。</h2>
+  <p class="lead">申請から許可までは労働局の審査待ちで、紹介業務はできません。この期間に「求人」「求職者の入口」「面談の型」の3つを揃えた会社ほど、初決定が早く出ています。</p>
+  <ul class="timeline">
+    <li><b>提出直後〜2週間</b><span>補正連絡に備えて、申請書類の控えと添付書類をすぐ出せる状態にしておく。労働局からの電話は平日日中に来ます。</span></li>
+    <li><b>2〜4週目</b><span>求人DBの資料請求と比較（04章）。集客経路を1つ決める（05章）。面談シートと進捗管理表を作る。</span></li>
+    <li><b>4〜8週目</b><span>求人の直接開拓を始める（許可前は「許可後に紹介したい」という関係づくりまで）。自社サイトかLPを用意し、明示書面を載せる。</span></li>
+    <li><b>許可直前</b><span>手数料表・業務運営規程・個人情報適正管理規程を事業所に備え付け。求職者との面談日程を許可日以降で仮押さえ。</span></li>
+  </ul>
+
+  <h3>この期間に作っておく5点セット</h3>
+  <div class="cols">
+    <div class="box">
+      <h4>① 求職者カウンセリングシート</h4>
+      <p class="small" style="margin-bottom:4px">当社がエージェントに渡しているカウンセリングメモと同じ5項目で作ると、面談前5分で読める形になります。</p>
+      <table class="compact">
+        <tr><td>1 基本情報</td><td>氏名・年齢・学歴・卒業年月</td></tr>
+        <tr><td>2 職歴</td><td>各社の在籍期間・業務内容・退職理由</td></tr>
+        <tr><td>3 現状の課題</td><td>転職を考えている背景・職場での不満</td></tr>
+        <tr><td>4 転職希望詳細</td><td>希望職種・NG職種・希望条件</td></tr>
+        <tr><td>5 希望条件</td><td>エリア・入社希望時期・希望年収</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="box" style="margin-bottom:8px">
+        <h4>② 求人票テンプレート　③ 推薦文の型（08章）</h4>
+        <p class="small" style="margin:0">求人票は労働条件の明示事項を網羅。推薦文は「どんな人か／何をしてきたか／なぜ御社か／懸念と補い方／推薦理由」の5行で固定します。</p>
+      </div>
+      <div class="box">
+        <h4>④ 求人企業向け契約書　⑤ 進捗管理表</h4>
+        <p class="small" style="margin:0">契約書は紹介手数料・返戻金の条件を手数料表と一致させる。進捗表は「面談結果を2営業日以内に記入」をルール化し、面談設定数・着座・応募・面接・内定・入社を1行で追える形に。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols" style="margin-top:10px">
+    <div class="box tint">
+      <h4>やってはいけないこと</h4>
+      <ul>
+        <li>許可前の紹介行為（求職者を企業に紹介して面接させる）</li>
+        <li>「許可取得予定」を隠した営業</li>
+        <li>求職者からの手数料徴収（職業安定法で原則禁止）</li>
+        <li>就職お祝い金の提供（2021年以降禁止）</li>
+      </ul>
+    </div>
+    <div class="box tint">
+      <h4>補正でよく指摘される点</h4>
+      <ul>
+        <li>住民票と申請書の住所表記のズレ、履歴書の空白期間</li>
+        <li>定款の事業目的に「職業紹介事業」がない</li>
+        <li>レイアウト図に面談スペースと書類の保管場所がない</li>
+        <li>貸借対照表から繰延資産・営業権を引いていない</li>
+        <li>責任者講習の受講日が申請日より後</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">04</span></div>
+</section>
+
+<!-- 04 求人側 1 -->
+<section class="page">
+  <div class="sec"><span class="no">04</span><span class="name">求人側の準備</span></div>
+  <h2>未経験で入社できる企業は限られる。<br>その範囲の求人を、面談前に手元に用意する。</h2>
+  <p class="lead">ジュニア層の面談で提案が止まる原因の大半は「出せる求人がない」ことです。当社が導入エージェント向けのオンボーディングで最初に伝えているのが、この「現実的な着地先」です。</p>
+  <h3>ジュニア層の現実的な着地先</h3>
+  <div class="lands">
+    <div><b>無期雇用派遣系</b>IT・施工管理・事務・販売。未経験の間口が最も広い</div>
+    <div><b>toC営業</b>業界問わず。ウォーターサーバー・太陽光・土地活用・買取・車など</div>
+    <div><b>法人営業</b>飲食・美容の店舗向け、通信系など一部</div>
+    <div><b>建設業界</b>施工管理。資格取得後のキャリアパスで提案</div>
+    <div><b>飲食業界</b>店舗運営・独立への展望があると好印象</div>
+    <div><b>製造業</b>コツコツ型・ものづくりへの関心がある人向け</div>
+  </div>
+  <div class="quote">1人あたり平均10件前後の求人をご案内しているので、選択肢の幅としても満足いただけていると感じています。他社だと「1週間後にまた面談して、その時に求人をご案内しますね」というケースもあるのですが、僕らは翌日、早ければ当日中に求人をお送りします。<span class="who">株式会社SmartForce様（成約率30%・CA1人あたり月40件の面談）取材より</span></div>
+
+  <h3>求人DBの比較（許可前に資料請求まで済ませる）</h3>
+  <table class="compact">
+    <tr><th>サービス</th><th>特徴</th><th>料金モデル</th><th>向いている会社</th></tr>
+    <tr><td>agent bank（ROXX）</td><td>若手・未経験層の求人が多い。40,000件超</td><td>月額制</td><td>20代・第二新卒・未経験層を扱う会社</td></tr>
+    <tr><td>circusAGENT</td><td>84,000件超。初期費用・月額ゼロ</td><td>完全成果報酬</td><td>固定費を抑えて始めたい会社</td></tr>
+    <tr><td>転職AGENT Navi</td><td>circus運営の関連サービス</td><td>成果報酬</td><td>複数DBを併用したい会社</td></tr>
+    <tr><td>直接開拓</td><td>自社で求人企業と契約。手数料率を自分で決められる</td><td>なし</td><td>特定業界に人脈がある会社</td></tr>
+  </table>
+  <p class="small">各社の条件は変わります。最新の料金と求人数は各社の資料でご確認ください。契約には許可証の写しが必要なため、比較と資料請求は許可前に済ませます。当社は求人DBを提供しておらず、利害関係はありません。</p>
+
+  <h3>直接開拓の型</h3>
+  <ol class="steps">
+    <li><b>既存の取引先・知人から始める。</b>「人を探している会社」を紹介してもらう。開業初月の直接契約3〜5社はここから出ることが多い。</li>
+    <li><b>採用に困っている業界を絞る。</b>上の着地先（無期雇用派遣、建設、飲食、物流、コールセンター）は若手未経験を採用したい業界で、紹介手数料に慣れています。</li>
+    <li><b>提案は「紹介の型」で。</b>手数料率・返戻金・面談から入社までの流れを1枚にまとめて渡す。ツールで作った手数料表と明示書面がそのまま営業資料になります。</li>
+  </ol>
+  <div class="point">求人DBを使う場合でも、直接契約の求人を3〜5件持っておくと決定単価と成約率が安定します。DBの求人は競合エージェントも同時に提案しているためです。</div>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">05</span></div>
+</section>
+
+<!-- 04 求人側 2：求人判断表 -->
+<section class="page">
+  <div class="sec"><span class="no">04</span><span class="name">求人側の準備｜求人判断</span></div>
+  <h2>営業職は「アピアランス・経験・コミュ力」の3つで<br>出す求人を決める。</h2>
+  <p class="lead">当社の面談マニュアルから、営業職・販売職の求人判断表をそのまま載せます。面談で見るべき客観的なポイントは3つだけです。○が2つ未満なら営業を勧めず、他の職種を軸にします。</p>
+  <table class="compact">
+    <tr><th class="c">アピアランス</th><th class="c">営業・販売経験<br>（1年以上）</th><th class="c">コミュ力</th><th>提案（具体例）</th></tr>
+    <tr><td class="c ok">○</td><td class="c ok">○</td><td class="c ok">○</td><td>法人・個人営業・カウンターセールス（学歴があればほぼ全業界出してOK）</td></tr>
+    <tr><td class="c ok">○</td><td class="c ok">○</td><td class="c ng">×</td><td>法人・個人営業・カウンターセールス（やや苦戦する可能性あり）</td></tr>
+    <tr><td class="c ok">○</td><td class="c ng">×</td><td class="c ok">○</td><td>個人営業（ウォーターサーバー、太陽光、土地活用、CA、派遣コーディネーター、車、買取など）／法人営業一部（通信系）</td></tr>
+    <tr><td class="c ok">○</td><td class="c ng">×</td><td class="c ng">×</td><td>販売優先。チャレンジで個人営業</td></tr>
+    <tr><td class="c ng">×</td><td class="c ok">○</td><td class="c ok">○</td><td>法人営業・個人営業・カウンターセールス（学歴があればほぼ全業界出してOK）</td></tr>
+    <tr><td class="c ng">×</td><td class="c ok">○</td><td class="c ng">×</td><td>販売職（携帯）、個人営業（営業代行系、買取）</td></tr>
+    <tr><td class="c ng">×</td><td class="c ng">×</td><td class="c ok">○</td><td>販売職（携帯）</td></tr>
+    <tr><td class="c ng">×</td><td class="c ng">×</td><td class="c ng">×</td><td>販売職（携帯）</td></tr>
+  </table>
+  <div class="cols">
+    <div class="box tint">
+      <h4>この表の使い方</h4>
+      <ul>
+        <li>3つに加えて<b>マインド（インセンティブで稼ぐ意欲）</b>を確認する。「頑張った分、収入に還元されやすい働き方に興味はありますか？」</li>
+        <li>マインドが高く、面接で話せて経験2社以内なら、表にかかわらず<b>面接対策をきっちりやれば個人営業は受かる</b>。</li>
+        <li>○が2つ以上つかない場合、土日休みやエリアなど他の条件のヒアリングは避ける。叶わない可能性が高い。</li>
+        <li>すべて×なら、潔く営業を選択肢から消す。時間を取られ、内定確率が低く、満足度も下がる。</li>
+      </ul>
+    </div>
+    <div>
+      <div class="box" style="margin-bottom:8px">
+        <h4>直接雇用の事務職を狙えるのは、この4ケースだけ</h4>
+        <ul>
+          <li>CS（カスタマーサクセス）経験1年以上で、学歴が日東駒専以上</li>
+          <li>有利な資格保有かつ20代後半まで（宅建、簿記2級以上、MOS Expert以上、行政書士、TOEIC800以上など）</li>
+          <li>事務まで自身で完結させてきた営業経験者で、アピアランスかコミュ力が高い</li>
+          <li>自社事務経験者で職歴2社以内・経験3年以上（データ入力だけはNG）</li>
+        </ul>
+        <p class="small" style="margin:0">新卒の希望職種1位は事務（34%）ですが、ジュニア層が直接雇用の事務に着地するのは難しく、無期雇用派遣の事務のほうが間口が広いのが実情です。</p>
+      </div>
+      <div class="box">
+        <h4>施工管理・エンジニアの応諾を取る3ステップ</h4>
+        <ol class="steps" style="margin:0">
+          <li>ニーズをスキル寄りの条件で回収する（「年収800万あれば理想の生活」→「市場価値を上げるなら営業か手に職」）</li>
+          <li>強み・嗜好を引き出す（コツコツ型、ものづくり、チームワーク、聞き上手）</li>
+          <li>施工管理技士の資格取得後のキャリアパス（独立・年収推移）を絡めて提案する</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <p class="src">当社 求職者面談マニュアル v1.0（2026年9月25日）2-2〜2-6</p>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">06</span></div>
+</section>
+
+<!-- 05 集客 -->
+<section class="page">
+  <div class="sec"><span class="no">05</span><span class="name">求職者側の準備</span></div>
+  <h2>集客は「安さ」ではなく、<br>面談に来る割合で選ぶ。</h2>
+  <p class="lead">02章のとおり、月商300万円には月34面談（成約率15%の場合）が必要です。開業初月からこの数を自社集客だけで作るのは難しいため、立ち上がりの速さ・固定費・面談実施率の3つで経路を選びます。</p>
+  <table class="compact">
+    <tr><th></th><th>自社でWeb広告</th><th>スカウト媒体</th><th>リード課金型の送客</th><th>着座課金型の送客</th></tr>
+    <tr><td>固定費</td><td>運用費・制作費が先に出る</td><td>月額利用料</td><td>0円</td><td>0円</td></tr>
+    <tr><td>課金のタイミング</td><td>クリック・表示</td><td>月額＋成功報酬</td><td>同意のうえ送客された1件ごと</td><td>面談の実施（着座）</td></tr>
+    <tr><td>単価の目安</td><td>相場に左右される</td><td>—</td><td>2,500〜4,000円／件</td><td>1.4〜3.5万円／面談</td></tr>
+    <tr><td>届く情報</td><td>フォームの入力項目</td><td>匿名レジュメ</td><td>履歴書データ一式</td><td>面談アポイント＋カウンセリングメモ</td></tr>
+    <tr><td>求職者の状態</td><td>情報収集〜検討</td><td>受け身（返信待ち）</td><td>書類を作り終えた応募直前</td><td>面談意思あり・日程確定済み</td></tr>
+    <tr><td>面談実施率の目安</td><td colspan="2">登録課金型で20〜35%（導入エージェント各社の導入前実績）</td><td>約14%（通電35%×面談40%）</td><td class="hl">80〜90%（当社実績）</td></tr>
+    <tr><td>社内の工数</td><td>運用・LP・クリエイティブ</td><td>スカウト文面・送信</td><td>架電のみ</td><td>少ない（面談から始まる）</td></tr>
+    <tr><td>立ち上がり</td><td>3〜6ヶ月</td><td>1〜2ヶ月</td><td>最短翌営業日</td><td>最短2〜3営業日</td></tr>
+  </table>
+  <p class="src">求職者送客クラウド サービス説明資料「他の集客手段との違い」／HRX社（導入前の面談実施率20〜35%）、Nexil社（35%前後）、Manly&amp;Cool社（登録課金型は約30%）取材／求職者送客の窓口 公表値</p>
+
+  <div class="quote">CAのスケジュールがパッと埋まっても、実際にはキャンセルばかりでその半分以上が空いてしまうような状態になっていました。<span class="who">株式会社Nexil様（自社運用・広告代理店・リスティングを試した後、面談実施率35%前後で頭打ちだった時期について）</span></div>
+
+  <div class="cols">
+    <div>
+      <h3>おすすめの組み合わせ（若手・未経験層）</h3>
+      <ul class="timeline">
+        <li><b>1〜3ヶ月目</b><span>着座課金型の送客で月20〜30件の面談を確保し、面談の型と求人提案の精度を上げる。並行して自社SNSを始める。</span></li>
+        <li><b>4〜6ヶ月目</b><span>自社集客が月10〜20人になったら、送客は補完に回す。リード課金型を少額のテスト枠で足し、通電体制を試す。</span></li>
+        <li><b>7ヶ月目〜</b><span>自社集客7割・送客3割程度。集客コストが下がり、利益率が上がる。</span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>当社の2つの送客サービス</h3>
+      <div class="box" style="margin-bottom:6px"><h4>求職者送客の窓口（着座課金型）</h4><p class="small" style="margin:0">SNSで集客し、当社CAがカウンセリングした求職者の面談を日程確定済みで設定。面談着座1件2.5万円〜、初期・月額0円、最低発注数なし。月10件〜100件超まで対応。カウンセリングメモ（約4,000文字の議事録）付き。</p></div>
+        <div class="box"><h4>求職者送客クラウド（リード課金型）</h4><p class="small" style="margin:0">履歴書作成サービス「ソクレキ」で書類を完成させた求職者を、社名明示の同意のうえ1件単位で送客。定価4,000円／件（2026年10月末まで2,500円）。月間・1日の上限件数を設定でき、初期・月額0円。免許取得直後に少額で試す用途に向きます。</p></div>
+    </div>
+  </div>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">07</span></div>
+</section>
+
+<!-- 06 初回面談 -->
+<section class="page">
+  <div class="sec"><span class="no">06</span><span class="name">初回面談（30〜40分）</span></div>
+  <h2>初回で求人は出さない。<br>ゴールは「2回目の約束」。</h2>
+  <p class="lead">当社の面談マニュアルは、初回30〜40分をヒアリングに徹し、求人提案は2回目（60分）に置く設計です。成果を出しているエージェント各社も、初回のゴールを「関係構築」と「方向性を握ること」に置いています。</p>
+  <div class="rules">
+    <div class="rule"><span class="tag">RULE 1</span><h4>初回のゴールは「2回目の約束」</h4><p>情報を聞き切ることではありません。初回30〜40分で信頼を作り、求人提案は2回目に置く設計が最も安定します。</p></div>
+    <div class="rule"><span class="tag">RULE 2</span><h4>提案は、本人が初回で言った言葉に絡める</h4><p>かすっているだけで構いません。「ご自身がおっしゃっていた◯◯に近いのは」と接続するだけで通り方が変わります。</p></div>
+    <div class="rule"><span class="tag">RULE 3</span><h4>持ち帰らせない</h4><p>この層にとって「検討します」は、ほぼ拒絶です。その場で次のアクションと日程まで決めてください。</p></div>
+  </div>
+  <div class="cols">
+    <div>
+      <h3>初回面談の7ステップ</h3>
+      <table class="compact">
+        <tr><th class="c">Step</th><th>内容</th><th class="c">目安</th><th class="c">区分</th></tr>
+        <tr><td class="c">1</td><td>オープニング（「今日は〇〇さんのことを深く知る時間にしたい」）</td><td class="c">5分</td><td class="c">必須</td></tr>
+        <tr><td class="c">2</td><td>現状のヒアリング（仕事内容・勤続・年収・転職のきっかけ）</td><td class="c">5分</td><td class="c">必須</td></tr>
+        <tr><td class="c">3</td><td>深掘りヒアリング（「なぜ？」を重ねて出口を聴く）</td><td class="c">10分</td><td class="c">必須</td></tr>
+        <tr><td class="c">4</td><td>理想・希望条件と期待値調整（譲れない条件は1〜2つまで）</td><td class="c">5分</td><td class="c">必須</td></tr>
+        <tr><td class="c">5</td><td>層の見極め（ジュニア層かどうか）</td><td class="c">5分</td><td class="c">削ってOK</td></tr>
+        <tr><td class="c">6</td><td>職種適性の見極め（営業／施工・エンジニア／飲食・製造／事務）</td><td class="c">5分</td><td class="c">削ってOK</td></tr>
+        <tr><td class="c">7</td><td>クロージング（2回目の日程確定＋楽しみになるフックか15分の宿題）</td><td class="c">5分</td><td class="c">必須</td></tr>
+      </table>
+      <p class="small">時間が足りないときはStep5と6を削ります。必須の5つで25分です。</p>
+      <div class="box tint" style="margin-top:6px">
+        <h4>初回終了時のチェックリスト</h4>
+        <ul class="check">
+          <li>現職／離職、勤続年数、現年収、通勤可能範囲がわかった</li>
+          <li>転職を考え始めたきっかけが、本人の言葉で聞けた</li>
+          <li>「成長したい」等の抽象語の出口まで聞けた</li>
+          <li>譲れない条件が1〜2つに絞れている</li>
+          <li>「まずは〇〇で経験を積む」という趣旨の言葉が本人から出た</li>
+          <li>職種の方向の当たりがついた</li>
+          <li>2回目の面談日時が確定している</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h3>深掘りの表：表面の言葉と本音</h3>
+      <table class="compact">
+        <tr><th>表面的な言葉</th><th>深層心理の可能性</th><th>深掘りの質問</th></tr>
+        <tr><td>「成長したい」</td><td>今の職場が暇で不安。単調な作業に飽きている</td><td>「成長した結果、どんな自分になりたいですか？」</td></tr>
+        <tr><td>「やりがいが欲しい」</td><td>「自分の名前で仕事がしたい」という承認欲求</td><td>「今までの人生でやりがいを感じたエピソードは？」</td></tr>
+        <tr><td>「年収を上げたい」</td><td>同年代と比較しての劣等感</td><td>「年収が上がったら、何を変えたいですか？」</td></tr>
+      </table>
+      <p class="small">ジュニア層の「やりたい」は「今の不満の裏返し」であることが多い。不満を解消するだけでなく「どんな不満なら耐えられるか、それ以上に得たい価値は何か」まで踏み込みます。</p>
+      <h3>理想が高い条件が出たときの3手順</h3>
+      <ol class="steps">
+        <li><b>理想の肯定。</b>「その条件を目指したいお気持ち、よく分かります。ぜひ最終ゴールとして目指しましょう」</li>
+        <li><b>構造の共有。</b>なぜ今すぐ難しいのか（競争率・求められるスキル）を客観的な事実として伝える。</li>
+        <li><b>ステップアップの提案。</b>「まずはA社で経験を積み、2〜3年後にその実績を武器に本命へ」というロードマップを描く。</li>
+      </ol>
+      <div class="warn"><b>「そんな求人は存在しない」「無理です」と否定しない。</b>信頼関係を損ねます。譲れない条件も聞きすぎると言葉にすることで再認識し、条件が増えます。</div>
+      <div class="quote" style="margin-top:8px">ゴールは「関係構築」と「方向性を握ること」の2つです。<span class="who">株式会社SmartForce様 取材より</span></div>
+    </div>
+  </div>
+  <p class="src">当社 求職者面談マニュアル v1.0 第1章／CA向けオンボーディング資料「初回面談の設計」</p>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">08</span></div>
+</section>
+
+<!-- 07 2回目面談 -->
+<section class="page">
+  <div class="sec"><span class="no">07</span><span class="name">2回目面談（60分）</span></div>
+  <h2>初回から中2日以内に、<br>各職種2〜3件を提案して、その場で応募を決める。</h2>
+  <p class="lead">この層は間が空くと消えます。初回から2回目までは中2日以内が目安（Manly&amp;Cool社は「必ず3日以内」、SmartForce社は「翌日、早ければ当日」に求人送付）。求人数は各職種2〜3件、トータルで10件を超えないこと。</p>
+  <div class="cols">
+    <div>
+      <h3>2回目面談の6ステップ</h3>
+      <table class="compact">
+        <tr><th class="c">Step</th><th>内容</th><th class="c">目安</th></tr>
+        <tr><td class="c">1</td><td>オープニング・前回の振り返り（要点を復唱、宿題の消化）</td><td class="c">5分</td></tr>
+        <tr><td class="c">2</td><td>求人提案（初回で本人が言った長所・好きなことに必ず絡める）</td><td class="c">20分</td></tr>
+        <tr><td class="c">3</td><td>反応確認・懸念のヒアリング（「率直にどう感じますか？」他社状況も聞く）</td><td class="c">10分</td></tr>
+        <tr><td class="c">4</td><td>競合対応（業界軸／職種軸／企業軸／エージェント軸）</td><td class="c">5分</td></tr>
+        <tr><td class="c">5</td><td>面接対策の頭出し（第一印象・結論ファースト・志望動機・退職理由）</td><td class="c">10分</td></tr>
+        <tr><td class="c">6</td><td>クロージング（応募求人の最終確定、次のアクション合意）</td><td class="c">5分</td></tr>
+      </table>
+      <h3>他社エージェントが入っているときの切り返し4軸</h3>
+      <table class="compact">
+        <tr><th>軸</th><th>使う場面と言い方</th></tr>
+        <tr><td>① 業界軸</td><td>紹介されているが乗り気でない。「今日の〇〇さんが実現したい働き方には、その業界はミスマッチだと思います」</td></tr>
+        <tr><td>② 職種軸</td><td>業界には乗り気。「業界の選択は良い。ただ施工管理という働き方はお勧めしません」→ CAD事務などを提案</td></tr>
+        <tr><td>③ 企業軸</td><td>特定企業を紹介されている。「同じ職種でも定着率や条件はかなり差があります。比較したうえで選びましょう」</td></tr>
+        <tr><td>④ エージェント軸</td><td>複数社がついている。「エージェントごとに強みが違うので、比較する軸を持っておくと良いですよ」</td></tr>
+      </table>
+      <p class="small">他社エージェントや企業を名指しで批判せず、「比較検討の材料を増やす」提案に留めるのがポイントです。</p>
+    </div>
+    <div>
+      <h3>推薦率を上げる「特別扱いの宣言」3つの型</h3>
+      <p class="small">初回で「自分は大事に扱われている」という確信を作れるかが推薦率を左右します。最短ルートは、通常との差分を言葉にして宣言すること。「普段は◯◯、あなたは△△」の対比の形にし、差を数字で言えるとさらに効きます。</p>
+      <div class="pat" style="margin-bottom:6px"><span class="k">型 A　担当者レベル</span><h4>誰が担当するかを特別化する</h4><p class="say">「普段は若手のコンサルタントが担当ですが、この経路でお越しの方は私（マネージャー）が直接見ています」</p></div>
+      <div class="pat" style="margin-bottom:6px"><span class="k">型 B　サポート量</span><h4>数字で差を可視化する</h4><p class="say">「通常は面接対策1〜2回ですが、回数無制限にしています。多い方だと10回以上練習しました」</p></div>
+      <div class="pat"><span class="k">型 C　スピード・応対</span><h4>即応性で差別化する</h4><p class="say">「普段はお返事が翌営業日ですが、当日中に必ず返すルールにしています」</p></div>
+      <div class="quote" style="margin-top:8px">1人の求職者に対して大体10回ぐらい面談を行っています。求職者さんからも「こんなにサポートしてくれるのは初めてです」とよく言っていただける。<span class="who">株式会社ReWave様（成約率20%→30〜35%）取材より</span></div>
+      <div class="warn"><b>クロージングで「検討しておいてください」と言わない。</b>応募する求人はなるべく多めに取り、持ち帰らせない。検討に入った段階でこの層は基本拒絶を意味し、途端に連絡が途絶えます。</div>
+    </div>
+  </div>
+  <p class="src">当社 求職者面談マニュアル v1.0 第2〜3章／CA向けオンボーディング資料「特別扱いの宣言」</p>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">09</span></div>
+</section>
+
+<!-- 08 応募〜入社 -->
+<section class="page">
+  <div class="sec"><span class="no">08</span><span class="name">応募から入社まで</span></div>
+  <h2>決定率を分けるのは、面談後の「速さ」と<br>承諾後の「連絡が途切れない期間」。</h2>
+  <p class="lead">上位エージェントの共通点は面談回数の多さです（ReWave社は1人に約10回、Manly&amp;Cool社は平均21回、Nexil社は面接対策だけで5〜7回）。回数を支えるのは、進行管理の型です。</p>
+  <div class="cols">
+    <div>
+      <h3>応募から面接までの進行管理</h3>
+      <table class="compact">
+        <tr><th>タイミング</th><th>やること</th></tr>
+        <tr><td>2回目面談の当日〜翌営業日</td><td>応募を決めた求人の<b>推薦を出す</b></td></tr>
+        <tr><td>推薦から2〜3営業日</td><td>書類の結果を確認し、<b>結果が出たその日に本人へ連絡</b></td></tr>
+        <tr><td>書類通過</td><td>面接日程を調整。候補日は<b>3つ以上</b>もらう</td></tr>
+        <tr><td>面接前日</td><td>対策の最終確認</td></tr>
+        <tr><td>面接直後</td><td><b>30分以内</b>に本人へ連絡し、手応えを聞く</td></tr>
+        <tr><td>結果連絡</td><td>合否にかかわらず、当日中に伝える</td></tr>
+      </table>
+      <p class="small">複数社を並行させるときは、第一志望を最後に受けてもらいます。他社の面接で場慣れしてから本命に臨むほうが通ります。</p>
+      <h3>推薦文の型（3〜5行、企業が知りたい順）</h3>
+      <ol class="steps">
+        <li>どんな人か（一言で）</li>
+        <li>これまで何をしてきたか（事実）</li>
+        <li>なぜ御社なのか（面談で本人が言った言葉を引用）</li>
+        <li>懸念点と、それをどう補えるか</li>
+        <li>面談担当としての推薦理由</li>
+      </ol>
+      <div class="box tint"><h4>営業職向けの例</h4><p class="small" style="margin:0">前職◯◯にて法人営業を2年、新規開拓中心に従事。◯◯という工夫で目標比◯%を達成しています。面談では「自分の名前で仕事がしたい」という言葉があり、裁量の大きい御社の環境を強く希望しています。業界知識はこれからですが、吸収の速さと素直さは面談を通じて確認できました。</p></div>
+    </div>
+    <div>
+      <h3>面接対策：面接官が見ているのは伸びしろと人柄</h3>
+      <ul>
+        <li><b>第一印象で大部分が決まる。</b>清潔感・明るさ・素直さ・誠実さ。内容より先に「感じの良さ」が評価される</li>
+        <li><b>結論ファースト。</b>結論→理由→具体例→今後どう活かすか。長いほど評価は下がる</li>
+        <li><b>志望動機は企業軸・業界軸で。</b>退職理由は前向きに変換する</li>
+        <li><b>逆質問で差がつく。</b>「活躍されている方の共通点は？」「入社までに準備すべきことは？」</li>
+      </ul>
+      <h3>内定フォロー：承諾から入社まで、連絡がない期間を作らない</h3>
+      <table class="compact">
+        <tr><th>タイミング</th><th>内容</th></tr>
+        <tr><td>承諾後1週目</td><td>準備確認（書類準備の進捗）</td></tr>
+        <tr><td>承諾後2週目</td><td>困りごと確認（退職手続き・引き止めへの寄り添い）</td></tr>
+        <tr><td>承諾後3週目</td><td>内定先のニュース・記事共有</td></tr>
+        <tr><td>入社直前週</td><td>持ち物・出社時間の最終確認</td></tr>
+      </table>
+      <table class="compact">
+        <tr><th>承諾〜入社の期間</th><th class="c">送信回数</th><th>承諾〜入社の期間</th><th class="c">送信回数</th></tr>
+        <tr><td>28日以上</td><td class="c">4回</td><td>14〜20日</td><td class="c">2回</td></tr>
+        <tr><td>21〜27日</td><td class="c">3回</td><td>5〜13日</td><td class="c">1回</td></tr>
+      </table>
+      <p class="small">ジュニア層は承諾から入社までおおよそ1ヶ月。期間が長いほど不安が膨らみ、他社に気持ちが傾きます。反応に離脱リスクが見えたら即日で対策MTGを設定します。</p>
+      <h3>入社フォロー：退職リスクの早期発見</h3>
+      <table class="compact">
+        <tr><td>入社日当日</td><td>「行ってらっしゃい」で安心感を</td></tr>
+        <tr><td>入社1週間後</td><td>小さなモヤモヤを早期キャッチ</td></tr>
+        <tr><td>入社1ヶ月後</td><td>定着確認。退職リスクの判定（返戻金の期間を意識）</td></tr>
+      </table>
+    </div>
+  </div>
+  <p class="src">当社 求職者面談マニュアル v1.0 第4〜6章、2-7／導入事例（ReWave・Manly&amp;Cool・Nexil）取材</p>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">10</span></div>
+</section>
+
+<!-- 09 許可後30日・90日 -->
+<section class="page">
+  <div class="sec"><span class="no">09</span><span class="name">許可後30日・90日</span></div>
+  <h2>最初の30日でやることは3つ。<br>求人を持つ、面談をする、1件決める。</h2>
+  <p class="lead">売上はまだ立ちません。ここで「型」ができるかどうかが、その後の3ヶ月を決めます。追う数字は面談設定数と着座率の2つ。成約率は90日以降に見ます。</p>
+  <div class="stats four">
+    <div class="stat"><b>10<small>件</small></b><span>手元の求人（直接契約3〜5社＋DB）</span></div>
+    <div class="stat"><b>10<small>件</small></b><span>求職者面談（着座ベース）</span></div>
+    <div class="stat"><b>1<small>件</small></b><span>初決定（内定承諾）</span></div>
+    <div class="stat"><b>毎日</b><span>進捗表の更新（結果は2営業日以内）</span></div>
+  </div>
+  <ul class="timeline">
+    <li><b>1週目</b><span>許可証の写しで求人DBの契約を本稼働。明示書面を事業所に掲示し、Webにも掲載。既存の取引先に開業の連絡。送客の受信条件を設定。</span></li>
+    <li><b>2週目</b><span>初回面談開始（30〜40分・7ステップ）。中2日以内に2回目を設定し、各職種2〜3件を提案。</span></li>
+    <li><b>3週目</b><span>推薦・書類選考・面接設定。面接直後30分以内の連絡、結果は当日中に。</span></li>
+    <li><b>4週目</b><span>初内定。労働条件通知書を確認し、入社日を確定。承諾後1週目の連絡から内定フォローを開始。</span></li>
+  </ul>
+
+  <h3>31〜90日：週次で見る指標と目安</h3>
+  <table class="compact">
+    <tr><th>指標</th><th class="num">2ヶ月目の目安</th><th class="num">3ヶ月目の目安</th><th>根拠・改善の打ち手</th></tr>
+    <tr><td>面談設定数</td><td class="num">20件</td><td class="num">30〜40件</td><td>集客経路を追加、送客の上限枠を増やす。CA1人で月40件前後まで回る（SmartForce社）</td></tr>
+    <tr><td>面談着座率</td><td class="num">70%</td><td class="num">80%以上</td><td>着座課金型なら80〜90%（当社実績）。自社集客は前日リマインドと初回コンタクト30分以内</td></tr>
+    <tr><td>選考進行率（面談→応募）</td><td class="num">50%</td><td class="num">70%</td><td>Manly&amp;Cool社 約70%、HRX社 80〜90%。求人を当日〜翌日に提示、初回で言った言葉に絡める</td></tr>
+    <tr><td>面接→内定率</td><td class="num">25%</td><td class="num">30%</td><td>面接対策の回数を増やす（5〜7回）、企業への事前情報提供</td></tr>
+    <tr><td>内定→入社率</td><td class="num">70%</td><td class="num">80%</td><td>承諾後の連絡回数表（08章）、家族への説明支援</td></tr>
+    <tr class="total"><td>面談→決定の成約率</td><td class="num">10%</td><td class="num">15%</td><td>上の指標の積で決まる。上位社は30〜35%（ReWave・SmartForce）</td></tr>
+  </table>
+
+  <div class="cols">
+    <div class="box tint">
+      <h4>決定が出ないときに見る順番</h4>
+      <ol class="steps" style="margin:0">
+        <li>面談数が足りているか（20件未満なら集客の問題）</li>
+        <li>提案した求人に応募しているか（していなければ求人か提案の問題。着地先の範囲か、本人の言葉に絡めたか）</li>
+        <li>面接に落ちているか（対策の回数と企業選定の問題）</li>
+        <li>内定辞退が多いか（承諾後のフォローと条件のズレ）</li>
+      </ol>
+    </div>
+    <div class="box tint">
+      <h4>やってはいけないこと（面談マニュアル 付録Bより）</h4>
+      <ul>
+        <li>機械的に面談を進める → 離脱します</li>
+        <li>初回で求人を出す → 情報不足で精度が落ちる</li>
+        <li>求人を10件以上出す → 選べなくなる</li>
+        <li>「検討しておいてください」で終える → ほぼ拒絶</li>
+        <li>○が2つ未満なのに営業を提案する → 落ちて満足度も下がる</li>
+        <li>求職者から手数料を徴収する → 職業安定法違反</li>
+      </ul>
+    </div>
+  </div>
+  <div class="point">月3〜5決定が安定したら、集客を増やす前に面談担当を1人増やすほうが利益率が上がります。取材した各社の実績では、CA1人あたりの面談は月40件前後が上限の目安です。</div>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">11</span></div>
+</section>
+
+<!-- 10 事務手続き -->
+<section class="page">
+  <div class="sec"><span class="no">10</span><span class="name">許可後の事務手続き</span></div>
+  <h2>更新でつまずくのは、<br>事業報告書の未提出と資産要件の未達。</h2>
+  <p class="lead">許可は取って終わりではありません。毎年の報告と、決算ごとの資産要件の確認を習慣にしてください。ここを落とすと、更新申請で止まります。</p>
+  <table>
+    <tr><th style="width:36mm">手続き</th><th style="width:30mm">いつ</th><th>内容</th></tr>
+    <tr><td>明示書面の備え付け・掲示</td><td>許可後すぐ</td><td>取扱職種の範囲、手数料表、返戻金制度、苦情窓口、個人情報の取扱いを事業所に備え付け、求人者・求職者に明示。Webにも掲載。</td></tr>
+    <tr><td>紹介実績の情報提供</td><td>毎年</td><td>就職者数、離職者数（6ヶ月以内）、手数料の実績を「人材サービス総合サイト」または自社サイトで公開（職業安定法32条の16）。</td></tr>
+    <tr><td>職業紹介事業報告書（様式第8号）</td><td>毎年4月末まで</td><td>前年度（4月〜3月）の求人数・求職者数・就職件数・手数料収入を労働局に提出。郵送またはe-Gov。</td></tr>
+    <tr><td>変更届（様式第6号）</td><td>変更から10日以内</td><td>名称・所在地・役員・職業紹介責任者・事業所の変更。</td></tr>
+    <tr><td>職業紹介責任者講習</td><td>5年ごと</td><td>責任者は5年以内に再受講。</td></tr>
+    <tr><td>許可の更新</td><td>初回3年、以降5年ごと</td><td>有効期間満了の3ヶ月前までに更新申請。資産要件は更新時にも確認される。</td></tr>
+    <tr><td>帳簿の備え付け</td><td>常時</td><td>求人求職管理簿、手数料管理簿を事業所に備え、2年間保存。</td></tr>
+    <tr><td>第三者提供の記録</td><td>送客・DBを使うとき</td><td>求職者情報を他社から受け取る／渡す場合は、年月日・提供先・本人・項目の記録を法定期間保存。当社の送客も同じ運用です。</td></tr>
+  </table>
+  <div class="cols">
+    <div class="box tint">
+      <h4>決算のたびに確認する2つの数字</h4>
+      <ul>
+        <li><b>資産 − 負債 ≧ 500万円</b>（繰延資産・営業権を除く）</li>
+        <li><b>現預金 ≧ 150万円</b></li>
+      </ul>
+      <p class="small" style="margin:0">立ち上げ期は集客費で現預金が減ります。02章の資金繰り（売上が立つまでの2〜3ヶ月）と合わせて、決算期の数字を先に逆算しておいてください。</p>
+    </div>
+    <div class="box tint">
+      <h4>求職者に取ってはいけないもの</h4>
+      <ul>
+        <li>手数料（原則禁止。芸能・モデル等の例外を除く）</li>
+        <li>就職お祝い金（2021年4月以降禁止）</li>
+        <li>要配慮個人情報（本人の同意なく取得しない。入力画面で明示する）</li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">12</span></div>
+</section>
+
+<!-- 11 TODO -->
+<section class="page">
+  <div class="sec"><span class="no">11</span><span class="name">免許取得までのTODO表</span></div>
+  <h2>上から順に進めれば、<br>抜け漏れなく許可にたどり着けます。</h2>
+  <span class="phase">申請前（準備）</span>
+  <table class="todo compact">
+    <tr><th></th><th>やること</th><th>ポイント</th><th>目安時期</th></tr>
+    <tr><td class="c">☐</td><td>要件の確認</td><td>資産−負債≧500万円、現預金≧150万円。事務所は専用スペースとプライバシー確保。責任者は3年以上の職業経験</td><td class="w">準備開始時</td></tr>
+    <tr><td class="c">☐</td><td>職業紹介責任者講習の予約・受講</td><td>申請受理日前5年以内の受講証明書が必要。月数回開催</td><td class="w">申請の2〜4週前</td></tr>
+    <tr><td class="c">☐</td><td>定款の事業目的に「職業紹介事業」を追加</td><td>ない場合は目的変更登記。登記事項証明書に反映されてから申請</td><td class="w">申請の3〜4週前</td></tr>
+    <tr><td class="c">☐</td><td>添付書類の収集</td><td>登記事項証明書、定款、住民票・履歴書（役員全員）、決算書、納税証明書、賃貸借契約書、レイアウト図</td><td class="w">申請の2週前</td></tr>
+    <tr><td class="c">☐</td><td>申請書類の作成（様式第1〜3号、手数料表、規程）</td><td>免許申請書類 無料作成ツールで作成。原本1部＋コピー2部</td><td class="w">申請の1週前</td></tr>
+    <tr><td class="c">☐</td><td>登録免許税9万円の納付、収入印紙5万円の購入</td><td>領収証書の原本を提出。印紙は貼らずに持参</td><td class="w">提出日まで</td></tr>
+  </table>
+  <span class="phase">申請〜許可（2〜3ヶ月）</span>
+  <table class="todo compact">
+    <tr><td class="c">☐</td><td>労働局に提出</td><td>本店所在地を管轄する労働局の需給調整事業部。窓口で内容確認</td><td class="w">提出日</td></tr>
+    <tr><td class="c">☐</td><td>補正連絡に対応</td><td>平日日中の電話に出られる体制。控えを手元に</td><td class="w">提出後1〜4週</td></tr>
+    <tr><td class="c">☐</td><td>求人DBの比較・資料請求</td><td>契約は許可証が必要。比較は許可前に（04章）</td><td class="w">提出後2〜4週</td></tr>
+    <tr><td class="c">☐</td><td>集客経路を決める</td><td>初月の面談20件をどう作るか。面談実施率で選ぶ（05章）</td><td class="w">提出後2〜4週</td></tr>
+    <tr><td class="c">☐</td><td>カウンセリングシート・求人票・推薦文・契約書・進捗表</td><td>03章の5点セット</td><td class="w">提出後4〜8週</td></tr>
+    <tr><td class="c">☐</td><td>面談の型を決める</td><td>初回30〜40分の7ステップ、2回目60分の6ステップ（06〜07章）</td><td class="w">提出後4〜8週</td></tr>
+    <tr><td class="c">☐</td><td>明示書面の準備（掲示・Web掲載）</td><td>手数料表・運営規程・個人情報適正管理規程・許可番号</td><td class="w">許可直前</td></tr>
+  </table>
+  <span class="phase y">許可後30日</span>
+  <table class="todo compact">
+    <tr><td class="c">☐</td><td>許可証の受領</td><td>許可番号を明示書面に記入。求人DBの契約と送客の受信条件を本稼働</td><td class="w">許可日</td></tr>
+    <tr><td class="c">☐</td><td>求人10件（直接契約3〜5社＋DB）</td><td>ジュニア層の着地先の範囲で用意（04章）</td><td class="w">1〜2週目</td></tr>
+    <tr><td class="c">☐</td><td>求職者面談10件</td><td>初回は求人を出さない。中2日以内に2回目を設定</td><td class="w">2〜4週目</td></tr>
+    <tr><td class="c">☐</td><td>初決定1件</td><td>労働条件通知書の確認、入社日と請求の確定、内定フォロー開始</td><td class="w">4週目</td></tr>
+  </table>
+  <span class="phase">許可後の定期手続き</span>
+  <table class="todo compact">
+    <tr><td class="c">☐</td><td>紹介実績の情報提供</td><td>就職者数・離職者数・手数料の公開</td><td class="w">毎年</td></tr>
+    <tr><td class="c">☐</td><td>職業紹介事業報告書（様式第8号）</td><td>前年度分を労働局に提出</td><td class="w">毎年4月末</td></tr>
+    <tr><td class="c">☐</td><td>許可の更新</td><td>初回3年、以降5年。満了の3ヶ月前までに申請。資産要件を再確認</td><td class="w">3年後</td></tr>
+  </table>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">13</span></div>
+</section>
+
+<!-- 裏表紙 -->
+<section class="page">
+  <div class="sec"><span class="no">出典</span><span class="name">SOURCES</span></div>
+  <h2>この資料で使った数字と、その出どころ</h2>
+  <table class="compact">
+    <tr><th style="width:52mm">数字</th><th>出典</th></tr>
+    <tr><td>30,561事業所／4,490億円・+12.0%</td><td>厚生労働省「令和6年度 職業紹介事業報告書の集計結果（速報）」／矢野経済研究所「人材ビジネス市場に関する調査」</td></tr>
+    <tr><td>面談単価2.5万円〜、成約率15%、決定単価16.7万円〜、着座率80〜90%</td><td>求職者送客の窓口 公表値（2026年6月改定）</td></tr>
+    <tr><td>第二新卒層・新卒の属性分布、エージェント未利用68.3%／0社66.2%、1人平均2.3社と面談</td><td>求職者送客の窓口 送客実績（第二新卒・新卒 サービス説明資料）</td></tr>
+    <tr><td>送客100件→通電35件→面談14件→決定0.98名、応募50→通電18→面談13→決定2</td><td>求職者送客クラウド サービス説明資料（当社CAへのヒアリングに基づく目安値）／求職者送客の窓口ライト 試算</td></tr>
+    <tr><td>成約率20%→30〜35%、1人に約10回面談、事前準備5分</td><td>株式会社ReWave 竹下聖真氏 導入事例インタビュー</td></tr>
+    <tr><td>成約率30%、ROAS 400%、CA1人あたり月40件、平均10件前後の求人を翌日に送付</td><td>株式会社SmartForce 導入事例インタビュー</td></tr>
+    <tr><td>面談実施率69.7%（登録課金型は約30%）、選考進行率約70%、平均21回面談、2回目は3日以内、初回→承諾は平均3ヶ月</td><td>株式会社Manly&amp;Cool 金澤聡氏 導入事例インタビュー</td></tr>
+    <tr><td>面談実施率20%→70%、選考進行率80〜90%</td><td>株式会社HRX 三好光輝氏 導入事例インタビュー</td></tr>
+    <tr><td>面談実施率35%前後、面接対策5〜7回</td><td>株式会社Nexil 導入事例インタビュー</td></tr>
+    <tr><td>面談の7ステップ・6ステップ、深掘り表、求人判断表、推薦文の型、内定フォロー回数表、NG表</td><td>当社 求職者面談マニュアル v1.0（2026年9月25日）／CA向けオンボーディング資料</td></tr>
+  </table>
+  <p class="small">導入事例の全文は 求職者送客の窓口 サイト「導入事例」で公開しています。取材値は各社の運用時点の数字であり、成果を保証するものではありません。求人DB各社の数字は各社の公開情報にもとづく一般的な整理です。</p>
+
+  <h3>免許が下りたら、最初の面談枠を一緒に設計します</h3>
+  <div class="cols">
+    <div class="box tint">
+      <h4>30分の無料相談（オンライン）</h4>
+      <p class="small" style="margin-bottom:6px">扱う求職者層・エリア・月の目標決定数を伺い、02章の逆算表を貴社の数字で作ります。集客経路の選び方、求人DBの選び方、面談の型の相談にも使ってください。売り込みはしません。</p>
+      <p style="margin:0;font-weight:700;font-size:9.5pt">https://calendar.app.google/9TdLRYotegY6JZCy5</p>
+    </div>
+    <div class="box tint">
+      <h4>運営会社</h4>
+      <p class="small" style="margin:0">株式会社HADO（有料職業紹介事業 許可番号 13-ユ-316820）<br>東京都目黒区上目黒1-1 第2育良ビル4F　設立 2020年11月6日<br>事業内容：求職者送客事業／人材紹介事業／マーケティング支援<br>求職者送客の窓口 kyusyokusyasokyaku-no-madoguchi.com<br>求職者送客クラウド soukyaku-cloud.com<br>免許申請書類 無料作成ツール kyusyokusyasokyaku-no-madoguchi.com/license/</p>
+    </div>
+  </div>
+  <p class="small" style="margin-top:10px">本資料の無断転載・再配布はご遠慮ください。法令・手続きに関する記載は2026年9月時点の一般的な情報です。個別の申請については管轄の労働局にご確認ください。</p>
+  <div class="foot"><span>© 2026 HADO, Inc.</span><span>免許取得から月商300万円までの完全ロードマップ</span><span class="pn">14</span></div>
+</section>
+</body>
+</html>

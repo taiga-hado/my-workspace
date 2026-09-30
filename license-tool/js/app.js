@@ -104,7 +104,8 @@
         <div class="modal" role="dialog" aria-modal="true" aria-labelledby="ltModalTitle">
           <div class="modal-icon"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg></div>
           <h2 id="ltModalTitle">入力内容を一時保存して、<br>あとから再開できるようにしますか？</h2>
-          <p class="muted">メールアドレスを登録すると、入力の途中で閉じても続きから再開できます。再開用のリンクと、許可までのTODOをメールでお送りします。</p>
+          <p class="muted">メールアドレスを登録すると、入力の途中で閉じても続きから再開できます。再開用のリンクと、下の2つの資料をメールでお送りします。</p>
+          <div class="modal-bonus"><img src="img/bonus/roadmap-1.webp" alt=""><img src="img/bonus/todo-1.webp" alt=""><div><b>登録特典</b><span>免許取得から月商300万円までの完全ロードマップ（PDF・15ページ）</span><span>免許取得までのTODO表（A4・1枚）</span></div></div>
           <form id="ltModalForm" novalidate>
             <div class="field"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" required placeholder="you@example.com" autocomplete="email"></div>
             <div class="field"><label>会社名・屋号<span class="req">必須</span></label><input type="text" name="company" required placeholder="株式会社○○（設立前なら予定の名称）" autocomplete="organization"></div>

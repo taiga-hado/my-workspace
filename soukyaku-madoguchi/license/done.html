@@ -6,6 +6,7 @@
 <title>書類のダウンロード｜人材紹介 免許申請書類 無料作成ツール</title>
 <meta name="robots" content="noindex">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/done.css">
 </head>
 <body>
 <header class="site-header"><div class="container">
@@ -13,52 +14,89 @@
   <a class="header-link" href="form.html#step6">入力内容を修正する</a>
 </div></header>
 
-<main class="container" style="padding:28px 16px 48px">
+<main class="container wide" style="padding:28px 16px 48px">
   <!-- メール登録 -->
-  <section id="gate" class="card hidden">
-    <h1>書類の準備ができました</h1>
-    <p>ダウンロードの前に、連絡先を登録してください。免許取得までのTODOリストと「免許取得から月商300万円までのロードマップ」をメールでお送りします。</p>
-    <form id="gateForm" novalidate>
-      <div class="inline">
-        <div class="field"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" required placeholder="you@example.com"></div>
-        <div class="field"><label>会社名・屋号<span class="req">必須</span></label><input type="text" name="company" required placeholder="株式会社○○"></div>
+  <section id="gate" class="hidden">
+    <div class="gate-wrap">
+      <div class="gate-form card">
+        <span class="badge">書類作成 完了</span>
+        <h1>登録して、書類と特典を受け取る</h1>
+        <p class="muted">メールアドレスと会社名を登録すると、作成した7書類のダウンロードに加えて、ロードマップとTODO表の2つの資料をお送りします。</p>
+        <form id="gateForm" novalidate>
+          <div class="field"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" required placeholder="you@example.com" autocomplete="email"></div>
+          <div class="field"><label>会社名・屋号<span class="req">必須</span></label><input type="text" name="company" required placeholder="株式会社○○（設立前なら予定の名称）" autocomplete="organization"></div>
+          <div class="field"><label class="check"><input type="checkbox" name="roadmap" checked> ロードマップの続き（許可待ちの過ごし方、許可後30日）をメールで受け取る</label></div>
+          <div class="field"><label class="check" style="font-weight:500"><input type="checkbox" name="agree" required> <span><a href="terms.html" target="_blank" rel="noopener">利用規約・プライバシーポリシー</a>に同意する</span></label></div>
+          <button type="submit" class="btn btn-save btn-block">登録して書類と特典を受け取る</button>
+          <p class="modal-note" style="text-align:center">登録は無料です。作成した書類の内容（住所や決算）は送信されません。</p>
+        </form>
       </div>
-      <div class="field"><label class="check"><input type="checkbox" name="roadmap" checked> ロードマップと、許可取得までの進め方の案内を受け取る</label></div>
-      <div class="field"><label class="check" style="font-weight:500"><input type="checkbox" name="agree" required> <span><a href="terms.html" target="_blank" rel="noopener">利用規約・プライバシーポリシー</a>に同意する</span></label></div>
-      <button type="submit" class="btn btn-primary btn-block">登録して書類をダウンロードする</button>
-    </form>
+      <aside class="gate-bonus">
+        <p class="eyebrow">登録するともらえるもの</p>
+        <div class="bonus-item">
+          <div class="bonus-art stack"><img class="back" src="img/bonus/roadmap-2.webp" alt=""><img class="front" src="img/bonus/roadmap-1.webp" alt="免許取得から月商300万円までの完全ロードマップ 表紙"></div>
+          <div class="bonus-text"><span class="k">PDF・15ページ</span><h3>免許取得から月商300万円までの完全ロードマップ</h3><p>月間約1,400件の面談を設定する当社の実績データと、成約率30〜35%のエージェント5社への取材をもとに構成。月商300万円の逆算表、免許待ちにやること、求人判断表、初回30〜40分・2回目60分の面談の型、内定フォローの回数表まで。</p></div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-art"><img src="img/bonus/todo-1.webp" alt="免許取得までのTODO表"></div>
+          <div class="bonus-text"><span class="k">A4・1枚</span><h3>免許取得までのTODO表</h3><p>申請前・申請中・許可後30日・定期手続きの4段階、22項目のチェックリスト。印刷して机に貼れます。</p></div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-art docs"><img src="img/docs/form1.webp" alt=""><img src="img/docs/form2.webp" alt=""><img src="img/docs/fee.webp" alt=""></div>
+          <div class="bonus-text"><span class="k">Word・7書類</span><h3>作成した申請書類一式</h3><p>様式第1〜3号、手数料表、業務運営規程、個人情報適正管理規程、明示書面。入力内容が入った状態でダウンロードできます。</p></div>
+        </div>
+      </aside>
+    </div>
   </section>
 
-  <!-- ダウンロード -->
   <section id="downloads" class="hidden">
-    <div class="card">
-      <h1>書類をダウンロード</h1>
-      <p class="muted">Word形式です。開いて内容を確認し、印刷してください。提出書類は原本1部＋コピー2部の計3部が基本です（労働局により異なります）。</p>
-      <ul class="doc-list" id="docList"></ul>
-      <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
-        <button type="button" class="btn btn-primary" id="allBtn">すべてダウンロード</button>
-        <a class="btn btn-secondary" href="form.html#step6">入力内容を修正する</a>
+    <!-- 完了バナー -->
+    <div class="hero-done">
+      <div>
+        <span class="badge">書類作成 完了</span>
+        <h1 id="doneTitle">申請書類 7点ができました</h1>
+        <p class="muted">入力内容を反映した書類です。プレビューで内容を確認し、Wordでダウンロードして印刷してください。提出書類は原本1部＋コピー2部の計3部が基本です。</p>
+        <div class="actions"><button type="button" class="btn btn-primary btn-lg" id="allBtn">7書類をまとめてダウンロード</button><a class="btn btn-secondary" href="form.html#step6">入力内容を修正する</a></div>
       </div>
-      <div class="warn" style="margin-top:16px"><strong>ご確認ください</strong><br>様式第1号の「有料・無料」「更新申請」など該当しない文言には取消線を入れています。労働局によっては二重線での抹消を求められる場合があるため、窓口の指示に従ってください。</div>
+      <div class="hero-done-art"><img src="img/hero.webp" alt="" width="1100" height="829"></div>
     </div>
 
-    <div class="card">
-      <h2>添付書類チェックリスト</h2>
-      <p class="muted">本ツールで作成した書類のほかに、以下の書類を添付します。</p>
-      <div id="checklist"></div>
+    <!-- 特典 -->
+    <h2 class="sec-title">特典資料</h2>
+    <div class="bonus-grid">
+      <a class="bonus-card" href="assets/roadmap.pdf" target="_blank" rel="noopener"><img src="img/bonus/roadmap-1.webp" alt=""><div><span class="k">PDF・15ページ</span><h3>免許取得から月商300万円までの完全ロードマップ</h3><p class="muted">当社の面談実績と導入エージェント5社の取材をもとにした逆算表、面談の型、求人判断表、許可後90日のKPI。</p><span class="btn btn-secondary btn-sm">PDFを開く</span></div></a>
+      <a class="bonus-card" href="assets/todo-sheet.pdf" target="_blank" rel="noopener"><img src="img/bonus/todo-1.webp" alt=""><div><span class="k">A4・1枚</span><h3>免許取得までのTODO表</h3><p class="muted">申請前から許可後30日までの22項目。印刷して使えます。</p><span class="btn btn-secondary btn-sm">PDFを開く</span></div></a>
     </div>
 
-    <div class="card">
-      <h2>許可までのTODO</h2>
-      <p class="muted">進捗はこのブラウザに保存されます。</p>
-      <ul class="todo" id="todo"></ul>
-      <div id="licensedBox" style="margin-top:16px"></div>
-    </div>
+    <!-- 書類 -->
+    <h2 class="sec-title">作成した書類</h2>
+    <p class="muted" style="margin-top:-6px">サムネイルは入力内容を反映したプレビューです。クリックで拡大できます。</p>
+    <div class="doc-grid" id="docGrid"></div>
+    <div class="warn" style="margin-top:16px"><strong>ご確認ください</strong><br>様式第1号の「有料・無料」「更新申請」など該当しない文言には取消線を入れています。労働局によっては二重線での抹消を求められる場合があるため、窓口の指示に従ってください。</div>
+
+    <!-- TODO -->
+    <h2 class="sec-title">免許取得までの道のり</h2>
+    <p class="muted" style="margin-top:-6px">終わった工程にチェックを入れてください。進捗はこのブラウザに保存されます。</p>
+    <div class="roadmap" id="todo"></div>
+    <div id="licensedBox" class="licensed-box"></div>
+
+    <!-- 添付書類 -->
+    <h2 class="sec-title">添付書類・費用・提出先</h2>
+    <div class="card"><div id="checklist" class="checklist-cols"></div></div>
   </section>
+
+  <!-- プレビュー拡大 -->
+  <div id="pvModal" class="pv-modal hidden" role="dialog" aria-modal="true">
+    <div class="pv-modal-inner">
+      <div class="pv-modal-bar"><strong id="pvTitle"></strong><div><button type="button" class="btn btn-secondary btn-sm" id="pvDl">Wordでダウンロード</button><button type="button" class="btn btn-ghost btn-sm" id="pvClose">閉じる</button></div></div>
+      <div class="pv-modal-body"><div class="pv-sheet" id="pvBody"></div></div>
+    </div>
+  </div>
 </main>
 <footer class="site-footer"><div class="container">運営：株式会社HADO（<a href="https://soukyaku-cloud.com/" target="_blank" rel="noopener">求職者送客クラウド</a>）</div></footer>
 <script src="js/vendor/jszip.min.js"></script>
 <script src="js/docgen.js"></script>
+<script src="js/preview.js"></script>
 <script src="js/app.js"></script>
 <script src="js/done.js"></script>
 </body>

@@ -5,7 +5,7 @@
 
   const config = {
     // Google Apps Script Web App URL (apps-script/lead-handler.gs をデプロイして設定する)
-    GAS_URL: (typeof window !== 'undefined' && window.__LT_GAS) || '',
+    GAS_URL: (typeof window !== 'undefined' && window.__LT_GAS) || 'https://script.google.com/macros/s/AKfycbyYaSU2ffzGRWk0d36NN2GIaDs7hrDC2jdzIynCfWyQOldRYBIQp_Q5ylZUKt87uWPl/exec',
     CLOUD_URL: 'https://soukyaku-cloud.com/',
     MADOGUCHI_URL: 'https://kyusyokusyasokyaku-no-madoguchi.com/',
     TEMPLATE_DIR: 'templates/',

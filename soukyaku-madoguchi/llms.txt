@@ -1,26 +1,73 @@
 # 求職者送客の窓口（kyusyokusyasokyaku-no-madoguchi.com）
 
-> 人材紹介会社向けの、面談着座成果報酬型の求職者送客サービス。SNSで独自に集客した若手求職者を、事前カウンセリングと日程調整まで代行したうえで、面談を実施した分だけの成果報酬で送客する。株式会社HADO（https://hado.co.jp/）が運営。
+> 人材紹介会社向けの、面談着座成果報酬型の求職者送客サービス。SNSで独自に集客した若手求職者を、事前カウンセリングと日程調整まで代行したうえで、面談を実施した分だけの成果報酬で送客する。株式会社HADO（https://hado.co.jp/、有料職業紹介事業 許可番号 13-ユ-316820）が運営。同社は自社でも月間約1,400件の求職者面談を設定している。
 
-集客・事前カウンセリング・日程調整までを一括で代行する点と、課金が「面談の着座」単位である点が特徴。初期費用と月額固定費はかからない。
+集客・事前カウンセリング・日程調整までを一括で代行する点と、課金が「面談の着座」単位である点が特徴。初期費用と月額固定費はかからない。同じサイトで、人材紹介の免許（有料職業紹介事業許可）の申請書類を無料で作成できるツールと、申請ガイド、業界データ集を公開している。
 
 ## 主要ページ
 
-- [トップ](https://kyusyokusyasokyaku-no-madoguchi.com/): サービスの説明、料金、比較
-- [第二新卒・20代向けプラン](https://kyusyokusyasokyaku-no-madoguchi.com/daini-shinsotsu/)
-- [新卒向けプラン](https://kyusyokusyasokyaku-no-madoguchi.com/shinsotsu/)
+- [トップ](https://kyusyokusyasokyaku-no-madoguchi.com/): サービスの説明、料金、他社比較、導入事例
+- [第二新卒・20代向けプラン](https://kyusyokusyasokyaku-no-madoguchi.com/daini-shinsotsu/): 着座率80%・成約率35%（導入エージェント実績）、対象18〜34歳
+- [新卒向けプラン](https://kyusyokusyasokyaku-no-madoguchi.com/shinsotsu/): 着座率90%実績、27卒〜28卒対象
 - [ライトプラン](https://kyusyokusyasokyaku-no-madoguchi.com/lite/): 応募課金型
-- [コラム](https://kyusyokusyasokyaku-no-madoguchi.com/column/): 人材紹介会社向けの記事
+- [導入事例](https://kyusyokusyasokyaku-no-madoguchi.com/#cases): ReWave（成約率20%→30〜35%）、SmartForce（成約率30%・ROAS 400%）、Nexil、Manly&Cool（面談実施率69.7%）、HRX（面談実施率20%→70%）
+- [コラム](https://kyusyokusyasokyaku-no-madoguchi.com/column/): 人材紹介会社向けの集客・面談・KPI・許認可の記事
+- [執筆者プロフィール：田中大雅](https://kyusyokusyasokyaku-no-madoguchi.com/author/tanaka-taiga/): 株式会社HADO代表取締役。記事と免許ガイドの執筆・監修者
 - [お問い合わせ](https://kyusyokusyasokyaku-no-madoguchi.com/contact/)
 
-## 事実関係
+## 人材紹介の免許申請（無料ツールとガイド）
 
-- 課金の単位は「面談の着座」。求職者が実際に面談へ来た分だけ支払う
-- 初期費用・月額固定費: なし
-- 対象: 第二新卒・20代・未経験・新卒の若手求職者
-- 運営: 株式会社HADO（東京都目黒区上目黒1丁目1 第2育良ビル4F）
-- リード課金型の姉妹サービス: 求職者送客クラウド（https://soukyaku-cloud.com/）
+- [免許申請書類 無料作成ツール](https://kyusyokusyasokyaku-no-madoguchi.com/license/): 有料職業紹介事業の許可申請に必要な様式第1号・第2号・第3号、手数料表、業務運営規程、個人情報適正管理規程、明示書面を、質問に答えるだけで労働局の公式Word様式に出力する。無料、登録不要、約30分
+- [免許申請ガイド一覧](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/)
+- [様式第1号 許可申請書の書き方](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/form1/)
+- [様式第2号 事業計画書の書き方](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/form2/)
+- [様式第3号 届出制手数料届出書の書き方](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/form3/)
+- [手数料表の作り方](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/fee-table/)
+- [業務運営規程のひな形と書き方](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/operation-rules/)
+- [個人情報適正管理規程のひな形と書き方](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/privacy-rules/)
+- [明示書面の作り方](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/disclosure/)
+- [許可申請にかかる費用](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/cost/)
+- [申請から許可までの期間](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/period/)
+- [資産要件の計算方法](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/asset-requirement/)
+- [職業紹介責任者講習](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/responsible-training/)
+- [許可更新の手続き](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/renewal/)
+- [補正でよく指摘される15の点](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/correction/)
+- [よくある質問50](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/faq/)
+- [都道府県別 労働局の提出先一覧](https://kyusyokusyasokyaku-no-madoguchi.com/license/roudoukyoku/): 47都道府県の需給調整事業室（課）の住所・電話
+- [人材紹介の業界データ集 2026年版](https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/industry-data/): 出典付きの数値一覧。引用自由
+- [開業ロードマップ（PDF）](https://kyusyokusyasokyaku-no-madoguchi.com/license/assets/roadmap.pdf): 免許取得から月商300万円までの15ページ資料
+
+## 事実関係（サービス）
+
+- 課金の単位は「面談の着座」。求職者が実際に面談へ来た分だけ支払う。着座の定義は初回面談への入室・応答
+- 面談単価: 2.5万円〜。成約率（面談→決定）: 15%（導入エージェント平均、上位は30〜35%）。決定単価: 16.7万円〜。面談着座率: 80〜90%
+- 初期費用・月額固定費: なし。最低発注数なし。月10件から100件超まで対応
+- 対象: 第二新卒・20代・未経験・新卒の若手求職者。送客する第二新卒層は20代が86.1%、エージェント未利用が68.3%
+- 求職者情報は約4,000文字のカウンセリングメモ（AI議事録）付きで共有
+- 運営: 株式会社HADO（東京都目黒区上目黒1丁目1 第2育良ビル4F、2020年11月6日設立、代表取締役 田中大雅）
+- リード課金型の姉妹サービス: 求職者送客クラウド（https://soukyaku-cloud.com/）。履歴書作成サービス「ソクレキ」で書類を完成させた求職者を1件単位で送客。定価4,000円／件
+
+## 事実関係（有料職業紹介の許可申請、2026年9月時点）
+
+- 費用: 登録免許税9万円＋許可手数料5万円（事業所1ヶ所）。2ヶ所目以降は1.8万円加算。更新は1.8万円×事業所数
+- 期間: 労働局の受理から許可まで2〜3ヶ月。許可日は毎月1日付。準備を含めると3〜5ヶ月
+- 資産要件: 基準資産額（資産−負債−繰延資産−営業権）500万円×事業所数以上、自己名義の現預金150万円＋60万円×（事業所数−1）以上
+- 事務所: プライバシーを確保できる構造。以前の「おおむね20㎡以上」要件は2017年に撤廃
+- 職業紹介責任者: 事業所ごとに1名以上、従事者50人につき1名以上。受理日前5年以内に講習を受講、成年後3年以上の職業経験
+- 提出先: 本店所在地を管轄する都道府県労働局の需給調整事業部（室・課）。原本1部＋写し2部が基本
+- 有効期間: 初回3年、更新後5年。更新申請は満了の30日前まで（労働局は3ヶ月前からを推奨）
+- 毎年: 事業報告書（様式第8号）を4月30日まで。紹介実績（就職者数・離職者数・手数料）の公開
+- 手数料: 届出制が一般的。相場は理論年収の30〜35%。求職者からの徴収は原則禁止。就職お祝い金は2021年4月以降禁止
+
+## 事実関係（業界データ）
+
+- 有料職業紹介事業所数 30,561（厚生労働省 令和6年度 職業紹介事業報告書の集計結果（速報））
+- 人材紹介市場規模 4,490億円、前年度比+12.0%（矢野経済研究所「人材ビジネス市場に関する調査」）
+- 面談→決定の成約率: 業界の一般的な水準8〜12%、当社導入エージェント平均15%、上位30〜35%
+- 集客チャネル別の面談実施率: 登録課金型20〜35%、リード課金型約14%、着座課金型80〜90%
+- CA1人あたりの月間面談数の上限目安 40件前後（SmartForce社取材）
 
 ## 補足
 
 - サイトマップ: https://kyusyokusyasokyaku-no-madoguchi.com/sitemap.xml
+- 引用: 業界データ集の数値は出典を「株式会社HADO『人材紹介の業界データ集 2026年版』」と明記すれば引用自由

@@ -9,12 +9,17 @@
 
 Run:  python3 tools/build-guide.py   (then tools/sync.sh)
 """
-import json, os, re, html, datetime
+import json, os, re, html, datetime, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from guide_extra import DATA_ARTICLE, FAQ_ARTICLE, faq_body
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 BASE = 'https://kyusyokusyasokyaku-no-madoguchi.com/license/'
 UPDATED = '2026-09-30'
 UPDATED_JA = '2026年9月30日'
+AUTHOR_URL = 'https://kyusyokusyasokyaku-no-madoguchi.com/author/tanaka-taiga/'
+AUTHOR_NAME = '田中大雅'
+AUTHOR_BOX = '''<aside class="g-author"><div class="g-author-body"><span class="g-author-k">この記事の執筆・監修</span><b>田中大雅</b><span class="g-author-t">株式会社HADO 代表取締役｜有料職業紹介事業 許可番号 13-ユ-316820</span><p>人材紹介会社向けの求職者送客サービス「求職者送客の窓口」「求職者送客クラウド」を運営。自社で月間約1,400件の求職者面談を設定し、免許取得から立ち上げまでを支援している。</p><a href="{author}">プロフィールと監修方針</a></div></aside>'''
 
 # ---------------------------------------------------------------- articles
 # Each article: slug, group, title, h1, description, lead, related (slugs), body (html), faqs [(q,a)]
@@ -629,7 +634,9 @@ article(slug='correction', group='proc', title='有料職業紹介の許可申�
         ('補正で許可日は遅れますか','補正が翌月にずれ込むと許可日も1ヶ月遅れることがあります。月の前半に提出し、補正に即日対応するのが最短です。')])
 
 # ---------------------------------------------------------------- template
-GROUPS = {'doc': '申請書類の書き方', 'proc': '手続き・要件'}
+GROUPS = {'doc': '申請書類の書き方', 'proc': '手続き・要件', 'data': 'データ・FAQ'}
+FAQ_ARTICLE['body'] = faq_body(FAQ_ARTICLE['faqs'])
+ARTICLES.append(DATA_ARTICLE); ARTICLES.append(FAQ_ARTICLE)
 
 def esc(s): return html.escape(s, quote=True)
 
@@ -649,11 +656,12 @@ def header(prefix):
 def footer(prefix):
     docs = ''.join(f'<li><a href="{prefix}guide/{a["slug"]}/">{esc(a["h1"])}</a></li>' for a in ARTICLES if a['group']=='doc')
     procs = ''.join(f'<li><a href="{prefix}guide/{a["slug"]}/">{esc(a["h1"])}</a></li>' for a in ARTICLES if a['group']=='proc')
+    datas = ''.join(f'<li><a href="{prefix}guide/{a["slug"]}/">{esc(a["h1"])}</a></li>' for a in ARTICLES if a['group']=='data')
     return f'''<footer class="g-footer"><div class="wrap">
   <div class="g-footer-grid">
     <div><h4>申請書類の書き方</h4><ul>{docs}</ul></div>
     <div><h4>手続き・要件</h4><ul>{procs}<li><a href="{prefix}roudoukyoku/">都道府県別 労働局の提出先</a></li></ul></div>
-    <div><h4>ツール</h4><ul><li><a href="{prefix}index.html">免許申請書類 無料作成ツール</a></li><li><a href="{prefix}check.html">要件診断（5分）</a></li><li><a href="{prefix}assets/roadmap.pdf" target="_blank" rel="noopener">開業ロードマップ（PDF）</a></li><li><a href="{prefix}terms.html">利用規約・プライバシーポリシー</a></li></ul></div>
+    <div><h4>ツール・データ</h4><ul>{datas}<li><a href="{prefix}index.html">免許申請書類 無料作成ツール</a></li><li><a href="{prefix}check.html">要件診断（5分）</a></li><li><a href="{prefix}assets/roadmap.pdf" target="_blank" rel="noopener">開業ロードマップ（PDF）</a></li><li><a href="{prefix}terms.html">利用規約・プライバシーポリシー</a></li></ul></div>
   </div>
   <p class="g-footer-note">運営：株式会社HADO（有料職業紹介事業 許可番号 13-ユ-316820）｜<a href="https://kyusyokusyasokyaku-no-madoguchi.com/" target="_blank" rel="noopener">求職者送客の窓口</a> ／ <a href="https://soukyaku-cloud.com/" target="_blank" rel="noopener">求職者送客クラウド</a><br>本サイトの記事は一般的な情報提供であり、個別の申請については管轄の労働局にご確認ください。</p>
 </div></footer>'''
@@ -670,7 +678,8 @@ def faq_html(faqs):
 def jsonld(page_url, title, description, crumbs, faqs=None, date=UPDATED):
     data = [
       {"@context":"https://schema.org","@type":"Article","headline":title,"description":description,"datePublished":date,"dateModified":date,
-       "author":{"@type":"Organization","name":"株式会社HADO"},"publisher":{"@type":"Organization","name":"株式会社HADO"},"mainEntityOfPage":page_url,"inLanguage":"ja"},
+       "author":{"@type":"Person","name":AUTHOR_NAME,"url":AUTHOR_URL,"jobTitle":"代表取締役","worksFor":{"@type":"Organization","name":"株式会社HADO","url":"https://hado.co.jp/"}},
+       "publisher":{"@type":"Organization","name":"株式会社HADO","url":"https://hado.co.jp/"},"mainEntityOfPage":page_url,"inLanguage":"ja"},
       {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":i+1,"name":n,"item":u} for i,(n,u) in enumerate(crumbs)]},
     ]
     if faqs:
@@ -684,7 +693,7 @@ def breadcrumb_html(crumbs, prefix):
         else: parts.append(f'<a href="{u}">{esc(n)}</a>')
     return '<nav class="g-crumb" aria-label="パンくず">' + ' › '.join(parts) + '</nav>'
 
-def page(prefix, url, title, description, h1, lead, body, crumbs, faqs=None, related_html='', group_label='', updated=UPDATED_JA, extra_head=''):
+def page(prefix, url, title, description, h1, lead, body, crumbs, faqs=None, related_html='', group_label='', updated=UPDATED_JA, extra_head='', faq_render=True):
     cta_mid = TOOL_CTA.format(prefix=prefix, title='この書類は無料ツールで作れます', text='会社情報と手数料を入力するだけで、労働局の公式Word様式（様式第1〜3号・手数料表・規程類・明示書面）に差し込んで出力します。登録不要、約30分。')
     cta_end = TOOL_CTA.format(prefix=prefix, title='まず、申請できる状態かを5分で確認', text='資産・事務所・講習の3点に答えるだけで、足りないものと許可までの目安スケジュールが分かります。そのまま7書類の作成に進めます。')
     # insert mid CTA after the 2nd h2 section: before the 3rd h2
@@ -708,11 +717,12 @@ def page(prefix, url, title, description, h1, lead, body, crumbs, faqs=None, rel
 <main class="g-main"><div class="wrap narrow">
 {breadcrumb_html(crumbs, prefix)}
 <article class="g-article">
-<header class="g-head">{('<span class="g-tag">'+esc(group_label)+'</span>') if group_label else ''}<h1>{h1}</h1><p class="g-lead">{lead}</p><p class="g-meta">最終更新：{updated}｜執筆：株式会社HADO（有料職業紹介事業 許可番号 13-ユ-316820）</p></header>
+<header class="g-head">{('<span class="g-tag">'+esc(group_label)+'</span>') if group_label else ''}<h1>{h1}</h1><p class="g-lead">{lead}</p><p class="g-meta">最終更新：{updated}｜執筆・監修：<a href="{AUTHOR_URL}">田中大雅</a>（株式会社HADO 代表取締役、有料職業紹介事業 許可番号 13-ユ-316820）</p></header>
 {toc(body)}
 {body}
-{faq_html(faqs)}
+{faq_html(faqs) if faq_render else ''}
 {cta_end}
+{AUTHOR_BOX.format(author=AUTHOR_URL)}
 {related_html}
 </article>
 </div></main>
@@ -738,7 +748,7 @@ for a in ARTICLES:
     prefix = '../../'
     url = f'{BASE}guide/{a["slug"]}/'
     crumbs = [('免許申請書類 無料作成ツール', prefix + 'index.html'), ('ガイド', prefix + 'guide/'), (a['h1'], url)]
-    html_out = page(prefix, url, a['title'], a['description'], a['h1'], a['lead'], a['body'], crumbs, a.get('faqs'), related_block(a['related'], prefix), GROUPS[a['group']])
+    html_out = page(prefix, url, a['title'], a['description'], a['h1'], a['lead'], a['body'], crumbs, a.get('faqs'), related_block(a['related'], prefix), GROUPS[a['group']], faq_render=(a['slug'] != 'faq'))
     write(f'guide/{a["slug"]}/index.html', html_out)
     urls.append((url, '0.8', 'monthly'))
 
@@ -747,7 +757,7 @@ def hub_guide():
     prefix = '../'
     url = BASE + 'guide/'
     cards = ''
-    for g in ('doc', 'proc'):
+    for g in ('doc', 'proc', 'data'):
         cards += f'<h2>{GROUPS[g]}</h2><div class="g-cards">' + ''.join(
             f'<a class="g-card" href="{a["slug"]}/"><h3>{esc(a["h1"])}</h3><p>{esc(a["description"][:80])}…</p></a>' for a in ARTICLES if a['group']==g) + '</div>'
     cards += '<h2>提出先を調べる</h2><div class="g-cards"><a class="g-card" href="../roudoukyoku/"><h3>都道府県別 労働局の提出先一覧</h3><p>本店所在地を管轄する労働局の需給調整事業部（室）の住所・電話・提出方法。</p></a></div>'

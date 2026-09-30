@@ -845,6 +845,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/industry-data/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/faq/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://kyusyokusyasokyaku-no-madoguchi.com/license/guide/</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -1137,5 +1149,11 @@
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kyusyokusyasokyaku-no-madoguchi.com/author/tanaka-taiga/</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

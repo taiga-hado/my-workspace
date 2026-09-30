@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>免許取得から月商300万円までの完全ロードマップ</title>
+<style>
+  @page { size: A4; margin: 0; }
+  :root { --blue: #1f4fd8; --deep: #16389c; --tint: #eef3ff; --navy: #1f2740; --gray: #5f6a82; --line: #d9dfec; --yellow: #ffcf3d; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif; color: var(--navy); font-size: 11.5pt; line-height: 1.75; }
+  .page { width: 210mm; height: 297mm; padding: 18mm 18mm 16mm; page-break-after: always; position: relative; overflow: hidden; }
+  .page:last-child { page-break-after: auto; }
+  .foot { position: absolute; left: 18mm; right: 18mm; bottom: 9mm; display: flex; justify-content: space-between; font-size: 8.5pt; color: var(--gray); border-top: 1px solid var(--line); padding-top: 4px; }
+  h1 { font-size: 26pt; line-height: 1.35; margin: 0 0 10px; letter-spacing: -.01em; }
+  h2 { font-size: 17pt; margin: 0 0 14px; padding-bottom: 8px; border-bottom: 3px solid var(--blue); }
+  h3 { font-size: 12.5pt; margin: 18px 0 6px; color: var(--deep); }
+  p { margin: 0 0 8px; }
+  .kicker { color: var(--blue); font-weight: 700; letter-spacing: .12em; font-size: 9.5pt; margin-bottom: 6px; }
+  .cover { background: linear-gradient(160deg, var(--tint) 0%, #fff 55%); display: flex; flex-direction: column; justify-content: center; }
+  .cover .badge { display: inline-block; background: var(--blue); color: #fff; font-weight: 700; padding: 6px 14px; border-radius: 6px; font-size: 10pt; margin-bottom: 18px; align-self: flex-start; }
+  .cover .sub { font-size: 13pt; color: var(--gray); margin-bottom: 30px; }
+  .cover .toc { background: #fff; border: 1px solid var(--line); border-radius: 12px; padding: 18px 22px; }
+  .cover .toc ol { margin: 0; padding-left: 20px; }
+  .cover .toc li { margin: 4px 0; }
+  .cover .pub { margin-top: 30px; font-size: 10pt; color: var(--gray); }
+  .point { background: var(--tint); border-left: 5px solid var(--blue); padding: 10px 14px; border-radius: 6px; margin: 10px 0 14px; }
+  .point b { color: var(--deep); }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 12px; font-size: 10.5pt; }
+  th, td { border: 1px solid var(--line); padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: var(--tint); font-weight: 700; }
+  td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .box { border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+  .box h4 { margin: 0 0 6px; font-size: 11pt; color: var(--deep); }
+  ul { margin: 4px 0 8px; padding-left: 20px; } li { margin: 2px 0; }
+  .timeline { list-style: none; padding: 0; margin: 8px 0; }
+  .timeline li { display: grid; grid-template-columns: 34mm 1fr; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); }
+  .timeline li b { color: var(--deep); }
+  .check li { list-style: none; padding-left: 22px; position: relative; }
+  .check li::before { content: ""; position: absolute; left: 0; top: 5px; width: 12px; height: 12px; border: 2px solid var(--blue); border-radius: 3px; }
+  .callout { background: #fff8dc; border: 1px solid #f1d878; border-radius: 8px; padding: 10px 14px; margin: 10px 0; font-size: 10.5pt; }
+  .kpi { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 10px 0 14px; }
+  .kpi div { background: var(--tint); border-radius: 10px; padding: 10px; text-align: center; }
+  .kpi b { display: block; font-size: 18pt; color: var(--blue); line-height: 1.2; }
+  .kpi span { font-size: 9pt; color: var(--gray); }
+  .small { font-size: 9.5pt; color: var(--gray); }
+</style>
+</head>
+<body>
+
+<!-- 表紙 -->
+<section class="page cover">
+  <span class="badge">人材紹介 開業ガイド</span>
+  <h1>免許取得から<br>月商300万円までの<br>完全ロードマップ</h1>
+  <p class="sub">有料職業紹介の許可申請から、開業、初決定、そして月3決定が安定するまで。<br>やることを時系列で1冊にまとめました。</p>
+  <div class="toc">
+    <b>目次</b>
+    <ol>
+      <li>月商300万円を数字で逆算する</li>
+      <li>免許待ちの2〜3ヶ月でやること</li>
+      <li>求人側の準備：求人DBと直接開拓</li>
+      <li>求職者側の準備：集客経路の決め方</li>
+      <li>許可後30日の動き方</li>
+      <li>31〜90日：初決定から月3決定へ</li>
+      <li>許可後に必要な事務手続き</li>
+      <li>免許取得までのTODO表</li>
+    </ol>
+  </div>
+  <p class="pub">発行：株式会社HADO（免許申請書類 無料作成ツール）　2026年9月版<br>本資料は一般的な情報提供であり、個別の事情については労働局・専門家にご確認ください。</p>
+</section>
+
+<!-- 1 -->
+<section class="page">
+  <p class="kicker">CHAPTER 1</p>
+  <h2>月商300万円を数字で逆算する</h2>
+  <p>月商300万円は「がんばる」目標ではなく、面談数から逆算できる数字です。決定単価と成約率を置けば、毎月必要な面談数と、そのための集客数が決まります。</p>
+  <div class="kpi">
+    <div><b>100万円</b><span>決定単価（年収330万×30%）</span></div>
+    <div><b>3件</b><span>月の決定数</span></div>
+    <div><b>15%</b><span>面談→決定の成約率</span></div>
+    <div><b>20件</b><span>月に必要な面談数</span></div>
+  </div>
+  <table>
+    <tr><th>項目</th><th>計算</th><th>目安</th></tr>
+    <tr><td>月商</td><td>決定単価 × 決定数</td><td class="num">300万円</td></tr>
+    <tr><td>必要な面談数</td><td>決定数 ÷ 成約率（15%）</td><td class="num">20件／月</td></tr>
+    <tr><td>必要な面談設定数</td><td>面談数 ÷ 着座率（80%）</td><td class="num">25件／月</td></tr>
+    <tr><td>必要な求職者登録数</td><td>面談設定数 ÷ 設定率（50%）</td><td class="num">50人／月</td></tr>
+    <tr><td>同時に動かす求人数</td><td>面談者1人に3〜5件を提案</td><td class="num">15〜20件</td></tr>
+  </table>
+  <div class="point"><b>ポイント：</b>成約率15%は、若手・未経験層で安定運用しているエージェントの水準です。開業直後は5〜10%から始まり、求人の質と面談の型が整うにつれて上がります。最初の3ヶ月は成約率よりも「面談数を切らさないこと」を優先してください。</div>
+  <h3>月商300万円までの現実的なタイムライン</h3>
+  <ul class="timeline">
+    <li><b>申請〜許可（2〜3ヶ月）</b><span>営業はできない期間。求人DB・集客経路・面談の型を準備する。</span></li>
+    <li><b>許可後1ヶ月目</b><span>求人3〜5社、面談10件。初決定を1件出すことが目標。</span></li>
+    <li><b>2〜3ヶ月目</b><span>面談15〜20件、決定1〜2件。入社と請求のタイムラグで売上はまだ小さい。</span></li>
+    <li><b>4〜6ヶ月目</b><span>面談20件、決定2〜3件が安定。月商200〜300万円が見えてくる。</span></li>
+  </ul>
+  <p class="small">※ 紹介手数料は入社後の請求が一般的で、決定から入金まで1〜3ヶ月かかります。資金繰りはこの遅れを前提に組んでください。</p>
+  <div class="foot"><span>免許取得から月商300万円までの完全ロードマップ</span><span>2</span></div>
+</section>
+
+<!-- 2 -->
+<section class="page">
+  <p class="kicker">CHAPTER 2</p>
+  <h2>免許待ちの2〜3ヶ月でやること</h2>
+  <p>申請から許可までは労働局の審査待ちで、この間は紹介業務ができません。ここで「求人」と「求職者」の両方の入口を用意した会社ほど、初決定が早く出ています。</p>
+  <ul class="timeline">
+    <li><b>提出直後〜2週間</b><span>補正連絡に備えて、申請書類の控えと添付書類をすぐ出せる状態にしておく。労働局からの電話は平日日中に来る。</span></li>
+    <li><b>2〜4週目</b><span>求人DBの資料請求と比較（第3章）。集客経路を1つに決める（第4章）。面談スクリプトと求職者管理シートを作る。</span></li>
+    <li><b>4〜8週目</b><span>求人の直接開拓を始める（許可前は「許可後に紹介したい」という関係づくりまで）。自社サイトかLPを用意し、明示書面を載せる。</span></li>
+    <li><b>許可直前</b><span>手数料表・運営規程・個人情報適正管理規程を事業所に備え付け。求職者との面談日程を許可日以降で仮押さえ。</span></li>
+  </ul>
+  <div class="cols">
+    <div class="box"><h4>この期間に作っておく5点セット</h4>
+      <ul class="check"><li>求職者面談シート（希望条件・職歴・転職理由）</li><li>求人票テンプレート（労働条件の明示事項を網羅）</li><li>紹介状・推薦文のひな形</li><li>求人企業向けの契約書（紹介手数料・返戻金）</li><li>求職者管理と進捗の一覧表（スプレッドシートで可）</li></ul>
+    </div>
+    <div class="box"><h4>やってはいけないこと</h4>
+      <ul><li>許可前の紹介行為（求職者を企業に紹介して面接させる）</li><li>「許可取得予定」を隠した営業</li><li>求職者からの手数料徴収（原則禁止）</li><li>就職お祝い金の提供（2021年以降禁止）</li></ul>
+    </div>
+  </div>
+  <div class="callout">補正でよく指摘される点：住民票と申請書の住所表記のズレ、履歴書の空白期間、定款の事業目的に「職業紹介事業」がない、レイアウト図に面談スペースと保管場所がない、貸借対照表から繰延資産・営業権を引いていない、責任者講習の受講日が申請日より後。</div>
+  <div class="foot"><span>免許取得から月商300万円までの完全ロードマップ</span><span>3</span></div>
+</section>
+
+<!-- 3 -->
+<section class="page">
+  <p class="kicker">CHAPTER 3</p>
+  <h2>求人側の準備：求人DBと直接開拓</h2>
+  <p>開業直後は自社で求人を集める力がないため、求人DB（他社が保有する求人を紹介できる仕組み）を使うのが一般的です。契約には許可証の写しが必要なので、比較と資料請求は許可前に済ませます。</p>
+  <table>
+    <tr><th>サービス</th><th>特徴</th><th>料金モデル</th><th>向いている会社</th></tr>
+    <tr><td>agent bank（ROXX）</td><td>若手・未経験層の求人が多い。40,000件超。</td><td>月額制</td><td>20代・第二新卒・未経験層を扱う会社</td></tr>
+    <tr><td>circusAGENT</td><td>84,000件超。初期費用・月額ゼロ。</td><td>完全成果報酬</td><td>固定費を抑えて始めたい会社</td></tr>
+    <tr><td>転職AGENT Navi（circus運営）</td><td>circusの関連サービス。</td><td>成果報酬</td><td>複数DBを併用したい会社</td></tr>
+    <tr><td>直接開拓</td><td>自社で求人企業と契約。手数料率を自分で決められる。</td><td>なし</td><td>特定業界に人脈がある会社</td></tr>
+  </table>
+  <p class="small">※ 各社の条件は変わります。最新の料金と求人数は各社の資料でご確認ください。当社は求人DBを提供していないため、利害関係はありません。</p>
+  <h3>直接開拓の型</h3>
+  <ul>
+    <li><b>既存の取引先・知人から</b>：「人を探している会社」を紹介してもらう。開業初月の求人3〜5社はここから出ることが多い。</li>
+    <li><b>採用に困っている業界を絞る</b>：介護、建設、飲食、物流、コールセンターなど、若手未経験を採用したい業界は紹介手数料に慣れている。</li>
+    <li><b>提案は「紹介の型」で</b>：手数料率、返戻金、面談から入社までの流れを1枚にまとめて渡す。手数料表と明示書面がそのまま営業資料になる。</li>
+  </ul>
+  <div class="point"><b>目安：</b>求人DBを使う場合でも、直接契約の求人を3〜5件持っておくと、決定単価と成約率が安定します。DBの求人は競合エージェントも提案しているためです。</div>
+  <div class="foot"><span>免許取得から月商300万円までの完全ロードマップ</span><span>4</span></div>
+</section>
+
+<!-- 4 -->
+<section class="page">
+  <p class="kicker">CHAPTER 4</p>
+  <h2>求職者側の準備：集客経路の決め方</h2>
+  <p>月商300万円に必要な求職者登録は月50人前後です（第1章）。開業初月からこの数を自社集客だけで作るのは難しいため、立ち上がりの速さと固定費で経路を選びます。</p>
+  <table>
+    <tr><th>経路</th><th>立ち上がり</th><th>費用の性質</th><th>強み</th><th>弱み</th></tr>
+    <tr><td>自社集客（SNS・Web）</td><td>3〜6ヶ月</td><td>人件費・制作費が先行</td><td>長期的に最も安い</td><td>初月はほぼゼロ</td></tr>
+    <tr><td>求人媒体・スカウト</td><td>1〜2ヶ月</td><td>掲載費が先行</td><td>件数を読める</td><td>競合が多く返信率が低い</td></tr>
+    <tr><td>送客サービス</td><td>即日〜1週間</td><td>1件ごとの成果報酬</td><td>初月から面談を作れる</td><td>領域が合わないと成約しにくい</td></tr>
+    <tr><td>知人・紹介</td><td>即日</td><td>なし</td><td>成約率が高い</td><td>数が続かない</td></tr>
+  </table>
+  <h3>おすすめの組み合わせ（若手・未経験層の場合）</h3>
+  <ul class="timeline">
+    <li><b>1〜3ヶ月目</b><span>送客サービスで月20〜30件の面談を確保し、面談の型と求人提案の精度を上げる。並行して自社SNSを始める。</span></li>
+    <li><b>4〜6ヶ月目</b><span>自社集客が月10〜20人になったら、送客は補完に回す。成約率が上がってきたら求人媒体も試す。</span></li>
+    <li><b>7ヶ月目〜</b><span>自社集客7割・送客3割程度。集客コストが下がり、利益率が上がる。</span></li>
+  </ul>
+  <div class="point"><b>当社の送客サービス：</b>「求職者送客クラウド」は履歴書を書き終えた20代・未経験層の求職者を1件単位で受け取れるサービスです。開業初月の面談枠を埋める用途で使えます。詳細は soukyaku-cloud.com をご覧ください。</div>
+  <div class="foot"><span>免許取得から月商300万円までの完全ロードマップ</span><span>5</span></div>
+</section>
+
+<!-- 5 -->
+<section class="page">
+  <p class="kicker">CHAPTER 5</p>
+  <h2>許可後30日の動き方</h2>
+  <p>最初の30日でやることは3つだけです。求人を持つ、面談をする、1件決める。売上はまだ立ちませんが、ここで「型」ができるかどうかが、その後の3ヶ月を決めます。</p>
+  <div class="kpi">
+    <div><b>3〜5社</b><span>求人（直接契約）</span></div>
+    <div><b>10件</b><span>求職者面談</span></div>
+    <div><b>1件</b><span>初決定</span></div>
+    <div><b>毎日</b><span>進捗表の更新</span></div>
+  </div>
+  <ul class="timeline">
+    <li><b>1週目</b><span>許可証の写しで求人DBの契約を本稼働。明示書面を事業所に掲示し、Webにも掲載。既存の取引先に開業の連絡。</span></li>
+    <li><b>2週目</b><span>面談開始。1件60分、希望条件・職歴・転職理由・希望年収を面談シートに記録。面談の翌日までに求人を3〜5件提案。</span></li>
+    <li><b>3週目</b><span>企業面接の設定と同行（またはフォロー）。面接後は当日中に本人と企業の両方に連絡。</span></li>
+    <li><b>4週目</b><span>初内定。労働条件通知書を確認し、入社日を確定。請求書と返戻金条件を再確認。</span></li>
+  </ul>
+  <h3>面談の型（60分）</h3>
+  <table>
+    <tr><th>時間</th><th>内容</th><th>ねらい</th></tr>
+    <tr><td>0〜10分</td><td>自己紹介と流れの説明、手数料は求職者からは取らないことの明示</td><td>安心感</td></tr>
+    <tr><td>10〜35分</td><td>職歴の棚卸し、転職理由、譲れない条件と妥協できる条件</td><td>提案の精度</td></tr>
+    <tr><td>35〜50分</td><td>求人の提案（3〜5件）、応募意思の確認</td><td>その場で次の予定を決める</td></tr>
+    <tr><td>50〜60分</td><td>書類作成の案内、次回連絡日の約束</td><td>離脱防止</td></tr>
+  </table>
+  <div class="foot"><span>免許取得から月商300万円までの完全ロードマップ</span><span>6</span></div>
+</section>
+
+<!-- 6 -->
+<section class="page">
+  <p class="kicker">CHAPTER 6</p>
+  <h2>31〜90日：初決定から月3決定へ</h2>
+  <p>2ヶ月目以降は「数を切らさないこと」と「決定までの日数を縮めること」の2つを追います。指標は週次で見ます。</p>
+  <table>
+    <tr><th>指標</th><th>2ヶ月目の目安</th><th>3ヶ月目の目安</th><th>改善の打ち手</th></tr>
+    <tr><td>面談設定数</td><td class="num">20件</td><td class="num">25件</td><td>集客経路を追加、送客の枠を増やす</td></tr>
+    <tr><td>面談着座率</td><td class="num">70%</td><td class="num">80%</td><td>前日リマインド、オンライン面談の選択肢</td></tr>
+    <tr><td>提案→応募率</td><td class="num">50%</td><td class="num">60%</td><td>面談当日に求人を提示、求人票の条件を明確に</td></tr>
+    <tr><td>面接→内定率</td><td class="num">25%</td><td class="num">30%</td><td>面接対策の同席、企業側への事前情報提供</td></tr>
+    <tr><td>内定→入社率</td><td class="num">70%</td><td class="num">80%</td><td>内定後の週1連絡、家族への説明支援</td></tr>
+    <tr><td>決定数</td><td class="num">1〜2件</td><td class="num">2〜3件</td><td>上の5指標の積で決まる</td></tr>
+  </table>
+  <div class="cols">
+    <div class="box"><h4>決定が出ないときに見る順番</h4>
+      <ol style="margin:0;padding-left:18px"><li>面談数が足りているか（20件未満なら集客の問題）</li><li>提案した求人に応募しているか（していなければ求人の問題）</li><li>面接に落ちているか（対策と企業選定の問題）</li><li>内定辞退が多いか（フォローと条件のズレ）</li></ol>
+    </div>
+    <div class="box"><h4>早期退職を防ぐ</h4>
+      <ul><li>入社後1週間・1ヶ月・3ヶ月に本人へ連絡</li><li>企業には入社前に本人の不安点を共有</li><li>返戻金の条件を契約書と手数料表で一致させる</li></ul>
+    </div>
+  </div>
+  <div class="point"><b>月3決定が安定したら：</b>集客を増やす前に、面談担当を1人増やす方が利益率が上がります。1人あたり月20〜25面談が上限です。</div>
+  <div class="foot"><span>免許取得から月商300万円までの完全ロードマップ</span><span>7</span></div>
+</section>
+
+<!-- 7 -->
+<section class="page">
+  <p class="kicker">CHAPTER 7</p>
+  <h2>許可後に必要な事務手続き</h2>
+  <table>
+    <tr><th>手続き</th><th>いつ</th><th>内容</th></tr>
+    <tr><td>明示書面の備え付け・掲示</td><td>許可後すぐ</td><td>取扱職種の範囲、手数料表、返戻金制度、苦情窓口、個人情報の取扱いを事業所に備え付け、求人者・求職者に明示。Webにも掲載。</td></tr>
+    <tr><td>紹介実績の情報提供</td><td>毎年</td><td>就職者数、離職者数（6ヶ月以内）、手数料の実績を「人材サービス総合サイト」または自社サイトで公開（職業安定法32条の16）。</td></tr>
+    <tr><td>職業紹介事業報告書（様式第8号）</td><td>毎年4月末まで</td><td>前年度（4月〜3月）の求人数・求職者数・就職件数・手数料収入を労働局に提出。郵送またはe-Gov。</td></tr>
+    <tr><td>変更届</td><td>変更から10日以内</td><td>名称・所在地・役員・職業紹介責任者・事業所の変更（様式第6号）。</td></tr>
+    <tr><td>職業紹介責任者講習</td><td>5年ごと</td><td>責任者は5年以内に再受講。</td></tr>
+    <tr><td>許可の更新</td><td>初回3年、以降5年ごと</td><td>有効期間満了の3ヶ月前までに更新申請。資産要件は更新時にも確認される。</td></tr>
+    <tr><td>帳簿の備え付け</td><td>常時</td><td>求人求職管理簿、手数料管理簿を事業所に備え、2年間保存。</td></tr>
+  </table>
+  <div class="callout">更新申請で最も多いつまずきは、事業報告書の未提出と、資産要件の未達です。決算のたびに「資産−負債≧500万円」「現預金≧150万円」を確認する習慣をつけてください。</div>
+  <div class="foot"><span>免許取得から月商300万円までの完全ロードマップ</span><span>8</span></div>
+</section>
+
+<!-- 8 TODO -->
+<section class="page">
+  <p class="kicker">CHAPTER 8</p>
+  <h2>免許取得までのTODO表</h2>
+  <p>申請の準備から開業初月まで。上から順に進めれば、抜け漏れなく許可にたどり着けます。</p>
+  <table>
+    <tr><th style="width:8%">✓</th><th style="width:34%">やること</th><th>ポイント</th><th style="width:18%">目安時期</th></tr>
+    <tr><td>☐</td><td>要件の確認（資産・現預金・事務所・責任者）</td><td>資産−負債≧500万円、現預金≧150万円。事務所は専用スペースとプライバシー確保。</td><td>準備開始時</td></tr>
+    <tr><td>☐</td><td>職業紹介責任者講習の予約・受講</td><td>申請受理日前5年以内の受講証明書が必要。月数回開催。</td><td>申請の2〜4週前</td></tr>
+    <tr><td>☐</td><td>定款の事業目的に「職業紹介事業」を追加</td><td>ない場合は目的変更登記。登記事項証明書に反映されてから申請。</td><td>申請の3〜4週前</td></tr>
+    <tr><td>☐</td><td>添付書類の収集</td><td>登記事項証明書、定款、住民票・履歴書（役員全員）、決算書、納税証明書、賃貸借契約書、レイアウト図。</td><td>申請の2週前</td></tr>
+    <tr><td>☐</td><td>申請書類の作成（様式第1〜3号、手数料表、規程）</td><td>免許申請書類 無料作成ツールで作成。3部そろえる。</td><td>申請の1週前</td></tr>
+    <tr><td>☐</td><td>登録免許税9万円の納付、収入印紙5万円の購入</td><td>領収証書の原本を提出。印紙は貼らずに持参。</td><td>提出日まで</td></tr>
+    <tr><td>☐</td><td>労働局に提出</td><td>本店所在地を管轄する労働局の需給調整事業部。窓口で内容確認。</td><td>提出日</td></tr>
+    <tr><td>☐</td><td>補正連絡に対応</td><td>平日日中の電話に出られる体制。控えを手元に。</td><td>提出後1〜4週</td></tr>
+    <tr><td>☐</td><td>求人DBの比較・資料請求</td><td>契約は許可証が必要。比較は許可前に。</td><td>提出後2〜4週</td></tr>
+    <tr><td>☐</td><td>集客経路を決める</td><td>初月の面談20件をどう作るか。送客・媒体・自社集客。</td><td>提出後2〜4週</td></tr>
+    <tr><td>☐</td><td>面談シート・求人票・契約書のひな形を作る</td><td>第2章の5点セット。</td><td>提出後4〜8週</td></tr>
+    <tr><td>☐</td><td>明示書面の準備（掲示・Web掲載）</td><td>手数料表・運営規程・個人情報適正管理規程・許可番号。</td><td>許可直前</td></tr>
+    <tr><td>☐</td><td>許可証の受領</td><td>許可番号を明示書面に記入。求人DBの契約を本稼働。</td><td>提出後2〜3ヶ月</td></tr>
+    <tr><td>☐</td><td>開業初月：求人3〜5社、面談10件、初決定1件</td><td>第5章の30日プラン。</td><td>許可後30日</td></tr>
+  </table>
+  <p class="small">株式会社HADO　免許申請書類 無料作成ツール　https://kyusyokusyasokyaku-no-madoguchi.com/license/</p>
+  <div class="foot"><span>免許取得から月商300万円までの完全ロードマップ</span><span>9</span></div>
+</section>
+</body>
+</html>

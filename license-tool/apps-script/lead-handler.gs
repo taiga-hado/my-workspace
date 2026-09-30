@@ -20,6 +20,8 @@ const FROM_NAME = '求職者送客クラウド（免許申請ツール）';
 const REPLY_TO = 'info@hado.co.jp';
 const TOOL_URL = 'https://soukyaku-cloud.com/license/';
 const CLOUD_URL = 'https://soukyaku-cloud.com/';
+const ROADMAP_PDF = TOOL_URL + 'assets/roadmap.pdf';
+const TODO_PDF = TOOL_URL + 'assets/todo-sheet.pdf';
 const SCHEDULE_URL = 'https://calendar.app.google/9TdLRYotegY6JZCy5'; // 無料相談の日程調整URL
 
 const HEADER = ['受信日時', 'id', 'event', 'email', 'company', 'roadmap', 'entityType', 'segment', 'channel', 'startMonth',
@@ -105,7 +107,10 @@ function day0Body_(p) {
     '4. 補正連絡に期限内に対応する\n' +
     '5. 許可待ちの2〜3ヶ月で、求人DBの契約と求職者の集客経路を決める\n' +
     '6. 許可証を受け取ったら、ツールの「許可が出た」ボタンを押す\n\n' +
-    (p.roadmap === '1' ? '「免許取得から月商300万円までのロードマップ」は、明日から数回に分けてお送りします。\n' : '') +
+    '■ 特典資料\n' +
+    '・免許取得から月商300万円までの完全ロードマップ（PDF・9ページ）\n  ' + ROADMAP_PDF + '\n' +
+    '・免許取得までのTODO表（A4・1枚）\n  ' + TODO_PDF + '\n\n' +
+    (p.roadmap === '1' ? 'ロードマップの各章のポイントは、明日から数回に分けてメールでもお送りします。\n' : '') +
     'ご不明点はこのメールに返信してください。' + sig_();
 }
 function day1Body_(p) {
@@ -168,6 +173,7 @@ function sendResume_(p) {
   GmailApp.sendEmail(p.email, '【一時保存】免許申請書類の入力を再開するには', greet_(p) +
     '入力内容の一時保存を有効にしました。入力内容は登録時にお使いのブラウザに保存されています。\n' +
     '続きは、同じブラウザで次のページを開くと再開できます。\n' + TOOL_URL + 'form.html\n\n' +
+    '特典資料は今すぐご覧いただけます。\n・免許取得から月商300万円までの完全ロードマップ: ' + ROADMAP_PDF + '\n・免許取得までのTODO表: ' + TODO_PDF + '\n\n' +
     '書類が完成すると、許可までのTODOと必要書類の一覧を改めてお送りします。' + sig_(), { name: FROM_NAME, replyTo: REPLY_TO });
 }
 

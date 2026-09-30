@@ -1,0 +1,444 @@
+[
+{
+"pref": "北海道",
+"bureau": "北海道労働局",
+"dept": "職業安定部 需給調整事業課",
+"postal": "060-8566",
+"address": "北海道札幌市北区北8条西2丁目1番1号 札幌第1合同庁舎",
+"tel": "011-709-2311",
+"url": "https://jsite.mhlw.go.jp/hokkaido-roudoukyoku/roudoukyoku/hokkaido02.html",
+"tel_note": "代表"
+},
+{
+"pref": "青森県",
+"bureau": "青森労働局",
+"dept": "職業安定部 職業安定課 需給調整事業室",
+"postal": "030-8558",
+"address": "青森県青森市新町2丁目4番25号 青森合同庁舎",
+"tel": "017-721-2000",
+"tel_note": "代表",
+"url": "https://jsite.mhlw.go.jp/aomori-roudoukyoku/hourei_seido_tetsuzuki/yuryou_muryou_shokugyou.html",
+"note": "footer"
+},
+{
+"pref": "岩手県",
+"bureau": "岩手労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "020-8522",
+"address": "岩手県盛岡市盛岡駅西通1丁目9番15号 盛岡第2合同庁舎5階",
+"tel": null,
+"url": "https://jsite.mhlw.go.jp/iwate-roudoukyoku/roudoukyoku/roudoukyoku/syozaichi.html"
+},
+{
+"pref": "宮城県",
+"bureau": "宮城労働局",
+"dept": "職業安定部 需給調整事業課",
+"postal": "983-8585",
+"address": "宮城県仙台市宮城野区鉄砲町1番地 仙台第4合同庁舎",
+"tel": "022-292-6071",
+"url": "https://jsite.mhlw.go.jp/miyagi-roudoukyoku/4/410/413.html"
+},
+{
+"pref": "秋田県",
+"bureau": "秋田労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "010-0951",
+"address": "秋田県秋田市山王3丁目1番7号 東カンビル5階",
+"tel": "018-883-0006",
+"url": "https://jsite.mhlw.go.jp/akita-roudoukyoku/madoguchi_annai/address/_120538.html"
+},
+{
+"pref": "山形県",
+"bureau": "山形労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "990-8567",
+"address": "山形県山形市香澄町3丁目2番1号 山交ビル3階",
+"tel": "023-676-4618",
+"url": "https://jsite.mhlw.go.jp/yamagata-roudoukyoku/hourei_seido_tetsuzuki/antei/anteika_00010.html",
+"note": "footer"
+},
+{
+"pref": "福島県",
+"bureau": "福島労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "960-8513",
+"address": "福島県福島市花園町5番46号 福島第二地方合同庁舎",
+"tel": "024-529-5746",
+"url": "https://jsite.mhlw.go.jp/fukushima-roudoukyoku/hourei_seido_tetsuzuki/yuryou_muryou_shokugyou.html",
+"note": "footer"
+},
+{
+"pref": "茨城県",
+"bureau": "茨城労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "310-8511",
+"address": "茨城県水戸市宮町1丁目8番31号 茨城労働総合庁舎7階",
+"tel": "029-224-6239",
+"url": "https://jsite.mhlw.go.jp/ibaraki-roudoukyoku/hourei_seido_tetsuzuki/shokugyou_shoukai.html"
+},
+{
+"pref": "栃木県",
+"bureau": "栃木労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "320-0845",
+"address": "栃木県宇都宮市明保野町1番4号 宇都宮第2地方合同庁舎",
+"tel": "028-610-3556",
+"url": "https://jsite.mhlw.go.jp/tochigi-roudoukyoku/hourei_seido_tetsuzuki/_85646.html",
+"note": "footer"
+},
+{
+"pref": "群馬県",
+"bureau": "群馬労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "371-0854",
+"address": "群馬県前橋市大渡町1丁目10番7号 群馬県公社総合ビル9階",
+"tel": "027-210-5105",
+"url": "https://jsite.mhlw.go.jp/gunma-roudoukyoku/roudoukyoku/shyozaichi.html"
+},
+{
+"pref": "埼玉県",
+"bureau": "埼玉労働局",
+"dept": "職業安定部 需給調整事業課",
+"postal": "330-6016",
+"address": "埼玉県さいたま市中央区新都心11番2号 ランド・アクシス・タワー",
+"tel": "048-600-6211",
+"url": "https://jsite.mhlw.go.jp/saitama-roudoukyoku/roudoukyoku/roudou.html"
+},
+{
+"pref": "千葉県",
+"bureau": "千葉労働局",
+"dept": "職業安定部 需給調整事業課",
+"postal": "260-8612",
+"address": "千葉県千葉市中央区中央4丁目11番1号 千葉第2地方合同庁舎3階",
+"tel": "043-221-5500",
+"url": "https://jsite.mhlw.go.jp/chiba-roudoukyoku/roudoukyoku/gyoumu_naiyou.html"
+},
+{
+"pref": "東京都",
+"bureau": "東京労働局",
+"dept": "需給調整事業部 需給調整事業第一課（許可・更新・変更届・事業報告書）",
+"postal": "108-8432",
+"address": "東京都港区海岸3丁目9番45号",
+"tel": "03-3452-1472",
+"url": "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/riyousha_mokuteki_menu/mokuteki_naiyou/haken_part/madoguchi003/002.html"
+},
+{
+"pref": "神奈川県",
+"bureau": "神奈川労働局",
+"dept": "職業安定部 需給調整事業課",
+"postal": "231-0015",
+"address": "神奈川県横浜市中区尾上町5丁目77番2号 大和地所馬車道ビル2階",
+"tel": "045-650-2810",
+"url": "https://jsite.mhlw.go.jp/kanagawa-roudoukyoku/hourei_seido_tetsuzuki/oshirase.html"
+},
+{
+"pref": "新潟県",
+"bureau": "新潟労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "950-8625",
+"address": "新潟県新潟市中央区美咲町1丁目2番1号 新潟美咲合同庁舎2号館",
+"tel": "025-288-3510",
+"url": "https://jsite.mhlw.go.jp/niigata-hellowork/jigyounushi/roudousya.html",
+"note": "footer"
+},
+{
+"pref": "富山県",
+"bureau": "富山労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "930-8509",
+"address": "富山県富山市神通本町1丁目5番5号 富山労働総合庁舎6階",
+"tel": "076-432-2718",
+"url": "https://jsite.mhlw.go.jp/toyama-roudoukyoku/hourei_seido_tetsuzuki/roudousha_haken.html"
+},
+{
+"pref": "石川県",
+"bureau": "石川労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "920-0024",
+"address": "石川県金沢市西念3丁目4番1号 金沢駅西合同庁舎5階",
+"tel": "076-265-4435",
+"url": "https://jsite.mhlw.go.jp/ishikawa-roudoukyoku/hourei_seido_tetsuzuki/syokugyou_antei/haken.html"
+},
+{
+"pref": "福井県",
+"bureau": "福井労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "910-8559",
+"address": "福井県福井市春山1丁目1番54号 福井春山合同庁舎9階",
+"tel": "0776-26-8617",
+"url": "https://jsite.mhlw.go.jp/fukui-roudoukyoku/roudoukyoku/roudoukyoku/goannai.html"
+},
+{
+"pref": "山梨県",
+"bureau": "山梨労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "400-8577",
+"address": "山梨県甲府市丸の内1丁目1番11号 4階",
+"tel": "055-225-2862",
+"url": "https://jsite.mhlw.go.jp/yamanashi-roudoukyoku/roudoukyoku/yamanashi.html"
+},
+{
+"pref": "長野県",
+"bureau": "長野労働局",
+"dept": "職業安定部 職業安定課 需給調整事業室（予約制）",
+"postal": "380-8572",
+"address": "長野県長野市中御所1丁目22番1号",
+"tel": "026-226-0864",
+"url": "https://jsite.mhlw.go.jp/nagano-roudoukyoku/hourei_seido_tetsuzuki/yuryou_muryou_shokugyou.html",
+"note": "footer"
+},
+{
+"pref": "岐阜県",
+"bureau": "岐阜労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "500-8723",
+"address": "岐阜県岐阜市金竜町5丁目13番地 岐阜合同庁舎4階",
+"tel": "058-245-1312",
+"url": "https://jsite.mhlw.go.jp/gifu-roudoukyoku/roudoukyoku/roudoukyoku.html"
+},
+{
+"pref": "静岡県",
+"bureau": "静岡労働局",
+"dept": "職業安定部 需給調整事業課",
+"postal": "420-8639",
+"address": "静岡県静岡市葵区追手町9番50号 静岡地方合同庁舎",
+"tel": "054-271-9980",
+"url": "https://jsite.mhlw.go.jp/shizuoka-roudoukyoku/hourei_seido_tetsuzuki/roudousha_haken.html",
+"note": "footer"
+},
+{
+"pref": "愛知県",
+"bureau": "愛知労働局",
+"dept": "需給調整事業部 需給調整事業第1課（許可申請・事業報告等）",
+"postal": "460-0008",
+"address": "愛知県名古屋市中区栄2丁目3番1号 名古屋広小路ビルヂング（広小路庁舎）",
+"tel": "052-219-5587",
+"url": "https://jsite.mhlw.go.jp/aichi-roudoukyoku/roudoukyoku/_121771/tyoushachizu.html"
+},
+{
+"pref": "三重県",
+"bureau": "三重労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "514-8524",
+"address": "三重県津市島崎町327番2 津第二地方合同庁舎",
+"tel": "059-226-2165",
+"url": "https://jsite.mhlw.go.jp/mie-roudoukyoku/roudoukyoku/gyoumu_naiyou.html"
+},
+{
+"pref": "滋賀県",
+"bureau": "滋賀労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "520-0806",
+"address": "滋賀県大津市打出浜14番15号 滋賀労働総合庁舎5階",
+"tel": "077-526-8617",
+"url": "https://jsite.mhlw.go.jp/shiga-roudoukyoku/roudoukyoku/roudou-1.html"
+},
+{
+"pref": "京都府",
+"bureau": "京都労働局",
+"dept": "職業安定部 需給調整事業課",
+"postal": "604-0846",
+"address": "京都府京都市中京区両替町通御池上ル金吹町451",
+"tel": "075-241-3225",
+"url": "https://jsite.mhlw.go.jp/kyoto-roudoukyoku/hourei_seido_tetsuzuki/yuryou_muryou_shokugyou.html",
+"note": "footer"
+},
+{
+"pref": "大阪府",
+"bureau": "大阪労働局",
+"dept": "需給調整事業部 需給調整事業第一課（許可・届出）",
+"postal": "540-0028",
+"address": "大阪府大阪市中央区常盤町1丁目3番8号 中央大通FNビル14階",
+"tel": "06-4790-6303",
+"url": "https://jsite.mhlw.go.jp/osaka-roudoukyoku/hourei_seido_tetsuzuki/yuryou_muryou_shokugyou.html"
+},
+{
+"pref": "兵庫県",
+"bureau": "兵庫労働局",
+"dept": "職業安定部 需給調整事業課",
+"postal": "650-0044",
+"address": "兵庫県神戸市中央区東川崎町1丁目1番3号 神戸クリスタルタワー",
+"tel": "078-367-0831",
+"url": "https://jsite.mhlw.go.jp/hyogo-roudoukyoku/hourei_seido_tetsuzuki/yuryo_muryo.html",
+"note": "footer"
+},
+{
+"pref": "奈良県",
+"bureau": "奈良労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "630-8570",
+"address": "奈良県奈良市法蓮町387番地 奈良第3地方合同庁舎2階",
+"tel": "0742-88-0245",
+"url": "https://jsite.mhlw.go.jp/nara-roudoukyoku/roudoukyoku/roudoukyoku.html"
+},
+{
+"pref": "和歌山県",
+"bureau": "和歌山労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "640-8581",
+"address": "和歌山県和歌山市黒田2丁目3番3号 和歌山労働総合庁舎",
+"tel": "073-488-1163",
+"url": "https://jsite.mhlw.go.jp/wakayama-roudoukyoku/hourei_seido_tetsuzuki/rouodushahakenjigyou.html",
+"note": "footer"
+},
+{
+"pref": "鳥取県",
+"bureau": "鳥取労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "680-8522",
+"address": "鳥取県鳥取市富安2丁目89番9号",
+"tel": "0857-88-0022",
+"url": "https://jsite.mhlw.go.jp/tottori-roudoukyoku/hourei_seido_tetsuzuki/yuryou_muryou_shokugyou.html",
+"note": "footer"
+},
+{
+"pref": "島根県",
+"bureau": "島根労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "690-0841",
+"address": "島根県松江市向島町134番10 松江地方合同庁舎5階",
+"tel": "0852-20-7017",
+"url": "https://jsite.mhlw.go.jp/shimane-roudoukyoku/roudoukyoku/gyoumu_naiyou.html"
+},
+{
+"pref": "岡山県",
+"bureau": "岡山労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "700-8611",
+"address": "岡山県岡山市北区下石井1丁目4番1号 岡山第2合同庁舎3階",
+"tel": "086-801-5110",
+"url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/roudoukyoku/annai01_1.html"
+},
+{
+"pref": "広島県",
+"bureau": "広島労働局",
+"dept": "職業安定部 需給調整事業課",
+"postal": "730-8538",
+"address": "広島県広島市中区上八丁堀6番30号 広島合同庁舎2号館",
+"tel": "082-511-1066",
+"url": "https://jsite.mhlw.go.jp/hiroshima-roudoukyoku/hourei_seido_tetsuzuki/yuryou_muryou_shokugyou.html",
+"note": "footer"
+},
+{
+"pref": "山口県",
+"bureau": "山口労働局",
+"dept": "職業安定部 需給調整事業室（予約制）",
+"postal": "753-8510",
+"address": "山口県山口市中河原町6番16号 山口地方合同庁舎2号館7階",
+"tel": "083-995-0385",
+"url": "https://jsite.mhlw.go.jp/yamaguchi-roudoukyoku/hourei_seido_tetsuzuki/roudousha_haken.html"
+},
+{
+"pref": "徳島県",
+"bureau": "徳島労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "770-0851",
+"address": "徳島県徳島市徳島町城内6番地6 徳島地方合同庁舎4階",
+"tel": "088-611-5386",
+"url": "https://jsite.mhlw.go.jp/tokushima-roudoukyoku/hourei_seido_tetsuzuki/yuryou_muryou_shokugyou.html"
+},
+{
+"pref": "香川県",
+"bureau": "香川労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "760-0019",
+"address": "香川県高松市サンポート3番33号 高松サンポート合同庁舎",
+"tel": "087-806-0010",
+"url": "https://jsite.mhlw.go.jp/kagawa-roudoukyoku/roudoukyoku/1-3.html"
+},
+{
+"pref": "愛媛県",
+"bureau": "愛媛労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "790-8538",
+"address": "愛媛県松山市若草町4番3号 松山若草合同庁舎",
+"tel": "089-943-5833",
+"url": "https://jsite.mhlw.go.jp/ehime-roudoukyoku/roudoukyoku/gyoumu_naiyou/231111_001.html"
+},
+{
+"pref": "高知県",
+"bureau": "高知労働局",
+"dept": "職業安定部 職業安定課 需給調整事業室",
+"postal": "781-9548",
+"address": "高知県高知市南金田1番39号",
+"tel": "088-885-6051",
+"url": "https://jsite.mhlw.go.jp/kochi-roudoukyoku/hourei_seido_tetsuzuki/roudousha_haken.html",
+"note": "footer"
+},
+{
+"pref": "福岡県",
+"bureau": "福岡労働局",
+"dept": "職業安定部 需給調整事業課",
+"postal": "812-0013",
+"address": "福岡県福岡市博多区博多駅東2丁目11番1号 福岡合同庁舎本館1階",
+"tel": "092-434-9711",
+"url": "https://jsite.mhlw.go.jp/fukuoka-roudoukyoku/roudoukyoku/_85827/_86222.html"
+},
+{
+"pref": "佐賀県",
+"bureau": "佐賀労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "840-0801",
+"address": "佐賀県佐賀市駅前中央3丁目3番20号 佐賀第2合同庁舎",
+"tel": "0952-32-7219",
+"url": "https://jsite.mhlw.go.jp/saga-roudoukyoku/roudoukyoku/busho_ichiran.html"
+},
+{
+"pref": "長崎県",
+"bureau": "長崎労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "850-0033",
+"address": "長崎県長崎市万才町7番1号 TBM長崎ビル6階",
+"tel": "095-801-0045",
+"url": "https://jsite.mhlw.go.jp/nagasaki-roudoukyoku/roudoukyoku/soshiki.html"
+},
+{
+"pref": "熊本県",
+"bureau": "熊本労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "860-8514",
+"address": "熊本県熊本市西区春日2丁目10番1号 熊本地方合同庁舎A棟9階",
+"tel": "096-211-1731",
+"url": "https://jsite.mhlw.go.jp/kumamoto-roudoukyoku/madoguchi_annai/sosiki.html"
+},
+{
+"pref": "大分県",
+"bureau": "大分労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "870-0037",
+"address": "大分県大分市東春日町17番20号 大分第2ソフィアプラザビル",
+"tel": "097-535-2095",
+"url": "https://jsite.mhlw.go.jp/oita-roudoukyoku/hourei_seido_tetsuzuki/yuryou_muryou_shokugyou.html",
+"note": "footer"
+},
+{
+"pref": "宮崎県",
+"bureau": "宮崎労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "880-0805",
+"address": "宮崎県宮崎市橘通東3丁目1番22号 宮崎合同庁舎",
+"tel": "0985-38-8823",
+"url": "https://jsite.mhlw.go.jp/miyazaki-roudoukyoku/hourei_seido_tetsuzuki/roudousha_haken.html",
+"note": "footer"
+},
+{
+"pref": "鹿児島県",
+"bureau": "鹿児島労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "892-8535",
+"address": "鹿児島県鹿児島市山下町13番21号 鹿児島合同庁舎",
+"tel": "099-803-7111",
+"url": "https://jsite.mhlw.go.jp/kagoshima-roudoukyoku/hourei_seido_tetsuzuki/roudousha_haken.html",
+"note": "footer"
+},
+{
+"pref": "沖縄県",
+"bureau": "沖縄労働局",
+"dept": "職業安定部 需給調整事業室",
+"postal": "900-0006",
+"address": "沖縄県那覇市おもろまち2丁目1番1号 那覇第2地方合同庁舎1号館3階",
+"tel": "098-868-1637",
+"url": "https://jsite.mhlw.go.jp/okinawa-roudoukyoku/hourei_seido_tetsuzuki/roudousha_haken.html",
+"note": "footer"
+}
+]

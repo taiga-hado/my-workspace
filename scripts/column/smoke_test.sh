@@ -14,6 +14,9 @@
 #   11 = service card text missing from top page
 #   12 = GTM ID mismatch
 #   13 = sitemap missing important URL
+#   14 = 資料ダウンロードフォーム/領域checkboxが欠けている
+#   15 = フォームの送信先(GAS URL)が変わった
+#   16 = 資料ページに面談予約URLがない
 
 BASE="https://kyusyokusyasokyaku-no-madoguchi.com"
 FAILED=0
@@ -29,6 +32,13 @@ CRITICAL_PAGES=(
   "/shinsotsu/"
   "/column/"
   "/thanks/"
+  "/document/"
+  "/assets/inquiry.js"
+  "/assets/inquiry.css"
+  "/dl/madoguchi-chuto.pdf"
+  "/dl/madoguchi-shinsotsu.pdf"
+  "/images/doc/chuto/s01.webp"
+  "/images/doc/shinsotsu/s01.webp"
 )
 
 for path in "${CRITICAL_PAGES[@]}"; do
@@ -74,39 +84,58 @@ for url in "${SITEMAP_REQUIRED[@]}"; do
   fi
 done
 
-# === 5. contact form has checkbox UI with all 3 service options ===
-# Past regression: GTM sweep replaced contact/index.html with an older
-# dropdown-based version, silently removing service options and the
-# checkbox UI. This guards against that.
+# === 5. 資料ダウンロードフォーム（2026-10-01〜 クラウド型）が両ページにある ===
+# トップ(#contact)と /contact/ の両方に form.iq-form があり、領域の checkbox
+# （第二新卒・未経験領域 / 新卒領域）が揃っていること。
+# 「相談して決めたい」は checkbox としては出さず、未選択時に inquiry.js が自動で送る。
+# 過去の regression: GTM sweep が contact/index.html を古い dropdown 版で上書きした。
+TOP_HTML_FORM=$(echo "$TOP_HTML" | grep -c 'class="iq-form"')
 CONTACT_HTML=$(curl -s "$BASE/contact/")
+CONTACT_FORM=$(echo "$CONTACT_HTML" | grep -c 'class="iq-form"')
+if [ "$TOP_HTML_FORM" -lt 1 ] || [ "$CONTACT_FORM" -lt 1 ]; then
+  REPORT="$REPORT\n✗ 資料ダウンロードフォーム(form.iq-form)が見つからない (top=$TOP_HTML_FORM contact=$CONTACT_FORM)"
+  FAILED=14
+fi
 EXPECTED_SERVICE_VALUES=(
   "第二新卒・未経験領域"
   "新卒領域"
-  "相談して決めたい"
 )
-
 for opt in "${EXPECTED_SERVICE_VALUES[@]}"; do
-  if ! echo "$CONTACT_HTML" | grep -q "value=\"$opt\""; then
-    REPORT="$REPORT\n✗ contact page missing service option: \"$opt\""
-    FAILED=14
-  fi
+  for page in "$TOP_HTML" "$CONTACT_HTML"; do
+    if ! echo "$page" | grep -q "value=\"$opt\""; then
+      REPORT="$REPORT\n✗ service option missing: \"$opt\""
+      FAILED=14
+    fi
+  done
 done
-
-CHECKBOX_COUNT=$(echo "$CONTACT_HTML" | grep -c 'type="checkbox" name="service"')
-if [ "$CHECKBOX_COUNT" -lt 3 ]; then
-  REPORT="$REPORT\n✗ contact page should have ≥3 service checkboxes (got $CHECKBOX_COUNT). The dropdown version may have been re-introduced."
+# /contact/ にはライトプラン（事前登録）の checkbox も残す（/lite/ からの導線）
+if ! echo "$CONTACT_HTML" | grep -q 'value="ライトプラン（応募課金型）"'; then
+  REPORT="$REPORT\n✗ contact page missing ライトプラン checkbox"
   FAILED=14
 fi
 
-# === 6. contact form submits to the current Apps Script Web App URL ===
-# Past regression: GAS endpoint failed silently for 5 days; nobody noticed
-# because mode:'no-cors' fetch always reports success. This guards against
-# the WEB_APP_URL drifting from the deployed Apps Script endpoint.
+# === 6. フォームの送信先が現行の Apps Script Web App URL である ===
+# 送信ロジックは assets/inquiry.js に集約（2026-10-01）。両ページがそれを読み込んでいること。
+# 過去の regression: GAS endpoint が5日間サイレントに失敗（no-cors fetch は常に成功扱い）。
 EXPECTED_GAS_URL='https://script.google.com/macros/s/AKfycbxKPd--F16UiULPqRmbz_jLjWGt-Xy9y_aipISPsgFhFiHcdZsOaSHNoc2AsCZXgQcR/exec'
-if ! echo "$CONTACT_HTML" | grep -q "$EXPECTED_GAS_URL"; then
-  ACTUAL=$(echo "$CONTACT_HTML" | grep -oE "https://script\.google\.com/macros/s/[^']+/exec" | head -1)
-  REPORT="$REPORT\n✗ contact form WEB_APP_URL changed.\n    Expected: $EXPECTED_GAS_URL\n    Got:      $ACTUAL"
+INQUIRY_JS=$(curl -s "$BASE/assets/inquiry.js")
+if ! echo "$INQUIRY_JS" | grep -q "$EXPECTED_GAS_URL"; then
+  ACTUAL=$(echo "$INQUIRY_JS" | grep -oE "https://script\.google\.com/macros/s/[^']+/exec" | head -1)
+  REPORT="$REPORT\n✗ inquiry.js WEB_APP_URL changed.\n    Expected: $EXPECTED_GAS_URL\n    Got:      $ACTUAL"
   FAILED=15
+fi
+for page in "$TOP_HTML" "$CONTACT_HTML"; do
+  if ! echo "$page" | grep -q 'assets/inquiry.js'; then
+    REPORT="$REPORT\n✗ a form page does not load assets/inquiry.js"
+    FAILED=15
+  fi
+done
+
+# === 7. 資料ページに面談予約URLがある ===
+THANKS_HTML=$(curl -s "$BASE/thanks/")
+if ! echo "$THANKS_HTML" | grep -q 'calendar.google.com/calendar/appointments/schedules/AcZssZ3I3OA0rCgTVGeRd0dgFnZX4-qzPcwhYerfWLX4yPs40cETVoq51xu1UGucxzUNu7TgWf9gfldD'; then
+  REPORT="$REPORT\n✗ /thanks/ に面談予約URL（Googleカレンダー予約ページ）がない"
+  FAILED=16
 fi
 
 # === Report ===

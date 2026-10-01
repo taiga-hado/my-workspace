@@ -1,5 +1,5 @@
 // =============================================================================
-// 【ミラー / バックアップ】求職者送客の窓口 - 問い合わせフォーム受信 GAS（v17）
+// 【ミラー / バックアップ】求職者送客の窓口 - 問い合わせフォーム受信 GAS（v17.1）
 // -----------------------------------------------------------------------------
 // 本番GASの参照用ミラー（ここで実行されるコードではありません）。
 // 正本: スプレッドシート「求職者送客の窓口DB」にバインドされたコンテナバウンドGAS『コード.gs』。
@@ -9,6 +9,7 @@
 // バックアップミラー: リポジトリ my-workspace の soukyaku-madoguchi/apps-script/form-handler.gs
 // このコードを変更したらミラーも必ず同期すること（SLACK_WEBHOOK_URL はミラーでは伏字）。
 //
+// v17.1 (2026-10-01): 資料案内から「ブラウザで見る（/document/）」の行を削除しPDFのURLだけに（ユーザー指示）。DOC_PAGE_* 定数は未使用で残置
 // v17 (2026-10-01): 自動返信を「下書き作成→Slack👍で送信」から**即時自動送信**に変更（ユーザー指示）。
 //   - doPost STEP 3 で GmailApp.sendEmail。失敗時のみ従来どおり下書きを作成。M列に「自動送信済み」を記録
 //   - Slack通知に「自動返信は送信済み・👍不要」を明記（Inquiry Sender の👍送信は下書きが無ければ何もしない）
@@ -101,8 +102,8 @@ function buildBody_(p) {
   if (!showChuto && !showShinsotsu && !showLite) { showChuto = true; showShinsotsu = true; }
 
   var docs = [];
-  if (showChuto) docs.push('▼ご紹介資料（第二新卒・未経験領域）全12ページ\n　PDF： ' + DOC_CHUTO + '\n　ブラウザで見る： ' + DOC_PAGE_CHUTO);
-  if (showShinsotsu) docs.push('▼ご紹介資料（新卒領域）全11ページ\n　PDF： ' + DOC_SHINSOTSU + '\n　ブラウザで見る： ' + DOC_PAGE_SHINSOTSU);
+  if (showChuto) docs.push('▼ご紹介資料（第二新卒・未経験領域）全12ページ\n' + DOC_CHUTO);
+  if (showShinsotsu) docs.push('▼ご紹介資料（新卒領域）全11ページ\n' + DOC_SHINSOTSU);
 
   var docSection = '';
   if (docs.length) {

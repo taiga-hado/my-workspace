@@ -108,11 +108,7 @@ for opt in "${EXPECTED_SERVICE_VALUES[@]}"; do
     fi
   done
 done
-# /contact/ にはライトプラン（事前登録）の checkbox も残す（/lite/ からの導線）
-if ! echo "$CONTACT_HTML" | grep -q 'value="ライトプラン（応募課金型）"'; then
-  REPORT="$REPORT\n✗ contact page missing ライトプラン checkbox"
-  FAILED=14
-fi
+# ライトプランは 2026-10-01 にサイトから一時撤去（.vercelignore で /lite/ も非公開）。復活時はここに checkbox の検査を戻す
 
 # === 6. フォームの送信先が現行の Apps Script Web App URL である ===
 # 送信ロジックは assets/inquiry.js に集約（2026-10-01）。両ページがそれを読み込んでいること。

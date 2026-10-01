@@ -3,3 +3,6 @@
 
 # Server-side Apps Script mirror (backup of the GAS form handler) — never publish
 apps-script/
+
+# ライトプラン（未リリース）は 2026-10-01 にサイトから一時撤去。復活時はこの行を消す（CLAUDE.md「Lite = サイトから一時撤去」）
+lite/

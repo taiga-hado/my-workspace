@@ -22,8 +22,8 @@ In the 「領域別の送客プラン」 section, both must be present with thes
 The legacy 「向け」 naming (e.g. 「第二新卒・未経験層向け」) was deprecated 2026-05-28 — do NOT revert.
 The 保育特化パッケージ card (SERVICE 03 → `/hoiku/`) was REMOVED 2026-06-22 — do NOT re-add unless the 保育 offering is relaunched.
 
-### Top page PLANS section (added 2026-07-29)
-Below the service cards, a `#plans` section presents the 2 pricing plans:
+### Top page PLANS section (added 2026-07-29, **2026-10-01〜 template に退避中**)
+Below the service cards, a `#plans` section presents the 2 pricing plans（現在は `<template>` 内で非表示。ライト復活時に戻す）:
 - 通常プラン（着座成果報酬型・面談着座1件 25,000円〜）
 - ライトプラン（応募課金型・1応募 10,000円）→ links to `/lite/`
 Keep both cards. ライトプラン is also linked from header nav, footer Services, and a top-page FAQ item.
@@ -33,13 +33,23 @@ Keep both cards. ライトプラン is also linked from header nav, footer Servi
 - /lite/ のフロー帯は `.flow-bands { grid-template-columns: 3fr 2fr; }` で上書き（site.css既定は通常フロー用の4:1。窓口=STEP01〜03/エージェント=STEP04〜05のため）。
 - トップの背景交互リズム: services(soft)→plans(白)→cases(soft)→pricing-model(白)。PRICING MODELセクションには「※通常プランのご説明です」の注記＋/lite/リンクあり。
 
-### Lite = pre-registration until launch (2026-07-29〜)
+### Lite = サイトから一時撤去（2026-10-01〜）
+ライトプランは未リリースのため、**サイト上の露出を全部止めた**（ユーザー指示）。復活時にすぐ戻せるよう、削除ではなく退避にしてある：
+- `index.html`：PLANSセクションは `<template id="lite-plans-section">` の中に丸ごと退避（描画されない）。ナビ／フッター／PRICING MODELの注記／FAQ項目は `<!-- LITE: … -->` コメント。背景リズムは services(soft)→cases(白)→pricing-model(soft) に変えてある（復活時は cases=soft・pricing-model=白に戻す）。
+- `contact/index.html`：ライトの checkbox を `<!-- LITE: … -->` コメント。
+- `sitemap.xml`：/lite/ の `<url>` をコメント。
+- `.vercelignore`：`lite/` を追加して非公開（ファイルは repo に残る）。
+- `scripts/column/smoke_test.sh`：ライト checkbox の検査を外した。
+- GAS（buildBody_ のライト案内文）と `/lite/index.html` はそのまま。
+**復活手順**：上の各所の `LITE:` コメント／template を外す → .vercelignore から `lite/` を消す → smoke_test に checkbox 検査を戻す → push。
+
+### （参考・撤去前）Lite = pre-registration until launch (2026-07-29〜)
 ライトプランは**未リリース**のため、/lite/・トップ・/contact/ は「現在リリース準備中につき事前登録受付中」の打ち出しで統一（CTA=事前登録する）。正式リリース時にこの表記を外す。
 
 ### 資料ダウンロード導線（2026-10-01〜、求職者送客クラウドの導線を踏襲）
-- トップの最終CTA（`#contact`）と `/contact/` は**資料ダウンロード型**：紺パネル＋資料の扇＋フォーム（会社名・姓名・会社メール・**ご希望のセグメント checkbox＝必須・1つ以上**）。CVは「フォーム送信」1点。トップから面談予約URLは出さない。
+- トップの最終CTA（`#contact`）と `/contact/` は**資料ダウンロード型**：紺パネル＋資料の扇＋フォーム（会社名・会社メール・姓名・**ご希望のセグメント checkbox＝必須・1つ以上**。必須バッジは出さず「任意」「複数可」だけ表示。部署名欄は廃止）。CVは「フォーム送信」1点。トップから面談予約URLは出さない。
 - フォーム共通ロジック＝`assets/inquiry.js`（POST先GASは従来と同じ、フリーメール拒否、attribution同梱、localStorage保存、送信後 `/thanks/?area=chuto|shinsotsu|both` へ遷移）。スタイル＝`assets/inquiry.css`（`.dl-*` `.iq-*` `.doc-*`）。
-- セグメントは必須なので未選択では送信できない（inquiry.js で検証）。GAS側の「領域不明なら両領域」フォールバックは手動リード等のために残している。`/contact/` には ライトプラン（事前登録）checkbox も残している（/lite/ からの導線用）。
+- セグメントは必須なので未選択では送信できない（inquiry.js で検証）。GAS側の「領域不明なら両領域」フォールバックは手動リード等のために残している。`/contact/` のライトプラン checkbox は 2026-10-01 にコメントアウト（上記 Lite 撤去を参照）。
 - 資料ページ `/thanks/`・`/document/`：ご紹介資料は**商談につなげる用**（料金表・今後の流れ・注意事項は載せない。面談で案内）。面談予約URL＝Googleカレンダー予約ページ `https://calendar.google.com/calendar/appointments/schedules/AcZssZ3I3OA0rCgTVGeRd0dgFnZX4-qzPcwhYerfWLX4yPs40cETVoq51xu1UGucxzUNu7TgWf9gfldD`（GASの SCHEDULE_URL と同じ）。
 - 資料を直すとき：`madoguchi-doc-deck/{chuto,shinsotsu}.html` を編集 → `./build.sh chuto` → PDFを `dl/` へ、`out/` の webp を `images/doc/` へコピー（`madoguchi-doc-deck/README.md`）。
 - GAS v16 (2026-10-01): 返信メールを説明動画からご紹介資料（PDF URL＋/document/）＋面談予約URLに変更。動画URL定数は削除。

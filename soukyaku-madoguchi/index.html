@@ -178,7 +178,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
       <nav class="site-nav">
         <div class="site-nav-links">
-          <a href="lite/">ライトプラン</a>
+          <!-- LITE: <a href="lite/">ライトプラン</a> -->
           <a href="column/">コラム</a>
         </div>
         <a href="#contact" class="btn btn-dark btn-sm">資料ダウンロード</a>
@@ -353,6 +353,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- LITE: PLANS セクションはライトプラン復活まで <template> に退避（2026-10-01）。復活時は template タグを外し、下の cases/pricing-model の背景を soft/白に戻す -->
+  <template id="lite-plans-section">
   <!-- PLANS (通常 / ライト) -->
   <section class="section" id="plans">
     <div class="container">
@@ -397,8 +399,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  </template>
+
   <!-- CASES -->
-  <section class="section bg-soft" id="cases">
+  <section class="section" id="cases">
     <div class="container">
       <div class="section-head" data-reveal>
         <span class="eyebrow">CASE STUDY</span>
@@ -451,12 +455,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- PRICING MODEL EXPLAINER -->
-  <section class="section pricing-model">
+  <section class="section bg-soft pricing-model">
     <div class="container">
       <div class="section-head" data-reveal>
         <span class="eyebrow eyebrow-light">PRICING MODEL</span>
         <h2 class="heading-xl">"面談実施した<span class="gold">分だけ</span>"<br>のシンプルな料金体系</h2>
-        <p class="lead lead-center" style="margin-top: 16px;">広告費・運用費・カウンセリング費用——すべて不要。ご請求は"面談着座"の件数だけ。<br><span style="font-size: 0.85em; opacity: 0.8;">※通常プラン（着座成果報酬型）のご説明です。応募課金型は<a href="lite/" style="color: inherit; text-decoration: underline;">ライトプラン</a>をご覧ください。</span></p>
+        <p class="lead lead-center" style="margin-top: 16px;">広告費・運用費・カウンセリング費用——すべて不要。ご請求は"面談着座"の件数だけ。</p><!-- LITE: <span style="font-size: 0.85em; opacity: 0.8;">※通常プラン（着座成果報酬型）のご説明です。応募課金型は<a href="lite/" style="color: inherit; text-decoration: underline;">ライトプラン</a>をご覧ください。</span> -->
       </div>
 
       <div class="pm-panel" data-reveal>
@@ -708,10 +712,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <summary class="faq-q"><span class="faq-q-text">料金体系を教えてください。</span></summary>
           <div class="faq-a">完全着座成果報酬型です。初期費用・月額費用は0円、最低契約期間の縛りもありません。面談が実際に着座した件数分のみご請求いたします。詳細な送客単価は、御社の獲得したい求職者像・月間希望面談数に応じて個別にご提案いたします。</div>
         </details>
+        <!-- LITE:FAQ:START（ライトプラン復活時にコメントを外す）
         <details class="faq-item" data-reveal>
           <summary class="faq-q"><span class="faq-q-text">応募課金型のプランはありますか？</span></summary>
           <div class="faq-a">SNS広告で獲得した応募リードを1応募ごとの固定単価でご提供する応募課金型プラン「<a href="lite/">求職者送客の窓口 ライト</a>」を現在リリース準備中で、事前登録を受付中です。架電・面談を自社CAでグリップしたいエージェント様におすすめです。事前登録いただいた企業様から順に、料金・提供開始時期の詳細をオンライン面談にてご案内いたします。</div>
         </details>
+        LITE:FAQ:END -->
         <details class="faq-item" data-reveal>
           <summary class="faq-q"><span class="faq-q-text">どのような求職者が送客されますか？</span></summary>
           <div class="faq-a">送客するターゲットにより変動します。詳細はお問い合わせください。</div>
@@ -779,15 +785,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="dl-formbox">
           <form class="iq-form" id="contactForm" novalidate data-tag="top">
             <div class="row2">
-              <label>会社名<i>必須</i><input type="text" name="company" required maxlength="120" autocomplete="organization" placeholder="株式会社○○"></label>
-              <label>メールアドレス（会社）<i>必須</i><input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="name@company.co.jp"></label>
+              <label>会社名<input type="text" name="company" required maxlength="120" autocomplete="organization" placeholder="株式会社○○"></label>
+              <label>メールアドレス（会社）<input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="name@company.co.jp"></label>
             </div>
             <div class="row2">
-              <label>姓<i>必須</i><input type="text" name="lastName" required maxlength="40" autocomplete="family-name" placeholder="山田"></label>
-              <label>名<i>必須</i><input type="text" name="firstName" required maxlength="40" autocomplete="given-name" placeholder="太郎"></label>
+              <label>姓<input type="text" name="lastName" required maxlength="40" autocomplete="family-name" placeholder="山田"></label>
+              <label>名<input type="text" name="firstName" required maxlength="40" autocomplete="given-name" placeholder="太郎"></label>
             </div>
             <div>
-              <label style="margin-bottom:6px">ご希望のセグメント<i>必須</i><i class="opt">複数可</i></label>
+              <label style="margin-bottom:6px">ご希望のセグメント<i class="opt">複数可</i></label>
               <div class="iq-areas">
                 <label class="iq-area"><input type="checkbox" name="service" value="第二新卒・未経験領域"><span>第二新卒・未経験領域<small>18〜34歳の若手層</small></span></label>
                 <label class="iq-area"><input type="checkbox" name="service" value="新卒領域"><span>新卒領域<small>27卒〜28卒の就活生</small></span></label>
@@ -817,7 +823,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <ul>
             <li><a href="daini-shinsotsu/">第二新卒・未経験層向け</a></li>
             <li><a href="shinsotsu/">新卒向け</a></li>
-            <li><a href="lite/">ライトプラン（応募課金型）</a></li>
+            <!-- LITE: <li><a href="lite/">ライトプラン（応募課金型）</a></li> -->
             <li><a href="https://soukyaku-cloud.com/" target="_blank" rel="noopener">求職者送客クラウド（リード課金型）</a></li>
             <li><a href="/license/">人材紹介 免許申請書類 無料作成ツール</a></li>
           </ul>

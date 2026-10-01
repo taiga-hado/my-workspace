@@ -73,20 +73,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="dl-formbox">
           <form class="iq-form" id="contactForm" novalidate data-tag="contact">
             <div class="row2">
-              <label>会社名<i>必須</i><input type="text" name="company" required maxlength="120" autocomplete="organization" placeholder="株式会社○○"></label>
-              <label>部署名・役職<i class="opt">任意</i><input type="text" name="department" maxlength="80" placeholder="事業責任者・マネージャー等"></label>
+              <label>会社名<input type="text" name="company" required maxlength="120" autocomplete="organization" placeholder="株式会社○○"></label>
+              <label>メールアドレス（会社）<input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="name@company.co.jp"></label>
             </div>
             <div class="row2">
-              <label>姓<i>必須</i><input type="text" name="lastName" required maxlength="40" autocomplete="family-name" placeholder="山田"></label>
-              <label>名<i>必須</i><input type="text" name="firstName" required maxlength="40" autocomplete="given-name" placeholder="太郎"></label>
+              <label>姓<input type="text" name="lastName" required maxlength="40" autocomplete="family-name" placeholder="山田"></label>
+              <label>名<input type="text" name="firstName" required maxlength="40" autocomplete="given-name" placeholder="太郎"></label>
             </div>
-            <label>メールアドレス（会社）<i>必須</i><input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="name@company.co.jp"></label>
             <div>
-              <label style="margin-bottom:6px">ご希望のセグメント<i>必須</i><i class="opt">複数可</i></label>
+              <label style="margin-bottom:6px">ご希望のセグメント<i class="opt">複数可</i></label>
               <div class="iq-areas">
                 <label class="iq-area"><input type="checkbox" name="service" value="第二新卒・未経験領域"><span>第二新卒・未経験領域<small>18〜34歳の若手層</small></span></label>
                 <label class="iq-area"><input type="checkbox" name="service" value="新卒領域"><span>新卒領域<small>27卒〜28卒の就活生</small></span></label>
-                <label class="iq-area"><input type="checkbox" name="service" value="ライトプラン（応募課金型）"><span>ライトプラン（応募課金型）<small>リリース前・事前登録受付中</small></span></label>
+                <!-- LITE: <label class="iq-area"><input type="checkbox" name="service" value="ライトプラン（応募課金型）"><span>ライトプラン（応募課金型）<small>リリース前・事前登録受付中</small></span></label> -->
               </div>
                           </div>
             <label>ご要望・ご質問<i class="opt">任意</i><textarea name="message" maxlength="2000" placeholder="例：営業職・東京で月20件ほど。送客見込みの試算もほしい"></textarea></label>

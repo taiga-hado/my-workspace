@@ -53,6 +53,7 @@ Keep both cards. ライトプラン is also linked from header nav, footer Servi
 - 資料ページ `/thanks/`・`/document/`：ご紹介資料は**商談につなげる用**（料金表・今後の流れ・注意事項は載せない。面談で案内）。面談予約URL＝Googleカレンダー予約ページ `https://calendar.google.com/calendar/appointments/schedules/AcZssZ3I3OA0rCgTVGeRd0dgFnZX4-qzPcwhYerfWLX4yPs40cETVoq51xu1UGucxzUNu7TgWf9gfldD`（GASの SCHEDULE_URL と同じ）。
 - 資料を直すとき：`madoguchi-doc-deck/{chuto,shinsotsu}.html` を編集 → `./build.sh chuto` → PDFを `dl/` へ、`out/` の webp を `images/doc/` へコピー（`madoguchi-doc-deck/README.md`）。
 - GAS v16 (2026-10-01): 返信メールを説明動画からご紹介資料（PDF URL＋/document/）＋面談予約URLに変更。動画URL定数は削除。
+- **GAS v17 (2026-10-01, 本番バージョン29): 自動返信を即時送信**（GmailApp.sendEmail、送信元 t.tanaka@hadoinc.com、失敗時のみ下書き）。M列は「自動送信済み」。Slackの👍送信（Inquiry Sender）は不要になった（下書きが無いので押しても何もしない）。
 
 ### Contact form + GAS (v10, 2026-07-29)
 - /contact/ の「ご興味のあるサービス」checkbox に `ライトプラン（応募課金型）` を追加（value はこの文字列。表示ラベルには「※リリース前・事前登録受付中」付き）。

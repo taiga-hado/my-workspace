@@ -1,5 +1,5 @@
 // =============================================================================
-// 【ミラー / バックアップ】求職者送客の窓口 - 問い合わせフォーム受信 GAS（v16）
+// 【ミラー / バックアップ】求職者送客の窓口 - 問い合わせフォーム受信 GAS（v17）
 // -----------------------------------------------------------------------------
 // 本番GASの参照用ミラー（ここで実行されるコードではありません）。
 // 正本: スプレッドシート「求職者送客の窓口DB」にバインドされたコンテナバウンドGAS『コード.gs』。
@@ -9,6 +9,9 @@
 // バックアップミラー: リポジトリ my-workspace の soukyaku-madoguchi/apps-script/form-handler.gs
 // このコードを変更したらミラーも必ず同期すること（SLACK_WEBHOOK_URL はミラーでは伏字）。
 //
+// v17 (2026-10-01): 自動返信を「下書き作成→Slack👍で送信」から**即時自動送信**に変更（ユーザー指示）。
+//   - doPost STEP 3 で GmailApp.sendEmail。失敗時のみ従来どおり下書きを作成。M列に「自動送信済み」を記録
+//   - Slack通知に「自動返信は送信済み・👍不要」を明記（Inquiry Sender の👍送信は下書きが無ければ何もしない）
 // v16 (2026-10-01): 返信メールを「説明動画」から「ご紹介資料（PDF）＋面談予約」に変更。
 //   - サイト側の導線を資料ダウンロード型（フォーム送信→資料ページ→面談予約）に変えたのに合わせる
 //   - 動画は視聴率が低く効果が薄かったため廃止（VIDEO_CHUTO / VIDEO_SHINSOTSU を削除）
@@ -176,7 +179,8 @@ function doPost(e) {
   try {
     if (writeOk && p.email) {
       var text = '新規問い合わせ\n会社: ' + p.company + '\nお名前: ' + p.lastName + ' ' + p.firstName +
-        '\nメール: ' + p.email + '\nサービス: ' + p.service + '\n月間件数: ' + p.monthly + '\nメッセージ: ' + p.message;
+        '\nメール: ' + p.email + '\nサービス: ' + p.service + '\n月間件数: ' + p.monthly + '\nメッセージ: ' + p.message +
+        '\n（資料＋面談予約URLの自動返信は送信済み。👍での送信は不要）';
       UrlFetchApp.fetch(SLACK_WEBHOOK_URL, {
         method: 'post', contentType: 'application/json',
         payload: JSON.stringify({ text: text }), muteHttpExceptions: true
@@ -186,17 +190,27 @@ function doPost(e) {
     console.error('slack notify error:', err);
   }
 
-  // STEP 3: Gmail下書き（領域別出し分け）＋ draftCreated 記録
+  // STEP 3: 自動返信メールを即時送信（v17〜。以前は下書きを作ってSlackの👍で送っていた）＋ M列に記録
+  // 送信元はこのスクリプトを実行するアカウント（t.tanaka@hadoinc.com）。送信済みメールはGmailの送信済みに残る。
+  // 失敗したときだけ従来どおり下書きを作って、手動で送れるようにする。
   try {
     if (writeOk && p.email) {
-      GmailApp.createDraft(p.email, DRAFT_SUBJECT, buildBody_(p));
+      var mailStatus = '';
+      try {
+        GmailApp.sendEmail(p.email, DRAFT_SUBJECT, buildBody_(p), { name: '株式会社HADO 田中大雅' });
+        mailStatus = '自動送信済み';
+      } catch (sendErr) {
+        console.error('gmail send error (fallback to draft):', sendErr);
+        GmailApp.createDraft(p.email, DRAFT_SUBJECT, buildBody_(p));
+        mailStatus = '下書き作成済み（自動送信失敗）';
+      }
       if (targetRow > 0) {
         SpreadsheetApp.getActiveSpreadsheet().getSheetByName(SHEET_NAME)
-          .getRange(targetRow, 13).setValue('下書き作成済み'); // M列=draftCreated
+          .getRange(targetRow, 13).setValue(mailStatus); // M列=draftCreated（送信状態）
       }
     }
   } catch (err) {
-    console.error('gmail draft error:', err);
+    console.error('gmail error:', err);
   }
 
   // STEP 4: ダッシュボード同期（新規ステータス自動分類 → シート1リード一覧を再生成）

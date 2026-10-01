@@ -37,9 +37,9 @@ Keep both cards. ライトプラン is also linked from header nav, footer Servi
 ライトプランは**未リリース**のため、/lite/・トップ・/contact/ は「現在リリース準備中につき事前登録受付中」の打ち出しで統一（CTA=事前登録する）。正式リリース時にこの表記を外す。
 
 ### 資料ダウンロード導線（2026-10-01〜、求職者送客クラウドの導線を踏襲）
-- トップの最終CTA（`#contact`）と `/contact/` は**資料ダウンロード型**：紺パネル＋資料の扇＋フォーム（会社名・姓名・会社メール・希望の資料 checkbox）。CVは「フォーム送信」1点。トップから面談予約URLは出さない。
+- トップの最終CTA（`#contact`）と `/contact/` は**資料ダウンロード型**：紺パネル＋資料の扇＋フォーム（会社名・姓名・会社メール・**ご希望のセグメント checkbox＝必須・1つ以上**）。CVは「フォーム送信」1点。トップから面談予約URLは出さない。
 - フォーム共通ロジック＝`assets/inquiry.js`（POST先GASは従来と同じ、フリーメール拒否、attribution同梱、localStorage保存、送信後 `/thanks/?area=chuto|shinsotsu|both` へ遷移）。スタイル＝`assets/inquiry.css`（`.dl-*` `.iq-*` `.doc-*`）。
-- 領域未選択は `service=相談して決めたい` で送る → GAS・資料ページとも両領域を出す。`/contact/` には ライトプラン（事前登録）checkbox も残している（/lite/ からの導線用）。
+- セグメントは必須なので未選択では送信できない（inquiry.js で検証）。GAS側の「領域不明なら両領域」フォールバックは手動リード等のために残している。`/contact/` には ライトプラン（事前登録）checkbox も残している（/lite/ からの導線用）。
 - 資料ページ `/thanks/`・`/document/`：ご紹介資料は**商談につなげる用**（料金表・今後の流れ・注意事項は載せない。面談で案内）。面談予約URL＝Googleカレンダー予約ページ `https://calendar.google.com/calendar/appointments/schedules/AcZssZ3I3OA0rCgTVGeRd0dgFnZX4-qzPcwhYerfWLX4yPs40cETVoq51xu1UGucxzUNu7TgWf9gfldD`（GASの SCHEDULE_URL と同じ）。
 - 資料を直すとき：`madoguchi-doc-deck/{chuto,shinsotsu}.html` を編集 → `./build.sh chuto` → PDFを `dl/` へ、`out/` の webp を `images/doc/` へコピー（`madoguchi-doc-deck/README.md`）。
 - GAS v16 (2026-10-01): 返信メールを説明動画からご紹介資料（PDF URL＋/document/）＋面談予約URLに変更。動画URL定数は削除。

@@ -1,4 +1,5 @@
 /* 求職者送客の窓口 - 問い合わせ（資料ダウンロード）フォーム共通
+ * ご希望のセグメント（service checkbox）は必須・1つ以上（2026-10-01）。
  * トップ（#contact）と /contact/ の2か所で使う。送信先は GAS Web App（従来と同じ）。
  * 送信後は /thanks/（資料ページ）へ遷移し、そこで選んだ領域の資料と面談予約URLを出す。
  * 直近の送信内容は localStorage（madoguchi_submissions）に残し、資料ページが領域の判定に使う。 */
@@ -52,9 +53,7 @@
 
     function serviceValues(){
       var checked = form.querySelectorAll('input[name="service"]:checked');
-      var v = Array.prototype.map.call(checked, function(c){ return c.value; }).join('、');
-      // 領域が未選択なら「相談して決めたい」として送る（GAS側は両領域の資料を案内する）
-      return v || '相談して決めたい';
+      return Array.prototype.map.call(checked, function(c){ return c.value; }).join('、');
     }
 
     function buildSubmission(){
@@ -109,6 +108,13 @@
       if(hp && hp.value){ location.href = NEXT; return; }
       if(!form.checkValidity()){ form.reportValidity(); return; }
       if(!validateEmailDomain()){ emailInput.focus(); return; }
+      // ご希望のセグメントは必須（1つ以上）
+      if(!serviceValues()){
+        showError('ご希望のセグメントを1つ以上お選びください。');
+        var first = form.querySelector('.iq-area input[type="checkbox"]');
+        if(first) first.focus();
+        return;
+      }
       if(submitBtn){ submitBtn.disabled = true; submitBtn.textContent = '送信中…'; }
       var submission = buildSubmission();
       saveLocal(submission);

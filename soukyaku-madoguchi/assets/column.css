@@ -406,3 +406,13 @@
   .art-cta { padding: 32px 22px; }
   .art-toc { padding: 20px 22px; }
 }
+
+/* author / supervisor box */
+.art-author { display: flex; gap: 18px; align-items: flex-start; margin-top: 40px; padding: 22px 24px; border: 1px solid var(--border-soft); border-radius: var(--r-lg); background: #fff; }
+.art-author-avatar { flex: 0 0 56px; width: 56px; height: 56px; border-radius: 50%; background: var(--brand-blue-tint); color: var(--brand-blue); font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+.art-author-k { display: block; font-size: .72rem; font-weight: 700; letter-spacing: .08em; color: var(--brand-blue); margin-bottom: 4px; }
+.art-author b { font-size: 1.05rem; }
+.art-author-t { display: block; font-size: .82rem; color: var(--text-sub); margin: 2px 0 8px; }
+.art-author p { font-size: .9rem; line-height: 1.75; margin: 0 0 8px; }
+.art-author a { font-size: .88rem; font-weight: 600; }
+@media (max-width: 640px) { .art-author { flex-direction: column; gap: 10px; } }

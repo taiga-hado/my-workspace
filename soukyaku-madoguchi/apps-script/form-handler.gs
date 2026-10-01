@@ -98,7 +98,7 @@ function buildBody_(p) {
   if (!showChuto && !showShinsotsu && !showLite) { showChuto = true; showShinsotsu = true; }
 
   var docs = [];
-  if (showChuto) docs.push('▼ご紹介資料（第二新卒・未経験領域）全11ページ\n　PDF： ' + DOC_CHUTO + '\n　ブラウザで見る： ' + DOC_PAGE_CHUTO);
+  if (showChuto) docs.push('▼ご紹介資料（第二新卒・未経験領域）全12ページ\n　PDF： ' + DOC_CHUTO + '\n　ブラウザで見る： ' + DOC_PAGE_CHUTO);
   if (showShinsotsu) docs.push('▼ご紹介資料（新卒領域）全11ページ\n　PDF： ' + DOC_SHINSOTSU + '\n　ブラウザで見る： ' + DOC_PAGE_SHINSOTSU);
 
   var docSection = '';

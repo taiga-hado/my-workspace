@@ -5,7 +5,7 @@ HADO資料デザインシステム（`~/.claude/skills/hado-deck/`）で作成�
 
 | ファイル | 内容 |
 |---|---|
-| `chuto.html` | 第二新卒・未経験領域 ご紹介資料（11枚） |
+| `chuto.html` | 第二新卒・未経験領域 ご紹介資料（12枚） |
 | `shinsotsu.html` | 新卒領域（27卒〜28卒） ご紹介資料（11枚） |
 | `common.css` | 共通スタイル（テンプレのCSS＋棒グラフ・ペルソナ・事例カード等の追加部品） |
 | `img/` | 導入事例の画像（`soukyaku-madoguchi/images/case-*.png` のコピー） |

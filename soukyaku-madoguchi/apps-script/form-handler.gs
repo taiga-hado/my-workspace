@@ -1,10 +1,19 @@
 // =============================================================================
-// 【ミラー / バックアップ】求職者送客の窓口 - 問い合わせフォーム受信 GAS（v15）
+// 【ミラー / バックアップ】求職者送客の窓口 - 問い合わせフォーム受信 GAS（v16）
 // -----------------------------------------------------------------------------
 // 本番GASの参照用ミラー（ここで実行されるコードではありません）。
 // 正本: スプレッドシート「求職者送客の窓口DB」にバインドされたコンテナバウンドGAS『コード.gs』。
 // SLACK_WEBHOOK_URL は秘密情報のため伏字。復元時は GAS エディタ側の実値を使うこと。
+// 作業は必ず clasp pull から始める（ミラーを起点にしない）。手順は apps-script/README.md。
 //
+// バックアップミラー: リポジトリ my-workspace の soukyaku-madoguchi/apps-script/form-handler.gs
+// このコードを変更したらミラーも必ず同期すること（SLACK_WEBHOOK_URL はミラーでは伏字）。
+//
+// v16 (2026-10-01): 返信メールを「説明動画」から「ご紹介資料（PDF）＋面談予約」に変更。
+//   - サイト側の導線を資料ダウンロード型（フォーム送信→資料ページ→面談予約）に変えたのに合わせる
+//   - 動画は視聴率が低く効果が薄かったため廃止（VIDEO_CHUTO / VIDEO_SHINSOTSU を削除）
+//   - 領域別にPDFのURLと資料ページ（/document/?area=…）を案内。未選択は両領域（v13の方針を踏襲）
+//   - 末尾は「面談予約URL（SCHEDULE_URL）」を主導線に、質問はメール返信で、の2択（従来どおり）
 // v15 (2026-09-24): 署名の住所を中目黒の新オフィスに更新（2026年8月移転）。
 //   - 〒150-0031 渋谷区桜丘町21-4 渋谷桜丘ビル3F → 〒153-0051 目黒区上目黒1-1 第2育良ビル4F
 // v14 (2026-08-31): 海外出張対応（v11-v12）を終了し通常文面に復帰（予定の9/4より前倒し・ユーザー帰国のため）。
@@ -51,17 +60,18 @@
 // =============================================================================
 
 const SHEET_NAME = 'submissions';
-const SLACK_WEBHOOK_URL = '__SET_IN_GAS_EDITOR__'; // 秘密情報のため伏字（実値はGASエディタ側のみ）
+const SLACK_WEBHOOK_URL = '__SET_IN_GAS_EDITOR__'; // 秘密情報。ミラーでは伏字（復元時はGASエディタ側の実値を使うこと）
 const DRAFT_SUBJECT = '求職者送客の窓口のお打ち合わせについて';
 const SCHEDULE_URL = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3I3OA0rCgTVGeRd0dgFnZX4-qzPcwhYerfWLX4yPs40cETVoq51xu1UGucxzUNu7TgWf9gfldD';
 
-// 領域別 説明動画（中途=Google Drive／新卒=tldv）
-const VIDEO_CHUTO = 'https://drive.google.com/file/d/1BCIvpJ7NvVYqOaUNCf1jnZr8DctOOWeP/view?usp=sharing';
-const VIDEO_SHINSOTSU = 'https://tldv.io/app/meetings/6a21f878b2719f0013b6ea5a/';
-
-// 領域別 サービス説明資料（Canva）※v7で本文から削除。復活用に残置（本文では未使用）
-const DOC_CHUTO = 'https://canva.link/p11v6pj204p3f09';
-const DOC_SHINSOTSU = 'https://canva.link/hggmjv7lkgkj7cb';
+// 領域別 ご紹介資料（サイトに置いたPDF。v16〜。説明動画・Canva資料は廃止）
+const SITE_URL = 'https://kyusyokusyasokyaku-no-madoguchi.com';
+const DOC_CHUTO = SITE_URL + '/dl/madoguchi-chuto.pdf';
+const DOC_SHINSOTSU = SITE_URL + '/dl/madoguchi-shinsotsu.pdf';
+// ブラウザで読める資料ページ（/thanks/ と同内容。/thanks/ は広告CVのURLなのでメールからは /document/ を案内する）
+const DOC_PAGE_CHUTO = SITE_URL + '/document/?area=chuto';
+const DOC_PAGE_SHINSOTSU = SITE_URL + '/document/?area=shinsotsu';
+const DOC_PAGE_BOTH = SITE_URL + '/document/?area=both';
 
 // A列ベースで最終データ行を返す（AB:AD列のARRAYFORMULAで getLastRow が膨らむ問題を回避）
 function lastDataRow_(sh) {
@@ -73,34 +83,30 @@ function lastDataRow_(sh) {
 }
 
 // ---------------------------------------------------------------------------
-// 返信メール本文（選択された領域だけ説明動画を出し分け）
+// 返信メール本文（選択された領域のご紹介資料を出し分け）
 // ---------------------------------------------------------------------------
 function buildBody_(p) {
   // フォームは複数選択（checkbox）。値は読点「、」区切りで届く（例: 第二新卒・未経験領域、新卒領域）。
-  var svc = p.service || '';
   // 部分一致で判定。「第二新卒・未経験領域」に「新卒」が含まれるため、
   // 新卒は必ず「新卒領域」という連続文字列で判定する（誤マッチ防止）。旧「両方」値にも後方互換。
+  var svc = p.service || '';
   var both = svc.indexOf('両方') !== -1;
   var showChuto = both || svc.indexOf('第二新卒') !== -1;
   var showShinsotsu = both || svc.indexOf('新卒領域') !== -1;
   var showLite = svc.indexOf('ライトプラン') !== -1;
+  // 「相談して決めたい」等で領域が特定できない場合は両領域を案内（ライトプランのみ選択時は除く）
+  if (!showChuto && !showShinsotsu && !showLite) { showChuto = true; showShinsotsu = true; }
 
-  var videos = [];
-  if (showChuto) videos.push('▼サービス説明動画（第二新卒・未経験領域）\n' + VIDEO_CHUTO);
-  if (showShinsotsu) videos.push('▼サービス説明動画（新卒領域）\n' + VIDEO_SHINSOTSU);
-  // 「相談して決めたい」等で領域が特定できない場合は両領域の動画を案内（v13）。
-  // ライトプランのみ選択時は除く（ライト案内文が入るため）
-  if (!videos.length && !showLite) {
-    videos.push('▼サービス説明動画（第二新卒・未経験領域）\n' + VIDEO_CHUTO);
-    videos.push('▼サービス説明動画（新卒領域）\n' + VIDEO_SHINSOTSU);
-  }
+  var docs = [];
+  if (showChuto) docs.push('▼ご紹介資料（第二新卒・未経験領域）全11ページ\n　PDF： ' + DOC_CHUTO + '\n　ブラウザで見る： ' + DOC_PAGE_CHUTO);
+  if (showShinsotsu) docs.push('▼ご紹介資料（新卒領域）全11ページ\n　PDF： ' + DOC_SHINSOTSU + '\n　ブラウザで見る： ' + DOC_PAGE_SHINSOTSU);
 
-  var videoSection = '';
-  if (videos.length) {
-    videoSection =
-      '\n\nサービスの内容につきましては、下記の説明動画にまとめております。\n' +
-      'まずはこちらをご覧いただけますと幸いです。\n\n' +
-      videos.join('\n\n');
+  var docSection = '';
+  if (docs.length) {
+    docSection =
+      '\n\nサービスの内容は、下記のご紹介資料にまとめております。\n' +
+      '送客する求職者層のデータ・面談前にお渡しする情報・導入事例をご覧いただけます。\n\n' +
+      docs.join('\n\n');
   }
 
   // ライトプラン（応募課金型）はリリース前＝事前登録受付。料金・提供条件は面談で案内する方針のため一文のみ
@@ -112,15 +118,16 @@ function buildBody_(p) {
   }
 
   var closing =
-    '\n\nご相談やご質問がございましたら、本メールへのご返信にてお気軽にお寄せください。\n\n' +
-    'また、オンライン面談にて直接ご説明・ご相談させていただくことも可能でございます。\n' +
-    'ご希望の場合は、下記の日程調整URLよりご都合のよろしい日時をご選択ください。\n\n' +
-    '▼オンライン面談の日程調整はこちら\n' + SCHEDULE_URL;
+    '\n\n貴社のご希望（求職者層・エリア・月間件数）でどのくらい送客できるか、料金やセグメント指定のオプションは、\n' +
+    '15分ほどのオンライン面談でその場でお答えしております。\n' +
+    'ご希望の際は、下記よりご都合のよろしい日時をお選びください。\n\n' +
+    '▼オンライン面談のご予約（15分・Google Meet）\n' + SCHEDULE_URL +
+    '\n\nご質問やご相談は、本メールへのご返信でもお気軽にお寄せください。';
 
   return (p.company || '') + '\n' + (p.lastName || '') + ' ' + (p.firstName || '') + ' 様\n\n' +
     'お世話になっております。\n株式会社HADOの田中でございます。\n\n' +
-    'この度は、弊社の求職者送客サービス「求職者送客の窓口」にご関心をお寄せいただき、誠にありがとうございます。' +
-    videoSection +
+    'この度は、弊社の求職者送客サービス「求職者送客の窓口」の資料をご請求いただき、誠にありがとうございます。' +
+    docSection +
     liteSection +
     closing +
     '\n\nそれでは、ご連絡をお待ちしております。\n引き続きどうぞよろしくお願いいたします。\n\n' +

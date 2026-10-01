@@ -9,7 +9,9 @@
 - `/shinsotsu/` - SERVICE 02 詳細
 - `/lite/` - 求職者送客の窓口 ライト（応募課金型プラン、added 2026-07-29）
 - `/column/` - SEO blog hub (37+ articles, auto-published daily)
-- `/thanks/` - form submission landing
+- `/thanks/` - form submission landing ＝ **資料ページ**（2026-10-01〜。PDFダウンロード＋スライド閲覧＋面談予約URL。広告CVのURLなので変えない）
+- `/document/` - `/thanks/` と同内容の資料ページ（メールから案内する用。CVを二重計上しないため分けている。**thanks を直したら document へ cp する**）
+- `/dl/madoguchi-chuto.pdf` `/dl/madoguchi-shinsotsu.pdf` - ご紹介資料PDF（ソース＝ワークスペース直下 `madoguchi-doc-deck/`、スライド画像は `images/doc/{chuto,shinsotsu}/sNN.webp`）
 - `/interview/*` - case study pages (Nexil, ReWave, SmartForce)
 
 ### Top page must contain 2 service cards
@@ -34,9 +36,19 @@ Keep both cards. ライトプラン is also linked from header nav, footer Servi
 ### Lite = pre-registration until launch (2026-07-29〜)
 ライトプランは**未リリース**のため、/lite/・トップ・/contact/ は「現在リリース準備中につき事前登録受付中」の打ち出しで統一（CTA=事前登録する）。正式リリース時にこの表記を外す。
 
+### 資料ダウンロード導線（2026-10-01〜、求職者送客クラウドの導線を踏襲）
+- トップの最終CTA（`#contact`）と `/contact/` は**資料ダウンロード型**：紺パネル＋資料の扇＋フォーム（会社名・姓名・会社メール・希望の資料 checkbox）。CVは「フォーム送信」1点。トップから面談予約URLは出さない。
+- フォーム共通ロジック＝`assets/inquiry.js`（POST先GASは従来と同じ、フリーメール拒否、attribution同梱、localStorage保存、送信後 `/thanks/?area=chuto|shinsotsu|both` へ遷移）。スタイル＝`assets/inquiry.css`（`.dl-*` `.iq-*` `.doc-*`）。
+- 領域未選択は `service=相談して決めたい` で送る → GAS・資料ページとも両領域を出す。`/contact/` には ライトプラン（事前登録）checkbox も残している（/lite/ からの導線用）。
+- 資料ページ `/thanks/`・`/document/`：ご紹介資料は**商談につなげる用**（料金表・今後の流れ・注意事項は載せない。面談で案内）。面談予約URL＝Googleカレンダー予約ページ `https://calendar.google.com/calendar/appointments/schedules/AcZssZ3I3OA0rCgTVGeRd0dgFnZX4-qzPcwhYerfWLX4yPs40cETVoq51xu1UGucxzUNu7TgWf9gfldD`（GASの SCHEDULE_URL と同じ）。
+- 資料を直すとき：`madoguchi-doc-deck/{chuto,shinsotsu}.html` を編集 → `./build.sh chuto` → PDFを `dl/` へ、`out/` の webp を `images/doc/` へコピー（`madoguchi-doc-deck/README.md`）。
+- GAS v16 (2026-10-01): 返信メールを説明動画からご紹介資料（PDF URL＋/document/）＋面談予約URLに変更。動画URL定数は削除。
+
 ### Contact form + GAS (v10, 2026-07-29)
 - /contact/ の「ご興味のあるサービス」checkbox に `ライトプラン（応募課金型）` を追加（value はこの文字列。表示ラベルには「※リリース前・事前登録受付中」付き）。
 - 受信GAS（apps-script/form-handler.gs ミラー、v10）: buildBody_ に「ライトプラン」部分一致でライト案内文（「事前登録として承りました」＋面談誘導。動画なし）。Slack通知・submissions・シート1ダッシュボードは p.service に値が流れるだけで変更不要。手動リード追加ダイアログ（本番は dashboard.gs 側が有効）にも同オプションあり。本番はバージョン16として既存デプロイに反映済み。
+- GAS v13 (2026-08-21, 本番バージョン20): 領域未選択（「相談して決めたい」等）でも**両領域の説明動画をフォールバック掲載**（ライトのみ選択時は除く）。旧仕様は本文がほぼ空のメールになる実害があった。
+- GAS v14 (2026-08-31, 本番バージョン21): 海外出張対応（v11-v12の`onTrip`日付判定＝8/10〜9/4メール一本化）を帰国前倒しで終了・コードごと削除し、通常の面談案内（メール返信＋日程調整URLの2択）に復帰。
 
 ### Logos for service cards
 - `images/logo-daini.png` (91KB)
@@ -83,3 +95,6 @@ Keep both cards. ライトプラン is also linked from header nav, footer Servi
 - 対応領域: 第二新卒・若手未経験・新卒（**保育士は2026-06-22にサービスサイトから削除**）
 
 If any column article (under `/column/`) still references old prices (e.g. 「3.5万円」), update or note it.
+- tl;dv録画URL自動ひも付けGAS（apps-script/tldv-sync.gs ミラー、2026-09-16）: 1時間トリガーで tl;dv API→submissions の tldvURL/商談日/ステータス(→商談済)を自動更新し、文字起こしを Claude（claude-opus-5）で分析して 先方要約/温度感(S-C)/理由 を書く（シート1 M〜O列に転記）。詳細は apps-script/README.md。
+- 契約書フォルダ同期GAS（apps-script/contract-sync.gs ミラー、2026-09-16）: 共有ドライブ「エージェント」フォルダ（1社1サブフォルダ）を3日ごとに走査し、契約書があるクライアントを submissions と突合してステータス→契約・契約日・契約書フォルダURLを書く。詳細は apps-script/README.md。
+- tl;dv Webhook 受け口（2026-09-16）: Web App exec URL `?src=tldv&token=…` → コード.gs doPost が tldv-sync.gs に委譲。受け口はキュー投入のみ、処理は毎分トリガー。詳細は apps-script/README.md。

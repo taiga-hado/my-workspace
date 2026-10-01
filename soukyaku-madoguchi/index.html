@@ -66,6 +66,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/inquiry.css">
   <style>
     /* ====== Plans (通常 / ライト) ====== */
     .plan-compare {
@@ -180,7 +181,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <a href="lite/">ライトプラン</a>
           <a href="column/">コラム</a>
         </div>
-        <a href="contact/" class="btn btn-dark btn-sm">お問い合わせ</a>
+        <a href="#contact" class="btn btn-dark btn-sm">資料ダウンロード</a>
       </nav>
       <button class="burger" aria-label="menu"><span></span><span></span><span></span></button>
     </div>
@@ -205,7 +206,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span style="font-size: 0.85em; opacity: 0.85;">※送客品質維持のため、パートナー企業様は審査制とさせていただいています。</span>
         </p>
         <div class="hero-ctas">
-          <a href="contact/" class="btn btn-primary btn-lg btn-arrow">オンライン商談を予約</a>
+          <a href="#contact" class="btn btn-primary btn-lg"><span class="btn-mins">1分で完了</span>資料をダウンロードする</a>
+          <a href="#services" class="btn btn-outline btn-lg">サービスを見る</a>
         </div>
       </div>
 
@@ -751,17 +753,55 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- CTA -->
-  <section class="cta-section" id="contact">
+  <!-- 資料ダウンロード（CVはこのフォーム送信1点。面談予約の導線は送信後の資料ページだけに置く） -->
+  <section class="dl-section" id="contact">
     <div class="container">
-      <div class="cta-panel" data-reveal>
-        <div class="cta-panel-inner">
-          <h2>面談だけに集中できる、<br><span class="gold">新しい求職者獲得モデル</span>を。</h2>
-          <p>御社の課題・獲得したい求職者像に合わせた送客プランを、無料でご提案いたします。まずはお気軽にご相談ください。<br><span style="font-size: 0.85em; opacity: 0.85;">※パートナー登録には所定の審査があります。</span></p>
-          <div class="cta-buttons">
-            <a href="contact/" class="btn btn-primary btn-lg btn-arrow">オンライン商談を予約</a>
+      <div class="dl-head">
+        <span class="dl-pill"><b>人材紹介会社さま向け</b> 面談着座成果報酬型の求職者送客サービス</span>
+        <h2>すぐに<em>ご紹介資料</em>をご確認いただけます。</h2>
+        <p class="dl-lead">送客する求職者層のデータ・面談前に届く情報・導入事例をまとめた、新卒／第二新卒・未経験 各11ページの資料です。<br>ご入力後そのまま画面でご覧いただけます（同じ資料をメールでもお送りします）。</p>
+      </div>
+      <div class="dl-grid">
+        <div class="dl-side">
+          <div class="dl-fan" aria-hidden="true">
+            <img class="c" src="images/doc/chuto/s05.webp" alt="" loading="lazy">
+            <img class="b" src="images/doc/shinsotsu/s01.webp" alt="" loading="lazy">
+            <img class="a" src="images/doc/chuto/s01.webp" alt="" loading="lazy">
+          </div>
+          <p class="dl-cap">新卒／第二新卒・未経験　各11ページ／PDF</p>
+          <div class="dl-gets">
+            <span>送客する求職者層のデータ</span>
+            <span>面談前に届く情報のサンプル</span>
+            <span>導入事例と実績</span>
+            <span>面談の進め方</span>
           </div>
         </div>
+        <div class="dl-formbox">
+          <form class="iq-form" id="contactForm" novalidate data-tag="top">
+            <div class="row2">
+              <label>会社名<i>必須</i><input type="text" name="company" required maxlength="120" autocomplete="organization" placeholder="株式会社○○"></label>
+              <label>メールアドレス（会社）<i>必須</i><input type="email" name="email" required maxlength="120" autocomplete="email" placeholder="name@company.co.jp"></label>
+            </div>
+            <div class="row2">
+              <label>姓<i>必須</i><input type="text" name="lastName" required maxlength="40" autocomplete="family-name" placeholder="山田"></label>
+              <label>名<i>必須</i><input type="text" name="firstName" required maxlength="40" autocomplete="given-name" placeholder="太郎"></label>
+            </div>
+            <div>
+              <label style="margin-bottom:6px">ご希望の資料<i class="opt">複数可</i></label>
+              <div class="iq-areas">
+                <label class="iq-area"><input type="checkbox" name="service" value="第二新卒・未経験領域"><span>第二新卒・未経験領域<small>18〜34歳の若手層</small></span></label>
+                <label class="iq-area"><input type="checkbox" name="service" value="新卒領域"><span>新卒領域<small>27卒〜28卒の就活生</small></span></label>
+              </div>
+              <p class="iq-hint">未選択の場合は両方の資料をお送りします。</p>
+            </div>
+            <input type="text" name="website" class="iq-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="iq-err" hidden></p>
+            <button type="submit" class="iq-submit"><span class="mins">1分で完了</span>今すぐ資料をダウンロード</button>
+            <p class="iq-note">ご入力後、その場で資料をご覧いただけます（同じ資料をメールでもお送りします）。いただいた情報は株式会社HADOの<a href="https://hado.co.jp/privacy" target="_blank" rel="noopener">プライバシーポリシー</a>に基づき、本サービスのご案内以外には使用しません。</p>
+          </form>
+        </div>
       </div>
+      <p class="dl-note">※パートナー登録には所定の審査があります。採用企業への直接送客・代理店とのアライアンスは行なっておりません。</p>
     </div>
   </section>
 
@@ -812,5 +852,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 
   <script src="assets/site.js"></script>
+  <script src="assets/inquiry.js"></script>
 </body>
 </html>

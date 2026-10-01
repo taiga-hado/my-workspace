@@ -234,8 +234,9 @@ def s_madoguchi():
     body += ('<div class="card k"><div class="lb">アクセス権限</div><h4>退職者が出たら権限解除のご連絡を</h4>'
              '<p>スプレッドシートはご共有いただいた担当者アカウントのみアクセスできます。'
              '担当者の入れ替わりがあれば速やかにお知らせください。</p></div>')
-    body += ('<div class="card k"><div class="lb">送客ペース・条件の変更</div><h4>10営業日前までにご相談ください</h4>'
-             '<p>増減・一時停止はSNS集客側の調整サイクルがあるため、直前のご依頼は反映が間に合いません。'
+    body += ('<div class="card k"><div class="lb">送客ペース・条件の変更</div><h4>効力発生日の5営業日前までに</h4>'
+             '<p>増減・一時停止は、効力発生日の5営業日前までに窓口へ（規約第6条）。やむを得ない事情のときは、'
+             'お早めにご連絡いただければ対応します。月間のご請求額は、申込書の月間予算が上限です。'
              '担当者の追加は最短翌営業日から反映できます。</p></div>')
     body += "</div>"
     return body
@@ -377,19 +378,17 @@ def build_chuto():
             '20代で社会人経験が浅く（目安3年以内）、専門スキルやキャリアの軸がまだ固まっていない方です。</p>'
             '<div class="card" style="margin-top:20px;padding:24px 28px">'
             '<div style="font-size:11px;font-weight:800;letter-spacing:1.5px;color:var(--blue);margin-bottom:12px">'
-            '現実的な着地先</div>'
-            '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">'
-            + "".join('<div style="background:var(--blue-soft);border-radius:10px;padding:13px 14px;'
-                      'font-size:14px;font-weight:700;color:var(--navy);line-height:1.5">%s</div>' % x
-                      for x in ["無期雇用派遣系<br><span style=\"font-size:11.5px;font-weight:500;color:var(--gray)\">IT・施工管理・事務・販売</span>",
-                                "飲食業界",
-                                "建設業界",
-                                "toC営業<br><span style=\"font-size:11.5px;font-weight:500;color:var(--gray)\">業界問わず</span>",
-                                "法人営業<br><span style=\"font-size:11.5px;font-weight:500;color:var(--gray)\">飲食・美容の店舗関連</span>",
-                                "製造業"])
+            '決定の中心となる4職種</div>'
+            '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">'
+            + "".join('<div style="background:var(--blue-soft);border-radius:10px;padding:16px 14px;'
+                      'font-size:15.5px;font-weight:700;color:var(--navy);line-height:1.5;text-align:center">%s</div>' % x
+                      for x in ["個人営業", "販売接客", "事務", "施工管理"])
+            + '<div style="grid-column:1/-1;font-size:12.5px;color:var(--gray);line-height:1.7;margin-top:4px">'
+              '雇用形態では<b style="color:var(--navy)">無期雇用派遣系</b>（IT・施工管理・事務・販売）の比率が高くなります。'
+              '飲食・製造・建設も未経験の受け入れはありますが、決定数ではこの4職種に及びません。</div>'
             + '</div></div>'
             '<div class="quote" style="margin-top:18px"><b>Point</b>　'
-            '未経験で入社できる企業はある程度限られます。<b>面談の前に、この範囲の求人を手元に用意しておく</b>と提案が止まりません。</div>')
+            '未経験で入社できる企業はある程度限られます。<b>面談の前に、この4職種の求人を手元に用意しておく</b>と提案が止まりません。</div>')
     S.append(slide(body, kicker=kick("05", "初回面談の設計"),
                    title="会うのは<em>ジュニア層</em>です", page="09"))
 
